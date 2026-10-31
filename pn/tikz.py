@@ -40,7 +40,8 @@ _OPPOSITE = {"above": "below", "below": "above", "left": "right", "right": "left
 def _tex(s):
     return (str(s).replace("\\", r"\textbackslash{}").replace("%", r"\%")
             .replace("&", r"\&").replace("#", r"\#").replace("_", r"\_")
-            .replace("\u202f", r"\,"))
+            .replace("\u202f", r"\,").replace("≥", r"$\geq$").replace("≤", r"$\leq$")
+            .replace("→", r"$\rightarrow$").replace("×", r"$\times$").replace("∧", r"$\land$"))
 
 
 def _xy(at):
