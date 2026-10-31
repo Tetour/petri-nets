@@ -35,7 +35,10 @@ def lint(net):
         if t.prob is not None:
             for p, _ in net.inputs(t.id):
                 groups[p].add(t.id)
-    for p, ts in groups.items():
+    # a place feeding only part of a branch (e.g. an extra resource taken by the 90 % branch)
+    # is not the branching place: check only the maximal sets
+    maximal = {p: ts for p, ts in groups.items() if not any(ts < other for other in groups.values())}
+    for p, ts in maximal.items():
         total = sum(T[t].prob for t in ts)
         if abs(total - 100) > 0.5:
             problems.append(f"probabilities of {sorted(ts)} (from {p}) add up to {total:g} %, not 100 %")
