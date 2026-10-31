@@ -1,8 +1,8 @@
 PY := python3
 
-.PHONY: all nets notes check clean
+.PHONY: all nets notes check simlib clean
 
-all: nets notes
+all: nets notes simlib
 
 nets:
 	$(PY) -m pn.build
@@ -10,7 +10,10 @@ nets:
 notes:
 	$(PY) -m pn.notes
 
-check:
+simlib:
+	$(PY) -m pn.simlib
+
+check: simlib
 	$(PY) -m pn.build --check-only
 
 clean:

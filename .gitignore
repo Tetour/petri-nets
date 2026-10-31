@@ -6,3 +6,6 @@ __pycache__/
 build/
 *.aux
 *.log
+
+# direnv
+.direnv/

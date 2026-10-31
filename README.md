@@ -209,13 +209,18 @@ build/         generated intermediates (git-ignored)
 
 ## Building
 
-Requires Python 3.11+, pdflatex with TikZ, poppler (`pdftocairo`, `pdftoppm`), and for the note PDFs pandoc + xelatex with the DejaVu fonts.
+All tools come from the Nix flake (`flake.nix`, pinned by `flake.lock`): Python, a slim TeX Live with TikZ, poppler, pandoc + xelatex with the DejaVu fonts, and SIMLIB 3.10 built from the official FIT source. Pinned versions keep the committed PDFs and SVGs byte-identical between builds.
 
 ```sh
-make            # check and render every net, then render every note to PDF
+nix develop          # or: direnv allow  (the .envrc loads the shell when you cd into the project)
+```
+
+```sh
+make            # render every net and note PDF, compile and run the SIMLIB models
 make nets       # check every net and render net.pdf + net.svg next to each net.py
 make notes      # render every note to "<TT–NN> - <název>.pdf" (A4; task on page 1, hint and net on later pages)
-make check      # checks only
+make check      # checks only (nets + SIMLIB models)
+make simlib     # compile and run the SIMLIB code of every note that has a SIMLIB section
 python3 -m pn.build "exercises/09–10 - Kopírovací centrum"   # one net
 python3 -m pn.index                            # regenerate the index below from pn/catalog.py
 python3 -m pn.dd 3 lifo 1 5 10 10.5            # D/D/3 LIFO trace: events at t1=10, state at t2=10.5
