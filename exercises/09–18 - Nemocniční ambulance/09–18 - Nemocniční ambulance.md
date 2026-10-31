@@ -23,10 +23,10 @@ Podobné úlohy: [03–04 – Porucha s opravou, transakce odchází](<../03–0
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – nemocniční ambulance](net.svg)
 

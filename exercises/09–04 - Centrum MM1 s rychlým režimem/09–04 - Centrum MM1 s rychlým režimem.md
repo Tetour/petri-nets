@@ -24,10 +24,10 @@ Podobné úlohy: [05–01 – Doba obsluhy podle délky fronty](<../05–01 - Do
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – centrum M/M/1 s rychlým režimem](net.svg)
 

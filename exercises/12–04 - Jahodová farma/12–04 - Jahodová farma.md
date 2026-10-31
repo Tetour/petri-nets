@@ -26,10 +26,10 @@ Podobné úlohy: [12–02 – Sběrači jahod](<../12–02 - Sběrači jahod/12�
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – jahodová farma](net.svg)
 

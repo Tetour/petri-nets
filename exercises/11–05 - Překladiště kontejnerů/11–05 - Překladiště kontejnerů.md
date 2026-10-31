@@ -25,10 +25,10 @@ Podobné úlohy: [11–09 – Překladiště s jeřábem](<../11–09 - Překlad
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – překladiště kontejnerů](net.svg)
 

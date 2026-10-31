@@ -21,10 +21,10 @@ Podobné úlohy: [02–01 – Netrpělivé požadavky](<../02–01 - Netrpěliv�
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – zákaznická linka s netrpělivými volajícími](net.svg)
 

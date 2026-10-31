@@ -24,10 +24,10 @@ Podobné úlohy: [04–06 – Údržba po každé 10. obsluze](<../04–06 - Úd
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – server s údržbou po 1000 požadavcích](net.svg)
 

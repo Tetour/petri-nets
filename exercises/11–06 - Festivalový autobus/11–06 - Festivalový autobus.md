@@ -27,10 +27,10 @@ Podobné úlohy: [11–01 – Výletní autobus](<../11–01 - Výletní autobus
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – festivalový autobus](net.svg)
 

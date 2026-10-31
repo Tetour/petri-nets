@@ -27,10 +27,10 @@ Podobné úlohy:
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – porucha s opravou, transakce odchází](net.svg)
 

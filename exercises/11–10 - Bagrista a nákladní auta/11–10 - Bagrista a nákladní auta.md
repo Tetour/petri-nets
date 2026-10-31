@@ -22,10 +22,10 @@ Podobné úlohy: [01–06 – Kravín](<../01–06 - Kravín/01–06 - Kravín.m
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – bagrista a nákladní auta](net.svg)
 

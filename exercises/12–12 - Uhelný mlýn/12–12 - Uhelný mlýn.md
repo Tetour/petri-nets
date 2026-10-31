@@ -22,10 +22,10 @@ Podobné úlohy: [12–07 – Spalovna](<../12–07 - Spalovna/12–07 - Spalovn
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – uhelný mlýn](net.svg)
 

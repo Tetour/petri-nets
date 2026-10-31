@@ -21,10 +21,10 @@ Podobné úlohy: [09–11 – Kopírovací centrum s poruchami](<../09–11 - Ko
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – kopírovací centrum](net.svg)
 

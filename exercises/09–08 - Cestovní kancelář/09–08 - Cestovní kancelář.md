@@ -22,10 +22,10 @@ Podobné úlohy: [09–15 – Úřad s dodatečnými přepážkami](<../09–15 
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – cestovní kancelář](net.svg)
 

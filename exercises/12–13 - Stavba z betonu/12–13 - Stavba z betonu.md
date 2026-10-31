@@ -27,10 +27,10 @@ Podobné úlohy: [12–15 – Dílna se třemi stroji](<../12–15 - Dílna se t
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – stavba z betonu](net.svg)
 

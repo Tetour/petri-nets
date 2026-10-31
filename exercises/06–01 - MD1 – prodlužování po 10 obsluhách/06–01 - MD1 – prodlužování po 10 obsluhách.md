@@ -23,10 +23,10 @@ Podobné úlohy: [04–06 – Údržba po každé 10. obsluze](<../04–06 - Úd
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – M/D/1 s prodlužováním obsluhy po 10 obsluhách](net.svg)
 

@@ -19,10 +19,10 @@ Podobné úlohy: [08–09 – DD1 – příchody 3, obsluha 2](<../08–09 - DD1
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ### Časový diagram
 

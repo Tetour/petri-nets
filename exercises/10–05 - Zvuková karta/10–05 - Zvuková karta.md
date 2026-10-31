@@ -29,10 +29,10 @@ Podobné úlohy: [10–04 – Počítačový server](<../10–04 - Počítačov�
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – zvuková karta](net.svg)
 

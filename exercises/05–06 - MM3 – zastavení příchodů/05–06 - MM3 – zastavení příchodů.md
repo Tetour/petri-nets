@@ -21,10 +21,10 @@ Podobné úlohy: [05–05 – Přerušení příchodů při plné frontě](<../0
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – M/M/3 se zastavením příchodů](net.svg)
 

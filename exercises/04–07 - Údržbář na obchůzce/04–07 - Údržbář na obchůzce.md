@@ -30,10 +30,10 @@ Podobné úlohy:
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – údržbář na obchůzce](net.svg)
 

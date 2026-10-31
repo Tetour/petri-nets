@@ -26,10 +26,10 @@ Podobné úlohy: [05–02 – Dočasně MM2 při dlouhé frontě](<../05–02 - 
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – databázový server](net.svg)
 

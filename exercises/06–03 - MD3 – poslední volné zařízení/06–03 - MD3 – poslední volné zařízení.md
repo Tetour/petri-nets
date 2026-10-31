@@ -21,10 +21,10 @@ Podobné úlohy: [06–02 – MD1 – střídání 2 a 3](<../06–02 - MD1 – 
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – M/D/3, poslední volné zařízení](net.svg)
 

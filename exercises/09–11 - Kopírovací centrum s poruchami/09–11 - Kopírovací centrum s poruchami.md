@@ -26,10 +26,10 @@ Podobné úlohy: [09–10 – Kopírovací centrum](<../09–10 - Kopírovací c
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – kopírovací centrum s poruchami](net.svg)
 

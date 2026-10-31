@@ -22,10 +22,10 @@ Podobné úlohy: [04–07 – Údržbář na obchůzce](<../04–07 - Údržbá�
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – překladiště s jeřábem](net.svg)
 

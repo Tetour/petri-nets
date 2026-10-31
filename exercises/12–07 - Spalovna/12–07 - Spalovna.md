@@ -25,10 +25,10 @@ Podobné úlohy: [12–05 – Spalovna se třemi vozy](<../12–05 - Spalovna se
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – spalovna](net.svg)
 

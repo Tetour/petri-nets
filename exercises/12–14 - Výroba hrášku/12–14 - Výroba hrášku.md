@@ -27,10 +27,10 @@ Podobné úlohy: [03–01 – Porucha zruší obsluhu](<../03–01 - Porucha zru
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – výroba hrášku](net.svg)
 

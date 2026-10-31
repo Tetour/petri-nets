@@ -20,10 +20,10 @@ Podobné úlohy: [01–04 – Výrobní systém](<../01–04 - Výrobní systém
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – kritická sekce](net.svg)
 

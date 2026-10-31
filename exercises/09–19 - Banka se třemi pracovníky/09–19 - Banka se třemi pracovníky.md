@@ -26,10 +26,10 @@ Podobné úlohy: [09–21 – Banka a lupič](<../09–21 - Banka a lupič/09–
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – banka se třemi pracovníky](net.svg)
 

@@ -24,10 +24,10 @@ Podobné úlohy: [09–04 – Centrum MM1 s rychlým režimem](<../09–04 - Cen
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – výrobní hala](net.svg)
 

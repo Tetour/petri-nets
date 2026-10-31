@@ -22,10 +22,10 @@ Podobné úlohy: [11–06 – Festivalový autobus](<../11–06 - Festivalový a
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – přepravní firma](net.svg)
 

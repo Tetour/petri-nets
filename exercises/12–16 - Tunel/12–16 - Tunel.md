@@ -27,10 +27,10 @@ Podobné úlohy: [03–02 – Porucha vrací transakci do fronty](<../03–02 - 
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – tunel](net.svg)
 

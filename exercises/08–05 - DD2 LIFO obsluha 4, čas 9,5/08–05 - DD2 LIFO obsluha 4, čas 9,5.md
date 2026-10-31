@@ -29,10 +29,10 @@ Podobné úlohy: [08–04 – DD2 LIFO obsluha 5, čas 9,5](<../08–04 - DD2 LI
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ### Časový diagram (obsazení zařízení)
 

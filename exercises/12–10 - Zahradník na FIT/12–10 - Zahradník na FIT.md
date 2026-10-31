@@ -23,10 +23,10 @@ Podobné úlohy: [12–01 – Zahradnictví a bouřka](<../12–01 - Zahradnictv
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – zahradník na FIT](net.svg)
 

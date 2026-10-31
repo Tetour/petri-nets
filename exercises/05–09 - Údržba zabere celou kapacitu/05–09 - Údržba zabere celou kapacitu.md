@@ -21,10 +21,10 @@ Podobné úlohy: [05–10 – Pomocník přidá kapacitu](<../05–10 - Pomocní
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – údržba zabere celou kapacitu](net.svg)
 

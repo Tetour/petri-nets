@@ -29,10 +29,10 @@ Podobné úlohy: [07–04 – Dva proudy příchodů](<../07–04 - Dva proudy p
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – telefonní ústředna](net.svg)
 

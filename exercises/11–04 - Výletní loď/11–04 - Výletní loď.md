@@ -23,10 +23,10 @@ Podobné úlohy: [11–07 – Vyhlídková loď na molu](<../11–07 - Vyhlídko
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – výletní loď](net.svg)
 

@@ -34,10 +34,10 @@ Podobné úlohy: [01–01 – Opravářská dílna](<../01–01 - Opravářská 
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – zdravotní středisko](net.svg)
 

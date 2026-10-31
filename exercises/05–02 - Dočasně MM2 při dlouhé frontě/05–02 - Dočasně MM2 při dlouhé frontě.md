@@ -27,10 +27,10 @@ Podobné úlohy: [05–03 – Natrvalo MM3 při dlouhé frontě](<../05–03 - N
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – dočasně M/M/2 při dlouhé frontě](net.svg)
 

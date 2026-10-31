@@ -24,10 +24,10 @@ Podobné úlohy: [12–04 – Jahodová farma](<../12–04 - Jahodová farma/12�
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – moštárna](net.svg)
 

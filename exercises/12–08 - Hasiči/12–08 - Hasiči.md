@@ -25,10 +25,10 @@ Podobné úlohy: [09–18 – Nemocniční ambulance](<../09–18 - Nemocniční
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – hasiči](net.svg)
 

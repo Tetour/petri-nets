@@ -26,10 +26,10 @@ Podobné úlohy: [11–14 – Přehrada s vyhlídkovou lodí](<../11–14 - Pře
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – výletní autobus](net.svg)
 

@@ -27,10 +27,10 @@ Podobné úlohy: [10–03 – Databázový server](<../10–03 - Databázový se
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – počítačový server](net.svg)
 

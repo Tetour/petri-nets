@@ -22,10 +22,10 @@ Podobné úlohy:
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – M/M/3, prioritní transakce zabírají dvě linky](net.svg)
 

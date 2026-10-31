@@ -22,10 +22,10 @@ Podobné úlohy: [03–06 – Porucha zničí obsluhu nebo počká](<../03–06 
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – automat na kávu](net.svg)
 

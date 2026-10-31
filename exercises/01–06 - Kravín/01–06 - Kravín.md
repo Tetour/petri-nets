@@ -28,10 +28,10 @@ Podobné úlohy: [11–10 – Bagrista a nákladní auta](<../11–10 - Bagrista
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – kravín](net.svg)
 

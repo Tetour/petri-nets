@@ -24,10 +24,10 @@ Podobné úlohy: [09–03 – Psí salon](<../09–03 - Psí salon/09–03 - Ps�
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – pekárna](net.svg)
 

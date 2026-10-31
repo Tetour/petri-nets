@@ -25,10 +25,10 @@ Podobné úlohy: [02–02 – Netrpělivý první ve frontě](<../02–02 - Netr
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – pražírna kávy](net.svg)
 

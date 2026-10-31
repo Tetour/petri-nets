@@ -24,10 +24,10 @@ Podobné úlohy: [09–08 – Cestovní kancelář](<../09–08 - Cestovní kanc
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – úřad s dodatečnými přepážkami](net.svg)
 

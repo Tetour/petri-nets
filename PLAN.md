@@ -99,7 +99,7 @@ Each note has these sections (headings in Czech):
 
 1. **Zadání**: the verbatim task text and links to similar exercises.
 2. **Interpretace** → **Nápověda**: ambiguities and the assumption chosen (e.g. "přesáhne 5" means > 5, so the test arc has weight 6). The section is called *Interpretace* while it is my unconfirmed reading; once you review the note and confirm the interpretation, it is renamed to *Nápověda* („Zobrazit nápovědu“). The README index derives the status `reviewed` from that name.
-3. **Řešení**: the diagram plus a table mapping each requirement to the place or transition that implements it.
+3. **Petriho síť**: the diagram plus a table mapping each requirement to the place or transition that implements it.
 4. **Časté chyby**: the common mistakes for this pattern.
 5. **Původ a zdroje**: where the exercise comes from (exam/midterm, year, term, group, points), every source file with pages, and the comparison with existing solutions (Hrubý's or students' nets, with the errors to avoid).
 

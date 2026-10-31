@@ -22,10 +22,10 @@ Podobné úlohy: [01–05 – Kritická sekce](<../01–05 - Kritická sekce/01�
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – výrobní systém](net.svg)
 

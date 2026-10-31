@@ -28,10 +28,10 @@ Podobné úlohy:
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – porucha prodlouží obsluhu o 2](net.svg)
 

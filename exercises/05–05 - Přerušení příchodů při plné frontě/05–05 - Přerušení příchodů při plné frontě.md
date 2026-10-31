@@ -22,10 +22,10 @@ Podobné úlohy: [09–06 – Klientské centrum](<../09–06 - Klientské centr
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – přerušení příchodů při plné frontě](net.svg)
 

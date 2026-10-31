@@ -22,10 +22,10 @@ Podobné úlohy: [04–01 – Automat na kávu – údržba po nečinnosti](<../
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – trafika](net.svg)
 

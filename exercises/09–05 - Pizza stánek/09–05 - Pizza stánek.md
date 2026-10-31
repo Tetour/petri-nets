@@ -23,10 +23,10 @@ Podobné úlohy: [11–03 – Pizzerie s rozvozem](<../11–03 - Pizzerie s rozv
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – pizza stánek](net.svg)
 

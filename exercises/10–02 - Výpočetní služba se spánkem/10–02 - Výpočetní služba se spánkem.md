@@ -22,10 +22,10 @@ Podobné úlohy: [04–08 – Spánek po nečinnosti](<../04–08 - Spánek po n
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – výpočetní služba se spánkem](net.svg)
 

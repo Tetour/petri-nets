@@ -22,10 +22,10 @@ Podobné úlohy: [02–04 – Fronta omezená na 10](<../02–04 - Fronta omezen
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – M/M/3 bez fronty s opakováním](net.svg)
 

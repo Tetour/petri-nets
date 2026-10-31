@@ -25,10 +25,10 @@ Podobné úlohy: [11–04 – Výletní loď](<../11–04 - Výletní loď/11–
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – vyhlídková loď na molu](net.svg)
 

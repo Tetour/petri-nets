@@ -24,10 +24,10 @@ Podobné úlohy: [12–11 – Přečerpávací elektrárna](<../12–11 - Přeč
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – přečerpávací elektrárna II](net.svg)
 

@@ -19,10 +19,10 @@ Podobné úlohy: [05–09 – Údržba zabere celou kapacitu](<../05–09 - Údr
 
 </details>
 
-## Řešení
+## Petriho síť
 
 <details>
-<summary>Zobrazit řešení</summary>
+<summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – pomocník přidá kapacitu](net.svg)
 
