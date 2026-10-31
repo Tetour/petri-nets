@@ -13,6 +13,7 @@ import os
 import shutil
 import subprocess
 import sys
+from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 
 from . import lint, sim, tikz
@@ -55,26 +56,35 @@ def render(net, src):
     subprocess.run(["pdftoppm", "-png", "-r", "110", "-singlefile", "net.pdf", "net"], cwd=out, check=True)
 
 
+def process(src, check_only):
+    """Check (and render) one net; returns (name, problems)."""
+    name = src.parent.relative_to(ROOT)
+    try:
+        net = load(src)
+        problems = lint.lint(net) + sim.check(net)
+        if not check_only:
+            render(net, src)
+    except Exception as e:  # report and continue with the other nets
+        problems = [f"{type(e).__name__}: {e}"]
+    return name, problems
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--check-only", action="store_true")
+    ap.add_argument("-j", "--jobs", type=int, default=os.cpu_count())
     ap.add_argument("paths", nargs="*")
     args = ap.parse_args()
+    srcs = list(find(args.paths))
     failed = 0
-    for src in find(args.paths):
-        name = src.parent.relative_to(ROOT)
-        try:
-            net = load(src)
-            problems = lint.lint(net) + sim.check(net)
-            if not args.check_only:
-                render(net, src)
-        except Exception as e:  # report and continue with the other nets
-            problems = [f"{type(e).__name__}: {e}"]
-        status = "ok" if not problems else "FAIL"
-        print(f"{status:4}  {name}")
-        for p in problems:
-            print(f"        - {p}")
-        failed += bool(problems)
+    with ProcessPoolExecutor(max_workers=args.jobs) as pool:
+        # results are printed in the order of the nets, as soon as each one is ready
+        for name, problems in pool.map(process, srcs, [args.check_only] * len(srcs)):
+            status = "ok" if not problems else "FAIL"
+            print(f"{status:4}  {name}", flush=True)
+            for p in problems:
+                print(f"        - {p}")
+            failed += bool(problems)
     sys.exit(1 if failed else 0)
 
 
