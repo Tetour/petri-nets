@@ -7,8 +7,8 @@
 > Firma F používá telefonní ústřednu s kapacitou 20 současných telefonních hovorů. Zákazníci volají různým zaměstnancům firmy průměrně 30krát za hodinu (Poissonův proces příchodů).
 > Existují dvě možnosti: 60 procent telefonujících zná místní telefonní číslo zaměstnance (klapku) a ústředna mu přidělí volnou linku automaticky.
 > Zbylých 40 procent volajících klapku nezná a jsou přepojeni na operátorku.
-> Zjištění klapky u operátorky trvá dobu danou rovnoměrným rozložením od 5 do 15 sekund. Poté má volající spojovaný přes operátorku vyšší prioritu při obsazování některé z linek.
-> Doba hovoru se řídí exponenciálním rozložením se střední hodnotou 2 minuty.
+> Zjištění klapky u operátorky trvá rovnoměrně 5–15 sekund. Poté má volající spojovaný přes operátorku vyšší prioritu při obsazování některé z linek.
+> Hovor trvá exponenciálně se středem 2 minuty.
 > Po skončení hovoru a uvolnění linky volající požadavek opouští systém.
 
 Věta „V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém“ v zadání není (přibyla až v roce 2022/23). Výstupní přechod je v síti přesto, dnes se vyžaduje.
@@ -21,11 +21,13 @@ Podobné úlohy: [07–04 – Dva proudy příchodů](<../07–04 - Dva proudy p
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **30 volání za hodinu** v Poissonově procesu znamená exponenciální intervaly se středem 60/30 = **2 minuty**: `exp(2 min)`.
-- **Ústředna s kapacitou 20 hovorů** je sklad: místo *Linky* s 20 značkami. Hovor zabere jednu značku a `exp(2 min)` ji vrací. Běžný časovaný přechod má pro každou značku v místě *Hovor* vlastní odpočet (slajd 138), takže 20 hovorů běží souběžně.
-- **Operátorka** je jedno zařízení. Volající na ni čekají ve *Frontě* a po `5–15 s` (rovnoměrně) ji uvolní. Že by operátorku držel až do přidělení linky, zadání neříká.
-- **Vyšší priorita při obsazování linek:** oba proudy mají vlastní místo čekajících a vlastní obsazovací přechod. Přechod spojovaných má `p=1`, takže když se linka uvolní a čekají oba druhy volajících, dostane ji spojovaný.
+- **30 volání za hodinu** v Poissonově procesu znamená exponenciální intervaly se středem 60/30 = **2 minuty**: místo *volání zákazníků* ve smyčce s `exp(2 min)`.
+- **Rozdělení** z místa *volající*: `60 %` nahoru (*zná klapku*), `40 %` dolů (*nezná klapku*).
+- **Operátorka** je jedno zařízení. Volající na ni čekají ve *frontě* a po `5–15 s` (rovnoměrně) ji uvolní. Že by operátorku držel až do přidělení linky, zadání neříká.
+- **Ústředna s kapacitou 20 hovorů** je sklad: místo *Linky* s 20 značkami mezi oběma řadami. Hovor zabere jednu značku a `exp(2 min)` ji vrací. Běžný časovaný přechod má pro každou značku v místě *hovor* vlastní odpočet (slajd 138), takže 20 hovorů běží souběžně.
+- **Vyšší priorita při obsazování linek:** oba proudy mají vlastní místo čekajících (*čeká na linku*, *spojovaný*) a vlastní obsazovací přechod. Přechod spojovaných má `p=1`, takže když se linka uvolní a čekají oba druhy volajících, dostane ji spojovaný.
 - Hovor s operátorkou linku z dvaceti nezabírá: podle zadání se linka přiděluje až po zjištění klapky.
+- Po hovoru volající odchází přes *konec* přechodem *odchod*.
 - Při zatížení 1 Erlang (30/h × 2 min) jsou linky skoro vždy volné, takže priorita se uplatní jen výjimečně. Na struktuře sítě to nic nemění.
 
 </details>
@@ -37,18 +39,6 @@ Podobné úlohy: [07–04 – Dva proudy příchodů](<../07–04 - Dva proudy p
 <br>
 
 ![Petriho síť – telefonní ústředna](net.svg)
-
-| Požadavek | Prvek sítě |
-|---|---|
-| 30 volání za hodinu | *generátor* ⇄ `exp(2 min)` → *Volající* |
-| 60 % zná klapku, 40 % ne | okamžité přechody `60 %` a `40 %` |
-| operátorka, zjištění klapky 5–15 s | *Operátorka* (1 značka), obsazení, `5–15 s` vrací značku → *Spojovaný* |
-| kapacita 20 hovorů | *Linky* (20 značek), dva obsazovací přechody |
-| spojovaný má přednost | obsazení linky spojovaným má `p=1` |
-| hovor exp(2 min), uvolnění linky | *Hovor* → `exp(2 min)` vrací značku do *Linky* |
-| odchod ze systému | *konec* → *odchod* |
-
-Kontrola simulací: *Linky* + *Hovor* = 20 a *Operátorka* + obsluhovaný = 1. Současně běží nejvýš kolem 7 hovorů, fronta na operátorku zůstává krátká.
 
 </details>
 
@@ -66,6 +56,77 @@ Kontrola simulací: *Linky* + *Hovor* = 20 a *Operátorka* + obsluhovaný = 1. S
 
 </details>
 
+## SIMLIB
+
+<details>
+<summary>Zobrazit SIMLIB kód</summary>
+<br>
+
+Model je izomorfní k Petriho síti výše: každé místo, přechod a značka mají svůj protějšek v kódu.
+
+```cpp
+// 09–22 Telefonní ústředna – model v SIMLIB/C++
+#include "simlib.h"
+
+const double SEK = 1.0 / 60;           // časová jednotka: minuta
+
+Store Linky("Linky", 20);              // místo Linky (20 značek)
+Facility Operatorka("Operátorka");     // místo Operátorka (1 značka)
+Histogram Cekani("Čekání na linku [min]", 0, 0.01, 10);
+int znaji = 0, pres_operatorku = 0;
+
+class Volajici : public Process {      // transakce = značka volajícího
+  void Behavior() override {
+    if (Random() < 0.6) {              // zná klapku 60 %: místo čeká na linku
+      znaji++;
+    } else {                           // nezná klapku 40 %
+      pres_operatorku++;
+      Seize(Operatorka);               // fronta + obsazení operátorky
+      Wait(Uniform(5 * SEK, 15 * SEK)); // zjištění klapky 5–15 s, vrací operátorku
+      Release(Operatorka);
+      Priority = 1;                    // místo spojovaný: obsazení linky p=1
+    }
+    double cekani = Time;
+    Enter(Linky, 1);                   // obsazení linky (priorita procesu řadí frontu)
+    Cekani(Time - cekani);
+    Wait(Exponential(2));              // místo hovor, přechod exp(2 min) ...
+    Leave(Linky, 1);                   // ... vrací linku
+  }                                    // místo konec + přechod odchod
+};
+
+class Prichody : public Event {        // místo volání zákazníků ve smyčce s exp(2 min)
+  void Behavior() override {
+    (new Volajici)->Activate();
+    Activate(Time + Exponential(2));   // 30 volání za hodinu
+  }
+};
+
+int main() {
+  Init(0, 1000 * 60);                  // modelový čas v minutách: 1000 hodin
+  (new Prichody)->Activate();
+  Run();
+  Print("Znali klapku: %d, přes operátorku: %d\n", znaji, pres_operatorku);
+  Linky.Output();
+  Operatorka.Output();
+  Cekani.Output();
+}
+```
+
+| Petriho síť | SIMLIB |
+|---|---|
+| *volání zákazníků* ⇄ `exp(2 min)` | událost `Prichody`, znovu za `Exponential(2)` |
+| značka volajícího | proces `Volajici` |
+| `60 %` / `40 %` | `if (Random() < 0.6)` |
+| *fronta* + *Operátorka* (1 značka), `5–15 s` vrací značku | `Seize(Operatorka); Wait(Uniform(5 * SEK, 15 * SEK)); Release(Operatorka);` |
+| *čeká na linku* / *spojovaný* + obsazení linky (`p=1` u spojovaných) | `Enter(Linky, 1)`, spojovaný má `Priority = 1` (řadí ho ve frontě skladu dopředu) |
+| *Linky* (20 značek) | `Store Linky("Linky", 20)` |
+| *hovor* → `exp(2 min)` vrací linku | `Wait(Exponential(2)); Leave(Linky, 1);` |
+| *konec* + *odchod* | konec metody `Behavior()` |
+
+**Kontrola simulací.** Petriho síť: *Linky* + *hovor* = 20 a *Operátorka* + obsluhovaný = 1 (`make check`). Současně běží nejvýš kolem 7 hovorů, fronta na operátorku zůstává krátká. SIMLIB model: za 1000 hodin přišlo 29 992 volání (teoreticky 30 000), 40 % přes operátorku. Obsazených linek bylo v průměru 1,00 (teoreticky 1 Erlang = 1/2 volání za minutu × 2 min), nejvýš 8, takže na linku nikdo nečekal a priorita spojovaných se neuplatnila. Operátorka byla vytížena na 3,3 % (0,4 · 1/2 za minutu × 10 s = 1/30).
+
+</details>
+
 ## Původ a zdroje
 
 <details>
@@ -73,6 +134,15 @@ Kontrola simulací: *Linky* + *Hovor* = 20 a *Operátorka* + obsluhovaný = 1. S
 <br>
 
 **Původ:** půlsemestrální písemka, rok neznámý (zadání zapsané ve Studentských skriptech 2015/16).
+
+**Původní znění:**
+
+> Firma F používá telefonní ústřednu s kapacitou 20 současných telefonních hovorů. Zákazníci volají různým zaměstnancům firmy průměrně 30krát za hodinu (Poissonův proces příchodů).
+> Existují dvě možnosti: 60 procent telefonujících zná místní telefonní číslo zaměstnance (klapku) a ústředna mu přidělí volnou linku automaticky.
+> Zbylých 40 procent volajících klapku nezná a jsou přepojeni na operátorku.
+> Zjištění klapky u operátorky trvá dobu danou rovnoměrným rozložením od 5 do 15 sekund. Poté má volající spojovaný přes operátorku vyšší prioritu při obsazování některé z linek.
+> Doba hovoru se řídí exponenciálním rozložením se střední hodnotou 2 minuty.
+> Po skončení hovoru a uvolnění linky volající požadavek opouští systém.
 
 **Zdroje:**
 
