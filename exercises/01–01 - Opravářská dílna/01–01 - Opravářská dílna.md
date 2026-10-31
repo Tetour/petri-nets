@@ -4,6 +4,12 @@
 
 > Do opravářské dílny přicházejí zákazníci v intervalech daných exponenciálním rozložením pravděpodobnosti se střední hodnotou 20 minut. V dílně jsou dva opraváři: jeden zpracovává normální zakázky a druhý náročné zakázky. Každá třetí zakázka je náročná. Vyřízení normální zakázky trvá 15 minut s exp. rozložením pravděpodobnosti, vyřízení náročné zakázky zabere 45 minut exp. Zákazník čeká na vyřízení své zakázky a pak systém opouští.
 
+**Časy:**
+
+- příchody zákazníků: exponenciálně se středem 20 minut
+- oprava normální zakázky: exponenciálně se středem 15 minut
+- oprava náročné zakázky: exponenciálně se středem 45 minut
+
 ## Nápověda
 
 <details>
