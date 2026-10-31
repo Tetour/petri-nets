@@ -6,7 +6,9 @@ numbered P0, P1, ... in order of arrival, devices Z0, Z1, ... are taken
 lowest number first, all events have the same priority, so events planned for
 the same time run in the order they were planned (calendar is FIFO for ties).
 
-    python3 -m pn.dd C {fifo|lifo} INTERVAL SERVICE T1 T2
+    python3 -m pn.dd C {fifo|lifo} INTERVAL SERVICE T1 T2   # events at T1, state at T2
+    python3 -m pn.dd log C {fifo|lifo} INTERVAL SERVICE UNTIL   # every event from 0 to UNTIL
+    python3 -m pn.dd table C {fifo|lifo} INTERVAL SERVICE TMAX  # state after each event time
 """
 
 import heapq
@@ -101,5 +103,28 @@ def main(argv):
     print("zařízení: " + ", ".join(f"Z{k}: {'P' + str(p) if p is not None else 'volné'}" for k, p in enumerate(dev)))
 
 
+def log(c, disc, interval, service, until):
+    m = DD(int(c), disc, float(interval), float(service))
+    for t, lines in m.run(float(until))[0]:
+        print(f"t = {fmt(t)}")
+        for line in lines:
+            print("   " + line)
+
+
+def table(c, disc, interval, service, tmax):
+    """State after all events at each event time (as the D/D/1 tasks ask)."""
+    m = DD(int(c), disc, float(interval), float(service))
+    last = {}
+    for t, cal, queue, dev in m.run(float(tmax))[2]:
+        last[t] = (queue, dev)
+    print("| čas | délka fronty | v obsluze | fronta | zařízení |")
+    print("|---|---|---|---|---|")
+    for t, (queue, dev) in last.items():
+        busy = sum(d is not None for d in dev)
+        print(f"| {fmt(t)} | {len(queue)} | {busy} | {', '.join(f'P{p}' for p in queue)} | "
+              + ", ".join(f"Z{k}: {'P' + str(p) if p is not None else '–'}" for k, p in enumerate(dev)) + " |")
+
+
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    args = sys.argv[1:]
+    {"log": log, "table": table}.get(args[0], lambda *a: main(list(a)))(*(args[1:] if args[0] in ("log", "table") else args))

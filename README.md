@@ -11,7 +11,7 @@ Exercises are numbered `TT–NN` (topic – position within the topic) and order
 Status: `todo` = not built yet; `drafted` = built and passing `make check`, waiting for review; `reviewed` = accepted.
 
 <!-- index:start -->
-62 of 118 exercises drafted.
+84 of 118 exercises drafted.
 
 ### 01 Základní modely (přednášky)
 
@@ -98,6 +98,8 @@ make check      # checks only
 python3 -m pn.build "exercises/09–10 - Kopírovací centrum"   # one net
 python3 -m pn.index                            # regenerate the index below from pn/catalog.py
 python3 -m pn.dd 3 lifo 1 5 10 10.5            # D/D/3 LIFO trace: events at t1=10, state at t2=10.5
+python3 -m pn.dd log 2 fifo 1 4 6.5             # every event from 0 to 6.5
+python3 -m pn.dd table 1 fifo 2 4 10            # state table after each event time (D/D/1 tasks)
 ```
 
 What `make check` verifies for each net:
