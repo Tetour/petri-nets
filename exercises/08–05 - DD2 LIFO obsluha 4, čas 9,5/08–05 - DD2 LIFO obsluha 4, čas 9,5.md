@@ -4,7 +4,7 @@
 
 > ⚠️ Jen studentská vzpomínka, která uvádí pouze rozdíly proti skupině B. Zbytek zadání (LIFO fronta, příchody od času 0 po 1 s, priority, pojmenování událostí, pseudokód next-event) je převzatý ze skupiny B.
 
-> 1\) D/D/2. Doba obsluhy 4s.
+> 1\) D/D/2. Doba obsluhy přesně 4 sekundy.
 >
 > Nakreslete casovy diagram ....:
 >
@@ -23,18 +23,13 @@ Podobné úlohy: [08–04 – DD2 LIFO obsluha 5, čas 9,5](<../08–04 - DD2 LI
 <br>
 
 - **LIFO je předpoklad.** Vzpomínka frontu neuvádí. Protože jde o „to co B“ a skupina B má LIFO, počítá se tu s LIFO. Při FIFO by bylo **značení sítě stejné** (síť pořadí ve frontě nevidí). Lišilo by se, kdo je kde: v čase 5 by z fronty šel P3 místo P4 a v čase 9,5 by byla fronta P6, P7, P8, P9, na Z0 P4 a na Z1 P5.
+- **Příchody:** místo *příchody požadavků* s jednou značkou ve smyčce s časovaným přechodem `1 s`. První příchod P0 je v čase 0, každý příchod naplánuje další za 1 s.
+- **Společná fronta:** jedno místo *fronta*, ze kterého vedou hrany k přechodům obsazení obou zařízení.
 - **Petriho síť zachycuje jen počty**, ne pořadí ve frontě.
-- **Zařízení obsazovaná prioritně:** `p=1` (Z0) a `p=0` (Z1, implicitní). Když jsou volná obě, vezme se Z0.
+- **Zařízení obsazovaná prioritně:** každé zařízení je místo s jednou značkou (*Z0*, *Z1*) a má svůj okamžitý přechod obsazení s prioritou `p=1` (Z0) a `p=0` (Z1, implicitní). Když jsou volná obě, vezme se Z0.
+- **Obsluha a uvolnění:** časovaný přechod `4 s` po skončení obsluhy vrací značku zařízení; uvolnění je s ním sloučené.
+- **Odchod:** obsloužený požadavek přejde do místa *hotovo* a opouští systém přechodem *odchod* bez výstupních hran.
 - **Pořadí událostí ve stejném čase:** všechny události mají stejnou prioritu, takže se dřív provede ta, která byla **dřív naplánována**. V čase 5 nejdřív končí obsluha P1 (naplánovaná v čase 1), až pak přichází P5 (naplánovaný v čase 4). Proto Z1 dostane P4 a P5 jde do fronty.
-- Generátor: první příchod P0 je v čase 0. Každý příchod naplánuje další za 1 s.
-
-</details>
-
-## Petriho síť
-
-<details>
-<summary>Zobrazit Petriho síť</summary>
-<br>
 
 ### Časový diagram (obsazení zařízení)
 
@@ -64,16 +59,22 @@ Proč toto pořadí: konec obsluhy P1 byl naplánován v čase 1, příchod P5 a
 
 Fronta v čase 9,5 (od nejstaršího): P2, P5, P6, P9. Zařízení: Z0 – P7, Z1 – P8.
 
-### Petriho síť se značením v čase 9,5
+### Značení sítě v čase 9,5
 
-![Petriho síť – D/D/2 v čase 9,5](net.svg)
-
-- *generátor*: 1 značka (příchod P10 se právě odpočítává)
-- *Fronta*: 4 značky (P2, P5, P6, P9)
+- *příchody požadavků*: 1 značka (příchod P10 se právě odpočítává)
+- *fronta*: 4 značky (P2, P5, P6, P9)
 - *Z0*, *Z1*: 0 značek (obě zařízení obsazená)
 - místa obsluhy: po 1 značce (P7, P8)
 
-Kontrola (`make check`): síť se odsimuluje od času 0 (P0 ve frontě, zařízení volná) do času 9,5 a výsledné značení se musí shodovat s nakresleným. Výpočet událostí a kalendáře: `python3 -m pn.dd 2 lifo 1 4 5 9.5`.
+</details>
+
+## Petriho síť
+
+<details>
+<summary>Zobrazit Petriho síť</summary>
+<br>
+
+![Petriho síť – D/D/2 v čase 9,5](net.svg)
 
 </details>
 
@@ -90,6 +91,95 @@ Kontrola (`make check`): síť se odsimuluje od času 0 (P0 ve frontě, zaříze
 
 </details>
 
+## SIMLIB
+
+<details>
+<summary>Zobrazit SIMLIB kód</summary>
+<br>
+
+Model je izomorfní k Petriho síti výše: každé místo, přechod a značka mají svůj protějšek v kódu. Simulace běží do času t2 = 9,5 a vypíše frontu, obsazení zařízení a obsah kalendáře.
+
+```cpp
+// 08–05 D/D/2 se společnou LIFO frontou – model v SIMLIB/C++
+#include "simlib.h"
+
+const int N = 2;                         // počet zařízení Z0, Z1
+Facility Z[N];                           // místa Z0, Z1 (značka = volné zařízení)
+Queue Fronta("fronta");                  // místo „fronta“ (společná LIFO fronta)
+
+class Pozadavek : public Process {       // transakce = značka, která prochází sítí
+ public:
+  const int id;                          // číslo požadavku P0, P1, ...
+  explicit Pozadavek(int n) : id(n) {}
+  void Behavior() override {
+    int k;                               // obsazení s prioritami p=1, 0:
+    for (;;) {                           // volné zařízení s nejnižším číslem
+      for (k = 0; k < N && Z[k].Busy(); k++) {}
+      if (k < N) break;
+      Fronta.InsFirst(this);             // vše obsazeno: čeká v místě „fronta“
+      Passivate();                       // (LIFO: na začátek, odkud se bere)
+    }
+    Seize(Z[k]);                         // obsazení: značka ze Zk do místa obsluhy
+    Wait(4);                             // časovaný přechod 4 s ...
+    Release(Z[k]);                       // ... který vrací značku do Zk
+    if (!Fronta.Empty())                 // další z fronty (LIFO: naposledy vložený)
+      Fronta.GetFirst()->Activate();
+  }                                      // místo „hotovo“ a přechod „odchod“
+};
+
+class Prichody : public Event {          // „příchody požadavků“ ⇄ přechod 1 s
+ public:
+  int n = 0;                             // číslo dalšího požadavku
+  void Behavior() override {
+    (new Pozadavek(n++))->Activate();    // příchod Pn: nová značka v místě „fronta“
+    Activate(Time + 1);                  // plánuje další příchod za 1 s
+  }
+};
+Prichody *Gen;
+
+class Stav : public Event {              // výpis stavu v čase t2 po událostech
+ public:
+  Stav() : Event(-1) {}                  // nižší priorita než události modelu
+  void Behavior() override {
+    Print("Stav v čase %g\nfronta (od začátku, odkud se bere):", Time);
+    for (Link *l : Fronta)
+      Print(" P%d", static_cast<Pozadavek *>(l)->id);
+    Print("\n");
+    for (int k = 0; k < N; k++) {        // zařízení a v kalendáři konce obsluh
+      auto *p = static_cast<Pozadavek *>(Z[k].In());
+      if (p)
+        Print("Z%d: P%d, konec obsluhy v %g\n", k, p->id, p->ActivationTime());
+      else
+        Print("Z%d: volné\n", k);
+    }
+    Print("v kalendáři příchod P%d v čase %g\n", Gen->n, Gen->ActivationTime());
+  }
+};
+
+int main() {
+  Init(0, 9.5);                          // čas v sekundách, běh do t2 = 9,5 s
+  Gen = new Prichody;
+  Gen->Activate();                       // příchod P0 v čase 0
+  (new Stav)->Activate(9.5);
+  Run();
+}
+```
+
+| Petriho síť | SIMLIB |
+|---|---|
+| *příchody požadavků* ⇄ `1 s` | událost `Prichody`, která se znovu plánuje za 1 s; `n` čísluje požadavky P0, P1, … |
+| značka (požadavek) | proces `Pozadavek` s číslem `id` |
+| *fronta* | `Queue Fronta`: `Fronta.InsFirst(this)` + `Passivate()` (LIFO, na začátek), výběr `Fronta.GetFirst()->Activate()` |
+| *Z0*, *Z1* (1 značka) | `Facility Z[N]` |
+| obsazení s prioritami `p=1`, `p=0` | cyklus přes `Z[k].Busy()`: první volné zařízení od Z0 |
+| místo obsluhy + časovaný přechod `4 s` se sloučeným uvolněním | `Seize(Z[k]); Wait(4); Release(Z[k]);` |
+| *hotovo* + přechod *odchod* | konec metody `Behavior()` |
+| značení v čase t2 | událost `Stav` s nižší prioritou, která proběhne po všech událostech v čase 9,5 |
+
+**Kontrola simulací.** Petriho síť: síť se odsimuluje od času 0 (P0 ve *frontě*, zařízení volná) do času 9,5 a výsledné značení se musí shodovat s nakresleným; zařízení se vždy vrátí a *fronta* smí růst, protože systém není stabilní (`make check`). Seznam událostí a kalendář počítá `python3 -m pn.dd 2 lifo 1 4 5 9.5`. SIMLIB model vypíše v čase 9,5 frontu P9 P6 P5 P2 (od začátku, odkud se bere, tedy obráceně než výše), Z0 – P7 s koncem obsluhy ve 12, Z1 – P8 ve 13 a příchod P10 v 10, tedy stejný stav a kalendář jako výše (`make simlib`). Kalendář SIMLIB obsluhuje události se stejným časem a prioritou v pořadí naplánování, stejně jako odpověď výše. Jediný rozdíl je v jemnějším dělení: P4 probuzený z fronty obsadí Z1 až ve své vlastní aktivaci, tedy po příchodu P5. P5 ale volné zařízení hledá až po něm, takže výsledek je stejný.
+
+</details>
+
 ## Původ a zdroje
 
 <details>
@@ -97,6 +187,16 @@ Kontrola (`make check`): síť se odsimuluje od času 0 (P0 ve frontě, zaříze
 <br>
 
 **Původ:** zkouška 2015/16, 2. termín, skupina A, otázka 1, 15 bodů. Sesterská skupina B je [08–04 – DD2 LIFO obsluha 5, čas 9,5](<../08–04 - DD2 LIFO obsluha 5, čas 9,5/08–04 - DD2 LIFO obsluha 5, čas 9,5.md>).
+
+**Původní znění:**
+
+> 1\) D/D/2. Doba obsluhy 4s.
+>
+> Nakreslete casovy diagram ....:
+>
+> - Seznam udalosti pri cas t1 = 5
+> - Obsah kalendare v t2 = 9.5
+> - Nakreslete PS v t2 = 9.5
 
 **Zdroje:**
 
