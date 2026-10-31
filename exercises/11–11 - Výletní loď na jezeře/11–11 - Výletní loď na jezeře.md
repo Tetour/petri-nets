@@ -2,7 +2,7 @@
 
 ## Zadání
 
-> Po jezeře jezdí jedna výletní loď s kapacitou 50 cestujících. Provozní doba lodi začíná ráno u nástupního mola pro cestující. Provozní doba lodi trvá 10 hodin. Cestující přichází na molo v intervalech daných exponenciálním rozložením se středem 5 minut. Pokud cestující příjde po ukončení provozní doby, okamžitě systém opouští. Cestující nastupují na loď jednotlivě. Nástup jednoho cestujícího na loď trvá dobu danou exp. rozložením se středem 30 sekund. Loď odjíždí od mola na výletní jízdu, pokud nastane jeden z těchto dvou případů (nastupování cestujícího se vždy dokončí): 1) loď je naplněna cestujícími, 2) uplynuly 2 minuty od nastoupení posledního cestujícího z fronty (tj. loď na molu čeká) Výlet trvá jednu hodinu a končí vždy na molu. Po ukončení provozní doby loď dokončí případné nabírání cestujících dle výše uvedených pravidel a vyrazí na výlet. Pokud se přistaví k molu po dokončení provozní doby, cestující už nenabírá a přesune se do depa. Cestovní doby mezi molem a depem neuvažujeme. Také neuvažujeme dobu vystupování cestujících po návratu z výletu.
+> Po jezeře jezdí jedna výletní loď s kapacitou 50 cestujících. Provozní doba lodi začíná ráno u nástupního mola pro cestující. Provozní doba lodi trvá přesně 10 hodin. Cestující přichází na molo v intervalech exponenciálně se středem 5 minut. Pokud cestující příjde po ukončení provozní doby, okamžitě systém opouští. Cestující nastupují na loď jednotlivě. Nástup jednoho cestujícího na loď trvá dobu exponenciálně se středem 30 sekund. Loď odjíždí od mola na výletní jízdu, pokud nastane jeden z těchto dvou případů (nastupování cestujícího se vždy dokončí): 1) loď je naplněna cestujícími, 2) uplynuly 2 minuty od nastoupení posledního cestujícího z fronty (tj. loď na molu čeká) Výlet trvá přesně 1 hodinu a končí vždy na molu. Po ukončení provozní doby loď dokončí případné nabírání cestujících dle výše uvedených pravidel a vyrazí na výlet. Pokud se přistaví k molu po dokončení provozní doby, cestující už nenabírá a přesune se do depa. Cestovní doby mezi molem a depem neuvažujeme. Také neuvažujeme dobu vystupování cestujících po návratu z výletu.
 >
 > Modelujte jeden den provozu výletní lodi.
 >
@@ -18,14 +18,13 @@ Podobné úlohy: [11–04 – Výletní loď](<../11–04 - Výletní loď/11–
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **Loď u mola** (1 značka) je zařízení pro nástup „jednotlivě“: obsazení, `exp(30 s)` a vrácení značky. Odjezdové přechody tu značku také potřebují, takže během nástupu loď odjet nemůže („nastupování cestujícího se vždy dokončí“).
-- **Odjezd po 2 minutách** je časovaný přechod `2 min` se vstupem *Loď u mola*. Odpočet začne, když se loď po nástupu vrátí do stavu „čeká“. Když mezitím přijde cestující, obsazení si značku lodi vezme a odpočet zanikne (slajd 139). Po jeho nástupu běží odpočet znovu, tedy „2 minuty od nastoupení posledního cestujícího“.
-- **Testovací hrana z *Na palubě*** u přechodu `2 min`: odpočet běží jen tehdy, když už někdo nastoupil. Bez ní by na začátku dne (i po každém návratu k prázdnému molu) odplula prázdná loď na hodinovou jízdu. Přesně tohle vytýká komentář k jednomu ze studentských řešení.
-- **Plná loď:** přechod *plná* s `p=1` a testovací hranou váhy 50 z *Na palubě*. Po 50. nástupu má přednost před obsazením lodi dalším cestujícím, takže 51. nenastoupí. Zvláštní místo s volnými místy proto není potřeba.
-- **Cestující zůstávají *Na palubě* během výletu** a vystupují po návratu (`p=2` smyčka *vystoupení*, dokud je někdo na palubě). Teprve pak se rozhoduje *k molu* (p=0), nebo *do depa* (p=1, jen po provozní době). Hrubý v podobné úloze [11–04](<../11–04 - Výletní loď/11–04 - Výletní loď.md>) nechává cestující zaniknout už při vyplutí; to by tu šlo také.
+- **Transakce** jsou cestující. *Příchody cestujících* ve smyčce s `exp(5 min)` je posílají k rozhodnutí: po provozní době hned odchází přechodem *pozdě* (`p=1`, test příznaku *po provozní době*), jinak jdou do *fronty* (p=0). Generátor běží dál, pozdě příchozí jen hned odcházejí.
+- **Loď u mola má dva stavy:** *loď u mola (prázdná)* (na začátku dne a po každém návratu k molu) a *loď u mola (s cestujícími)*, když už někdo nastoupil. V obou stavech je to zařízení pro nástup „jednotlivě“: obsazení (jeden přechod pro každý stav lodi), `exp(30 s)` a vrácení značky do *lodi s cestujícími*. Odjezdové přechody tu značku také potřebují, takže během nástupu loď odjet nemůže („nastupování cestujícího se vždy dokončí“).
+- **Odjezd po 2 minutách** je časovaný přechod `2 min` se vstupem *loď u mola (s cestujícími)*. Odpočet začne, když se loď po nástupu vrátí do stavu „čeká“. Když mezitím přijde cestující, obsazení si značku lodi vezme a odpočet zanikne (slajd 139). Po jeho nástupu běží odpočet znovu, tedy „2 minuty od nastoupení posledního cestujícího“. Prázdná loď odpočet nemá, takže na začátku dne ani po návratu k prázdnému molu neodpluje prázdná na hodinovou jízdu.
+- **Plná loď:** přechod *plná* s `p=1` a testovací hranou váhy 50 z *na palubě*. Po 50. nástupu má přednost před obsazením lodi dalším cestujícím, takže 51. nenastoupí. Zvláštní místo s volnými místy proto není potřeba.
+- **Výlet:** *plavba* → `1 h` → *návrat*. Cestující zůstávají *na palubě* během výletu a vystupují po návratu (`p=2` smyčka *vystoupení*, dokud je někdo na palubě), pak přes *vystoupili* odcházejí. Teprve potom se rozhoduje *k molu* (p=0), nebo *do depa* (p=1, jen po provozní době). V podobné úloze [11–04](<../11–04 - Výletní loď/11–04 - Výletní loď.md>) cestující zanikají už při vyplutí; to by šlo i tady.
 - **Konec provozní doby:** `10 h` proběhne jednou (modelujeme jeden den) a nastaví dva příznaky *po provozní době*: jeden testuje přechod *pozdě* u příchodů, druhý přechod *do depa*. Je to jen kvůli přehlednosti kresby; jedno místo se dvěma testovacími hranami by bylo totéž.
-- **Pozdě příchozí** odcházejí přechodem *pozdě* (`p=1`, test příznaku), jinak jde cestující do *Fronty* (p=0). Generátor běží dál, příchozí jen hned odcházejí.
-- **Po provozní době** loď u mola nabírá dál podle stejných pravidel a odjede na výlet (fronta se už nezvětšuje). Po návratu jede do depa. **Cestující, kteří na molu zůstali** (přišli ještě v provozní době, ale loď byla na výletě), zadání neřeší. Model je po odjezdu lodi do depa pošle pryč (*rozchod*), jinak by zůstali v síti navždy.
+- **Po provozní době** loď u mola nabírá dál podle stejných pravidel a odjede na výlet (fronta se už nezvětšuje). Po návratu jede do depa. **Cestující, kteří na molu zůstali** (přišli ještě v provozní době, ale loď byla na výletě), zadání neřeší. Model je po odjezdu lodi do depa pošle pryč (*rozchod* se smyčkou na *depu*) přes *odchází* a *odchod*, jinak by zůstali v síti navždy.
 - **Prázdná loď u mola v okamžiku konce provozu** (nikdo nečeká ani nesedí na palubě) zůstane stát u mola. Zadání posílá do depa jen loď, která se k molu přistaví po konci provozu.
 
 </details>
@@ -38,20 +37,6 @@ Podobné úlohy: [11–04 – Výletní loď](<../11–04 - Výletní loď/11–
 
 ![Petriho síť – výletní loď na jezeře](net.svg)
 
-| Požadavek | Prvek sítě |
-|---|---|
-| příchody exp(5 min) | *generátor* ⇄ `exp(5 min)` → rozhodnutí: *pozdě* (p=1, po provozní době) / *Fronta* |
-| provozní doba 10 h, jeden den | *provozní doba* → `10 h` → dva příznaky *po provozní době* |
-| nástup jednotlivě exp(30 s) | obsazení *Lodi u mola*, `exp(30 s)` vrací značku lodi → *Na palubě* |
-| odjezd plné lodi | *plná* (p=1): *Loď u mola* + test 50 na *Na palubě* → *Plavba* |
-| odjezd 2 min po posledním nástupu | `2 min`: *Loď u mola* + test 1 na *Na palubě* → *Plavba* |
-| výlet 1 h, končí na molu | *Plavba* → `1 h` → *návrat k molu* |
-| výstup bez časové ztráty | smyčka *vystoupení* (p=2) → *vystoupili* → *odchod* |
-| po provozní době do depa | *do depa* (p=1, test příznaku) → *Depo*, jinak *k molu* → *Loď u mola* |
-| zbylí čekající po odjezdu do depa | *rozchod*: *Depo* (test) + *Fronta* → *odchází* → *odchod* |
-
-Kontrola simulací: *Loď u mola* + nastupující + *Plavba* + *návrat k molu* + *Depo* = 1, *Na palubě* ≤ 50. Za den proběhne asi 9 výletů (na palubě nejvýš 19–23 cestujících), v 10 h je loď obvykle na výletě, pak odjede do depa a 7–19 čekajících odejde. S příchody exp(5 min) se loď nikdy nenaplní, proto byla větev *plná* ověřena zvlášť se zrychlenými příchody exp(20 s): loď pak odplouvá s 50 cestujícími.
-
 </details>
 
 ## Časté chyby
@@ -61,11 +46,150 @@ Kontrola simulací: *Loď u mola* + nastupující + *Plavba* + *návrat k molu* 
 <br>
 
 - Časovač 2 min bez podmínky, že někdo nastoupil: prázdná loď odplouvá každé 2 minuty.
-- Časovač 2 min jako samostatný proces, který nezaniká s nástupem dalšího cestujícího. Musí ho zrušit obsazení lodi (vstupem je *Loď u mola*).
-- Odjezd, který nebere značku *Loď u mola*: loď by mohla odjet uprostřed nástupu, nebo by se během výletu dál nastupovalo.
+- Časovač 2 min jako samostatný proces, který nezaniká s nástupem dalšího cestujícího. Musí ho zrušit obsazení lodi (vstupem je značka lodi).
+- Odjezd, který nebere značku lodi u mola: loď by mohla odjet uprostřed nástupu, nebo by se během výletu dál nastupovalo.
 - Plná loď bez priority před dalším nástupem: nastoupí 51. cestující.
 - Cestující na palubě se po výletu nevynulují (smyčka *vystoupení* chybí nebo nemá přednost před návratem k molu). Další jízda pak začíná s „plnou“ lodí.
 - Příchody po konci provozní doby, které se řadí do fronty. Zadání chce okamžitý odchod.
+
+</details>
+
+## SIMLIB
+
+<details>
+<summary>Zobrazit SIMLIB kód</summary>
+<br>
+
+Model je izomorfní k Petriho síti výše: každé místo, přechod a značka mají svůj protějšek v kódu.
+
+```cpp
+// 11–11 Výletní loď na jezeře – model v SIMLIB/C++
+#include "simlib.h"
+
+const int KAPACITA = 50;
+
+Queue Fronta("Fronta na molu");         // místo fronta
+Queue Paluba("Na palubě");              // místo na palubě
+bool po_provozu = false;                // oba příznaky po provozní době
+int pozde = 0, rozchod = 0, vylety = 0;
+Histogram Obsazeni("Cestujících na výletě", 0, 5, 11);
+
+class Lod : public Process {            // značka lodi: u mola -> plavba -> návrat -> (depo)
+ public:
+  bool ceka = false;                    // loď u mola a nikdo nenastupuje
+  bool vyprselo = false;
+  void Nastup() {                       // obsazení lodi a nástup exp(30 s)
+    Entity *c = Fronta.GetFirst();
+    Wait(Exponential(0.5));
+    Paluba.Insert(c);                   // značka do na palubě, loď je znovu volná
+  }
+  void Behavior();
+};
+Lod *lod;
+
+class Odpocet : public Event {          // časovaný přechod 2 min (vstup: loď s cestujícími)
+  void Behavior() {
+    lod->vyprselo = true;
+    lod->Activate();
+  }
+};
+
+void Lod::Behavior() {
+  for (;;) {
+    while (Fronta.Empty()) {            // místo loď u mola (prázdná)
+      ceka = true;
+      Passivate();                      // probudí ji příchozí cestující
+      ceka = false;
+    }
+    Nastup();                           // obsazení prázdné lodi
+    for (;;) {                          // místo loď u mola (s cestujícími)
+      if ((int)Paluba.Length() >= KAPACITA)
+        break;                          // plná (p=1, test 50)
+      if (Fronta.Empty()) {
+        vyprselo = false;
+        Odpocet *o = new Odpocet;
+        o->Activate(Time + 2);          // odpočet 2 min od posledního nástupu
+        ceka = true;
+        Passivate();
+        ceka = false;
+        bool odjezd = vyprselo;
+        delete o;                       // příchod cestujícího odpočet zruší (obsazení bere loď)
+        if (odjezd)
+          break;
+        continue;
+      }
+      Nastup();                         // obsazení lodi s cestujícími
+    }
+    vylety++;                           // Plavba
+    Obsazeni(Paluba.Length());
+    Wait(60);                           // výlet 1 h -> návrat k molu
+    while (!Paluba.Empty())             // vystoupení (p=2): cestující odcházejí
+      Paluba.GetFirst()->Activate();
+    if (po_provozu)                     // do depa (p=1)
+      break;
+  }                                     // jinak k molu (p=0)
+  while (!Fronta.Empty()) {             // místo Depo: rozchod čekajících
+    Fronta.GetFirst()->Activate();
+    rozchod++;
+  }
+  Passivate();                          // loď zůstává v depu
+}
+
+class Cestujici : public Process {      // transakce = cestující
+  void Behavior() {
+    if (po_provozu) {                   // pozdě (p=1): okamžitý odchod
+      pozde++;
+      return;
+    }
+    Into(Fronta);                       // do fronty (p=0)
+    if (lod->ceka)
+      lod->Activate();                  // loď u mola čeká: začne nástup
+    Passivate();                        // nástup, výlet, vystoupení nebo rozchod
+  }                                     // odchod
+};
+
+class Generator : public Event {        // místo příchody cestujících ve smyčce s exp(5 min)
+  void Behavior() {
+    (new Cestujici)->Activate();
+    Activate(Time + Exponential(5));
+  }
+};
+
+class KonecProvozu : public Event {     // provozní doba -> 10 h -> po provozní době
+  void Behavior() { po_provozu = true; }
+};
+
+int main() {
+  Init(0, 24 * 60);                     // modelový čas v minutách: jeden den
+  lod = new Lod;
+  lod->Activate();
+  (new Generator)->Activate(Exponential(5));
+  (new KonecProvozu)->Activate(10 * 60);
+  Run();
+  Print("Výletů: %d, pozdě příchozích: %d, rozchod z mola: %d\n", vylety, pozde, rozchod);
+  Fronta.Output();
+  Obsazeni.Output();
+}
+```
+
+| Petriho síť | SIMLIB |
+|---|---|
+| *příchody cestujících* ⇄ `exp(5 min)` | událost `Generator`, která se znovu plánuje za `Exponential(5)` |
+| značka cestujícího | proces `Cestujici` |
+| *pozdě* (`p=1`) / do *fronty* (p=0) | `if (po_provozu)` / `Into(Fronta)` |
+| *provozní doba* → `10 h` → oba příznaky | událost `KonecProvozu` v čase 600 nastaví `po_provozu` |
+| značka lodi (*loď u mola*, *plavba*, *návrat*, *depo*) | proces `Lod`, jeho stav je místo v kódu |
+| *loď u mola (prázdná)* / *(s cestujícími)* | první a druhý cyklus v `Lod::Behavior()` |
+| obsazení lodi (z obou stavů) + nástup `exp(30 s)` | `Nastup()`: `GetFirst`, `Wait(Exponential(0.5))`, `Paluba.Insert` |
+| *na palubě* | fronta `Paluba` (pasivní cestující) |
+| *plná* (`p=1`, test 50) | `if (Paluba.Length() >= KAPACITA) break;` |
+| `2 min` (zaniká s nástupem) | událost `Odpocet`, kterou příchod cestujícího zruší (`delete o`) |
+| `1 h`, *vystoupení* (`p=2`) | `Wait(60)` a aktivace všech z `Paluba` |
+| *do depa* (`p=1`) / *k molu* (p=0) | `if (po_provozu) break;` / další průchod cyklem |
+| *rozchod* | aktivace všech z `Fronta` po odjezdu do depa |
+| přechody *odchod* | konec metody `Behavior()` cestujícího |
+
+**Kontrola simulací.** Petriho síť: *loď u mola (prázdná)* + *loď u mola (s cestujícími)* + nastupující + *plavba* + *návrat* + *depo* = 1, *na palubě* ≤ 50 (`make check`). Za den proběhne asi 9 výletů (na palubě nejvýš 19–23 cestujících), v 10 h je loď obvykle na výletě, pak odjede do depa a 7–19 čekajících odejde. S příchody exp(5 min) se loď nikdy nenaplní, proto byla větev *plná* ověřena zvlášť se zrychlenými příchody exp(20 s): loď pak odplouvá s 50 cestujícími. SIMLIB model (jeden den): 9 výletů, průměrně 15 cestujících na výletě (nejvýš 24), 179 pozdě příchozích (14 h po provozní době × 12 za hodinu ≈ 168) a 4 cestující odešli z mola rozchodem (`make simlib`).
 
 </details>
 
@@ -76,6 +200,14 @@ Kontrola simulací: *Loď u mola* + nastupující + *Plavba* + *návrat k molu* 
 <br>
 
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z1. Přesný rok a varianta nejsou známé.
+
+**Původní znění:**
+
+> Po jezeře jezdí jedna výletní loď s kapacitou 50 cestujících. Provozní doba lodi začíná ráno u nástupního mola pro cestující. Provozní doba lodi trvá 10 hodin. Cestující přichází na molo v intervalech daných exponenciálním rozložením se středem 5 minut. Pokud cestující příjde po ukončení provozní doby, okamžitě systém opouští. Cestující nastupují na loď jednotlivě. Nástup jednoho cestujícího na loď trvá dobu danou exp. rozložením se středem 30 sekund. Loď odjíždí od mola na výletní jízdu, pokud nastane jeden z těchto dvou případů (nastupování cestujícího se vždy dokončí): 1) loď je naplněna cestujícími, 2) uplynuly 2 minuty od nastoupení posledního cestujícího z fronty (tj. loď na molu čeká) Výlet trvá jednu hodinu a končí vždy na molu. Po ukončení provozní doby loď dokončí případné nabírání cestujících dle výše uvedených pravidel a vyrazí na výlet. Pokud se přistaví k molu po dokončení provozní doby, cestující už nenabírá a přesune se do depa. Cestovní doby mezi molem a depem neuvažujeme. Také neuvažujeme dobu vystupování cestujících po návratu z výletu.
+>
+> Modelujte jeden den provozu výletní lodi.
+>
+> *Zadaný systém modelujte formou Petriho sítě s vyznačením všech potřebných parametrů.*
 
 **Zdroje:**
 
