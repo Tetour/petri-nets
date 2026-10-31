@@ -2,7 +2,7 @@
 
 ## Zadání
 
-> Do kopírovacího centra přichází klienti v intervalech daných exponenciálním rozložením se středem 3 minuty. U přepážky registrují svůj požadavek, což zabere 1-2 minuty rovnoměrně. V centru jsou dva kopírovací stroje: stroj pro normální zakázky (A) a stroj pro speciální zakázky. 70% zakázek směřuje na stroj A. Klienti se speciální zakázkou jsou však netrpěliví, proto po 10 minutách čekání ve frontě na stroj B opouští systém. Doba zpracování na obou strojích se řídí exponenciálním rozložením se středem 3 minuty.
+> Do kopírovacího centra přichází klienti v intervalech exponenciálně se středem 3 minuty. U přepážky registrují svůj požadavek, což zabere rovnoměrně 1–2 minuty. V centru jsou dva kopírovací stroje: stroj pro normální zakázky (A) a stroj pro speciální zakázky. 70% zakázek směřuje na stroj A. Klienti se speciální zakázkou jsou však netrpěliví, proto po přesně 10 minutách čekání ve frontě na stroj B opouští systém. Doba zpracování na obou strojích je exponenciálně se středem 3 minuty.
 >
 > **V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém.**
 
@@ -14,11 +14,13 @@ Podobné úlohy: [09–11 – Kopírovací centrum s poruchami](<../09–11 - Ko
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **Přepážka** je jedno zařízení (Hrubý si k ní připsal „jedno zařízení“). Před ní čekají klienti ve frontě.
-- **Uvolnění zařízení** je sloučené s časovaným přechodem obsluhy (hrana vede z časovaného přechodu zpět do místa zařízení), stejně jako na slajdu 164 a v Hrubého řešení. Samostatný okamžitý přechod „Release“ by byl také správně, jen je to zbytečný prvek navíc.
-- **Netrpělivost** je časovaný přechod `10 min` přímo na místě *Fronta B*. Běžný časovaný přechod neomezuje počet současně čekajících (slajd 138), takže každý klient ve frontě má vlastní odpočet. Když klienta mezitím obsadí stroj B, jeho odpočet zanikne (značka z místa zmizí). Přesně to je „po 10 minutách čekání ve frontě opouští systém“.
-- **70 % / 30 %** jsou parametry přechodů, ne hran (slajd 135).
-- Generátor je místo se značkou ve smyčce s přechodem `exp(3 min)`. Kratší varianta bez místa (jen přechod bez vstupu) je na slajdech také a u zkoušky projde.
+- **Příchody:** místo *příchody klientů* ve smyčce s přechodem `exp(3 min)` vkládá klienty do *Fronty*. Kratší varianta generátoru bez místa (jen přechod bez vstupu) je na slajdech také a u zkoušky projde.
+- **Přepážka** je jedno zařízení (místo s 1 značkou). Registrace `1–2 min` je časovaný přechod, který značku přepážky vrací.
+- **Uvolnění zařízení** je sloučené s časovaným přechodem obsluhy (hrana vede z časovaného přechodu zpět do místa zařízení), stejně jako na slajdu 164. Samostatný okamžitý přechod „Release“ by byl také správně, jen je to zbytečný prvek navíc.
+- **70 % / 30 %:** z místa *rozdělování* vedou dva okamžité přechody s pravděpodobnostmi. Jsou to parametry přechodů, ne hran (slajd 135).
+- **Stroje A a B** jsou zařízení, každé s vlastní frontou (*Fronta A*, *Fronta B*) a časovaným přechodem `exp(3 min)`, který značku stroje vrací.
+- **Netrpělivost** je časovaný přechod `10 min` přímo na místě *Fronta B*, vede rovnou do *konec*. Běžný časovaný přechod neomezuje počet současně čekajících (slajd 138), takže každý klient ve frontě má vlastní odpočet. Když klienta mezitím obsadí stroj B, jeho odpočet zanikne (značka z místa zmizí). Přesně to je „po 10 minutách čekání ve frontě opouští systém“.
+- **Odchod:** obsloužení i netrpěliví klienti se sejdou v místě *konec* a opouštějí systém přechodem *odchod* bez výstupních hran.
 
 </details>
 
@@ -29,17 +31,6 @@ Podobné úlohy: [09–11 – Kopírovací centrum s poruchami](<../09–11 - Ko
 <br>
 
 ![Petriho síť – kopírovací centrum](net.svg)
-
-| Požadavek ze zadání | Prvek sítě |
-|---|---|
-| příchody exp(3 min) | *generátor* ⇄ `exp(3 min)` → *Fronta* |
-| registrace u přepážky 1–2 min | *Přepážka* (1 značka), obsazení, časovaný `1–2 min` vrací značku do *Přepážka* |
-| 70 % na stroj A, 30 % na stroj B | z místa *rozdělování* dva okamžité přechody `70 %` a `30 %` |
-| zpracování na stroji exp(3 min) | *Stroj A* / *Stroj B* (1 značka), obsazení, časovaný `exp(3 min)` vrací značku stroji |
-| netrpěliví klienti u stroje B | časovaný `10 min` z *Fronta B* rovnou do *konec* |
-| moment odchodu ze systému | přechod *odchod* bez výstupních hran |
-
-Kontrola simulací (`make check`): značka každého zařízení se vždy vrátí (*Přepážka* + obsluhovaný = 1, totéž pro oba stroje), všechny přechody se provádějí, fronty nerostou do nekonečna (stroj A je vytížen asi na 70 %).
 
 </details>
 
@@ -57,6 +48,89 @@ Kontrola simulací (`make check`): značka každého zařízení se vždy vrát�
 
 </details>
 
+## SIMLIB
+
+<details>
+<summary>Zobrazit SIMLIB kód</summary>
+<br>
+
+Model je izomorfní k Petriho síti výše: každé místo, přechod a značka mají svůj protějšek v kódu.
+
+```cpp
+// 09–10 Kopírovací centrum – model v SIMLIB/C++
+#include "simlib.h"
+
+Facility Prepazka("Přepážka");             // místo „Přepážka“ (1 značka)
+Facility StrojA("Stroj A");                // místo „Stroj A“
+Facility StrojB("Stroj B");                // místo „Stroj B“
+long netrpelivych = 0;
+Histogram Doba("Doba klienta v centru [min]", 0, 3, 15);
+
+class Netrpelivost : public Event {        // časovaný přechod „10 min“ na místě „Fronta B“
+  Process *klient;
+ public:
+  Netrpelivost(Process *k) : klient(k) { Activate(Time + 10); }
+  void Behavior() {
+    delete klient;                         // klient opustí frontu i systém (→ „konec“)
+    netrpelivych++;
+  }
+};
+
+class Klient : public Process {            // transakce
+  void Behavior() {
+    double prichod = Time;
+    Seize(Prepazka);                       // Fronta + obsazení přepážky
+    Wait(Uniform(1, 2));                   // registrace 1–2 min ...
+    Release(Prepazka);                     // ... vrací značku přepážky
+    if (Random() < 0.70) {                 // místo „rozdělování“: 70 % / 30 %
+      Seize(StrojA);                       // Fronta A + obsazení stroje A
+      Wait(Exponential(3));                // exp(3 min) vrací značku stroje A
+      Release(StrojA);
+    } else {
+      Event *odpocet = new Netrpelivost(this);  // každý ve Frontě B má vlastní odpočet
+      Seize(StrojB);                       // Fronta B + obsazení stroje B
+      odpocet->Cancel();                   // značka opustila Frontu B: odpočet zaniká
+      Wait(Exponential(3));
+      Release(StrojB);
+    }
+    Doba(Time - prichod);
+  }                                        // konec Behavior = „konec“ → přechod „odchod“
+};
+
+class Generator : public Event {           // „příchody klientů“ ve smyčce s exp(3 min)
+  void Behavior() {
+    (new Klient)->Activate();
+    Activate(Time + Exponential(3));
+  }
+};
+
+int main() {
+  Init(0, 60 * 1000);                      // modelový čas v minutách: 1000 hodin
+  (new Generator)->Activate();
+  Run();
+  Prepazka.Output();
+  StrojA.Output();
+  StrojB.Output();
+  Doba.Output();
+  Print("Netrpěliví klienti (odešli z Fronty B): %ld\n", netrpelivych);
+}
+```
+
+| Petriho síť | SIMLIB |
+|---|---|
+| *příchody klientů* ⇄ `exp(3 min)` | událost `Generator`, která se znovu plánuje za `Exponential(3)` |
+| značka (klient) | proces `Klient` |
+| *Fronta* + *Přepážka* (1 značka), `1–2 min` | `Seize(Prepazka); Wait(Uniform(1, 2)); Release(Prepazka);` |
+| *rozdělování*, `70 %` / `30 %` | `if (Random() < 0.70)` |
+| *Fronta A* + *Stroj A*, `exp(3 min)` | `Seize(StrojA); Wait(Exponential(3)); Release(StrojA);` |
+| *Fronta B* + *Stroj B*, `exp(3 min)` | totéž se `StrojB` |
+| `10 min` na *Frontě B* (vlastní odpočet každého klienta) | událost `Netrpelivost(this)`; po obsazení stroje `Cancel()`, jinak `delete klient` |
+| *konec* → *odchod* | konec metody `Behavior()` |
+
+**Kontrola simulací.** Petriho síť (`make check`): značka každého zařízení se vždy vrátí (*Přepážka* + obsluhovaný = 1, totéž pro oba stroje), všechny přechody se provádějí, fronty nerostou do nekonečna. SIMLIB model (`make simlib`): za 1000 h byla přepážka vytížena na 50 %, stroj A na 70 % a stroj B na 29 %, netrpělivě odešlo 74 klientů z asi 6 000 se speciální zakázkou. Teorie: přepážka 1,5 min / 3 min = 50 %, stroj A 0,7 × 3 min / 3 min = 70 %, stroj B nejvýš 30 % (bez netrpělivých).
+
+</details>
+
 ## Původ a zdroje
 
 <details>
@@ -64,6 +138,12 @@ Kontrola simulací (`make check`): značka každého zařízení se vždy vrát�
 <br>
 
 **Původ:** půlsemestrální písemka 2022/23, varianta A, 10 bodů.
+
+**Původní znění:**
+
+> Do kopírovacího centra přichází klienti v intervalech daných exponenciálním rozložením se středem 3 minuty. U přepážky registrují svůj požadavek, což zabere 1-2 minuty rovnoměrně. V centru jsou dva kopírovací stroje: stroj pro normální zakázky (A) a stroj pro speciální zakázky. 70% zakázek směřuje na stroj A. Klienti se speciální zakázkou jsou však netrpěliví, proto po 10 minutách čekání ve frontě na stroj B opouští systém. Doba zpracování na obou strojích se řídí exponenciálním rozložením se středem 3 minuty.
+>
+> **V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém.**
 
 **Zdroje:**
 
@@ -73,7 +153,7 @@ Kontrola simulací (`make check`): značka každého zařízení se vždy vrát�
 
 **Existující řešení:**
 
-- **Hrubý (str. 1):** stejná struktura: *Fronta* → přepážka → *Fronta – rozdělování* → 70 %/30 % → *Fronta A* / *Fronta B* → stroj → *konec* → výstupní přechod. Netrpělivost kreslí také jako časovaný přechod `10min` z *Fronta B* do *konec*. Jediný rozdíl: generátor kreslí bez místa.
+- **Hrubý (str. 1):** stejná struktura (k přepážce si připsal „jedno zařízení“): *Fronta* → přepážka → *Fronta – rozdělování* → 70 %/30 % → *Fronta A* / *Fronta B* → stroj → *konec* → výstupní přechod. Netrpělivost kreslí také jako časovaný přechod `10min` z *Fronta B* do *konec*. Jediný rozdíl: generátor kreslí bez místa.
 - **Řešení ze cvičení (fotky 2024/25, str. 2):** totéž, jen každá větev končí vlastním výstupním přechodem. Obojí je správně; zadání chce jen, aby byl odchod jednoznačně vidět.
 
 </details>
