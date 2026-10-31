@@ -44,7 +44,7 @@ Key facts:
 
 - Order: midterm word problems first (§6).
 - Language: the project scaffolding is in English (directories `pn/`, `exercises/`, `notation/`, `book/`, file names `net.py`/`net.svg`/`net.pdf`, the top-level `README.md`, `Makefile`, code). Everything that is a note is in Czech:
-  - each exercise's note file name, e.g. `M41 - Kopírovací centrum.md`;
+  - each exercise's note file name, e.g. `09.10 - Kopírovací centrum.md` (folder of the same name);
   - its headings and text;
   - labels in the diagrams;
   - the notation cheat sheet (`notation/Notace a vzory.md`);
@@ -68,15 +68,17 @@ petri-nets/
 │   ├── net.py               ← DSL: places, transitions, arcs, positions
 │   ├── tikz.py              ← emits TikZ that follows course notation
 │   ├── lint.py              ← notation/structure rules (§4)
-│   └── sim.py               ← timed token-game simulator (§4)
+│   ├── sim.py               ← timed token-game simulator (§4)
+│   ├── dd.py                ← next-event trace for the D/D/x tasks
+│   ├── catalog.py           ← all exercises: id, Czech name, origin (single source of truth)
+│   └── index.py             ← regenerates the README index from the catalogue
 ├── notation/
 │   ├── Notace a vzory.md    ← cheat sheet (Czech): course notation + standard patterns, with slide refs
 │   └── patterns/*.py        ← generator, seize/release, Store, timeout, preemption, counter, if/else by priority, test arc …
-├── exercises/
-│   ├── exam/E01-…/          ← final-exam M/M/x variants
-│   ├── trace/T01-…/         ← D/D/x "marking at time t"
-│   ├── midterm/M01-…/       ← midterm word problems
-│   └── lecture/L01-…/       ← lecturer's worked examples
+├── exercises/               ← flat, one folder per exercise, ordered by topic (§5)
+│   ├── 01.01 - Opravářská dílna/
+│   ├── …
+│   └── 12.18 - Logistická centrála/
 ├── book/                    ← generated printable collection (task page, then solution page)
 └── inventory/               ← raw source inventory (already present)
 ```
@@ -84,22 +86,25 @@ petri-nets/
 Each exercise folder:
 
 ```
-exercises/midterm/M41/
-├── M41 - Kopírovací centrum.md   ← the note (Czech), see below
+exercises/09.10 - Kopírovací centrum/
+├── 09.10 - Kopírovací centrum.md   ← the note (Czech), see below
 ├── net.py                        ← the net definition (single source of truth)
 ├── net.svg                       ← generated; embedded in the note (renders in the VS Code Markdown preview)
 └── net.pdf                       ← generated; vector, for printing
 ```
 
-Folders are named by id only, so paths stay short and stable; the note carries the Czech name.
+Folder and note are named `<TT.NN> - <název>`. The id carries no origin; the origin is the first line of the note (**Původ:** zkouška/půlsemestrálka, year, term, group, points).
 
 Each note has these sections (headings in Czech):
 
+0. **Původ** (first line under the heading): where the exercise comes from.
 1. **Zadání**: verbatim text, every source where it appears (file + page, term/group, points), and its variants or duplicates.
 2. **Interpretace**: ambiguities and the assumption chosen (e.g. "přesáhne 5" means > 5, so the test arc has weight 6).
 3. **Řešení**: the diagram plus a table mapping each requirement to the place or transition that implements it.
 4. **Existující řešení**: how Hrubý's or students' nets differ, and which of their errors to avoid.
 5. **Časté chyby**: the common mistakes for this pattern.
+
+Only the heading, **Původ** and **Zadání** are visible when the note is opened. Sections 2–5 are collapsed in `<details>` blocks (works in the VS Code preview and on GitHub), so you can try the exercise first and reveal the interpretation as a hint before the solution.
 
 Nets that differ only in numbers stay separate exercises (you asked for every one), but their notes link to each other. The D/D/x trace tasks get one net per parameter set, with that task's marking.
 
@@ -162,91 +167,24 @@ I view every rendered PNG for overlaps and readability before marking an exercis
 
 ## 5. Exercise catalogue (118 diagrams)
 
-Ids are provisional; the README index will link every one.
+Exercises are ordered **by topic** and numbered `TT.NN` (topic.position). Topics go from basic models over single mechanisms (the short M/M/1-variant exam questions) to marking at time t and full word problems (the midterm format). Within a topic, newer tasks come first. The two-level id keeps numbers stable when an exercise is added later.
 
-### E: final-exam M/M/x variants (44)
-
-| Id | Task | Sources (term) |
+| Topic | Content | Count |
 |---|---|---|
-| E01 | M/M/1, impatient requests, max wait W (10 / 20) | 2017-18 1.t A(8H), 7A; 2023-24 1.t A; student nets in Příprava 18-19 |
-| E02 | only the **head** of the queue is impatient (5 / X / 4) | 2017-18 2.t A; 2019-20 2.t Y; 2024-25 2.t E (student net) |
-| E03 | *invent* an M/M/1 showing an impatient transaction | 2019-20 1.opr; 2020-21 3.t C; Bug, cranycrane 4 |
-| E04 | M/M/1 with queue limited to 10 | 2017-18 8C; xenix |
-| E05 | failure exp(200) only cancels the service | 2017-18 1.t Z; xenix |
-| E06 | failure exp(X) interrupts service → transaction back to queue | 2020 1.opr B; cranycrane 3 |
-| E07 | failure Exp(E) occupies line for R, interrupted transaction back to queue | 2024-25 1.t A |
-| E08 | failure Exp(X), repair C, interrupted transaction leaves | 2021-22 1.t A/? ; fifinas |
-| E09 | critical failure exp(100) disables line for 10, work discarded | 2025-26 1.t C |
-| E10 | failure destroys current service **or** waits for the next one | 2021-22 2.t |
-| E11 | every 10th transaction triggers failure of length C | 2021-22 1.t B; fifinas |
-| E12 | failure makes the **next** service 10 longer | 2017-18 3.t A; Příprava 18-19 |
-| E13 | failure prolongs the **current** service by 2 | 2020-21 1.t; Řešené 17-21 |
-| E14 | failure prolongs current service by 5, no effect if idle | 2021 COVID term |
-| E15 | service longer than X is interrupted, transaction leaves | 2019-20 2.t Z; cranycrane 2 |
-| E16 | coffee machine: 5 idle → maintenance 20 | 2017-18 2.t B; 2018-19 1.t |
-| E17 | coffee machine: every 50 (40) services → maintenance 20 | 2017-18 2.t C; 2018-19 1.t |
-| E18 | sleeps after 5 idle; wake-up adds 2 to the service | 2017-18 2.t D |
-| E19 | queue empty after service → maintenance 5 | 2019-20 1.t D; 2020-21 1.t 16:00 |
-| E20 | service lasted ≥ C → maintenance D | 2021-22 1.t D; fifinas |
-| E21 | every 10th completed service → maintenance C | 2022-23 1.t D |
-| E22 | maintenance worker every exp(4h); if ≥ 10 services → wait, 20 min maintenance | 2022-23 1.t C; cranycrane 8 (buggy) |
-| E23 | 10 idle → sleep; arrival wakes, 5 min warm-up | 2022-23 2.t F |
-| E24 | service 5 if queue ≥ X (3), else 10 | 2019-20 1.t; 2020-21 1.t 10:00 |
-| E25 | queue > 5 → M/M/2 for 15 | 2018-19 3.t; Řešené; Bug; cranycrane 1 |
-| E26 | queue reaches 5 → M/M/3 permanently | 2020-21 1.t 14:00; cranycrane 5 |
-| E27 | arrival mean A if queue ≥ C, else B | 2021-22 1.t C; 2022-23 1.t A; fifinas |
-| E28 | arrivals pause for 10 when queue reaches 5 | 2024-25 1.t B |
-| E29 | M/M/3: arrivals stop when all busy, resume when ≥ 2 free | 2024-25 1.t C |
-| E30 | every 100th transaction flushes the queue | 2022-23 2.t E |
-| E31 | Store: periodically +3 capacity for 100 | 2017-18 3.t Z (blurry) |
-| E32 | M/D/1: service 3, +3 after every 10 services | 2024-25 2.t F |
-| E33 | M/D/1: service alternates 2, 3, 2, 3 … | 2025-26 1.t A |
-| E34 | M/D/3: taking the last free server → 5, else 3 | 2024-25 3.t H |
-| E35 | M/D/1: < 10 since last service → 2, else 5 | 2021 1.opr 9:00 |
-| E36 | *invent* an M/M/1 showing process priority | 2019-20 3.t A |
-| E37 | every N-th transaction gets process priority | 2022-23 3.t G |
-| E38 | every 10th transaction gets service priority | 2022-23 3.t H; cranycrane 7 |
-| E39 | two independent arrival streams, one with service priority | 2025-26 1.t B |
-| E40 | process vs. service priority, small demo nets | 2025-26 1.t C Q3 |
-| E41 | M/M/3: 20 % priority transactions need 2 lines at once | 2019 (Řešené); xenix |
-| E42 | M/M/2: maintenance every exp(100) takes the whole capacity for 10, must not wait | 2025-26 2.t E |
-| E43 | M/M/1: helper every exp(100) adds 1 capacity for 20 | 2025-26 2.t F |
-| E44 | M/M/3 without queue, rejected transactions retry after X | 2023-24 1.t B; cranycrane 6 |
+| 01 | Základní modely (lecture worked examples) | 6 |
+| 02 | Netrpělivost, omezená fronta, opakování | 5 |
+| 03 | Poruchy a přerušení obsluhy | 11 |
+| 04 | Údržba, nečinnost, spánek | 8 |
+| 05 | Řízení podle délky fronty a kapacita | 10 |
+| 06 | Doba obsluhy podle stavu | 4 |
+| 07 | Priority | 6 |
+| 08 | Značení v čase t (D/D/x) | 9 |
+| 09 | Slovní úlohy: obsluha zákazníků | 22 |
+| 10 | Slovní úlohy: počítačové systémy | 5 |
+| 11 | Slovní úlohy: doprava a dávky | 14 |
+| 12 | Slovní úlohy: výroba, zdroje a sklady | 18 |
 
-### T: D/D/x, marking at time t (9)
-
-| Id | System | t | Sources |
-|---|---|---|---|
-| T01 | D/D/2 FIFO, arrivals 1 s, service 4 s | 6.5 | 2012-13 2.t C |
-| T02 | D/D/3 LIFO, 1 / 5 | 10.5 | 2015-16 3.t A; 2014-15 1.t C; Příprava, xenix (student nets) |
-| T03 | D/D/2 LIFO, 1 / 6 | 13.5 | 2015-16 3.t D (+ "2005-06" transcript) |
-| T04 | D/D/2 LIFO, 1 / 5 | 9.5 | 2014-15 1.t B; 2015-16 2.t |
-| T05 | D/D/2 LIFO, 1 / 4 | 9.5 | 2015-16 2.t A |
-| T06 | D/D/4 LIFO, 1 / 7 | 9.5 | 2014-15 3.t D |
-| T07 | D/D/3 FIFO, 1 / 5 | 9.5 | 2015-16 1.t 5H |
-| T08 | D/D/1, 2 / 4: net + state table to 10, stability | — | 2022-23 3.t G |
-| T09 | D/D/1, 3 / 2: same | — | 2022-23 3.t H |
-
-### M: midterm word problems (59)
-
-| Year | Ids and tasks | Reference solutions |
-|---|---|---|
-| 2010-11 | M01 banka + lupič · M02 logistická centrála · M03 chmel · M04 pražírna kávy | student nets for M02–M04 in Studentská skripta |
-| 2011-12 | M05 tunel · M06 pošta (100 zásilek) · M07 přehrada, přístaviště A/B · M08 dílna, 3 stroje | — |
-| 2013-14 | M09 banka · M10 hrášek · M11 server · M12 stavba (betonáři) | student nets in skripta |
-| 2014-19 overview | M13–M36 = Z1–Z24 (loď, uhelný mlýn, přečerpávací el. ×2, bagrista, překladiště, ambulance, rádio, zahradník, menza, úřad, přepravní firma, hasiči, pekárna, spalovna ×2, moštárna, letiště, vyhlídková loď, pošta, festivalový autobus, DB server, jahodová farma, výrobní hala) | demo-exercise solutions (Z4, Z6, Z7, Z16, Z17, Z20, Z24); student nets for most in Příprava 21-22 and luppo |
-| 2021-22 | M37 překladiště · M38 jahody · M39 výletní loď · M40 kopírovací centrum | Hrubý |
-| 2022-23 | M41 kopírovací centrum · M42 trafika · M43 pizzerie · M44 cestovní kancelář | Hrubý (+ projector photos) |
-| 2023-24 | M45 server, maintenance after 1000 (paraphrase) · M46 výpočetní služba (sleep) · M47 automat na kávu · M48 klientské centrum | student sketch for M46 |
-| 2024-25 | M49 zahradnictví + bouřka · M50 pizza stánek (paraphrase) · M51 vyhlídkové lety · M52 centrum M/M/1 | Hrubý |
-| 2025-26 | M53 psí salon · M54 obslužné centrum · M55 výletní autobus · M56 úřad — **task text reconstructed from Hrubý's solutions** | Hrubý |
-| extra | M57 přehrada, vyhlídková loď ("Příklad 3") · M58 zvuková karta · M59 ústředna | student nets |
-
-### L: lecture worked examples (6)
-
-L01 opravářská dílna (slides 157–164) · L02 samoobsluha (195–198) · L03 kravín (lecture example, luppo board) · L04 výrobní systém (MSI) · L05 kritická sekce (MSI) · L06 zdravotní středisko (MSI, redrawn in course notation).
-
-The small notation demos (readers/writers, while loop, 30 %/70 %, breakdown on `exp(10)`) go into `notation/` as patterns rather than exercises.
+The full list (id, Czech name, origin) lives in [pn/catalog.py](pn/catalog.py); the README index is generated from it (`python3 -m pn.index`). Midterm word problems (09–12) are assigned to a topic by their dominant mechanism, judged from the task text. If a closer reading changes that, the exercise moves, but its id stays.
 
 ---
 
@@ -254,22 +192,22 @@ The small notation demos (readers/writers, while loop, 30 %/70 %, breakdown on `
 
 0. **Git setup**: `git init`, private GitHub repo, first commit with the plan and the inventory.
 1. **Tooling + pilot (5 nets).** Build `pn/` with lint and simulator and the notation cheat sheet. The pilot leans toward the midterm:
-   - M41 kopírovací centrum (2022-23; Hrubý's solution exists, to compare);
-   - M53 psí salon (2025-26; tests reconstructing a task from a solution);
-   - L01 opravářská dílna (the lecturer's own net, to calibrate the style);
-   - E06 failure → back to queue (exam type);
-   - T02 D/D/3 marking at t = 10.5 (trace type).
+   - 09.10 kopírovací centrum (midterm 2022/23; Hrubý's solution exists, to compare);
+   - 09.03 psí salon (midterm 2025/26; tests reconstructing a task from a solution);
+   - 01.01 opravářská dílna (the lecturer's own net, to calibrate the style);
+   - 03.02 failure → back to queue (exam type);
+   - 08.02 D/D/3 marking at t = 10.5 (trace type).
 
    **You review these** for style, language and depth before I mass-produce. This is the cheapest point to change format.
 2. **Main batch, midterm first:**
-   - M, newest years first: 2025-26 → 2024-25 → … → 2010-11, then the Z1–Z24 overview and the extras;
-   - then L;
-   - then E (newest first);
-   - then T.
+   - word problems (topics 09–12), by year across topics, newest first: 2025/26 → 2024/25 → … → 2010/11, then Z1–Z24 and the extras;
+   - then the lecture examples (01);
+   - then the mechanism topics 02–07 (newest first);
+   - then marking at time t (08).
 3. Drafting can run in parallel with subagents, one per batch of years. Each net still goes through `make check` and my visual review. I commit and push after each finished batch.
 4. **Finish**: README index, `make book` → one PDF with each task on its own page and the solution on the next page (for practice), and a final consistency pass. Where my net disagrees with Hrubý's, his version wins unless it is demonstrably a different reading, and that gets noted.
 
-Status per exercise in the index: `todo / drafted / checked / reviewed-by-you`.
+Status per exercise in the README index: `todo / drafted / reviewed`.
 
 ---
 
@@ -284,5 +222,5 @@ Status per exercise in the index: `todo / drafted / checked / reviewed-by-you`.
 
 ## 8. Possible improvements (later)
 
-- **SIMLIB code** (`simlib.cpp`) for the ~15 exam tasks that ask for a SIMLIB model isomorphic to the net (E01, E03, E05, E08, E10, E11, E20, E22, E25, E27, E36–E38, …). The simulator in `pn/` makes it possible to cross-check net and code behaviour.
+- **SIMLIB code** (`simlib.cpp`) for the ~15 exam tasks that ask for a SIMLIB model isomorphic to the net (e.g. 02.01, 02.03, 03.01, 03.04, 03.06, 03.07, 04.05, 04.07, 05.02, 05.04, 07.01–07.03). The simulator in `pn/` makes it possible to cross-check net and code behaviour.
 - **Video transcripts** of the 2023 demo exercises, used to cross-check midterm solutions against Hrubý's spoken reasoning.

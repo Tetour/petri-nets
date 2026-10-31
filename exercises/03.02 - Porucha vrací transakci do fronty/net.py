@@ -1,6 +1,6 @@
 from pn import Net
 
-net = Net("E06", "M/M/1, porucha přeruší obsluhu a transakce se vrací do fronty")
+net = Net("03.02", "M/M/1, porucha přeruší obsluhu a transakce se vrací do fronty")
 net.params = {"A": 10, "B": 6, "X": 50}
 
 # M/M/1

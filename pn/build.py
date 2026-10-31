@@ -16,6 +16,8 @@ from pathlib import Path
 
 from . import lint, sim, tikz
 
+sys.dont_write_bytecode = True  # keep exercise folders free of __pycache__
+
 ROOT = Path(__file__).resolve().parent.parent
 BUILD = ROOT / "build"
 

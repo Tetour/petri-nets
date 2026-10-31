@@ -1,6 +1,6 @@
 from pn import Net
 
-net = Net("M41", "Kopírovací centrum (půlsemestrálka 2022/23, varianta A)")
+net = Net("09.10", "Kopírovací centrum (půlsemestrálka 2022/23, varianta A)")
 
 # příchody a registrace u přepážky
 net.place("gen", (0, 0), tokens=1, label="generátor", label_pos="below")
