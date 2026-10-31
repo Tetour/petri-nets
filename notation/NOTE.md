@@ -97,6 +97,8 @@ Podobné úlohy: [02–01 – Netrpělivé požadavky](<../02–01 - Netrpěliv�
   | constant | přesně 5 minut | `5 min` |
   | symbol | exponenciálně se středem X časových jednotek | `exp(X)` |
 
+  A **speed** („rychlostí 15 kubíků za hodinu“) stays as written: converting it to a time per unit (`4 min`) is part of the exercise, and the hints state the conversion.
+
   The rest of the text stays as in the source. Diverging from the original is accepted (at the exam one can ask); the original is kept as **Původní znění** in Původ a zdroje.
 - If the source is only a student's recollection or a reconstruction, a ⚠️ line before the quote says so.
 - `Podobné úlohy:` links to related exercises (optional). Generate each link with `python3 -c "from pn.catalog import link; print(link('02–01'))"`.
