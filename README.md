@@ -2,7 +2,7 @@
 
 Petri net diagrams for the Petri net exercises of the IMS course (Modelování a simulace, FIT VUT), drawn in the course notation and checked by simulation. The notes are in Czech; the scaffolding is in English. The plan is in [PLAN.md](PLAN.md); the raw source inventory is in [inventory/](inventory/).
 
-Start with the notation cheat sheet: [Notace a vzory](notation/Notace%20a%20vzory.md).
+Start with the notation cheat sheet: [Notace a vzory](notation/Notace%20a%20vzory.md). How the notes and diagrams are written: [NOTE.md](notation/NOTE.md) and [STYLE.md](notation/STYLE.md).
 
 ## Exercises
 
