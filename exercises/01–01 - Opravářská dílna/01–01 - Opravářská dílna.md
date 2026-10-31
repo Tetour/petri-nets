@@ -2,13 +2,7 @@
 
 ## Zadání
 
-> Do opravářské dílny přicházejí zákazníci v intervalech daných exponenciálním rozložením pravděpodobnosti se střední hodnotou 20 minut. V dílně jsou dva opraváři: jeden zpracovává normální zakázky a druhý náročné zakázky. Každá třetí zakázka je náročná. Vyřízení normální zakázky trvá 15 minut s exp. rozložením pravděpodobnosti, vyřízení náročné zakázky zabere 45 minut exp. Zákazník čeká na vyřízení své zakázky a pak systém opouští.
-
-**Časy:**
-
-- příchody zákazníků: exponenciálně se středem 20 minut
-- oprava normální zakázky: exponenciálně se středem 15 minut
-- oprava náročné zakázky: exponenciálně se středem 45 minut
+> Do opravářské dílny přicházejí zákazníci v intervalech **exponenciálně se středem 20 minut**. V dílně jsou dva opraváři: jeden zpracovává normální zakázky a druhý náročné zakázky. Každá třetí zakázka je náročná. Vyřízení normální zakázky trvá **exponenciálně se středem 15 minut**, vyřízení náročné zakázky **exponenciálně se středem 45 minut**. Zákazník čeká na vyřízení své zakázky a pak systém opouští.
 
 ## Nápověda
 
@@ -117,6 +111,10 @@ int main() {
 <br>
 
 **Původ:** řešený příklad z přednášky (Hrubý), slajdy 157–164. Na přednášce 11. 10. 2024 ho označil za „typizovanou úlohu pro půlsemestrální písemku“.
+
+**Původní znění:**
+
+> Do opravářské dílny přicházejí zákazníci v intervalech daných exponenciálním rozložením pravděpodobnosti se střední hodnotou 20 minut. V dílně jsou dva opraváři: jeden zpracovává normální zakázky a druhý náročné zakázky. Každá třetí zakázka je náročná. Vyřízení normální zakázky trvá 15 minut s exp. rozložením pravděpodobnosti, vyřízení náročné zakázky zabere 45 minut exp. Zákazník čeká na vyřízení své zakázky a pak systém opouští.
 
 **Zdroje:**
 

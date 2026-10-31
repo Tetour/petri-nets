@@ -97,12 +97,12 @@ Folder and note are named `<TT–NN> - <název>`. The id carries no origin; the 
 
 Each note has these sections (headings in Czech):
 
-1. **Zadání**: the verbatim task text, links to similar exercises, and a list **Časy:** with every time in the task, one line per process, in a uniform form: the distribution as a Czech adverb before the value, units as whole words, no brackets — „exponenciálně se středem 20 minut“, „rovnoměrně 10–15 minut“, „přesně 5 minut“, „exponenciálně se středem X časových jednotek“. (The diagram keeps the short labels `exp(20 min)`, `10–15 min`, `5 min`.)
+1. **Zadání**: the task text and links to similar exercises. The times in the text are rewritten into one uniform form and set in bold: the distribution as a Czech adverb before the value, units as whole words, no brackets — „**exponenciálně se středem 20 minut**“, „**rovnoměrně 10–15 minut**“, „**přesně 5 minut**“, „**exponenciálně se středem X časových jednotek**“. Diverging from the original wording is accepted (at the exam one can ask); the original is kept as **Původní znění** in the hidden section 6. (The diagram keeps the short labels `exp(20 min)`, `10–15 min`, `5 min`.)
 2. **Interpretace** → **Nápověda**: ambiguities and the assumption chosen (e.g. "přesáhne 5" means > 5, so the test arc has weight 6). The section is called *Interpretace* while it is my unconfirmed reading; once you review the note and confirm the interpretation, it is renamed to *Nápověda* („Zobrazit nápovědu“). The README index derives the status `reviewed` from that name.
 3. **Petriho síť**: the diagram only. (How each requirement maps to places and transitions belongs in the hints, not in a table here.)
 4. **Časté chyby**: the common mistakes for this pattern.
 5. **SIMLIB** (being added gradually, so far only 01–01): a SIMLIB/C++ model isomorphic to the net, a table mapping net elements to code, and the simulation check (what `make check` verified on the net and what the SIMLIB run gave).
-6. **Původ a zdroje**: where the exercise comes from (exam/midterm, year, term, group, points), every source file with pages, and the comparison with existing solutions (Hrubý's or students' nets, with the errors to avoid).
+6. **Původ a zdroje**: where the exercise comes from (exam/midterm, year, term, group, points), every source file with pages, and the original task wording (**Původní znění**, where the task text was rewritten), and the comparison with existing solutions (Hrubý's or students' nets, with the errors to avoid).
 
 When a note is opened, only the heading and **Zadání** are shown. Every other section is collapsed in a `<details>` block (works in the VS Code preview and on GitHub), so you can try the exercise first and reveal the hint before the net; the origin and existing solutions stay hidden too, since they can give the answer away.
 
