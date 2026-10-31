@@ -167,7 +167,7 @@ I view every rendered PNG for overlaps and readability before marking an exercis
 
 ## 5. Exercise catalogue (118 diagrams)
 
-Exercises are ordered **by topic** and numbered `TT–NN` (topic.position). Topics go from basic models over single mechanisms (the short M/M/1-variant exam questions) to marking at time t and full word problems (the midterm format). Within a topic, newer tasks come first. The two-level id keeps numbers stable when an exercise is added later.
+Exercises are ordered **by topic** and numbered `TT–NN` (topic – position within the topic). Topics go from basic models over single mechanisms (the short M/M/1-variant exam questions) to marking at time t and full word problems (the midterm format). Within a topic, newer tasks come first. The two-level id keeps numbers stable when an exercise is added later.
 
 | Topic | Content | Count |
 |---|---|---|
