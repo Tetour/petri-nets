@@ -52,6 +52,8 @@ class Arc:
     bend: float = 0             # degrees; positive bends left
     via: list = field(default_factory=list)
     w_pos: str = "auto"         # TikZ placement of the weight label
+    out: float | None = None    # curved arc: direction it leaves the source (degrees, 90 = up)
+    into: float | None = None   # ... and direction from which it enters the target (0 = from the right)
 
 
 class Net:
