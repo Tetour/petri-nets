@@ -11,7 +11,7 @@ Exercises are numbered `TT–NN` (topic – position within the topic) and order
 Status: `todo` = not built yet; `drafted` = built and passing `make check`, waiting for review; `reviewed` = you confirmed the interpretation, marked by renaming the note's section *Interpretace* to *Nápověda* (the index reads the status from that name).
 
 <!-- index:start -->
-118 of 118 exercises drafted, 2 reviewed.
+118 of 118 exercises drafted, 3 reviewed.
 
 ### 01 Základní modely (přednášky)
 
@@ -20,7 +20,7 @@ Status: `todo` = not built yet; `drafted` = built and passing `make check`, wait
 | 01–01 | [Opravářská dílna](<exercises/01–01 - Opravářská dílna/01–01 - Opravářská dílna.md>) | přednáška, slajdy 157–164 | reviewed |
 | 01–02 | [Samoobsluha](<exercises/01–02 - Samoobsluha/01–02 - Samoobsluha.md>) | přednáška, slajdy 195–198 | drafted |
 | 01–03 | [Zdravotní ordinace](<exercises/01–03 - Zdravotní ordinace/01–03 - Zdravotní ordinace.md>) | poznámky MSI (stochastické PN) | reviewed |
-| 01–04 | [Výrobní systém](<exercises/01–04 - Výrobní systém/01–04 - Výrobní systém.md>) | poznámky MSI (P/T sítě) | drafted |
+| 01–04 | [Výrobní systém](<exercises/01–04 - Výrobní systém/01–04 - Výrobní systém.md>) | poznámky MSI (P/T sítě) | reviewed |
 | 01–05 | [Kritická sekce](<exercises/01–05 - Kritická sekce/01–05 - Kritická sekce.md>) | poznámky MSI (P/T sítě) | drafted |
 | 01–06 | [Kravín](<exercises/01–06 - Kravín/01–06 - Kravín.md>) | příklad z přednášky (tabule luppo) | drafted |
 
