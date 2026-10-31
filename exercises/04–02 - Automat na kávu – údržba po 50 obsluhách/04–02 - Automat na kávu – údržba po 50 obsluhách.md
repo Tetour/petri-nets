@@ -59,6 +59,9 @@ Kontrola simulací: *Automat* + obsluha + *údržba* = 1, v čítači je nejvý�
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** zkouška 2017/18, 2. termín, skupina C (hlavička je na fotce useknutá), otázka 1, 10 bodů. Stejná úloha (podle vzpomínky studenta, počet káv nejistý): zkouška 2018/19, 1. termín, otázka 1, 10 bodů.
 
 **Zdroje:**
@@ -67,9 +70,6 @@ Kontrola simulací: *Automat* + obsluha + *údržba* = 1, v čítači je nejvý�
 - `Fitcheats/Zkoušky z minulých let/2018-19 - 1. termín.txt` (druhá vzpomínka v souboru)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - Ve zdrojích není žádné řešení. Stejný čítač s váhou hrany je v řešení půlsemestrálky [10–01 – Server s údržbou po 1000 požadavcích](<../10–01 - Server s údržbou po 1000 požadavcích/10–01 - Server s údržbou po 1000 požadavcích.md>).
 

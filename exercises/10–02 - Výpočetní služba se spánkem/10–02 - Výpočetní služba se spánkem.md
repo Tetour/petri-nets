@@ -57,6 +57,9 @@ Kontrola simulací: *Služba* + obsluha + *spící služba* + *iniciace* = 1. Sl
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrální písemka 2023/24, varianta neoznačená (pravděpodobně B: varianty A, C a D jsou známé). Body nejsou uvedené (ostatní varianty téhož roku mají 10 bodů).
 
 **Zdroje:**
@@ -64,9 +67,6 @@ Kontrola simulací: *Služba* + obsluha + *spící služba* + *iniciace* = 1. Sl
 - `Fitcheats/Půlsemestrálky/Zadání z minulých let/2023-24.pdf`, str. 2 (zadání přepsané rukou a pod ním studentské řešení)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Studentské řešení (str. 2, pod přepisem zadání):** stejná síť jako výše, jen zrcadlově (služba a spánek jsou pod hlavní linkou). Generátor ⇄ `exp(100s)` → *Příchozí* → obsazení → `exp(5s)` („řešení“) → *Odchod*; *Služba* (1 značka) → `200s` → *spící služba* → probuzení s dvojicí hran ↓↑ k *Příchozí* (test) → *Procedura* `5s` → *Služba*. Je správné.
 - Pozor na kreslení: student má vyplněné obdélníky u okamžitých přechodů (obsazení, probuzení) a prázdné u časovaných. V notaci předmětu je to naopak: časovaný přechod je vyplněný obdélník, okamžitý tenká čárka.

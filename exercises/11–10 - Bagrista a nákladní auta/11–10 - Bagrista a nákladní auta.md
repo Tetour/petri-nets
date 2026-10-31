@@ -59,6 +59,9 @@ Kontrola simulací: auta jsou vždy 3 (*Auta* + *auto u bagru* + bagrování + *
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z4. Přesný rok a varianta nejsou známé.
 
 **Zdroje:**
@@ -69,9 +72,6 @@ Kontrola simulací: auta jsou vždy 3 (*Auta* + *auto u bagru* + bagrování + *
 - `Fitcheats/Příprava na zkoušku/luppo - Tabule.png` (studentské řešení na tabuli)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Řešení z democvičení 2020/21 (str. 1):** stejná struktura jako síť výše. Modrý přechod `p=1` vezme *Bagr* a auto z *Aut* („…“) a dá 3 značky kapacity a místo „auto u bagru“. Červený přechod `p=1` bere metr z místa *1000*, kapacitu a auto u bagru, `exp(5m)` vrací auto u bagru. Tučný přechod bez priority (odjezd) vrací *Bagr* a posílá auto přes `exp(1h)` zpět do *Aut*. Modře *Bagr* → přechod → `10m` → *Bagr*. Chybí konec práce: po odstranění úseku bagrista dál přistavuje auta, ta hned prázdná odjíždějí a značky kapacity se hromadí. Výstupní přechod tehdy zadání nevyžadovalo.
 - **Studentské řešení (Příprava 2021/22, str. 8, souhlasí 1, nesouhlasí 1):** `P=1` vezme bagristu a *nákl. auto* → *bagruje* `exp(5m)`, metry se sčítají, hrana váhy 3 → *naložení* → *odvoz* `exp(1h)`; *odstraněno* s váhou 1000 → `P=2` konec; *bagrista* ⇄ *bufet* `10m`. Auto se vrací do *nákl. auto* po každém metru, takže není „přistavené“ (to vytýká i komentář). Poslední metr (1000 není dělitelné 3) nikdy neodjede, protože odjezd potřebuje přesně 3.

@@ -59,6 +59,9 @@ Kontrola simulací: *Pekař u pultu* + obsluha + pečení = 1, *Pekař peče* ex
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z14.
 
 **Zdroje:**
@@ -67,9 +70,6 @@ Kontrola simulací: *Pekař u pultu* + obsluha + pečení = 1, *Pekař peče* ex
 - `Fitcheats/Půlsemestrálky/FIT - Příprava 2021-22.pdf`, str. 17 (studentské řešení, bez hlasů)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Příprava 2021/22 (str. 17):** stejná struktura: obsazení pekaře (`p=1`), přechod „když je chleba“ (`p=1`) s místem *chleba* (20), `1-2m`, jinak přechod, který pošle zákazníka na „odchod zákazníka“ a pekaře na `2h`; stav „peče?“, ze kterého smyčka vyprazdňuje frontu („odchod z obchodu“); po pečení 20 bochníků a „dopekl“ + „peče?“ → `P=1` → pekař u pultu. Řešení je správně, liší se jen rozložením (a zbytečnou prioritou na obsazení pekaře). Nikdo pro něj nehlasoval.
 

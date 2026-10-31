@@ -53,6 +53,9 @@ Kontrola simulací (A = 5, B = 4): *Linka* + obsluhovaní + *správce jinde* = 2
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** zkouška 2025/26, 2. termín (27. 1. 2026), skupina F, otázka 1, 10 bodů.
 
 **Zdroje:**
@@ -60,9 +63,6 @@ Kontrola simulací (A = 5, B = 4): *Linka* + obsluhovaní + *správce jinde* = 2
 - `Fitcheats/Zkoušky z minulých let/2025-26 - 2. termín F.pdf`, str. 1 (fotka zadání, bez řešení)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - K této úloze v materiálech žádné řešení není.
 

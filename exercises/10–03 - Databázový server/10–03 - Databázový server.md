@@ -64,6 +64,9 @@ Kontrola simulací: *Proces A* + obsluha A = 1, *B čeká* + *Proces B aktivní*
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z22. Rok, varianta ani body nejsou známé.
 
 **Zdroje:**
@@ -71,9 +74,6 @@ Kontrola simulací: *Proces A* + obsluha A = 1, *B čeká* + *Proces B aktivní*
 - `Fitcheats/Půlsemestrálky/Zadání z minulých let/Přehled zadání 2014-19.pdf`, str. 5 (zadání, bez řešení)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - K této úloze v materiálech žádné řešení není.
 

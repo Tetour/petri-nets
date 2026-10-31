@@ -60,6 +60,9 @@ Kontrola simulací: platí *Pracovníci* + vyřizované = 3 a *Rozvozník* + *č
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrální písemka 2022/23, varianta C, 10 bodů.
 
 **Zdroje:**
@@ -68,9 +71,6 @@ Kontrola simulací: platí *Pracovníci* + vyřizované = 3 a *Rozvozník* + *č
 - `Fitcheats/Půlsemestrálky/Hrubý - Řešení 2022-23.pdf`, str. 3 (řešení od Hrubého) a str. 4 (jeho poznámky k častým chybám)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Hrubý (str. 3):** síť výše je jeho řešení překreslené: *FRONTA* → obsazení „zam.“ (3) → `exp(10min)` → „Hotová pizza“; „Rozvozník“ s přechodem „10+ hotovo“ (váha 10) a s `15min` čekání → „uběhl timeout“ → přechod s hranou z *Hotová pizza*; obě cesty vedou do místa se smyčkou `P=1` „dobere zbylých hotových zakázek“ → „vyráží“ → „je na cestě“ → rozvoz → *Rozvozník*. Výstup kreslí ve dvou variantách: „varianta A“ hned po `exp(10min)`, „var B“ za rozvozem. Rozdíly: u rozvozu má napsáno `30-60min`, ale zadání říká 30–50 minut; generátor kreslí bez místa. Poznámka vedle sítě zdůrazňuje, že nezáleží na tom, kolik zakázek rozvozník veze, ale musí vzít všechny hotové.
 - **Hrubý (str. 4):** seznam častých chyb (viz níže) a srovnání správného a chybného modelu čekání na ose modelového času.

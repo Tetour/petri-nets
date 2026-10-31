@@ -53,6 +53,9 @@ Kontrola simulací: *Operátor* + probíhající hovor = 1, fronta krátká (nej
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** zkouška 2020/21, 3. termín, skupina C, otázka 2, 20 bodů (podle názvu souboru). Sbírka Řešené výpočetní příklady má stejnou fotku zadání u „2020 - 2. opravný - skupina C“ (další otázka je stejná, 4y'' + 3y' = 0) a ještě jednou u „2019/2020 1. opravný“. Úloha z dvojice „vymyslete příklad“; druhá je [07–01 – Příklad s prioritou procesu](<../07–01 - Příklad s prioritou procesu/07–01 - Příklad s prioritou procesu.md>).
 
 **Zdroje:**
@@ -63,9 +66,6 @@ Kontrola simulací: *Operátor* + probíhající hovor = 1, fronta krátká (nej
 - `Fitcheats/Příprava na zkoušku/cranycrane - Kódy (generátory, Monte Carlo, Euler, RK, Petri + SIMLIB)/petri/4.png` a `4.cpp` (jiný výklad: odmítnutí při obsazené lince)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Řešené výpočetní příklady, str. 5–6, a Bug, str. 10 („Automat na bagety“, „Po 5 minutách čekání člověk odejde z fronty.“):** správně. Časovaný přechod `5m` vede přímo z fronty do místa před výstupním přechodem. Že časovač „visí na celé frontě“, nevadí: podle slajdu 138 má každá značka vlastní odpočet. Všechny přechody jsou ale nakreslené stejně, časované jdou poznat jen podle popisku.
 - **Řešené výpočetní příklady, str. 31:** u tohoto zadání je jen odkaz na SIMLIB kód, síť chybí.

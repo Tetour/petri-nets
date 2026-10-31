@@ -59,6 +59,9 @@ Kontrola simulací: platí *prodavač* + obsluha + *nikdo nepřišel* + *ve skla
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrální písemka 2022/23, varianta B, 10 bodů.
 
 **Zdroje:**
@@ -68,9 +71,6 @@ Kontrola simulací: platí *prodavač* + obsluha + *nikdo nepřišel* + *ve skla
 - `Fitcheats/Půlsemestrálky/Hrubý - Řešení 2022-23.pdf`, str. 2 (řešení od Hrubého)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Hrubý (str. 2):** síť výše je jeho řešení překreslené. Místo *přítomen* testuje přechod `p=1` do *Fronty*, z téhož místa vede výstupní přechod pro zákazníka, který prodavače nezastihne. Místo *prodavač* má označené jako „Facility“, z něj vede `10min` (poznámka „nikdo nepřichází“) → místo → `p=2` odchod do skladu (bere *přítomen*) → místo → `10min` návrat, který vrací obě značky. Obsloužený odchází přes vlastní výstupní přechod. Jediný rozdíl: generátor kreslí bez místa.
 - **Řešení ze cvičení (fotky 2024/25, str. 6):** stejná stavba. Vstup do *FRONTA* je `p=1` s testem místa přítomnosti (zakroužkované modře), odchod nepřítomnému prodavači je vodorovný výstupní přechod nad místem příchodu. Obsazení *L* má `P=1`. Úsek mezi prvním `10 min` a vysokým okamžitým přechodem je přeškrtaný a zakroužkovaný, takže ho nelze spolehlivě přečíst; písmeno „F“ u tohoto přechodu možná znamená test prázdné fronty. Ten není potřeba, protože při volném prodavači je fronta vždy prázdná.

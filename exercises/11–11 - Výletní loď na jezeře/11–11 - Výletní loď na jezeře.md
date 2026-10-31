@@ -68,6 +68,9 @@ Kontrola simulací: *Loď u mola* + nastupující + *Plavba* + *návrat k molu* 
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z1. Přesný rok a varianta nejsou známé.
 
 **Zdroje:**
@@ -76,9 +79,6 @@ Kontrola simulací: *Loď u mola* + nastupující + *Plavba* + *návrat k molu* 
 - `Fitcheats/Půlsemestrálky/FIT - Příprava 2021-22.pdf`, str. 3–4 (dvě studentská řešení s komentáři)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Studentské řešení (Příprava 2021/22, str. 3, bílé na černém, bez hlasování):** místa *loď na molu*, *kapacita* (hrana 50 k přechodu `p=3` pro odjezd plné lodi), časovaný přechod „nikdo nenastupuje 2m“, *vyplutí*, *plavba* `1h`, *vyprázdnění* s `p=4` a *depo* přes `p=1` s testem konce provozní doby. Komentář na str. 4 správně vytýká, že časovač 2 min běží i před prvním nástupem: na začátku dne loď odpluje dřív, než přijde první cestující. Autor odpovídá, že zadání říká „loď na molu čeká“. Rozhodující je ale „od nastoupení posledního cestujícího“, tedy někdo musí nastoupit.
 - **Studentské řešení (str. 4, fotka modrým perem, souhlasí 0, nesouhlasí 2):** hrany s váhou 50, `1h`, `2 min`, smyčky s `p=1`, `exp(30s)`, `10h`. Komentář: „z toho horního přechodu nemá jít 50 a po uplynutí hodiny se má zase vrátit 50“. Kapacita se tedy neobnovuje správně.

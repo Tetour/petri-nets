@@ -59,6 +59,9 @@ Kontrola simulací: *Linka* + obsluhovaná transakce + *prodloužení* = 1, asi 
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** zkouška 2020/21, náhradní termín (COVID), otázka 2, 10 bodů.
 
 **Zdroje:**
@@ -66,9 +69,6 @@ Kontrola simulací: *Linka* + obsluhovaná transakce + *prodloužení* = 1, asi 
 - `Fitcheats/Příprava na zkoušku/FIT - Řešené výpočetní příklady 2017-21.pdf`, str. 38 („2021 - náhradný COVID termín“, jen text zadání, bez řešení)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - K této úloze žádné řešení není.
 

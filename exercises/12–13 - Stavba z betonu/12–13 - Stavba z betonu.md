@@ -64,6 +64,9 @@ Kontrola simulací: forem je vždy 10 (volné + všechny rozpracované), bedná�
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrální písemka 2013/14, varianta D, 6 bodů (k příkladu patřila ještě otázka z teorie za 4 body).
 
 **Zdroje:**
@@ -72,9 +75,6 @@ Kontrola simulací: forem je vždy 10 (volné + všechny rozpracované), bedná�
 - `Fitcheats/Skripta/FIT - Studentská skripta 2015-16.pdf`, str. 51 (zadání zapsané po paměti, bez řešení)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Studentská skripta (str. 51):** jen zadání zapsané po paměti, řešení chybí. Je v něm „Pokud betonáři nemají dodávku betonu, přidávají se na jeden úkol k bednářům“, tedy stejný smysl jako v originálu.
 - Jiné řešení v materiálech není.

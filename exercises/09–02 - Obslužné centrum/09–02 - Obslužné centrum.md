@@ -57,6 +57,9 @@ Kontrola simulací: platí *Linka* + obsluhovaní = 3, *den* + *noc* + *ráno* =
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrální písemka 2025/26, varianta B, 10 bodů (bodování podle ostatních let).
 
 **Zdroj:**
@@ -64,9 +67,6 @@ Kontrola simulací: platí *Linka* + obsluhovaní = 3, *den* + *noc* + *ráno* =
 - `Fitcheats/Půlsemestrálky/Hrubý - Řešení 2025-26.pdf`, str. 2
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Hrubý (str. 2):** stejná síť: tři značky v *Lince*, if-else s `p=1` a smyčkou na *je noc*, proces den/noc `16h` → `8h` → `p=2`. Rozdíl je jen v uvolnění linky: obě obsluhy u něj vedou do společného místa a teprve přechod za ním vrací značku *Lince* a zároveň ukončuje transakci. Tady je uvolnění sloučené s oběma časovanými přechody (jako na slajdu 164) a odchod je samostatný přechod bez výstupu. Obojí je správně.
 

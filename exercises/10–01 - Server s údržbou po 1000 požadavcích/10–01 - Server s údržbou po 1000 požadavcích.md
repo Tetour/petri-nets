@@ -60,6 +60,9 @@ Kontrola simulací: *Server* + obsluhovaný + *Údržba* = 1, *probíhá údržb
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrální písemka 2023/24, varianta A. Body nejsou uvedené (ostatní varianty téhož roku mají 10 bodů).
 
 **Zdroje:**
@@ -67,9 +70,6 @@ Kontrola simulací: *Server* + obsluhovaný + *Údržba* = 1, *probíhá údržb
 - `Fitcheats/Půlsemestrálky/Zadání z minulých let/2023-24.pdf`, str. 1 (snímek zprávy z Discordu, bez řešení)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - K této variantě v materiálech žádné řešení není (ani od Hrubého, ani studentské).
 

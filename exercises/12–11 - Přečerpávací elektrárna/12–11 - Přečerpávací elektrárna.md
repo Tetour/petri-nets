@@ -60,6 +60,9 @@ Kontrola simulací (asi 600 dní): *A* + *B* = 1000, *den* + *noc* = 1, právě 
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z3. Přesný rok a varianta nejsou známé.
 
 **Zdroje:**
@@ -69,9 +72,6 @@ Kontrola simulací (asi 600 dní): *A* + *B* = 1000, *den* + *noc* = 1, právě 
 - `Fitcheats/Příprava na zkoušku/luppo - Tabule.png` (studentské řešení na tabuli)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Studentské řešení (Příprava 2021/22, str. 7, bez hlasů, komentář „opraveno“, ale nepřehledné):** stejná myšlenka hodin: *den* → `16h` → *noc* → `8h` se signálními místy a stavová místa *denní provoz* / *noční provoz* přepínaná okamžitými přechody. Dále *A* (500), *B* (500), přesuny `4m` a `1m`, generátor `exp(100d)` → *je havárie* a časovač `3h`, místo *A při havárii* s přesunem `1m` a `p=1`. Generátor se obnovuje až po 3 h, i když havárie nastala v noci. Jak přesně se havarijní provoz ukončí a vrátí denní provoz, se z kresby spolehlivě přečíst nedá.
 - **Tabule luppo:** *A* (500), *B* (500), přesuny `4min` a `1min`, hodiny `16h` / `8h` s místy *Den* a *Noc*, `Exp(100)` → *Můžu přečerpat* a `3hod`. Leží v červeně ohraničené části tabule.

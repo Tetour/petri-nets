@@ -102,6 +102,9 @@ int main() {
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** řešený příklad z přednášky (Hrubý), slajdy 157–164. Na přednášce 11. 10. 2024 ho označil za „typizovanou úlohu pro půlsemestrální písemku“.
 
 **Zdroje:**
@@ -110,9 +113,6 @@ int main() {
 - `Přednášky - Video 2024/Přepisy/IMS_2024-10-11_1080p.txt` (výklad)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Slajd 164:** stejná síť. Generátor je tam nakreslený zkráceně jako přechod bez vstupního místa (slajd 151 ukazuje obě varianty); tady je ve smyčce s místem, což přednášející 18. 10. 2024 označil za „mírně korektnější“. Výstupní přechod je na slajdu také.
 

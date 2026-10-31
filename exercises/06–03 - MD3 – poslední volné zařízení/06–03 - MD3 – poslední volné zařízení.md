@@ -55,6 +55,9 @@ Kontrola simulací: invariant tří zařízení platí. Při `A = 2` trvalo asi 
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** zkouška 2024/25, 3. termín (6. 2. 2025), skupina H, otázka 3, 10 bodů.
 
 **Zdroje:**
@@ -62,9 +65,6 @@ Kontrola simulací: invariant tří zařízení platí. Při `A = 2` trvalo asi 
 - `Fitcheats/Zkoušky z minulých let/2024-25 - 3. termín H.pdf`, str. 2, vlevo dole (fotka zadání z dálky; text je drobný, ale po zvětšení čitelný, včetně čísel 5 a 3)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - Žádné řešení k této úloze není.
 

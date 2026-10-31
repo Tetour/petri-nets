@@ -93,6 +93,9 @@ Kontrola (`make check`): síť se odsimuluje od času 0 (P0 ve frontě, zaříze
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** zkouška 2014/15, 3. termín, skupina D (podle studenta „asi“), otázka 1, 15 bodů.
 
 **Zdroje:**
@@ -100,9 +103,6 @@ Kontrola (`make check`): síť se odsimuluje od času 0 (P0 ve frontě, zaříze
 - `Fitcheats/Zkoušky z minulých let/2014-15 - 3. termín.txt`, otázka 1 (studentská vzpomínka)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - K této úloze řešení v podkladech není. Síť má stejný tvar jako studentská řešení úlohy [08–02](<../08–02 - DD3 LIFO, čas 10,5/08–02 - DD3 LIFO, čas 10,5.md>), jen se čtyřmi zařízeními a prioritami 3, 2, 1, 0.
 

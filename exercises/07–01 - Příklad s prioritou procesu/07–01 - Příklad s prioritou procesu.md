@@ -56,6 +56,9 @@ Kontrola simulací: *Lékař* + vyšetřovaní pacienti = 1. Akutních je asi 20
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** zkouška 2019/20, 3. termín, skupina A (7. 2. 2020), otázka 2, 20 bodů.
 
 **Zdroje:**
@@ -63,9 +66,6 @@ Kontrola simulací: *Lékař* + vyšetřovaní pacienti = 1. Akutních je asi 20
 - `Fitcheats/Zkoušky z minulých let/2019-20 - 3. termín A.pdf`, str. 2 (fotka zadání, rámeček na odpověď je prázdný)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - K tomuto zadání žádné řešení není. Stejnou konstrukci (dvě fronty, obsazení s různou prioritou) kreslí **Studentská skripta 2015-16, str. 39** jako „slabou prioritu“.
 

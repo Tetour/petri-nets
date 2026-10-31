@@ -58,6 +58,9 @@ Kontrola simulací: *Linka* + obsluhovaná transakce + *oprava* = 1. Každá por
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** zkouška 2024/25, 1. termín, skupina A, otázka 3, 10 bodů.
 
 **Zdroje:**
@@ -65,9 +68,6 @@ Kontrola simulací: *Linka* + obsluhovaná transakce + *oprava* = 1. Každá por
 - `Fitcheats/Zkoušky z minulých let/2024-25 - 1. termín A+C.pdf`, str. 2 (fotka zadání, rámeček na odpověď je prázdný)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - K tomuto zadání žádné řešení není. Nejbližší je **fifinas, str. 2** (úloha 03–04): porucha zabere volnou linku přechodem s `p=1` a obsazenou linku přechodem, který vezme obsluhovanou transakci. Oba vedou do místa před časovaným přechodem `C`, který linku vrátí. Rozdíl je jen v tom, že tam přerušená transakce mizí, kdežto tady se vrací do *Fronty*.
 

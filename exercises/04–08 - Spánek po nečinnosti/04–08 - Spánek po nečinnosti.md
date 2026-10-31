@@ -61,6 +61,9 @@ Kontrola simulací: *Linka* + obsluha + *spí* + *probouzí se* = 1. Linka usín
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** zkouška 2022/23, 2. termín (v hlavičce přepisu „IMS 1.op. F: 2023“), skupina F, otázka 2, 10 bodů.
 
 **Zdroje:**
@@ -68,9 +71,6 @@ Kontrola simulací: *Linka* + obsluha + *spí* + *probouzí se* = 1. Linka usín
 - `Fitcheats/Zkoušky z minulých let/2022-23 - 2. termín F.pdf`, str. 1 a 2 (dva ručně psané přepisy zadání od různých studentů)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - Ve zdrojích není žádné řešení. Stejná síť (jen s jinými časy) je v řešení půlsemestrálky [10–02 – Výpočetní služba se spánkem](<../10–02 - Výpočetní služba se spánkem/10–02 - Výpočetní služba se spánkem.md>).
 

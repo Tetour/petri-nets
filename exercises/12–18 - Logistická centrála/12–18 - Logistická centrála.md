@@ -61,6 +61,9 @@ Kontrola simulací: *Rampa* + *Vyložená* + *Nakládá* + *Odjíždí* = 1, *Pr
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrální písemka 2010/11 (bodování neuvedeno).
 
 **Zdroje:**
@@ -69,9 +72,6 @@ Kontrola simulací: *Rampa* + *Vyložená* + *Nakládá* + *Odjíždí* = 1, *Pr
 - `Fitcheats/Skripta/FIT - Studentská skripta 2015-16.pdf`, str. 44 (zadání a ručně kreslené studentské řešení s komentáři)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Studentská skripta, str. 44 (ručně kreslené):** „PRICHÁDZA DODÁVKA“ `exp(2h)` → přechod s „RAMPA“ → váha 100 do „BALÍKY NA VYLOŽENIE“ → `exp(1min)` s „PRACOVNÍK“ → „VYLOŽENÉ BALÍKY“ a „CENTRÁLA“ → váha 100 → `50%`: „PO VYLOŽENÍ ODCHOD“ / `50%`: „NAKLÁDÁ“ → `exp(1min)` (bere z centrály) → „NALOŽENÉ“ → váha 100 → „NALOŽENÁ ODCHÁDZA“. Obě odjíždějící větve vracejí rampu. Chyby:
   - pracovník se po zpracování balíku nevrací (komentář „Ten pracovník se nevrací?“). Zpracuje se tak jediný balík;

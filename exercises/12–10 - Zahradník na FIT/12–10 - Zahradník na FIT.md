@@ -61,6 +61,9 @@ Kontrola simulací: zahradník je vždy právě v jednom stavu a konev nikdy nem
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z8.
 
 **Zdroje:**
@@ -70,9 +73,6 @@ Kontrola simulací: zahradník je vždy právě v jednom stavu a konev nikdy nem
 - `Fitcheats/Příprava na zkoušku/luppo - Tabule.png` (studentské řešení na tabuli)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Příprava 2021/22 (str. 12, 0 pro / 2 proti):** obrácené značení (šrafovaně okamžité, prázdně časované přechody). *zahradník* → `2-5m` → místo, kde se losuje `20%`/`80%`. Zalití bere 3/4 z *Konev* (10) a přesouvá je do místa *zalito*. Cesta pro vodu `2-5m` vede z míst po losování. Je to časovaný přechod, takže zalití (okamžitý přechod) má přednost i bez priority. U zdroje (*dopouštění*) se značky ze *zalito* vrátí do *Konev* a pak `60s`. To je správné doplnění „do plné kapacity“ pomocí doplňkového místa. Chyby: po napuštění jde zahradník přes `2-5m` znovu na losování `20%`/`80%`, takže se potřeba květiny losuje znovu. Úplně chybí zalití `20 s`.
 - **Tabule luppo:** podobná síť (*Start* bere z *květiny* (30), *T get spotted* → `20%`/`80%`, váhy 3 a 4 z konve (10)). U *Musím naplnit* je `P1`, který podle všeho vylévá zbytek z konve, `P0` jde `2-5min` → `Naleju 60s` → `2-5` a vrací 10 jednotek. I tady se ale po návratu jde zpět na losování potřeby.

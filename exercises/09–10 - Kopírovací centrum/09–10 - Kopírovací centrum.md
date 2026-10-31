@@ -56,6 +56,9 @@ Kontrola simulací (`make check`): značka každého zařízení se vždy vrát�
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrální písemka 2022/23, varianta A, 10 bodů.
 
 **Zdroje:**
@@ -65,9 +68,6 @@ Kontrola simulací (`make check`): značka každého zařízení se vždy vrát�
 - `Fitcheats/Půlsemestrálky/Hrubý - Řešení 2022-23.pdf`, str. 1 (řešení od Hrubého)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Hrubý (str. 1):** stejná struktura: *Fronta* → přepážka → *Fronta – rozdělování* → 70 %/30 % → *Fronta A* / *Fronta B* → stroj → *konec* → výstupní přechod. Netrpělivost kreslí také jako časovaný přechod `10min` z *Fronta B* do *konec*. Jediný rozdíl: generátor kreslí bez místa.
 - **Řešení ze cvičení (fotky 2024/25, str. 2):** totéž, jen každá větev končí vlastním výstupním přechodem. Obojí je správně; zadání chce jen, aby byl odchod jednoznačně vidět.

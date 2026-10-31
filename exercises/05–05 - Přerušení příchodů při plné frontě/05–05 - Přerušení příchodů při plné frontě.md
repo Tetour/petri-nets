@@ -56,6 +56,9 @@ Kontrola simulací (A = 5, B = 6): *Linka* + obsluhovaná transakce = 1, *gener�
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** zkouška 2024/25, 1. termín, skupina B, otázka 3 (body neuvedené; ve skupinách A a C téhož termínu byla otázka 3 za 10 bodů).
 
 **Zdroje:**
@@ -63,9 +66,6 @@ Kontrola simulací (A = 5, B = 6): *Linka* + obsluhovaná transakce = 1, *gener�
 - `Fitcheats/Zkoušky z minulých let/2024-25 - 1. termín B.txt`, otázka 3 (studentský přepis zadání)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - K této úloze v materiálech žádné řešení není. Stejný mechanismus je v [09–06 – Klientské centrum](<../09–06 - Klientské centrum/09–06 - Klientské centrum.md>).
 

@@ -57,6 +57,9 @@ Kontrola simulací: *Pracovnice* + obsluhovaný = 1, *generátor* + *stop stav* 
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrální písemka 2023/24, varianta D, 10 bodů.
 
 **Zdroje:**
@@ -64,9 +67,6 @@ Kontrola simulací: *Pracovnice* + obsluhovaný = 1, *generátor* + *stop stav* 
 - `Fitcheats/Půlsemestrálky/Zadání z minulých let/2023-24.pdf`, str. 4 (fotka zadání; v plném rozlišení čitelná celá)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - K této variantě v materiálech žádné řešení není (ani od Hrubého, ani studentské).
 

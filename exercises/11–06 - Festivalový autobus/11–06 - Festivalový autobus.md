@@ -66,6 +66,9 @@ Kontrola simulací: autobus je vždy právě v jednom stavu, *Volná místa* + j
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z21. Rok, varianta ani body nejsou známé.
 
 **Zdroje:**
@@ -73,9 +76,6 @@ Kontrola simulací: autobus je vždy právě v jednom stavu, *Volná místa* + j
 - `Fitcheats/Půlsemestrálky/Zadání z minulých let/Přehled zadání 2014-19.pdf`, str. 5 (zadání, bez řešení)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - K této úloze v materiálech žádné řešení není. Nejbližší je výletní autobus z roku 2025/26 ([11–01](<../11–01 - Výletní autobus/11–01 - Výletní autobus.md>)), který také odjíždí buď plný, nebo po uplynutí času, s kapacitou jako místem s 20 značkami.
 

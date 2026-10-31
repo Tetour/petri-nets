@@ -63,6 +63,9 @@ Kontrola simulací: na zastávce je vždy nejvýš jeden autobus a ke každému 
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrální písemka 2025/26, varianta C, 10 bodů (bodování podle ostatních let).
 
 **Zdroj:**
@@ -70,9 +73,6 @@ Kontrola simulací: na zastávce je vždy nejvýš jeden autobus a ke každému 
 - `Fitcheats/Půlsemestrálky/Hrubý - Řešení 2025-26.pdf`, str. 3
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Hrubý (str. 3):** stejná struktura: zdroj `1h` dává *proces „bus“*, váhou 20 *kapacitu* a *proces timeout*; if-else `p=1` → *čekám na turistu* → nástup `exp(30s)` → zpět; odjezd *1 (plno, bere i timeout) a *2 (`20min` + čekám na turistu) s `p=1` smyčkou na *kapacitu*; výstup *autobus pryč*. Hnědě dokreslený přechod (*proces bus* + vypršený timeout) řeší past popsanou v Interpretaci. Rozdíly: oba generátory kreslí jako přechod bez vstupního místa; má dvě místa *odjezd kapacitní* a *odjezd timeout* (tady jedno místo *odjezd*, smyčka na kapacitu u plného autobusu nic nedělá); nemá prioritu u odjezdu po 20 minutách.
 

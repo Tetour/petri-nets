@@ -58,6 +58,9 @@ Kontrola simulací: mlýn je vždy právě v jednom stavu (*mlýn – běžný p
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z2. Přesný rok a varianta nejsou známé.
 
 **Zdroje:**
@@ -66,9 +69,6 @@ Kontrola simulací: mlýn je vždy právě v jednom stavu (*mlýn – běžný p
 - `Fitcheats/Půlsemestrálky/FIT - Příprava 2021-22.pdf`, str. 5–6 (dvě studentská řešení s hlasováním)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Studentské řešení (Příprava 2021/22, str. 5, souhlasí 3, nesouhlasí 1):** místa *BĚŽNÝ PROVOZ* a *MLÍN*, přechody `exp(100d)`, `5h`, `5h`, smyčky `1min` a `5min`, několik přechodů `prio 1`. Komentář: počáteční značky mají být v *mlýn* a *běžný provoz*. Bez nich se síť vůbec nerozběhne.
 - **Studentské řešení (str. 6, souhlasí 2, nesouhlasí 0, netuší 1):** skoro stejné jako síť výše. *mlýn norm.* ⇄ `1m`, generátor `exp(100d)`, `P=1` přechod sebere značku normálního mlýna, *chladne* `5h`, *start el.*, *rozehřívá se* `5h`, *mlýn po výpadku* ⇄ `5m` a závěrečný `P=1`, který vrátí normální mlýn a znovu spustí generátor havárií. Komentář se ptá, zda je v pořádku mít mlýn ve dvou místech (je, jde o dva stavy jedné značky), a navrhuje po havárii jít rovnou do *chladne*.

@@ -61,6 +61,9 @@ Kontrola simulací: *Linka* + obsluha P + obsluha N = 1. Asi 60 % prioritních t
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** zkouška 2025/26, 1. termín, skupina B, otázka 1, 10 bodů.
 
 **Zdroje:**
@@ -68,9 +71,6 @@ Kontrola simulací: *Linka* + obsluha P + obsluha N = 1. Asi 60 % prioritních t
 - `Fitcheats/Zkoušky z minulých let/2025-26 - 1. termín B.pdf`, str. 1 (fotka zadání, 13. 1. 2026; rámeček na odpověď je prázdný)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - K tomuto zadání žádné řešení není. Variantu s přerušením kreslí **Studentská skripta 2015-16, str. 40** a je chybná, rozbor je v [07–05](<../07–05 - Priorita procesu a obsluhy/07–05 - Priorita procesu a obsluhy.md>).
 

@@ -55,6 +55,9 @@ Kontrola simulací: *Linky* + obsluhované transakce = 3, v *žádá o linku* ni
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** zkouška 2023/24, 1. termín, skupina B, otázka 3, 10 bodů.
 
 **Zdroje:**
@@ -63,9 +66,6 @@ Kontrola simulací: *Linky* + obsluhované transakce = 3, v *žádá o linku* ni
 - `Fitcheats/Příprava na zkoušku/cranycrane - Kódy (generátory, Monte Carlo, Euler, RK, Petri + SIMLIB)/petri/6.png` a `6.cpp` (studentská síť a SIMLIB; zadání je jen v komentáři kódu)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **cranycrane, 6.png:** stejná struktura: obsazení `p=1` z místa se 3 značkami, přechod s nižší prioritou do místa čekání a zpět časovaným přechodem. Chyby:
   - návrat má čas `Exp(x)`, ale zadání chce pevnou dobu X (kód `6.cpp` má správně `Wait(X)`, síť a kód si tedy neodpovídají);

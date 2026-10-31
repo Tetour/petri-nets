@@ -65,6 +65,9 @@ Kontrola simulací: *Linky* + *Hovor* = 20 a *Operátorka* + obsluhovaný = 1. S
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrální písemka, rok neznámý (zadání zapsané ve Studentských skriptech 2015/16).
 
 **Zdroje:**
@@ -72,9 +75,6 @@ Kontrola simulací: *Linky* + *Hovor* = 20 a *Operátorka* + obsluhovaný = 1. S
 - `Fitcheats/Skripta/FIT - Studentská skripta 2015-16.pdf`, str. 42–43 (zadání „Příklad ústředna (možná jiné konstanty)“ a ručně kreslené studentské řešení)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Studentská skripta, str. 43 (ručně kreslené):** stejná kostra: `60%`/`40%`, místo „linka“ s 20 značkami, `exp(2min)` vrací linku, „operátorka“ s jednou značkou, obsazení linky `p=1` (přímo) a `p=2` (přes operátorku). Rozdíly a chyby:
   - generátor `exp(20min)` s otazníkem; 30 volání za hodinu je střed **2 minuty**;

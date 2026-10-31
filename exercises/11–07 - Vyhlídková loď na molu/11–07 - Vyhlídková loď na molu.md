@@ -62,6 +62,9 @@ Kontrola simulací: loď je vždy v jednom stavu (prázdná u mola + s cestujíc
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z18.
 
 **Zdroje:**
@@ -69,9 +72,6 @@ Kontrola simulací: loď je vždy v jednom stavu (prázdná u mola + s cestujíc
 - `Fitcheats/Půlsemestrálky/Zadání z minulých let/Přehled zadání 2014-19.pdf`, str. 4–5 (zadání; řešení v materiálech není)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - Řešení této úlohy v materiálech není. Síť vychází z Hrubého řešení příbuzné [11–04 – Výletní loď](<../11–04 - Výletní loď/11–04 - Výletní loď.md>): loď u mola jako zařízení pro nástup, čítač nastoupených, vyplutí `p=1` s hranou váhy 20.
 

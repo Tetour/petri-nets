@@ -57,6 +57,9 @@ Kontrola simulací: *Automat* + obsluhovaný + *oprava* = 1 a *bez poruchy* + *p
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrální písemka 2023/24, varianta C, 10 bodů.
 
 **Zdroje:**
@@ -65,9 +68,6 @@ Kontrola simulací: *Automat* + obsluhovaný + *oprava* = 1 a *bez poruchy* + *p
 - `Fitcheats/Půlsemestrálky/Zadání z minulých let/2024-25 - Varianta A (fotky).pdf`, str. 3–4 (zadání a řešení kreslené na cvičení)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Řešení ze cvičení (fotky 2024/25, str. 4):** stejná síť. Automat kreslí nad hlavní linkou, a proto hrana z `1 hod.` zpět do automatu kříží hlavní linku. Zasaženého zákazníka posílá červenou hranou do koncového místa před výstupním přechodem. Generátor poruch je místo se značkou → `Rovn(5-6 hodin)`, návrat z `1 hod.` vede dlouhou hranou dole.
 - Hrubého řešení k ročníku 2023/24 v materiálech není.

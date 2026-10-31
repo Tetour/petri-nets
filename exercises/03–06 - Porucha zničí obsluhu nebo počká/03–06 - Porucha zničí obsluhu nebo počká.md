@@ -65,6 +65,9 @@ Kontrola simulací: *Linka* + obsluhovaná transakce = 1, každá porucha znič�
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** zkouška 2021/22, 2. termín, otázka 1 (body neuvedené).
 
 **Zdroje:**
@@ -72,9 +75,6 @@ Kontrola simulací: *Linka* + obsluhovaná transakce = 1, každá porucha znič�
 - `Fitcheats/Zkoušky z minulých let/2021-22 - 2. termín.txt`, otázka 1 (studentský přepis zadání)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - K této úloze žádné řešení není.
 

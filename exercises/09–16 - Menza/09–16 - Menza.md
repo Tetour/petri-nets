@@ -58,6 +58,9 @@ Kontrola simulací: *Kuchařky* + *výdej* = 5, *generátor* + *Karanténa* = 1,
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z9.
 
 **Zdroje:**
@@ -67,9 +70,6 @@ Kontrola simulací: *Kuchařky* + *výdej* = 5, *generátor* + *Karanténa* = 1,
 - `Fitcheats/Příprava na zkoušku/luppo - Tabule.png` (studentské řešení na tabuli)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Příprava 2021/22 (str. 13, 0 pro / 2 proti):** obrácené značení (šrafovaně okamžité přechody). Výdej je jediný časovaný přechod `exp(1m)` se vstupy z fronty a z *kuchařek* (kuchařku hned vrací), takže obsluhovaní studenti zůstávají ve frontě a vyhazovací přechod `P=2` je bere spolu s čekajícími. Konzumující vyhazuje `P=1`. Chyby, které vytkly i komentáře: příchody studentů se nezastaví a karanténa `10d` startuje přímo z generátoru hlášení, ne až po vyprázdnění. Studenti nemají výstupní přechod.
 - **Tabule luppo:** *Studenti* → `Exp(3min)` → *Příchod* → obsazení kuchařek (5) → *Obsluha* → `Exp(1min)` → *Žere* → `Rav(10-15)` → *Odchod*. *hlášení* má smyčky na vyhazovací přechody z fronty (`p=2`), z obsluhy (vrací kuchařku) i z *Žere*. Časovač `10dní` je přímo na místě *hlášení*. Hrana, která by brala značku generátoru studentů, na fotce není vidět.

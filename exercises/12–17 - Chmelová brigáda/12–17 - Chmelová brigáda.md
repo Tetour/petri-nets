@@ -63,6 +63,9 @@ Kontrola simulací: platí *Sběrači* + *Plný košík* + ukládající + *Proc
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrální písemka 2010/11 (bodování neuvedeno).
 
 **Zdroje:**
@@ -71,9 +74,6 @@ Kontrola simulací: platí *Sběrači* + *Plný košík* + ukládající + *Proc
 - `Fitcheats/Skripta/FIT - Studentská skripta 2015-16.pdf`, str. 45–46 (zadání, dvě studentská řešení s komentáři)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Studentská skripta, str. 45 (kresleno na počítači, „bez záruky“):** sběrači, `p=1` uložení s „miesta v sklade“ (20), procházka `10-15m` a návrat do „plný košík“ jsou správně. Začátek nakládání vrací místo ve skladu. Chyby:
   - nakládání má `1-2m` místo `exp(2 min)`;

@@ -53,6 +53,9 @@ Kontrola simulací (A = 3, B = 8): *Linky* + obsluhované = 3, *generátor* + *z
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** zkouška 2024/25, 1. termín (8. 1. 2025), skupina C, otázka 3, 10 bodů.
 
 **Zdroje:**
@@ -60,9 +63,6 @@ Kontrola simulací (A = 3, B = 8): *Linky* + obsluhované = 3, *generátor* + *z
 - `Fitcheats/Zkoušky z minulých let/2024-25 - 1. termín A+C.pdf`, str. 3–4 (fotky zadání skupiny C: hlavička na str. 3, otázka 3 na str. 4, bez řešení)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - K této úloze v materiálech žádné řešení není.
 

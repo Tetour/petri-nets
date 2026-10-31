@@ -60,6 +60,9 @@ Kontrola simulací (88 dní): *Přepážka* + registrovaný + přeobjednávajíc
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z6. Přesný rok a varianta nejsou známé.
 
 **Zdroje:**
@@ -70,9 +73,6 @@ Kontrola simulací (88 dní): *Přepážka* + registrovaný + přeobjednávajíc
 - `Fitcheats/Příprava na zkoušku/luppo - Tabule.png` (studentské řešení na tabuli)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Řešení z democvičení 2020/21 (str. 2):** červeně generátor `exp(20m)` (bez místa) → *Fp* → obsazení přepážky *P* → `1-2m` → *F* → obsazení *Lékaři* (2 značky) → `exp(10)` → odchod. Modře `exp(5h)` → místo sanity se dvěma smyčkami `p=1`: jedna odebírá volné lékaře, druhá přerušená vyšetření a posílá pacienty do *Přeobjednat*. Odtud přechod obsadí *P*, časovaný přechod pak vrátí *P* a pacient odchází. Přechod bez priority vezme sanitu → `3-4h` → vrací 2 lékaře. Výklad „rozpracovaných pacientů“ je stejný jako tady. Chyba: přechod před `3-4h` bere jen sanitu, takže sanita, která přijede během zásahu, spustí další „zásah“ bez lékařů a po něm přibudou 2 lékaři navíc.
 - **Studentské řešení (Příprava 2021/22, str. 10, souhlasí 0, nesouhlasí 3):** registrace je jen časovaný přechod `1-2m` bez zařízení, takže se registruje libovolně mnoho pacientů najednou (to vytýká komentář). Přerušená vyšetření jdou do *přeregistrace* `1-2m`, také bez přepážky. Zásah `3-4h` s váhou 2, místo *je sanita?* a priority `P=1`, `P=2`. Komentáře upozorňují na chyby zápisu u `3-4h` a `p=2`.

@@ -64,6 +64,9 @@ Kontrola simulací: stroj, přepážky (= 3) i vedoucí (*Vedoucí* + poradenstv
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrální písemka 2013/14, varianta A, 6 bodů (k příkladu patřila ještě otázka z teorie za 4 body).
 
 **Zdroje:**
@@ -72,9 +75,6 @@ Kontrola simulací: stroj, přepážky (= 3) i vedoucí (*Vedoucí* + poradenstv
 - `Fitcheats/Skripta/FIT - Studentská skripta 2015-16.pdf`, str. 48–49 (zadání zapsané po paměti a studentské řešení s komentáři)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Studentská skripta (str. 49), fotka ručního řešení:** stejná struktura: 90 %/10 %, přepážky jako místo se 3 značkami, vedoucí jako místo s 1 značkou, cyklus vedoucí → `30min` → kontrola → `10-20min` → vedoucí, auto `EXP(5h)` a dva přechody `P=1` (auto + vedoucí, auto + místo kontroly) do obsluhy auta `10-15min`, výstupy „KLIENT ODCHÁZÍ“ a „AUTO ODJÍŽDÍ“. Výhrady:
   - Časované přechody nejsou graficky odlišené od okamžitých, poznají se jen podle připsaného času.

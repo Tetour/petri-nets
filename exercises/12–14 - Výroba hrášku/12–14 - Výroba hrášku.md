@@ -65,6 +65,9 @@ Kontrola simulací: platí *Kapacita* + v úpravě = 50, *Balicí stroj* + balen
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrální písemka 2013/14, varianta B, 6 bodů (k příkladu patřila ještě otázka z teorie za 4 body).
 
 **Zdroje:**
@@ -73,9 +76,6 @@ Kontrola simulací: platí *Kapacita* + v úpravě = 50, *Balicí stroj* + balen
 - `Fitcheats/Skripta/FIT - Studentská skripta 2015-16.pdf`, str. 50 (zadání zapsané po paměti, bez řešení)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Studentská skripta (str. 50):** jen zadání zapsané po paměti („Je to z hlavy, tak mě kdyžtak opravte“), řešení chybí. Obsahově odpovídá originálu, závazný je ale text z `2013-14.pdf`.
 - Jiné řešení v materiálech není.

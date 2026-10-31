@@ -74,6 +74,9 @@ Kontrola (`make check`): síť se odsimuluje od času 0 (P0 ve frontě, linka vo
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** zkouška 2022/23, 3. termín, skupina H, otázka 1 (body v přepisu nejsou; ve skupině G má stejná otázka 15 bodů).
 
 **Zdroje:**
@@ -81,9 +84,6 @@ Kontrola (`make check`): síť se odsimuluje od času 0 (P0 ve frontě, linka vo
 - `Fitcheats/Zkoušky z minulých let/2022-23 - 3. termín H.pdf`, str. 1 (přepsané zadání bez hlavičky a číslování)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - K této úloze řešení v podkladech není.
 

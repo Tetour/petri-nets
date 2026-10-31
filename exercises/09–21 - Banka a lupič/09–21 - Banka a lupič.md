@@ -74,6 +74,9 @@ Kontrola simulací (300 000 událostí, asi 2,6 roku): *Přepážka* + obsluhova
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrální písemka 2010/11 (bodování neuvedeno).
 
 **Zdroje:**
@@ -81,9 +84,6 @@ Kontrola simulací (300 000 událostí, asi 2,6 roku): *Přepážka* + obsluhova
 - `Fitcheats/Půlsemestrálky/Zadání z minulých let/2010-11.pdf`, str. 1 (zadání, úloha 1 „Banka“)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - V materiálech k této úloze žádné řešení není (ani Hrubého, ani studentské). Banka ve Studentských skriptech (str. 48–49) je jiná úloha, [09–19 – Banka se třemi pracovníky](<../09–19 - Banka se třemi pracovníky/09–19 - Banka se třemi pracovníky.md>).
 

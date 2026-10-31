@@ -63,6 +63,9 @@ Kontrola simulací: vůz je vždy v jednom stavu, pracovníků je vždy 3 (voln�
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrální písemka 2011/12, příklad 2 (bodování v zadání není).
 
 **Zdroje:**
@@ -70,9 +73,6 @@ Kontrola simulací: vůz je vždy v jednom stavu, pracovníků je vždy 3 (voln�
 - `Fitcheats/Půlsemestrálky/Zadání z minulých let/2011-12.pdf`, str. 1 (zadání, příklad 2)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - K zadáním z roku 2011/12 v materiálech žádné řešení není.
 

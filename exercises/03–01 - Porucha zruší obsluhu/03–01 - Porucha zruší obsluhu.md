@@ -59,6 +59,9 @@ Kontrola simulací: *Linka* + obsluhovaná transakce = 1, v místě *porucha* je
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** zkouška 2017/18, 1. termín, skupina Z, otázka 1 (body neuvedené).
 
 **Zdroje:**
@@ -67,9 +70,6 @@ Kontrola simulací: *Linka* + obsluhovaná transakce = 1, v místě *porucha* je
 - `Fitcheats/Příprava na zkoušku/xenix - Příprava.pdf`, str. 26 („M/M/1 exp(200) porucha zruší obsluhu“: studentská síť)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **xenix, str. 26:** poruchy `exp(200)`, přechod `p=0` pro poruchu bez účinku, přechod `p=1` vrací *Linku* a dlouhou hranou s popiskem „návrat zrušeného procesu“ posílá transakci zpět do fronty. Síť je sama o sobě správná, ale řeší jinou úlohu (03–02). Chybí jí výstupní přechod: obsloužená transakce končí v místě bez odchodu.
 

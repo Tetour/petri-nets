@@ -58,6 +58,9 @@ Kontrola simulací: linka se vždy vrátí, platí *generátor* + pauza = 1 a *v
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrální písemka 2025/26, varianta A, 10 bodů (bodování podle ostatních let).
 
 **Zdroj:**
@@ -65,9 +68,6 @@ Kontrola simulací: linka se vždy vrátí, platí *generátor* + pauza = 1 a *v
 - `Fitcheats/Půlsemestrálky/Hrubý - Řešení 2025-26.pdf`, str. 1
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Hrubý (str. 1):** síť výše je jeho řešení překreslené: stejná místa, přechody i priority. Generátor kreslí také jako místo ve smyčce s `exp(10min)`.
 

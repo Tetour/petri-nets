@@ -62,6 +62,9 @@ Kontrola simulací: *Automat* + obsluha + *spí* + *probouzení* = 1. Automat us
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** zkouška 2017/18, 2. termín, skupina D, otázka 1 (body neuvedeny, sesterské skupiny B a C mají 10 bodů).
 
 **Zdroje:**
@@ -69,9 +72,6 @@ Kontrola simulací: *Automat* + obsluha + *spí* + *probouzení* = 1. Automat us
 - `Fitcheats/Zkoušky z minulých let/2017-18 - 2. termín D.txt`, otázka [1] (vzpomínka studenta)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - Ve zdrojích není žádné řešení.
 

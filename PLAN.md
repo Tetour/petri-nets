@@ -104,7 +104,7 @@ Each note has these sections (headings in Czech):
 5. **Časté chyby**: the common mistakes for this pattern.
 6. **Původ a zdroje**: where the exercise comes from (exam/midterm, year, term, group, points), every source file with pages, and the comparison with existing solutions (Hrubý's or students' nets, with the errors to avoid).
 
-When a note is opened, only the heading, **Zadání** and the visible part of **Původ a zdroje** are shown. Sections 2–5 and the existing-solutions part of section 6 are collapsed in `<details>` blocks (works in the VS Code preview and on GitHub), so you can try the exercise first and reveal the interpretation as a hint before the solution.
+When a note is opened, only the heading and **Zadání** are shown. Every other section is collapsed in a `<details>` block (works in the VS Code preview and on GitHub), so you can try the exercise first and reveal the hint before the net; the origin and existing solutions stay hidden too, since they can give the answer away.
 
 Nets that differ only in numbers stay separate exercises (you asked for every one), but their notes link to each other. The D/D/x trace tasks get one net per parameter set, with that task's marking.
 

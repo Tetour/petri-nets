@@ -58,6 +58,9 @@ Kontrola simulací: *Linka* + balená bedýnka = 1, *Sběrači* + 5 × *pauza* =
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrální písemka 2021/22, varianta B, 10 bodů.
 
 **Zdroje:**
@@ -66,9 +69,6 @@ Kontrola simulací: *Linka* + balená bedýnka = 1, *Sběrači* + 5 × *pauza* =
 - `Fitcheats/Půlsemestrálky/Hrubý - Řešení 2021-22.pdf`, str. 2 (řešení od Hrubého, dvě varianty)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Hrubý (str. 2), hlavní varianta:** „Sběrači“ (5) ⇄ `exp(20min)` → „Fronta beden“ → „Linka“ → `5-7min`. Přechod `p=1` „Spouštěcí podmínka (jednou proveditelné)“ testuje frontu hranami s váhou 10 a bere značku z místa „Pracuje“ (červeně zakroužkované). Dál přes místo na přechod „odvolání sběračů“ (červeně „(přerušení práce)“), který bere 5 sběračů, a přes místo na `1h` „pauza“. Ta vrací 5 sběračů a značku do „Pracuje“. Místo „Pracuje“ brání opakovanému spuštění během pauzy.
 - **Hrubý (str. 2), „Alternativně“:** totéž bez místa „Pracuje“. Přechod rovnou testuje frontu (10/10) a bere 5 sběračů, poznámka „provede se JEDNOU“. Váhu 5 na hraně ze sběračů má červeně zakroužkovanou s vykřičníkem. Síť výše je tato alternativa, jen s `p=1` z hlavní varianty.

@@ -59,6 +59,9 @@ Kontrola simulací: *Linka* + obsluhovaná transakce + *odstávka* = 1, každá 
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** zkouška 2025/26, 1. termín (13. 1. 2026), skupina C, otázka 1, 10 bodů.
 
 **Zdroje:**
@@ -66,9 +69,6 @@ Kontrola simulací: *Linka* + obsluhovaná transakce + *odstávka* = 1, každá 
 - `Fitcheats/Zkoušky z minulých let/2025-26 - 1. termín C.pdf`, str. 1 (fotka zadání)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - K tomuto zadání žádné řešení není. Stejnou úlohu se symboly řeší fifinas (str. 2), viz [03–04 – Porucha s opravou, transakce odchází](<../03–04 - Porucha s opravou, transakce odchází/03–04 - Porucha s opravou, transakce odchází.md>).
 

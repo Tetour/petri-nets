@@ -62,6 +62,9 @@ Kontrola simulací: platí *1. místo volné* + *První* = 1 a prodavač je vžd
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrální písemka 2010/11 (bodování neuvedeno).
 
 **Zdroje:**
@@ -70,9 +73,6 @@ Kontrola simulací: platí *1. místo volné* + *První* = 1 a prodavač je vžd
 - `Fitcheats/Skripta/FIT - Studentská skripta 2015-16.pdf`, str. 46–47 (zadání a studentské řešení s komentáři)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Studentská skripta, str. 47 (kresleno na počítači, „Zase bez záruky“):** stejná struktura jako tady: „fronta“ → „prvý“ → obsazení prodavače „v predajni“ → „predávač + zákazník“, váha 5 do „počet výberov“, přechod `p=1`, „kúpi“ → `exp(1m)` / „nekúpi“, „ukončenie nákupu“ vrací prodavače. Prodavač má smyčku `exp(10m)` → „v dielni“ → `exp(1h)`. Rozdíly a chyby:
   - „prvý“ je místo s „kapacita = 1“. V notaci kurzu se kapacity míst nepoužívají; nahradí je doplňkové místo;

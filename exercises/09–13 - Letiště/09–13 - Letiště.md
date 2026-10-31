@@ -64,6 +64,9 @@ Kontrola simulací: *Dráha* + letadla na ní + *havárie* + *odstávka* = 1, *p
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z17.
 
 **Zdroje:**
@@ -74,9 +77,6 @@ Kontrola simulací: *Dráha* + letadla na ní + *havárie* + *odstávka* = 1, *p
 - `Fitcheats/Půlsemestrálky/FIT - Příprava 2021-22.pdf`, str. 20 (studentské řešení s hlasováním)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Democvičení 2020/21 (str. 5):** generátor `exp(10m)` s testem na místo „OK“ → fronta s časovaným `30m` k výstupu → `p=1` obsazení dráhy → `exp(3m)` → `90%` (vrací dráhu) → `20-30m` → obsazení dráhy pro start (bez priority) → start → výstup. `10%` → přechod, který vezme „OK“ → stav havárie → smyčka `p=1` vyprázdní frontu k výstupu → `8h` vrací dráhu a „OK“. Struktura je stejná jako tady; trosky ze systému neodcházejí (viz poznámka výše).
 - **Příprava 2021/22 (str. 20):** o havárii rozhoduje už hned za generátorem (`10%` / `90%`), havarující letadlo pak obsadí dráhu s `P=2` a vůbec nepřistává `exp(3m)`. Obě fronty mají `30m`, vyprázdnění front a odstávka `8h` (vrací dráhu a generátor) tam jsou. Chybí výstupní přechody. Hlasy: 0 souhlasí, 1 nesouhlasí („why“).

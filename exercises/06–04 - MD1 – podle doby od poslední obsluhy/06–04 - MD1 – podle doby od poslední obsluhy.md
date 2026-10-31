@@ -59,6 +59,9 @@ Kontrola simulací: invariant jedné linky platí. Při `A = 6` trvalo asi 89 % 
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** zkouška 2020/21, 1. opravný termín (9:00), otázka 2 (počet bodů neznámý). Navazující otázka 3 chtěla tutéž síť popsat pseudokódem podle SIMLIBu.
 
 **Zdroje:**
@@ -66,9 +69,6 @@ Kontrola simulací: invariant jedné linky platí. Při `A = 6` trvalo asi 89 % 
 - `Fitcheats/Příprava na zkoušku/FIT - Řešené výpočetní příklady 2017-21.pdf`, str. 35 („2021 - 1. opravný 9:00“: zadání z paměti, k SIMLIB části jen odkaz na onlinegdb, síť chybí)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Řešené výpočetní příklady, str. 35:** jen zadání a odkaz na SIMLIB kód na onlinegdb, Petriho síť chybí.
 

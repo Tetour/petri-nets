@@ -59,6 +59,9 @@ Kontrola simulací: pracovník je vždy na jednom místě (*pracovník volí* / 
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrální písemka 2011/12, příklad 4 (bodování v zadání není).
 
 **Zdroje:**
@@ -66,9 +69,6 @@ Kontrola simulací: pracovník je vždy na jednom místě (*pracovník volí* / 
 - `Fitcheats/Půlsemestrálky/Zadání z minulých let/2011-12.pdf`, str. 1 (zadání, příklad 4)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - K zadáním z roku 2011/12 v materiálech žádné řešení není.
 

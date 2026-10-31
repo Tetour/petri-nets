@@ -59,6 +59,9 @@ Kontrola simulací: *Linka* + obsluha + *obslouženo* + *údržba* = 1, v číta
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** zkouška 2022/23, 1. termín (11. 1. 2023), skupina D, otázka 1, 15 bodů.
 
 **Zdroje:**
@@ -66,9 +69,6 @@ Kontrola simulací: *Linka* + obsluha + *obslouženo* + *údržba* = 1, v číta
 - `Fitcheats/Zkoušky z minulých let/2022-23 - 1. termín D.pdf`, str. 1 (malá rozmazaná fotka zadání) a str. 4 (ručně psaný přepis celé písemky)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - Ve zdrojích není žádné řešení této otázky.
 

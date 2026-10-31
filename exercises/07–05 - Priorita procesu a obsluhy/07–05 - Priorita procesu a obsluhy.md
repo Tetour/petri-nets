@@ -66,6 +66,9 @@ Kontrola simulací: v obou sítích *Linka* + obsluha P + obsluha N = 1. V síti
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** zkouška 2025/26, 1. termín, skupina C, otázka 3, 10 bodů. Stejnou dvojici pojmů obsahovala teoretická otázka zkoušky „2019 - 2. opravný“ (bod d) „Priorita procesu, priorita obsluhy“).
 
 **Zdroje:**
@@ -77,9 +80,6 @@ Kontrola simulací: v obou sítích *Linka* + obsluha P + obsluha N = 1. V síti
 - `Fitcheats/Příprava na zkoušku/xenix - Příprava.pdf`, str. 6 (studentské definice)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Studentská skripta 2015-16, str. 39** (slabá priorita): dvě fronty, obsazení s `p=1` a `p=2` bere společnou linku, jedna obsluha, uvolnění vrací linku. Správně, odpovídá ukázce a). Chybí jen doba obsluhy.
 - **Skripta, str. 40** (silná priorita) je chybná:

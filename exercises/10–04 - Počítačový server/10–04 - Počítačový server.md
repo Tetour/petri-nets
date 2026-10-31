@@ -64,6 +64,9 @@ Kontrola simulací: platí *Síťová linka* + příjem + odesílání = 1 a *Pr
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrální písemka 2013/14, varianta C, 6 bodů (k příkladu patřila ještě otázka z teorie za 4 body).
 
 **Zdroje:**
@@ -72,9 +75,6 @@ Kontrola simulací: platí *Síťová linka* + příjem + odesílání = 1 a *Pr
 - `Fitcheats/Skripta/FIT - Studentská skripta 2015-16.pdf`, str. 50–51 (zadání zapsané po paměti, bez řešení)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Studentská skripta (str. 50–51):** jen zadání zapsané po paměti, řešení chybí. Je v něm „procesor je okamžitě přidělen databázové úloze“, originál říká jen „může být přerušena uživatelská úloha“.
 - Jiné řešení v materiálech není.

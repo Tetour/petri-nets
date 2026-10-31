@@ -55,6 +55,9 @@ Kontrola simulací: *Fronta* + *volná místa ve frontě* = 10, *Linka* + obsluh
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** zkouška 2017/18, 1. termín, skupina 8C, otázka 1, 15 bodů.
 
 **Zdroje:**
@@ -63,9 +66,6 @@ Kontrola simulací: *Fronta* + *volná místa ve frontě* = 10, *Linka* + obsluh
 - `Fitcheats/Příprava na zkoušku/xenix - Příprava.pdf`, str. 26 („M/M/1 s frontou omezenou na 10 transakcí“, síť)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Příprava 2018-19, str. 32–33 („Prosim o kontrolu (MK)“):** místo za generátorem, z něj přechod `p=1` do místa fronty s poznámkou `c=10` a druhý přechod dolů jako odmítnutí. Funkčně správně, ale omezení je zapsané kapacitou místa. To kurzová notace nepoužívá; doplňkové místo s 10 značkami je čitelnější a je hned vidět, kdo místo ve frontě uvolňuje. Místo linky je popsané „Obsluha“.
 - **xenix, str. 26:** stejná síť jako tady: doplňkové místo `10`, vstup `p=1`, obsazení linky vrací značku do `10`, odmítnutí s nižší prioritou bez výstupu. Okamžité přechody jsou tu černé a časované bílé, tedy opačně než na slajdech, kde jsou časované vyplněné.

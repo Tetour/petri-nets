@@ -63,6 +63,9 @@ Kontrola simulací: vozů je vždy celkem 5, *Extrémní požár* + *bez extrém
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z13.
 
 **Zdroje:**
@@ -72,9 +75,6 @@ Kontrola simulací: vozů je vždy celkem 5, *Extrémní požár* + *bez extrém
 - `Fitcheats/Příprava na zkoušku/luppo - Tabule.png` (řešení na tabuli, vpravo dole)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Příprava 2021/22 (str. 16):** stejné procesy: generátor `exp(8h)` → „nahlášen“, `2-3h` „nenahlášen“, vozy (5), `exp(10m)`, `30-60m`, `exp(10)` zpět; extrémní požár `exp(1t)`, výjezd `P=1` ve smyčce, `10h`. Chyby:
   - mezi okamžitým výjezdem a `exp(10m)` chybí místo (komentář pod řešením: „mezi prechody od hasicu a exp(10m) ma byt stav“);

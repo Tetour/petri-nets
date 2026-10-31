@@ -54,6 +54,9 @@ Kontrola simulací (A = 10, B = 8): *Sklad* + obsluhované = 1 + 3 · *M/M/4* + 
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** zkouška 2017/18, 3. termín, skupina Z, otázka 3, 10 bodů (počet bodů je na fotce špatně čitelný).
 
 **Zdroje:**
@@ -61,9 +64,6 @@ Kontrola simulací (A = 10, B = 8): *Sklad* + obsluhované = 1 + 3 · *M/M/4* + 
 - `Fitcheats/Zkoušky z minulých let/2017-18 - 3. termín Z.pdf`, str. 1 (rozmazaná fotka zadání, 438 × 720 px)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - K této úloze v materiálech žádné řešení není.
 

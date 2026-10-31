@@ -63,6 +63,9 @@ Kontrola simulací: *Linka* + zpracovávaný kubík + oprava = 1, *Sklad* + *Vol
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z15.
 
 **Zdroje:**
@@ -71,9 +74,6 @@ Kontrola simulací: *Linka* + zpracovávaný kubík + oprava = 1, *Sklad* + *Vol
 - `Fitcheats/Půlsemestrálky/FIT - Příprava 2021-22.pdf`, str. 18 (studentské řešení, bez hlasů)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Příprava 2021/22 (str. 18):** auta `6m`, vyložení `2m`, *sklad* (50), přechod „odjezd“ se stavem „Plný“, linka s větvemi `4m` a `2m` přepínanými místy „norm“ a „rychle“, porucha `exp(3d)` „je nehoda“, oprava `5h`, zrychlení `5h`. Rychlosti přepočítané na časy jsou správně. Výhrady:
   - plnost skladu se zjišťuje dvojicí hran s váhou 100 na místě *sklad*; auta, která se právě vykládají, se do obsazenosti nepočítají, takže sklad může přetéct. Jak se stav „Plný“ vrací zpět, z obrázku jednoznačně nevyčtu;

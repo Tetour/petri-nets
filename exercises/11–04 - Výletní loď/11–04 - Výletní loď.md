@@ -59,6 +59,9 @@ Kontrola simulací: *Loď u mola* + nastupující + *Vyjíždí* + *Plavba* = 1,
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrální písemka 2021/22, varianta C, 10 bodů.
 
 **Zdroje:**
@@ -67,9 +70,6 @@ Kontrola simulací: *Loď u mola* + nastupující + *Vyjíždí* + *Plavba* = 1,
 - `Fitcheats/Půlsemestrálky/Hrubý - Řešení 2021-22.pdf`, str. 3 (řešení od Hrubého)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Hrubý (str. 3):** stejná struktura: generátor `exp(5min)` (bez místa) → „Fronta na molu“ → obsazení místa „Loď je k nástupu“ → `exp(1min)` „NÁSTUP“ (vrací loď) → „Počet nastoupených“ → přechod s váhou 20, `p=1`, „(trigger)“, který bere i značku lodi → „Vyjíždí“ → smyčka `p=1` „Vyčisti frontu“ → přechod s nižší prioritou → „na cestě“ → `1h` → „návrat“ do místa lodi. Vedle sítě opsal větu ze zadání „S okamžikem vyplutí opouští všichni čekající turisté molo“.
   - Červeně jsou zakroužkované obsazení lodi a trigger a spojené čarou, nejspíš kvůli soupeření o značku lodi (odtud `p=1`).

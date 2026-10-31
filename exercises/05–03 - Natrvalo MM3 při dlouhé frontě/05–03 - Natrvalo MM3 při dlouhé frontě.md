@@ -53,6 +53,9 @@ Kontrola simulací (A = 4, B = 6): *Linka* + obsluhované + 2 · *M/M/1* = 3. *Z
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** zkouška 2020/21, 1. termín, skupina ve 14:00, otázka 3 (body neuvedené).
 
 **Zdroje:**
@@ -62,9 +65,6 @@ Kontrola simulací (A = 4, B = 6): *Linka* + obsluhované + 2 · *M/M/1* = 3. *Z
 - `Fitcheats/Příprava na zkoušku/cranycrane - Kódy (generátory, Monte Carlo, Euler, RK, Petri + SIMLIB)/petri/5.png` a `5.cpp`
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - **Řešené výpočetní příklady, str. 33:** stejná síť: přechod `P=1` s testem 5/5 na frontě, jednorázové místo s jednou značkou a hrana s váhou 2 do linky. Generátor je jen přechod `exp(x)` bez místa, výstupní přechod je. Správně.
 - **cranycrane, 5.png:** totéž (test 5/5, jednorázová značka, váha 2). Kód `5.cpp` hlídá délku fronty jen při příchodu a nastaví `SetCapacity(3)`. To tu stačí, protože fronta roste jen příchody.

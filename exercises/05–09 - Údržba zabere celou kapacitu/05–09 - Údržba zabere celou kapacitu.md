@@ -55,6 +55,9 @@ Kontrola simulací (A = 6, B = 9): *Linka* + obsluhovaní + *zabráno* + 2 · *�
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** zkouška 2025/26, 2. termín (27. 1. 2026), skupina E, otázka 1, 10 bodů.
 
 **Zdroje:**
@@ -62,9 +65,6 @@ Kontrola simulací (A = 6, B = 9): *Linka* + obsluhovaní + *zabráno* + 2 · *�
 - `Fitcheats/Zkoušky z minulých let/2025-26 - 2. termín E.pdf`, str. 1 (fotka zadání, studentská odpověď je zabělená)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - Na fotce zadání je studentská odpověď, ale celá zabělená, takže se nedá přečíst. Jiné řešení v materiálech není.
 

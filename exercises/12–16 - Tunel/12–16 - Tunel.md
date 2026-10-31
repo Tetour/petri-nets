@@ -63,6 +63,9 @@ Kontrola simulací: platí *Den* + *noc trvá* = 1, *Den* + *Noc* + *ráno* = 1 
 
 ## Původ a zdroje
 
+<details>
+<summary>Zobrazit původ a zdroje</summary>
+
 **Původ:** půlsemestrální písemka 2011/12, příklad 1 (bodování v zadání není).
 
 **Zdroje:**
@@ -70,9 +73,6 @@ Kontrola simulací: platí *Den* + *noc trvá* = 1, *Den* + *Noc* + *ráno* = 1 
 - `Fitcheats/Půlsemestrálky/Zadání z minulých let/2011-12.pdf`, str. 1 (zadání, příklad 1)
 
 **Existující řešení:**
-
-<details>
-<summary>Zobrazit existující řešení</summary>
 
 - K zadáním z roku 2011/12 v materiálech žádné řešení není.
 
