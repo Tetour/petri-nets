@@ -2,7 +2,7 @@
 
 ## Zadání
 
-> Do opravářské dílny přicházejí zákazníci v intervalech **exponenciálně se středem 20 minut**. V dílně jsou dva opraváři: jeden zpracovává normální zakázky a druhý náročné zakázky. Každá třetí zakázka je náročná. Vyřízení normální zakázky trvá **exponenciálně se středem 15 minut**, vyřízení náročné zakázky **exponenciálně se středem 45 minut**. Zákazník čeká na vyřízení své zakázky a pak systém opouští.
+> Do opravářské dílny přicházejí zákazníci v intervalech exponenciálně se středem 20 minut. V dílně jsou dva opraváři: jeden zpracovává normální zakázky a druhý náročné zakázky. Každá třetí zakázka je náročná. Vyřízení normální zakázky trvá exponenciálně se středem 15 minut, vyřízení náročné zakázky exponenciálně se středem 45 minut. Zákazník čeká na vyřízení své zakázky a pak systém opouští.
 
 ## Nápověda
 
