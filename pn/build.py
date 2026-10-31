@@ -9,6 +9,7 @@ net.py) and a PNG preview in build/.
 
 import argparse
 import importlib.util
+import os
 import shutil
 import subprocess
 import sys
@@ -42,8 +43,10 @@ def render(net, src):
     out = BUILD / src.parent.relative_to(ROOT)
     out.mkdir(parents=True, exist_ok=True)
     (out / "net.tex").write_text(tikz.document(net))
+    # fixed timestamps and ids so that rebuilding an unchanged net gives an identical PDF
+    env = dict(os.environ, SOURCE_DATE_EPOCH="0", FORCE_SOURCE_DATE="1")
     r = subprocess.run(["pdflatex", "-interaction=nonstopmode", "-halt-on-error", "net.tex"],
-                       cwd=out, capture_output=True, text=True)
+                       cwd=out, capture_output=True, text=True, env=env)
     if r.returncode:
         err = [l for l in r.stdout.splitlines() if l.startswith("!")][:3]
         raise RuntimeError(f"pdflatex failed: {err} (see {out / 'net.log'})")
