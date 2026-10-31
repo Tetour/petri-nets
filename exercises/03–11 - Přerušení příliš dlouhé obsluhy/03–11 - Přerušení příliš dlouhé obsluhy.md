@@ -2,7 +2,7 @@
 
 ## Zadání
 
-> Pro následující systém nakreslete jeho model v Petriho síti. Systém typu M/M/1. Pokud právě probíhající obsluha přesáhne délku X č.j., pak je přerušena a její transakce opouští systém.
+> Pro následující systém nakreslete jeho model v Petriho síti. Systém typu M/M/1. Pokud právě probíhající obsluha přesáhne délku X časových jednotek, pak je přerušena a její transakce opouští systém.
 
 Podobné úlohy:
 
@@ -16,8 +16,9 @@ Podobné úlohy:
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **Časový limit = druhý časovaný přechod na stejném místě.** Z místa obsluhy vedou dva časované přechody: `exp(B)` (konec obsluhy) a `X` (limit). Oba začnou odpočítávat ve chvíli, kdy transakce obsadí linku. Který doběhne dřív, ten si značku vezme a druhý odpočet zanikne (slajdy 137 a 139).
-- Obsluha tedy skončí normálně, je-li `exp(B) < X`. Jinak ji po `X` č.j. přeruší limit: vrátí *Linku* a transakce odchází přes *přerušená* → *odchod po přerušení*.
+- **M/M/1:** místo *příchody transakcí* ve smyčce s `exp(A)` → *Fronta* → obsazení *Linky* → *obsluha* → `exp(B)` (vrací *Linku*) → *hotovo* → *odchod*. Časy příchodů a obsluhy zadání neuvádí, proto `exp(A)` a `exp(B)`.
+- **Časový limit = druhý časovaný přechod na stejném místě.** Z místa *obsluha* vedou dva časované přechody: `exp(B)` (konec obsluhy) a `X` (limit). Oba začnou odpočítávat ve chvíli, kdy transakce obsadí linku. Který doběhne dřív, ten si značku vezme a druhý odpočet zanikne (slajdy 137 a 139).
+- Obsluha tedy skončí normálně, je-li `exp(B) < X`. Jinak ji po `X` č. j. přeruší limit: vrátí *Linku* a transakce odchází přes *přerušená* → *odchod po přerušení*.
 - `X` je konstanta (délka ze zadání), ne `exp(X)`.
 - Žádná priorita ani porucha tu není potřeba. Na rozdíl od netrpělivosti ve frontě ([02–01](<../02–01 - Netrpělivé požadavky/02–01 - Netrpělivé požadavky.md>)) je limit na místě obsluhy, kde je vždy nejvýš jedna značka.
 
@@ -30,14 +31,6 @@ Podobné úlohy:
 <br>
 
 ![Petriho síť – přerušení příliš dlouhé obsluhy](net.svg)
-
-| Požadavek | Prvek sítě |
-|---|---|
-| M/M/1 | *generátor* ⇄ `exp(A)` → *Fronta* → obsazení *Linky* → `exp(B)` (vrací *Linku*) → *odchod* |
-| obsluha přesáhne X → přerušena | časovaný přechod `X` z místa obsluhy, soupeří s `exp(B)` a vrací *Linku* |
-| transakce opouští systém | *přerušená* → *odchod po přerušení* |
-
-Kontrola simulací: *Linka* + obsluhovaná transakce = 1, provádějí se oba odchody.
 
 </details>
 
@@ -54,6 +47,84 @@ Kontrola simulací: *Linka* + obsluhovaná transakce = 1, provádějí se oba od
 
 </details>
 
+## SIMLIB
+
+<details>
+<summary>Zobrazit SIMLIB kód</summary>
+<br>
+
+Model je izomorfní k Petriho síti výše: každé místo, přechod a značka mají svůj protějšek v kódu.
+
+```cpp
+// 03–11 Přerušení příliš dlouhé obsluhy – model v SIMLIB/C++
+#include "simlib.h"
+
+const double A = 10, B = 6, X = 10;    // příchody, obsluha (zadání je nedává) a limit
+
+Facility Linka("Linka");               // místo „Linka“ (1 značka)
+long obslouzenych = 0, prerusenych = 0;
+
+class Transakce : public Process {     // transakce = značka, která prochází sítí
+ public:
+  bool prerusena = false;
+  void Behavior() override;
+};
+
+class Limit : public Event {           // časovaný přechod X na místě „obsluha“
+  Transakce *t;
+ public:
+  Limit(Transakce *t) : t(t) { Activate(Time + X); }
+  void Behavior() override {
+    t->prerusena = true;               // X doběhl dřív: vezme značku transakce ...
+    t->Activate();                     // ... a odpočet exp(B) zanikne (Wait skončí hned)
+  }
+};
+
+void Transakce::Behavior() {
+  Seize(Linka);                        // Fronta + obsazení, transakce je v místě „obsluha“
+  Limit *limit = new Limit(this);      // oba odpočty začínají obsazením linky
+  Wait(Exponential(B));                // časovaný přechod exp(B)
+  if (!prerusena)
+    limit->Cancel();                   // exp(B) doběhl dřív: odpočet X zaniká
+  Release(Linka);                      // exp(B) i X vracejí značku Linky
+  if (prerusena)
+    prerusenych++;                     // „přerušená“ → přechod „odchod po přerušení“
+  else
+    obslouzenych++;                    // „hotovo“ → přechod „odchod“
+}                                      // konec Behavior = výstupní přechod
+
+class Generator : public Event {       // místo „příchody transakcí“ ve smyčce s exp(A)
+  void Behavior() override {
+    (new Transakce)->Activate();       // nová značka v místě „Fronta“
+    Activate(Time + Exponential(A));   // další příchod
+  }
+};
+
+int main() {
+  Init(0, 100000);                     // modelový čas v časových jednotkách (č. j.)
+  (new Generator)->Activate();
+  Run();
+  Print("Obsloužených: %ld, přerušených: %ld (%.1f %%)\n", obslouzenych, prerusenych,
+        100.0 * prerusenych / (obslouzenych + prerusenych));
+  Linka.Output();
+}
+```
+
+| Petriho síť | SIMLIB |
+|---|---|
+| *příchody transakcí* ⇄ `exp(A)` | událost `Generator`, která se znovu plánuje za `Exponential(A)` |
+| značka (transakce) | proces `Transakce` |
+| *Fronta* + obsazení *Linky* | `Seize(Linka)` (fronta je vnitřní fronta zařízení) |
+| časovaný přechod `exp(B)` z místa *obsluha* | `Wait(Exponential(B))` |
+| časovaný přechod `X` z místa *obsluha* | událost `Limit` naplánovaná za `X` po obsazení; přeruší `Wait` přes `t->Activate()` |
+| zánik druhého odpočtu | `limit->Cancel()`, resp. přerušené `Wait` |
+| oba přechody vracejí *Linku* | `Release(Linka)` |
+| *hotovo* → *odchod*, *přerušená* → *odchod po přerušení* | větve `if (prerusena)` a konec metody `Behavior()` |
+
+**Kontrola simulací.** Petriho síť: *Linka* + obsluhovaná transakce = 1, provádějí se oba odchody (`make check`). SIMLIB model: v jednom běhu (100 000 č. j.) bylo přerušeno 19,0 % obsluh, teoreticky P(exp(6) > 10) = e^(−10/6) = 18,9 %; linka byla vytížena na 49,5 %, teoreticky 1/10 × 6 × (1 − e^(−10/6)) = 48,7 % (`make simlib`).
+
+</details>
+
 ## Původ a zdroje
 
 <details>
@@ -61,6 +132,10 @@ Kontrola simulací: *Linka* + obsluhovaná transakce = 1, provádějí se oba od
 <br>
 
 **Původ:** zkouška 2019/20, 2. termín (29. 1. 2020; v Řešených výpočetních příkladech „2020 - 1. opravný“), skupina Z, otázka 3, 10 bodů.
+
+**Původní znění:**
+
+> Pro následující systém nakreslete jeho model v Petriho síti. Systém typu M/M/1. Pokud právě probíhající obsluha přesáhne délku X č.j., pak je přerušena a její transakce opouští systém.
 
 **Zdroje:**
 

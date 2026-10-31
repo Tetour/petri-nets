@@ -3,36 +3,36 @@ from pn import Net
 net = Net("06–04", "M/D/1: do 10 od konce poslední obsluhy trvá obsluha 2, jinak 5")
 net.params = {"A": 6}
 
-net.place("gen", (0, 0), tokens=1, label="generátor", label_pos="above")
+net.place("gen", (0, 0), tokens=1, label="příchody transakcí", label_pos="above")
 net.timed("prichod", (1.5, 0), "exp(A)")
 net.loop("gen", "prichod")
-net.place("fronta", (3, 0), label="Fronta", label_pos="above")
+net.place("fronta", (3, 0), label="fronta", label_pos="above left")
 net.arc("prichod", "fronta")
 
-# volná linka ve dvou stavech: od konce obsluhy uplynulo < 10 (obsluha 2), nebo ≥ 10 (obsluha 5)
-net.place("linka2", (6.75, 0), tokens=0, label="Linka (2)", label_pos="right")
-net.timed("vychladnuti", (5.6, 0), "10", param_pos="below")
-net.place("linka5", (4.5, 0), tokens=1, label="Linka (5)", label_pos="above")
-net.chain("linka2", "vychladnuti", "linka5")
+# volná linka ve dvou stavech mezi řadami: od konce obsluhy uplynulo < 10 (obsluha 2),
+# nebo ≥ 10 (obsluha 5); časovaný přechod 10 přesouvá značku z Linky (2) do Linky (5)
+net.place("linka2", (5.6, 0.7), label="Linka (2)", label_pos="above left")
+net.place("linka5", (5.6, -0.9), tokens=1, label="Linka (5)", label_pos="right")
+net.timed("vychladnuti", (4.3, -0.1), "10", param_pos="left")
+net.arc("linka2", "vychladnuti", via=[(4.3, 0.7)])
+net.arc("vychladnuti", "linka5", via=[(4.3, -0.9)])
 
-net.immediate("obsaz2", (4.5, 2))
-net.place("obsluha2", (6, 2))
-net.timed("obsl2", (7.5, 2), "2", param_pos="above")
-net.chain("fronta", "obsaz2", "obsluha2", "obsl2")
-net.arc("linka2", "obsaz2")
-net.arc("obsl2", "linka2")
+# horní řada obsluha 2, dolní obsluha 5
+for row, y, time in (("2", 2.2, "2"), ("5", -2.2, "5")):
+    up = y > 0
+    net.immediate(f"obsaz{row}", (5.6, y))
+    net.arc("fronta", f"obsaz{row}", via=[(3, y)], corner=20)
+    net.place(f"obsluha{row}", (7.3, y))
+    net.timed(f"obsl{row}", (9, y), time, param_pos="above" if up else "below")
+    net.chain(f"obsaz{row}", f"obsluha{row}", f"obsl{row}")
+    net.arc(f"linka{row}", f"obsaz{row}")
+    # obě obsluhy vracejí linku do stavu „2“: oblouk ze spodní (u dolní řady z horní) strany
+    net.arc(f"obsl{row}", "linka2", out=270 if up else 90, into=20 if up else -20)
 
-net.immediate("obsaz5", (4.5, -2))
-net.place("obsluha5", (6, -2))
-net.timed("obsl5", (7.5, -2), "5")
-net.chain("fronta", "obsaz5", "obsluha5", "obsl5")
-net.arc("linka5", "obsaz5")
-net.arc("obsl5", "linka2")
-
-net.place("konec", (9.6, 0), label="konec", label_pos="above")
-net.immediate("odchod", (11.1, 0), exit=True, label="odchod")
-net.arc("obsl2", "konec")
-net.arc("obsl5", "konec")
+net.place("konec", (10.6, 0), label="obslouženo", label_pos="left")
+net.immediate("odchod", (12.1, 0), exit=True, label="odchod")
+net.arc("obsl2", "konec", via=[(10.6, 2.2)], corner=20)
+net.arc("obsl5", "konec", via=[(10.6, -2.2)], corner=20)
 net.arc("konec", "odchod")
 
 net.invariant({"linka2": 1, "linka5": 1, "obsluha2": 1, "obsluha5": 1}, 1)
