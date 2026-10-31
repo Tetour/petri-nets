@@ -11,7 +11,7 @@ Exercises are numbered `TT–NN` (topic – position within the topic) and order
 Status: `todo` = not built yet; `drafted` = built and passing `make check`, waiting for review; `reviewed` = accepted.
 
 <!-- index:start -->
-99 of 118 exercises drafted.
+111 of 118 exercises drafted.
 
 ### 01 Základní modely (přednášky)
 
