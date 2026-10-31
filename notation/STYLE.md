@@ -24,6 +24,7 @@ How to lay out a net in `net.py`. These are preferences, not hard rules: when fo
 
 ## Labels, parameters, weights
 
+- **Name places after the example**, not after the pattern: the generator's place is not „generátor“ but what arrives in the task, e.g. „příchody zákazníků“ (01–01). The generic word says nothing the shape doesn't already show; the specific name ties the net to the task.
 - No text may touch a line or other text.
 - Put a label on a side that no arc uses. If all four sides are taken, use a corner (`label_pos="below left"`).
 - Move a parameter with `param_pos` when the default side has an arc (for example, a time above a bar whose output leaves downward).

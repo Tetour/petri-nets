@@ -2,7 +2,7 @@ from pn import Net
 
 net = Net("01–01", "Opravářská dílna (přednáška, slajdy 157–164)")
 
-net.place("gen", (0, 0), tokens=1, label="generátor", label_pos="below")
+net.place("gen", (0, 0), tokens=1, label="příchody zákazníků", label_pos="above")
 net.timed("prichod", (1.5, 0), "exp(20 min)")
 net.loop("gen", "prichod")
 net.place("zakazka", (3, 0), label="zakázka", label_pos="right")

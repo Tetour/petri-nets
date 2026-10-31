@@ -24,7 +24,7 @@
 
 | Požadavek | Prvek sítě |
 |---|---|
-| příchody exp(20 min) | *generátor* ⇄ `exp(20 min)` → *zakázka* |
+| příchody exp(20 min) | *příchody zákazníků* ⇄ `exp(20 min)` → *zakázka* |
 | každá třetí náročná | okamžité přechody `33,3 %` / `66,7 %` z místa *zakázka* |
 | opravář náročných zakázek, exp(45 min) | *Náročné* (1 značka), obsazení, `exp(45 min)` vrací značku |
 | opravář normálních zakázek, exp(15 min) | *Normální* (1 značka), obsazení, `exp(15 min)` vrací značku |
@@ -66,7 +66,7 @@ class Zakaznik : public Process {      // transakce = značka, která prochází
   }                                    // konec Behavior = přechod „odchod“
 };
 
-class Generator : public Event {       // místo „generátor“ ve smyčce s exp(20 min)
+class Generator : public Event {       // místo „příchody zákazníků“ ve smyčce s exp(20 min)
   void Behavior() {
     (new Zakaznik)->Activate();        // nová značka v místě „zakázka“
     Activate(Time + Exponential(20));  // další příchod
@@ -85,7 +85,7 @@ int main() {
 
 | Petriho síť | SIMLIB |
 |---|---|
-| *generátor* ⇄ `exp(20 min)` | událost `Generator`, která se znovu plánuje za `Exponential(20)` |
+| *příchody zákazníků* ⇄ `exp(20 min)` | událost `Generator`, která se znovu plánuje za `Exponential(20)` |
 | značka (zákazník) | proces `Zakaznik` |
 | `33,3 %` / `66,7 %` | `if (Random() < 1.0 / 3)` |
 | *fronta* + obsazení opraváře | `Seize(Narocne)` (fronta je vnitřní fronta zařízení) |
