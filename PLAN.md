@@ -2,7 +2,7 @@
 
 Goal: one correct, exam-style Petri net diagram for every Petri net exercise in the IMS study material, plus enough explanation to learn from each one.
 
-Status: **pilot built (§6.1): tooling, notation cheat sheet and 5 nets, waiting for your review.**
+Status: **all 118 exercises drafted and passing `make check` (§6.2 done). Remaining: polishing crowded diagrams, `make book`, final consistency pass (§6.4).**
 
 ---
 
