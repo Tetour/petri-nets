@@ -414,7 +414,7 @@ The PREP student nets are small white-on-black tablet drawings. The labels liste
   - 2010-11 #1–4;
   - 2011-12 #1–4;
   - 2013-14 A–D and the theory question;
-  - Z11, Z18, Z21, Z22, Z23;
+  - Z18, Z21, Z22, Z23 (Z11 has a student net on the luppo whiteboard, see `prep-materials.md` §F10);
   - 2023/24 A and D.
 
 ## Duplicates and variants
