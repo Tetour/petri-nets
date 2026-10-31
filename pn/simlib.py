@@ -1,11 +1,12 @@
 """Compile and run the SIMLIB code of every note that has a SIMLIB section.
 
-    python3 -m pn.simlib [PATH ...]
+    python3 -m pn.simlib [-j N] [PATH ...]
 
 The C++ block of the section is extracted to build/simlib/<exercise>/model.cc, compiled
 with g++ against SIMLIB (provided by the Nix dev shell) and run; it must exit with 0.
 """
 
+import argparse
 import os
 import re
 import subprocess
@@ -46,11 +47,15 @@ def check(note: Path):
 
 
 def main():
-    dirs = [Path(p).resolve() for p in sys.argv[1:]] or sorted((ROOT / "exercises").iterdir())
+    ap = argparse.ArgumentParser()
+    ap.add_argument("-j", "--jobs", type=int, default=os.cpu_count())
+    ap.add_argument("paths", nargs="*")
+    args = ap.parse_args()
+    dirs = [Path(p).resolve() for p in args.paths] or sorted((ROOT / "exercises").iterdir())
     notes = [d / f"{d.name}.md" for d in dirs if (d / f"{d.name}.md").exists()]
     notes = [n for n in notes if code(n)]
     failed = 0
-    with ProcessPoolExecutor(max_workers=os.cpu_count()) as pool:
+    with ProcessPoolExecutor(max_workers=args.jobs) as pool:
         for name, problem in pool.map(check, notes):
             print(f"{'FAIL' if problem else 'ok':4}  {name} (SIMLIB)", flush=True)
             if problem:
