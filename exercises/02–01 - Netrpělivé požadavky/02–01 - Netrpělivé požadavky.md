@@ -20,12 +20,11 @@ Podobné úlohy: [02–02 – Netrpělivý první ve frontě](<../02–02 - Netr
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
+- **M/M/1:** *příchody požadavků* ⇄ `exp(A)` → *Fronta* → obsazení *Linky* → `exp(B)`, který *Linku* vrací → *konec* → *odchod*. Příchody a obsluha nemají v zadání čísla, proto symboly `exp(A)` a `exp(B)`.
 - **Netrpělivost = časovaný přechod `10` přímo na místě *Fronta*.** Běžný časovaný přechod má pro každou značku ve vstupním místě vlastní odpočet (slajd 138), takže každý čekající odchází po 10 jednotkách svého čekání. Kdo se dřív dostane k lince, tomu okamžité obsazení vezme značku a jeho odpočet zanikne (slajd 139).
 - **Měří se čekání ve frontě, ne obsluha.** Transakce v obsluze už netrpělivá není, proto časovač nesmí začínat až obsazením linky.
-- **Doba čekání je pevná** („nanejvýš 10“), tedy `10`, ne `exp(10)`. Jednotky zadání neuvádí, takže se nepíšou.
-- Příchody a obsluha nemají v zadání čísla, proto symboly `exp(A)` a `exp(B)`.
-- Obsloužené i netrpělivé transakce tu odcházejí stejným přechodem *odchod*. Dva samostatné výstupní přechody jsou také správně (hodí se, když se mají počítat zvlášť).
-- SIMLIB část otázky tu není řešená.
+- **Doba čekání je pevná** („nanejvýš 10“), tedy `10`, ne `exp(10)`. Jednotky zadání neuvádí, takže se nepíšou. Pro variantu 2017/18 8H stačí přepsat `10` na `20`.
+- **Odchod bez obsluhy:** *netrpělivost* vede do místa *konec*, odkud transakce odchází stejným přechodem *odchod* jako obsloužené. Dva samostatné výstupní přechody jsou také správně (hodí se, když se mají počítat zvlášť).
 
 </details>
 
@@ -36,16 +35,6 @@ Podobné úlohy: [02–02 – Netrpělivý první ve frontě](<../02–02 - Netr
 <br>
 
 ![Petriho síť – netrpělivé požadavky](net.svg)
-
-| Požadavek | Prvek sítě |
-|---|---|
-| M/M/1 | *generátor* ⇄ `exp(A)` → *Fronta* → obsazení *Linky* → `exp(B)` (vrací *Linku*) → *odchod* |
-| transakce čeká ve frontě nejvýš 10 | *netrpělivost* `10` z *Fronty* do *konec* |
-| odchod bez obsluhy | *netrpělivost* → *konec* → *odchod* |
-
-Kontrola simulací: *Linka* + obsluhovaná transakce = 1. Při `A = 10`, `B = 8` odešla bez obsluhy zhruba čtvrtina transakcí, fronta zůstala krátká (nejvýš 6).
-
-Pro variantu 2017/18 8H stačí přepsat `10` na `20`.
 
 </details>
 
@@ -60,6 +49,79 @@ Pro variantu 2017/18 8H stačí přepsat `10` na `20`.
 - `exp(10)` místo pevné doby `10`, případně jednotky (`10 s`), které zadání nemá.
 - Netrpělivý přechod bez pokračování k výstupnímu přechodu: od roku 2022 se vyžaduje přechodem ukázat, kde transakce opouští systém.
 - Odmítnutí při obsazené lince (okamžitý přechod s nižší prioritou místo časovaného): to je jiné chování, transakce vůbec nečeká.
+
+</details>
+
+## SIMLIB
+
+<details>
+<summary>Zobrazit SIMLIB kód</summary>
+<br>
+
+Model je izomorfní k Petriho síti výše: každé místo, přechod a značka mají svůj protějšek v kódu. Hodnoty `A = 10` a `B = 8` jsou doplněné, zadání je nedává. Linka je `Facility` (místo s jednou značkou), ne `Store`; na to míří poznámka „Pozor na volbu typu obslužné linky!“ v zadání 2017/18.
+
+```cpp
+// 02–01 Netrpělivé požadavky – model v SIMLIB/C++
+#include "simlib.h"
+
+const double A = 10;                   // střední interval příchodů exp(A)
+const double B = 8;                    // střední doba obsluhy exp(B)
+const double TRPELIVOST = 10;          // přechod „netrpělivost“ (pevná doba)
+
+Facility Linka("Linka");               // místo Linka s jednou značkou
+int obslouzeno = 0, netrpelivych = 0;  // počty provedení přechodů odchod (po obsluze / po netrpělivosti)
+
+class Netrpelivost : public Event {    // časovaný přechod „netrpělivost“ na místě Fronta
+  Process *pozadavek;                  // čí odpočet to je
+ public:
+  Netrpelivost(Process *p) : pozadavek(p) { Activate(Time + TRPELIVOST); }
+  void Behavior() {
+    netrpelivych++;
+    pozadavek->Cancel();               // vyjme požadavek z fronty a ukončí ho: konec → odchod
+  }
+};
+
+class Pozadavek : public Process {     // transakce = značka, která prochází sítí
+  void Behavior() {
+    Event *netrp = new Netrpelivost(this);  // značka v místě Fronta: vlastní odpočet 10
+    Seize(Linka);                      // Fronta + obsazení (bere značku Linky)
+    delete netrp;                      // obsazení vzalo značku z Fronty, odpočet zaniká
+    Wait(Exponential(B));              // časovaný přechod exp(B) ...
+    Release(Linka);                    // ... který vrací značku Lince
+    obslouzeno++;
+  }                                    // konec Behavior = místo konec + přechod odchod
+};
+
+class Generator : public Event {       // místo „příchody požadavků“ ve smyčce s exp(A)
+  void Behavior() {
+    (new Pozadavek)->Activate();       // nová značka v místě Fronta
+    Activate(Time + Exponential(A));   // další příchod
+  }
+};
+
+int main() {
+  Init(0, 1000000);                    // modelový čas v časových jednotkách
+  (new Generator)->Activate();
+  Run();
+  Linka.Output();
+  Print("Obslouženo: %d, odešlo bez obsluhy: %d (%.1f %%)\n", obslouzeno, netrpelivych,
+        100.0 * netrpelivych / (obslouzeno + netrpelivych));
+}
+```
+
+| Petriho síť | SIMLIB |
+|---|---|
+| *příchody požadavků* ⇄ `exp(A)` | událost `Generator`, která se znovu plánuje za `Exponential(A)` |
+| značka (požadavek) | proces `Pozadavek` |
+| *Fronta* + obsazení *Linky* | `Seize(Linka)` (fronta je vnitřní fronta zařízení) |
+| místo *Linka* (1 značka) | `Facility Linka` |
+| časovaný přechod `exp(B)` se sloučeným uvolněním | `Wait(Exponential(B)); Release(Linka);` |
+| odpočet *netrpělivost* `10` pro značku ve *Frontě* | událost `Netrpelivost`, kterou každý požadavek naplánuje za 10 před `Seize` |
+| obsazení vezme značku z *Fronty*, odpočet zaniká | `delete netrp;` hned po `Seize` |
+| provedení *netrpělivosti* (značka z *Fronty* do *konec*) | `pozadavek->Cancel()`: vyjme proces z fronty linky a ukončí ho |
+| *konec* → *odchod* | konec metody `Behavior()` nebo `Cancel()`; počítadla `obslouzeno`, `netrpelivych` |
+
+**Kontrola simulací.** Petriho síť: *Linka* + obsluhovaná transakce = 1, všechny přechody se provádějí, fronta zůstává omezená (`make check`); při `A = 10`, `B = 8` odešla bez obsluhy zhruba čtvrtina transakcí a fronta měla nejvýš 6 čekajících. SIMLIB model: v jednom běhu (10⁶ časových jednotek) odešlo bez obsluhy 25,0 % požadavků a linka byla vytížena na 60,1 %. Teorie (M/M/1 s pevnou trpělivostí τ = 10: požadavek odejde, právě když nedokončená práce v systému při jeho příchodu přesáhne τ) dává 24,8 % a vytížení 0,1 · 0,752 · 8 = 60,1 % (`make simlib`).
 
 </details>
 

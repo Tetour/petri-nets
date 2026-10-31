@@ -14,11 +14,11 @@ Podobné úlohy: [02–01 – Netrpělivé požadavky](<../02–01 - Netrpěliv�
 
 - **Vymyšlený příklad (patří do odpovědi slovy):** Zákaznická linka s jedním operátorem. Hovory přicházejí v intervalech `exp(4 min)`, hovor s operátorem trvá `exp(3 min)`. Každý volající má jinou trpělivost, rovnoměrně 1–5 min. Když ho operátor do té doby nespojí, zavěsí a odchází bez obsluhy.
 - Příklad má být konkrétní: pojmenované zařízení (*Operátor*), čísla s jednotkami a jasné, kdy transakce odchází. Stačí jedno M/M/1 a jeden mechanismus, víc úloha nežádá.
+- **M/M/1:** *příchody hovorů* ⇄ `exp(4 min)` → *Fronta* → *spojení* (bere značku *Operátora*) → *hovor* → `exp(3 min)`, který *Operátora* vrací → *vyřízen* → *odchod*.
 - **„Netrpělivá transakce ve frontě u zařízení“** = časovaný přechod přímo na místě *Fronta* před zařízením. Každý čekající má vlastní odpočet (slajd 138). Spojení s operátorem značku vezme a odpočet zanikne (slajd 139).
 - **Náhodná trpělivost `1–5 min`:** odpočet se losuje pro každou značku zvlášť, takže každý volající čeká jinak dlouho. Proti [02–01](<../02–01 - Netrpělivé požadavky/02–01 - Netrpělivé požadavky.md>) (pevných 10) to ukazuje, že doba netrpělivosti může být i náhodná. Pevná doba by byla také správně.
-- **Dva výstupní přechody** (*odchod* a *odchod bez obsluhy*) oddělují vyřízené a zavěšené hovory. V modelu se dají počítat zvlášť, což je u takového příkladu typická otázka (kolik volajících zavěsí).
+- Zavěšení vede do místa *zavěsil* a odtud do výstupního přechodu *odchod bez obsluhy*. **Dva výstupní přechody** (*odchod* a *odchod bez obsluhy*) oddělují vyřízené a zavěšené hovory. V modelu se dají počítat zvlášť, což je u takového příkladu typická otázka (kolik volajících zavěsí).
 - **Co netrpělivost není:** odchod hned při obsazeném zařízení (okamžitý přechod s nižší prioritou než obsazení). Transakce pak ve frontě vůbec nečeká; to je odmítnutí (anglicky *balking*), viz cranycrane níže.
-- SIMLIB část otázky tu není řešená.
 
 </details>
 
@@ -29,15 +29,6 @@ Podobné úlohy: [02–01 – Netrpělivé požadavky](<../02–01 - Netrpěliv�
 <br>
 
 ![Petriho síť – zákaznická linka s netrpělivými volajícími](net.svg)
-
-| Požadavek | Prvek sítě |
-|---|---|
-| M/M/1: hovory `exp(4 min)`, jeden operátor, hovor `exp(3 min)` | *generátor* ⇄ `exp(4 min)` → *Fronta* → obsazení *Operátora* → `exp(3 min)` (vrací *Operátora*) |
-| netrpělivý volající ve frontě | *zavěšení* `1–5 min` přímo z *Fronty* |
-| vyřízený hovor opouští systém | *vyřízen* → *odchod* |
-| zavěšený hovor opouští systém | *zavěsil* → *odchod bez obsluhy* |
-
-Kontrola simulací: *Operátor* + probíhající hovor = 1, fronta krátká (nejvýš 6). Zavěsilo asi 28 % volajících.
 
 </details>
 
@@ -51,6 +42,75 @@ Kontrola simulací: *Operátor* + probíhající hovor = 1, fronta krátká (nej
 - Časovač za obsazením zařízení: omezuje obsluhu, ne čekání ve frontě.
 - Příklad bez konkrétních čísel a jednotek, nebo bez řečeného, kdy transakce odchází.
 - Netrpělivý odchod bez výstupního přechodu.
+
+</details>
+
+## SIMLIB
+
+<details>
+<summary>Zobrazit SIMLIB kód</summary>
+<br>
+
+Model je izomorfní k Petriho síti výše: každé místo, přechod a značka mají svůj protějšek v kódu.
+
+```cpp
+// 02–03 Zákaznická linka s netrpělivými volajícími – model v SIMLIB/C++
+#include "simlib.h"
+
+Facility Operator("Operátor");         // místo Operátor s jednou značkou
+int vyrizeno = 0, zavesilo = 0;        // počty provedení přechodů odchod a odchod bez obsluhy
+
+class Zaveseni : public Event {        // časovaný přechod „zavěšení“ 1–5 min na místě Fronta
+  Process *volajici;                   // čí odpočet to je
+ public:
+  Zaveseni(Process *v) : volajici(v) { Activate(Time + Uniform(1, 5)); }  // vlastní trpělivost
+  void Behavior() {
+    zavesilo++;
+    volajici->Cancel();                // vezme značku z Fronty: zavěsil → odchod bez obsluhy
+  }
+};
+
+class Hovor : public Process {         // transakce = značka, která prochází sítí
+  void Behavior() {
+    Event *zaveseni = new Zaveseni(this);  // značka v místě Fronta: odpočet 1–5 min
+    Seize(Operator);                   // Fronta + spojení (bere značku Operátora)
+    delete zaveseni;                   // spojení vzalo značku z Fronty, odpočet zaniká
+    Wait(Exponential(3));              // časovaný přechod exp(3 min) ...
+    Release(Operator);                 // ... který vrací značku Operátorovi
+    vyrizeno++;
+  }                                    // konec Behavior = místo vyřízen + přechod odchod
+};
+
+class Generator : public Event {       // místo „příchody hovorů“ ve smyčce s exp(4 min)
+  void Behavior() {
+    (new Hovor)->Activate();           // nová značka v místě Fronta
+    Activate(Time + Exponential(4));   // další hovor
+  }
+};
+
+int main() {
+  Init(0, 60 * 10000);                 // modelový čas v minutách: 10 000 hodin provozu
+  (new Generator)->Activate();
+  Run();
+  Operator.Output();
+  Print("Vyřízeno: %d, zavěsilo: %d (%.1f %%)\n", vyrizeno, zavesilo,
+        100.0 * zavesilo / (vyrizeno + zavesilo));
+}
+```
+
+| Petriho síť | SIMLIB |
+|---|---|
+| *příchody hovorů* ⇄ `exp(4 min)` | událost `Generator`, která se znovu plánuje za `Exponential(4)` |
+| značka (volající) | proces `Hovor` |
+| *Fronta* + *spojení* | `Seize(Operator)` (fronta je vnitřní fronta zařízení) |
+| místo *Operátor* (1 značka) | `Facility Operator` |
+| časovaný přechod `exp(3 min)` se sloučeným uvolněním | `Wait(Exponential(3)); Release(Operator);` |
+| odpočet *zavěšení* `1–5 min` pro značku ve *Frontě* | událost `Zaveseni` naplánovaná za `Uniform(1, 5)` před `Seize` |
+| spojení vezme značku z *Fronty*, odpočet zaniká | `delete zaveseni;` hned po `Seize` |
+| provedení *zavěšení* → *zavěsil* → *odchod bez obsluhy* | `volajici->Cancel()`: vyjme proces z fronty a ukončí ho; počítadlo `zavesilo` |
+| *vyřízen* → *odchod* | konec metody `Behavior()`; počítadlo `vyrizeno` |
+
+**Kontrola simulací.** Petriho síť: *Operátor* + probíhající hovor = 1, všechny přechody se provádějí, fronta zůstává krátká (nejvýš 7) (`make check`); zavěsilo 26,6 % volajících. SIMLIB model: v jednom běhu (10 000 hodin) zavěsilo 26,7 % volajících a operátor byl vytížen na 54,9 %. Teorie (volající zavěsí, právě když nedokončená práce v systému při jeho příchodu přesáhne jeho trpělivost) dává 26,8 % a vytížení 0,25 · (1 − 0,268) · 3 = 54,9 % (`make simlib`).
 
 </details>
 
