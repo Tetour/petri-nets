@@ -1,0 +1,71 @@
+from pn import Net
+
+net = Net("12–08", "Hasiči (půlsemestrálky 2014–19, Z13)")
+
+# běžné požáry: hlášení čeká na volný vůz, nehašený požár po 2–3 h zaniká
+net.place("gen", (0, 0), tokens=1, label="generátor", label_pos="below")
+net.timed("vznik", (1.5, 0), "exp(8 h)", param_pos="below")
+net.loop("gen", "vznik")
+net.place("hlaseni", (3, 0), label="Hlášení", label_pos="above left")
+net.place("vozy", (4.5, -1.75), tokens=5, label="Vozy v centrále", label_pos="left")
+net.immediate("vyjezd", (4.5, 0), label="výjezd", label_pos="above")
+net.place("cesta_k", (6, 0))
+net.timed("jizda", (7.5, 0), "exp(10 min)")
+net.place("hasi", (9, 0), label="hašení", label_pos="above")
+net.timed("haseni", (10.5, 0), "30–60 min", param_pos="below right")
+net.chain("vznik", "hlaseni", "vyjezd", "cesta_k", "jizda", "hasi", "haseni")
+net.arc("vozy", "vyjezd")
+net.place("konec", (12.4, 0), label="konec", label_pos="below right")
+net.immediate("odchod", (13.9, 0), exit=True, label="odchod", label_pos="above")
+net.chain("haseni", "konec", "odchod")
+net.timed("vyhoreni", (7.5, 1.6), "2–3 h", horizontal=True, label="vyhořel bez zásahu",
+          label_pos="above", param_pos="below")
+net.arc("hlaseni", "vyhoreni", via=[(3, 1.6)])
+net.arc("vyhoreni", "konec", via=[(12.4, 1.6)])
+
+# návrat vozu do centrály
+net.place("zpet", (10.5, -1.75), label="cesta zpět", label_pos="right")
+net.timed("navrat", (7.5, -1.75), "exp(10 min)", param_pos="below")
+net.arc("haseni", "zpet")
+net.chain("zpet", "navrat", "vozy")
+
+# extrémní požár: hlášení, stav „extrémní požár“ a jeho trvání 10 h
+net.place("gen_e", (0, -5.3), tokens=1, label="generátor", label_pos="below")
+net.timed("vznik_e", (1.5, -5.3), "exp(1 týden)", param_pos="below")
+net.loop("gen_e", "vznik_e")
+net.place("hlaseni_e", (3, -5.3), label="hlášení", label_pos="below")
+net.immediate("vyhlaseni", (4.5, -5.3))
+net.chain("vznik_e", "hlaseni_e", "vyhlaseni")
+net.place("ext", (6, -5.3), label="Extrémní požár", label_pos="right")
+net.arc("vyhlaseni", "ext")
+net.place("trva", (4.5, -7))
+net.timed("trvani", (6, -7), "10 h", param_pos="below")
+net.place("skoncil", (7.5, -7), label="skončil", label_pos="below")
+net.chain("vyhlaseni", "trva", "trvani", "skoncil")
+net.immediate("konec_e", (9, -7))
+net.arc("skoncil", "konec_e")
+net.arc("ext", "konec_e")
+net.place("klid", (13.5, -3.5), tokens=1, label="bez extrémního požáru", label_pos="above")
+net.arc("konec_e", "klid")
+net.arc("klid", "vyhlaseni", via=[(13.5, -8.6), (3.9, -8.6), (3.9, -6.2)])
+net.place("konec_e2", (10.5, -7), label="konec", label_pos="below")
+net.immediate("odchod_e", (12, -7), exit=True, label="odchod", label_pos="above")
+net.chain("konec_e", "konec_e2", "odchod_e")
+
+# výjezd všech dostupných vozů (p=1 před běžným výjezdem) a jejich návrat po skončení
+net.immediate("vyjezd_e", (6, -3.5), p=1, param_pos="above right")
+net.arc("vozy", "vyjezd_e")
+net.loop("ext", "vyjezd_e", bend=25)
+net.place("jede_e", (7.5, -3.5))
+net.timed("jizda_e", (9, -3.5), "exp(10 min)", param_pos="above")
+net.place("u_ext", (10.5, -3.5), label="u extrémního", label_pos="below")
+net.chain("vyjezd_e", "jede_e", "jizda_e", "u_ext")
+net.immediate("navrat_e", (12, -3.5))
+net.arc("u_ext", "navrat_e")
+net.loop("klid", "navrat_e", bend=20)
+net.arc("navrat_e", "zpet")
+
+net.invariant({"vozy": 1, "cesta_k": 1, "hasi": 1, "zpet": 1, "jede_e": 1, "u_ext": 1}, 5,
+              name="vozy celkem = 5")
+net.invariant({"ext": 1, "klid": 1}, 1)
+net.invariant({"ext": 1, "trva": -1, "skoncil": -1}, 0, name="ext = trva + skoncil")

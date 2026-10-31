@@ -1,0 +1,70 @@
+from pn import Net
+
+net = Net("09–13", "Letiště (půlsemestrálky 2014–19, Z17)")
+
+# žádosti o přistání; kdo do 30 min nezíská dráhu, odlétá (každé letadlo má vlastní odpočet)
+net.place("gen", (0, 0), tokens=1, label="generátor", label_pos="below")
+net.timed("zadost", (1.5, 0), "exp(10 min)", param_pos="below")
+net.loop("gen", "zadost")
+net.place("fronta", (3, 0), label="Fronta", label_pos="below right")
+net.timed("netrpelivost", (3, -1.75), "30 min", horizontal=True, param_pos="left")
+net.arc("fronta", "netrpelivost")
+
+# přistání má přednost (p=1) před startem
+net.place("draha", (10.5, -1.75), tokens=1, label="Dráha", label_pos="above left")
+net.immediate("pristani_start", (4.5, 0), p=1, param_pos="above right")
+net.place("pristava", (6, 0))
+net.timed("pristani", (7.5, 0), "exp(3 min)", param_pos="below")
+net.place("pristalo", (9, 0))
+net.immediate("ok", (10.5, 0), prob=90, param_pos="below left")
+net.chain("zadost", "fronta", "pristani_start", "pristava", "pristani", "pristalo", "ok")
+net.arc("draha", "pristani_start", via=[(4.5, -1.75)])
+net.arc("ok", "draha")
+net.place("vymena", (12, 0), label="výměna", label_pos="below")
+net.timed("t_vymena", (13.5, 0), "20–30 min", param_pos="right")
+net.chain("ok", "vymena", "t_vymena")
+
+# start (p=0), odlet
+net.place("chce_start", (13.5, -3.5), label="chce startovat", label_pos="right")
+net.immediate("start_start", (12, -3.5))
+net.place("startuje", (10.5, -3.5))
+net.timed("start", (9, -3.5), "exp(3 min)", param_pos="below")
+net.chain("t_vymena", "chce_start", "start_start", "startuje", "start")
+net.arc("draha", "start_start")
+net.arc("start", "draha")
+net.place("konec", (6, -3.5), label="konec", label_pos="below")
+net.immediate("odchod", (4.5, -3.5), exit=True, label="odchod", label_pos="below")
+net.arc("start", "konec")
+net.arc("netrpelivost", "konec")
+net.arc("konec", "odchod")
+
+# 10 % havárie: dráha zůstane obsazená, čekající odlétají jinam (p=1), pak uzavření na 8 h
+net.immediate("havaruje", (9, 1.6), prob=10, horizontal=True, param_pos="right")
+net.arc("pristalo", "havaruje")
+net.place("havarie", (7.5, 3), label="havárie", label_pos="above left")
+net.arc("havaruje", "havarie")
+net.immediate("vyprazdni", (6, 1.6), p=1, horizontal=True, param_pos="right")
+net.arc("fronta", "vyprazdni")
+net.loop("havarie", "vyprazdni", bend=20)
+net.place("pryc", (4.5, 1.6), label="odlétá jinam", label_pos="above")
+net.immediate("odchod_p", (3, 1.6), exit=True, label="odchod", label_pos="above")
+net.chain("vyprazdni", "pryc", "odchod_p")
+
+# příchody se zastaví: provoz testuje generátor, uzavření mu značku vezme
+net.place("provoz", (1.5, 1.6), tokens=1, label="provoz", label_pos="left")
+net.loop("provoz", "zadost", bend=25)
+net.immediate("uzavreni", (9, 3))
+net.arc("havarie", "uzavreni")
+net.arc("provoz", "uzavreni", via=[(1.5, 3.8), (9, 3.8)])
+net.place("odstavka", (10.5, 3), label="odstávka", label_pos="above")
+net.timed("t_odstavka", (12, 3), "8 h", param_pos="above right")
+net.chain("uzavreni", "odstavka", "t_odstavka")
+net.arc("t_odstavka", "provoz", via=[(12, 4.6), (0.6, 4.6), (0.6, 2.4)])
+net.arc("t_odstavka", "draha", via=[(12, 2.2), (11.25, 2.2), (11.25, -1.75)])
+net.place("trosky", (13.5, 3), label="trosky", label_pos="above")
+net.immediate("odchod_t", (15, 3), exit=True, label="odchod", label_pos="above")
+net.chain("t_odstavka", "trosky", "odchod_t")
+
+net.invariant({"draha": 1, "pristava": 1, "pristalo": 1, "startuje": 1, "havarie": 1,
+               "odstavka": 1}, 1)
+net.invariant({"provoz": 1, "odstavka": 1}, 1)
