@@ -100,10 +100,11 @@ Each note has these sections (headings in Czech):
 1. **Zadání**: the verbatim task text and links to similar exercises.
 2. **Interpretace** → **Nápověda**: ambiguities and the assumption chosen (e.g. "přesáhne 5" means > 5, so the test arc has weight 6). The section is called *Interpretace* while it is my unconfirmed reading; once you review the note and confirm the interpretation, it is renamed to *Nápověda* („Zobrazit nápovědu“). The README index derives the status `reviewed` from that name.
 3. **Petriho síť**: the diagram plus a table mapping each requirement to the place or transition that implements it.
-4. **Časté chyby**: the common mistakes for this pattern.
-5. **Původ a zdroje**: where the exercise comes from (exam/midterm, year, term, group, points), every source file with pages, and the comparison with existing solutions (Hrubý's or students' nets, with the errors to avoid).
+4. **SIMLIB** (being added gradually, so far only 01–01): a SIMLIB/C++ model isomorphic to the net, with a table mapping net elements to code.
+5. **Časté chyby**: the common mistakes for this pattern.
+6. **Původ a zdroje**: where the exercise comes from (exam/midterm, year, term, group, points), every source file with pages, and the comparison with existing solutions (Hrubý's or students' nets, with the errors to avoid).
 
-When a note is opened, only the heading, **Zadání** and the visible part of **Původ a zdroje** are shown. Sections 2–4 and the existing-solutions part of section 5 are collapsed in `<details>` blocks (works in the VS Code preview and on GitHub), so you can try the exercise first and reveal the interpretation as a hint before the solution.
+When a note is opened, only the heading, **Zadání** and the visible part of **Původ a zdroje** are shown. Sections 2–5 and the existing-solutions part of section 6 are collapsed in `<details>` blocks (works in the VS Code preview and on GitHub), so you can try the exercise first and reveal the interpretation as a hint before the solution.
 
 Nets that differ only in numbers stay separate exercises (you asked for every one), but their notes link to each other. The D/D/x trace tasks get one net per parameter set, with that task's marking.
 
@@ -221,5 +222,5 @@ Status per exercise in the README index: `todo / drafted / reviewed`.
 
 ## 8. Possible improvements (later)
 
-- **SIMLIB code** (`simlib.cpp`) for the ~15 exam tasks that ask for a SIMLIB model isomorphic to the net (e.g. 02–01, 02–03, 03–01, 03–04, 03–06, 03–07, 04–05, 04–07, 05–02, 05–04, 07–01 až 07–03). The simulator in `pn/` makes it possible to cross-check net and code behaviour.
+- **SIMLIB code** in each note's SIMLIB section (started with 01–01). The code is syntax-checked against a stub header; real compilation needs SIMLIB, which is not in nixpkgs (source: https://www.fit.vut.cz/person/peringer/public/SIMLIB/).
 - **Video transcripts** of the 2023 demo exercises, used to cross-check midterm solutions against Hrubý's spoken reasoning.

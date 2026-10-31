@@ -34,6 +34,67 @@ Kontrola simulací: oba opraváři se vždy vrátí, všechny přechody se prov�
 
 </details>
 
+## SIMLIB
+
+<details>
+<summary>Zobrazit SIMLIB kód</summary>
+
+Model je izomorfní k Petriho síti výše: každé místo, přechod a značka mají svůj protějšek v kódu.
+
+```cpp
+// 01–01 Opravářská dílna – model v SIMLIB/C++
+#include "simlib.h"
+
+// opraváři = místa se značkou opraváře (zařízení s kapacitou 1, každé má vlastní frontu)
+Facility Narocne("Opravář náročných zakázek");
+Facility Normalni("Opravář normálních zakázek");
+Histogram Doba("Doba zákazníka v dílně [min]", 0, 15, 20);
+
+class Zakaznik : public Process {      // transakce = značka, která prochází sítí
+  void Behavior() {
+    double prichod = Time;
+    if (Random() < 1.0 / 3) {          // okamžité přechody 33,3 % / 66,7 %
+      Seize(Narocne);                  // fronta + obsazení (bere značku opraváře)
+      Wait(Exponential(45));           // časovaný přechod exp(45 min) ...
+      Release(Narocne);                // ... který vrací značku opraváři
+    } else {
+      Seize(Normalni);
+      Wait(Exponential(15));           // časovaný přechod exp(15 min)
+      Release(Normalni);
+    }
+    Doba(Time - prichod);
+  }                                    // konec Behavior = přechod „odchod“
+};
+
+class Generator : public Event {       // místo „generátor“ ve smyčce s exp(20 min)
+  void Behavior() {
+    (new Zakaznik)->Activate();        // nová značka v místě „zakázka“
+    Activate(Time + Exponential(20));  // další příchod
+  }
+};
+
+int main() {
+  Init(0, 60 * 1000);                  // modelový čas v minutách: 1000 hodin provozu
+  (new Generator)->Activate();
+  Run();
+  Narocne.Output();
+  Normalni.Output();
+  Doba.Output();
+}
+```
+
+| Petriho síť | SIMLIB |
+|---|---|
+| *generátor* ⇄ `exp(20 min)` | událost `Generator`, která se znovu plánuje za `Exponential(20)` |
+| značka (zákazník) | proces `Zakaznik` |
+| `33,3 %` / `66,7 %` | `if (Random() < 1.0 / 3)` |
+| *fronta* + obsazení opraváře | `Seize(Narocne)` (fronta je vnitřní fronta zařízení) |
+| časovaný přechod se sloučeným uvolněním | `Wait(Exponential(45)); Release(Narocne);` |
+| místa *Náročné* / *Normální* (1 značka) | `Facility Narocne`, `Facility Normalni` |
+| přechod *odchod* | konec metody `Behavior()` |
+
+</details>
+
 ## Časté chyby
 
 <details>
