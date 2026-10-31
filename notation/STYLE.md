@@ -7,6 +7,7 @@ How to lay out a net in `net.py`. These are preferences, not hard rules: when fo
 - Transactions flow **left to right**. Side processes (breakdowns, counters, signals) go in rows above or below the main flow.
 - The **generator is on the left**: its place is the leftmost node of its row and the transactions it creates start from there. If something has to act on the generator's token (stopping arrivals, for example), put it below or above the generator, not to its left.
 - Keep similar things aligned: one row per flow, one column per stage when rows run in parallel.
+- **Split branches of the same kind symmetrically**: when a place branches into alternatives that are handled alike (e.g. 33 % / 67 % to two repairers), put one row above and one below the branching place, mirror-imaged, and merge them the same way. The symmetry shows that the branches are of a similar kind. See [01–01](../exercises/01–01%20-%20Opravářská%20dílna/net.py).
 
 ## Transitions
 
