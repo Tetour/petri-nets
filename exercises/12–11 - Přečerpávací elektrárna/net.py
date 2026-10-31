@@ -1,0 +1,76 @@
+from pn import Net
+
+net = Net("12–11", "Přečerpávací elektrárna (půlsemestrálky 2014–19, Z3)")
+
+# nádrže a přesuny vody; režim (denní / noční / havarijní) je značka, přesun ji testuje
+net.place("A", (6, 0), tokens=500, label="A", label_pos="left")
+net.place("B", (15, 0), tokens=500, label="B", label_pos="right")
+net.place("den_p", (10.5, 6.0), tokens=1, label="denní provoz", label_pos="above right")
+net.timed("t_den", (10.5, 4.6), "4 min", horizontal=True, param_pos="right")
+net.loop("den_p", "t_den", bend=30)
+net.arc("A", "t_den")
+net.arc("t_den", "B")
+net.place("hav_p", (10.5, 2.3), label="havarijní provoz", label_pos="above")
+net.timed("t_hav", (10.5, 1.0), "1 min", horizontal=True, param_pos="below")
+net.loop("hav_p", "t_hav", bend=30)
+net.arc("A", "t_hav")
+net.arc("t_hav", "B")
+net.place("noc_p", (10.5, -2.8), label="noční provoz", label_pos="below")
+net.timed("t_noc", (10.5, -1.4), "1 min", horizontal=True, param_pos="above")
+net.loop("noc_p", "t_noc", bend=30)
+net.arc("B", "t_noc")
+net.arc("t_noc", "A")
+
+# hodiny: den 16 h, noc 8 h; konec dne / noci je signál pro přepnutí režimu
+net.place("den", (9, 8.8), tokens=1, label="den", label_pos="left")
+net.timed("t16", (10.5, 9.6), "16 h", horizontal=True, param_pos="above")
+net.place("noc", (12, 8.8), label="noc", label_pos="right")
+net.timed("t8", (10.5, 8.0), "8 h", horizontal=True, param_pos="below right")
+net.chain("den", "t16", "noc", "t8", "den")
+net.place("sig_noc", (16.5, 9.6), label="konec dne", label_pos="above")
+net.arc("t16", "sig_noc")
+net.immediate("na_noc", (16.5, 6.0), horizontal=True, label="na noc", label_pos="right")
+net.arc("sig_noc", "na_noc")
+net.arc("den_p", "na_noc")
+net.arc("na_noc", "noc_p", via=[(16.5, -2.8)])
+net.place("sig_den", (0, 8.0), label="konec noci", label_pos="above")
+net.arc("t8", "sig_den")
+net.immediate("na_den", (-1.5, 7.2), horizontal=True, label="na den", label_pos="left")
+net.arc("sig_den", "na_den")
+net.arc("noc_p", "na_den", via=[(-1.5, -2.8)])
+net.arc("na_den", "den_p", via=[(-1.5, 7.2), (10.5, 7.2)])
+
+# havárie: jen v běžném denním provozu zvýší výrobu na 3 h, jinak bez účinku
+net.place("gen_h", (0, 5.2), tokens=1, label="generátor havárií", label_pos="above")
+net.timed("vznik", (1.5, 5.2), "exp(100 d)", param_pos="below")
+net.loop("gen_h", "vznik")
+net.place("havarie", (3, 5.2), label="havárie", label_pos="above")
+net.arc("vznik", "havarie")
+net.immediate("bez_ucinku", (3, 3.8), horizontal=True, label="bez účinku", label_pos="left")
+net.arc("havarie", "bez_ucinku")
+net.immediate("zvyseni", (4.5, 5.2), p=1, label="zvýšení výroby", label_pos="above right",
+              param_pos="above left")
+net.arc("havarie", "zvyseni")
+net.arc("den_p", "zvyseni")
+net.arc("zvyseni", "hav_p", via=[(9.2, 2.3)])
+net.place("trvani", (4.5, 4.0))
+net.timed("t3", (4.5, 2.8), "3 h", horizontal=True, param_pos="left")
+net.place("konec_h", (4.5, 1.6))
+net.chain("zvyseni", "trvani", "t3", "konec_h")
+net.immediate("navrat", (6, 1.6), label="návrat", label_pos="below right")
+net.arc("konec_h", "navrat")
+net.arc("hav_p", "navrat", via=[(9.3, 1.6)])
+net.arc("navrat", "den_p")
+
+net.closed = True  # voda jen obíhá mezi nádržemi, žádná transakce systém neopouští
+net.invariant({"A": 1, "B": 1}, 1000)
+net.bound("A", 1000)  # kapacita nádrží se nikdy nepřekročí
+net.bound("B", 1000)
+net.invariant({"den": 1, "noc": 1}, 1)
+net.invariant({"den_p": 1, "noc_p": 1, "hav_p": 1}, 1, name="právě jeden režim")
+net.invariant({"hav_p": 1, "trvani": -1}, 0, name="havarijní provoz = běží 3 h")
+net.bound("sig_noc", 1)
+net.bound("sig_den", 1)
+net.bound("havarie", 0)
+# havárie exp(100 d), přesuny po 1–4 min: ~500 událostí za den, ~600 dní simulace
+net.sim_events = 300000

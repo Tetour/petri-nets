@@ -174,7 +174,7 @@ def check(net, seeds=(1, 2, 3)):
                 problems.append(f"seed {seed}: {e}")
                 continue
             dead -= {t for t, n in r["fired"].items() if n}
-            if r["deadlock"] and not net.closed:
+            if r["deadlock"] and not (net.closed or net.deadlock_ok):
                 problems.append(f"seed {seed}: deadlock at t={r['time']:.2f}, marking "
                                 f"{ {p: v for p, v in r['marking'].items() if v} }")
             for p, v in r["peak"].items():

@@ -68,6 +68,7 @@ class Net:
         self.unbounded_ok = set()       # places allowed to grow (unstable queues)
         self.may_not_fire = set()       # transitions allowed to stay dead in a run
         self.closed = False             # no exit transition expected
+        self.deadlock_ok = False        # the simulation may stop (finite task, e.g. one working day)
         self.simulate = True
         self.sim_events = 20000
         self.trace = None               # {"start": {...}, "at": t}: displayed marking must equal sim at t

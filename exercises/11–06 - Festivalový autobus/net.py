@@ -89,7 +89,7 @@ net.invariant({"hleda": 1, "jede": 1, "timer": -1, "vyprselo": -1}, 0,
 
 # model jednoho festivalu: po uzávěrce registrací autobus doveze poslední návštěvníky a skončí,
 # síť se pak zastaví (to je správný konec, ne deadlock)
-net.closed = True
+net.deadlock_ok = True
 # Naplnění autobusu je se zadanými čísly téměř nemožné: 20 jízd po exp(3 min) trvá v průměru
 # 60 min, svoz ale končí po 40 min. Ověřeno zvlášť s registracemi exp(1 min): „plno“ se provede.
 net.may_not_fire = {"plno"}
