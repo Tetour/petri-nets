@@ -1,9 +1,14 @@
 PY := python3
 
-.PHONY: all check clean
+.PHONY: all nets notes check clean
 
-all:
+all: nets notes
+
+nets:
 	$(PY) -m pn.build
+
+notes:
+	$(PY) -m pn.notes
 
 check:
 	$(PY) -m pn.build --check-only

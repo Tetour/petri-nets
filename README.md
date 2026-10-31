@@ -11,7 +11,7 @@ Exercises are numbered `TT–NN` (topic – position within the topic) and order
 Status: `todo` = not built yet; `drafted` = built and passing `make check`, waiting for review; `reviewed` = you confirmed the interpretation, marked by renaming the note's section *Interpretace* to *Nápověda* (the index reads the status from that name).
 
 <!-- index:start -->
-118 of 118 exercises drafted, 1 reviewed.
+118 of 118 exercises drafted, 2 reviewed.
 
 ### 01 Základní modely (přednášky)
 
@@ -19,7 +19,7 @@ Status: `todo` = not built yet; `drafted` = built and passing `make check`, wait
 |---|---|---|---|
 | 01–01 | [Opravářská dílna](<exercises/01–01 - Opravářská dílna/01–01 - Opravářská dílna.md>) | přednáška, slajdy 157–164 | reviewed |
 | 01–02 | [Samoobsluha](<exercises/01–02 - Samoobsluha/01–02 - Samoobsluha.md>) | přednáška, slajdy 195–198 | drafted |
-| 01–03 | [Zdravotní středisko](<exercises/01–03 - Zdravotní středisko/01–03 - Zdravotní středisko.md>) | poznámky MSI (stochastické PN) | drafted |
+| 01–03 | [Zdravotní ordinace](<exercises/01–03 - Zdravotní ordinace/01–03 - Zdravotní ordinace.md>) | poznámky MSI (stochastické PN) | reviewed |
 | 01–04 | [Výrobní systém](<exercises/01–04 - Výrobní systém/01–04 - Výrobní systém.md>) | poznámky MSI (P/T sítě) | drafted |
 | 01–05 | [Kritická sekce](<exercises/01–05 - Kritická sekce/01–05 - Kritická sekce.md>) | poznámky MSI (P/T sítě) | drafted |
 | 01–06 | [Kravín](<exercises/01–06 - Kravín/01–06 - Kravín.md>) | příklad z přednášky (tabule luppo) | drafted |
@@ -196,22 +196,25 @@ Status: `todo` = not built yet; `drafted` = built and passing `make check`, wait
 
 ```
 pn/            Python library: exercise catalogue (catalog.py), README index
-               (index.py), net model (net.py), TikZ output (tikz.py),
+               (index.py), note PDFs (notes.py), net model (net.py), TikZ output (tikz.py),
                lint rules (lint.py), timed token-game simulator (sim.py),
                D/D/x next-event trace (dd.py), build driver (build.py)
 notation/      cheat sheet + small pattern nets
 exercises/     one folder per exercise, "<TT–NN> - <název>/" containing
-               "<TT–NN> - <název>.md" (the note), net.py, net.svg, net.pdf
+               "<TT–NN> - <název>.md" (the note), "<TT–NN> - <název>.pdf" (the same
+               note as a PDF), net.py, net.svg, net.pdf
 inventory/     where every exercise comes from (file, page, verbatim text)
 build/         generated intermediates (git-ignored)
 ```
 
 ## Building
 
-Requires Python 3.11+, pdflatex with TikZ, and poppler (`pdftocairo`, `pdftoppm`).
+Requires Python 3.11+, pdflatex with TikZ, poppler (`pdftocairo`, `pdftoppm`), and for the note PDFs pandoc + xelatex with the DejaVu fonts.
 
 ```sh
-make            # check every net and render net.pdf + net.svg next to each net.py
+make            # check and render every net, then render every note to PDF
+make nets       # check every net and render net.pdf + net.svg next to each net.py
+make notes      # render every note to "<TT–NN> - <název>.pdf" (A4; task on page 1, hint and net on later pages)
 make check      # checks only
 python3 -m pn.build "exercises/09–10 - Kopírovací centrum"   # one net
 python3 -m pn.index                            # regenerate the index below from pn/catalog.py
