@@ -9,9 +9,11 @@
 <details>
 <summary>Zobrazit nápovědu</summary>
 
+- **Příchody** modeluje místo s jednou značkou ve smyčce s časovaným přechodem `exp(20 min)`: každé provedení přechodu vloží do sítě nového zákazníka a značku vrátí, takže se odpočítává další příchod.
 - **„Každá třetí zakázka je náročná“** se modeluje jako pravděpodobnost 1/3 (na slajdu 33 % / 66 %; tady 33,3 % / 66,7 %, aby součet byl 100 %). Doslovné „každá třetí“ by šlo modelovat deterministicky čítačem: značka obíhá mezi třemi místy a každá třetí zakázka jde k náročnému opraváři.
 - Každý opravář je zařízení s kapacitou 1 (místo s jednou značkou) a má vlastní frontu.
 - Uvolnění opraváře je sloučené s časovaným přechodem opravy: oprava a uvolnění jsou jeden přechod, který po skončení vrací značku opraváře.
+- Zákazník **opouští systém** okamžitým přechodem bez výstupních hran.
 
 </details>
 
@@ -21,16 +23,6 @@
 <summary>Zobrazit Petriho síť</summary>
 
 ![Petriho síť – opravářská dílna](net.svg)
-
-| Požadavek | Prvek sítě |
-|---|---|
-| příchody exp(20 min) | *příchody zákazníků* ⇄ `exp(20 min)` → *zakázka* |
-| každá třetí náročná | okamžité přechody `33,3 %` / `66,7 %` z místa *zakázka* |
-| opravář náročných zakázek, exp(45 min) | *Náročné* (1 značka), obsazení, `exp(45 min)` vrací značku |
-| opravář normálních zakázek, exp(15 min) | *Normální* (1 značka), obsazení, `exp(15 min)` vrací značku |
-| zákazník odchází | *hotovo* → přechod *odchod* bez výstupu |
-
-Kontrola simulací: oba opraváři se vždy vrátí, všechny přechody se provádějí. Vytížení je asi 75 % (náročné) a 50 % (normální), fronty zůstávají omezené.
 
 </details>
 
@@ -92,6 +84,8 @@ int main() {
 | časovaný přechod se sloučeným uvolněním | `Wait(Exponential(45)); Release(Narocne);` |
 | místa *Náročné* / *Normální* (1 značka) | `Facility Narocne`, `Facility Normalni` |
 | přechod *odchod* | konec metody `Behavior()` |
+
+**Kontrola simulací.** Petriho síť: oba opraváři se vždy vrátí, všechny přechody se provádějí, fronty zůstávají omezené (`make check`). SIMLIB model: v jednom běhu (1000 h) byl opravář náročných zakázek vytížen na 67 % a opravář normálních na 49 %; teoreticky je to 75 % a 50 % (1/60 zakázky za minutu × 45 min, 2/60 × 15 min), rozdíl je náhodný rozptyl jednoho běhu (`make simlib`).
 
 </details>
 
