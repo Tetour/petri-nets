@@ -1,0 +1,89 @@
+# T02 – D/D/3 s LIFO frontou, značení v čase 10,5
+
+Zkouška 2015/16, 3. termín (27. 1. 2016), skupina 5-A, otázka 1, 15 bodů. Stejné parametry má i zkouška 2014/15, 1. termín, skupina C.
+
+## Zadání
+
+> Napište pseudokód algoritmu řízení diskrétní simulace typu "next-event" (nesmíte použít speciální ukončovací událost). POZOR: bude-li chybět, -5b. Mějme model systému typu D/D/3 se společnou LIFO frontou. Příchody požadavků začínají v čase 0 s intervalem 1s a doba obsluhy trvá 5s. Simulace bude provedena pro čas od 0 do 99s. Požadavky číslujte od 0 podle pořadí příchodu. Priorita všech událostí je 2 (Priority==2). Zařízení (číslovaná od 0) jsou obsazována prioritně (nižší číslo zařízení = vyšší priorita). Události vhodně pojmenujte (např. "P0 obsazuje Z0", "P2 jde do fronty"). Nakreslete časový diagram činnosti simulátoru a napište:
+>
+> - Seznam všech událostí provedených v čase t1 = 10. Podmínky: každá událost na zvláštní řádek, události musí být ve správném pořadí (napište PROČ toto pořadí, jinak -3b), a včetně všech provedených operací plánování do kalendáře (jinak -4b). Nepište žádné jiné události (jinak -1b).
+> - Obsah kalendáře v čase t2 = 10.5 (POZOR: bude-li chybět, -5b).
+> - Nakreslete Petriho síť systému se značením odpovídajícím času t2 = 10.5.
+
+Zdroje (cesty relativně ke složce `IMS - Modelování a simulace/`):
+
+- `Fitcheats/Zkoušky z minulých let/2016-17 - 3. termín A.pdf` (fotka zadání; podle hlavičky jde o 27. 1. 2016, tedy rok 2015/16)
+- `Fitcheats/Zkoušky z minulých let/2014-15 - 1. termín.txt`, skupina C (stejné parametry, události v čase 5, stav v čase 10,5)
+- `Fitcheats/Příprava na zkoušku/FIT - Příprava 2018-19.pdf`, str. 2–5 (studentské řešení včetně sítě)
+- `Fitcheats/Příprava na zkoušku/xenix - Příprava.pdf`, str. 10–11 (varianta s t1 = 6, bez priorit událostí)
+
+Podobné úlohy: [T01](../T01/), [T03](../T03/)–[T07](../T07/) (jiné D/D/x a časy).
+
+## Interpretace
+
+- **Petriho síť zachycuje jen počty**, ne pořadí ve frontě. LIFO/FIFO se v síti neprojeví, projeví se jen v seznamu událostí (kdo jde z fronty na zařízení).
+- **Zařízení obsazovaná prioritně:** tři okamžité přechody obsazení s prioritami `p=2` (Z0), `p=1` (Z1) a `p=0` (Z2, implicitní). Vyšší číslo má přednost (slajd 132). Pokud je volných víc zařízení, vezme se Z0.
+- **Pořadí událostí ve stejném čase:** všechny mají stejnou prioritu (2), takže kalendář je pro stejný čas FIFO: dřív se provede událost, která byla **dřív naplánována**. V čase 10 tedy nejdřív končí obsluha P4 (naplánovaná v čase 5), až pak přichází P10 (naplánovaný v čase 9). Proto P9 jde na Z0 a P10 zůstává ve frontě.
+- Generátor: první příchod P0 je v čase 0. Každý příchod naplánuje další za 1 s.
+
+## Řešení
+
+### Časový diagram (obsazení zařízení)
+
+| zařízení | obsluhy |
+|---|---|
+| Z0 | P0 0–5, P4 5–10, P9 10–15 |
+| Z1 | P1 1–6, P5 6–11 |
+| Z2 | P2 2–7, P6 7–12 |
+
+Fronta: P3 čeká od 3 (pod ní se střídají novější), P4 jde v 5 na Z0, P5 v 6 na Z1, P6 v 7 na Z2, P9 v 10 na Z0.
+
+### Události provedené v čase t1 = 10
+
+1. P4 uvolňuje Z0 a odchází
+2. P9 vystupuje z fronty (LIFO – poslední) a obsazuje Z0; plánuje konec obsluhy P9 na Z0 v čase 15
+3. příchod P10; plánuje příchod P11 v čase 11
+4. P10 jde do fronty
+
+Proč toto pořadí: konec obsluhy P4 byl naplánován v čase 5, příchod P10 až v čase 9. Při stejné prioritě rozhoduje pořadí naplánování.
+
+### Kalendář v čase t2 = 10,5
+
+| čas | událost |
+|---|---|
+| 11 | konec obsluhy P5 na Z1 (naplánováno v čase 6) |
+| 11 | příchod P11 (naplánováno v čase 10) |
+| 12 | konec obsluhy P6 na Z2 |
+| 15 | konec obsluhy P9 na Z0 |
+
+Fronta v čase 10,5 (od nejstaršího): P3, P7, P8, P10. Zařízení: Z0 – P9, Z1 – P5, Z2 – P6.
+
+### Petriho síť se značením v čase 10,5
+
+![Petriho síť – D/D/3 v čase 10,5](net.svg)
+
+- *generátor*: 1 značka (příchod P11 se právě odpočítává)
+- *Fronta*: 4 značky (P3, P7, P8, P10)
+- *Z0*, *Z1*, *Z2*: 0 značek (všechna zařízení obsazená)
+- místa obsluhy: po 1 značce (P9, P5, P6)
+
+Kontrola (`make check`): síť se odsimuluje od času 0 (P0 ve frontě, zařízení volná) do času 10,5 a výsledné značení se musí shodovat s nakresleným. Výpočet událostí a kalendáře: `python3 -m pn.dd 3 lifo 1 5 10 10.5`.
+
+### Varianty se stejnou sítí
+
+- **xenix (t1 = 6):** P1 uvolňuje Z1 a odchází → P5 vystupuje z fronty a obsazuje Z1, plánuje konec v 11 → příchod P6, plánuje příchod P7 v 7 → P6 jde do fronty.
+- **2014/15 skupina C (události v čase 5):** P0 uvolňuje Z0 a odchází → P4 vystupuje z fronty a obsazuje Z0, plánuje konec v 10 → příchod P5, plánuje příchod P6 v 6 → P5 jde do fronty.
+
+Stav v čase 10,5 je v obou variantách stejný jako výše.
+
+## Existující řešení
+
+- **Příprava 2018-19, str. 2–5:** stejný kalendář (11 uvolnění Z1, 11 příchod P11, 12, 15) i fronta (P3, P7, P8, P10). V síti je generátor jen přechod `1s` bez místa a priority obsazení jsou `p=3, 2, 1`. To je ekvivalentní, záleží jen na pořadí priorit. Řešení má 20 souhlasů.
+- **xenix, str. 10–11:** stejné značení, priority `p2, p1, (0)`. Chybí výstupní přechod, takže není vidět, kde transakce opouští systém. V seznamu událostí je omylem „FIFO poslední z fronty“, ačkoli fronta je LIFO.
+
+## Časté chyby
+
+- Značky ve frontě v pořadí nebo s čísly P3, P7, … přímo v síti. Síť zobrazuje jen počet.
+- Prázdná místa obsluhy a značky ve volných zařízeních: v čase 10,5 jsou všechna tři zařízení obsazená.
+- Opačné pořadí událostí v čase 10 (nejdřív příchod P10). Pak by P10 obsadil Z0 a ve frontě by zůstal P9.
+- Zapomenuté plánování do kalendáře u každé události (-4 b).
