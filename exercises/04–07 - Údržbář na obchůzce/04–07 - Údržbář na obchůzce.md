@@ -4,7 +4,7 @@
 
 > 1. (15 bodů) Modelujte zadaný systém Petriho sítí s vyznačením všech relevantních parametrů. Napište simulační model systému prostředky knihovny SIMLIB, který je izomorfní k modelu v Petriho síti.
 >
-> Uvažujme systém M/M/1. V systému pracuje jeden údržbář, který se v intervalech exp(4 hodiny) vrací k této obslužné lince. Pokud v okamžiku jeho příchodu bylo dokončeno alespoň 10 obsluh od jeho poslední návštěvy u linky, pak počká na dokončení případné právě prováděné obsluhy a zahájí na lince údržbu trvající 20 minut. Jinak pokračuje ve své obchůzce.
+> Uvažujme systém M/M/1. V systému pracuje jeden údržbář, který se v intervalech exponenciálně se středem 4 hodiny vrací k této obslužné lince. Pokud v okamžiku jeho příchodu bylo dokončeno alespoň 10 obsluh od jeho poslední návštěvy u linky, pak počká na dokončení případné právě prováděné obsluhy a zahájí na lince údržbu trvající přesně 20 minut. Jinak pokračuje ve své obchůzce.
 
 Podobné úlohy:
 
@@ -17,17 +17,19 @@ Podobné úlohy:
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **Údržbář** je jedna značka, která obíhá: *na obchůzce* → `exp(4 h)` → *u linky* → (údržba, nebo nic) → zpět *na obchůzku*.
+- **M/M/1:** *příchody transakcí* ⇄ `exp(A)` → *fronta* → obsazení *Linky* → `exp(B)`, které značku linky vrací → *odchod*. Časy jsou v minutách, střední doby příchodů a obsluhy zadání neuvádí, proto `exp(A)` a `exp(B)`.
 - **Čítač obsluh:** `exp(B)` dává značku do místa *obsluhy*. Víc než 10 si pamatovat netřeba („alespoň 10“), proto přechod *nad 10* (hrana s váhou 11 tam, 10 zpět) každou jedenáctou značku hned zahodí. V čítači je tak vždy 0 až 10 značek.
+- **Údržbář** je jedna značka, která obíhá: *údržbář na obchůzce* → `exp(4 h)` (= exp(240 min)) → *u linky* → (údržba, nebo nic) → zpět *na obchůzku*.
 - **Rozhodnutí u linky** (tři okamžité přechody, vyšší priorita má přednost):
   - *aspoň 10* (`p=2`) odebere 10 značek, tedy celý čítač, a údržbář jde *čekat na linku*;
   - *vynulování* (`p=1`, testovací hrany na *u linky*) odebírá zbytek čítače po jedné, když je obsluh méně než 10;
   - *pokračuje* (`p=0`) vrátí údržbáře na obchůzku, až je čítač prázdný.
-  
+
   Čítač se tedy nuluje při každé návštěvě, i když údržba neproběhne: „od jeho poslední návštěvy“ počítá i návštěvu bez údržby.
-- **Počká na dokončení probíhající obsluhy:** údržbář si linku bere obyčejným obsazením, takže probíhající obsluhu nepřeruší. Obsazení údržbářem má `p=1`, proto po skončení obsluhy dostane linku on, ne další zákazník z fronty.
+- **Počká na dokončení probíhající obsluhy:** údržbář si linku bere obyčejným obsazením, takže probíhající obsluhu nepřeruší. Obsazení údržbářem má `p=1`, proto po skončení obsluhy dostane linku on, ne další transakce z fronty.
+- **Údržba 20 min** (pevná doba): *údržba* → `20 min` vrací značku *Lince* i údržbáře *na obchůzku*.
 - Obsluhy dokončené v době, kdy údržbář čeká na linku, se počítají už do další návštěvy.
-- Časy jsou v minutách: `exp(4 h)` = exp(240 min), údržba `20 min`. Střední doby příchodů a obsluhy zadání neuvádí, proto `exp(A)` a `exp(B)`. SIMLIB část otázky tu není řešená.
+- Transakce po obsluze **opouští systém** přechodem *odchod*.
 
 </details>
 
@@ -38,18 +40,6 @@ Podobné úlohy:
 <br>
 
 ![Petriho síť – údržbář na obchůzce](net.svg)
-
-| Požadavek | Prvek sítě |
-|---|---|
-| M/M/1 | *generátor* ⇄ `exp(A)` → *Fronta* → obsazení *Linky* → `exp(B)` (vrací *Linku*) → *odchod* |
-| počet dokončených obsluh | `exp(B)` → *obsluhy* (nejvýš 10, přechod *nad 10*) |
-| údržbář se vrací v intervalech exp(4 h) | *údržbář na obchůzce* → `exp(4 h)` → *u linky* |
-| aspoň 10 obsluh → údržba | *aspoň 10* (`p=2`): *u linky* + 10 × *obsluhy* → *čeká na linku* |
-| jinak pokračuje, čítač se nuluje | *vynulování* (`p=1`), *pokračuje* → *údržbář na obchůzce* |
-| počká na konec obsluhy, údržba 20 min | `p=1`: *čeká na linku* + *Linka* → *údržba* → `20 min` → *Linka* + *údržbář na obchůzce* |
-| transakce opouští systém | *odchod* |
-
-Kontrola simulací: *Linka* + obsluha + *údržba* = 1, údržbář je vždy na právě jednom místě, v čítači je nejvýš 10 značek. Údržbář přichází v průměru po 4 h a asi při 70 % návštěv údržbu provede.
 
 </details>
 
@@ -67,6 +57,92 @@ Kontrola simulací: *Linka* + obsluha + *údržba* = 1, údržbář je vždy na 
 
 </details>
 
+## SIMLIB
+
+<details>
+<summary>Zobrazit SIMLIB kód</summary>
+<br>
+
+Model je izomorfní k Petriho síti výše: každé místo, přechod a značka mají svůj protějšek v kódu.
+
+```cpp
+// 04–07 Údržbář na obchůzce – model v SIMLIB/C++
+#include "simlib.h"
+
+const double A = 10;                   // střední interval příchodů [min] (zadání ho neuvádí)
+const double B = 6;                    // střední doba obsluhy [min] (zadání ji neuvádí)
+
+Facility Linka("Linka");               // místo „Linka“ (1 značka) + fronta
+Histogram Doba("Doba transakce v systému [min]", 0, 5, 20);
+int pocet = 0;                         // místo „obsluhy“ (čítač, nejvýš 10)
+int navstev = 0, udrzeb = 0;           // počet návštěv údržbáře a údržeb
+
+class Transakce : public Process {     // transakce = značka, která prochází sítí
+  void Behavior() {
+    double prichod = Time;
+    Seize(Linka);                      // fronta + obsazení
+    Wait(Exponential(B));              // časovaný přechod exp(B) ...
+    Release(Linka);                    // ... vrací značku linky ...
+    if (pocet < 10)                    // ... a přidá značku do čítače
+      pocet++;                         //   (přechod „nad 10“ jedenáctou hned odebere)
+    Doba(Time - prichod);
+  }                                    // konec Behavior = přechod „odchod“
+};
+
+class Udrzbar : public Process {       // značka údržbáře, obíhá dokola
+  void Behavior() {
+    Priority = 1;                      // p=1: linku dostane dřív než čekající transakce
+    for (;;) {                         // místo „údržbář na obchůzce“
+      Wait(Exponential(4 * 60));       // časovaný přechod exp(4 h) → „u linky“
+      navstev++;
+      if (pocet >= 10) {               // „aspoň 10“ (p=2): odebere 10 značek čítače
+        pocet = 0;
+        Seize(Linka);                  // „čeká na linku“ + obsazení: probíhající
+        udrzeb++;                      //   obsluhu nepřeruší, předběhne frontu
+        Wait(20);                      // místo „údržba“ + časovaný přechod 20 min ...
+        Release(Linka);                // ... vrací linku i údržbáře na obchůzku
+      } else
+        pocet = 0;                     // „vynulování“ (p=1) a „pokračuje“ (p=0)
+    }
+  }
+};
+
+class Generator : public Event {       // místo „příchody transakcí“ ve smyčce s exp(A)
+  void Behavior() {
+    (new Transakce)->Activate();       // nová značka v místě „fronta“
+    Activate(Time + Exponential(A));   // další příchod
+  }
+};
+
+int main() {
+  Init(0, 1000000);                    // modelový čas v minutách: asi 694 dní provozu
+  (new Generator)->Activate();
+  (new Udrzbar)->Activate();           // značka v místě „údržbář na obchůzce“
+  Run();
+  Linka.Output();                      // vytížení = obsluha + údržba
+  Doba.Output();
+  Print("Návštěv údržbáře: %d, údržeb: %d\n", navstev, udrzeb);
+}
+```
+
+| Petriho síť | SIMLIB |
+|---|---|
+| *příchody transakcí* ⇄ `exp(A)` | událost `Generator`, která se znovu plánuje za `Exponential(A)` |
+| značka (transakce) | proces `Transakce` |
+| *fronta* + obsazení linky | `Seize(Linka)` (fronta je vnitřní fronta zařízení) |
+| časovaný přechod `exp(B)` se sloučeným uvolněním | `Wait(Exponential(B)); Release(Linka);` |
+| místo *Linka* (1 značka) | `Facility Linka` |
+| místo *obsluhy* a přechod *nad 10* | `int pocet`, `if (pocet < 10) pocet++;` |
+| značka údržbáře, *údržbář na obchůzce* → `exp(4 h)` → *u linky* | proces `Udrzbar`, smyčka s `Wait(Exponential(4 * 60))` |
+| *aspoň 10* (`p=2`) / *vynulování* (`p=1`) + *pokračuje* (`p=0`) | `if (pocet >= 10) … else …`, v obou větvích `pocet = 0` |
+| *čeká na linku* + obsazení s `p=1` | `Priority = 1; Seize(Linka);` (priorita procesu: první ve frontě, obsluhu nepřeruší) |
+| *údržba* → `20 min` → *Linka* + *údržbář na obchůzce* | `Wait(20); Release(Linka);` a další průchod smyčkou |
+| přechod *odchod* | konec metody `Behavior()` |
+
+**Kontrola simulací.** Petriho síť: *Linka* + obsluha + *údržba* = 1, údržbář je vždy na právě jednom místě, v čítači je nejvýš 10 značek, všechny přechody se provádějí (`make check`). SIMLIB model: v jednom běhu (1 000 000 min) přišel údržbář 3 848krát (méně než 1 000 000 / 240 ≈ 4 167, protože čekání na linku a údržba jeho oběh prodlužují) a údržbu provedl při 2 749 návštěvách (71 %). Linka byla obsazená 66 % času: 60 % obsluha (B/A = 6/10) a 5,5 % údržba (2 749 × 20 / 1 000 000) (`make simlib`).
+
+</details>
+
 ## Původ a zdroje
 
 <details>
@@ -74,6 +150,12 @@ Kontrola simulací: *Linka* + obsluha + *údržba* = 1, údržbář je vždy na 
 <br>
 
 **Původ:** zkouška 2022/23, 1. termín (11. 1. 2023, 16:00–17:30), skupina C, otázka 1, 15 bodů.
+
+**Původní znění:**
+
+> 1. (15 bodů) Modelujte zadaný systém Petriho sítí s vyznačením všech relevantních parametrů. Napište simulační model systému prostředky knihovny SIMLIB, který je izomorfní k modelu v Petriho síti.
+>
+> Uvažujme systém M/M/1. V systému pracuje jeden údržbář, který se v intervalech exp(4 hodiny) vrací k této obslužné lince. Pokud v okamžiku jeho příchodu bylo dokončeno alespoň 10 obsluh od jeho poslední návštěvy u linky, pak počká na dokončení případné právě prováděné obsluhy a zahájí na lince údržbu trvající 20 minut. Jinak pokračuje ve své obchůzce.
 
 **Zdroje:**
 

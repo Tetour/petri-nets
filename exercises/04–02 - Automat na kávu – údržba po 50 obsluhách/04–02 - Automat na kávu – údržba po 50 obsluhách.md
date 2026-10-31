@@ -2,7 +2,7 @@
 
 ## Zadání
 
-> 1. (10 bodů) Nakreslete Petriho síť pro systém typu M/M/1 s obslužnou linkou "automat na kafe". Automat se po každých 50 cyklech provedené obsluhy přepne do režimu údržby (není k dispozici) na dobu 20 časových jednotek.
+> 1. (10 bodů) Nakreslete Petriho síť pro systém typu M/M/1 s obslužnou linkou "automat na kafe". Automat se po každých 50 cyklech provedené obsluhy přepne do režimu údržby (není k dispozici) na dobu přesně 20 časových jednotek.
 
 Zkouška 2018/19 podle vzpomínky: „Automat na kávu, který po připravení X (40??) káv přejde do režimu údržby na dobu 20 časových jednotek.“
 
@@ -19,11 +19,13 @@ Podobné úlohy:
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **Čítač:** každá dokončená obsluha přidá značku do místa *počet obsluh*. Přechod *do údržby* má z čítače hranu s váhou 50, takže se provede až po 50. obsluze a čítač zároveň vynuluje.
-- **Údržba si vezme volný automat:** `exp(B)` vrací značku *Automatu*, údržba si ji hned odebere. Pokud čeká zákazník, je v tu chvíli proveditelné i obsazení. Priorita `p=1` zajistí, že vyhraje údržba, takže přijde opravdu po každé 50. obsluze, ne až po některé další.
+- **M/M/1:** *příchody zákazníků* ⇄ `exp(A)` → *fronta* → obsazení *Automatu* → `exp(B)`, které značku automatu vrací → *odchod*. Střední doby příchodů a obsluhy zadání neuvádí, proto `exp(A)` a `exp(B)`.
+- **Čítač:** každá dokončená obsluha (`exp(B)`) přidá značku do místa *počet obsluh*. Přechod *do údržby* má z čítače hranu s váhou 50, takže se provede až po 50. obsluze a čítač zároveň vynuluje.
+- **Údržba si vezme volný automat:** `exp(B)` vrací značku *Automatu*, *do údržby* si ji hned odebere a přesune do místa *údržba*. Pokud čeká zákazník, je v tu chvíli proveditelné i obsazení. Priorita `p=1` zajistí, že vyhraje údržba, takže přijde opravdu po každé 50. obsluze, ne až po některé další.
 - Údržba nepřerušuje obsluhu: začíná vždy jen na volném automatu, tedy hned po 50. obsluze.
+- **Údržba trvá 20** (pevná doba): *údržba* → `20` → zpět do *Automatu*. Zákazníci, kteří mezitím přijdou, čekají ve *frontě*.
 - Počet 50 je podle fotky zadání 2017/18. Vzpomínka z roku 2018/19 má „X (40??)“, síť je stejná, jen s jinou vahou hrany.
-- Doba 20 je pevná. Střední doby příchodů a obsluhy zadání neuvádí, proto `exp(A)` a `exp(B)`.
+- Zákazník po obsluze **opouští systém** přechodem *odchod*.
 
 </details>
 
@@ -34,16 +36,6 @@ Podobné úlohy:
 <br>
 
 ![Petriho síť – automat na kávu s údržbou po 50 obsluhách](net.svg)
-
-| Požadavek | Prvek sítě |
-|---|---|
-| M/M/1, linka „automat“ | *generátor* ⇄ `exp(A)` → *Fronta* → obsazení *Automatu* → `exp(B)` (vrací *Automat*) → *odchod* |
-| počítání obsluh | `exp(B)` → *počet obsluh* |
-| po každých 50 obsluhách údržba | *do údržby* (`p=1`): 50 × *počet obsluh* + *Automat* → *údržba* |
-| údržba 20 č. j., automat není k dispozici | *údržba* → `20` → *Automat* |
-| transakce opouští systém | *odchod* |
-
-Kontrola simulací: *Automat* + obsluha + *údržba* = 1, v čítači je nejvýš 50 značek. Údržba proběhla přesně po každé 50. obsluze (198 údržeb na 9 900 obsluh).
 
 </details>
 
@@ -60,6 +52,82 @@ Kontrola simulací: *Automat* + obsluha + *údržba* = 1, v čítači je nejvý�
 
 </details>
 
+## SIMLIB
+
+<details>
+<summary>Zobrazit SIMLIB kód</summary>
+<br>
+
+Model je izomorfní k Petriho síti výše: každé místo, přechod a značka mají svůj protějšek v kódu.
+
+```cpp
+// 04–02 Automat na kávu – údržba po 50 obsluhách – model v SIMLIB/C++
+#include "simlib.h"
+
+const double A = 10;                   // střední interval příchodů (zadání ho neuvádí)
+const double B = 6;                    // střední doba obsluhy (zadání ji neuvádí)
+
+Facility Automat("Automat");           // místo „Automat“ (1 značka) + fronta
+Histogram Doba("Doba zákazníka v systému [č. j.]", 0, 5, 20);
+int pocet = 0;                         // místo „počet obsluh“ (čítač)
+int udrzeb = 0;                        // počet provedených údržeb
+
+class Udrzba : public Process {        // přechod „do údržby“ → údržba → 20
+  void Behavior() {
+    Seize(Automat, 1);                 // p=1: automat dostane dřív než čekající zákazník
+    udrzeb++;                          //   (zákazníka, kterému ho Release právě předal, vytlačí)
+    Wait(20);                          // časovaný přechod 20 ...
+    Release(Automat);                  // ... vrací značku do místa Automat
+  }
+};
+
+class Zakaznik : public Process {      // transakce = značka, která prochází sítí
+  void Behavior() {
+    double prichod = Time;
+    Seize(Automat);                    // fronta + obsazení
+    Wait(Exponential(B));              // časovaný přechod exp(B) přidá značku do čítače
+    if (++pocet == 50) {               // hrana s váhou 50: přechod „do údržby“
+      pocet = 0;                       //   čítač vynuluje; údržba je naplánovaná před
+      (new Udrzba)->Activate();        //   Release, poběží dřív než zákazník,
+    }                                  //   kterému Release předá automat
+    Release(Automat);                  // exp(B) vrací značku automatu
+    Doba(Time - prichod);
+  }                                    // konec Behavior = přechod „odchod“
+};
+
+class Generator : public Event {       // místo „příchody zákazníků“ ve smyčce s exp(A)
+  void Behavior() {
+    (new Zakaznik)->Activate();        // nová značka v místě „fronta“
+    Activate(Time + Exponential(A));   // další příchod
+  }
+};
+
+int main() {
+  Init(0, 100000);                     // modelový čas v časových jednotkách
+  (new Generator)->Activate();
+  Run();
+  Automat.Output();                    // vytížení = obsluha + údržba
+  Doba.Output();
+  Print("Počet údržeb: %d\n", udrzeb);
+}
+```
+
+| Petriho síť | SIMLIB |
+|---|---|
+| *příchody zákazníků* ⇄ `exp(A)` | událost `Generator`, která se znovu plánuje za `Exponential(A)` |
+| značka (zákazník) | proces `Zakaznik` |
+| *fronta* + obsazení automatu | `Seize(Automat)` (fronta je vnitřní fronta zařízení) |
+| časovaný přechod `exp(B)` se sloučeným uvolněním | `Wait(Exponential(B)); Release(Automat);` |
+| místo *Automat* (1 značka) | `Facility Automat` |
+| místo *počet obsluh*, hrana s váhou 50 | `int pocet`, `if (++pocet == 50) pocet = 0;` |
+| *do údržby* (`p=1`) | proces `Udrzba`, `Seize(Automat, 1)` (priorita obsluhy) |
+| *údržba* → `20` → *Automat* | `Wait(20); Release(Automat);` |
+| přechod *odchod* | konec metody `Behavior()` |
+
+**Kontrola simulací.** Petriho síť: *Automat* + obsluha + *údržba* = 1, v čítači je nejvýš 50 značek, údržba proběhla přesně po každé 50. obsluze (198 údržeb na 9 900 obsluh), fronta zůstává krátká (`make check`). SIMLIB model: v jednom běhu (100 000 č. j.) proběhlo 10 027 obsluh a 200 údržeb (10 027 / 50 = 200). Automat byl obsazený 64 % času; teoreticky 60 % obsluha (B/A = 6/10) a 4 % údržba (20 jednotek na 50 × 10 = 500 jednotek provozu). Ve 119 případech už automat po uvolnění dostal čekající zákazník a údržba ho vytlačila dřív, než jeho obsluha začala; ten pak čekal přesně 20 (fronta přerušených obsluh `Q2`), stejně jako by v síti čekal ve *frontě* (`make simlib`).
+
+</details>
+
 ## Původ a zdroje
 
 <details>
@@ -67,6 +135,10 @@ Kontrola simulací: *Automat* + obsluha + *údržba* = 1, v čítači je nejvý�
 <br>
 
 **Původ:** zkouška 2017/18, 2. termín, skupina C (hlavička je na fotce useknutá), otázka 1, 10 bodů. Stejná úloha (podle vzpomínky studenta, počet káv nejistý): zkouška 2018/19, 1. termín, otázka 1, 10 bodů.
+
+**Původní znění:**
+
+> 1. (10 bodů) Nakreslete Petriho síť pro systém typu M/M/1 s obslužnou linkou "automat na kafe". Automat se po každých 50 cyklech provedené obsluhy přepne do režimu údržby (není k dispozici) na dobu 20 časových jednotek.
 
 **Zdroje:**
 
