@@ -11,8 +11,8 @@ net.timed("obsl", (4.5, 0), "exp(10)")
 net.place("o", (6, 0), label="konec", label_pos="above")
 net.chain("q", "seize", "s", "obsl", "o")
 net.arc("f", "seize")
-net.arc("obsl", "f", bend=-25)
-net.timed("timeout", (1.5, -1.6), "10", horizontal=True, label="netrpělivost",
-          label_pos="below", param_pos="right")
+net.arc("obsl", "f", via=[(4.5, 1.7)])
+net.timed("timeout", (1.5, -1.6), "10", label="netrpělivost", param_pos="above",
+          label_pos="below")
 net.arc("q", "timeout", via=[(0, -1.6)])
 net.arc("timeout", "o", via=[(6, -1.6)])

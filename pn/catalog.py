@@ -24,7 +24,7 @@ TOPICS = {
 EXERCISES = [
     ("01–01", "Opravářská dílna", "přednáška, slajdy 157–164"),
     ("01–02", "Samoobsluha", "přednáška, slajdy 195–198"),
-    ("01–03", "Zdravotní středisko", "poznámky MSI (stochastické PN)"),
+    ("01–03", "Zdravotní ordinace", "poznámky MSI (stochastické PN)"),
     ("01–04", "Výrobní systém", "poznámky MSI (P/T sítě)"),
     ("01–05", "Kritická sekce", "poznámky MSI (P/T sítě)"),
     ("01–06", "Kravín", "příklad z přednášky (tabule luppo)"),

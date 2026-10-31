@@ -97,6 +97,8 @@ Podobné úlohy: [02–01 – Netrpělivé požadavky](<../02–01 - Netrpěliv�
   | constant | přesně 5 minut | `5 min` |
   | symbol | exponenciálně se středem X časových jednotek | `exp(X)` |
 
+  A time **without a distribution** („v průměru 6 minut“) stays as written: choosing the distribution is part of the exercise, and the hints state the choice.
+
   A **speed** („rychlostí 15 kubíků za hodinu“) stays as written: converting it to a time per unit (`4 min`) is part of the exercise, and the hints state the conversion.
 
   The rest of the text stays as in the source. Diverging from the original is accepted (at the exam one can ask); the original is kept as **Původní znění** in Původ a zdroje.
