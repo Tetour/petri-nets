@@ -246,8 +246,8 @@ Solutions to §5 A–D. Blue pen with red teacher notes. Small strokes; read car
 
 **p2 (B, jahody):**
 - "Sběrači" (5 tokens) ↔ "exp(20min)" → place "Fronta beden" → seize "Linka" (token) → place → "5-7min" → release.
-- Fronta beden has weight-10 arcs in and out (test) to the "p=1" transition "Spouštěcí podmínka (jednou proveditelné)". It also needs the red-circled place "Reakce" (token).
-- → place → transition "odvolání sběračů (přerušení práce)", which takes 5 sběrači (arc weight 5) → place → "1h pauza" → weight 5 back to Sběrači and back to Reakce.
+- Fronta beden has weight-10 arcs in and out (test) to the "p=1" transition "Spouštěcí podmínka (jednou proveditelné)". It also needs the red-circled place "Pracuje" (token; earlier misread as "Reakce", checked at 500 dpi).
+- → place → transition "odvolání sběračů (přerušení práce)", which takes 5 sběrači (arc weight 5) → place → "1h pauza" → weight 5 back to Sběrači and back to Pracuje.
 - "Alternativně" (same page): Sběrači(5) → exp → Fronta; a transition tests 10/10 on Fronta with an inhibitor-style red "(5)" → place → "1h" → 5 back. Note "jen na JEDNOU" (fires only once).
 
 **p3 (C, loď):**
