@@ -14,13 +14,12 @@ Podobné úlohy: [05–05 – Přerušení příchodů při plné frontě](<../0
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **Kdy se rozhoduje:** jen při příchodu („po každé nově příchozí transakci“). Zvolený interval platí až do dalšího příchodu, i když se fronta mezitím zkrátí. Značka generátoru proto po příchodu přejde do místa *po příchodu* a odtud jedním ze dvou přechodů do *intervalu A*, nebo do *intervalu B*. Každý z nich má svůj časovaný přechod (jeden přechod = jeden čas).
+- **Kdy se rozhoduje:** jen při příchodu („po každé nově příchozí transakci“). Zvolený interval platí až do dalšího příchodu, i když se fronta mezitím zkrátí. Značka generátoru proto po příchodu přejde do místa *po příchodu* a odtud jedním ze dvou přechodů do *intervalu A*, nebo do *intervalu B*. Každý z nich má svůj časovaný přechod `exp(A)`, resp. `exp(B)` (jeden přechod = jeden čas), a ten po příchodu vrací značku do *po příchodu*.
 - **„Fronta ≥ C“** testuje dvojice hran s váhou C (do přechodu a zpět). *Jinak* (`p=0`) žádný test nepotřebuje, provede se, jen když *fronta ≥ C* (`p=1`) proveditelná není. Inhibiční hrana tu tedy není potřeba.
 - **„Včetně nově příchozího“:** časovaný příchod dá značku do *Fronty* a do *po příchodu* zároveň, takže se nově příchozí do fronty počítá. Priorita `p=1` navíc zajistí, že test proběhne dřív než obsazení linky (`p=0`).
+- **M/M/1:** *Fronta* → obsazení *Linky* → `exp(S)`, který *Linku* vrací → *konec* → *odchod*. Doba obsluhy v zadání není, proto `exp(S)`.
 - Na začátku je fronta prázdná, proto je značka generátoru v *intervalu B*.
-- Doba obsluhy v zadání není, proto `exp(S)`.
 - Přepis z roku 2021/22 by šel číst i tak, že se rychlost generátoru přepíná průběžně podle aktuální fronty. Oficiální znění z roku 2022/23 to vyjasňuje: rozhoduje se jen při příchodu.
-- SIMLIB část otázky tu není řešená.
 
 </details>
 
@@ -31,16 +30,6 @@ Podobné úlohy: [05–05 – Přerušení příchodů při plné frontě](<../0
 <br>
 
 ![Petriho síť – interval příchodů podle délky fronty](net.svg)
-
-| Požadavek | Prvek sítě |
-|---|---|
-| po každém příchodu přehodnotit interval | `exp(A)` i `exp(B)` vracejí značku generátoru do *po příchodu* |
-| fronta (včetně nově příchozího) ≥ C → střední doba A | *fronta ≥ C* (`p=1`, test C na *Frontě*) → *interval A* ⇄ `exp(A)` |
-| jinak B | *jinak* (`p=0`) → *interval B* ⇄ `exp(B)` |
-| M/M/1 | *Fronta* → obsazení *Linky* → `exp(S)` (vrací *Linku*) → *odchod* |
-| transakce opouští systém | *odchod* |
-
-Kontrola simulací (A = 20, B = 5, C = 5, S = 8): *Linka* + obsluhovaná transakce = 1, značka generátoru je vždy právě v jednom ze tří míst. Pomalejší příchody `exp(A)` se volí asi u čtvrtiny příchodů. Fronta zůstává omezená, i když by ji samotné příchody `exp(B)` při obsluze `exp(8)` neudržely.
 
 </details>
 
@@ -54,6 +43,74 @@ Kontrola simulací (A = 20, B = 5, C = 5, S = 8): *Linka* + obsluhovaná transak
 - Přepínání režimu generátoru průběžně, testem fronty kdykoli (i mezi příchody). Rozhodnutí patří jen k okamžiku příchodu.
 - Test fronty jen hranou dovnitř: rozhodnutí by z fronty odebralo C transakcí.
 - Větev *jinak* bez nižší priority: při dlouhé frontě by se náhodně volil i interval B.
+
+</details>
+
+## SIMLIB
+
+<details>
+<summary>Zobrazit SIMLIB kód</summary>
+<br>
+
+Model je izomorfní k Petriho síti výše: každé místo, přechod a značka mají svůj protějšek v kódu. Hodnoty `A = 20`, `B = 5`, `C = 5` a `S = 8` jsou doplněné, zadání je nedává. Značku generátoru představuje událost `Generator`: o dalším intervalu rozhoduje hned po vytvoření transakce, tedy jen při příchodu. Nově aktivovaná transakce se do fronty linky zařadí až po skončení události, proto se k `QueueLen()` přičítá 1 („včetně nově příchozího“).
+
+```cpp
+// 05–04 Interval příchodů podle délky fronty – model v SIMLIB/C++
+#include "simlib.h"
+
+const double A = 20;                   // střední interval při dlouhé frontě exp(A)
+const double B = 5;                    // jinak exp(B)
+const unsigned C = 5;                  // hranice délky fronty
+const double S = 8;                    // střední doba obsluhy exp(S), zadání ji nedává
+
+Facility Linka("Linka");               // místo Linka s jednou značkou
+int intervalA = 0, intervalB = 0;      // počty provedení přechodů „fronta ≥ C“ a „jinak“
+
+class Transakce : public Process {     // transakce = značka, která prochází sítí
+  void Behavior() {
+    Seize(Linka);                      // Fronta + obsazení (bere značku Linky)
+    Wait(Exponential(S));              // časovaný přechod exp(S) ...
+    Release(Linka);                    // ... který vrací značku Lince
+  }                                    // konec Behavior = konec + odchod
+};
+
+class Generator : public Event {       // značka generátoru: interval A / B → po příchodu
+  void Behavior() {
+    (new Transakce)->Activate();       // příchod: nová značka ve Frontě
+    if (Linka.QueueLen() + 1 >= C) {   // fronta ≥ C (p=1), včetně nově příchozího
+      intervalA++;
+      Activate(Time + Exponential(A)); // → interval A ⇄ exp(A)
+    } else {                           // jinak (p=0)
+      intervalB++;
+      Activate(Time + Exponential(B)); // → interval B ⇄ exp(B)
+    }
+  }
+};
+
+int main() {
+  Init(0, 1000000);                    // modelový čas v časových jednotkách
+  (new Generator)->Activate(Exponential(B));  // na začátku je značka v „interval B“
+  Run();
+  Linka.Output();
+  Print("Interval A zvolen %d×, interval B %d× (A u %.1f %% příchodů)\n",
+        intervalA, intervalB, 100.0 * intervalA / (intervalA + intervalB));
+}
+```
+
+| Petriho síť | SIMLIB |
+|---|---|
+| značka generátoru v *interval A* / *interval B* | událost `Generator` naplánovaná za `Exponential(A)` / `Exponential(B)` |
+| na začátku značka v *interval B* | `(new Generator)->Activate(Exponential(B))` |
+| `exp(A)` / `exp(B)`: transakce do *Fronty*, značka do *po příchodu* | `(new Transakce)->Activate()` na začátku `Behavior()` generátoru |
+| *fronta ≥ C* (`p=1`, test C na *Frontě*) | `if (Linka.QueueLen() + 1 >= C)` |
+| *jinak* (`p=0`) | větev `else` |
+| značka (transakce) | proces `Transakce` |
+| *Fronta* + obsazení *Linky* | `Seize(Linka)` (fronta je vnitřní fronta zařízení) |
+| místo *Linka* (1 značka) | `Facility Linka` |
+| `exp(S)` se sloučeným uvolněním | `Wait(Exponential(S)); Release(Linka);` |
+| *konec* → *odchod* | konec metody `Behavior()` transakce |
+
+**Kontrola simulací.** Petriho síť: *Linka* + obsluhovaná transakce = 1, značka generátoru je vždy právě v jednom ze tří míst, všechny přechody se provádějí (`make check`). Pomalejší příchody `exp(A)` se volí asi u čtvrtiny příchodů. Fronta zůstává omezená, i když by ji samotné příchody `exp(B)` při obsluze `exp(8)` neudržely. SIMLIB model: v jednom běhu (10⁶ časových jednotek) se interval A zvolil u 26,5 % příchodů, fronta měla nejvýš 14 čekajících a linka byla vytížena na 89,4 %. To odpovídá 111 492 příchodům × 8 / 10⁶ = 89,2 % (`make simlib`).
 
 </details>
 
