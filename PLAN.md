@@ -95,6 +95,8 @@ exercises/09–10 - Kopírovací centrum/
 
 Folder and note are named `<TT–NN> - <název>`. The id carries no origin; the origin is in the note's last section **Původ a zdroje**.
 
+The current, binding description of a note is [notation/NOTE.md](notation/NOTE.md) (with [01–01](exercises/01–01%20-%20Opravářská%20dílna/01–01%20-%20Opravářská%20dílna.md) as the reference note); the summary below is kept for the plan's history.
+
 Each note has these sections (headings in Czech):
 
 1. **Zadání**: the task text and links to similar exercises. The times in the text are rewritten into one uniform form: the distribution as a Czech adverb before the value, units as whole words, no brackets — „exponenciálně se středem 20 minut“, „rovnoměrně 10–15 minut“, „přesně 5 minut“, „exponenciálně se středem X časových jednotek“. Diverging from the original wording is accepted (at the exam one can ask); the original is kept as **Původní znění** in the hidden section 6. (The diagram keeps the short labels `exp(20 min)`, `10–15 min`, `5 min`.)
