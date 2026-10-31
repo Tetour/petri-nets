@@ -4,53 +4,51 @@ net = Net("07–05", "Ukázky: a) priorita procesu (pořadí ve frontě), b) pri
 net.params = {"A": 10, "P": 30, "B": 6}
 
 
-def mm1(k, y0, preemptive):
+def mm1(k, yc, preemptive):
     """M/M/1 s prioritními (P, nahoře) a normálními (N, dole) transakcemi; k = předpona."""
     def n(name):
         return f"{k}_{name}"
 
-    yp, yn, ym = y0 + 4, y0, y0 + 2
-    net.place(n("gen_p"), (0, yp), tokens=1, label="generátor P", label_pos="above")
-    net.timed(n("prichod_p"), (1.5, yp), "exp(P)")
-    net.loop(n("gen_p"), n("prichod_p"))
-    net.place(n("fronta_p"), (3, yp), label="Fronta P")
-    net.immediate(n("obsaz_p"), (4.5, yp), p=1, param_pos="above")
-    net.place(n("obsluha_p"), (6.3, yp))
-    net.timed(n("obsl_p"), (7.8, yp), "exp(B)", param_pos="above")
-    net.chain(n("prichod_p"), n("fronta_p"), n("obsaz_p"), n("obsluha_p"), n("obsl_p"))
+    for row, y, time in (("p", yc + 2, "exp(P)"), ("n", yc - 2, "exp(A)")):
+        side = "above" if y > yc else "below"
+        net.place(n(f"gen_{row}"), (0, y), tokens=1, label=f"příchody {row.upper()}", label_pos=side)
+        net.timed(n(f"prichod_{row}"), (1.5, y), time, param_pos=side)
+        net.loop(n(f"gen_{row}"), n(f"prichod_{row}"))
+        net.place(n(f"fronta_{row}"), (3, y), label=f"fronta {row.upper()}", label_pos=side)
+        net.place(n(f"obsluha_{row}"), (6.5, y))
+        net.timed(n(f"obsl_{row}"), (8, y), "exp(B)", param_pos=side)
+        net.arc(n(f"prichod_{row}"), n(f"fronta_{row}"))
+        net.chain(n(f"obsaz_{row}"), n(f"obsluha_{row}"), n(f"obsl_{row}"))
 
-    net.place(n("gen_n"), (0, yn), tokens=1, label="generátor N", label_pos="below")
-    net.timed(n("prichod_n"), (1.5, yn), "exp(A)")
-    net.loop(n("gen_n"), n("prichod_n"))
-    net.place(n("fronta_n"), (3, yn), label="Fronta N", label_pos="below")
-    net.immediate(n("obsaz_n"), (4.5, yn))
-    net.place(n("obsluha_n"), (6.3, yn))
-    net.timed(n("obsl_n"), (7.8, yn), "exp(B)")
-    net.chain(n("prichod_n"), n("fronta_n"), n("obsaz_n"), n("obsluha_n"), n("obsl_n"))
-
-    net.place(n("linka"), (5.4, ym), tokens=1, label="Linka", label_pos="above right")
+    # jedna linka pro oba druhy; prioritní ji obsadí přednostně (p=1)
+    net.place(n("linka"), (5, yc), tokens=1, label="linka", label_pos="above left")
+    net.immediate(n("obsaz_p"), (5, yc + 2), p=1, param_pos="above")
+    net.immediate(n("obsaz_n"), (5, yc - 2))
+    net.arc(n("fronta_p"), n("obsaz_p"))
+    net.arc(n("fronta_n"), n("obsaz_n"))
     net.arc(n("linka"), n("obsaz_p"))
     net.arc(n("linka"), n("obsaz_n"))
-    net.arc(n("obsl_p"), n("linka"), bend=40)
-    net.arc(n("obsl_n"), n("linka"), bend=-40)
+    net.arc(n("obsl_p"), n("linka"), out=270, into=25)
+    net.arc(n("obsl_n"), n("linka"), out=90, into=-25)
 
     if preemptive:
-        net.immediate(n("preruseni"), (3, ym), label="přerušení", label_pos="left")
+        # hrana z obsluhy N obchází zdola a zleva proud N (jinak by křížila linku)
+        net.immediate(n("preruseni"), (3, yc), label="přerušení", label_pos="below right")
         net.loop(n("fronta_p"), n("preruseni"), bend=20)
-        net.arc(n("obsluha_n"), n("preruseni"))
+        net.arc(n("obsluha_n"), n("preruseni"), via=[(6.5, yc - 3.4), (-1.2, yc - 3.4), (-1.2, yc)])
         net.arc(n("preruseni"), n("fronta_n"))
         net.arc(n("preruseni"), n("linka"))
 
-    net.place(n("konec"), (9.3, ym))
-    net.immediate(n("odchod"), (10.8, ym), exit=True, label="odchod")
-    net.arc(n("obsl_p"), n("konec"))
-    net.arc(n("obsl_n"), n("konec"))
+    net.place(n("konec"), (9.5, yc), label="obslouženo", label_pos="left")
+    net.immediate(n("odchod"), (11, yc), exit=True, label="odchod")
+    net.arc(n("obsl_p"), n("konec"), via=[(9.5, yc + 2)], corner=20)
+    net.arc(n("obsl_n"), n("konec"), via=[(9.5, yc - 2)], corner=20)
     net.arc(n("konec"), n("odchod"))
 
     net.invariant({n("linka"): 1, n("obsluha_p"): 1, n("obsluha_n"): 1}, 1)
 
 
-net.notes.append(((-0.6, 5.5), "a) priorita procesu"))
+net.notes.append(((-1.6, 3.6), "a) priorita procesu"))
 mm1("a", 0, preemptive=False)
-net.notes.append(((-0.6, -2.0), "b) priorita obsluhy"))
-mm1("b", -8, preemptive=True)
+net.notes.append(((-1.6, -3.6), "b) priorita obsluhy"))
+mm1("b", -7.4, preemptive=True)

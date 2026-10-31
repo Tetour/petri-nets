@@ -3,44 +3,42 @@ from pn import Net
 net = Net("07–04", "M/M/1 se dvěma proudy příchodů, prioritní mají vyšší prioritu obsluhy")
 net.params = {"A": 10, "P": 30, "B": 6}
 
-# prioritní proud (nahoře)
-net.place("gen_p", (0, 4), tokens=1, label="generátor P", label_pos="above")
-net.timed("prichod_p", (1.5, 4), "exp(P)")
-net.loop("gen_p", "prichod_p")
-net.place("fronta_p", (3, 4), label="Fronta P")
-net.immediate("obsaz_p", (4.5, 4), p=1, param_pos="above")
-net.place("obsluha_p", (6.3, 4))
-net.timed("obsl_p", (7.8, 4), "exp(B)", param_pos="above")
-net.chain("prichod_p", "fronta_p", "obsaz_p", "obsluha_p", "obsl_p")
+# horní řada prioritní proud (P), dolní normální (N); linka je mezi řadami
+for row, y, time in (("p", 2, "exp(P)"), ("n", -2, "exp(A)")):
+    up = y > 0
+    side = "above" if up else "below"
+    net.place(f"gen_{row}", (0, y), tokens=1, label=f"příchody {row.upper()}", label_pos=side)
+    net.timed(f"prichod_{row}", (1.5, y), time, param_pos=side)
+    net.loop(f"gen_{row}", f"prichod_{row}")
+    net.place(f"fronta_{row}", (3, y), label=f"fronta {row.upper()}", label_pos=side)
+    net.place(f"obsluha_{row}", (6.5, y))
+    net.timed(f"obsl_{row}", (8, y), "exp(B)", param_pos=side)
+    net.arc(f"prichod_{row}", f"fronta_{row}")
+    net.chain(f"obsaz_{row}", f"obsluha_{row}", f"obsl_{row}")
 
-# normální proud (dole)
-net.place("gen_n", (0, 0), tokens=1, label="generátor N", label_pos="below")
-net.timed("prichod_n", (1.5, 0), "exp(A)")
-net.loop("gen_n", "prichod_n")
-net.place("fronta_n", (3, 0), label="Fronta N", label_pos="below")
-net.immediate("obsaz_n", (4.5, 0))
-net.place("obsluha_n", (6.3, 0))
-net.timed("obsl_n", (7.8, 0), "exp(B)")
-net.chain("prichod_n", "fronta_n", "obsaz_n", "obsluha_n", "obsl_n")
-
-# jedna linka pro oba proudy
-net.place("linka", (5.4, 2), tokens=1, label="Linka", label_pos="above right")
+# jedna linka pro oba proudy; prioritní ji obsadí přednostně (p=1)
+net.place("linka", (5, 0), tokens=1, label="linka", label_pos="above left")
+net.immediate("obsaz_p", (5, 2), p=1, param_pos="above")
+net.immediate("obsaz_n", (5, -2))
+net.arc("fronta_p", "obsaz_p")
+net.arc("fronta_n", "obsaz_n")
 net.arc("linka", "obsaz_p")
 net.arc("linka", "obsaz_n")
-net.arc("obsl_p", "linka", bend=40)
-net.arc("obsl_n", "linka", bend=-40)
+net.arc("obsl_p", "linka", out=270, into=25)
+net.arc("obsl_n", "linka", out=90, into=-25)
 
-# priorita obsluhy: čekající prioritní vyhodí normální transakci z obsluhy
-net.immediate("preruseni", (3, 2), label="přerušení", label_pos="left")
+# priorita obsluhy: čekající prioritní vyhodí normální transakci z obsluhy;
+# hrana z obsluhy N obchází zdola a zleva proud N (jinak by křížila linku)
+net.immediate("preruseni", (3, 0), label="přerušení", label_pos="below right")
 net.loop("fronta_p", "preruseni", bend=20)
-net.arc("obsluha_n", "preruseni")
+net.arc("obsluha_n", "preruseni", via=[(6.5, -3.4), (-1.2, -3.4), (-1.2, 0)])
 net.arc("preruseni", "fronta_n")
 net.arc("preruseni", "linka")
 
-net.place("konec", (9.3, 2))
-net.immediate("odchod", (10.8, 2), exit=True, label="odchod")
-net.arc("obsl_p", "konec")
-net.arc("obsl_n", "konec")
+net.place("konec", (9.5, 0), label="obslouženo", label_pos="left")
+net.immediate("odchod", (11, 0), exit=True, label="odchod")
+net.arc("obsl_p", "konec", via=[(9.5, 2)], corner=20)
+net.arc("obsl_n", "konec", via=[(9.5, -2)], corner=20)
 net.arc("konec", "odchod")
 
 net.invariant({"linka": 1, "obsluha_p": 1, "obsluha_n": 1}, 1)

@@ -15,11 +15,12 @@ Podobné úlohy:
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **M/M/3 = sklad se třemi linkami:** místo *Linky* se 3 značkami. Prioritní transakce zabere dvě linky jedním přechodem s hranou váhy 2 („současně“) a časovaný přechod jí obě vrátí (hrana váhy 2 zpět). Normální bere a vrací jednu.
-- **Jaká priorita:** zadání ji neupřesňuje. M/M/3 se modeluje skladem a sklad prioritu obsluhy nemá (slajd 188). Přerušovat by se navíc musely až dvě cizí obsluhy. Jde tedy o prioritu procesu: `p=1` na obsazení dvou linek. Čekají-li oba druhy a jsou-li volné aspoň dvě linky, jde dřív prioritní.
-- **Předbíhání u jedné volné linky:** prioritní ji použít nemůže, takže ji dostane čekající normální transakce. Stejně se chová sklad v SIMLIBu: „První čekající s uspokojitelným požadavkem je obsloužen (nemusí být první ve frontě)“ (slajd 188). Kdyby prioritní měla normální zastavit, dokud se neuvolní dvě linky, musela by síť testovat prázdnou *Frontu P* (inhibiční hranou). To zadání nežádá.
+- Čísla zadání nedává: příchody `exp(X)` (místo *příchody transakcí* ve smyčce), obsluha `exp(Y)` pro oba druhy jako ve studentském řešení.
 - **Druh transakce** určí pravděpodobnostní větvení hned po příchodu (20 % / 80 %), každý druh pak čeká ve vlastní frontě.
-- Čísla zadání nedává: příchody `exp(X)`, obsluha `exp(Y)` pro oba druhy jako ve studentském řešení.
+- **M/M/3 = sklad se třemi linkami:** místo *linky* se 3 značkami. Prioritní transakce zabere dvě linky jedním přechodem s hranou váhy 2 („současně“) a časovaný přechod jí obě vrátí (hrana váhy 2 zpět). Normální bere a vrací jednu.
+- **Jaká priorita:** zadání ji neupřesňuje. M/M/3 se modeluje skladem a sklad prioritu obsluhy nemá (slajd 188). Přerušovat by se navíc musely až dvě cizí obsluhy. Jde tedy o prioritu procesu: `p=1` na obsazení dvou linek. Čekají-li oba druhy a jsou-li volné aspoň dvě linky, jde dřív prioritní.
+- **Předbíhání u jedné volné linky:** prioritní ji použít nemůže, takže ji dostane čekající normální transakce. Stejně se chová sklad v SIMLIBu: „První čekající s uspokojitelným požadavkem je obsloužen (nemusí být první ve frontě)“ (slajd 188). Kdyby prioritní měla normální zastavit, dokud se neuvolní dvě linky, musela by síť testovat prázdnou *frontu P* (inhibiční hranou). To zadání nežádá.
+- Obsloužená transakce **opouští systém** přechodem *odchod*.
 
 </details>
 
@@ -30,16 +31,6 @@ Podobné úlohy:
 <br>
 
 ![Petriho síť – M/M/3, prioritní transakce zabírají dvě linky](net.svg)
-
-| Požadavek | Prvek sítě |
-|---|---|
-| M/M/3 | *generátor* ⇄ `exp(X)`; *Linky* (3 značky); obsluha `exp(Y)` |
-| 20 % transakcí je prioritních | větvení `20 %` → *Fronta P*, `80 %` → *Fronta N* |
-| prioritní zabírá dvě linky současně | obsazení s hranou váhy 2 z *Linek*, `exp(Y)` vrací 2 |
-| prioritní má přednost | obsazení z *Fronty P* s `p=1` |
-| transakce opouští systém | *odchod* |
-
-Kontrola simulací: *Linky* + 2 × obsluha P + obsluha N = 3, takže najednou se obsluhuje nejvýš jedna prioritní transakce. Prioritních je asi 20 % a obě fronty zůstávají omezené.
 
 </details>
 
@@ -53,6 +44,75 @@ Kontrola simulací: *Linky* + 2 × obsluha P + obsluha N = 3, takže najednou se
 - *Linky* s jednou značkou místo tří.
 - Dvě linky obsazené dvěma postupnými přechody. Prioritní pak drží jednu linku nevyužitou a čeká na druhou, zadání chce obě současně.
 - Pravděpodobnost i priorita na jednom přechodu (`20 %, p=1`). Přechod má jen jeden parametr.
+- V SIMLIBu `Facility` místo `Store`, nebo `Enter(Linky, 2)` a `Leave(Linky, 1)`.
+
+</details>
+
+## SIMLIB
+
+<details>
+<summary>Zobrazit SIMLIB kód</summary>
+<br>
+
+Model je izomorfní k Petriho síti výše: každé místo, přechod a značka mají svůj protějšek v kódu. Obě fronty sítě jsou v SIMLIBu jedna fronta skladu seřazená podle atributu `Priority`; `Leave` prochází frontu od začátku a pustí každého, komu stačí volná kapacita, takže normální transakce může předběhnout prioritní stejně jako v síti.
+
+```cpp
+// 07–06 M/M/3, prioritní transakce zabírají dvě linky – model v SIMLIB/C++
+#include "simlib.h"
+
+const double X = 10, Y = 15;               // hodnoty symbolů X a Y
+
+Store Linky("Linky", 3);                   // místo „linky“ se 3 značkami
+Histogram CekaniP("Čekání prioritních", 0, 2, 15);
+Histogram CekaniN("Čekání normálních", 0, 2, 15);
+
+class Transakce : public Process {         // transakce = značka, která prochází sítí
+  void Behavior() {
+    double prichod = Time;
+    if (Random() < 0.2) {                  // okamžitý přechod 20 %
+      Priority = 1;                        // priorita procesu = p=1 na obsazení z „fronty P“
+      Enter(Linky, 2);                     // hrana s váhou 2: obě linky současně
+      CekaniP(Time - prichod);
+      Wait(Exponential(Y));                // časovaný přechod exp(Y) ...
+      Leave(Linky, 2);                     // ... vrací obě linky (hrana s váhou 2)
+    } else {                               // okamžitý přechod 80 %
+      Enter(Linky, 1);
+      CekaniN(Time - prichod);
+      Wait(Exponential(Y));
+      Leave(Linky, 1);
+    }
+  }                                        // konec Behavior = přechod „odchod“
+};
+
+class Prichody : public Event {            // místo „příchody transakcí“ ve smyčce s exp(X)
+  void Behavior() {
+    (new Transakce)->Activate();
+    Activate(Time + Exponential(X));
+  }
+};
+
+int main() {
+  Init(0, 1000000);                        // časová jednotka podle X a Y (např. minuty)
+  (new Prichody)->Activate();
+  Run();
+  Linky.Output();
+  CekaniP.Output();
+  CekaniN.Output();
+}
+```
+
+| Petriho síť | SIMLIB |
+|---|---|
+| *příchody transakcí* ⇄ `exp(X)` | událost `Prichody`, která se znovu plánuje za `Exponential(X)` |
+| značka (transakce) | proces `Transakce` |
+| `20 %` / `80 %` | `if (Random() < 0.2)` |
+| *fronta P*, obsazení s `p=1` a hranou váhy 2 | `Priority = 1; Enter(Linky, 2);` |
+| *fronta N*, obsazení s `p=0` | `Enter(Linky, 1);` |
+| místo *linky* (3 značky) | `Store Linky("Linky", 3)` |
+| `exp(Y)` vrací 2 (1) značky | `Wait(Exponential(Y)); Leave(Linky, 2);` (`Leave(Linky, 1)`) |
+| přechod *odchod* | konec metody `Behavior()` |
+
+**Kontrola simulací.** Petriho síť: *linky* + 2 × obsluha P + obsluha N = 3, takže najednou se obsluhuje nejvýš jedna prioritní transakce. Prioritních je asi 20 %, obě fronty zůstávají omezené a všechny přechody se provádějí (`make check`). SIMLIB model (X = 10, Y = 15, 10⁶ časových jednotek): průměrně bylo obsazeno 1,81 linky, teoreticky 0,1 × (0,2 × 2 + 0,8 × 1) × 15 = 1,8. Prioritní transakce čekaly v průměru 16,5 časové jednotky, normální jen 6,2: priorita procesu nepomůže, když prioritní potřebuje dvě volné linky najednou a normální jí uvolněné linky po jedné berou (`make simlib`).
 
 </details>
 

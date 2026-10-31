@@ -2,51 +2,54 @@ from pn import Net
 
 net = Net("07–03", "Tiskárna M/M/1: každá 10. úloha má vyšší prioritu obsluhy (přeruší probíhající tisk)")
 
-net.place("gen", (0, 2), tokens=1, label="generátor", label_pos="above")
-net.timed("prichod", (1.5, 2), "exp(6 min)")
+Y = 2.4  # vzdálenost řad od středu
+
+net.place("gen", (0, 0), tokens=1, label="příchody úloh", label_pos="above")
+net.timed("prichod", (1.5, 0), "exp(6 min)", param_pos="below")
 net.loop("gen", "prichod")
-net.place("nova", (3, 2), label="úloha", label_pos="above")
+net.place("nova", (3, 0), label="úloha", label_pos="right")
 net.arc("prichod", "nova")
 
 # čítač příchodů: 10. úloha jde do prioritní fronty a čítač se vynuluje
-net.place("citac", (3, 4), label="čítač", label_pos="above")
+net.place("citac", (1.5, Y + 1.6), label="čítač", label_pos="left")
 net.arc("prichod", "citac")
-net.immediate("desata", (4.5, 4), p=1, param_pos="above")
-net.immediate("ostatni", (4.5, 0))
-net.arc("citac", "desata", w=10, w_pos="above")
-net.arc("nova", "desata")
-net.arc("nova", "ostatni")
-net.place("fronta_p", (6, 4), label="Fronta P", label_pos="above")
-net.place("fronta_n", (6, 0), label="Fronta N", label_pos="below")
-net.arc("desata", "fronta_p")
-net.arc("ostatni", "fronta_n")
+net.immediate("vyber_p", (4.5, Y), p=1, param_pos="below")
+net.immediate("vyber_n", (4.5, -Y))
+net.arc("citac", "vyber_p", w=10, via=[(4.5, Y + 1.6)], w_pos="above")
 
-# tiskárna
-net.place("tiskarna", (8.4, 2), tokens=1, label="Tiskárna", label_pos="above right")
-net.immediate("obsaz_p", (7.5, 4), p=1, param_pos="above")
-net.immediate("obsaz_n", (7.5, 0))
-net.place("tisk_p", (9.3, 4))
-net.place("tisk_n", (9.3, 0))
-net.timed("konec_p", (10.8, 4), "exp(4 min)", param_pos="above")
-net.timed("konec_n", (10.8, 0), "exp(4 min)")
-net.chain("fronta_p", "obsaz_p", "tisk_p", "konec_p")
-net.chain("fronta_n", "obsaz_n", "tisk_n", "konec_n")
+# horní řada úlohy vedení (každá 10.), dolní běžné; tiskárna je mezi řadami
+for row, y, name in (("p", Y, "fronta P"), ("n", -Y, "fronta N")):
+    up = y > 0
+    net.arc("nova", f"vyber_{row}", via=[(3, y)], corner=20)
+    net.place(f"fronta_{row}", (6, y), label=name, label_pos="above" if up else "below")
+    net.place(f"tisk_{row}", (9.5, y))
+    net.timed(f"konec_{row}", (11, y), "exp(4 min)", param_pos="above" if up else "below")
+    net.chain(f"vyber_{row}", f"fronta_{row}")
+    net.chain(f"obsaz_{row}", f"tisk_{row}", f"konec_{row}")
+
+net.place("tiskarna", (8, 0), tokens=1, label="tiskárna", label_pos="above left")
+net.immediate("obsaz_p", (8, Y), p=1, param_pos="above")
+net.immediate("obsaz_n", (8, -Y))
+net.arc("fronta_p", "obsaz_p")
+net.arc("fronta_n", "obsaz_n")
 net.arc("tiskarna", "obsaz_p")
 net.arc("tiskarna", "obsaz_n")
-net.arc("konec_p", "tiskarna", bend=40)
-net.arc("konec_n", "tiskarna", bend=-40)
+net.arc("konec_p", "tiskarna", out=270, into=25)
+net.arc("konec_n", "tiskarna", out=90, into=-25)
 
-# priorita obsluhy: čekající prioritní úloha vyhodí běžnou z tisku a tiskárnu hned zabere (p=1)
-net.immediate("preruseni", (6, 2), label="přerušení", label_pos="left")
+# priorita obsluhy: čekající prioritní úloha vyhodí běžnou z tisku a tiskárnu hned zabere (p=1).
+# Síť s jednou tiskárnou, společným odchodem a tímto přechodem nejde nakreslit bez křížení
+# (není rovinná): hrana z tisku N kříží hranu tiskárna → obsazení N.
+net.immediate("preruseni", (6, 0), label="přerušení", label_pos="below right")
 net.loop("fronta_p", "preruseni", bend=20)
-net.arc("tisk_n", "preruseni")
-net.arc("preruseni", "fronta_n")
+net.arc("tisk_n", "preruseni", via=[(9.5, -1.0), (6, -1.0)])
+net.arc("preruseni", "fronta_n", via=[(5.25, 0), (5.25, -1.5), (6, -1.5)])
 net.arc("preruseni", "tiskarna")
 
-net.place("konec", (12.3, 2))
-net.immediate("odchod", (13.8, 2), exit=True, label="odchod")
-net.arc("konec_p", "konec")
-net.arc("konec_n", "konec")
+net.place("konec", (12.5, 0), label="vytištěno", label_pos="left")
+net.immediate("odchod", (14, 0), exit=True, label="odchod")
+net.arc("konec_p", "konec", via=[(12.5, Y)], corner=20)
+net.arc("konec_n", "konec", via=[(12.5, -Y)], corner=20)
 net.arc("konec", "odchod")
 
 net.invariant({"tiskarna": 1, "tisk_p": 1, "tisk_n": 1}, 1)
