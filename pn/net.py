@@ -47,7 +47,7 @@ class Transition:
 class Arc:
     src: str
     dst: str
-    w: int = 1
+    w: int | str = 1            # a symbol (e.g. "C") needs a value in net.params
     inhibitor: bool = False
     bend: float = 0             # degrees; positive bends left
     via: list = field(default_factory=list)

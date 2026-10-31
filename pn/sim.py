@@ -5,7 +5,8 @@ Semantics follow the IMS slides:
   the highest priority wins, ties are broken by probability or uniformly;
 - a timed transition starts counting when it becomes enabled and the tokens
   stay in its input places while it counts (slide 137), so another transition
-  may take them away and the countdown is cancelled (slide 139);
+  may take them away and the countdown is cancelled (slide 139) — immediately,
+  even if the place is refilled in the same instant (also by a test arc);
 - an ordinary timed transition does not limit how many tokens wait in it at
   once (slide 138): every enabling instance has its own clock. A `capacity`
   limits the number of clocks. When an instance is cancelled, the oldest one
@@ -76,9 +77,12 @@ def run(net, until=None, events=None, seed=1, start=None):
     M = initial(net, start)
     imm = [t for t in net.transitions.values() if t.kind == "immediate"]
     tim = [t for t in net.transitions.values() if t.kind == "timed"]
-    ins = {t: net.inputs(t) for t in net.transitions}
-    inh = {t: net.inhibitors(t) for t in net.transitions}
-    outs = {t: net.outputs(t) for t in net.transitions}
+    def num(w):  # arc weights may be symbols with a value in net.params
+        return w if isinstance(w, int) else int(net.params[w])
+
+    ins = {t: [(p, num(w)) for p, w in net.inputs(t)] for t in net.transitions}
+    inh = {t: [(p, num(w)) for p, w in net.inhibitors(t)] for t in net.transitions}
+    outs = {t: [(p, num(w)) for p, w in net.outputs(t)] for t in net.transitions}
     samp = {t.id: sampler(t.sim or t.time, net) for t in tim}
     clocks = {t.id: [] for t in tim}          # list of (start, fire_at)
     fired = Counter()
@@ -97,10 +101,25 @@ def run(net, until=None, events=None, seed=1, start=None):
         for p, w in ins[t]:
             M[p] -= w
             assert M[p] >= 0
+        cancel()
         for p, w in outs[t]:
             M[p] += w
             peak[p] = max(peak[p], M[p])
         fired[t] += 1
+
+    def cancel():
+        """A countdown whose transition lost its tokens ends at once, even if the place is
+        refilled in the same instant (that is a new enabling with a new countdown).
+        Called after the inputs are removed and before the outputs are added, so a test
+        arc (take and put back) on a place feeding a timed transition also restarts that
+        countdown (slides 137–139). Keep such state in a separate place if it must not."""
+        for t in tim:
+            cl = clocks[t.id]
+            if cl:
+                d = degree(t.id)
+                if len(cl) > d:
+                    cl.sort()
+                    del cl[:len(cl) - d]
 
     def check():
         for name, coefs, value in net.invariants:

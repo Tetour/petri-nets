@@ -12,7 +12,10 @@ def lint(net):
             problems.append(f"arc {a.src} -> {a.dst} must connect a place and a transition")
         if a.inhibitor and a.src not in P:
             problems.append(f"inhibitor arc {a.src} -> {a.dst} must start in a place")
-        if a.w < 1:
+        if isinstance(a.w, str):
+            if a.w not in net.params:
+                problems.append(f"arc {a.src} -> {a.dst}: weight symbol {a.w!r} has no value in net.params")
+        elif a.w < 1:
             problems.append(f"arc {a.src} -> {a.dst} has weight {a.w}")
     used = {a.src for a in net.arcs} | {a.dst for a in net.arcs}
     for n in list(P) + list(T):

@@ -36,6 +36,8 @@ Podobné úlohy: [09–03 – Psí salon](<../09–03 - Psí salon/09–03 - Ps�
 - **Neřešený případ:** lupič, který přijde během přepadení nebo obnovy, počká v *Lupič u banky*, až se obnoví provoz (nebo odejde, když uvidí policistu). Při středu 1 měsíc to prakticky nenastane.
 - Klient vyhnaný z fronty odchází vlastním výstupním přechodem vlevo, klient od přepážky přes *konec*. Obojí je odchod ze systému; dva přechody jsou tu jen kvůli přehlednosti kresby.
 
+- **Jemnost sémantiky:** přechody *vidí policistu* a *zlikvidování* testují místo *Policista u banky* hranou tam a zpět. To místo je zároveň vstupem časovaného přechodu `3–5 min`, takže test jeho odpočet formálně zruší a spustí znovu (slajdy 137–139): policista u banky zůstane o chvíli déle. Tady se to stane nejvýš jednou za přepadení (zhruba jednou za měsíc), takže to na chování nic nemění. Přesný model by měl stav „policista přítomen“ v samostatném místě, které časovaný přechod nebere.
+
 </details>
 
 ## Řešení

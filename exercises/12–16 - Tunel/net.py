@@ -29,12 +29,25 @@ net.immediate("preruseni", (4.5, 0.9), label="přerušení", label_pos="above le
 net.arc("rychle", "preruseni")
 net.arc("preruseni", "a_metr")
 
-# den 16 h a noc 8 h; začínáme ráno
+# den 16 h a noc 8 h; začínáme ráno.
+# Odpočet noci běží na vlastním místě „noc trvá“. Vrtání testuje jen stavové místo „Noc“:
+# testovací hrana značku na okamžik vezme a vrátí, a kdyby testovala místo, ze kterého bere
+# časovaný přechod 8 h, každý nový metr by noc prodloužil (slajdy 137–139).
 net.place("noc", (6, 0), label="Noc", label_pos="above")
-net.place("den", (9, 0), tokens=1, label="Den", label_pos="right")
-net.timed("t_noc", (7.5, 0.8), "8 h", param_pos="above")
-net.timed("t_den", (7.5, -0.8), "16 h", param_pos="below")
-net.chain("noc", "t_noc", "den", "t_den", "noc")
+net.place("noc_trva", (9, 0.3), label="noc trvá", label_pos="left")
+net.place("den", (10.3, -0.35), tokens=1, label="Den", label_pos="right")
+net.timed("t_den", (9, 1.5), "16 h", param_pos="right")
+net.timed("t_noc", (9, -1.0), "8 h", param_pos="right")
+net.arc("den", "t_den")
+net.arc("t_den", "noc_trva")
+net.arc("t_den", "noc")
+net.arc("noc_trva", "t_noc")
+net.arc("t_noc", "den")
+net.place("rano", (7.5, -1.0), label="ráno", label_pos="below")
+net.arc("t_noc", "rano")
+net.immediate("konec_noci", (6, -1.0), p=2, horizontal=True, param_pos="below")
+net.arc("rano", "konec_noci")
+net.arc("noc", "konec_noci")
 net.loop("noc", "preruseni", bend=15)
 net.loop("noc", "a_pomalu", bend=15)
 
@@ -63,7 +76,8 @@ net.arc("t_b", "vyvrtano", via=[(15, -4.2)])
 net.immediate("setkani", (16.8, -1.6), exit=True, label="setkání, konec prací", label_pos="above")
 net.arc("vyvrtano", "setkani", w=1000, w_pos="below")
 
-net.invariant({"den": 1, "noc": 1}, 1)
+net.invariant({"den": 1, "noc_trva": 1}, 1)
+net.invariant({"noc": 1, "rano": 1, "den": 1}, 1, name="Noc + ráno + Den = 1")
 net.invariant({"a_volna": 1, "a_metr": 1, "rychle": 1, "pomalu": 1, "a_hotovo": 1}, 1)
 net.invariant({"b_volna": 1, "b_vrta": 1}, 1)
 net.bound("zbyva", 1000)

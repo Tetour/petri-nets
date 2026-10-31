@@ -1,0 +1,35 @@
+from pn import Net
+
+net = Net("03–07", "M/M/1, každá 10. obsloužená transakce vyvolá poruchu linky na dobu C")
+net.params = {"A": 10, "B": 6, "C": 5}
+
+# M/M/1 (rozmístění jako v 03–02)
+net.place("gen", (0, 0), tokens=1, label="generátor", label_pos="above")
+net.timed("prichod", (1.5, 0), "exp(A)")
+net.loop("gen", "prichod")
+net.place("fronta", (3, 0), label="Fronta")
+net.place("linka", (5.4, 1.7), tokens=1, label="Linka", label_pos="left")
+net.immediate("obsaz", (4.5, 0))
+net.place("obsluha", (6.3, 0))
+net.timed("obsl", (7.8, 0), "exp(B)")
+net.chain("prichod", "fronta", "obsaz", "obsluha", "obsl")
+net.arc("linka", "obsaz")
+net.arc("obsl", "linka", bend=-25)
+net.place("konec", (9.3, 0))
+net.immediate("odchod", (10.8, 0), exit=True, label="odchod")
+net.chain("obsl", "konec", "odchod")
+
+# čítač obsloužených transakcí; 10. z nich vyvolá poruchu (p=1: dřív než další obsazení)
+net.place("citac", (8.55, 1.7), label="čítač", label_pos="right")
+net.arc("obsl", "citac")
+net.immediate("porucha", (8.55, 3.2), p=1, horizontal=True, param_pos="above")
+net.arc("citac", "porucha", w=10, w_pos="right")
+net.arc("linka", "porucha")
+net.place("oprava", (7.0, 3.2), label="porucha linky", label_pos="above")
+net.arc("porucha", "oprava")
+net.timed("opr", (5.4, 3.2), "C", horizontal=True, param_pos="above")
+net.arc("oprava", "opr")
+net.arc("opr", "linka")
+
+net.invariant({"linka": 1, "obsluha": 1, "oprava": 1}, 1)
+net.bound("citac", 10)

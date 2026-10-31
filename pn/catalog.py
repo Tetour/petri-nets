@@ -43,7 +43,7 @@ EXERCISES = [
     ("03–06", "Porucha zničí obsluhu nebo počká", "zkouška 2021/22 2. t."),
     ("03–07", "Každá 10. transakce vyvolá poruchu", "zkouška 2021/22 1. t. B"),
     ("03–08", "Porucha prodlouží další obsluhu", "zkouška 2017/18 3. t. A"),
-    ("03–09", "Porucha prodlouží obsluhu o 2", "zkouška 2020/21 1. t."),
+    ("03–09", "Porucha prodlouží obsluhu o 2", "zkouška 2020/21 1. opravný (11:00)"),
     ("03–10", "Porucha prodlouží probíhající obsluhu o 5", "zkouška 2020/21 náhradní termín"),
     ("03–11", "Přerušení příliš dlouhé obsluhy", "zkouška 2019/20 2. t. Z"),
 

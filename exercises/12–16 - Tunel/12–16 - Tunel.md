@@ -29,6 +29,8 @@ Podobné úlohy: [03–02 – Porucha vrací transakci do fronty](<../03–02 - 
 - **Vzdálenost od A:** každý metr soupravy A přidá značku do *Vzdálenost od A (m)*. Po setkání je v něm počet metrů od A, kde se soupravy potkaly.
 - **Konec prací:** každý dokončený metr (A i B) přidá značku do *Vyvrtáno (m)*. Výstupní přechod s váhou 1000 je okamžik setkání. Den a noc se pak střídají dál, soupravy už nemají co vrtat.
 
+- **Noc jako stav a noc jako odpočet:** vrtání v noci testuje místo *Noc* (hrana tam a zpět). Testovací hrana značku na okamžik vezme a vrátí, a kdyby byla *Noc* zároveň vstupem časovaného přechodu `8 h`, každý nově zahájený metr by odpočet noci zrušil a spustil znovu (slajdy 137–139) – noc by se protahovala. Proto odpočet běží na samostatném místě *noc trvá* a stav *Noc* ráno odebere okamžitý přechod (`p=2`) přes místo *ráno*.
+
 </details>
 
 ## Řešení
@@ -42,13 +44,13 @@ Podobné úlohy: [03–02 – Porucha vrací transakci do fronty](<../03–02 - 
 |---|---|
 | tunel 1000 m, soupravy se nesrazí | *Zbývá metrů* (N = 1000); metr se zabírá na začátku vrtání |
 | B vrtá 1–3 h na metr | *souprava B* + metr → *B vrtá* → `1–3 h` → *souprava B* + *Vyvrtáno* |
-| den 16 h, noc 8 h, začátek ráno | *Den* (1 značka) → `16 h` → *Noc* → `8 h` → *Den* |
+| den 16 h, noc 8 h, začátek ráno | *Den* (1 značka) → `16 h` → *noc trvá* + *Noc* → `8 h` → *Den* + *ráno*; *ráno* + *Noc* → konec noci (`p=2`) |
 | A v noci pomalu 3–5 h, ve dne 1–3 h | z *A má metr*: `p=1` s testem *Noc* → `3–5 h`, jinak → `1–3 h` |
 | soumrak přeruší rychlé vrtání, metr znovu pomalu | *přerušení*: *vrtá rychle* + test *Noc* → *A má metr* |
 | místo se vzdáleností setkání od A | *Vzdálenost od A (m)* |
 | setkání, konec prací | *Vyvrtáno (m)* → váha 1000 → *setkání, konec prací* |
 
-Kontrola simulací: platí *Den* + *Noc* = 1 a každá souprava je vždy v jednom stavu. Soupravy se setkají asi po 48 dnech zhruba 430 m od A (A urazí za den asi 9 m, B asi 12 m). Přerušení nastane skoro každý večer.
+Kontrola simulací: platí *Den* + *noc trvá* = 1, *Den* + *Noc* + *ráno* = 1 a každá souprava je vždy v jednom stavu. Soupravy se setkají asi po 48 dnech zhruba 430 m od A (A urazí za den asi 9 m, B asi 12 m). Přerušení nastane skoro každý večer.
 
 </details>
 

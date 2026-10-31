@@ -23,7 +23,8 @@ Podobné úlohy: [04–06 – Údržba po každé 10. obsluze](<../04–06 - Úd
 - **Server s kapacitou 1** je místo *Server* s jednou značkou. Uvolnění je sloučené s časovaným přechodem obsluhy.
 - **Čítač:** každá dokončená obsluha přidá značku do místa *obsloužené*. Okamžitý přechod s hranou s váhou 1000 vezme všech 1000 značek (čítač se tím vynuluje) a k tomu značku *Serveru*. Server tak přejde do *Údržby* a po `100 s` se značka vrátí do *Serveru*.
 - **„Ihned po obsloužení“:** v okamžiku 1000. obsluhy se značka vrátí do *Serveru* a zároveň jsou proveditelné dva okamžité přechody: přechod do údržby a obsazení serveru dalším čekajícím. Priorita `p=1` zajistí, že vyhraje údržba. Bez ní by server mohl obsloužit ještě 1001. požadavek.
-- **Vyhazování:** okamžitý přechod *vyhození* bere požadavky z *Fronty* a testovacími hranami (hrana tam a zpět) kontroluje, že je server v *Údržbě*. Provádí se opakovaně, takže na začátku údržby vyprázdní celou frontu a pak hned vyhodí každý nově příchozí požadavek. Vyhozené požadavky se do čítače nepočítají.
+- **Vyhazování:** okamžitý přechod *vyhození* bere požadavky z *Fronty* a testovacími hranami (hrana tam a zpět) kontroluje stav *probíhá údržba*. Provádí se opakovaně, takže na začátku údržby vyprázdní celou frontu a pak hned vyhazuje každý nově příchozí požadavek.
+- **Proč samostatné místo *probíhá údržba*:** testovací hrana značku na okamžik vezme a vrátí. Kdyby testovala přímo místo *Údržba*, které je vstupem časovaného přechodu `100 s`, každé vyhození by odpočet zrušilo a spustilo znovu (slajdy 137–139) – s příchody každých 100 ms by údržba nikdy neskončila. Proto odpočet běží na *Údržbě*, testuje se *probíhá údržba* a po skončení údržby ho okamžitý přechod *konec režimu* (`p=1`) zruší.
 - Příchody se během údržby **nezastavují**: požadavky dál přicházejí, jen hned odcházejí bez obsluhy (odchod přes vlastní výstupní přechod).
 - Zadání je převyprávěné. Pokud by originál říkal něco jiného (např. že se během údržby příchody zastaví), změní se jen část s vyhazováním.
 
@@ -41,11 +42,11 @@ Podobné úlohy: [04–06 – Údržba po každé 10. obsluze](<../04–06 - Úd
 | příchody exp(100 ms) | *generátor* ⇄ `exp(100 ms)` → *Fronta* |
 | server s kapacitou 1, obsluha exp(70 ms) | *Server* (1 značka), obsazení, `exp(70 ms)` vrací značku *Serveru* |
 | počítání obsloužených | `exp(70 ms)` → *obsloužené* |
-| po 1000. obsluze údržba 100 s | `p=1`: *obsloužené* (váha 1000) + *Server* → *Údržba* → `100 s` → *Server* |
-| vyhození fronty i nově příchozích | *vyhození*: *Fronta* + test *Údržby* → *bez obsluhy* → *odchod* |
+| po 1000. obsluze údržba 100 s | `p=1`: *obsloužené* (váha 1000) + *Server* → *Údržba* + *probíhá údržba*; *Údržba* → `100 s` → *Server* + *údržba skončila* → *konec režimu* |
+| vyhození fronty i nově příchozích | *vyhození*: *Fronta* + test *probíhá údržba* → *bez obsluhy* → *odchod* |
 | odchod obsloužených | *odchod* vpravo |
 
-Kontrola simulací: *Server* + obsluhovaný + *Údržba* = 1, čítač nikdy nepřesáhne 1000. Údržba nastane zhruba každých 200 s (asi 100 s na 1000 obsluh a 100 s údržby) a během ní se vyhodí asi 1000 požadavků. Fronta zůstává krátká (nejvýš kolem 16).
+Kontrola simulací: *Server* + obsluhovaný + *Údržba* = 1, *probíhá údržba* = *Údržba* + *údržba skončila*, čítač nikdy nepřesáhne 1000. Údržba nastane zhruba každých 200 s (asi 100 s na 1000 obsluh a 100 s údržby) a během ní se vyhodí asi 1000 požadavků. Fronta zůstává krátká (nejvýš kolem 16).
 
 </details>
 

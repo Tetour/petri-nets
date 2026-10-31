@@ -32,6 +32,8 @@ Podobné úlohy: [10–04 – Počítačový server](<../10–04 - Počítačov�
 - **20 % / 80 %:** proces se buď vzdá v náhodném okamžiku kvanta (`0–10 ms` rovnoměrně), nebo kvantum vyčerpá (`10 ms`). Pak uvolní procesor a vrací se mezi připravené.
 - Procesy systém neopouštějí (běží pořád). Proto je výstupní přechod jen u přehraných bloků.
 
+- **Jemnost sémantiky:** přechod *paměť plná* testuje místo *Plné bloky* hranou s váhou 100 tam a zpět. To místo je zároveň vstupem přehrávání `1 ms`, takže test probíhající přehrávání bloku formálně zruší a spustí znovu (slajdy 137–139). Stane se to jednou za cyklus plnění a zpozdí to přehrávání nejvýš o 1 ms, na podstatu modelu to nemá vliv. Přesný model by měl stav „paměť plná“ v samostatném místě.
+
 </details>
 
 ## Řešení
