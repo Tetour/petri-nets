@@ -13,7 +13,7 @@ for row, y, prob, name, time in (("N", 1.7, 33.3, "Náročné", "exp(45 min)"),
                                  ("B", -1.7, 66.7, "Normální", "exp(15 min)")):
     up = y > 0
     net.immediate(f"vyber_{row}", (4.5, y), prob=prob, param_pos="above" if up else "below")
-    net.arc("zakazka", f"vyber_{row}", via=[(3, y)])
+    net.arc("zakazka", f"vyber_{row}", via=[(3, y)], corner=20)
     net.place(f"fronta_{row}", (6, y), label="fronta", label_pos="below" if up else "above")
     net.place(f"opravar_{row}", (7.5, y + (1.6 if up else -1.6)), tokens=1,
               label=name, label_pos="above" if up else "below")
@@ -27,8 +27,8 @@ for row, y, prob, name, time in (("N", 1.7, 33.3, "Náročné", "exp(45 min)"),
 
 net.place("konec", (12, 0), label="hotovo", label_pos="left")
 net.immediate("odchod", (13.5, 0), exit=True, label="odchod")
-net.arc("opr_N", "konec", via=[(12, 1.7)])
-net.arc("opr_B", "konec", via=[(12, -1.7)])
+net.arc("opr_N", "konec", via=[(12, 1.7)], corner=20)
+net.arc("opr_B", "konec", via=[(12, -1.7)], corner=20)
 net.arc("konec", "odchod")
 
 net.invariant({"opravar_N": 1, "oprava_N": 1}, 1)

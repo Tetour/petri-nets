@@ -54,6 +54,8 @@ class Arc:
     w_pos: str = "auto"         # TikZ placement of the weight label
     out: float | None = None    # curved arc: direction it leaves the source (degrees, 90 = up)
     into: float | None = None   # ... and direction from which it enters the target (0 = from the right)
+    looseness: float | None = None  # curved arc: how far the curve swings out (TikZ default 1)
+    corner: float | None = None # orthogonal arc (via): corner radius in pt (default 5)
 
 
 class Net:

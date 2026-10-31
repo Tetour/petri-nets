@@ -80,10 +80,13 @@ def _transition(t):
 
 def _arc(a):
     style = "inh" if a.inhibitor else "arc"
+    if a.corner is not None:
+        style += f",rounded corners={a.corner:g}pt"
     w = f" node[wgt,{a.w_pos},pos=0.5] {{{a.w}}}" if a.w != 1 else ""
     if a.out is not None or a.into is not None:
         opts = ",".join(o for o in (f"out={a.out:g}" if a.out is not None else "",
-                                    f"in={a.into:g}" if a.into is not None else "") if o)
+                                    f"in={a.into:g}" if a.into is not None else "",
+                                    f"looseness={a.looseness:g}" if a.looseness is not None else "") if o)
         return f"\\draw[{style}] ({a.src}) to[{opts}]{w} ({a.dst});"
     if a.via:
         pts = " -- ".join(_xy(v) for v in a.via)

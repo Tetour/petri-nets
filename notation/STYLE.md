@@ -16,6 +16,7 @@ How to lay out a net in `net.py`. These are preferences, not hard rules: when fo
 ## Arcs
 
 - Route arcs **orthogonally**: horizontal and vertical segments with `via=[...]`. The `arc` style rounds the corners. Avoid diagonal lines and `bend=`.
+- Where the main flow **splits into branches or merges back**, give the bend a larger radius: `corner=20` (20 pt instead of the default 5 pt). The arc keeps its up-then-right shape but reads as one smooth turn. Compared with curves (`out`/`into`), this was the preferred look; see [01–01](../exercises/01–01%20-%20Opravářská%20dílna/net.py).
 - **Exception:** self-loops (a generator's `net.loop`, a test loop with weights) keep the usual curved lens.
 - **Exception:** the return arc of a resource (a timed transition giving the token back to a facility or store above the seize transition) is a **curve**: it leaves the transition from the **top** and enters the resource place from the **side facing the transition**. Use `net.arc(t, resource, out=90, into=0)` when the resource is to the left of the transition (`into=180` when it is to the right; for a resource below the row, `out=270`). See [01–03](../exercises/01–03%20-%20Zdravotní%20ordinace/net.py).
 - The final segment always aims at the centre of the target node, so a place has only **four orthogonal entry points** (top, bottom, left, right). Plan positions so that each arc gets its own side.
