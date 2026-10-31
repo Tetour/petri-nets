@@ -1,12 +1,5 @@
 # 03–01 – Porucha zruší obsluhu
 
-**Původ:** zkouška 2017/18, 1. termín, skupina Z, otázka 1 (body neuvedené).
-
-**Zdroje:**
-
-- `Fitcheats/Zkoušky z minulých let/2017-18 - 1. termín Z.txt`, otázka 1 (studentský přepis zadání)
-- `Fitcheats/Příprava na zkoušku/xenix - Příprava.pdf`, str. 26 („M/M/1 exp(200) porucha zruší obsluhu“: studentská síť)
-
 ## Zadání
 
 ⚠️ Původní zadání se nedochovalo, jen studentský přepis (slovensky):
@@ -52,15 +45,6 @@ Kontrola simulací: *Linka* + obsluhovaná transakce = 1, v místě *porucha* je
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- **xenix, str. 26:** poruchy `exp(200)`, přechod `p=0` pro poruchu bez účinku, přechod `p=1` vrací *Linku* a dlouhou hranou s popiskem „návrat zrušeného procesu“ posílá transakci zpět do fronty. Síť je sama o sobě správná, ale řeší jinou úlohu (03–02). Chybí jí výstupní přechod: obsloužená transakce končí v místě bez odchodu.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -70,5 +54,23 @@ Kontrola simulací: *Linka* + obsluhovaná transakce = 1, v místě *porucha* je
 - Zrušení bez vrácení značky *Lince*: linka se ztratí a systém se zastaví.
 - Zrušená transakce zmizí bez výstupního přechodu. Odchod ze systému má být v síti vidět i pro neobslouženou transakci.
 - Porucha modelovaná jako transakce, která se řadí do fronty k lince: čeká, až obsluha skončí, a nic nezruší.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** zkouška 2017/18, 1. termín, skupina Z, otázka 1 (body neuvedené).
+
+**Zdroje:**
+
+- `Fitcheats/Zkoušky z minulých let/2017-18 - 1. termín Z.txt`, otázka 1 (studentský přepis zadání)
+- `Fitcheats/Příprava na zkoušku/xenix - Příprava.pdf`, str. 26 („M/M/1 exp(200) porucha zruší obsluhu“: studentská síť)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- **xenix, str. 26:** poruchy `exp(200)`, přechod `p=0` pro poruchu bez účinku, přechod `p=1` vrací *Linku* a dlouhou hranou s popiskem „návrat zrušeného procesu“ posílá transakci zpět do fronty. Síť je sama o sobě správná, ale řeší jinou úlohu (03–02). Chybí jí výstupní přechod: obsloužená transakce končí v místě bez odchodu.
 
 </details>

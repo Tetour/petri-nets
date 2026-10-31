@@ -1,11 +1,5 @@
 # 11–07 – Vyhlídková loď na molu
 
-**Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z18.
-
-**Zdroje:**
-
-- `Fitcheats/Půlsemestrálky/Zadání z minulých let/Přehled zadání 2014-19.pdf`, str. 4–5 (zadání; řešení v materiálech není)
-
 ## Zadání
 
 > Na nástupní molo pro vyhlídkové jízdy lodí přichází cestující v intervalech daných exp(5min). Jízdy provádí jedna výletní loď. Každý cestující po 30 minutách svého čekání ve frontě z fronty odchází. Pokud je k molu přistavena loď, cestující po jednom nastupují. Nastoupení jednoho trvá 1 minutu. Loď od mola vyráží, pokud nastane jedna ze dvou okolností: 1) nastoupilo 20 cestujících (naplněna kapacita lodi), 2) od nastoupení posledního uběhly 3 minuty (prázdná fronta). Vyhlídková trasa trvá 1 hodinu, a pak se loď vrací k molu. Dobu vystupování cestujících neuvažujeme.
@@ -52,15 +46,6 @@ Kontrola simulací: loď je vždy v jednom stavu (prázdná u mola + s cestujíc
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- Řešení této úlohy v materiálech není. Síť vychází z Hrubého řešení příbuzné [11–04 – Výletní loď](<../11–04 - Výletní loď/11–04 - Výletní loď.md>): loď u mola jako zařízení pro nástup, čítač nastoupených, vyplutí `p=1` s hranou váhy 20.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -72,5 +57,22 @@ Kontrola simulací: loď je vždy v jednom stavu (prázdná u mola + s cestujíc
 - Výstup po návratu hranou s váhou 20: při vyplutí po 3 min je cestujících méně a přechod by se nikdy neprovedl.
 - Netrpělivost jako jeden společný odpočet pro celou frontu místo vlastního pro každého cestujícího.
 - Zapomenutý návrat lodi k molu po jízdě.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z18.
+
+**Zdroje:**
+
+- `Fitcheats/Půlsemestrálky/Zadání z minulých let/Přehled zadání 2014-19.pdf`, str. 4–5 (zadání; řešení v materiálech není)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- Řešení této úlohy v materiálech není. Síť vychází z Hrubého řešení příbuzné [11–04 – Výletní loď](<../11–04 - Výletní loď/11–04 - Výletní loď.md>): loď u mola jako zařízení pro nástup, čítač nastoupených, vyplutí `p=1` s hranou váhy 20.
 
 </details>

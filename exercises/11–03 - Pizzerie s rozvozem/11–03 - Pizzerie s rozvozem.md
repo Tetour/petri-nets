@@ -1,12 +1,5 @@
 # 11–03 – Pizzerie s rozvozem
 
-**Původ:** půlsemestrální písemka 2022/23, varianta C, 10 bodů.
-
-**Zdroje:**
-
-- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2022-23.pdf`, str. 3 (fotka zadání)
-- `Fitcheats/Půlsemestrálky/Hrubý - Řešení 2022-23.pdf`, str. 3 (řešení od Hrubého) a str. 4 (jeho poznámky k častým chybám)
-
 ## Zadání
 
 > Do pizzerie s rozvozem volají zákazníci v intervalech daných exponenciálním rozložením se středem 5 minut. Vyřízení jedné objednávky (rozhovor, výroba pizzy) zabere dobu danou exponenciálním rozložením se středem 10 minut. V pizzerii jsou 3 pracovníci pro obsluhu volajících a jeden pracovník pro rozvoz. Rozvozový pracovník vyráží na trasu rozvozu se všemi hotovými objednávkami, pokud je splněna jedna z podmínek: A) buď je hotových objednávek alespoň 10, nebo B) je hotová alespoň nějaká a on už čeká 15 minut. Kompletní rozvoz trvá rovnoměrně 30-50 minut.
@@ -52,16 +45,6 @@ Kontrola simulací: platí *Pracovníci* + vyřizované = 3 a *Rozvozník* + *č
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- **Hrubý (str. 3):** síť výše je jeho řešení překreslené: *FRONTA* → obsazení „zam.“ (3) → `exp(10min)` → „Hotová pizza“; „Rozvozník“ s přechodem „10+ hotovo“ (váha 10) a s `15min` čekání → „uběhl timeout“ → přechod s hranou z *Hotová pizza*; obě cesty vedou do místa se smyčkou `P=1` „dobere zbylých hotových zakázek“ → „vyráží“ → „je na cestě“ → rozvoz → *Rozvozník*. Výstup kreslí ve dvou variantách: „varianta A“ hned po `exp(10min)`, „var B“ za rozvozem. Rozdíly: u rozvozu má napsáno `30-60min`, ale zadání říká 30–50 minut; generátor kreslí bez místa. Poznámka vedle sítě zdůrazňuje, že nezáleží na tom, kolik zakázek rozvozník veze, ale musí vzít všechny hotové.
-- **Hrubý (str. 4):** seznam častých chyb (viz níže) a srovnání správného a chybného modelu čekání na ose modelového času.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -72,5 +55,24 @@ Kontrola simulací: platí *Pracovníci* + vyřizované = 3 a *Rozvozník* + *č
 - Po 15 minutách odjezd bez kontroly, že je hotová aspoň jedna pizza: rozvozník pak vyrazí naprázdno.
 - Smyčka *dobere hotové* bez priority: se stejnou prioritou jako *vyráží* může rozvozník odjet dřív, než naloží všechno.
 - Chybějící návrat značky *Rozvozník* po rozvozu, nebo chybějící výstupní přechod.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** půlsemestrální písemka 2022/23, varianta C, 10 bodů.
+
+**Zdroje:**
+
+- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2022-23.pdf`, str. 3 (fotka zadání)
+- `Fitcheats/Půlsemestrálky/Hrubý - Řešení 2022-23.pdf`, str. 3 (řešení od Hrubého) a str. 4 (jeho poznámky k častým chybám)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- **Hrubý (str. 3):** síť výše je jeho řešení překreslené: *FRONTA* → obsazení „zam.“ (3) → `exp(10min)` → „Hotová pizza“; „Rozvozník“ s přechodem „10+ hotovo“ (váha 10) a s `15min` čekání → „uběhl timeout“ → přechod s hranou z *Hotová pizza*; obě cesty vedou do místa se smyčkou `P=1` „dobere zbylých hotových zakázek“ → „vyráží“ → „je na cestě“ → rozvoz → *Rozvozník*. Výstup kreslí ve dvou variantách: „varianta A“ hned po `exp(10min)`, „var B“ za rozvozem. Rozdíly: u rozvozu má napsáno `30-60min`, ale zadání říká 30–50 minut; generátor kreslí bez místa. Poznámka vedle sítě zdůrazňuje, že nezáleží na tom, kolik zakázek rozvozník veze, ale musí vzít všechny hotové.
+- **Hrubý (str. 4):** seznam častých chyb (viz níže) a srovnání správného a chybného modelu čekání na ose modelového času.
 
 </details>

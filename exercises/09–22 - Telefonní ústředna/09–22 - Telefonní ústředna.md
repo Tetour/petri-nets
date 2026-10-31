@@ -1,11 +1,5 @@
 # 09–22 – Telefonní ústředna
 
-**Původ:** půlsemestrální písemka, rok neznámý (zadání zapsané ve Studentských skriptech 2015/16).
-
-**Zdroje:**
-
-- `Fitcheats/Skripta/FIT - Studentská skripta 2015-16.pdf`, str. 42–43 (zadání „Příklad ústředna (možná jiné konstanty)“ a ručně kreslené studentské řešení)
-
 ## Zadání
 
 > ⚠️ Text je zápis studentů ve skriptech, nadepsaný „možná jiné konstanty“. Oficiální zadání v materiálech není.
@@ -56,20 +50,6 @@ Kontrola simulací: *Linky* + *Hovor* = 20 a *Operátorka* + obsluhovaný = 1. S
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- **Studentská skripta, str. 43 (ručně kreslené):** stejná kostra: `60%`/`40%`, místo „linka“ s 20 značkami, `exp(2min)` vrací linku, „operátorka“ s jednou značkou, obsazení linky `p=1` (přímo) a `p=2` (přes operátorku). Rozdíly a chyby:
-  - generátor `exp(20min)` s otazníkem; 30 volání za hodinu je střed **2 minuty**;
-  - časovaný `5-15s` bere značku operátorky přímo (bez okamžitého obsazení). To ještě funguje, protože operátorka je jen jedna;
-  - operátorka se vrací až přechodem `p=2`, tedy až když volající dostane linku. Pokud by byly všechny linky obsazené, operátorka by zbytečně čekala s ním;
-  - za `exp(2min)` šipka mizí za okrajem fotky, výstupní přechod není vidět.
-- Pod řešením je dotaz „Neni to spíš takhle, protože by mel cekat na volnou operátorku?“ s odkazem na obrázek, který už není dostupný. Ve fotce volající na operátorku čeká už teď (přechod `5-15s` potřebuje její značku).
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -80,5 +60,27 @@ Kontrola simulací: *Linky* + *Hovor* = 20 a *Operátorka* + obsluhovaný = 1. S
 - Priorita napsaná u přechodu `40 %` místo u obsazení linky. Přechod má jen jeden parametr a priorita má rozhodovat o lince.
 - *Linky* s jednou značkou nebo hovor jako zařízení: ústředna zvládne 20 hovorů současně.
 - Chybějící návrat značky operátorce nebo lince.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** půlsemestrální písemka, rok neznámý (zadání zapsané ve Studentských skriptech 2015/16).
+
+**Zdroje:**
+
+- `Fitcheats/Skripta/FIT - Studentská skripta 2015-16.pdf`, str. 42–43 (zadání „Příklad ústředna (možná jiné konstanty)“ a ručně kreslené studentské řešení)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- **Studentská skripta, str. 43 (ručně kreslené):** stejná kostra: `60%`/`40%`, místo „linka“ s 20 značkami, `exp(2min)` vrací linku, „operátorka“ s jednou značkou, obsazení linky `p=1` (přímo) a `p=2` (přes operátorku). Rozdíly a chyby:
+  - generátor `exp(20min)` s otazníkem; 30 volání za hodinu je střed **2 minuty**;
+  - časovaný `5-15s` bere značku operátorky přímo (bez okamžitého obsazení). To ještě funguje, protože operátorka je jen jedna;
+  - operátorka se vrací až přechodem `p=2`, tedy až když volající dostane linku. Pokud by byly všechny linky obsazené, operátorka by zbytečně čekala s ním;
+  - za `exp(2min)` šipka mizí za okrajem fotky, výstupní přechod není vidět.
+- Pod řešením je dotaz „Neni to spíš takhle, protože by mel cekat na volnou operátorku?“ s odkazem na obrázek, který už není dostupný. Ve fotce volající na operátorku čeká už teď (přechod `5-15s` potřebuje její značku).
 
 </details>

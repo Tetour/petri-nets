@@ -1,12 +1,5 @@
 # 08–03 – D/D/2 s LIFO frontou, obsluha 6 s, značení v čase 13,5
 
-**Původ:** zkouška 2015/16, 3. termín (27. 1. 2016), skupina 5-D, otázka 1, 15 bodů. Sesterská skupina 5-A je [08–02 – DD3 LIFO, čas 10,5](<../08–02 - DD3 LIFO, čas 10,5/08–02 - DD3 LIFO, čas 10,5.md>).
-
-**Zdroje:**
-
-- `Fitcheats/Zkoušky z minulých let/2016-17 - 3. termín D.pdf` (rozmazaná fotka zadání; podle hlavičky „skupina 5-D“, 27. 1. 2016, tedy rok 2015/16)
-- `Fitcheats/Zkoušky z minulých let/2005-06 - Termín 27. 1. 2006 (5D).pdf`, str. 1 („přepis zadání zkoušky z hůře čitelné fotky“; stejná zkouška, rok 2006 v názvu je překlep)
-
 ## Zadání
 
 > ⚠️ Text je z přepisu. Na fotce se dá přečíst, že v první odrážce stojí „provedených“, ne „plánovaných“ (stejně jako ve skupině 5-A), a zřejmě také „doba obsluhy“ a „nižší číslo zařízení = vyšší priorita“.
@@ -78,15 +71,6 @@ Kontrola (`make check`): síť se odsimuluje od času 0 (P0 ve frontě, zaříze
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- K této skupině řešení v podkladech není. Síť má stejný tvar jako studentská řešení sesterské skupiny 5-A ([08–02](<../08–02 - DD3 LIFO, čas 10,5/08–02 - DD3 LIFO, čas 10,5.md>)), jen se dvěma zařízeními.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -96,5 +80,23 @@ Kontrola (`make check`): síť se odsimuluje od času 0 (P0 ve frontě, zaříze
 - Kalendář s událostí v čase 13 (konec obsluhy P6, příchod P13): ty už jsou v čase 13,5 provedené.
 - Brát z LIFO fronty nejstarší požadavek (jako u FIFO). P2, P3 a P4 čekají od začátku a v čase 13,5 jsou ve frontě pořád.
 - Zapomenuté plánování do kalendáře u událostí v čase 12.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** zkouška 2015/16, 3. termín (27. 1. 2016), skupina 5-D, otázka 1, 15 bodů. Sesterská skupina 5-A je [08–02 – DD3 LIFO, čas 10,5](<../08–02 - DD3 LIFO, čas 10,5/08–02 - DD3 LIFO, čas 10,5.md>).
+
+**Zdroje:**
+
+- `Fitcheats/Zkoušky z minulých let/2016-17 - 3. termín D.pdf` (rozmazaná fotka zadání; podle hlavičky „skupina 5-D“, 27. 1. 2016, tedy rok 2015/16)
+- `Fitcheats/Zkoušky z minulých let/2005-06 - Termín 27. 1. 2006 (5D).pdf`, str. 1 („přepis zadání zkoušky z hůře čitelné fotky“; stejná zkouška, rok 2006 v názvu je překlep)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- K této skupině řešení v podkladech není. Síť má stejný tvar jako studentská řešení sesterské skupiny 5-A ([08–02](<../08–02 - DD3 LIFO, čas 10,5/08–02 - DD3 LIFO, čas 10,5.md>)), jen se dvěma zařízeními.
 
 </details>

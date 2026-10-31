@@ -1,11 +1,5 @@
 # 05–06 – MM3 – zastavení příchodů
 
-**Původ:** zkouška 2024/25, 1. termín (8. 1. 2025), skupina C, otázka 3, 10 bodů.
-
-**Zdroje:**
-
-- `Fitcheats/Zkoušky z minulých let/2024-25 - 1. termín A+C.pdf`, str. 3–4 (fotky zadání skupiny C: hlavička na str. 3, otázka 3 na str. 4, bez řešení)
-
 ## Zadání
 
 > Uvažujme systém typu M/M/3. Proces příchodu nových transakcí se přeruší v okamžiku, kdy jsou všechny linky obsazené. Znovu se rozběhne, až jsou alespoň dvě linky volné. Nakreslete model systému s použitím Petriho sítí.
@@ -45,15 +39,6 @@ Kontrola simulací (A = 3, B = 8): *Linky* + obsluhované = 3, *generátor* + *z
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- K této úloze v materiálech žádné řešení není.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -63,5 +48,22 @@ Kontrola simulací (A = 3, B = 8): *Linky* + obsluhované = 3, *generátor* + *z
 - Zastavení i rozběh bez řídicí značky: testy zůstávají splněné a přechody se provádějí pořád dokola.
 - Zastavení odebráním transakcí z *Fronty* nebo blokováním obsazení místo odebrání značky *generátoru*.
 - Inhibiční hrana z *Linek* na zastavení. Funguje, ale Hrubý ji nechce, test na místě obsluhy dělá totéž.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** zkouška 2024/25, 1. termín (8. 1. 2025), skupina C, otázka 3, 10 bodů.
+
+**Zdroje:**
+
+- `Fitcheats/Zkoušky z minulých let/2024-25 - 1. termín A+C.pdf`, str. 3–4 (fotky zadání skupiny C: hlavička na str. 3, otázka 3 na str. 4, bez řešení)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- K této úloze v materiálech žádné řešení není.
 
 </details>

@@ -1,11 +1,5 @@
 # 04–08 – Spánek po nečinnosti
 
-**Původ:** zkouška 2022/23, 2. termín (v hlavičce přepisu „IMS 1.op. F: 2023“), skupina F, otázka 2, 10 bodů.
-
-**Zdroje:**
-
-- `Fitcheats/Zkoušky z minulých let/2022-23 - 2. termín F.pdf`, str. 1 a 2 (dva ručně psané přepisy zadání od různých studentů)
-
 ## Zadání
 
 ⚠️ Zadání je známé jen ze dvou vzpomínek studentů. Autor souboru píše: „Zadania máme dve. Neviem, ktoré je presnejšie, tak tu nechám obe.“
@@ -53,15 +47,6 @@ Kontrola simulací: *Linka* + obsluha + *spí* + *probouzí se* = 1. Linka usín
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- Ve zdrojích není žádné řešení. Stejná síť (jen s jinými časy) je v řešení půlsemestrálky [10–02 – Výpočetní služba se spánkem](<../10–02 - Výpočetní služba se spánkem/10–02 - Výpočetní služba se spánkem.md>).
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -71,5 +56,22 @@ Kontrola simulací: *Linka* + obsluha + *spí* + *probouzí se* = 1. Linka usín
 - Probuzení obyčejnou hranou z *Fronty* bez návratu: požadavek, který linku probudil, zmizí a nikdy není obsloužen. (Pokud místo toho rovnou obsadí linku, jako v [04–03](<../04–03 - Automat na kávu – uspání/04–03 - Automat na kávu – uspání.md>), je to v pořádku.)
 - Spící linka, kterou probudí sám čas, ne příchod požadavku.
 - Probouzení, které nevrací značku do *Linky* (linka zůstane nedostupná).
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** zkouška 2022/23, 2. termín (v hlavičce přepisu „IMS 1.op. F: 2023“), skupina F, otázka 2, 10 bodů.
+
+**Zdroje:**
+
+- `Fitcheats/Zkoušky z minulých let/2022-23 - 2. termín F.pdf`, str. 1 a 2 (dva ručně psané přepisy zadání od různých studentů)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- Ve zdrojích není žádné řešení. Stejná síť (jen s jinými časy) je v řešení půlsemestrálky [10–02 – Výpočetní služba se spánkem](<../10–02 - Výpočetní služba se spánkem/10–02 - Výpočetní služba se spánkem.md>).
 
 </details>

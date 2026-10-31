@@ -1,11 +1,5 @@
 # 03–03 – Porucha s opravou, návrat do fronty
 
-**Původ:** zkouška 2024/25, 1. termín, skupina A, otázka 3, 10 bodů.
-
-**Zdroje:**
-
-- `Fitcheats/Zkoušky z minulých let/2024-25 - 1. termín A+C.pdf`, str. 2 (fotka zadání, rámeček na odpověď je prázdný)
-
 ## Zadání
 
 > Uvažujme systém typu M/M/1. U linky dochází k poruše v intervalech daných Exp(E). Porucha zabere linku na dobu R. Pokud je v okamžiku vzniku poruchy nějaká transakce v obsluze, pak je její obsluha zrušena a transakce se vrací do fronty. Nakreslete model systému s použitím Petriho sítí.
@@ -49,15 +43,6 @@ Kontrola simulací: *Linka* + obsluhovaná transakce + *oprava* = 1. Každá por
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- K tomuto zadání žádné řešení není. Nejbližší je **fifinas, str. 2** (úloha 03–04): porucha zabere volnou linku přechodem s `p=1` a obsazenou linku přechodem, který vezme obsluhovanou transakci. Oba vedou do místa před časovaným přechodem `C`, který linku vrátí. Rozdíl je jen v tom, že tam přerušená transakce mizí, kdežto tady se vrací do *Fronty*.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -68,5 +53,22 @@ Kontrola simulací: *Linka* + obsluhovaná transakce + *oprava* = 1. Každá por
 - Zabrání linky bez priority: po zrušení obsluhy si linku znovu vezme transakce z *Fronty* a oprava se odloží.
 - Linka se po opravě nevrátí (chybí hrana z `R` do *Linky*).
 - Přerušená transakce poslaná na odchod místo do *Fronty*.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** zkouška 2024/25, 1. termín, skupina A, otázka 3, 10 bodů.
+
+**Zdroje:**
+
+- `Fitcheats/Zkoušky z minulých let/2024-25 - 1. termín A+C.pdf`, str. 2 (fotka zadání, rámeček na odpověď je prázdný)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- K tomuto zadání žádné řešení není. Nejbližší je **fifinas, str. 2** (úloha 03–04): porucha zabere volnou linku přechodem s `p=1` a obsazenou linku přechodem, který vezme obsluhovanou transakci. Oba vedou do místa před časovaným přechodem `C`, který linku vrátí. Rozdíl je jen v tom, že tam přerušená transakce mizí, kdežto tady se vrací do *Fronty*.
 
 </details>

@@ -1,11 +1,5 @@
 # 06–03 – MD3 – poslední volné zařízení
 
-**Původ:** zkouška 2024/25, 3. termín (6. 2. 2025), skupina H, otázka 3, 10 bodů.
-
-**Zdroje:**
-
-- `Fitcheats/Zkoušky z minulých let/2024-25 - 3. termín H.pdf`, str. 2, vlevo dole (fotka zadání z dálky; text je drobný, ale po zvětšení čitelný, včetně čísel 5 a 3)
-
 ## Zadání
 
 > Mějme systém M/D/3. Doba obsluhy transakce se řídí následujícím pravidlem: pokud příchozí transakce obsadí poslední volné zařízení, pak je její doba obsluhy 5 č.j. jinak je doba obsluhy nastavena na 3 č.j. Systém modelujte prostředky Petriho sítí.
@@ -46,15 +40,6 @@ Kontrola simulací: invariant tří zařízení platí. Při `A = 2` trvalo asi 
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- Žádné řešení k této úloze není.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -65,5 +50,22 @@ Kontrola simulací: invariant tří zařízení platí. Při `A = 2` trvalo asi 
 - Inhibiční hrana („žádné další volné“) místo priority: funguje, ale Hrubý ji nechce.
 - Tři samostatná zařízení s pevně danou dobou obsluhy (např. „třetí zařízení má vždy 5“): poslední volné nemusí být pořád stejné zařízení.
 - `exp(3)` a `exp(5)` místo pevných dob; zadání je M/D/3.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** zkouška 2024/25, 3. termín (6. 2. 2025), skupina H, otázka 3, 10 bodů.
+
+**Zdroje:**
+
+- `Fitcheats/Zkoušky z minulých let/2024-25 - 3. termín H.pdf`, str. 2, vlevo dole (fotka zadání z dálky; text je drobný, ale po zvětšení čitelný, včetně čísel 5 a 3)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- Žádné řešení k této úloze není.
 
 </details>

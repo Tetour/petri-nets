@@ -1,12 +1,5 @@
 # 09–07 – Automat na kávu
 
-**Původ:** půlsemestrální písemka 2023/24, varianta C, 10 bodů.
-
-**Zdroje:**
-
-- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2023-24.pdf`, str. 3 (fotka zadání)
-- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2024-25 - Varianta A (fotky).pdf`, str. 3–4 (zadání a řešení kreslené na cvičení)
-
 ## Zadání
 
 > K automatu na kávu přichází zákazníci v intervalech daných exponenciálním rozložení se středem 10 minut. Doba obsluhy se řídí exponenciálním rozložením se středem 2 minuty. V automatu se cyklicky projevuje porucha, a to vždy rovnoměrně 5-6 hodin od okamžiku poslední opravy poruchy (nebo od počátku času). Porucha se projeví na právě probíhající obsluze nebo na další následující transakci. Požadavek zasažený poruchou opouští systém bez obsluhy. Oprava poruchy zabere 1 hodinu.
@@ -49,16 +42,6 @@ Kontrola simulací: *Automat* + obsluhovaný + *oprava* = 1 a *bez poruchy* + *p
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- **Řešení ze cvičení (fotky 2024/25, str. 4):** stejná síť. Automat kreslí nad hlavní linkou, a proto hrana z `1 hod.` zpět do automatu kříží hlavní linku. Zasaženého zákazníka posílá červenou hranou do koncového místa před výstupním přechodem. Generátor poruch je místo se značkou → `Rovn(5-6 hodin)`, návrat z `1 hod.` vede dlouhou hranou dole.
-- Hrubého řešení k ročníku 2023/24 v materiálech není.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -69,5 +52,24 @@ Kontrola simulací: *Automat* + obsluhovaný + *oprava* = 1 a *bez poruchy* + *p
 - Zásah, který vrací značku *Automatu* hned. Automat by pak během opravy dál obsluhoval.
 - Zásah, který bere zákazníka z *Fronty*. Když je ve frontě někdo, automat zrovna obsluhuje, a porucha má zasáhnout toho obsluhovaného.
 - Zasažený zákazník, který nikam neodejde (chybí hrana do odchodu).
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** půlsemestrální písemka 2023/24, varianta C, 10 bodů.
+
+**Zdroje:**
+
+- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2023-24.pdf`, str. 3 (fotka zadání)
+- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2024-25 - Varianta A (fotky).pdf`, str. 3–4 (zadání a řešení kreslené na cvičení)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- **Řešení ze cvičení (fotky 2024/25, str. 4):** stejná síť. Automat kreslí nad hlavní linkou, a proto hrana z `1 hod.` zpět do automatu kříží hlavní linku. Zasaženého zákazníka posílá červenou hranou do koncového místa před výstupním přechodem. Generátor poruch je místo se značkou → `Rovn(5-6 hodin)`, návrat z `1 hod.` vede dlouhou hranou dole.
+- Hrubého řešení k ročníku 2023/24 v materiálech není.
 
 </details>

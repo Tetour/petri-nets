@@ -1,12 +1,5 @@
 # 02–05 – MM3 bez fronty s opakováním
 
-**Původ:** zkouška 2023/24, 1. termín, skupina B, otázka 3, 10 bodů.
-
-**Zdroje:**
-
-- `Fitcheats/Zkoušky z minulých let/2023-24 - 1. termín B.pdf`, str. 1 (ručně opsané zadání)
-- `Fitcheats/Příprava na zkoušku/cranycrane - Kódy (generátory, Monte Carlo, Euler, RK, Petri + SIMLIB)/petri/6.png` a `6.cpp` (studentská síť a SIMLIB; zadání je jen v komentáři kódu)
-
 ## Zadání
 
 ⚠️ Zadání je známé z ručního opisu (čitelného).
@@ -47,18 +40,6 @@ Kontrola simulací: *Linky* + obsluhované transakce = 3, v *žádá o linku* ni
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- **cranycrane, 6.png:** stejná struktura: obsazení `p=1` z místa se 3 značkami, přechod s nižší prioritou do místa čekání a zpět časovaným přechodem. Chyby:
-  - návrat má čas `Exp(x)`, ale zadání chce pevnou dobu X (kód `6.cpp` má správně `Wait(X)`, síť a kód si tedy neodpovídají);
-  - po obsluze končí síť místem bez výstupního přechodu, není vidět, kde transakce opouští systém;
-  - přechod odmítnutí nemá napsanou prioritu (implicitně 0, to stačí, ale u zkoušky je lepší ji napsat).
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -69,5 +50,26 @@ Kontrola simulací: *Linky* + obsluhované transakce = 3, v *žádá o linku* ni
 - Tři samostatné linky bez důvodu (zadání nerozlišuje, která linka obslouží).
 - `exp(X)` místo pevné doby X.
 - Odmítnutá transakce poslaná na výstup: zadání říká, že se vrací.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** zkouška 2023/24, 1. termín, skupina B, otázka 3, 10 bodů.
+
+**Zdroje:**
+
+- `Fitcheats/Zkoušky z minulých let/2023-24 - 1. termín B.pdf`, str. 1 (ručně opsané zadání)
+- `Fitcheats/Příprava na zkoušku/cranycrane - Kódy (generátory, Monte Carlo, Euler, RK, Petri + SIMLIB)/petri/6.png` a `6.cpp` (studentská síť a SIMLIB; zadání je jen v komentáři kódu)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- **cranycrane, 6.png:** stejná struktura: obsazení `p=1` z místa se 3 značkami, přechod s nižší prioritou do místa čekání a zpět časovaným přechodem. Chyby:
+  - návrat má čas `Exp(x)`, ale zadání chce pevnou dobu X (kód `6.cpp` má správně `Wait(X)`, síť a kód si tedy neodpovídají);
+  - po obsluze končí síť místem bez výstupního přechodu, není vidět, kde transakce opouští systém;
+  - přechod odmítnutí nemá napsanou prioritu (implicitně 0, to stačí, ale u zkoušky je lepší ji napsat).
 
 </details>

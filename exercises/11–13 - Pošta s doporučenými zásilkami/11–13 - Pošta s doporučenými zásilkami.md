@@ -1,11 +1,5 @@
 # 11–13 – Pošta s doporučenými zásilkami
 
-**Původ:** půlsemestrální písemka 2011/12, příklad 2 (bodování v zadání není).
-
-**Zdroje:**
-
-- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2011-12.pdf`, str. 1 (zadání, příklad 2)
-
 ## Zadání
 
 > Poštovní pobočka má každý den rozvézt 100 nových doporučených zásilek. K dispozici má jeden poštovní vůz s doručovatelem. Poštovní vůz za dobu 10-15 minut nabere najednou zásilky až po svou kapacitu 20 zásilek. Pak vyrazí do terénu. Každý úsek trasy (z pošty k zákazníkovi, od zákazníka k jinému zákazníkovi, od zákazníka zpět na poštu) trvá dobu exp(2min). Po příjezdu k zákazníkovi je pravděpodobnost 20 procent, že zákazník nebude zastižen. Pokud je zastižen, pak je doba vyřizování 3-5 minut, jinak je 1 minutu. Vůz se po posledním zákazníkovi vrací na pobočku, kde vyloží jednotlivě nedoručené zásilky, které se uloží pro přímý odběr zákazníky. Vyložení každé jednotlivé nedoručené zásilky trvá exp(2min). Zákazníci přichází na pobočku pro nedoručené balíky v intervalech exp(10min) a čekají ve frontě libovolně dlouho. K dispozici mají 3 poštovní přepážky, každou s jedním pracovníkem pošty. Obsluha zákazníka trvá 1-2 minuty. Při nakládání a vykládání vozu asistuje doručovateli vždy jeden z pracovníků na přepážce.
@@ -54,15 +48,6 @@ Kontrola simulací: vůz je vždy v jednom stavu, pracovníků je vždy 3 (voln�
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- K zadáním z roku 2011/12 v materiálech žádné řešení není.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -73,5 +58,22 @@ Kontrola simulací: vůz je vždy v jednom stavu, pracovníků je vždy 3 (voln�
 - Vykládka všech nedoručených zásilek najednou (hrana s váhou); zadání chce vykládat jednotlivě, každou `exp(2 min)`.
 - Pracovník u nakládání nebo vykládky, který se nevrátí na přepážku; po čase by nezbyl nikdo pro zákazníky.
 - Zastižený a nezastižený zákazník bez rozlišení doby (3–5 min vs. 1 min) nebo pravděpodobnost napsaná na hraně místo na přechodu.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** půlsemestrální písemka 2011/12, příklad 2 (bodování v zadání není).
+
+**Zdroje:**
+
+- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2011-12.pdf`, str. 1 (zadání, příklad 2)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- K zadáním z roku 2011/12 v materiálech žádné řešení není.
 
 </details>

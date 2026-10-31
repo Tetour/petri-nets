@@ -1,11 +1,5 @@
 # 05–08 – Sklad s dočasně větší kapacitou
 
-**Původ:** zkouška 2017/18, 3. termín, skupina Z, otázka 3, 10 bodů (počet bodů je na fotce špatně čitelný).
-
-**Zdroje:**
-
-- `Fitcheats/Zkoušky z minulých let/2017-18 - 3. termín Z.pdf`, str. 1 (rozmazaná fotka zadání, 438 × 720 px)
-
 ## Zadání
 
 ⚠️ Fotka je malá a rozmazaná. Text níže je čtení po zvětšení výřezu. Jistá jsou čísla (500, 3, M/M/4, 100, 1) a většina slov. Méně jistá jsou slova na začátcích řádků vlevo a to, zda před „500“ nestojí „Exp“ (na fotce ho vidět není).
@@ -46,15 +40,6 @@ Kontrola simulací (A = 10, B = 8): *Sklad* + obsluhované = 1 + 3 · *M/M/4* + 
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- K této úloze v materiálech žádné řešení není.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -64,5 +49,22 @@ Kontrola simulací (A = 10, B = 8): *Sklad* + obsluhované = 1 + 3 · *M/M/4* + 
 - Odebrání bez priority: uvolněnou jednotku může dřív obsadit čekající transakce a M/M/4 se protahuje.
 - Přerušení rozpracovaných obsluh po 100 č. j. Zadání výslovně říká, že doběhnou.
 - `exp(500)` místo konstanty 500 (zadání mluví o intervalech daných 500 časovými jednotkami).
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** zkouška 2017/18, 3. termín, skupina Z, otázka 3, 10 bodů (počet bodů je na fotce špatně čitelný).
+
+**Zdroje:**
+
+- `Fitcheats/Zkoušky z minulých let/2017-18 - 3. termín Z.pdf`, str. 1 (rozmazaná fotka zadání, 438 × 720 px)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- K této úloze v materiálech žádné řešení není.
 
 </details>

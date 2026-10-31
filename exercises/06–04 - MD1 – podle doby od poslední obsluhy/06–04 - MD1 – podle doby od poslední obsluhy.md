@@ -1,11 +1,5 @@
 # 06–04 – MD1 – podle doby od poslední obsluhy
 
-**Původ:** zkouška 2020/21, 1. opravný termín (9:00), otázka 2 (počet bodů neznámý). Navazující otázka 3 chtěla tutéž síť popsat pseudokódem podle SIMLIBu.
-
-**Zdroje:**
-
-- `Fitcheats/Příprava na zkoušku/FIT - Řešené výpočetní příklady 2017-21.pdf`, str. 35 („2021 - 1. opravný 9:00“: zadání z paměti, k SIMLIB části jen odkaz na onlinegdb, síť chybí)
-
 ## Zadání
 
 ⚠️ Zadání je známé jen jako zápis studenta ve sbírce, originál zkoušky chybí.
@@ -51,15 +45,6 @@ Kontrola simulací: invariant jedné linky platí. Při `A = 6` trvalo asi 89 % 
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- **Řešené výpočetní příklady, str. 35:** jen zadání a odkaz na SIMLIB kód na onlinegdb, Petriho síť chybí.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -69,5 +54,22 @@ Kontrola simulací: invariant jedné linky platí. Při `A = 6` trvalo asi 89 % 
 - Linka, která po obsluze `5` zůstane ve stavu „5“: po každé obsluze se odpočet musí spustit znovu.
 - Časovač, který běží i během obsluhy (např. vlastní místo spouštěné obsazením linky a nerušené): pak se počítá od začátku obsluhy, ne od jejího konce.
 - `exp(2)` a `exp(5)` místo pevných dob; zadání je M/D/1.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** zkouška 2020/21, 1. opravný termín (9:00), otázka 2 (počet bodů neznámý). Navazující otázka 3 chtěla tutéž síť popsat pseudokódem podle SIMLIBu.
+
+**Zdroje:**
+
+- `Fitcheats/Příprava na zkoušku/FIT - Řešené výpočetní příklady 2017-21.pdf`, str. 35 („2021 - 1. opravný 9:00“: zadání z paměti, k SIMLIB části jen odkaz na onlinegdb, síť chybí)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- **Řešené výpočetní příklady, str. 35:** jen zadání a odkaz na SIMLIB kód na onlinegdb, Petriho síť chybí.
 
 </details>

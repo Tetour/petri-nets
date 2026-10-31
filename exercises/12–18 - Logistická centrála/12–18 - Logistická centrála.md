@@ -1,12 +1,5 @@
 # 12–18 – Logistická centrála
 
-**Původ:** půlsemestrální písemka 2010/11 (bodování neuvedeno).
-
-**Zdroje:**
-
-- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2010-11.pdf`, str. 1 (zadání, úloha 2)
-- `Fitcheats/Skripta/FIT - Studentská skripta 2015-16.pdf`, str. 44 (zadání a ručně kreslené studentské řešení s komentáři)
-
 ## Zadání
 
 > Do logistické centrály přijíždí dodávky v intervalech daných exponenciálním rozložením se středem 2 hodiny. Dodávka přistupuje k centrále přes jednu nakládací/vykládací rampu. Dodávka přiveze 100 balíků ke zpracování. Dobu vyložení balíků zanedbáváme. Zpracováním přivezených balíků se zabývá jeden pracovník. Doba zpracování každého jednotlivého balíku se řídí exponenciálním rozložením se středem 1 minuta. Zpracované balíky jsou umístěny v centrále. Kapacitu centrály pro uložení přivezených nebo zpracovaných balíků nezkoumáme. Polovina dodávek po vyložení balíků nakládá zpracované balíky až po svou kapacitu 100 balíků, druhá polovina po vyložení okamžitě opouští systém. Doba naložení každého jednotlivého balíku se řídí exponenciálním rozložením se středem 1 minuta. Po plném naložení dodávka odjíždí a další její chování nezkoumáme.
@@ -53,19 +46,6 @@ Kontrola simulací: *Rampa* + *Vyložená* + *Nakládá* + *Odjíždí* = 1, *Pr
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- **Studentská skripta, str. 44 (ručně kreslené):** „PRICHÁDZA DODÁVKA“ `exp(2h)` → přechod s „RAMPA“ → váha 100 do „BALÍKY NA VYLOŽENIE“ → `exp(1min)` s „PRACOVNÍK“ → „VYLOŽENÉ BALÍKY“ a „CENTRÁLA“ → váha 100 → `50%`: „PO VYLOŽENÍ ODCHOD“ / `50%`: „NAKLÁDÁ“ → `exp(1min)` (bere z centrály) → „NALOŽENÉ“ → váha 100 → „NALOŽENÁ ODCHÁDZA“. Obě odjíždějící větve vracejí rampu. Chyby:
-  - pracovník se po zpracování balíku nevrací (komentář „Ten pracovník se nevrací?“). Zpracuje se tak jediný balík;
-  - dodávka v síti zmizí a dál ji zastupuje 100 značek „vyložené balíky“. Rampu tedy drží, dokud pracovník nezpracuje všech 100 balíků. To odporuje „dobu vyložení zanedbáváme“ i poznámce, že pracovník je nezávislý proces. Navíc se tam míchají balíky různých dodávek;
-  - chybí okamžité obsazení pracovníka (komentář pod řešením). Časovaný přechod se vstupem z místa zařízení by ale fungoval také.
-- Diskuse pod řešením („Neměli by tam být odkonce 2 pracovníci, zvlášť na zpracování a nakládání?“) skončila správně: „v zadani je ze pracovnik se zabyva zpracovanim, nic vic“.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -76,5 +56,27 @@ Kontrola simulací: *Rampa* + *Vyložená* + *Nakládá* + *Odjíždí* = 1, *Pr
 - Nakládání bez místa *Nakládá* ve smyčce: časovaný přechod jen se vstupem *Zpracované* by nakládal všechny balíky najednou (každá značka má vlastní odpočet, slajd 138).
 - Odjezd bez hrany váhy 100, nebo bez návratu značky *Rampě*.
 - Rozhodnutí 50 % / 50 % až po zpracování nebo s parametrem na hraně místo na přechodu.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** půlsemestrální písemka 2010/11 (bodování neuvedeno).
+
+**Zdroje:**
+
+- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2010-11.pdf`, str. 1 (zadání, úloha 2)
+- `Fitcheats/Skripta/FIT - Studentská skripta 2015-16.pdf`, str. 44 (zadání a ručně kreslené studentské řešení s komentáři)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- **Studentská skripta, str. 44 (ručně kreslené):** „PRICHÁDZA DODÁVKA“ `exp(2h)` → přechod s „RAMPA“ → váha 100 do „BALÍKY NA VYLOŽENIE“ → `exp(1min)` s „PRACOVNÍK“ → „VYLOŽENÉ BALÍKY“ a „CENTRÁLA“ → váha 100 → `50%`: „PO VYLOŽENÍ ODCHOD“ / `50%`: „NAKLÁDÁ“ → `exp(1min)` (bere z centrály) → „NALOŽENÉ“ → váha 100 → „NALOŽENÁ ODCHÁDZA“. Obě odjíždějící větve vracejí rampu. Chyby:
+  - pracovník se po zpracování balíku nevrací (komentář „Ten pracovník se nevrací?“). Zpracuje se tak jediný balík;
+  - dodávka v síti zmizí a dál ji zastupuje 100 značek „vyložené balíky“. Rampu tedy drží, dokud pracovník nezpracuje všech 100 balíků. To odporuje „dobu vyložení zanedbáváme“ i poznámce, že pracovník je nezávislý proces. Navíc se tam míchají balíky různých dodávek;
+  - chybí okamžité obsazení pracovníka (komentář pod řešením). Časovaný přechod se vstupem z místa zařízení by ale fungoval také.
+- Diskuse pod řešením („Neměli by tam být odkonce 2 pracovníci, zvlášť na zpracování a nakládání?“) skončila správně: „v zadani je ze pracovnik se zabyva zpracovanim, nic vic“.
 
 </details>

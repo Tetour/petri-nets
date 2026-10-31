@@ -1,11 +1,5 @@
 # 04–03 – Automat na kávu – uspání
 
-**Původ:** zkouška 2017/18, 2. termín, skupina D, otázka 1 (body neuvedeny, sesterské skupiny B a C mají 10 bodů).
-
-**Zdroje:**
-
-- `Fitcheats/Zkoušky z minulých let/2017-18 - 2. termín D.txt`, otázka [1] (vzpomínka studenta)
-
 ## Zadání
 
 ⚠️ Zadání je známé jen ze vzpomínky studenta. Petriho síť v textu výslovně není, ale otázka 1 tohoto termínu je ve skupinách B a C vždy Petriho síť.
@@ -53,15 +47,6 @@ Kontrola simulací: *Automat* + obsluha + *spí* + *probouzení* = 1. Automat us
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- Ve zdrojích není žádné řešení.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -72,5 +57,22 @@ Kontrola simulací: *Automat* + obsluha + *spí* + *probouzení* = 1. Automat us
 - Prodloužení o 2 u všech obsluh (časovaný přechod `2` přímo v hlavní větvi) místo jen u obsluhy po probuzení.
 - `exp(2)` místo pevné doby 2.
 - Probuzení, po kterém se značka automatu nevrátí do *Automatu* (automat po první obsluze po probuzení zmizí nebo zůstane „spát“).
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** zkouška 2017/18, 2. termín, skupina D, otázka 1 (body neuvedeny, sesterské skupiny B a C mají 10 bodů).
+
+**Zdroje:**
+
+- `Fitcheats/Zkoušky z minulých let/2017-18 - 2. termín D.txt`, otázka [1] (vzpomínka studenta)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- Ve zdrojích není žádné řešení.
 
 </details>

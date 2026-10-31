@@ -1,11 +1,5 @@
 # 11–01 – Výletní autobus
 
-**Původ:** půlsemestrální písemka 2025/26, varianta C, 10 bodů (bodování podle ostatních let).
-
-**Zdroj:**
-
-- `Fitcheats/Půlsemestrálky/Hrubý - Řešení 2025-26.pdf`, str. 3
-
 ## Zadání
 
 > ⚠️ **Rekonstrukce.** Zadání z roku 2025/26 v materiálech chybí, existuje jen Hrubého řešení. Text níže je odvozený z jeho sítě a poznámek („proces „bus““, „proces timeout“, „čekám na turistu“, „Odjezd: *1 – plno, *2 – čekám ≥ 20min“). Čísla jsou převzatá z řešení. Že po 20 minutách autobus už nikoho nenabírá, je doplněné (podle podobné úlohy s lodí).
@@ -54,15 +48,6 @@ Kontrola simulací: na zastávce je vždy nejvýš jeden autobus a ke každému 
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- **Hrubý (str. 3):** stejná struktura: zdroj `1h` dává *proces „bus“*, váhou 20 *kapacitu* a *proces timeout*; if-else `p=1` → *čekám na turistu* → nástup `exp(30s)` → zpět; odjezd *1 (plno, bere i timeout) a *2 (`20min` + čekám na turistu) s `p=1` smyčkou na *kapacitu*; výstup *autobus pryč*. Hnědě dokreslený přechod (*proces bus* + vypršený timeout) řeší past popsanou v Interpretaci. Rozdíly: oba generátory kreslí jako přechod bez vstupního místa; má dvě místa *odjezd kapacitní* a *odjezd timeout* (tady jedno místo *odjezd*, smyčka na kapacitu u plného autobusu nic nedělá); nemá prioritu u odjezdu po 20 minutách.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -73,5 +58,22 @@ Kontrola simulací: na zastávce je vždy nejvýš jeden autobus a ke každému 
 - Timeout `20 min` přímo na místě *čeká na turistu*: měří jen čekání na dalšího turistu (a s každým nástupem začíná znovu), ne dobu od příjezdu autobusu.
 - Chybějící přechod pro případ „odpočet vypršel během nástupu posledního turisty“ (Hrubý ho dokreslil až dodatečně).
 - Kapacita testovaná inhibiční hranou místo if-else přes prioritu.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** půlsemestrální písemka 2025/26, varianta C, 10 bodů (bodování podle ostatních let).
+
+**Zdroj:**
+
+- `Fitcheats/Půlsemestrálky/Hrubý - Řešení 2025-26.pdf`, str. 3
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- **Hrubý (str. 3):** stejná struktura: zdroj `1h` dává *proces „bus“*, váhou 20 *kapacitu* a *proces timeout*; if-else `p=1` → *čekám na turistu* → nástup `exp(30s)` → zpět; odjezd *1 (plno, bere i timeout) a *2 (`20min` + čekám na turistu) s `p=1` smyčkou na *kapacitu*; výstup *autobus pryč*. Hnědě dokreslený přechod (*proces bus* + vypršený timeout) řeší past popsanou v Interpretaci. Rozdíly: oba generátory kreslí jako přechod bez vstupního místa; má dvě místa *odjezd kapacitní* a *odjezd timeout* (tady jedno místo *odjezd*, smyčka na kapacitu u plného autobusu nic nedělá); nemá prioritu u odjezdu po 20 minutách.
 
 </details>

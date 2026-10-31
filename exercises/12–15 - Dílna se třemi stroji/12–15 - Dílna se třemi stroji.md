@@ -1,11 +1,5 @@
 # 12–15 – Dílna se třemi stroji
 
-**Původ:** půlsemestrální písemka 2011/12, příklad 4 (bodování v zadání není).
-
-**Zdroje:**
-
-- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2011-12.pdf`, str. 1 (zadání, příklad 4)
-
 ## Zadání
 
 > V dílně jsou tři stroje - A, B a C. Stroje A a B obsluhuje jeden pracovník, stroj C pracuje samostatně. Ke strojům A a B přistupuje pracovník s rovnoměrnou pravděpodobností. Obsluha stroje spočívá v přípravě výrobní operace, která zabere 3-5 min u stroje A a 4-6 min u stroje B. Po přípravě operace stroje už operaci dokončí samy v době 10 min u stroje A a 15 min u stroje B. Výsledkem výrobní operace na A a B je 20 kusů mezivýrobku, které jsou umístěny ve výstupním kontejneru stroje s neomezenou kapacitou. Stroj C v každém cyklu bere současně mezivýrobek z A a B z výstupních kontejnerů operací. Pokud nemá tyto mezivýrobky, dojde u něj k poruše, která vyžaduje okamžitou opravu pracovníkem. Obsluha opravy zabere exp(20 min). Pracovník obnoví po návratu z opravy poruchy svou předchozí činnost od jejího počátku. Výrobní cyklus stroje C trvá vždy 1 minutu.
@@ -50,15 +44,6 @@ Kontrola simulací: pracovník je vždy na jednom místě (*pracovník volí* / 
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- K zadáním z roku 2011/12 v materiálech žádné řešení není.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -69,5 +54,22 @@ Kontrola simulací: pracovník je vždy na jednom místě (*pracovník volí* / 
 - Porucha C bez priority vůči normálnímu cyklu, takže může nastat, i když mezivýrobky jsou.
 - Oprava, která pracovníka „vezme“, ale nezruší jeho rozpracovanou přípravu (ta by pak během opravy doběhla).
 - Pracovník, který se po opravě vrací k náhodné volbě stroje; zadání chce předchozí činnost od začátku.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** půlsemestrální písemka 2011/12, příklad 4 (bodování v zadání není).
+
+**Zdroje:**
+
+- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2011-12.pdf`, str. 1 (zadání, příklad 4)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- K zadáním z roku 2011/12 v materiálech žádné řešení není.
 
 </details>

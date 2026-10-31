@@ -1,12 +1,5 @@
 # 03–09 – Porucha prodlouží obsluhu o 2
 
-**Původ:** zkouška 2020/21, 1. opravný termín (11:00), otázka 2, 10 bodů. Soubor se zadáním se jmenuje „1. termín“, ale otázky jsou totožné s termínem „2021 - 1. opravný 11:00“ v Řešených výpočetních příkladech.
-
-**Zdroje:**
-
-- `Fitcheats/Zkoušky z minulých let/2020-21 - 1. termín.pdf`, str. 1 (ručně přepsané celé zadání)
-- `Fitcheats/Příprava na zkoušku/FIT - Řešené výpočetní příklady 2017-21.pdf`, str. 37 („2021 - 1. opravný 11:00“, jen text zadání a odkaz na pseudokód)
-
 ## Zadání
 
 ⚠️ Zadání je dochované jen jako ruční přepis:
@@ -53,15 +46,6 @@ Kontrola simulací: *Linka* + obsluhovaná transakce + *prodloužení* = 1, kaž
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- K této úloze žádná nakreslená síť není. Řešené výpočetní příklady (str. 37) mají jen odkaz na pseudokód.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -72,5 +56,23 @@ Kontrola simulací: *Linka* + obsluhovaná transakce + *prodloužení* = 1, kaž
 - Přerušená transakce, která po prodloužení nepokračuje v obsluze, ale jde do fronty nebo odchází.
 - Chybějící zánik poruchy při volné lince: poruchy se hromadí a prodlouží pozdější obsluhy.
 - Zánik poruchy jako obyčejný přechod `p=0`: porucha během prodloužení se ztratí.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** zkouška 2020/21, 1. opravný termín (11:00), otázka 2, 10 bodů. Soubor se zadáním se jmenuje „1. termín“, ale otázky jsou totožné s termínem „2021 - 1. opravný 11:00“ v Řešených výpočetních příkladech.
+
+**Zdroje:**
+
+- `Fitcheats/Zkoušky z minulých let/2020-21 - 1. termín.pdf`, str. 1 (ručně přepsané celé zadání)
+- `Fitcheats/Příprava na zkoušku/FIT - Řešené výpočetní příklady 2017-21.pdf`, str. 37 („2021 - 1. opravný 11:00“, jen text zadání a odkaz na pseudokód)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- K této úloze žádná nakreslená síť není. Řešené výpočetní příklady (str. 37) mají jen odkaz na pseudokód.
 
 </details>

@@ -1,11 +1,5 @@
 # 04–06 – Údržba po každé 10. obsluze
 
-**Původ:** zkouška 2022/23, 1. termín (11. 1. 2023), skupina D, otázka 1, 15 bodů.
-
-**Zdroje:**
-
-- `Fitcheats/Zkoušky z minulých let/2022-23 - 1. termín D.pdf`, str. 1 (malá rozmazaná fotka zadání) a str. 4 (ručně psaný přepis celé písemky)
-
 ## Zadání
 
 ⚠️ Fotka zadání je hodně rozmazaná. Znění je přečtené z ní a ověřené ručním přepisem na str. 4 („M/M/1, kde transakce po každé 10 dokončené obsluze navíc zařadí blok údržby linky trvající C časových jednotek.“).
@@ -51,15 +45,6 @@ Kontrola simulací: *Linka* + obsluha + *obslouženo* + *údržba* = 1, v číta
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- Ve zdrojích není žádné řešení této otázky.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -69,5 +54,22 @@ Kontrola simulací: *Linka* + obsluha + *obslouženo* + *údržba* = 1, v číta
 - Údržba bez priority vůči uvolnění (nebo vůči obsazení ve variantě s vracením linky): údržba se může posunout k pozdější obsluze.
 - Linka vrácená z `exp(B)` a zároveň držená během údržby: vzniknou dvě značky linky.
 - SIMLIB, který neodpovídá síti (např. údržba až po uvolnění linky, kdy už ji drží další transakce, zatímco síť ji drží během údržby).
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** zkouška 2022/23, 1. termín (11. 1. 2023), skupina D, otázka 1, 15 bodů.
+
+**Zdroje:**
+
+- `Fitcheats/Zkoušky z minulých let/2022-23 - 1. termín D.pdf`, str. 1 (malá rozmazaná fotka zadání) a str. 4 (ručně psaný přepis celé písemky)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- Ve zdrojích není žádné řešení této otázky.
 
 </details>

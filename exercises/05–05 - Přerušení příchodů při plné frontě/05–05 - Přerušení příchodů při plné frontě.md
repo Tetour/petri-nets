@@ -1,11 +1,5 @@
 # 05–05 – Přerušení příchodů při plné frontě
 
-**Původ:** zkouška 2024/25, 1. termín, skupina B, otázka 3 (body neuvedené; ve skupinách A a C téhož termínu byla otázka 3 za 10 bodů).
-
-**Zdroje:**
-
-- `Fitcheats/Zkoušky z minulých let/2024-25 - 1. termín B.txt`, otázka 3 (studentský přepis zadání)
-
 ## Zadání
 
 ⚠️ Původní zadání se nedochovalo, jen studentský přepis:
@@ -47,15 +41,6 @@ Kontrola simulací (A = 5, B = 6): *Linka* + obsluhovaná transakce = 1, *gener�
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- K této úloze v materiálech žádné řešení není. Stejný mechanismus je v [09–06 – Klientské centrum](<../09–06 - Klientské centrum/09–06 - Klientské centrum.md>).
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -66,5 +51,22 @@ Kontrola simulací (A = 5, B = 6): *Linka* + obsluhovaná transakce = 1, *gener�
 - Zapomenutý návrat značky po 10 č. j.: příchody by se zastavily natrvalo.
 - Přerušení, které nebere značku generátoru ani jinou řídicí značku: test zůstává splněný a přechod se provádí pořád dokola.
 - Váha 6 („přesáhne“) místo 5 („dosáhne“).
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** zkouška 2024/25, 1. termín, skupina B, otázka 3 (body neuvedené; ve skupinách A a C téhož termínu byla otázka 3 za 10 bodů).
+
+**Zdroje:**
+
+- `Fitcheats/Zkoušky z minulých let/2024-25 - 1. termín B.txt`, otázka 3 (studentský přepis zadání)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- K této úloze v materiálech žádné řešení není. Stejný mechanismus je v [09–06 – Klientské centrum](<../09–06 - Klientské centrum/09–06 - Klientské centrum.md>).
 
 </details>

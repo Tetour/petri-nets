@@ -1,11 +1,5 @@
 # 12–16 – Tunel
 
-**Původ:** půlsemestrální písemka 2011/12, příklad 1 (bodování v zadání není).
-
-**Zdroje:**
-
-- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2011-12.pdf`, str. 1 (zadání, příklad 1)
-
 ## Zadání
 
 > Mezi místy A a B je třeba vykopat 1000 metrů dlouhý tunel. Z každé strany kope jiná vrtná souprava (souprava A/B). Souprava B vždy vrtá úsek jednoho metru dobu 1-3 hodiny. Souprava A je extrémně hlučná a proto musí v nočních hodinách vrtat pomalu (3-5 hodin na metr) a v denních hodinach smí pracovat běžnou rychlostí 1-3 hodiny na metr. Pokud v libovolném okamžiku vrtání běžnou rychlostí u soupravy A denní doba přejde z denních do nočních hodin, vrtání se přeruší a dále se rozpracovaný metrový úsek od počátku znovu opakuje v pomalém módu. Vrtné soupravy postupují proti sobě, přesto se však nesmí srazit. Práce se ukončí v okamžiku, kdy se soupravy potkají. Vyznačte v Petriho síti místo, které bude obsahovat informaci o počtu metrů od startovního místa A, kde dojde k setkání obou souprav. Noční doba trvá 8 hodin. Zvolte si vhodně počáteční čas.
@@ -54,15 +48,6 @@ Kontrola simulací: platí *Den* + *noc trvá* = 1, *Den* + *Noc* + *ráno* = 1 
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- K zadáním z roku 2011/12 v materiálech žádné řešení není.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -73,5 +58,22 @@ Kontrola simulací: platí *Den* + *noc trvá* = 1, *Den* + *Noc* + *ráno* = 1 
 - Přerušený metr poslaný do pomalého vrtání s pokračujícím odpočtem; zadání chce úsek „od počátku znovu“, tedy nový odpočet `3–5 h`.
 - Místo pro vzdálenost setkání, které počítá metry obou souprav dohromady (to je vždy 1000).
 - Den a noc jako dva nezávislé generátory místo jednoho cyklu; pak se mohou překrývat.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** půlsemestrální písemka 2011/12, příklad 1 (bodování v zadání není).
+
+**Zdroje:**
+
+- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2011-12.pdf`, str. 1 (zadání, příklad 1)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- K zadáním z roku 2011/12 v materiálech žádné řešení není.
 
 </details>

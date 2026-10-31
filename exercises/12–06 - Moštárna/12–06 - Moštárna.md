@@ -1,13 +1,5 @@
 # 12–06 – Moštárna
 
-**Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z16.
-
-**Zdroje:**
-
-- `Fitcheats/Půlsemestrálky/Zadání z minulých let/Přehled zadání 2014-19.pdf`, str. 4 (zadání)
-- `Fitcheats/Půlsemestrálky/Democvičení 2020-21 - Z4 zadání a řešení.pdf`, str. 4 (zadání a řešení z democvičení)
-- `Fitcheats/Půlsemestrálky/FIT - Příprava 2021-22.pdf`, str. 19 (studentské řešení, bez hlasů)
-
 ## Zadání
 
 > Dílna na produkci jablečného moštu (moštárna) leží vedle jablečného sadu. Moštárna obsahuje 5 poloautomatických lisů, sběrnou nádobu na mošt a jednu lahvovací linku. Ve firmě pracují dva moštaři a pět sběračů jablek. Sběrač v intervalech daný exponenciálním rozložením se středem 30 minut přináší do moštárny jednu bedýnku jablek. Každý moštař pracuje nezávisle a provádí dvě činnosti: 1) plnění lisů jablky, 2) lahvování. Lis pracuje dávkově s kapacitou danou obsahem jedné bedýnky jablek. Plnění lisu moštařem zabere 5-7 minut. Po naplnění lisu dále lis pracuje samostatně. Lisování zabere 30-40 minut a výsledkem je mošt o objemu na 20 lahví. Lisovaný mošt ze všech lisů jde do centrální záchytné nádoby (kapacitu neuvažujeme). Pokud je v záchytné nádobě nějaký mošt, pak moštař přednostně provádí lahvování dokud je nádoba neprázdná. Naplnění jedné lahve moštařem na lahvovací lince zabere 1-2 minuty.
@@ -52,19 +44,6 @@ Kontrola simulací: lisů je vždy celkem 5, moštařů 2, linka je nejvýš jed
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- **Democvičení 2020/21 (str. 4):** sběrači (5) ⇄ `exp(30m)` → „Fbed“ → obsazení „5 Lis“ a „2 Moštař“ → `5-7m` (vrací moštaře) → `30-40m` (vrací lis) → hrana `20` do „Nádoba“. Lahvování: „Lah“ (linka) + moštař + nádoba → `p=1` → láhev `1-2m` → `p=1` další láhev, dokud je mošt, jinak přechod, který vrátí linku a moštaře. Struktura je stejná jako tady, jen s explicitní smyčkou lahvování. Láhve nikam neodcházejí (výstupní přechod se tehdy nevyžadoval).
-- **Příprava 2021/22 (str. 19):** stejné schéma, ale:
-  - v místě *sběrači* je jen jedna značka; pět sběračů musí být pět značek;
-  - zahájení lahvování nemá prioritu, takže „přednostně“ není zajištěno (`P=1` má jen pokračování smyčky);
-  - chybí výstupní přechod.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -75,5 +54,28 @@ Kontrola simulací: lisů je vždy celkem 5, moštařů 2, linka je nejvýš jed
 - Lis vrácený už po naplnění, ne až po lisování.
 - Lahvování bez priority, nebo dvě lahvovací linky (každý moštař „pracuje nezávisle“, ale linka je jedna).
 - Hrana do nádoby bez váhy 20: jedna bedýnka by dala jen jednu láhev.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z16.
+
+**Zdroje:**
+
+- `Fitcheats/Půlsemestrálky/Zadání z minulých let/Přehled zadání 2014-19.pdf`, str. 4 (zadání)
+- `Fitcheats/Půlsemestrálky/Democvičení 2020-21 - Z4 zadání a řešení.pdf`, str. 4 (zadání a řešení z democvičení)
+- `Fitcheats/Půlsemestrálky/FIT - Příprava 2021-22.pdf`, str. 19 (studentské řešení, bez hlasů)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- **Democvičení 2020/21 (str. 4):** sběrači (5) ⇄ `exp(30m)` → „Fbed“ → obsazení „5 Lis“ a „2 Moštař“ → `5-7m` (vrací moštaře) → `30-40m` (vrací lis) → hrana `20` do „Nádoba“. Lahvování: „Lah“ (linka) + moštař + nádoba → `p=1` → láhev `1-2m` → `p=1` další láhev, dokud je mošt, jinak přechod, který vrátí linku a moštaře. Struktura je stejná jako tady, jen s explicitní smyčkou lahvování. Láhve nikam neodcházejí (výstupní přechod se tehdy nevyžadoval).
+- **Příprava 2021/22 (str. 19):** stejné schéma, ale:
+  - v místě *sběrači* je jen jedna značka; pět sběračů musí být pět značek;
+  - zahájení lahvování nemá prioritu, takže „přednostně“ není zajištěno (`P=1` má jen pokračování smyčky);
+  - chybí výstupní přechod.
 
 </details>

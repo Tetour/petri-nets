@@ -1,11 +1,5 @@
 # 05–10 – Pomocník přidá kapacitu
 
-**Původ:** zkouška 2025/26, 2. termín (27. 1. 2026), skupina F, otázka 1, 10 bodů.
-
-**Zdroje:**
-
-- `Fitcheats/Zkoušky z minulých let/2025-26 - 2. termín F.pdf`, str. 1 (fotka zadání, bez řešení)
-
 ## Zadání
 
 > Mějme systém M/M/1. V intervalech exp(100 č.j.) přichází dobrotivý správce linky, který na dobu 20 č.j. pomáhá s obsluhou tak, že poskytuje lince další jednu jednotku kapacity (systém je pak M/M/2). Zadaný systém modelujte prostředky Petriho sítě.
@@ -45,15 +39,6 @@ Kontrola simulací (A = 5, B = 4): *Linka* + obsluhovaní + *správce jinde* = 2
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- K této úloze v materiálech žádné řešení není.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -63,5 +48,22 @@ Kontrola simulací (A = 5, B = 4): *Linka* + obsluhovaní + *správce jinde* = 2
 - Odebrání jednotky bez priority: uvolněnou jednotku může dřív obsadit čekající zákazník a pomoc se protáhne.
 - Přidání jednotky bez jejího odebrání (kapacita roste s každým příchodem správce).
 - Generátor správce ve smyčce: při překryvu dvou návštěv vznikne M/M/3.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** zkouška 2025/26, 2. termín (27. 1. 2026), skupina F, otázka 1, 10 bodů.
+
+**Zdroje:**
+
+- `Fitcheats/Zkoušky z minulých let/2025-26 - 2. termín F.pdf`, str. 1 (fotka zadání, bez řešení)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- K této úloze v materiálech žádné řešení není.
 
 </details>

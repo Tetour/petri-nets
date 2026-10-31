@@ -1,11 +1,5 @@
 # 07–04 – Dva proudy příchodů
 
-**Původ:** zkouška 2025/26, 1. termín, skupina B, otázka 1, 10 bodů.
-
-**Zdroje:**
-
-- `Fitcheats/Zkoušky z minulých let/2025-26 - 1. termín B.pdf`, str. 1 (fotka zadání, 13. 1. 2026; rámeček na odpověď je prázdný)
-
 ## Zadání
 
 > Zadaný systém modelujte prostředky Petriho sítě s vyznačením atributů na přechodech a místech. Vyznačte přechodem, kde transakce opouští systém.
@@ -52,15 +46,6 @@ Kontrola simulací: *Linka* + obsluha P + obsluha N = 1. Asi 60 % prioritních t
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- K tomuto zadání žádné řešení není. Variantu s přerušením kreslí **Studentská skripta 2015-16, str. 40** a je chybná, rozbor je v [07–05](<../07–05 - Priorita procesu a obsluhy/07–05 - Priorita procesu a obsluhy.md>).
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -71,5 +56,22 @@ Kontrola simulací: *Linka* + obsluha P + obsluha N = 1. Asi 60 % prioritních t
 - Přerušení, které nevrátí značku *Lince* (nebo ji vrátí a prioritní ji pak nezabere): linka se ztratí, nebo ji znovu dostane normální transakce.
 - Přerušená transakce zahozená nebo poslaná na *odchod*. Při prioritě obsluhy se její obsluha jen odkládá.
 - Přerušení i z obsluhy prioritní transakce: prioritní by se navzájem vyhazovaly.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** zkouška 2025/26, 1. termín, skupina B, otázka 1, 10 bodů.
+
+**Zdroje:**
+
+- `Fitcheats/Zkoušky z minulých let/2025-26 - 1. termín B.pdf`, str. 1 (fotka zadání, 13. 1. 2026; rámeček na odpověď je prázdný)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- K tomuto zadání žádné řešení není. Variantu s přerušením kreslí **Studentská skripta 2015-16, str. 40** a je chybná, rozbor je v [07–05](<../07–05 - Priorita procesu a obsluhy/07–05 - Priorita procesu a obsluhy.md>).
 
 </details>

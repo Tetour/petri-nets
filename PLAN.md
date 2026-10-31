@@ -93,18 +93,17 @@ exercises/09–10 - Kopírovací centrum/
 └── net.pdf                       ← generated; vector, for printing
 ```
 
-Folder and note are named `<TT–NN> - <název>`. The id carries no origin; the origin is the first line of the note (**Původ:** zkouška/půlsemestrálka, year, term, group, points).
+Folder and note are named `<TT–NN> - <název>`. The id carries no origin; the origin is in the note's last section **Původ a zdroje**.
 
 Each note has these sections (headings in Czech):
 
-0. **Původ** (first line under the heading): where the exercise comes from.
-1. **Zadání**: verbatim text, every source where it appears (file + page, term/group, points), and its variants or duplicates.
-2. **Interpretace**: ambiguities and the assumption chosen (e.g. "přesáhne 5" means > 5, so the test arc has weight 6).
+1. **Zadání**: the verbatim task text and links to similar exercises.
+2. **Interpretace** → **Nápověda**: ambiguities and the assumption chosen (e.g. "přesáhne 5" means > 5, so the test arc has weight 6). The section is called *Interpretace* while it is my unconfirmed reading; once you review the note and confirm the interpretation, it is renamed to *Nápověda* („Zobrazit nápovědu“). The README index derives the status `reviewed` from that name.
 3. **Řešení**: the diagram plus a table mapping each requirement to the place or transition that implements it.
-4. **Existující řešení**: how Hrubý's or students' nets differ, and which of their errors to avoid.
-5. **Časté chyby**: the common mistakes for this pattern.
+4. **Časté chyby**: the common mistakes for this pattern.
+5. **Původ a zdroje**: where the exercise comes from (exam/midterm, year, term, group, points), every source file with pages, and the comparison with existing solutions (Hrubý's or students' nets, with the errors to avoid).
 
-Only the heading, **Původ** and **Zadání** are visible when the note is opened. Sections 2–5 are collapsed in `<details>` blocks (works in the VS Code preview and on GitHub), so you can try the exercise first and reveal the interpretation as a hint before the solution.
+When a note is opened, only the heading, **Zadání** and the visible part of **Původ a zdroje** are shown. Sections 2–4 and the existing-solutions part of section 5 are collapsed in `<details>` blocks (works in the VS Code preview and on GitHub), so you can try the exercise first and reveal the interpretation as a hint before the solution.
 
 Nets that differ only in numbers stay separate exercises (you asked for every one), but their notes link to each other. The D/D/x trace tasks get one net per parameter set, with that task's marking.
 

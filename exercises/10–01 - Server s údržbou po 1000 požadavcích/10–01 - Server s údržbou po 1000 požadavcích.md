@@ -1,11 +1,5 @@
 # 10–01 – Server s údržbou po 1000 požadavcích
 
-**Původ:** půlsemestrální písemka 2023/24, varianta A. Body nejsou uvedené (ostatní varianty téhož roku mají 10 bodů).
-
-**Zdroje:**
-
-- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2023-24.pdf`, str. 1 (snímek zprávy z Discordu, bez řešení)
-
 ## Zadání
 
 > ⚠️ **Převyprávěné zadání.** Originální zadání v materiálech chybí. Text níže je zpráva studenta na Discordu (Thetzi, 1. 11. 2023), kterou autor po odeslání ještě upravil (Discord u ní ukazuje „(upraveno)“). Přesné znění, body a závěrečná věta o odchodu transakce nejsou známé. Řešení neexistuje.
@@ -50,15 +44,6 @@ Kontrola simulací: *Server* + obsluhovaný + *Údržba* = 1, *probíhá údržb
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- K této variantě v materiálech žádné řešení není (ani od Hrubého, ani studentské).
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -70,5 +55,22 @@ Kontrola simulací: *Server* + obsluhovaný + *Údržba* = 1, *probíhá údržb
 - Zastavení generátoru místo vyhazování. Zadání říká, že požadavky přicházejí a jsou vyhozeny, ne že přestanou chodit.
 - Údržba, která nevrátí značku *Serveru*. Systém se po první údržbě zastaví.
 - Počítání i vyhozených požadavků do tisíce. Počítají se jen obsloužené.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** půlsemestrální písemka 2023/24, varianta A. Body nejsou uvedené (ostatní varianty téhož roku mají 10 bodů).
+
+**Zdroje:**
+
+- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2023-24.pdf`, str. 1 (snímek zprávy z Discordu, bez řešení)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- K této variantě v materiálech žádné řešení není (ani od Hrubého, ani studentské).
 
 </details>

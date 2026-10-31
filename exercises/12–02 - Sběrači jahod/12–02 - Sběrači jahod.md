@@ -1,12 +1,5 @@
 # 12–02 – Sběrači jahod
 
-**Původ:** půlsemestrální písemka 2021/22, varianta B, 10 bodů.
-
-**Zdroje:**
-
-- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2021-22.pdf`, str. 2 (zadání)
-- `Fitcheats/Půlsemestrálky/Hrubý - Řešení 2021-22.pdf`, str. 2 (řešení od Hrubého, dvě varianty)
-
 ## Zadání
 
 > Na poli pracuje 5 sběračů jahod. Každému sběrači zabere dobu danou exponenciálním rozložením se středem 20 minut nasbírat bedýnku jahod a donést ji do sběrného místa. Ve sběrném místě pracuje jedna balicí linka. Lince zabere 5-7 minut rovnoměrně zabalit obsah jedné bedýnky. Pokud fronta k lince dosáhne délky alespoň 10 bedýnek, pak linka hlásí sirénou přeplněnost. Na signál sirény si všichni sběrači dají pauzu v práci na dobu 60 minut a pak obnoví činnost od počátku.
@@ -50,17 +43,6 @@ Kontrola simulací: *Linka* + balená bedýnka = 1, *Sběrači* + 5 × *pauza* =
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- **Hrubý (str. 2), hlavní varianta:** „Sběrači“ (5) ⇄ `exp(20min)` → „Fronta beden“ → „Linka“ → `5-7min`. Přechod `p=1` „Spouštěcí podmínka (jednou proveditelné)“ testuje frontu hranami s váhou 10 a bere značku z místa „Pracuje“ (červeně zakroužkované). Dál přes místo na přechod „odvolání sběračů“ (červeně „(přerušení práce)“), který bere 5 sběračů, a přes místo na `1h` „pauza“. Ta vrací 5 sběračů a značku do „Pracuje“. Místo „Pracuje“ brání opakovanému spuštění během pauzy.
-- **Hrubý (str. 2), „Alternativně“:** totéž bez místa „Pracuje“. Přechod rovnou testuje frontu (10/10) a bere 5 sběračů, poznámka „provede se JEDNOU“. Váhu 5 na hraně ze sběračů má červeně zakroužkovanou s vykřičníkem. Síť výše je tato alternativa, jen s `p=1` z hlavní varianty.
-- V obou variantách bedýnka zaniká v přechodu linky. Výstupní přechod se tehdy nevyžadoval.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -71,5 +53,25 @@ Kontrola simulací: *Linka* + balená bedýnka = 1, *Sběrači* + 5 × *pauza* =
 - Siréna bez `p=1`: linka může desátou bedýnku odebrat dřív a siréna nezazní.
 - Odvolání jen jednoho sběrače (hrana bez váhy 5), nebo vrácení jiného počtu, než se odebralo.
 - Siréna, kterou nic neblokuje (jen test fronty, žádná spotřebovaná značka). Okamžitý přechod, který jen testuje, by se při plné frontě prováděl stále dokola. Blokovat ho musí značky *Sběračů* (nebo místo „Pracuje“ jako u Hrubého).
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** půlsemestrální písemka 2021/22, varianta B, 10 bodů.
+
+**Zdroje:**
+
+- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2021-22.pdf`, str. 2 (zadání)
+- `Fitcheats/Půlsemestrálky/Hrubý - Řešení 2021-22.pdf`, str. 2 (řešení od Hrubého, dvě varianty)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- **Hrubý (str. 2), hlavní varianta:** „Sběrači“ (5) ⇄ `exp(20min)` → „Fronta beden“ → „Linka“ → `5-7min`. Přechod `p=1` „Spouštěcí podmínka (jednou proveditelné)“ testuje frontu hranami s váhou 10 a bere značku z místa „Pracuje“ (červeně zakroužkované). Dál přes místo na přechod „odvolání sběračů“ (červeně „(přerušení práce)“), který bere 5 sběračů, a přes místo na `1h` „pauza“. Ta vrací 5 sběračů a značku do „Pracuje“. Místo „Pracuje“ brání opakovanému spuštění během pauzy.
+- **Hrubý (str. 2), „Alternativně“:** totéž bez místa „Pracuje“. Přechod rovnou testuje frontu (10/10) a bere 5 sběračů, poznámka „provede se JEDNOU“. Váhu 5 na hraně ze sběračů má červeně zakroužkovanou s vykřičníkem. Síť výše je tato alternativa, jen s `p=1` z hlavní varianty.
+- V obou variantách bedýnka zaniká v přechodu linky. Výstupní přechod se tehdy nevyžadoval.
 
 </details>

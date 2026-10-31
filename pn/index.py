@@ -2,7 +2,8 @@
 
     python3 -m pn.index
 
-Status: `todo` (no folder yet), `drafted` (net.py exists), `reviewed` (in REVIEWED).
+Status: `todo` (no folder yet), `drafted` (net.py exists), `reviewed` (the user confirmed the
+interpretation, which is marked by renaming the note's section „Interpretace“ to „Nápověda“).
 """
 
 from pathlib import Path
@@ -11,23 +12,23 @@ from .catalog import EXERCISES, TOPICS, folder
 
 ROOT = Path(__file__).resolve().parent.parent
 START, END = "<!-- index:start -->", "<!-- index:end -->"
-REVIEWED = set()
-
-
 def status(ex_id):
-    if ex_id in REVIEWED:
-        return "reviewed"
-    return "drafted" if (ROOT / "exercises" / folder(ex_id) / "net.py").exists() else "todo"
+    d = ROOT / "exercises" / folder(ex_id)
+    if not (d / "net.py").exists():
+        return "todo"
+    note = d / f"{folder(ex_id)}.md"
+    return "reviewed" if note.exists() and "\n## Nápověda\n" in note.read_text() else "drafted"
 
 
 def table():
     out = []
-    done = sum(status(i) != "todo" for i, _, _ in EXERCISES)
-    out.append(f"{done} of {len(EXERCISES)} exercises drafted.\n")
+    st = [status(i) for i, _, _ in EXERCISES]
+    out.append(f"{len(st) - st.count('todo')} of {len(EXERCISES)} exercises drafted, "
+               f"{st.count('reviewed')} reviewed.\n")
     for t, title in TOPICS.items():
         out += [f"### {t} {title}", "", "| Id | Úloha | Původ | Status |", "|---|---|---|---|"]
         for i, name, origin in EXERCISES:
-            if not i.startswith(t + "."):
+            if not i.startswith(t + "–"):
                 continue
             st = status(i)
             cell = f"[{name}](<exercises/{folder(i)}/{folder(i)}.md>)" if st != "todo" else name

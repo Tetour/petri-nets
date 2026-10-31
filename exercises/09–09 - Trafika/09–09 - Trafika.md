@@ -1,13 +1,5 @@
 # 09–09 – Trafika
 
-**Původ:** půlsemestrální písemka 2022/23, varianta B, 10 bodů.
-
-**Zdroje:**
-
-- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2022-23.pdf`, str. 2 (fotka zadání, spodek listu je zakrytý)
-- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2024-25 - Varianta A (fotky).pdf`, str. 5–6 (celé zadání a řešení kreslené na cvičení)
-- `Fitcheats/Půlsemestrálky/Hrubý - Řešení 2022-23.pdf`, str. 2 (řešení od Hrubého)
-
 ## Zadání
 
 > Do trafiky přichází zákazníci v intervalech daných exponenciálním rozložením se středem 5 minut. V trafice pracuje jeden prodavač. Doba obsluhy zákazníka se řídí exponenciálním rozložením se středem 2 minuty. Pokud prodavač nemá zákazníky 10 minut, pak odchází do skladu a vrací se po 10 minutách. Příchozí zákazník okamžitě z trafiky odchází, pokud u pultu není přítomen prodavač.
@@ -52,16 +44,6 @@ Kontrola simulací: platí *prodavač* + obsluha + *nikdo nepřišel* + *ve skla
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- **Hrubý (str. 2):** síť výše je jeho řešení překreslené. Místo *přítomen* testuje přechod `p=1` do *Fronty*, z téhož místa vede výstupní přechod pro zákazníka, který prodavače nezastihne. Místo *prodavač* má označené jako „Facility“, z něj vede `10min` (poznámka „nikdo nepřichází“) → místo → `p=2` odchod do skladu (bere *přítomen*) → místo → `10min` návrat, který vrací obě značky. Obsloužený odchází přes vlastní výstupní přechod. Jediný rozdíl: generátor kreslí bez místa.
-- **Řešení ze cvičení (fotky 2024/25, str. 6):** stejná stavba. Vstup do *FRONTA* je `p=1` s testem místa přítomnosti (zakroužkované modře), odchod nepřítomnému prodavači je vodorovný výstupní přechod nad místem příchodu. Obsazení *L* má `P=1`. Úsek mezi prvním `10 min` a vysokým okamžitým přechodem je přeškrtaný a zakroužkovaný, takže ho nelze spolehlivě přečíst; písmeno „F“ u tohoto přechodu možná znamená test prázdné fronty. Ten není potřeba, protože při volném prodavači je fronta vždy prázdná.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -72,5 +54,25 @@ Kontrola simulací: platí *prodavač* + obsluha + *nikdo nepřišel* + *ve skla
 - Časovač nečinnosti se vstupem z *přítomen*: ten běží i během obsluhy, protože prodavač je přítomen i tehdy.
 - Zákazník, který přijde během nepřítomnosti, čeká ve frontě. Podle zadání musí okamžitě odejít, a to přes výstupní přechod.
 - Po návratu ze skladu se vrátí jen jedna ze dvou značek (*přítomen* nebo *prodavač*). Trafika pak buď nikoho nepustí dovnitř, nebo nikoho neobslouží.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** půlsemestrální písemka 2022/23, varianta B, 10 bodů.
+
+**Zdroje:**
+
+- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2022-23.pdf`, str. 2 (fotka zadání, spodek listu je zakrytý)
+- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2024-25 - Varianta A (fotky).pdf`, str. 5–6 (celé zadání a řešení kreslené na cvičení)
+- `Fitcheats/Půlsemestrálky/Hrubý - Řešení 2022-23.pdf`, str. 2 (řešení od Hrubého)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- **Hrubý (str. 2):** síť výše je jeho řešení překreslené. Místo *přítomen* testuje přechod `p=1` do *Fronty*, z téhož místa vede výstupní přechod pro zákazníka, který prodavače nezastihne. Místo *prodavač* má označené jako „Facility“, z něj vede `10min` (poznámka „nikdo nepřichází“) → místo → `p=2` odchod do skladu (bere *přítomen*) → místo → `10min` návrat, který vrací obě značky. Obsloužený odchází přes vlastní výstupní přechod. Jediný rozdíl: generátor kreslí bez místa.
+- **Řešení ze cvičení (fotky 2024/25, str. 6):** stejná stavba. Vstup do *FRONTA* je `p=1` s testem místa přítomnosti (zakroužkované modře), odchod nepřítomnému prodavači je vodorovný výstupní přechod nad místem příchodu. Obsazení *L* má `P=1`. Úsek mezi prvním `10 min` a vysokým okamžitým přechodem je přeškrtaný a zakroužkovaný, takže ho nelze spolehlivě přečíst; písmeno „F“ u tohoto přechodu možná znamená test prázdné fronty. Ten není potřeba, protože při volném prodavači je fronta vždy prázdná.
 
 </details>

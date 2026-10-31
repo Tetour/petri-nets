@@ -1,11 +1,5 @@
 # 03–10 – Porucha prodlouží probíhající obsluhu o 5
 
-**Původ:** zkouška 2020/21, náhradní termín (COVID), otázka 2, 10 bodů.
-
-**Zdroje:**
-
-- `Fitcheats/Příprava na zkoušku/FIT - Řešené výpočetní příklady 2017-21.pdf`, str. 38 („2021 - náhradný COVID termín“, jen text zadání, bez řešení)
-
 ## Zadání
 
 ⚠️ Původní zadání se nedochovalo, jen studentský přepis (slovensky):
@@ -51,15 +45,6 @@ Kontrola simulací: *Linka* + obsluhovaná transakce + *prodloužení* = 1, asi 
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- K této úloze žádné řešení není.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -69,5 +54,22 @@ Kontrola simulací: *Linka* + obsluhovaná transakce + *prodloužení* = 1, asi 
 - Přerušení obsluhy bez návratu do ní: transakce po prodloužení odejde nebo jde do fronty.
 - Zánik poruchy jako obyčejný přechod `p=0`: porucha během prodloužení se ztratí.
 - Tento postup (restart `exp(B)`) použitý pro konstantní dobu obsluhy: odpočet by začal znovu od začátku a obsluha by se prodloužila víc než o 5.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** zkouška 2020/21, náhradní termín (COVID), otázka 2, 10 bodů.
+
+**Zdroje:**
+
+- `Fitcheats/Příprava na zkoušku/FIT - Řešené výpočetní příklady 2017-21.pdf`, str. 38 („2021 - náhradný COVID termín“, jen text zadání, bez řešení)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- K této úloze žádné řešení není.
 
 </details>

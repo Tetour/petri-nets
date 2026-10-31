@@ -1,11 +1,5 @@
 # 09–03 – Psí salon
 
-**Původ:** půlsemestrální písemka 2025/26, varianta A, 10 bodů (bodování podle ostatních let).
-
-**Zdroj:**
-
-- `Fitcheats/Půlsemestrálky/Hrubý - Řešení 2025-26.pdf`, str. 1
-
 ## Zadání
 
 > ⚠️ **Rekonstrukce.** Zadání z roku 2025/26 v materiálech chybí, existuje jen Hrubého řešení. Text níže je odvozený z jeho sítě a poznámek („čekající zákazníci odchází ze salonu“, „deaktivace procesu příchodů“, „pokud kdokoli ve frontě čeká ≥ 1 h, pak …“). Čísla jsou převzatá z řešení.
@@ -50,15 +44,6 @@ Kontrola simulací: linka se vždy vrátí, platí *generátor* + pauza = 1 a *v
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- **Hrubý (str. 1):** síť výše je jeho řešení překreslené: stejná místa, přechody i priority. Generátor kreslí také jako místo ve smyčce s `exp(10min)`.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -68,5 +53,22 @@ Kontrola simulací: linka se vždy vrátí, platí *generátor* + pauza = 1 a *v
 - Vyprázdnění fronty jedním přechodem s váhou hrany. Váha bere přesný počet značek, ne „všechny“. Na „všechny“ je potřeba smyčka s prioritou.
 - Zapomenutá smyčka *poplach* → přechod → *poplach*: pak se odebere jen jeden zákazník.
 - Zapomenutý návrat značky do *vyhlížení* po 3 h: hlídání by pak fungovalo jen jednou.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** půlsemestrální písemka 2025/26, varianta A, 10 bodů (bodování podle ostatních let).
+
+**Zdroj:**
+
+- `Fitcheats/Půlsemestrálky/Hrubý - Řešení 2025-26.pdf`, str. 1
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- **Hrubý (str. 1):** síť výše je jeho řešení překreslené: stejná místa, přechody i priority. Generátor kreslí také jako místo ve smyčce s `exp(10min)`.
 
 </details>

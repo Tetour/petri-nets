@@ -1,12 +1,5 @@
 # 02–04 – Fronta omezená na 10
 
-**Původ:** zkouška 2017/18, 1. termín, skupina 8C, otázka 1, 15 bodů.
-
-**Zdroje:**
-
-- `Fitcheats/Příprava na zkoušku/FIT - Příprava 2018-19.pdf`, str. 32–33 (opsané zadání, studentská síť a SIMLIB)
-- `Fitcheats/Příprava na zkoušku/xenix - Příprava.pdf`, str. 26 („M/M/1 s frontou omezenou na 10 transakcí“, síť)
-
 ## Zadání
 
 ⚠️ Zadání je známé jen z přepisu ve sbírce Příprava 2018-19, originál zkoušky chybí.
@@ -48,16 +41,6 @@ Kontrola simulací: *Fronta* + *volná místa ve frontě* = 10, *Linka* + obsluh
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- **Příprava 2018-19, str. 32–33 („Prosim o kontrolu (MK)“):** místo za generátorem, z něj přechod `p=1` do místa fronty s poznámkou `c=10` a druhý přechod dolů jako odmítnutí. Funkčně správně, ale omezení je zapsané kapacitou místa. To kurzová notace nepoužívá; doplňkové místo s 10 značkami je čitelnější a je hned vidět, kdo místo ve frontě uvolňuje. Místo linky je popsané „Obsluha“.
-- **xenix, str. 26:** stejná síť jako tady: doplňkové místo `10`, vstup `p=1`, obsazení linky vrací značku do `10`, odmítnutí s nižší prioritou bez výstupu. Okamžité přechody jsou tu černé a časované bílé, tedy opačně než na slajdech, kde jsou časované vyplněné.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -67,5 +50,24 @@ Kontrola simulací: *Fronta* + *volná místa ve frontě* = 10, *Linka* + obsluh
 - Značka doplňku vrácená až koncem obsluhy, i když se omezuje jen fronta (pak je limit 10 na celý systém, ne na frontu).
 - Vstup a odmítnutí bez priorit: transakce by byla odmítnuta i při volném místě.
 - Odmítnutá transakce, která zůstane viset v místě, nebo zmizí bez výstupního přechodu.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** zkouška 2017/18, 1. termín, skupina 8C, otázka 1, 15 bodů.
+
+**Zdroje:**
+
+- `Fitcheats/Příprava na zkoušku/FIT - Příprava 2018-19.pdf`, str. 32–33 (opsané zadání, studentská síť a SIMLIB)
+- `Fitcheats/Příprava na zkoušku/xenix - Příprava.pdf`, str. 26 („M/M/1 s frontou omezenou na 10 transakcí“, síť)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- **Příprava 2018-19, str. 32–33 („Prosim o kontrolu (MK)“):** místo za generátorem, z něj přechod `p=1` do místa fronty s poznámkou `c=10` a druhý přechod dolů jako odmítnutí. Funkčně správně, ale omezení je zapsané kapacitou místa. To kurzová notace nepoužívá; doplňkové místo s 10 značkami je čitelnější a je hned vidět, kdo místo ve frontě uvolňuje. Místo linky je popsané „Obsluha“.
+- **xenix, str. 26:** stejná síť jako tady: doplňkové místo `10`, vstup `p=1`, obsazení linky vrací značku do `10`, odmítnutí s nižší prioritou bez výstupu. Okamžité přechody jsou tu černé a časované bílé, tedy opačně než na slajdech, kde jsou časované vyplněné.
 
 </details>

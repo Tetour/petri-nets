@@ -1,26 +1,17 @@
 # 01–01 – Opravářská dílna
 
-**Původ:** řešený příklad z přednášky (Hrubý), slajdy 157–164. Na přednášce 11. 10. 2024 ho označil za „typizovanou úlohu pro půlsemestrální písemku“.
-
-**Zdroje:**
-
-- `Přednášky - Prezentace 2025/IMS - Prezentace.pdf`: slajd 157 (zadání), 158–163 (postupná stavba), 164 (výsledná síť)
-- `Přednášky - Video 2024/Přepisy/IMS_2024-10-11_1080p.txt` (výklad)
-
 ## Zadání
 
 > Do opravářské dílny přicházejí zákazníci v intervalech daných exponenciálním rozložením pravděpodobnosti se střední hodnotou 20 minut. V dílně jsou dva opraváři: jeden zpracovává normální zakázky a druhý náročné zakázky. Každá třetí zakázka je náročná. Vyřízení normální zakázky trvá 15 minut s exp. rozložením pravděpodobnosti, vyřízení náročné zakázky zabere 45 minut exp. Zákazník čeká na vyřízení své zakázky a pak systém opouští.
->
-> Modelujte systém pomocí stochastické Petriho sítě.
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 
-- **„Každá třetí zakázka je náročná“** chápe přednášející jako pravděpodobnost 1/3 (na slajdu 33 % / 66 %; tady 33,3 % / 66,7 %, aby součet byl 100 %). Doslovné „každá třetí“ by šlo modelovat deterministicky čítačem: značka obíhá mezi třemi místy a každá třetí zakázka jde k náročnému opraváři. Na přednášce se to ale nepožadovalo.
+- **„Každá třetí zakázka je náročná“** se modeluje jako pravděpodobnost 1/3 (na slajdu 33 % / 66 %; tady 33,3 % / 66,7 %, aby součet byl 100 %). Doslovné „každá třetí“ by šlo modelovat deterministicky čítačem: značka obíhá mezi třemi místy a každá třetí zakázka jde k náročnému opraváři.
 - Každý opravář je zařízení s kapacitou 1 (místo s jednou značkou) a má vlastní frontu.
-- Uvolnění opraváře je sloučené s časovaným přechodem opravy. Přednášející to výslovně ukazuje: „tady jsem to zabral a tady jsem to pracoval a uvolnil, zdrcel do jednoho přechodu“ (přepis přednášky).
+- Uvolnění opraváře je sloučené s časovaným přechodem opravy: oprava a uvolnění jsou jeden přechod, který po skončení vrací značku opraváře.
 
 </details>
 
@@ -43,15 +34,6 @@ Kontrola simulací: oba opraváři se vždy vrátí, všechny přechody se prov�
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- **Slajd 164:** stejná síť. Generátor je tam nakreslený zkráceně jako přechod bez vstupního místa (slajd 151 ukazuje obě varianty); tady je ve smyčce s místem, což přednášející 18. 10. 2024 označil za „mírně korektnější“. Výstupní přechod je na slajdu také.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -60,5 +42,23 @@ Kontrola simulací: oba opraváři se vždy vrátí, všechny přechody se prov�
 - Jedna společná fronta a jeden opravář s dobou obsluhy „buď 15, nebo 45“. Zadání má dva opraváře, každého pro jiný typ zakázek.
 - Pravděpodobnosti, které nedávají dohromady 100 %.
 - Zákazník „čeká na vyřízení své zakázky“: nemodeluje se zvlášť zakázka a zákazník, transakce je jedna.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** řešený příklad z přednášky (Hrubý), slajdy 157–164. Na přednášce 11. 10. 2024 ho označil za „typizovanou úlohu pro půlsemestrální písemku“.
+
+**Zdroje:**
+
+- `Přednášky - Prezentace 2025/IMS - Prezentace.pdf`: slajd 157 (zadání), 158–163 (postupná stavba), 164 (výsledná síť)
+- `Přednášky - Video 2024/Přepisy/IMS_2024-10-11_1080p.txt` (výklad)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- **Slajd 164:** stejná síť. Generátor je tam nakreslený zkráceně jako přechod bez vstupního místa (slajd 151 ukazuje obě varianty); tady je ve smyčce s místem, což přednášející 18. 10. 2024 označil za „mírně korektnější“. Výstupní přechod je na slajdu také.
 
 </details>

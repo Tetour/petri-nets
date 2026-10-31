@@ -1,11 +1,5 @@
 # 09–02 – Obslužné centrum
 
-**Původ:** půlsemestrální písemka 2025/26, varianta B, 10 bodů (bodování podle ostatních let).
-
-**Zdroj:**
-
-- `Fitcheats/Půlsemestrálky/Hrubý - Řešení 2025-26.pdf`, str. 2
-
 ## Zadání
 
 > ⚠️ **Rekonstrukce.** Zadání z roku 2025/26 v materiálech chybí, existuje jen Hrubého řešení. Text níže je odvozený z jeho sítě a poznámek („if-else“, „je noc“, „proces den/noc“). Čísla jsou převzatá z řešení. Že délka obsluhy závisí na denní době v okamžiku jejího začátku, je odvozené ze sítě.
@@ -48,15 +42,6 @@ Kontrola simulací: platí *Linka* + obsluhovaní = 3, *den* + *noc* + *ráno* =
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- **Hrubý (str. 2):** stejná síť: tři značky v *Lince*, if-else s `p=1` a smyčkou na *je noc*, proces den/noc `16h` → `8h` → `p=2`. Rozdíl je jen v uvolnění linky: obě obsluhy u něj vedou do společného místa a teprve přechod za ním vrací značku *Lince* a zároveň ukončuje transakci. Tady je uvolnění sloučené s oběma časovanými přechody (jako na slajdu 164) a odchod je samostatný přechod bez výstupu. Obojí je správně.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -67,5 +52,22 @@ Kontrola simulací: platí *Linka* + obsluhovaní = 3, *den* + *noc* + *ráno* =
 - Noc modelovaná pravděpodobností (např. 33 % na `exp(10 min)`): zadání závisí na čase, ne na náhodě.
 - Zapomenutý návrat značky *Lince* z jedné z větví: linky postupně „zmizí“.
 - Jedna linka místo tří (značka navíc v místě *Linka* je celý rozdíl mezi M/M/1 a M/M/3).
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** půlsemestrální písemka 2025/26, varianta B, 10 bodů (bodování podle ostatních let).
+
+**Zdroj:**
+
+- `Fitcheats/Půlsemestrálky/Hrubý - Řešení 2025-26.pdf`, str. 2
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- **Hrubý (str. 2):** stejná síť: tři značky v *Lince*, if-else s `p=1` a smyčkou na *je noc*, proces den/noc `16h` → `8h` → `p=2`. Rozdíl je jen v uvolnění linky: obě obsluhy u něj vedou do společného místa a teprve přechod za ním vrací značku *Lince* a zároveň ukončuje transakci. Tady je uvolnění sloučené s oběma časovanými přechody (jako na slajdu 164) a odchod je samostatný přechod bez výstupu. Obojí je správně.
 
 </details>

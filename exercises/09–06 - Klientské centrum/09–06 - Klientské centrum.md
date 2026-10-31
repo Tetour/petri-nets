@@ -1,11 +1,5 @@
 # 09–06 – Klientské centrum
 
-**Původ:** půlsemestrální písemka 2023/24, varianta D, 10 bodů.
-
-**Zdroje:**
-
-- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2023-24.pdf`, str. 4 (fotka zadání; v plném rozlišení čitelná celá)
-
 ## Zadání
 
 > Do klientského centra přichází klienti v intervalech daných exponenciálním rozložením se středem 20 minut. Požadavky obsluhuje jedna pracovnice. Doba obsluhy se řídí exponenciálním rozložením se středem 10 minut. Pokud fronta k obsluze dosáhne délky 10 čekajících, pak centrum vyhlásí dočasný "stop stav", během kterého se zastaví proces příchodu požadavků. Stop stav trvá 4 hodiny.
@@ -48,15 +42,6 @@ Kontrola simulací: *Pracovnice* + obsluhovaný = 1, *generátor* + *stop stav* 
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- K této variantě v materiálech žádné řešení není (ani od Hrubého, ani studentské).
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -67,5 +52,22 @@ Kontrola simulací: *Pracovnice* + obsluhovaný = 1, *generátor* + *stop stav* 
 - Zapomenutý návrat značky *generátoru* po 4 h: příchody by se zastavily natrvalo.
 - Vyhlášení stop stavu, které nebere značku generátoru ani jinou řídicí značku. Test fronty pak zůstává splněný a přechod se provádí pořád dokola.
 - Váha 11 („přesáhne“) místo 10 („dosáhne“), nebo započítání obsluhovaného klienta do délky fronty.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** půlsemestrální písemka 2023/24, varianta D, 10 bodů.
+
+**Zdroje:**
+
+- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2023-24.pdf`, str. 4 (fotka zadání; v plném rozlišení čitelná celá)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- K této variantě v materiálech žádné řešení není (ani od Hrubého, ani studentské).
 
 </details>

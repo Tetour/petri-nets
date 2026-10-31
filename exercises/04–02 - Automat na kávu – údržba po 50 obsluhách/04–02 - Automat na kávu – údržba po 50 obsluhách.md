@@ -1,12 +1,5 @@
 # 04–02 – Automat na kávu – údržba po 50 obsluhách
 
-**Původ:** zkouška 2017/18, 2. termín, skupina C (hlavička je na fotce useknutá), otázka 1, 10 bodů. Stejná úloha (podle vzpomínky studenta, počet káv nejistý): zkouška 2018/19, 1. termín, otázka 1, 10 bodů.
-
-**Zdroje:**
-
-- `Fitcheats/Zkoušky z minulých let/2017-18 - 2. termín C.pdf`, str. 1 (fotka zadání)
-- `Fitcheats/Zkoušky z minulých let/2018-19 - 1. termín.txt` (druhá vzpomínka v souboru)
-
 ## Zadání
 
 > 1. (10 bodů) Nakreslete Petriho síť pro systém typu M/M/1 s obslužnou linkou "automat na kafe". Automat se po každých 50 cyklech provedené obsluhy přepne do režimu údržby (není k dispozici) na dobu 20 časových jednotek.
@@ -52,15 +45,6 @@ Kontrola simulací: *Automat* + obsluha + *údržba* = 1, v čítači je nejvý�
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- Ve zdrojích není žádné řešení. Stejný čítač s váhou hrany je v řešení půlsemestrálky [10–01 – Server s údržbou po 1000 požadavcích](<../10–01 - Server s údržbou po 1000 požadavcích/10–01 - Server s údržbou po 1000 požadavcích.md>).
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -70,5 +54,23 @@ Kontrola simulací: *Automat* + obsluha + *údržba* = 1, v čítači je nejvý�
 - Čítání příchodů místo dokončených obsluh.
 - Údržba bez priority: při čekajícím zákazníkovi může automat dostat on a údržba se posune o jednu nebo více obsluh.
 - Údržba, která si nevezme značku *Automatu*. Pak automat během údržby dál obsluhuje.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** zkouška 2017/18, 2. termín, skupina C (hlavička je na fotce useknutá), otázka 1, 10 bodů. Stejná úloha (podle vzpomínky studenta, počet káv nejistý): zkouška 2018/19, 1. termín, otázka 1, 10 bodů.
+
+**Zdroje:**
+
+- `Fitcheats/Zkoušky z minulých let/2017-18 - 2. termín C.pdf`, str. 1 (fotka zadání)
+- `Fitcheats/Zkoušky z minulých let/2018-19 - 1. termín.txt` (druhá vzpomínka v souboru)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- Ve zdrojích není žádné řešení. Stejný čítač s váhou hrany je v řešení půlsemestrálky [10–01 – Server s údržbou po 1000 požadavcích](<../10–01 - Server s údržbou po 1000 požadavcích/10–01 - Server s údržbou po 1000 požadavcích.md>).
 
 </details>

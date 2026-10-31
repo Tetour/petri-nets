@@ -1,12 +1,5 @@
 # 09–19 – Banka se třemi pracovníky
 
-**Původ:** půlsemestrální písemka 2013/14, varianta A, 6 bodů (k příkladu patřila ještě otázka z teorie za 4 body).
-
-**Zdroje:**
-
-- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2013-14.pdf`, str. 1 (zadání) a str. 3 (hlavička písemky s bodováním)
-- `Fitcheats/Skripta/FIT - Studentská skripta 2015-16.pdf`, str. 48–49 (zadání zapsané po paměti a studentské řešení s komentáři)
-
 ## Zadání
 
 > Do bankovní pobočky přicházejí klienti v intervalech daných exponenciálním rozložením se středem 5 minut. V pobočce pracují tři pracovníci na přepážce a jeden vedoucí pobočky. Klient si po příchodu do pobočky vezme lístek ze stroje pro evidenci pořadí. Použití stroje zabere 30-60 sekund rovnoměrně. Deset procent klientů požaduje speciální poradenství, které vykonává vedoucí pobočky. Ostatní klienti jsou obsluhováni na přepážkách. Obsluha na přepážce i speciální poradenství trvají dobu danou exponenciálním rozložením se středem 5 minut.
@@ -56,19 +49,6 @@ Kontrola simulací: stroj, přepážky (= 3) i vedoucí (*Vedoucí* + poradenstv
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- **Studentská skripta (str. 49), fotka ručního řešení:** stejná struktura: 90 %/10 %, přepážky jako místo se 3 značkami, vedoucí jako místo s 1 značkou, cyklus vedoucí → `30min` → kontrola → `10-20min` → vedoucí, auto `EXP(5h)` a dva přechody `P=1` (auto + vedoucí, auto + místo kontroly) do obsluhy auta `10-15min`, výstupy „KLIENT ODCHÁZÍ“ a „AUTO ODJÍŽDÍ“. Výhrady:
-  - Časované přechody nejsou graficky odlišené od okamžitých, poznají se jen podle připsaného času.
-  - Za každou obsluhou je navíc místo a samostatný přechod uvolnění. Je to správně (plný tvar ze slajdu 154), jen delší; komentář pod řešením: „Souhlasím že ty místa za přechody s exp(5min) jsou navíc.“
-  - Část kresby u stroje na lístky je přeškrtaná a špatně čitelná.
-- Zadání ve skriptech (str. 48) je zapsané po paměti a zkrácené (chybí např. „dokončí nejprve obsluhu klienta“); platí text z `2013-14.pdf`.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -79,5 +59,27 @@ Kontrola simulací: stroj, přepážky (= 3) i vedoucí (*Vedoucí* + poradenstv
 - Auto, které přeruší i probíhající poradenství; zadání chce obsluhu klienta nejprve dokončit.
 - Chybějící přerušení kontroly: auto by čekalo až 20 minut, než se vedoucí vrátí.
 - Přepážky jako tři samostatná zařízení s náhodným výběrem; stačí jeden sklad se 3 značkami.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** půlsemestrální písemka 2013/14, varianta A, 6 bodů (k příkladu patřila ještě otázka z teorie za 4 body).
+
+**Zdroje:**
+
+- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2013-14.pdf`, str. 1 (zadání) a str. 3 (hlavička písemky s bodováním)
+- `Fitcheats/Skripta/FIT - Studentská skripta 2015-16.pdf`, str. 48–49 (zadání zapsané po paměti a studentské řešení s komentáři)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- **Studentská skripta (str. 49), fotka ručního řešení:** stejná struktura: 90 %/10 %, přepážky jako místo se 3 značkami, vedoucí jako místo s 1 značkou, cyklus vedoucí → `30min` → kontrola → `10-20min` → vedoucí, auto `EXP(5h)` a dva přechody `P=1` (auto + vedoucí, auto + místo kontroly) do obsluhy auta `10-15min`, výstupy „KLIENT ODCHÁZÍ“ a „AUTO ODJÍŽDÍ“. Výhrady:
+  - Časované přechody nejsou graficky odlišené od okamžitých, poznají se jen podle připsaného času.
+  - Za každou obsluhou je navíc místo a samostatný přechod uvolnění. Je to správně (plný tvar ze slajdu 154), jen delší; komentář pod řešením: „Souhlasím že ty místa za přechody s exp(5min) jsou navíc.“
+  - Část kresby u stroje na lístky je přeškrtaná a špatně čitelná.
+- Zadání ve skriptech (str. 48) je zapsané po paměti a zkrácené (chybí např. „dokončí nejprve obsluhu klienta“); platí text z `2013-14.pdf`.
 
 </details>

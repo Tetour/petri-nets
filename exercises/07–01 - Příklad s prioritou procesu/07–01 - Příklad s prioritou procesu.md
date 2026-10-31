@@ -1,11 +1,5 @@
 # 07–01 – Příklad s prioritou procesu
 
-**Původ:** zkouška 2019/20, 3. termín, skupina A (7. 2. 2020), otázka 2, 20 bodů.
-
-**Zdroje:**
-
-- `Fitcheats/Zkoušky z minulých let/2019-20 - 3. termín A.pdf`, str. 2 (fotka zadání, rámeček na odpověď je prázdný)
-
 ## Zadání
 
 > Vymyslete příklad systému hromadné obsluhy typu M/M/1, který bude demonstrovat použití priority procesu. Sestavte jeho model v Petriho síti a SIMLIBu.
@@ -48,15 +42,6 @@ Kontrola simulací: *Lékař* + vyšetřovaní pacienti = 1. Akutních je asi 20
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- K tomuto zadání žádné řešení není. Stejnou konstrukci (dvě fronty, obsazení s různou prioritou) kreslí **Studentská skripta 2015-16, str. 39** jako „slabou prioritu“.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -66,5 +51,22 @@ Kontrola simulací: *Lékař* + vyšetřovaní pacienti = 1. Akutních je asi 20
 - Jedna společná fronta a v ní „prioritní“ přechod. Místo nerozliší, která značka je akutní pacient.
 - Pravděpodobnost i priorita na jednom přechodu (např. `20 %, p=1`). Přechod má jen jeden parametr.
 - Priorita napsaná na hranu místo na přechod.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** zkouška 2019/20, 3. termín, skupina A (7. 2. 2020), otázka 2, 20 bodů.
+
+**Zdroje:**
+
+- `Fitcheats/Zkoušky z minulých let/2019-20 - 3. termín A.pdf`, str. 2 (fotka zadání, rámeček na odpověď je prázdný)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- K tomuto zadání žádné řešení není. Stejnou konstrukci (dvě fronty, obsazení s různou prioritou) kreslí **Studentská skripta 2015-16, str. 39** jako „slabou prioritu“.
 
 </details>

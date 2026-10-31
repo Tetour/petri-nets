@@ -1,11 +1,5 @@
 # 08–08 – D/D/1, příchody po 2 min, obsluha 4 min
 
-**Původ:** zkouška 2022/23, 3. termín (3. 2. 2023), skupina G, otázka 1, 15 bodů.
-
-**Zdroje:**
-
-- `Fitcheats/Zkoušky z minulých let/2022-23 - 3. termín G.pdf`, str. 1 (fotka zadání, rámeček na odpověď je prázdný)
-
 ## Zadání
 
 > Mějme systém D/D/1 s intervaly mezi příchody = 2 minuty a délkou obsluhy = 4 minuty. Systém modelujte Petriho sítí. Zjistěte, zda je tento systém stabilní. Určete, ve kterých časových okamžicích dochází ke změně stavu systému až po čas TMAX=10 včetně. Do tabulky napište hodnoty stavových veličin systému ve zjištěných okamžicích změny stavu systému (po provedení všech událostí v daném čase). Tabulka nechť obsahuje: 1) čas, 2) délku fronty, 3) počet transakcí v obsluze.
@@ -64,15 +58,6 @@ Kontrola (`make check`): síť se odsimuluje od času 0 (P0 ve frontě, linka vo
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- K této úloze řešení v podkladech není (rámeček na fotce je prázdný).
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -83,5 +68,22 @@ Kontrola (`make check`): síť se odsimuluje od času 0 (P0 ve frontě, linka vo
 - V čase 4 zapsaný mezistav (fronta 0 po odchodu P0) místo stavu po všech událostech.
 - Požadavek, který právě skončil, započtený do „v obsluze“. V jednom okamžiku je v obsluze nejvýš 1 transakce.
 - Síť bez vrácení značky *Lince* po obsluze nebo bez výstupního přechodu.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** zkouška 2022/23, 3. termín (3. 2. 2023), skupina G, otázka 1, 15 bodů.
+
+**Zdroje:**
+
+- `Fitcheats/Zkoušky z minulých let/2022-23 - 3. termín G.pdf`, str. 1 (fotka zadání, rámeček na odpověď je prázdný)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- K této úloze řešení v podkladech není (rámeček na fotce je prázdný).
 
 </details>

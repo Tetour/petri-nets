@@ -1,11 +1,5 @@
 # 01–04 – Výrobní systém
 
-**Původ:** řešený příklad 1 z poznámek „Černobílé a barvené Petriho sítě“ ke cvičení MSI (Vojnar), které jsou na webu předmětu. P/T síť bez času, tady překreslená do notace IMS.
-
-**Zdroje:**
-
-- `Web předmětu/Petriho sítě - Černobílé a barvené (poznámky MSI).pdf`, str. 2 PDF (tištěná s. 3): oddíl 3, příklad 1 a obr. 6
-
 ## Zadání
 
 > Výrobní systém – přicházející výrobky jsou zpracovány soustruhem, pak jednou ze dvou vrtaček a opouští systém po kontrole jako dobré nebo špatné.
@@ -47,15 +41,6 @@ Kontrola simulací: všechny stroje se vždy vrátí (P3 + P2 = 1, P6 + P5 = 1, 
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- **Poznámky MSI, obr. 6:** stejná síť (místa P1–P13, přechody *soustr_start*, *vrt1_start*, …). Přechody jsou černé čárky (konvence P/T sítí v poznámkách), generátor je přechod bez vstupu a popisky *zmetek* / *vyrobek* jsou prohozené.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -64,5 +49,22 @@ Kontrola simulací: všechny stroje se vždy vrátí (P3 + P2 = 1, P6 + P5 = 1, 
 - Stroj bez místa „volný“. Nic by pak nebránilo zpracovávat na soustruhu několik výrobků najednou.
 - Při neúspěšné kontrole nevrátit značku kontroly (P11). Kontrola by se po prvním zmetku zablokovala; v originále vede proto od *kontr_neuspech* dlouhá hrana zpět do P11.
 - Nakreslit generátor jako okamžitý přechod bez vstupu. V SPN by se prováděl pořád dokola v nulovém čase.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** řešený příklad 1 z poznámek „Černobílé a barvené Petriho sítě“ ke cvičení MSI (Vojnar), které jsou na webu předmětu. P/T síť bez času, tady překreslená do notace IMS.
+
+**Zdroje:**
+
+- `Web předmětu/Petriho sítě - Černobílé a barvené (poznámky MSI).pdf`, str. 2 PDF (tištěná s. 3): oddíl 3, příklad 1 a obr. 6
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- **Poznámky MSI, obr. 6:** stejná síť (místa P1–P13, přechody *soustr_start*, *vrt1_start*, …). Přechody jsou černé čárky (konvence P/T sítí v poznámkách), generátor je přechod bez vstupu a popisky *zmetek* / *vyrobek* jsou prohozené.
 
 </details>

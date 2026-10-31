@@ -1,12 +1,5 @@
 # 12–13 – Stavba z betonu
 
-**Původ:** půlsemestrální písemka 2013/14, varianta D, 6 bodů (k příkladu patřila ještě otázka z teorie za 4 body).
-
-**Zdroje:**
-
-- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2013-14.pdf`, str. 2 (zadání) a str. 3 (hlavička varianty D s bodováním)
-- `Fitcheats/Skripta/FIT - Studentská skripta 2015-16.pdf`, str. 51 (zadání zapsané po paměti, bez řešení)
-
 ## Zadání
 
 > Pro dokončení stavby budovy z betonu je třeba provést 100 elementárních betonových stavebních částí. Na stavbě pracuje jedna parta bednářů a jedna parta betonářů. Pro zbudování jedné stavební části je třeba 1) připravit licí formu pro lití betonu (dělají bednáři, trvá 3-5 hodin), 2) do formy nalít beton (dělají betonáři, trvá 30-60 minut), 3) beton nechat uzrát 10 dní a 4) licí formu odstranit (dělají bednáři, trvá 2-3 hodiny). Na stavbě je k dispozici 10 licích forem. V situaci, kdy lze někde licí formu zbudovat a jinde licí formu po vyzrání betonu odstranit, bednáři přednostně vykonávají odstraňování forem.
@@ -56,16 +49,6 @@ Kontrola simulací: forem je vždy 10 (volné + všechny rozpracované), bedná�
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- **Studentská skripta (str. 51):** jen zadání zapsané po paměti, řešení chybí. Je v něm „Pokud betonáři nemají dodávku betonu, přidávají se na jeden úkol k bednářům“, tedy stejný smysl jako v originálu.
-- Jiné řešení v materiálech není.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -76,5 +59,24 @@ Kontrola simulací: forem je vždy 10 (volné + všechny rozpracované), bedná�
 - Dodávka betonu jako jeden společný časovač: dodávky pro různé formy se pak „řadí“ za sebou.
 - Betonáři, kteří pomáhají bednářům, i když beton dorazil (chybí `p=2` na lití).
 - Chybějící konec stavby po 100 částech; počítadlo *Zbývá částí* samo nic neukončí.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** půlsemestrální písemka 2013/14, varianta D, 6 bodů (k příkladu patřila ještě otázka z teorie za 4 body).
+
+**Zdroje:**
+
+- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2013-14.pdf`, str. 2 (zadání) a str. 3 (hlavička varianty D s bodováním)
+- `Fitcheats/Skripta/FIT - Studentská skripta 2015-16.pdf`, str. 51 (zadání zapsané po paměti, bez řešení)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- **Studentská skripta (str. 51):** jen zadání zapsané po paměti, řešení chybí. Je v něm „Pokud betonáři nemají dodávku betonu, přidávají se na jeden úkol k bednářům“, tedy stejný smysl jako v originálu.
+- Jiné řešení v materiálech není.
 
 </details>

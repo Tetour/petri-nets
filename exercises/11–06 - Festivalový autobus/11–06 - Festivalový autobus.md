@@ -1,11 +1,5 @@
 # 11–06 – Festivalový autobus
 
-**Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z21. Rok, varianta ani body nejsou známé.
-
-**Zdroje:**
-
-- `Fitcheats/Půlsemestrálky/Zadání z minulých let/Přehled zadání 2014-19.pdf`, str. 5 (zadání, bez řešení)
-
 ## Zadání
 
 > Městský festivalový autobus sváží návštěvníky z jejich domovů do areálu festivalu. Kapacita autobusu je 20 míst. Návštěvníci registrují svůj požadavek na odvoz v intervalech daných exp(5min). Autobus při své jízdě po jednom nabírá registrované návštěvníky. Každá jízda autobusu (z areálu k návštěvníkovi, mezi návštěvníky, zpět do areálu) se řídí exp(3min). Autobus se vrací do areálu buď po naplnění kapacity, nebo pokud je již na svozové jízdě déle než 40 minut. Po příjezdu do areálu vyloží návštěvníky (dobu zanedbáváme) a vyráží na další svozovou jízdu. Festival trvá 12 hodin. Čtyři hodiny před koncem festivalu už se návštěvníci neregistrují ke svozu, a pokud už není koho svážet, tak končí i činnost autobusu.
@@ -56,15 +50,6 @@ Kontrola simulací: autobus je vždy právě v jednom stavu, *Volná místa* + j
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- K této úloze v materiálech žádné řešení není. Nejbližší je výletní autobus z roku 2025/26 ([11–01](<../11–01 - Výletní autobus/11–01 - Výletní autobus.md>)), který také odjíždí buď plný, nebo po uplynutí času, s kapacitou jako místem s 20 značkami.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -76,5 +61,22 @@ Kontrola simulací: autobus je vždy právě v jednom stavu, *Volná místa* + j
 - Vyložení jedním přechodem s hranou s váhou 20. V autobusu bývá méně lidí, proto vyložení po jednom ve smyčce s prioritou.
 - Zastavení registrací po 12 h místo po 8 h, nebo zastavení autobusu hned po 8 h, i když ještě někdo čeká na odvoz.
 - Chybějící priorita u návratu po 40 min: autobus by mohl dál nabírat, i když čas vypršel.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z21. Rok, varianta ani body nejsou známé.
+
+**Zdroje:**
+
+- `Fitcheats/Půlsemestrálky/Zadání z minulých let/Přehled zadání 2014-19.pdf`, str. 5 (zadání, bez řešení)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- K této úloze v materiálech žádné řešení není. Nejbližší je výletní autobus z roku 2025/26 ([11–01](<../11–01 - Výletní autobus/11–01 - Výletní autobus.md>)), který také odjíždí buď plný, nebo po uplynutí času, s kapacitou jako místem s 20 značkami.
 
 </details>

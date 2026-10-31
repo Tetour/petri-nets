@@ -1,13 +1,5 @@
 # 02–02 – Netrpělivý první ve frontě
 
-**Původ:** zkouška 2024/25, 2. termín (20. 1. 2025), skupina E, otázka 3, 10 bodů. Stejná úloha (jiná čísla): zkouška 2019/20, 2. termín, skupina Y, otázka 3, 10 bodů (X č. j.) a zkouška 2017/18, 2. termín, skupina A, otázka 1, 10 bodů (automat na kávu, 5 jednotek).
-
-**Zdroje:**
-
-- `Fitcheats/Zkoušky z minulých let/2024-25 - 2. termín E.pdf`, str. 2 (fotka zadání se studentským řešením)
-- `Fitcheats/Zkoušky z minulých let/2019-20 - 2. termín Y.pdf`, str. 2 (fotka zadání)
-- `Fitcheats/Zkoušky z minulých let/2017-18 - 2. termín A.txt` (vzpomínka studenta, otázka 1)
-
 ## Zadání
 
 > Mějme SHO typu M/M/1. Fronta k lince má to specifikum, že transakce, která je první ve frontě, je netrpělivá, takže po 4 časových jednotkách čekání frontu (a systém celkově) opouští. Systém modelujte Petriho sítí.
@@ -51,16 +43,6 @@ Kontrola simulací: *Linka* + obsluhovaná transakce = 1, *1. místo volné* + *
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- **Studentské řešení na zkouškovém archu 2024/25 E** (bez bodového hodnocení): stejná struktura jako tady. Fronta je rozdělená do dvou míst, místo se značkou pod přechodem *postup* funguje jako *1. místo volné* a vrací se z obsazení linky i z přechodu `4 jč.`. Netrpělivý odchod vede do místa před výstupním přechodem. Výhrady jsou jen k notaci: všechny přechody jsou nakreslené stejně jako tenké čárky, takže časované (`EXP(x)`, `EXP(Y)`, `4 jč.`) jdou poznat jen podle popisku, a místa nemají názvy.
-- K zadáním 2017/18 a 2019/20 žádné řešení není.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -71,5 +53,25 @@ Kontrola simulací: *Linka* + obsluhovaná transakce = 1, *1. místo volné* + *
 - Značka doplňku vrácená až koncem obsluhy: během obsluhy pak v čele nikdo není a čekající nejsou netrpěliví vůbec.
 - Netrpělivý odchod, který nevrátí značku doplňku: čelo fronty se zablokuje a síť se zastaví.
 - Časovač za obsazením linky (omezuje obsluhu, ne čekání).
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** zkouška 2024/25, 2. termín (20. 1. 2025), skupina E, otázka 3, 10 bodů. Stejná úloha (jiná čísla): zkouška 2019/20, 2. termín, skupina Y, otázka 3, 10 bodů (X č. j.) a zkouška 2017/18, 2. termín, skupina A, otázka 1, 10 bodů (automat na kávu, 5 jednotek).
+
+**Zdroje:**
+
+- `Fitcheats/Zkoušky z minulých let/2024-25 - 2. termín E.pdf`, str. 2 (fotka zadání se studentským řešením)
+- `Fitcheats/Zkoušky z minulých let/2019-20 - 2. termín Y.pdf`, str. 2 (fotka zadání)
+- `Fitcheats/Zkoušky z minulých let/2017-18 - 2. termín A.txt` (vzpomínka studenta, otázka 1)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- **Studentské řešení na zkouškovém archu 2024/25 E** (bez bodového hodnocení): stejná struktura jako tady. Fronta je rozdělená do dvou míst, místo se značkou pod přechodem *postup* funguje jako *1. místo volné* a vrací se z obsazení linky i z přechodu `4 jč.`. Netrpělivý odchod vede do místa před výstupním přechodem. Výhrady jsou jen k notaci: všechny přechody jsou nakreslené stejně jako tenké čárky, takže časované (`EXP(x)`, `EXP(Y)`, `4 jč.`) jdou poznat jen podle popisku, a místa nemají názvy.
+- K zadáním 2017/18 a 2019/20 žádné řešení není.
 
 </details>

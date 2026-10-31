@@ -1,11 +1,5 @@
 # 06–01 – MD1 – prodlužování po 10 obsluhách
 
-**Původ:** zkouška 2024/25, 2. termín (20. 1. 2025), skupina F, otázka 3, 10 bodů.
-
-**Zdroje:**
-
-- `Fitcheats/Zkoušky z minulých let/2024-25 - 2. termín F.pdf`, str. 2 (fotka zadání, rámeček na odpověď prázdný)
-
 ## Zadání
 
 > Mějme SHO typu M/D/1, kde je na počátku doba obsluhy 3 časové jednotky. Po každých 10 provedených obsluhách se doba obsluhy navýší o 3 č.j. Systém modelujte Petriho sítí.
@@ -49,15 +43,6 @@ Kontrola simulací: *Linka* + transakce v obsluze (*v obsluze*, fáze, *hotovo*)
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- Žádné řešení k této úloze není (rámeček na odpověď je na fotce prázdný).
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -68,5 +53,22 @@ Kontrola simulací: *Linka* + transakce v obsluze (*v obsluze*, fáze, *hotovo*)
 - Odsloužené fáze vracené bez čekání na konec obsluhy: smyčka fází se nikdy neukončí.
 - Linka uvolněná dřív, než se fáze vrátí: další transakce může začít obsluhu s neúplnou *úrovní*.
 - `exp(3)` místo pevné doby; zadání je M/D/1.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** zkouška 2024/25, 2. termín (20. 1. 2025), skupina F, otázka 3, 10 bodů.
+
+**Zdroje:**
+
+- `Fitcheats/Zkoušky z minulých let/2024-25 - 2. termín F.pdf`, str. 2 (fotka zadání, rámeček na odpověď prázdný)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- Žádné řešení k této úloze není (rámeček na odpověď je na fotce prázdný).
 
 </details>

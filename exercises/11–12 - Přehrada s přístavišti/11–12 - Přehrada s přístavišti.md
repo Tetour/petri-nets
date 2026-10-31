@@ -1,11 +1,5 @@
 # 11–12 – Přehrada s přístavišti
 
-**Původ:** půlsemestrální písemka 2011/12, příklad 3 (bodování v zadání není).
-
-**Zdroje:**
-
-- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2011-12.pdf`, str. 1 (zadání, příklad 3)
-
 ## Zadání
 
 > Na přehradě jsou přístaviště A a B, každé s kapacitou jedna pro přistavení lodi. Mezi přístavišti A a B jezdí dvě vyhlídkové lodě s kapacitou 50 turistů. Na přístaviště A přichází turisti v intervalech exp(2min). Každý jednotlivý turista je ochoten čekat na příjezd lodi nejvýše 20 minut, pak opouští systém. Po přistavení lodi k molu přístaviště začnou turisti po jednom nastupovat. Nastoupení každého trvá 20-30 sekund. Loď z přístaviště odjíždí po naplnění svojí kapacity, nejpozději však po 15 minutách od přistavené k molu (aktuálně nastupující turista smí dokončit nastupování). Neobsloužení turisti po odplutí lodi opouští systém. Vyhlídková jízda lodě trvá 30-40 minut a končí v přístavišti B, kde během 5 minut všichni turisti najednou vystoupí. V přístavišti B žádní cestující nenastupují a loď se vrací po vyprázdnění do přístaviště A. Cesta z B do A jí trvá 20 minut. V počátečním stavu sítě platí, že každá z lodí se poprvé do přístaviště A dostane po době dané exp(3 hodiny).
@@ -55,15 +49,6 @@ Kontrola simulací: lodě jsou vždy dvě, přístaviště A i B má nejvýš je
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- K zadáním z roku 2011/12 v materiálech žádné řešení není.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -75,5 +60,22 @@ Kontrola simulací: lodě jsou vždy dvě, přístaviště A i B má nejvýš je
 - Smazání čekajících jen jedním přechodem s váhou; „všichni neobsloužení“ potřebují smyčku s prioritou.
 - Přístaviště bez kapacity 1: obě lodě by mohly stát u mola současně.
 - Počet turistů na palubě, který se při odjezdu nevynuluje; další loď by pak odjela „plná“ dřív.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** půlsemestrální písemka 2011/12, příklad 3 (bodování v zadání není).
+
+**Zdroje:**
+
+- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2011-12.pdf`, str. 1 (zadání, příklad 3)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- K zadáním z roku 2011/12 v materiálech žádné řešení není.
 
 </details>

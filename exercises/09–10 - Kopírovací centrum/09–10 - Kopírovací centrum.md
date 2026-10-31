@@ -1,13 +1,5 @@
 # 09–10 – Kopírovací centrum
 
-**Původ:** půlsemestrální písemka 2022/23, varianta A, 10 bodů.
-
-**Zdroje:**
-
-- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2022-23.pdf`, str. 1 (fotka zadání)
-- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2024-25 - Varianta A (fotky).pdf`, str. 1–2 (zadání a řešení kreslené na cvičení)
-- `Fitcheats/Půlsemestrálky/Hrubý - Řešení 2022-23.pdf`, str. 1 (řešení od Hrubého)
-
 ## Zadání
 
 > Do kopírovacího centra přichází klienti v intervalech daných exponenciálním rozložením se středem 3 minuty. U přepážky registrují svůj požadavek, což zabere 1-2 minuty rovnoměrně. V centru jsou dva kopírovací stroje: stroj pro normální zakázky (A) a stroj pro speciální zakázky. 70% zakázek směřuje na stroj A. Klienti se speciální zakázkou jsou však netrpěliví, proto po 10 minutách čekání ve frontě na stroj B opouští systém. Doba zpracování na obou strojích se řídí exponenciálním rozložením se středem 3 minuty.
@@ -49,16 +41,6 @@ Kontrola simulací (`make check`): značka každého zařízení se vždy vrát�
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- **Hrubý (str. 1):** stejná struktura: *Fronta* → přepážka → *Fronta – rozdělování* → 70 %/30 % → *Fronta A* / *Fronta B* → stroj → *konec* → výstupní přechod. Netrpělivost kreslí také jako časovaný přechod `10min` z *Fronta B* do *konec*. Jediný rozdíl: generátor kreslí bez místa.
-- **Řešení ze cvičení (fotky 2024/25, str. 2):** totéž, jen každá větev končí vlastním výstupním přechodem. Obojí je správně; zadání chce jen, aby byl odchod jednoznačně vidět.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -69,5 +51,25 @@ Kontrola simulací (`make check`): značka každého zařízení se vždy vrát�
 - Chybějící hrana vracející značku stroji nebo přepážce. Zařízení se pak „ztratí“ a systém se zastaví.
 - 70 %/30 % napsané na hranách místo na přechodech, nebo k pravděpodobnosti připsaná ještě priorita (slajd 135: přechod má jediný parametr).
 - Chybějící výstupní přechod; zadání ho výslovně vyžaduje.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** půlsemestrální písemka 2022/23, varianta A, 10 bodů.
+
+**Zdroje:**
+
+- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2022-23.pdf`, str. 1 (fotka zadání)
+- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2024-25 - Varianta A (fotky).pdf`, str. 1–2 (zadání a řešení kreslené na cvičení)
+- `Fitcheats/Půlsemestrálky/Hrubý - Řešení 2022-23.pdf`, str. 1 (řešení od Hrubého)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- **Hrubý (str. 1):** stejná struktura: *Fronta* → přepážka → *Fronta – rozdělování* → 70 %/30 % → *Fronta A* / *Fronta B* → stroj → *konec* → výstupní přechod. Netrpělivost kreslí také jako časovaný přechod `10min` z *Fronta B* do *konec*. Jediný rozdíl: generátor kreslí bez místa.
+- **Řešení ze cvičení (fotky 2024/25, str. 2):** totéž, jen každá větev končí vlastním výstupním přechodem. Obojí je správně; zadání chce jen, aby byl odchod jednoznačně vidět.
 
 </details>

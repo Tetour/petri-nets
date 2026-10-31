@@ -1,11 +1,5 @@
 # 03–05 – Kritická havárie
 
-**Původ:** zkouška 2025/26, 1. termín (13. 1. 2026), skupina C, otázka 1, 10 bodů.
-
-**Zdroje:**
-
-- `Fitcheats/Zkoušky z minulých let/2025-26 - 1. termín C.pdf`, str. 1 (fotka zadání)
-
 ## Zadání
 
 > Zadaný systém modelujte prostředky Petriho sítě s vyznačením atributů na přechodech a místech. Vyznačte přechodem, kde transakce opouští systém.
@@ -50,15 +44,6 @@ Kontrola simulací: *Linka* + obsluhovaná transakce + *odstávka* = 1, každá 
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- K tomuto zadání žádné řešení není. Stejnou úlohu se symboly řeší fifinas (str. 2), viz [03–04 – Porucha s opravou, transakce odchází](<../03–04 - Porucha s opravou, transakce odchází/03–04 - Porucha s opravou, transakce odchází.md>).
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -69,5 +54,22 @@ Kontrola simulací: *Linka* + obsluhovaná transakce + *odstávka* = 1, každá 
 - Ukončená transakce se vrací do fronty: to by byla náhrada (úloha 03–03).
 - Chybí výstupní přechod pro ukončenou transakci (zadání ho výslovně chce).
 - Linka se po odstávce nevrátí.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** zkouška 2025/26, 1. termín (13. 1. 2026), skupina C, otázka 1, 10 bodů.
+
+**Zdroje:**
+
+- `Fitcheats/Zkoušky z minulých let/2025-26 - 1. termín C.pdf`, str. 1 (fotka zadání)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- K tomuto zadání žádné řešení není. Stejnou úlohu se symboly řeší fifinas (str. 2), viz [03–04 – Porucha s opravou, transakce odchází](<../03–04 - Porucha s opravou, transakce odchází/03–04 - Porucha s opravou, transakce odchází.md>).
 
 </details>

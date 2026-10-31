@@ -1,11 +1,5 @@
 # 01–03 – Zdravotní středisko
 
-**Původ:** řešený příklad z poznámek „Stochastické Petriho sítě“ ke cvičení MSI (Vojnar), které jsou na webu předmětu. Tady překreslený do notace IMS.
-
-**Zdroje:**
-
-- `Web předmětu/Petriho sítě - Stochastické (poznámky MSI).pdf`, str. 2 PDF (tištěné s. 3–4): oddíl 3 (zadání) a obr. 6 (řešení); obr. 3 a 5 (konvence)
-
 ## Zadání
 
 > Budeme modelovat jednoduché zdravotní středisko:
@@ -61,15 +55,6 @@ Kontrola simulací: všechna tři zařízení se vždy vrátí. Úzkým místem 
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- **Poznámky MSI, obr. 6:** stejný tok pacientů (*BeforeInd*, *AfterInd*, *BeforeLab*, *AfterLab*, *BeforeExp*). Liší se konvencí (viz interpretace) a tím, že zařízení nemají vlastní místa, protože kapacitu 1 zajišťuje implicitní kapacita serveru. U laboratoře je na obrázku 300 s místo 6 minut z textu.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -78,5 +63,22 @@ Kontrola simulací: všechna tři zařízení se vždy vrátí. Úzkým místem 
 - Převzít konvenci z poznámek MSI do IMS. Bílý obdélník je v IMS okamžitý přechod, ne exponenciální.
 - Lékař jako samotný časovaný přechod bez místa se značkou. Podle sémantiky IMS by pak vyšetřoval libovolně mnoho pacientů najednou.
 - Napsat k přechodům váhy `75`/`25` místo procent, nebo `50 %` počítat ze všech pacientů místo jen z těch, kteří prošli laboratoří.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** řešený příklad z poznámek „Stochastické Petriho sítě“ ke cvičení MSI (Vojnar), které jsou na webu předmětu. Tady překreslený do notace IMS.
+
+**Zdroje:**
+
+- `Web předmětu/Petriho sítě - Stochastické (poznámky MSI).pdf`, str. 2 PDF (tištěné s. 3–4): oddíl 3 (zadání) a obr. 6 (řešení); obr. 3 a 5 (konvence)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- **Poznámky MSI, obr. 6:** stejný tok pacientů (*BeforeInd*, *AfterInd*, *BeforeLab*, *AfterLab*, *BeforeExp*). Liší se konvencí (viz interpretace) a tím, že zařízení nemají vlastní místa, protože kapacitu 1 zajišťuje implicitní kapacita serveru. U laboratoře je na obrázku 300 s místo 6 minut z textu.
 
 </details>

@@ -1,11 +1,5 @@
 # 08–06 – D/D/4 s LIFO frontou, obsluha 7 s, značení v čase 9,5
 
-**Původ:** zkouška 2014/15, 3. termín, skupina D (podle studenta „asi“), otázka 1, 15 bodů.
-
-**Zdroje:**
-
-- `Fitcheats/Zkoušky z minulých let/2014-15 - 3. termín.txt`, otázka 1 (studentská vzpomínka)
-
 ## Zadání
 
 > ⚠️ Jen studentská vzpomínka, původní zadání v podkladech není.
@@ -85,15 +79,6 @@ Kontrola (`make check`): síť se odsimuluje od času 0 (P0 ve frontě, zaříze
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- K této úloze řešení v podkladech není. Síť má stejný tvar jako studentská řešení úlohy [08–02](<../08–02 - DD3 LIFO, čas 10,5/08–02 - DD3 LIFO, čas 10,5.md>), jen se čtyřmi zařízeními a prioritami 3, 2, 1, 0.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -103,5 +88,22 @@ Kontrola (`make check`): síť se odsimuluje od času 0 (P0 ve frontě, zaříze
 - V kalendáři obráceně dvě události v čase 10. Konec obsluhy P3 byl naplánován v čase 3, příchod P10 v čase 9.
 - Opačné pořadí v čase 7 (nejdřív příchod P7). Pak by P7 obsadil Z0 a ve frontě by zůstal P6.
 - Stejná priorita na všech přechodech obsazení. Pak síť nevyjadřuje, že se zařízení obsazují od Z0.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** zkouška 2014/15, 3. termín, skupina D (podle studenta „asi“), otázka 1, 15 bodů.
+
+**Zdroje:**
+
+- `Fitcheats/Zkoušky z minulých let/2014-15 - 3. termín.txt`, otázka 1 (studentská vzpomínka)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- K této úloze řešení v podkladech není. Síť má stejný tvar jako studentská řešení úlohy [08–02](<../08–02 - DD3 LIFO, čas 10,5/08–02 - DD3 LIFO, čas 10,5.md>), jen se čtyřmi zařízeními a prioritami 3, 2, 1, 0.
 
 </details>

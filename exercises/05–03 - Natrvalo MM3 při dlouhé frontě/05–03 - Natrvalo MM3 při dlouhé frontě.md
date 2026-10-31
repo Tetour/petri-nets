@@ -1,13 +1,5 @@
 # 05–03 – Natrvalo MM3 při dlouhé frontě
 
-**Původ:** zkouška 2020/21, 1. termín, skupina ve 14:00, otázka 3 (body neuvedené).
-
-**Zdroje:**
-
-- `Fitcheats/Zkoušky z minulých let/2020-21 - 1. termín.txt`, skupina 14:00, otázka 3 (studentský přepis zadání)
-- `Fitcheats/Příprava na zkoušku/FIT - Řešené výpočetní příklady 2017-21.pdf`, str. 33 („2021 - Řádný 14:00“: síť na tabuli)
-- `Fitcheats/Příprava na zkoušku/cranycrane - Kódy (generátory, Monte Carlo, Euler, RK, Petri + SIMLIB)/petri/5.png` a `5.cpp`
-
 ## Zadání
 
 ⚠️ Původní zadání se nedochovalo, jen studentský přepis (slovensky):
@@ -47,16 +39,6 @@ Kontrola simulací (A = 4, B = 6): *Linka* + obsluhované + 2 · *M/M/1* = 3. *Z
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- **Řešené výpočetní příklady, str. 33:** stejná síť: přechod `P=1` s testem 5/5 na frontě, jednorázové místo s jednou značkou a hrana s váhou 2 do linky. Generátor je jen přechod `exp(x)` bez místa, výstupní přechod je. Správně.
-- **cranycrane, 5.png:** totéž (test 5/5, jednorázová značka, váha 2). Kód `5.cpp` hlídá délku fronty jen při příchodu a nastaví `SetCapacity(3)`. To tu stačí, protože fronta roste jen příchody.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -66,5 +48,25 @@ Kontrola simulací (A = 4, B = 6): *Linka* + obsluhované + 2 · *M/M/1* = 3. *Z
 - Přepínač bez jednorázové značky: při každé frontě 5 přibudou další linky.
 - Test fronty jen hranou dovnitř: přechod by z fronty odebral pět požadavků.
 - Váha 6 („přesáhne“) místo 5.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** zkouška 2020/21, 1. termín, skupina ve 14:00, otázka 3 (body neuvedené).
+
+**Zdroje:**
+
+- `Fitcheats/Zkoušky z minulých let/2020-21 - 1. termín.txt`, skupina 14:00, otázka 3 (studentský přepis zadání)
+- `Fitcheats/Příprava na zkoušku/FIT - Řešené výpočetní příklady 2017-21.pdf`, str. 33 („2021 - Řádný 14:00“: síť na tabuli)
+- `Fitcheats/Příprava na zkoušku/cranycrane - Kódy (generátory, Monte Carlo, Euler, RK, Petri + SIMLIB)/petri/5.png` a `5.cpp`
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- **Řešené výpočetní příklady, str. 33:** stejná síť: přechod `P=1` s testem 5/5 na frontě, jednorázové místo s jednou značkou a hrana s váhou 2 do linky. Generátor je jen přechod `exp(x)` bez místa, výstupní přechod je. Správně.
+- **cranycrane, 5.png:** totéž (test 5/5, jednorázová značka, váha 2). Kód `5.cpp` hlídá délku fronty jen při příchodu a nastaví `SetCapacity(3)`. To tu stačí, protože fronta roste jen příchody.
 
 </details>

@@ -1,11 +1,5 @@
 # 03–06 – Porucha zničí obsluhu nebo počká
 
-**Původ:** zkouška 2021/22, 2. termín, otázka 1 (body neuvedené).
-
-**Zdroje:**
-
-- `Fitcheats/Zkoušky z minulých let/2021-22 - 2. termín.txt`, otázka 1 (studentský přepis zadání)
-
 ## Zadání
 
 ⚠️ Původní zadání se nedochovalo, jen studentský přepis (slovensky):
@@ -57,15 +51,6 @@ Kontrola simulací: *Linka* + obsluhovaná transakce = 1, každá porucha znič�
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- K této úloze žádné řešení není.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -75,5 +60,22 @@ Kontrola simulací: *Linka* + obsluhovaná transakce = 1, každá porucha znič�
 - Čekající porucha modelovaná vlastním časovaným přechodem nebo testem fronty. Stačí, že porucha zůstane v místě, dokud nemá s čím reagovat.
 - Zničení bez vrácení *Linky*.
 - Zničená transakce zmizí bez výstupního přechodu.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** zkouška 2021/22, 2. termín, otázka 1 (body neuvedené).
+
+**Zdroje:**
+
+- `Fitcheats/Zkoušky z minulých let/2021-22 - 2. termín.txt`, otázka 1 (studentský přepis zadání)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- K této úloze žádné řešení není.
 
 </details>

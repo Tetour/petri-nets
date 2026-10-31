@@ -1,13 +1,5 @@
 # 09–16 – Menza
 
-**Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z9.
-
-**Zdroje:**
-
-- `Fitcheats/Půlsemestrálky/Zadání z minulých let/Přehled zadání 2014-19.pdf`, str. 3 (zadání)
-- `Fitcheats/Půlsemestrálky/FIT - Příprava 2021-22.pdf`, str. 13 (studentské řešení, 0 pro / 2 proti)
-- `Fitcheats/Příprava na zkoušku/luppo - Tabule.png` (studentské řešení na tabuli)
-
 ## Zadání
 
 > Do školní menzy přichází studenti v intervalech exp(3 min). Jídlo vydává 5 kuchařek. Doba obsluhy jednoho studenta kuchařkou se řídí exp(1min). Po obdržení jídla student konzumuje po dobu 10-15 minut rovnoměrně. V intervalech exp(100 dní) dostává menza hlášení o žloutenkové karanténě. Po příchodu hlášení se ukončí okamžitě všechny činnosti (výdej, konzumace) a úplně všichni studenti opustí menzu. Po odchodu všech studentů z menzy se zahájí karanténa trvající 10 dní. Příchodem hlášení se zastaví proces příchodu studentů do menzy.
@@ -51,16 +43,6 @@ Kontrola simulací: *Kuchařky* + *výdej* = 5, *generátor* + *Karanténa* = 1,
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- **Příprava 2021/22 (str. 13, 0 pro / 2 proti):** obrácené značení (šrafovaně okamžité přechody). Výdej je jediný časovaný přechod `exp(1m)` se vstupy z fronty a z *kuchařek* (kuchařku hned vrací), takže obsluhovaní studenti zůstávají ve frontě a vyhazovací přechod `P=2` je bere spolu s čekajícími. Konzumující vyhazuje `P=1`. Chyby, které vytkly i komentáře: příchody studentů se nezastaví a karanténa `10d` startuje přímo z generátoru hlášení, ne až po vyprázdnění. Studenti nemají výstupní přechod.
-- **Tabule luppo:** *Studenti* → `Exp(3min)` → *Příchod* → obsazení kuchařek (5) → *Obsluha* → `Exp(1min)` → *Žere* → `Rav(10-15)` → *Odchod*. *hlášení* má smyčky na vyhazovací přechody z fronty (`p=2`), z obsluhy (vrací kuchařku) i z *Žere*. Časovač `10dní` je přímo na místě *hlášení*. Hrana, která by brala značku generátoru studentů, na fotce není vidět.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -71,5 +53,25 @@ Kontrola simulací: *Kuchařky* + *výdej* = 5, *generátor* + *Karanténa* = 1,
 - Karanténa spuštěná přímo hlášením bez priorit. Zadání chce karanténu až po odchodu všech, proto vyhazování `p=1` a zahájení karantény p=0.
 - Zapomenuté zastavení generátoru studentů: během karantény by se fronta plnila.
 - Generátor hlášení ve smyčce bez ohledu na karanténu: druhé hlášení během karantény by spustilo další, souběžnou karanténu.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z9.
+
+**Zdroje:**
+
+- `Fitcheats/Půlsemestrálky/Zadání z minulých let/Přehled zadání 2014-19.pdf`, str. 3 (zadání)
+- `Fitcheats/Půlsemestrálky/FIT - Příprava 2021-22.pdf`, str. 13 (studentské řešení, 0 pro / 2 proti)
+- `Fitcheats/Příprava na zkoušku/luppo - Tabule.png` (studentské řešení na tabuli)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- **Příprava 2021/22 (str. 13, 0 pro / 2 proti):** obrácené značení (šrafovaně okamžité přechody). Výdej je jediný časovaný přechod `exp(1m)` se vstupy z fronty a z *kuchařek* (kuchařku hned vrací), takže obsluhovaní studenti zůstávají ve frontě a vyhazovací přechod `P=2` je bere spolu s čekajícími. Konzumující vyhazuje `P=1`. Chyby, které vytkly i komentáře: příchody studentů se nezastaví a karanténa `10d` startuje přímo z generátoru hlášení, ne až po vyprázdnění. Studenti nemají výstupní přechod.
+- **Tabule luppo:** *Studenti* → `Exp(3min)` → *Příchod* → obsazení kuchařek (5) → *Obsluha* → `Exp(1min)` → *Žere* → `Rav(10-15)` → *Odchod*. *hlášení* má smyčky na vyhazovací přechody z fronty (`p=2`), z obsluhy (vrací kuchařku) i z *Žere*. Časovač `10dní` je přímo na místě *hlášení*. Hrana, která by brala značku generátoru studentů, na fotce není vidět.
 
 </details>

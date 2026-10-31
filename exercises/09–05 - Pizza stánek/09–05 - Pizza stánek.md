@@ -1,12 +1,5 @@
 # 09–05 – Pizza stánek
 
-**Původ:** půlsemestrální písemka 2024/25, varianta B, 10 bodů (bodování podle ostatních variant téhož termínu).
-
-**Zdroje:**
-
-- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2024-25.pdf`, str. 1 (koláž zadání; varianta B jen jako studentská parafráze)
-- `Fitcheats/Půlsemestrálky/Hrubý - Řešení 2024-25.pdf`, str. 2 (řešení od Hrubého)
-
 ## Zadání
 
 > ⚠️ **Parafráze.** Oficiální text varianty B v materiálech chybí. V koláži je místo něj přepis od studenta (podepsaný „credits to mav_“), který zachycuje čísla, ale ne přesné znění. Text níže je ten přepis beze změn.
@@ -49,16 +42,6 @@ Kontrola simulací: *Pizzař* + *příprava* + *vyndávání* = 1, *Pec* + pizzy
 
 </details>
 
-## Existující řešení
-
-<details>
-<summary>Zobrazit srovnání s existujícími řešeními</summary>
-
-- **Hrubý (str. 2):** stejná síť. Generátor kreslí jako přechod `exp(10min)` bez místa. Na časovaných přechodech má jen názvy (*příprava*, *pečení*, *vytažení*), časy 3–5, 4 a 1 min nedopsal. Místa *obsluha* (pizzař) a *kapacita pece* (4) jdou do společného obsazení, vytažení má `p=1` a vrací obojí.
-- **Hrubý, „Alternativně“ (str. 2 dole):** pec se zabírá až po přípravě. Pizza čeká v místě *Fronta na pec* a pec obsadí přechod s `p=1`. Je to také přípustné, ale pizza pak může čekat „mimo pec“, dokud se místo neuvolní. Hrubý proto doporučuje první variantu.
-
-</details>
-
 ## Časté chyby
 
 <details>
@@ -68,5 +51,24 @@ Kontrola simulací: *Pizzař* + *příprava* + *vyndávání* = 1, *Pec* + pizzy
 - Pec jako jedno zařízení místo skladu se 4 značkami, nebo časovaný přechod pečení s kapacitou 4 bez místa *Pec*.
 - Priorita `p=1` na špatném přechodu: patří k obsazení pizzaře pro vyndání, ne k časovanému přechodu (ten parametr priority mít nemůže).
 - Zákazník odchází hned po objednávce. Podle zadání čeká, než pizzu dostane, takže odchod je až po předání.
+
+</details>
+
+## Původ a zdroje
+
+**Původ:** půlsemestrální písemka 2024/25, varianta B, 10 bodů (bodování podle ostatních variant téhož termínu).
+
+**Zdroje:**
+
+- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2024-25.pdf`, str. 1 (koláž zadání; varianta B jen jako studentská parafráze)
+- `Fitcheats/Půlsemestrálky/Hrubý - Řešení 2024-25.pdf`, str. 2 (řešení od Hrubého)
+
+**Existující řešení:**
+
+<details>
+<summary>Zobrazit existující řešení</summary>
+
+- **Hrubý (str. 2):** stejná síť. Generátor kreslí jako přechod `exp(10min)` bez místa. Na časovaných přechodech má jen názvy (*příprava*, *pečení*, *vytažení*), časy 3–5, 4 a 1 min nedopsal. Místa *obsluha* (pizzař) a *kapacita pece* (4) jdou do společného obsazení, vytažení má `p=1` a vrací obojí.
+- **Hrubý, „Alternativně“ (str. 2 dole):** pec se zabírá až po přípravě. Pizza čeká v místě *Fronta na pec* a pec obsadí přechod s `p=1`. Je to také přípustné, ale pizza pak může čekat „mimo pec“, dokud se místo neuvolní. Hrubý proto doporučuje první variantu.
 
 </details>
