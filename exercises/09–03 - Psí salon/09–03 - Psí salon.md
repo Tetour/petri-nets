@@ -1,6 +1,10 @@
-# 09.03 – Psí salon
+# 09–03 – Psí salon
 
 **Původ:** půlsemestrální písemka 2025/26, varianta A, 10 bodů (bodování podle ostatních let).
+
+**Zdroj:**
+
+- `Fitcheats/Půlsemestrálky/Hrubý - Řešení 2025-26.pdf`, str. 1
 
 ## Zadání
 
@@ -8,13 +12,9 @@
 >
 > Do psího salonu přichází zákazníci v intervalech daných exponenciálním rozložením se středem 10 minut. Salon má jednu linku obsluhy, obsluha (stříhání) trvá dobu danou exponenciálním rozložením se středem 15 minut. Pokud některý zákazník čeká ve frontě alespoň 1 hodinu, všichni čekající zákazníci salon opustí a salon na 3 hodiny přestane přijímat nové zákazníky. V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém.
 
-Zdroj (cesta relativně ke složce `IMS - Modelování a simulace/`):
-
-- `Fitcheats/Půlsemestrálky/Hrubý - Řešení 2025-26.pdf`, str. 1
-
 Všimni si: obsluha (15 min) je pomalejší než příchody (10 min), takže bez pravidla s jednou hodinou by fronta rostla do nekonečna. Právě proto zadání dává smysl.
 
-Podobné úlohy: [05.05 – Přerušení příchodů při plné frontě](<../05.05 - Přerušení příchodů při plné frontě/05.05 - Přerušení příchodů při plné frontě.md>), [05.07 – Každá 100. transakce vyprázdní frontu](<../05.07 - Každá 100. transakce vyprázdní frontu/05.07 - Každá 100. transakce vyprázdní frontu.md>), [02.01 – Netrpělivé požadavky](<../02.01 - Netrpělivé požadavky/02.01 - Netrpělivé požadavky.md>).
+Podobné úlohy: [05–05 – Přerušení příchodů při plné frontě](<../05–05 - Přerušení příchodů při plné frontě/05–05 - Přerušení příchodů při plné frontě.md>), [05–07 – Každá 100. transakce vyprázdní frontu](<../05–07 - Každá 100. transakce vyprázdní frontu/05–07 - Každá 100. transakce vyprázdní frontu.md>), [02–01 – Netrpělivé požadavky](<../02–01 - Netrpělivé požadavky/02–01 - Netrpělivé požadavky.md>).
 
 ## Interpretace
 

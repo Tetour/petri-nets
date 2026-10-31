@@ -1,22 +1,22 @@
-# 03.02 – Porucha vrací transakci do fronty
+# 03–02 – Porucha vrací transakci do fronty
 
 **Původ:** zkouška 2019/20, 1. opravný termín, skupina B, otázka 3, 10 bodů.
+
+**Zdroje:**
+
+- `Fitcheats/Příprava na zkoušku/FIT - Řešené výpočetní příklady 2017-21.pdf`, str. 29 („2020 - 1OP. SK B“: fotka zadání a studentské řešení s komentáři)
+- `Fitcheats/Příprava na zkoušku/cranycrane - Kódy (generátory, Monte Carlo, Euler, RK, Petri + SIMLIB)/petri/3.png` a `3.cpp`
 
 ## Zadání
 
 > Pro následující systém nakreslete jeho model v Petriho síti. Systém typu M/M/1. V intervalech exp(X) dochází na lince k poruše, která přeruší případnou právě probíhající obsluhu a transakce se vrací do fronty.
 
-Zdroje (cesty relativně ke složce `IMS - Modelování a simulace/`):
-
-- `Fitcheats/Příprava na zkoušku/FIT - Řešené výpočetní příklady 2017-21.pdf`, str. 29 („2020 - 1OP. SK B“: fotka zadání a studentské řešení s komentáři)
-- `Fitcheats/Příprava na zkoušku/cranycrane - Kódy (generátory, Monte Carlo, Euler, RK, Petri + SIMLIB)/petri/3.png` a `3.cpp`
-
 Podobné úlohy:
 
-- [03.03 – Porucha s opravou, návrat do fronty](<../03.03 - Porucha s opravou, návrat do fronty/03.03 - Porucha s opravou, návrat do fronty.md>): porucha navíc zabere linku na dobu R
-- [03.01 – Porucha zruší obsluhu](<../03.01 - Porucha zruší obsluhu/03.01 - Porucha zruší obsluhu.md>): porucha jen zruší obsluhu
-- [03.04 – Porucha s opravou, transakce odchází](<../03.04 - Porucha s opravou, transakce odchází/03.04 - Porucha s opravou, transakce odchází.md>): přerušená transakce odchází
-- [03.05 – Kritická havárie](<../03.05 - Kritická havárie/03.05 - Kritická havárie.md>)
+- [03–03 – Porucha s opravou, návrat do fronty](<../03–03 - Porucha s opravou, návrat do fronty/03–03 - Porucha s opravou, návrat do fronty.md>): porucha navíc zabere linku na dobu R
+- [03–01 – Porucha zruší obsluhu](<../03–01 - Porucha zruší obsluhu/03–01 - Porucha zruší obsluhu.md>): porucha jen zruší obsluhu
+- [03–04 – Porucha s opravou, transakce odchází](<../03–04 - Porucha s opravou, transakce odchází/03–04 - Porucha s opravou, transakce odchází.md>): přerušená transakce odchází
+- [03–05 – Kritická havárie](<../03–05 - Kritická havárie/03–05 - Kritická havárie.md>)
 
 ## Interpretace
 
@@ -67,7 +67,7 @@ Kontrola simulací: *Linka* + obsluhovaná transakce = 1, v místě *porucha* je
 
 - Chybějící zánik poruchy, když linka nepracuje (poruchy se hromadí).
 - Přerušení bez vrácení značky *Lince*: linka se ztratí a systém se zastaví.
-- Přerušená transakce poslaná na *odchod*. To je jiná úloha ([03.04 – Porucha s opravou, transakce odchází](<../03.04 - Porucha s opravou, transakce odchází/03.04 - Porucha s opravou, transakce odchází.md>)).
+- Přerušená transakce poslaná na *odchod*. To je jiná úloha ([03–04 – Porucha s opravou, transakce odchází](<../03–04 - Porucha s opravou, transakce odchází/03–04 - Porucha s opravou, transakce odchází.md>)).
 - Porucha modelovaná jako „další transakce“, která se řadí do fronty k lince. Pak čeká, až obsluha skončí, a nic nepřeruší.
 
 </details>

@@ -1,17 +1,17 @@
-# 01.01 – Opravářská dílna
+# 01–01 – Opravářská dílna
 
 **Původ:** řešený příklad z přednášky (Hrubý), slajdy 157–164. Na přednášce 11. 10. 2024 ho označil za „typizovanou úlohu pro půlsemestrální písemku“.
+
+**Zdroje:**
+
+- `Přednášky - Prezentace 2025/IMS - Prezentace.pdf`: slajd 157 (zadání), 158–163 (postupná stavba), 164 (výsledná síť)
+- `Přednášky - Video 2024/Přepisy/IMS_2024-10-11_1080p.txt` (výklad)
 
 ## Zadání
 
 > Do opravářské dílny přicházejí zákazníci v intervalech daných exponenciálním rozložením pravděpodobnosti se střední hodnotou 20 minut. V dílně jsou dva opraváři: jeden zpracovává normální zakázky a druhý náročné zakázky. Každá třetí zakázka je náročná. Vyřízení normální zakázky trvá 15 minut s exp. rozložením pravděpodobnosti, vyřízení náročné zakázky zabere 45 minut exp. Zákazník čeká na vyřízení své zakázky a pak systém opouští.
 >
 > Modelujte systém pomocí stochastické Petriho sítě.
-
-Zdroje (cesty relativně ke složce `IMS - Modelování a simulace/`):
-
-- `Přednášky - Prezentace 2025/IMS - Prezentace.pdf`: slajd 157 (zadání), 158–163 (postupná stavba), 164 (výsledná síť)
-- `Přednášky - Video 2024/Přepisy/IMS_2024-10-11_1080p.txt` (výklad)
 
 ## Interpretace
 

@@ -1,6 +1,6 @@
 from pn import Net
 
-net = Net("09.03", "Psí salon (půlsemestrálka 2025/26, varianta A – zadání rekonstruované)")
+net = Net("09–03", "Psí salon (půlsemestrálka 2025/26, varianta A – zadání rekonstruované)")
 
 # příchody a obsluha
 net.place("gen", (0, 0), tokens=1, label="generátor", label_pos="above")

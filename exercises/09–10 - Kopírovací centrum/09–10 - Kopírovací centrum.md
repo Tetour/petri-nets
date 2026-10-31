@@ -1,6 +1,12 @@
-# 09.10 – Kopírovací centrum
+# 09–10 – Kopírovací centrum
 
 **Původ:** půlsemestrální písemka 2022/23, varianta A, 10 bodů.
+
+**Zdroje:**
+
+- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2022-23.pdf`, str. 1 (fotka zadání)
+- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2024-25 - Varianta A (fotky).pdf`, str. 1–2 (zadání a řešení kreslené na cvičení)
+- `Fitcheats/Půlsemestrálky/Hrubý - Řešení 2022-23.pdf`, str. 1 (řešení od Hrubého)
 
 ## Zadání
 
@@ -8,13 +14,7 @@
 >
 > **V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém.**
 
-Zdroje (cesty relativně ke složce `IMS - Modelování a simulace/`):
-
-- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2022-23.pdf`, str. 1 (fotka zadání)
-- `Fitcheats/Půlsemestrálky/Zadání z minulých let/2024-25 - Varianta A (fotky).pdf`, str. 1–2 (zadání a řešení kreslené na cvičení)
-- `Fitcheats/Půlsemestrálky/Hrubý - Řešení 2022-23.pdf`, str. 1 (řešení od Hrubého)
-
-Podobné úlohy: [09.11 – Kopírovací centrum s poruchami](<../09.11 - Kopírovací centrum s poruchami/09.11 - Kopírovací centrum s poruchami.md>) (2021/22), [02.01 – Netrpělivé požadavky](<../02.01 - Netrpělivé požadavky/02.01 - Netrpělivé požadavky.md>).
+Podobné úlohy: [09–11 – Kopírovací centrum s poruchami](<../09–11 - Kopírovací centrum s poruchami/09–11 - Kopírovací centrum s poruchami.md>) (2021/22), [02–01 – Netrpělivé požadavky](<../02–01 - Netrpělivé požadavky/02–01 - Netrpělivé požadavky.md>).
 
 ## Interpretace
 

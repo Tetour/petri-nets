@@ -1,6 +1,6 @@
 from pn import Net
 
-net = Net("08.02", "D/D/3 se společnou LIFO frontou, značení v čase t2 = 10,5 s", unit="s")
+net = Net("08–02", "D/D/3 se společnou LIFO frontou, značení v čase t2 = 10,5 s", unit="s")
 
 net.place("gen", (0, 0), tokens=1, label="generátor", label_pos="below")
 net.timed("prichod", (1.5, 0), "1 s")

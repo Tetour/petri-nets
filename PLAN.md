@@ -44,7 +44,7 @@ Key facts:
 
 - Order: midterm word problems first (§6).
 - Language: the project scaffolding is in English (directories `pn/`, `exercises/`, `notation/`, `book/`, file names `net.py`/`net.svg`/`net.pdf`, the top-level `README.md`, `Makefile`, code). Everything that is a note is in Czech:
-  - each exercise's note file name, e.g. `09.10 - Kopírovací centrum.md` (folder of the same name);
+  - each exercise's note file name, e.g. `09–10 - Kopírovací centrum.md` (folder of the same name);
   - its headings and text;
   - labels in the diagrams;
   - the notation cheat sheet (`notation/Notace a vzory.md`);
@@ -76,9 +76,9 @@ petri-nets/
 │   ├── Notace a vzory.md    ← cheat sheet (Czech): course notation + standard patterns, with slide refs
 │   └── patterns/*.py        ← generator, seize/release, Store, timeout, preemption, counter, if/else by priority, test arc …
 ├── exercises/               ← flat, one folder per exercise, ordered by topic (§5)
-│   ├── 01.01 - Opravářská dílna/
+│   ├── 01–01 - Opravářská dílna/
 │   ├── …
-│   └── 12.18 - Logistická centrála/
+│   └── 12–18 - Logistická centrála/
 ├── book/                    ← generated printable collection (task page, then solution page)
 └── inventory/               ← raw source inventory (already present)
 ```
@@ -86,14 +86,14 @@ petri-nets/
 Each exercise folder:
 
 ```
-exercises/09.10 - Kopírovací centrum/
-├── 09.10 - Kopírovací centrum.md   ← the note (Czech), see below
+exercises/09–10 - Kopírovací centrum/
+├── 09–10 - Kopírovací centrum.md   ← the note (Czech), see below
 ├── net.py                        ← the net definition (single source of truth)
 ├── net.svg                       ← generated; embedded in the note (renders in the VS Code Markdown preview)
 └── net.pdf                       ← generated; vector, for printing
 ```
 
-Folder and note are named `<TT.NN> - <název>`. The id carries no origin; the origin is the first line of the note (**Původ:** zkouška/půlsemestrálka, year, term, group, points).
+Folder and note are named `<TT–NN> - <název>`. The id carries no origin; the origin is the first line of the note (**Původ:** zkouška/půlsemestrálka, year, term, group, points).
 
 Each note has these sections (headings in Czech):
 
@@ -167,7 +167,7 @@ I view every rendered PNG for overlaps and readability before marking an exercis
 
 ## 5. Exercise catalogue (118 diagrams)
 
-Exercises are ordered **by topic** and numbered `TT.NN` (topic.position). Topics go from basic models over single mechanisms (the short M/M/1-variant exam questions) to marking at time t and full word problems (the midterm format). Within a topic, newer tasks come first. The two-level id keeps numbers stable when an exercise is added later.
+Exercises are ordered **by topic** and numbered `TT–NN` (topic.position). Topics go from basic models over single mechanisms (the short M/M/1-variant exam questions) to marking at time t and full word problems (the midterm format). Within a topic, newer tasks come first. The two-level id keeps numbers stable when an exercise is added later.
 
 | Topic | Content | Count |
 |---|---|---|
@@ -192,11 +192,11 @@ The full list (id, Czech name, origin) lives in [pn/catalog.py](pn/catalog.py); 
 
 0. **Git setup**: `git init`, private GitHub repo, first commit with the plan and the inventory.
 1. **Tooling + pilot (5 nets).** Build `pn/` with lint and simulator and the notation cheat sheet. The pilot leans toward the midterm:
-   - 09.10 kopírovací centrum (midterm 2022/23; Hrubý's solution exists, to compare);
-   - 09.03 psí salon (midterm 2025/26; tests reconstructing a task from a solution);
-   - 01.01 opravářská dílna (the lecturer's own net, to calibrate the style);
-   - 03.02 failure → back to queue (exam type);
-   - 08.02 D/D/3 marking at t = 10.5 (trace type).
+   - 09–10 kopírovací centrum (midterm 2022/23; Hrubý's solution exists, to compare);
+   - 09–03 psí salon (midterm 2025/26; tests reconstructing a task from a solution);
+   - 01–01 opravářská dílna (the lecturer's own net, to calibrate the style);
+   - 03–02 failure → back to queue (exam type);
+   - 08–02 D/D/3 marking at t = 10.5 (trace type).
 
    **You review these** for style, language and depth before I mass-produce. This is the cheapest point to change format.
 2. **Main batch, midterm first:**
@@ -222,5 +222,5 @@ Status per exercise in the README index: `todo / drafted / reviewed`.
 
 ## 8. Possible improvements (later)
 
-- **SIMLIB code** (`simlib.cpp`) for the ~15 exam tasks that ask for a SIMLIB model isomorphic to the net (e.g. 02.01, 02.03, 03.01, 03.04, 03.06, 03.07, 04.05, 04.07, 05.02, 05.04, 07.01–07.03). The simulator in `pn/` makes it possible to cross-check net and code behaviour.
+- **SIMLIB code** (`simlib.cpp`) for the ~15 exam tasks that ask for a SIMLIB model isomorphic to the net (e.g. 02–01, 02–03, 03–01, 03–04, 03–06, 03–07, 04–05, 04–07, 05–02, 05–04, 07–01 až 07–03). The simulator in `pn/` makes it possible to cross-check net and code behaviour.
 - **Video transcripts** of the 2023 demo exercises, used to cross-check midterm solutions against Hrubý's spoken reasoning.
