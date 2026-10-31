@@ -29,6 +29,11 @@ PANDOC = [
 
 NEW_PAGE_BEFORE = ("## Interpretace", "## Nápověda", "## Petriho síť")
 
+# long lines in code blocks wrap instead of running off the page (pandoc's Highlighting env)
+HEADER = r"""\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breakanywhere,commandchars=\\\{\}}
+"""
+
 
 def prepare(md: str) -> str:
     md = md.replace("️", "")                                   # emoji variation selector
@@ -48,7 +53,9 @@ def render(note: Path):
     out.mkdir(parents=True, exist_ok=True)
     md = prepare(note.read_text()).replace("](net.pdf)", f"](<{note.parent / 'net.pdf'}>)")
     (out / "note.md").write_text(md)
-    r = subprocess.run(PANDOC + ["-s", "note.md", "-o", "note.tex"], cwd=out, capture_output=True, text=True)
+    (out / "header.tex").write_text(HEADER)
+    r = subprocess.run(PANDOC + ["-s", "-H", "header.tex", "note.md", "-o", "note.tex"],
+                       cwd=out, capture_output=True, text=True)
     if r.returncode:
         return note.parent.name, r.stderr.strip()
     env = dict(os.environ, SOURCE_DATE_EPOCH="0", FORCE_SOURCE_DATE="1")
@@ -66,6 +73,8 @@ def main():
     ap.add_argument("paths", nargs="*")
     args = ap.parse_args()
     dirs = [Path(p).resolve() for p in args.paths] or sorted((ROOT / "exercises").iterdir())
+    # a folder that is not itself an exercise (e.g. exercises/) stands for all exercises in it
+    dirs = [e for d in dirs for e in ([d] if (d / f"{d.name}.md").exists() else sorted(d.iterdir()))]
     notes = [d / f"{d.name}.md" for d in dirs if (d / f"{d.name}.md").exists()]
     failed = 0
     with ProcessPoolExecutor(max_workers=args.jobs) as pool:

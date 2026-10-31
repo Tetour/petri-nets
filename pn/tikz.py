@@ -57,6 +57,11 @@ def _place(p):
         text = str(p.tokens)
     elif p.tokens > 0:
         opts.append(f"tokens={p.tokens}")
+    # a number or symbol written inside the place must fit the circle
+    if len(text) >= 4:
+        opts.append("font=\\scriptsize")
+    elif len(text) == 3:
+        opts.append("font=\\footnotesize")
     if p.label:
         opts.append(f"label={{[lbl]{p.label_pos}:{{{_tex(p.label)}}}}}")
     return f"\\node[{','.join(opts)}] ({p.id}) at {_xy(p.at)} {{{text}}};"

@@ -52,6 +52,8 @@
             babel-czech fontspec unicode-math xcolor hyperref bookmark geometry
             booktabs etoolbox fancyvrb framed upquote microtype xurl footnotehyper
             parskip lineno
+            # long code lines wrap instead of running off the page
+            fvextra
           ]);
         in
         {
