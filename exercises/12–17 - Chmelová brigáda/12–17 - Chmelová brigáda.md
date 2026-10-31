@@ -2,7 +2,7 @@
 
 ## Zadání
 
-> Na chmelové brigádě je 100 sběračů chmele. Doba sběru chmele do košíku se řídí exponenciálním rozložením se středem 20 minut. Po naplnění košíku jde sběrač košík uložit do skladu s kapacitou 20 košíků. Pokud ve skladu není aktuálně volné místo pro uložení košíku, sběrač se vydá s košíkem na 10-15 minut na procházku. Po návratu opět zkoumá volnou kapacitu skladu (počet procházek je neomezený). V případě volné kapacity skladu zabere uložení košíku do skladu 1-2 minuty rovnoměrně. Po uložení plného košíku s nasbíraným chmelem obdrží sběrač volný košík a vrací se ke sběru. Počty košíků v systému nesledujeme a zanedbáváme i doby přesunu sběrače mezi polem a skladištěm (tzn. není tam sklad volných košíků). V systému pracuje jedna přepravní dodávka s kapacitou 10 košíků. Naložení každého jednotlivého košíku do dodávky trvá dobu, která se řídí exponenciálním rozložením se středem 2 minuty. Okamžikem započetí nakládání košíku dodávkou se uvolňuje jedna pozice ve skladu. Po plném naložení dodávka odjíždí a vrací se prázdná za jednu hodinu.
+> Na chmelové brigádě je 100 sběračů chmele. Sběr chmele do košíku trvá exponenciálně se středem 20 minut. Po naplnění košíku jde sběrač košík uložit do skladu s kapacitou 20 košíků. Pokud ve skladu není aktuálně volné místo pro uložení košíku, sběrač se vydá s košíkem na procházku, která trvá rovnoměrně 10–15 minut. Po návratu opět zkoumá volnou kapacitu skladu (počet procházek je neomezený). V případě volné kapacity skladu zabere uložení košíku do skladu rovnoměrně 1–2 minuty. Po uložení plného košíku s nasbíraným chmelem obdrží sběrač volný košík a vrací se ke sběru. Počty košíků v systému nesledujeme a zanedbáváme i doby přesunu sběrače mezi polem a skladištěm (tzn. není tam sklad volných košíků). V systému pracuje jedna přepravní dodávka s kapacitou 10 košíků. Naložení každého jednotlivého košíku do dodávky trvá exponenciálně se středem 2 minuty. Okamžikem započetí nakládání košíku dodávkou se uvolňuje jedna pozice ve skladu. Po plném naložení dodávka odjíždí a vrací se prázdná přesně za 1 hodinu.
 >
 > Poznámka: Kapacitu skladu plných košíků lze modelovat místem v Petriho síti se zadanou kapacitou.
 
@@ -18,10 +18,10 @@ Podobné úlohy: [12–02 – Sběrači jahod](<../12–02 - Sběrači jahod/12�
 
 - **Sběrači** jsou uzavřený cyklus: místo se 100 značkami a `exp(20 min)`. Každá značka má vlastní odpočet (slajd 138), takže všech 100 sběračů sbírá souběžně. Sběrači systém neopouštějí.
 - **Kapacita skladu bez kapacity místa:** poznámka v zadání dovoluje místo s kapacitou 20, ale v notaci kurzu se kapacity míst nepoužívají. Místo nich je doplňkové místo *Volná místa ve skladu* s 20 značkami.
-- **Volné místo, nebo procházka:** obsazení místa ve skladu má `p=1`, procházka `p=0`. Procházka se tedy provede, jen když žádné volné místo není. Po `10–15 min` se sběrač vrátí do *Plný košík* a zkouší to znovu.
-- Místo ve skladu se zabere **na začátku ukládání** (`1–2 min`) a uvolní se **na začátku nakládání** do dodávky, jak říká zadání. Košík ve skladu je značka v *Sklad*. Platí tedy *Volná místa* + ukládané + *Sklad* = 20.
-- **Dodávka** je zařízení s jednou značkou (*Dodávka u skladu*). Nakládá se po jednom košíku, `exp(2 min)`. Čítač *Naloženo* a přechod *odjezd* s váhou 10 a `p=1` jsou stejný vzor jako u výletní lodi: po 10. košíku odjezd předběhne další nakládání (oba potřebují značku dodávky).
-- Po `1 h` se prázdná dodávka vrací. **Odvezené košíky** opouštějí systém (výstupní přechod *odchod*).
+- **Volné místo, nebo procházka:** obsazení místa ve skladu má `p=1`, procházka (*není místo*) `p=0`. Procházka se tedy provede, jen když žádné volné místo není. Po `10–15 min` se sběrač vrátí do *Plný košík* a zkouší to znovu.
+- Místo ve skladu se zabere **na začátku ukládání** (`1–2 min`) a uvolní se **na začátku nakládání** do dodávky, jak říká zadání. Košík ve skladu je značka v *Sklad*, sběrač se po uložení vrací do *Sběrači*. Platí tedy *Volná místa* + ukládané + *Sklad* = 20.
+- **Dodávka** je zařízení s jednou značkou (*Dodávka u skladu*). Začátek nakládání je okamžitý přechod, který vezme košík ze *Skladu* a značku dodávky a vrátí volné místo. Nakládá se po jednom košíku, `exp(2 min)`, pak se značka dodávky vrací. Čítač *Naloženo* a přechod *odjezd* s váhou 10 a `p=1` jsou stejný vzor jako u výletní lodi: po 10. košíku odjezd předběhne další nakládání (oba potřebují značku dodávky).
+- Po `1 h` se prázdná dodávka vrací do *Dodávka u skladu*. **Odvezené košíky** (hrana s váhou 10) opouštějí systém (výstupní přechod *odchod*).
 - Systém je silně přetížený: sběrači naplní asi 5 košíků za minutu, dodávka odveze 10 košíků zhruba za 80 minut. Sklad je skoro pořád plný a většina sběračů chodí na procházky. Síť je správně, zadání tak prostě vychází.
 
 </details>
@@ -33,19 +33,6 @@ Podobné úlohy: [12–02 – Sběrači jahod](<../12–02 - Sběrači jahod/12�
 <br>
 
 ![Petriho síť – chmelová brigáda](net.svg)
-
-| Požadavek | Prvek sítě |
-|---|---|
-| 100 sběračů, sběr exp(20 min) | *Sběrači* (100) → `exp(20 min)` → *Plný košík* |
-| sklad s kapacitou 20 | *Volná místa ve skladu* (20 značek) |
-| je-li místo, uložení 1–2 min | `p=1`: *Plný košík* + volné místo → `1–2 min` → *Sklad* a sběrač zpět do *Sběrači* |
-| není-li místo, procházka 10–15 min | *není místo* (`p=0`) → *Procházka* → `10–15 min` → *Plný košík* |
-| začátek nakládání uvolní místo | okamžitý přechod: *Sklad* + *Dodávka u skladu* → nakládání + volné místo |
-| nakládání po jednom, exp(2 min) | `exp(2 min)` vrací značku dodávky → *Naloženo* |
-| po 10 košících odjezd, návrat za 1 h | *odjezd* (`p=1`, váha 10) → *Na cestě* → `1 h` → *Dodávka u skladu* |
-| odvezené košíky opouštějí systém | *Odvezené košíky* (váha 10) → *odchod* |
-
-Kontrola simulací: platí *Sběrači* + *Plný košík* + ukládající + *Procházka* = 100, *Volná místa* + ukládané + *Sklad* = 20 a *Dodávka* + nakládání + *Na cestě* = 1. *Naloženo* nepřesáhne 10. Dodávka odjíždí zhruba každých 80 minut a procházky jsou nejčastější událost.
 
 </details>
 
@@ -64,6 +51,83 @@ Kontrola simulací: platí *Sběrači* + *Plný košík* + ukládající + *Proc
 
 </details>
 
+## SIMLIB
+
+<details>
+<summary>Zobrazit SIMLIB kód</summary>
+<br>
+
+Model je izomorfní k Petriho síti výše: každé místo, přechod a značka mají svůj protějšek v kódu.
+
+```cpp
+// 12–17 Chmelová brigáda – model v SIMLIB/C++
+#define I_REALLY_KNOW_HOW_TO_USE_WAITUNTIL  // SIMLIB zpřístupní WaitUntil jen s tímto makrem
+#include "simlib.h"
+
+Store Sklad("Místa ve skladu", 20);   // Free() = místo Volná místa ve skladu (20 značek)
+int veSkladu = 0;                      // místo Sklad (uložené košíky)
+long prochazky = 0, odvezeno = 0;
+
+class Sberac : public Process {        // značka v místě Sběrači (uzavřený cyklus)
+  void Behavior() {
+    for (;;) {
+      Wait(Exponential(20));           // sběr exp(20 min) -> Plný košík
+      while (Sklad.Full()) {           // p=0 „není místo“: žádné volné místo
+        prochazky++;
+        Wait(Uniform(10, 15));         // Procházka 10–15 min, pak znovu Plný košík
+      }
+      Enter(Sklad, 1);                 // p=1: zabere volné místo (volné je, neblokuje)
+      Wait(Uniform(1, 2));             // uložení 1–2 min
+      veSkladu++;                      // košík do místa Sklad, sběrač zpět ke sběru
+    }
+  }
+};
+
+class Dodavka : public Process {       // značka v místě Dodávka u skladu
+  void Behavior() {
+    for (;;) {
+      int nalozeno = 0;                // místo Naloženo
+      while (nalozeno < 10) {          // odjezd (p=1, váha 10) předběhne další nakládání
+        WaitUntil(veSkladu > 0);       // začátek nakládání: košík ze Skladu ...
+        veSkladu--;
+        Leave(Sklad, 1);               // ... a hned vrací volné místo
+        Wait(Exponential(2));          // naložení exp(2 min)
+        nalozeno++;
+      }
+      odvezeno += 10;                  // Odvezené košíky -> odchod
+      Wait(60);                        // Na cestě, návrat za 1 h
+    }
+  }
+};
+
+int main() {
+  Init(0, 60 * 24 * 30);               // modelový čas v minutách: 30 dní
+  for (int i = 0; i < 100; i++)        // 100 značek v místě Sběrači
+    (new Sberac)->Activate();
+  (new Dodavka)->Activate();
+  Run();
+  Sklad.Output();
+  Print("Odvezeno košíků: %ld, procházek: %ld\n", odvezeno, prochazky);
+}
+```
+
+| Petriho síť | SIMLIB |
+|---|---|
+| *Sběrači* (100) → `exp(20 min)` → *Plný košík* | 100 procesů `Sberac`, `Wait(Exponential(20))` |
+| *Volná místa ve skladu* (20) | `Store Sklad` s kapacitou 20 (`Sklad.Free()`) |
+| `p=1` uložit / `p=0` *není místo* | `while (Sklad.Full())` … `Enter(Sklad, 1)` |
+| *Procházka* → `10–15 min` → *Plný košík* | `Wait(Uniform(10, 15))` a nový test v cyklu `while` |
+| `1–2 min` → *Sklad* + *Sběrači* | `Wait(Uniform(1, 2)); veSkladu++;` a další obrat cyklu `for` |
+| *Dodávka u skladu* (1 značka) | proces `Dodavka` |
+| začátek nakládání (vrací volné místo) | `WaitUntil(veSkladu > 0); veSkladu--; Leave(Sklad, 1);` |
+| `exp(2 min)` → *Naloženo* | `Wait(Exponential(2)); nalozeno++;` |
+| *odjezd* (`p=1`, váha 10) → *Na cestě* → `1 h` | konec cyklu `while (nalozeno < 10)`, `Wait(60)` |
+| *Odvezené košíky* → *odchod* | `odvezeno += 10` (košíky jsou jen čísla) |
+
+**Kontrola simulací.** Petriho síť: platí *Sběrači* + *Plný košík* + ukládající + *Procházka* = 100, *Volná místa* + ukládané + *Sklad* = 20 a *Dodávka* + nakládání + *Na cestě* = 1. *Naloženo* nepřesáhne 10. Dodávka odjíždí zhruba každých 80 minut a procházky jsou nejčastější událost (`make check`). SIMLIB model: za 30 dní odvezla dodávka 5380 košíků; teoreticky 5400 (jedna jízda trvá v průměru 10 × 2 min + 60 min = 80 min). Sklad byl v průměru obsazený na 19,98 z 20 míst a sběrači šli na procházku 336 369krát (`make simlib`).
+
+</details>
+
 ## Původ a zdroje
 
 <details>
@@ -71,6 +135,12 @@ Kontrola simulací: platí *Sběrači* + *Plný košík* + ukládající + *Proc
 <br>
 
 **Původ:** půlsemestrální písemka 2010/11 (bodování neuvedeno).
+
+**Původní znění:**
+
+> Na chmelové brigádě je 100 sběračů chmele. Doba sběru chmele do košíku se řídí exponenciálním rozložením se středem 20 minut. Po naplnění košíku jde sběrač košík uložit do skladu s kapacitou 20 košíků. Pokud ve skladu není aktuálně volné místo pro uložení košíku, sběrač se vydá s košíkem na 10-15 minut na procházku. Po návratu opět zkoumá volnou kapacitu skladu (počet procházek je neomezený). V případě volné kapacity skladu zabere uložení košíku do skladu 1-2 minuty rovnoměrně. Po uložení plného košíku s nasbíraným chmelem obdrží sběrač volný košík a vrací se ke sběru. Počty košíků v systému nesledujeme a zanedbáváme i doby přesunu sběrače mezi polem a skladištěm (tzn. není tam sklad volných košíků). V systému pracuje jedna přepravní dodávka s kapacitou 10 košíků. Naložení každého jednotlivého košíku do dodávky trvá dobu, která se řídí exponenciálním rozložením se středem 2 minuty. Okamžikem započetí nakládání košíku dodávkou se uvolňuje jedna pozice ve skladu. Po plném naložení dodávka odjíždí a vrací se prázdná za jednu hodinu.
+>
+> Poznámka: Kapacitu skladu plných košíků lze modelovat místem v Petriho síti se zadanou kapacitou.
 
 **Zdroje:**
 
