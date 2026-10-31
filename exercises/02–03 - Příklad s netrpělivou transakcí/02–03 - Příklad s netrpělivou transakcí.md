@@ -10,6 +10,7 @@ Podobné úlohy: [02–01 – Netrpělivé požadavky](<../02–01 - Netrpěliv�
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Vymyšlený příklad (patří do odpovědi slovy):** Zákaznická linka s jedním operátorem. Hovory přicházejí v intervalech `exp(4 min)`, hovor s operátorem trvá `exp(3 min)`. Každý volající má jinou trpělivost, rovnoměrně 1–5 min. Když ho operátor do té doby nespojí, zavěsí a odchází bez obsluhy.
 - Příklad má být konkrétní: pojmenované zařízení (*Operátor*), čísla s jednotkami a jasné, kdy transakce odchází. Stačí jedno M/M/1 a jeden mechanismus, víc úloha nežádá.
@@ -25,6 +26,7 @@ Podobné úlohy: [02–01 – Netrpělivé požadavky](<../02–01 - Netrpěliv�
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – zákaznická linka s netrpělivými volajícími](net.svg)
 
@@ -43,6 +45,7 @@ Kontrola simulací: *Operátor* + probíhající hovor = 1, fronta krátká (nej
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Odmítnutí při obsazené lince místo časovaného odchodu z fronty (viz cranycrane).
 - Časovač za obsazením zařízení: omezuje obsluhu, ne čekání ve frontě.
@@ -55,6 +58,7 @@ Kontrola simulací: *Operátor* + probíhající hovor = 1, fronta krátká (nej
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2020/21, 3. termín, skupina C, otázka 2, 20 bodů (podle názvu souboru). Sbírka Řešené výpočetní příklady má stejnou fotku zadání u „2020 - 2. opravný - skupina C“ (další otázka je stejná, 4y'' + 3y' = 0) a ještě jednou u „2019/2020 1. opravný“. Úloha z dvojice „vymyslete příklad“; druhá je [07–01 – Příklad s prioritou procesu](<../07–01 - Příklad s prioritou procesu/07–01 - Příklad s prioritou procesu.md>).
 

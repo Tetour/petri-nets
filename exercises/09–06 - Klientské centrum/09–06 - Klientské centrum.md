@@ -12,6 +12,7 @@ Podobné úlohy: [05–05 – Přerušení příchodů při plné frontě](<../0
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Délka fronty** jsou jen čekající klienti v místě *Fronta*. Obsluhovaný klient je v jiném místě, takže se nepočítá („10 čekajících“).
 - **„Dosáhne délky 10“** = test, že je ve *Frontě* aspoň 10 značek: hrana s váhou 10 do přechodu a hrana s váhou 10 zpět. Z fronty se nic neodebere. (Kdyby zadání říkalo „přesáhne 10“, byla by váha 11.)
@@ -26,6 +27,7 @@ Podobné úlohy: [05–05 – Přerušení příchodů při plné frontě](<../0
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – klientské centrum](net.svg)
 
@@ -46,6 +48,7 @@ Kontrola simulací: *Pracovnice* + obsluhovaný = 1, *generátor* + *stop stav* 
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Hrana s váhou 10 jen do přechodu, bez hrany zpět. Přechod by pak z fronty odebral 10 klientů.
 - Zastavení příchodů odebráním klientů z *Fronty* místo odebrání značky *generátoru*.
@@ -59,6 +62,7 @@ Kontrola simulací: *Pracovnice* + obsluhovaný = 1, *generátor* + *stop stav* 
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2023/24, varianta D, 10 bodů.
 

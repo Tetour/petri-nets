@@ -15,6 +15,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Údržbář** je jedna značka, která obíhá: *na obchůzce* → `exp(4 h)` → *u linky* → (údržba, nebo nic) → zpět *na obchůzku*.
 - **Čítač obsluh:** `exp(B)` dává značku do místa *obsluhy*. Víc než 10 si pamatovat netřeba („alespoň 10“), proto přechod *nad 10* (hrana s váhou 11 tam, 10 zpět) každou jedenáctou značku hned zahodí. V čítači je tak vždy 0 až 10 značek.
@@ -34,6 +35,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – údržbář na obchůzce](net.svg)
 
@@ -55,6 +57,7 @@ Kontrola simulací: *Linka* + obsluha + *údržba* = 1, údržbář je vždy na 
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Údržba, která probíhající obsluhu přeruší. Zadání chce počkat na její dokončení.
 - Údržbář bez priority při obsazení linky: po skončení obsluhy dostane linku další zákazník a údržbář čeká na prázdnou frontu.
@@ -68,6 +71,7 @@ Kontrola simulací: *Linka* + obsluha + *údržba* = 1, údržbář je vždy na 
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2022/23, 1. termín (11. 1. 2023, 16:00–17:30), skupina C, otázka 1, 15 bodů.
 

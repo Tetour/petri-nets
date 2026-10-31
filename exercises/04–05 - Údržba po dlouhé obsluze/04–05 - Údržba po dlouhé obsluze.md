@@ -17,6 +17,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Délku obsluhy síť přímo nezná.** Hodnota vylosovaná pro `exp(B)` se nikde neukládá. Proto se s obsazením linky spustí souběžný **časovač**: obsazení dává značku i do místa *časovač* a časovaný přechod `C` ji po C jednotkách přesune do *uplynulo C*.
 - **Konec obsluhy** vrací značku *Lince* jako obvykle. V tu chvíli je značka buď ještě v *časovači* (obsluha byla kratší než C), nebo už v *uplynulo C*:
@@ -33,6 +34,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – údržba po dlouhé obsluze](net.svg)
 
@@ -52,6 +54,7 @@ Kontrola simulací: *Linka* + obsluha + *údržba* = 1 a *časovač* + *uplynulo
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Pokus porovnat „výsledek `exp(B)`“ s C přímo v síti. Síť umí jen časovat, potřebuje souběžný časovač.
 - Časovač, který se po krátké obsluze nezruší. Zůstane běžet a spustí údržbu po některé z dalších obsluh.
@@ -64,6 +67,7 @@ Kontrola simulací: *Linka* + obsluha + *údržba* = 1 a *časovač* + *uplynulo
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2021/22, 1. termín, skupina D, otázka 1 (body neuvedeny).
 

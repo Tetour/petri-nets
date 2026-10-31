@@ -16,6 +16,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **„Linku na 10 č.j. zcela odstaví“:** havárie si vezme značku *Linky* a vrátí ji po 10 č.j., ať linka zrovna obsluhuje, nebo ne.
 - **„Rozpracovaná obsluha je bez náhrady ukončena“:** přerušená transakce se neobslouží a odchází ze systému. Zadání chce vyznačit odchod přechodem, a odchody jsou tu dva: *odchod* po obsluze a *odchod bez obsluhy*.
@@ -29,6 +30,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – kritická havárie](net.svg)
 
@@ -48,6 +50,7 @@ Kontrola simulací: *Linka* + obsluhovaná transakce + *odstávka* = 1, každá 
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Havárie jen ukončí obsluhu, ale linku neodstaví (chybí doba 10).
 - Odstávka jen při obsazené lince: volnou linku havárie neodstaví a hned může začít další obsluha.
@@ -61,6 +64,7 @@ Kontrola simulací: *Linka* + obsluhovaná transakce + *odstávka* = 1, každá 
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2025/26, 1. termín (13. 1. 2026), skupina C, otázka 1, 10 bodů.
 

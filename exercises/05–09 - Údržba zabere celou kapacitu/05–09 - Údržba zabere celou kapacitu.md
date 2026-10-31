@@ -10,6 +10,7 @@ Podobné úlohy: [05–10 – Pomocník přidá kapacitu](<../05–10 - Pomocní
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **M/M/2** = *Linka* se dvěma značkami (dvě jednotky kapacity).
 - **Údržbový proces** vzniká v *generátoru údržby* (`exp(100)`) a čeká v místě *údržba čeká*. Probíhající obsluhy nepřerušuje, čeká na uvolnění jednotek.
@@ -25,6 +26,7 @@ Podobné úlohy: [05–10 – Pomocník přidá kapacitu](<../05–10 - Pomocní
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – údržba zabere celou kapacitu](net.svg)
 
@@ -44,6 +46,7 @@ Kontrola simulací (A = 6, B = 9): *Linka* + obsluhovaní + *zabráno* + 2 · *�
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Údržba bere obě jednotky jedním přechodem s váhou 2: při trvalém provozu může čekat neomezeně dlouho (přesně to zadání zakazuje).
 - Údržba bez priority před zákazníky: uvolněná jednotka se náhodně dostane zákazníkovi.
@@ -57,6 +60,7 @@ Kontrola simulací (A = 6, B = 9): *Linka* + obsluhovaní + *zabráno* + 2 · *�
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2025/26, 2. termín (27. 1. 2026), skupina E, otázka 1, 10 bodů.
 

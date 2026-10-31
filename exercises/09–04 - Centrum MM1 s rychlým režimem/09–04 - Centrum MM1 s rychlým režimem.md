@@ -14,6 +14,7 @@ Podobné úlohy: [05–01 – Doba obsluhy podle délky fronty](<../05–01 - Do
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Režim** je stav: jedna značka buď v *běžném režimu*, nebo v *zrychleném režimu*.
 - **„Dosáhne 5 čekajících“:** přechod *zrychlení* bere značku *běžného režimu* a testuje *Frontu* dvojicí hran s váhou 5. Přechod se provede hned, jak je ve frontě aspoň 5 zákazníků („dosáhne 5“ = váha 5, ne 6).
@@ -28,6 +29,7 @@ Podobné úlohy: [05–01 – Doba obsluhy podle délky fronty](<../05–01 - Do
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – centrum M/M/1 s rychlým režimem](net.svg)
 
@@ -48,6 +50,7 @@ Kontrola simulací: *Linka* + obsluhovaný zákazník = 1, *běžný režim* + *
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Přepnutí režimu napojené na časovaný přechod probíhající obsluhy (přerušení obsluhy). Zadání mění jen nově zahájené obsluhy.
 - Test délky fronty jednou hranou s váhou 5 bez zpětné hrany. Přechod by pak 5 zákazníků z fronty odebral.
@@ -61,6 +64,7 @@ Kontrola simulací: *Linka* + obsluhovaný zákazník = 1, *běžný režim* + *
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2024/25, varianta D, 10 bodů.
 

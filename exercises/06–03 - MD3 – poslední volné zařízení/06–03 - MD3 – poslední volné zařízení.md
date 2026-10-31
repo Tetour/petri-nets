@@ -10,6 +10,7 @@ Podobné úlohy: [06–02 – MD1 – střídání 2 a 3](<../06–02 - MD1 – 
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Tři zařízení = místo *Zařízení* se 3 značkami.** Zadání je nerozlišuje, takže stačí jedno místo.
 - **„Obsadí poslední volné zařízení“** = v okamžiku obsazení je volné právě jedno. Podmínka se testuje prioritou:
@@ -25,6 +26,7 @@ Podobné úlohy: [06–02 – MD1 – střídání 2 a 3](<../06–02 - MD1 – 
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – M/D/3, poslední volné zařízení](net.svg)
 
@@ -44,6 +46,7 @@ Kontrola simulací: invariant tří zařízení platí. Při `A = 2` trvalo asi 
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Obě obsazení se stejnou prioritou: mezi `3` a `5` by se losovalo bez ohledu na počet volných zařízení.
 - Test „aspoň 2 volná“ hranou s váhou 2 bez vrácení jedné značky: transakce by obsadila dvě zařízení.
@@ -57,6 +60,7 @@ Kontrola simulací: invariant tří zařízení platí. Při `A = 2` trvalo asi 
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2024/25, 3. termín (6. 2. 2025), skupina H, otázka 3, 10 bodů.
 

@@ -12,6 +12,7 @@ Podobné úlohy: [01–06 – Kravín](<../01–06 - Kravín/01–06 - Kravín.m
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Přistavení** (`p=1`) vezme volného *Bagristu* a prázdné auto z *Aut* a vytvoří *auto u bagru* plus 3 značky *volné místo* (kapacita auta). Auto zůstává přistavené, dokud neodjede, tedy po všechny 3 metry, ne jen na jeden.
 - **Bagrování metru** (`p=1`) potřebuje *auto u bagru*, *volné místo* a metr z *Úseku*. Po `exp(5 min)` se značka *auto u bagru* vrátí a metr přibude do *odstraněno*.
@@ -26,6 +27,7 @@ Podobné úlohy: [01–06 – Kravín](<../01–06 - Kravín/01–06 - Kravín.m
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – bagrista a nákladní auta](net.svg)
 
@@ -48,6 +50,7 @@ Kontrola simulací: auta jsou vždy 3 (*Auta* + *auto u bagru* + bagrování + *
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Auto obsazené jen na jeden metr a hned vrácené: nejde pak o „jedno aktuálně přistavené auto“.
 - Odjezd jen při plném autě (hrana váhy 3): poslední metr se nikdy neodveze.
@@ -61,6 +64,7 @@ Kontrola simulací: auta jsou vždy 3 (*Auta* + *auto u bagru* + bagrování + *
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z4. Přesný rok a varianta nejsou známé.
 

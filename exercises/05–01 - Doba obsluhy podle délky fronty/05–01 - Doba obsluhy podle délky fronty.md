@@ -16,6 +16,7 @@ Podobné úlohy: [09–04 – Centrum MM1 s rychlým režimem](<../09–04 - Cen
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Kdy se rozhoduje:** při zahájení obsluhy („trvání další obsluhy“). Probíhající obsluhu pozdější změna fronty nemění. Proto jsou tu dvě obsazení *Linky*, každé s vlastní obsluhou.
 - **Test fronty v obsazení:** *fronta ≥ 3* bere z *Fronty* 3 značky a 2 vrací. Odebere tedy jednu transakci a zároveň ověří, že jich ve frontě byly aspoň 3. Priorita `p=1` zajistí, že při dlouhé frontě vyhraje rychlá obsluha. *Jinak* (`p=0`) se provede jen tehdy, když rychlá větev proveditelná není.
@@ -30,6 +31,7 @@ Podobné úlohy: [09–04 – Centrum MM1 s rychlým režimem](<../09–04 - Cen
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – doba obsluhy podle délky fronty](net.svg)
 
@@ -48,6 +50,7 @@ Kontrola simulací (A = 7): *Linka* + obsluhovaná transakce = 1. Asi 70 % obslu
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Test fronty jedinou hranou s váhou 3 bez zpětné hrany: obsazení by z fronty odebralo tři transakce.
 - Obě obsazení bez priority: při dlouhé frontě by se náhodně vybírala i pomalá obsluha.
@@ -60,6 +63,7 @@ Kontrola simulací (A = 7): *Linka* + obsluhovaná transakce = 1. Asi 70 % obslu
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2020/21, 1. termín, skupina v 10:00, otázka 2 (body neuvedené). Stejná úloha (obecné X místo 3): zkouška 2019/20, 1. termín, neznámá skupina, otázka 4, 10 bodů.
 

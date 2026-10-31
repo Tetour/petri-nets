@@ -15,6 +15,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Doba poruchy** v zadání není, takže porucha jen přeruší obsluhu a linka je hned znovu volná. Přerušená transakce se vrátí do *Fronty* a obsluhu později začne znovu od začátku.
 - **„Případnou“ obsluhu:** porucha, která přijde ve chvíli, kdy linka nic neobsluhuje, nemá žádný účinek. Proto je tu přechod *porucha bez účinku*. Bez něj by se značky v místě *porucha* hromadily a příští obsluha by byla přerušena okamžitě po začátku.
@@ -28,6 +29,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – porucha vrací transakci do fronty](net.svg)
 
@@ -47,6 +49,7 @@ Kontrola simulací: *Linka* + obsluhovaná transakce = 1, v místě *porucha* je
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Chybějící zánik poruchy, když linka nepracuje (poruchy se hromadí).
 - Přerušení bez vrácení značky *Lince*: linka se ztratí a systém se zastaví.
@@ -59,6 +62,7 @@ Kontrola simulací: *Linka* + obsluhovaná transakce = 1, v místě *porucha* je
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2019/20, 1. opravný termín, skupina B, otázka 3, 10 bodů.
 

@@ -12,6 +12,7 @@ Podobné úlohy: [09–15 – Úřad s dodatečnými přepážkami](<../09–15 
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **3 přepážky** jsou sklad se 3 značkami. Otevření dvou dalších přidá do téhož místa 2 značky (Hrubého *varianta A*). Přepážky jsou stejné, takže nevadí, že se pak zavřou „nějaké“ dvě, ne nutně ty přidané. Hrubý si k tomu poznamenal, že takové míchání 3 + 2 přepážek je přijatelné.
 - **„alespoň 5 čekajících“** je test hranami váhy 5 tam a zpět: přechod frontu jen zkontroluje a nikoho z ní neodebere. Na „alespoň 5“ stačí váha 5, ne 6.
@@ -26,6 +27,7 @@ Podobné úlohy: [09–15 – Úřad s dodatečnými přepážkami](<../09–15 
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – cestovní kancelář](net.svg)
 
@@ -47,6 +49,7 @@ Kontrola simulací: platí *Přepážky* + obsluhovaní + 2 × *nepřidáno* + *
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Test fronty jen jednou hranou váhy 5 bez zpětné hrany: přechod pak 5 klientů z fronty odebere.
 - Chybějící stav *nepřidáno*: při frontě ≥ 5 se přepážky přidávají opakovaně a jejich počet roste bez omezení.
@@ -60,6 +63,7 @@ Kontrola simulací: platí *Přepážky* + obsluhovaní + 2 × *nepřidáno* + *
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2022/23, varianta D, 10 bodů.
 

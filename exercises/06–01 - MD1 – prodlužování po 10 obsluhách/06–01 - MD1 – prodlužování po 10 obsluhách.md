@@ -10,6 +10,7 @@ Podobné úlohy: [04–06 – Údržba po každé 10. obsluze](<../04–06 - Úd
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Doba obsluhy je 3, 6, 9, 12, …** (prvních 10 obsluh 3, dalších 10 obsluh 6 atd.) a roste bez omezení. Časovaný přechod má ale pevný čas. Možnosti:
   - **obsluha složená z k fází po `3`**, kde k je počet značek v místě *úroveň*. Síť je konečná a modeluje celý systém (řešení tady);
@@ -27,6 +28,7 @@ Podobné úlohy: [04–06 – Údržba po každé 10. obsluze](<../04–06 - Úd
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – M/D/1 s prodlužováním obsluhy po 10 obsluhách](net.svg)
 
@@ -47,6 +49,7 @@ Kontrola simulací: *Linka* + transakce v obsluze (*v obsluze*, fáze, *hotovo*)
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Jediná další větev s obsluhou 6: modeluje jen první navýšení, ne „po každých 10“.
 - Čítač testovaný hranami s váhou 10 tam a zpět: nevynuluje se, takže po desáté obsluze by navyšovala každá další.
@@ -60,6 +63,7 @@ Kontrola simulací: *Linka* + transakce v obsluze (*v obsluze*, fáze, *hotovo*)
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2024/25, 2. termín (20. 1. 2025), skupina F, otázka 3, 10 bodů.
 

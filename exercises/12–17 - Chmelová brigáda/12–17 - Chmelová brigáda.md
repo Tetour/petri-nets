@@ -14,6 +14,7 @@ Podobné úlohy: [12–02 – Sběrači jahod](<../12–02 - Sběrači jahod/12�
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Sběrači** jsou uzavřený cyklus: místo se 100 značkami a `exp(20 min)`. Každá značka má vlastní odpočet (slajd 138), takže všech 100 sběračů sbírá souběžně. Sběrači systém neopouštějí.
 - **Kapacita skladu bez kapacity místa:** poznámka v zadání dovoluje místo s kapacitou 20, ale v notaci kurzu se kapacity míst nepoužívají. Místo nich je doplňkové místo *Volná místa ve skladu* s 20 značkami.
@@ -29,6 +30,7 @@ Podobné úlohy: [12–02 – Sběrači jahod](<../12–02 - Sběrači jahod/12�
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – chmelová brigáda](net.svg)
 
@@ -51,6 +53,7 @@ Kontrola simulací: platí *Sběrači* + *Plný košík* + ukládající + *Proc
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Procházka bez nižší priority: sběrač by mohl jít na procházku, i když je ve skladu místo.
 - Uvolnění místa ve skladu až po naložení košíku. Zadání ho uvolňuje okamžikem začátku nakládání.
@@ -65,6 +68,7 @@ Kontrola simulací: platí *Sběrači* + *Plný košík* + ukládající + *Proc
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2010/11 (bodování neuvedeno).
 

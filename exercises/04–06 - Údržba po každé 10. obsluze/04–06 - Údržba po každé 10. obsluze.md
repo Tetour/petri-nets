@@ -17,6 +17,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Údržbu „zařadí transakce“:** desátá transakce po své obsluze linku neuvolní, ale drží ji ještě C jednotek na údržbu a teprve pak ji uvolní a odchází. V SIMLIBu by tedy transakce po obsluze započítala obsluhu a při desáté čekala C ještě před uvolněním linky. Izomorfní síť proto má uvolnění linky jako samostatný přechod *uvolnění* až po rozhodnutí o údržbě.
 - **Čítač:** `exp(B)` dává značku do *počtu obsluh*. Přechod *10. obsluha* má z čítače hranu s váhou 10, takže se provede po každé desáté obsluze a čítač vynuluje.
@@ -31,6 +32,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – údržba po každé 10. obsluze](net.svg)
 
@@ -49,6 +51,7 @@ Kontrola simulací: *Linka* + obsluha + *obslouženo* + *údržba* = 1, v číta
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Hrana z čítače bez váhy 10, nebo jen testovací hrana s váhou 10, která čítač nevynuluje.
 - Údržba bez priority vůči uvolnění (nebo vůči obsazení ve variantě s vracením linky): údržba se může posunout k pozdější obsluze.
@@ -61,6 +64,7 @@ Kontrola simulací: *Linka* + obsluha + *obslouženo* + *údržba* = 1, v číta
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2022/23, 1. termín (11. 1. 2023), skupina D, otázka 1, 15 bodů.
 

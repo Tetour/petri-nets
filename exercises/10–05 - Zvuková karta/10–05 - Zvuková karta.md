@@ -14,6 +14,7 @@ Podobné úlohy: [10–04 – Počítačový server](<../10–04 - Počítačov�
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Jednotka je blok 100 vzorků**, jak radí doporučení. Paměť 10 000 vzorků je 100 bloků: místo *Volné bloky* (na počátku 100 značek, paměť je prázdná) a *Plné bloky*. Platí *Volné* + *Plné* = 100.
 - **Časy:** zvukový proces vyrobí 100 vzorků za 100 / 500 000 s = **0,2 ms**, karta je přehraje za 100 / 100 000 s = **1 ms**. Obojí jsou pevné časy.
@@ -33,6 +34,7 @@ Podobné úlohy: [10–04 – Počítačový server](<../10–04 - Počítačov�
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – zvuková karta](net.svg)
 
@@ -53,6 +55,7 @@ Kontrola simulací: procesor je vždy právě u jednoho procesu nebo volný, *Vo
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Přepočet rychlostí: 100 vzorků je 0,2 ms při 500 000/s a 1 ms při 100 000/s.
 - Přehrávání bez značky karty: časovaný přechod s více značkami na vstupu má odpočet pro každou značku (slajd 138).
@@ -67,6 +70,7 @@ Kontrola simulací: procesor je vždy právě u jednoho procesu nebo volný, *Vo
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka, rok neznámý (zadání ve Studentských skriptech 2015/16 a v přípravném dokumentu 2021/22).
 

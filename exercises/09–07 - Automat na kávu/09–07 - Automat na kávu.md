@@ -12,6 +12,7 @@ Podobné úlohy: [03–06 – Porucha zničí obsluhu nebo počká](<../03–06 
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Cyklus poruchy** je jedna značka, která obíhá: *bez poruchy* → `5–6 h` (rovnoměrně) → *porucha* → zásah → *oprava* → `1 h` → zpět *bez poruchy*. Další porucha se tak počítá od konce opravy, jak chce zadání. Počáteční značka v *bez poruchy* odpovídá „nebo od počátku času“.
 - **Zásah** je okamžitý přechod se vstupy *porucha* a obsluhovaný zákazník. Když automat právě obsluhuje, provede se hned a odpočet `exp(2 min)` zanikne (slajd 139). Když automat stojí, porucha čeká a zasáhne prvního zákazníka, který automat obsadí, ve stejném okamžiku, kdy ho obsadí. To je „na další následující transakci“.
@@ -26,6 +27,7 @@ Podobné úlohy: [03–06 – Porucha zničí obsluhu nebo počká](<../03–06 
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – automat na kávu](net.svg)
 
@@ -46,6 +48,7 @@ Kontrola simulací: *Automat* + obsluhovaný + *oprava* = 1 a *bez poruchy* + *p
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Generátor poruch ve smyčce `5–6 h` nezávislý na opravě. Interval se pak počítá od minulé poruchy, ne od konce opravy.
 - Porucha, která při nečinném automatu zanikne (vzor z jiných úloh). Tady má počkat na dalšího zákazníka.
@@ -59,6 +62,7 @@ Kontrola simulací: *Automat* + obsluhovaný + *oprava* = 1 a *bez poruchy* + *p
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2023/24, varianta C, 10 bodů.
 

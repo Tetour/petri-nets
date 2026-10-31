@@ -12,6 +12,7 @@ Podobné úlohy: [11–04 – Výletní loď](<../11–04 - Výletní loď/11–
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **3 pracovníci** jsou sklad se 3 značkami. Každý vyřídí celou objednávku (rozhovor i výrobu) za `exp(10 min)`.
 - **Kdy transakce opouští systém:** Hrubý nabízí dvě varianty. Tady je jeho *varianta A*: transakce (hovor, objednávka) odchází hned po vyřízení a časovaný přechod zároveň vloží značku do *Hotové*. Značky v *Hotové* jsou pak hotové pizzy, které rozvozník odveze. *Varianta B* nechává odejít jednu značku až po návratu z rozvozu (transakcí je pak jízda, ne objednávka). Obojí je v pořádku, jen musí být jasné, co je transakce.
@@ -27,6 +28,7 @@ Podobné úlohy: [11–04 – Výletní loď](<../11–04 - Výletní loď/11–
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – pizzerie s rozvozem](net.svg)
 
@@ -49,6 +51,7 @@ Kontrola simulací: platí *Pracovníci* + vyřizované = 3 a *Rozvozník* + *č
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - **Nevzít všechny hotové** (Hrubý: „nedobrat všechny hotové – malá chyba“): přechod A vezme jen 10, přechod B jen jednu a smyčka *dobere hotové* chybí. Rozvozník pak odveze jen část hotových objednávek.
 - **Chybný model timeoutu** (Hrubý: „model timeoutu – malá chyba“): časovaný `15 min` se vstupy *Rozvozník* i *Hotové*. Odpočet pak začne až s první hotovou pizzou, takže rozvozník odjede 15 minut po ní, ne po 15 minutách čekání. Hrubý to na str. 4 ukazuje na ose modelového času. Navíc má pak každá hotová pizza vlastní odpočet (slajd 138).
@@ -62,6 +65,7 @@ Kontrola simulací: platí *Pracovníci* + vyřizované = 3 a *Rozvozník* + *č
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2022/23, varianta C, 10 bodů.
 

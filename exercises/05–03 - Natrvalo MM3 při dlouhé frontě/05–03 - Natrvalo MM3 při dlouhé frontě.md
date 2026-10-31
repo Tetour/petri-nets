@@ -12,6 +12,7 @@ Podobné úlohy: [05–02 – Dočasně MM2 při dlouhé frontě](<../05–02 - 
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **„Keď bude vo fronte 5“** = fronta dosáhne 5, test má váhu 5 (hrana do přechodu a zpět, z fronty se nic neodebere).
 - **M/M/3** = tři jednotky kapacity linky. *Změna* přidá do *Linky* dvě značky (hrana s váhou 2), obsluha se nemění.
@@ -25,6 +26,7 @@ Podobné úlohy: [05–02 – Dočasně MM2 při dlouhé frontě](<../05–02 - 
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – natrvalo M/M/3 při dlouhé frontě](net.svg)
 
@@ -43,6 +45,7 @@ Kontrola simulací (A = 4, B = 6): *Linka* + obsluhované + 2 · *M/M/1* = 3. *Z
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Hrana s váhou 3 do *Linky*: k původní značce přibudou tři a vznikne M/M/4.
 - Přepínač bez jednorázové značky: při každé frontě 5 přibudou další linky.
@@ -55,6 +58,7 @@ Kontrola simulací (A = 4, B = 6): *Linka* + obsluhované + 2 · *M/M/1* = 3. *Z
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2020/21, 1. termín, skupina ve 14:00, otázka 3 (body neuvedené).
 

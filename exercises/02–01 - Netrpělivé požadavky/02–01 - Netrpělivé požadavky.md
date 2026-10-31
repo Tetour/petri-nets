@@ -18,6 +18,7 @@ Podobné úlohy: [02–02 – Netrpělivý první ve frontě](<../02–02 - Netr
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Netrpělivost = časovaný přechod `10` přímo na místě *Fronta*.** Běžný časovaný přechod má pro každou značku ve vstupním místě vlastní odpočet (slajd 138), takže každý čekající odchází po 10 jednotkách svého čekání. Kdo se dřív dostane k lince, tomu okamžité obsazení vezme značku a jeho odpočet zanikne (slajd 139).
 - **Měří se čekání ve frontě, ne obsluha.** Transakce v obsluze už netrpělivá není, proto časovač nesmí začínat až obsazením linky.
@@ -32,6 +33,7 @@ Podobné úlohy: [02–02 – Netrpělivý první ve frontě](<../02–02 - Netr
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – netrpělivé požadavky](net.svg)
 
@@ -51,6 +53,7 @@ Pro variantu 2017/18 8H stačí přepsat `10` na `20`.
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Časovač za obsazením linky (omezuje obsluhu, ne čekání).
 - Netrpělivá větev, která vezme i značku *Linky* nebo ji nevrátí.
@@ -64,6 +67,7 @@ Pro variantu 2017/18 8H stačí přepsat `10` na `20`.
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2023/24, 1. termín, skupina A, otázka 3, 10 bodů. Stejná úloha (jiná čísla, navíc SIMLIB, 15 bodů): zkouška 2017/18, 1. termín, skupina 8H (5. 1. 2018, čekání nejvýš 20) a skupina 7A (čekání nejvýš 10).
 

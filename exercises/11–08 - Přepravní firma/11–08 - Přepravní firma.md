@@ -12,6 +12,7 @@ Podobné úlohy: [11–06 – Festivalový autobus](<../11–06 - Festivalový a
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Naložení:** okamžitý přechod vezme *Řidiče* a 20 *A-balíků* (váha 20). Řidič tedy čeká v centrále, dokud A-balíků není 20, a nakládání netrvá žádný čas.
 - **Rozvoz:** balíky jsou v autě jako 20 značek. Řidič *na trase* bere po jednom (`p=1`) další balík a jede `exp(10 min)` k adresátovi, zastávka trvá `3–5 min`. Když v autě nic nezbývá, provede se *auto prázdné* (p=0) a cesta zpět `exp(10 min)`.
@@ -26,6 +27,7 @@ Podobné úlohy: [11–06 – Festivalový autobus](<../11–06 - Festivalový a
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – přepravní firma](net.svg)
 
@@ -48,6 +50,7 @@ Kontrola simulací: řidič je vždy v právě jednom stavu, v autě je nejvýš
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Odpočet 24 h hned po nezastižení. Balík se nejdřív musí vrátit do centrály a vyložit.
 - Naložení bez váhy 20 (řidič odjede s jedním balíkem), nebo jen test 20 balíků bez jejich odebrání.
@@ -61,6 +64,7 @@ Kontrola simulací: řidič je vždy v právě jednom stavu, v autě je nejvýš
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z12.
 

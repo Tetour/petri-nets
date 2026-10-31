@@ -12,6 +12,7 @@ Podobné úlohy: [09–08 – Cestovní kancelář](<../09–08 - Cestovní kanc
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Dodatečné přepážky** jsou udělané stejně jako v [09–08](<../09–08 - Cestovní kancelář/09–08 - Cestovní kancelář.md>) (Hrubého varianta A): *otevři* vezme *nepřidáno*, otestuje frontu hranami s váhou 10 tam a zpět a přidá 3 značky do *Přepážky*. Po `2 h` přijdou 3 značky do *chci 3 zpět* a přechod `p=1` zavírá po jedné každou volnou přepážku, rozpracovaný klient se dokončí. Po třech zavřených vrátí *obnov stav* značku *nepřidáno*.
 - **„Dosáhne počtu 10“** = alespoň 10, tedy váha 10, ne 11.
@@ -28,6 +29,7 @@ Podobné úlohy: [09–08 – Cestovní kancelář](<../09–08 - Cestovní kanc
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – úřad s dodatečnými přepážkami](net.svg)
 
@@ -49,6 +51,7 @@ Kontrola simulací: *Přepážky* + obsluhovaní + 3 × *nepřidáno* + *zavřen
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Chybějící stav *nepřidáno*: při frontě ≥ 10 se přepážky přidávají znovu a znovu.
 - Zavření dodatečných přepážek hranou s váhou 3 z *Přepážky*: čeká se, až budou volné tři najednou, místo zavírání po jedné.
@@ -62,6 +65,7 @@ Kontrola simulací: *Přepážky* + obsluhovaní + 3 × *nepřidáno* + *zavřen
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z10.
 

@@ -14,6 +14,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **„Porucha zabere linku na dobu R“:** porucha se chová jako transakce s vyšší prioritou obsluhy (v SIMLIBu `Seize(linka, 1)`): vezme si značku *Linky* a vrátí ji po čase `R`.
 - **Dva kroky:** je-li linka obsazená, přechod `p=1` dole nejdřív obsluhu zruší: transakci vrátí do *Fronty* a značku *Lince*. Porucha přitom v místě *porucha* zůstává (hrana tam a zpět). Hned potom ji přechod `p=1` nahoře spojí s volnou *Linkou* a začne doba `R`. Když linka nic neobsluhuje, provede se rovnou ten horní přechod. Oba kroky proběhnou ve stejném okamžiku, protože jde o okamžité přechody.
@@ -28,6 +29,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – porucha s opravou, návrat do fronty](net.svg)
 
@@ -47,6 +49,7 @@ Kontrola simulací: *Linka* + obsluhovaná transakce + *oprava* = 1. Každá por
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Porucha jen přeruší obsluhu, ale linku nezabere: chybí doba `R` (to je úloha 03–02).
 - Porucha zabere jen volnou linku a obsazenou ignoruje, nebo naopak volnou linku nezabere a porucha zanikne.
@@ -60,6 +63,7 @@ Kontrola simulací: *Linka* + obsluhovaná transakce + *oprava* = 1. Každá por
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2024/25, 1. termín, skupina A, otázka 3, 10 bodů.
 

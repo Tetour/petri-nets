@@ -16,6 +16,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Rozhoduje se v okamžiku dokončení obsluhy.** Proto `exp(B)` nevrací značku přímo *Lince*, ale do místa *dokončeno*. Odtud vedou dva okamžité přechody:
   - *fronta neprázdná* (`p=1`) je k *Frontě* připojený testovacími hranami (tam a zpět): ověří, že někdo čeká, nikoho z fronty neodebere a vrátí značku *Lince*. Čekající ji pak hned obsadí.
@@ -31,6 +32,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – údržba při prázdné frontě](net.svg)
 
@@ -50,6 +52,7 @@ Kontrola simulací: *Linka* + obsluha + *dokončeno* + *údržba* = 1. Obě vět
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Časovač nečinnosti na volné lince místo rozhodnutí po obsluze (viz Interpretace).
 - Test fronty obyčejnou hranou bez návratu: rozhodovací přechod pak odebere čekající transakci z *Fronty*.
@@ -62,6 +65,7 @@ Kontrola simulací: *Linka* + obsluha + *dokončeno* + *údržba* = 1. Obě vět
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2019/20, 1. termín, skupina D, otázka 3, 10 bodů. Pravděpodobně stejná úloha: zkouška 2020/21, 1. termín (16:00), otázka 2, ze zadání se zachovalo jen „petriho siete M/M/1 s údržbou“.
 

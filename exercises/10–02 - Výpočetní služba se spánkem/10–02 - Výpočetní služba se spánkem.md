@@ -12,6 +12,7 @@ Podobné úlohy: [04–08 – Spánek po nečinnosti](<../04–08 - Spánek po n
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Služba** je místo s jednou značkou (kapacita 1). Značka je vždy právě v jednom ze stavů: volná (*Služba*), obsluhuje, spí (*spící služba*), nebo se probouzí (*iniciace*).
 - **Nečinnost 200 s:** časovaný přechod `200 s` má jediný vstup, místo *Služba*. Odpočet tedy běží přesně po dobu, kdy je služba volná. Když přijde požadavek, obsazení (okamžitý přechod) si značku vezme a odpočet zanikne (slajd 139). Po každé obsluze začíná odpočet znovu od nuly.
@@ -26,6 +27,7 @@ Podobné úlohy: [04–08 – Spánek po nečinnosti](<../04–08 - Spánek po n
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – výpočetní služba se spánkem](net.svg)
 
@@ -46,6 +48,7 @@ Kontrola simulací: *Služba* + obsluha + *spící služba* + *iniciace* = 1. Sl
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Odpočet `200 s` řízený samostatným „hlídacím“ procesem, který má značku pořád. Pak měří čas od libovolného okamžiku, ne dobu nečinnosti, a příchod požadavku ho nezruší.
 - Přechod probuzení bez vstupu ze *spící služby*. Spouštěl by se při každém příchodu, i když služba nespí.
@@ -59,6 +62,7 @@ Kontrola simulací: *Služba* + obsluha + *spící služba* + *iniciace* = 1. Sl
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2023/24, varianta neoznačená (pravděpodobně B: varianty A, C a D jsou známé). Body nejsou uvedené (ostatní varianty téhož roku mají 10 bodů).
 

@@ -14,6 +14,7 @@ Podobné úlohy: [11–14 – Přehrada s vyhlídkovou lodí](<../11–14 - Pře
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Autobus je proces** (značka), ne zařízení. Přechod `1 h` vytvoří značku *autobus*, 20 značek *kapacita* (volná místa) a značku *timeout* (odpočet 20 min pro tento autobus).
 - **If-else „je volné místo?“:** přechod s `p=1` vezme *autobus* a jedno volné místo a autobus pak *čeká na turistu*. Když místo není, provede se přechod *plno* (p=0).
@@ -30,6 +31,7 @@ Podobné úlohy: [11–14 – Přehrada s vyhlídkovou lodí](<../11–14 - Pře
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – výletní autobus](net.svg)
 
@@ -52,6 +54,7 @@ Kontrola simulací: na zastávce je vždy nejvýš jeden autobus a ke každému 
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Odjezd plného autobusu bez odebrání značky *timeout*: odpočet doběhne naprázdno a další autobus pak odjede předčasně, hned jak začne čekat na turistu.
 - Zapomenuté vynulování zbylých míst: kapacita dalšího autobusu je pak větší než 20.
@@ -65,6 +68,7 @@ Kontrola simulací: na zastávce je vždy nejvýš jeden autobus a ke každému 
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2025/26, varianta C, 10 bodů (bodování podle ostatních let).
 

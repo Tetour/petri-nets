@@ -17,6 +17,7 @@ Podobné úlohy: [08–02 – DD3 LIFO, čas 10,5](<../08–02 - DD3 LIFO, čas 
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Petriho síť zachycuje jen počty**, ne pořadí ve frontě. FIFO se v síti neprojeví, projeví se jen v seznamu událostí (kdo jde z fronty na zařízení).
 - **Zařízení obsazovaná prioritně:** dva okamžité přechody obsazení s prioritami `p=1` (Z0) a `p=0` (Z1, implicitní). Když jsou volná obě zařízení, vezme se Z0.
@@ -30,6 +31,7 @@ Podobné úlohy: [08–02 – DD3 LIFO, čas 10,5](<../08–02 - DD3 LIFO, čas 
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ### Časový diagram (obsazení zařízení)
 
@@ -92,6 +94,7 @@ Kontrola (`make check`): síť se odsimuluje od času 0 (P0 ve frontě, zaříze
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Opačné pořadí v časech 4 a 5 (nejdřív příchod). Stav vyjde stejně, ale seznam událostí je špatně.
 - V kalendáři chybí příchod P7: generátor ho naplánoval už v čase 6.
@@ -104,6 +107,7 @@ Kontrola (`make check`): síť se odsimuluje od času 0 (P0 ve frontě, zaříze
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2012/13, 2. termín (1. opravný), skupina C, otázka 4, 15 bodů.
 

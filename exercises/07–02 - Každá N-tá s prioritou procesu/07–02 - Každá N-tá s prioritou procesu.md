@@ -14,6 +14,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Vymyšlený příklad:** myčka aut. Auta přijíždějí v intervalech `exp(10 min)`, mytí trvá `exp(8 min)`. Každé N-té auto dostane v rámci věrnostní akce přednost: předjede všechna čekající auta, rozjeté mytí ale nepřeruší.
 - **Priorita procesu = pořadí ve frontě** (slajd 182). N-té auto proto jde do vlastní *Fronty P* a obsazení *Myčky* z ní má `p=1`. Přednost se projeví, když se myčka uvolní a čekají auta v obou frontách.
@@ -28,6 +29,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – každé N-té auto s prioritou procesu](net.svg)
 
@@ -47,6 +49,7 @@ Kontrola simulací: *Myčka* + mytá auta = 1, *čítač* nikdy nepřesáhne N. 
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - N-tá transakce přeruší probíhající obsluhu. To je priorita obsluhy (úloha ze skupiny H).
 - Čítač, který se nevynuluje (hrana váhy N jen testuje a vrací značky), nebo hrana váhy N−1 při čítači, do kterého přispívá i právě příchozí transakce.
@@ -59,6 +62,7 @@ Kontrola simulací: *Myčka* + mytá auta = 1, *čítač* nikdy nepřesáhne N. 
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2022/23, 3. termín, skupina G, otázka 2, 10 bodů. Ve skupině H stejného termínu byla sesterská úloha s prioritou obsluhy ([07–03](<../07–03 - Každá 10. s prioritou obsluhy/07–03 - Každá 10. s prioritou obsluhy.md>)).
 

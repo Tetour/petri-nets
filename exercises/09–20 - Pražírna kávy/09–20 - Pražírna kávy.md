@@ -14,6 +14,7 @@ Podobné úlohy: [02–02 – Netrpělivý první ve frontě](<../02–02 - Netr
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Netrpělivý je jen první ve frontě.** Časovaný přechod přímo na *Frontě* by dal odpočet každému čekajícímu (slajd 138). Proto má první čekající vlastní místo *První* s doplňkem *1. místo volné* (1 značka). Do *První* se dostane jen jeden zákazník a odpočet `1 min` (deterministicky, „po minutě“) běží jen jemu. Když odejde nebo ho prodavač začne obsluhovat, uvolní se místo pro dalšího a jeho odpočet začíná od nuly.
 - Obsluhovaný zákazník už ve frontě není, takže kdo čeká za ním, je „první ve frontě“ a po minutě odchází. Jiné čtení (zákazník u pultu zůstává „první“, netrpělivost se uplatní jen při prodavači v dílně) by znamenalo vracet značku *1. místo volné* až přechodem *konec nákupu*. Při příchodech jednou za hodinu se obě varianty liší jen výjimečně.
@@ -29,6 +30,7 @@ Podobné úlohy: [02–02 – Netrpělivý první ve frontě](<../02–02 - Netr
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – pražírna kávy](net.svg)
 
@@ -51,6 +53,7 @@ Kontrola simulací: platí *1. místo volné* + *První* = 1 a prodavač je vžd
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Časovaný přechod netrpělivosti přímo na *Frontě*: pak je netrpělivý každý čekající, ne jen první.
 - Odpočet 10 minut, který nezanikne s příchodem zákazníka (např. na samostatném místě, které obsluha nebere). Prodavač by odešel uprostřed provozu.
@@ -64,6 +67,7 @@ Kontrola simulací: platí *1. místo volné* + *První* = 1 a prodavač je vžd
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2010/11 (bodování neuvedeno).
 

@@ -12,6 +12,7 @@ Podobné úlohy: [05–10 – Pomocník přidá kapacitu](<../05–10 - Pomocní
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Linka typu Sklad** = místo s počtem značek rovným kapacitě (na začátku 1). Transakce bere jednu jednotku a obsluha ji vrací. Sklad tu zadání zmiňuje proto, že v SIMLIBu jde měnit kapacitu skladu (`SetCapacity`), v Petriho síti se kreslí stejně jako zařízení.
 - **„V intervalech daných 500“** = konstanta: *generátor rozšíření* ve smyčce s přechodem `500`. Každé jeho provedení přidá do *Skladu* 3 značky (hrana s váhou 3) a značku do *M/M/4*.
@@ -25,6 +26,7 @@ Podobné úlohy: [05–10 – Pomocník přidá kapacitu](<../05–10 - Pomocní
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – sklad s dočasně větší kapacitou](net.svg)
 
@@ -44,6 +46,7 @@ Kontrola simulací (A = 10, B = 8): *Sklad* + obsluhované = 1 + 3 · *M/M/4* + 
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Odebrání všech tří jednotek najednou (hrana s váhou 3 ze *Skladu*): přechod čeká, až budou volné tři současně, a mezitím je dál obsazují nové transakce.
 - Odebrání bez priority: uvolněnou jednotku může dřív obsadit čekající transakce a M/M/4 se protahuje.
@@ -56,6 +59,7 @@ Kontrola simulací (A = 10, B = 8): *Sklad* + obsluhované = 1 + 3 · *M/M/4* + 
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2017/18, 3. termín, skupina Z, otázka 3, 10 bodů (počet bodů je na fotce špatně čitelný).
 

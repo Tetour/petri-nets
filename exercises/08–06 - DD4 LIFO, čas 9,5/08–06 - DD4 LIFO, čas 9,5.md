@@ -21,6 +21,7 @@ Podobné úlohy: [08–02 – DD3 LIFO, čas 10,5](<../08–02 - DD3 LIFO, čas 
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Interval příchodů ve vzpomínce chybí.** Předpokládá se šablona ostatních zadání: příchody od času 0 po **1 s**, požadavky číslované od P0, zařízení Z0–Z3 obsazovaná prioritně (nižší číslo dřív), všechny události se stejnou prioritou.
 - **Petriho síť zachycuje jen počty**, ne pořadí ve frontě. LIFO se v síti neprojeví, projeví se jen v seznamu událostí a v obsahu fronty.
@@ -33,6 +34,7 @@ Podobné úlohy: [08–02 – DD3 LIFO, čas 10,5](<../08–02 - DD3 LIFO, čas 
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ### Časový diagram (obsazení zařízení)
 
@@ -83,6 +85,7 @@ Kontrola (`make check`): síť se odsimuluje od času 0 (P0 ve frontě, zaříze
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Zapomenutý P3 na Z3: obsluha 3–10 v čase 9,5 ještě běží, takže v kalendáři je jeho konec v čase 10.
 - V kalendáři obráceně dvě události v čase 10. Konec obsluhy P3 byl naplánován v čase 3, příchod P10 v čase 9.
@@ -95,6 +98,7 @@ Kontrola (`make check`): síť se odsimuluje od času 0 (P0 ve frontě, zaříze
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2014/15, 3. termín, skupina D (podle studenta „asi“), otázka 1, 15 bodů.
 

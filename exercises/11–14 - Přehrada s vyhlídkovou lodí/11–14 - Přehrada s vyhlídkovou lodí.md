@@ -14,6 +14,7 @@ Podobné úlohy: [11–04 – Výletní loď](<../11–04 - Výletní loď/11–
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Loď v přístavu** (1 značka) je stejně jako ve [výletní lodi](<../11–04 - Výletní loď/11–04 - Výletní loď.md>) zároveň zařízení pro nástup po jednom a informace, že loď stojí v přístavu. Nástup je obsazení, `exp(10 s)` a vrácení značky.
 - **Dva důvody k odjezdu** vedou do stejného místa *Odjíždí*:
@@ -32,6 +33,7 @@ Podobné úlohy: [11–04 – Výletní loď](<../11–04 - Výletní loď/11–
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – přehrada s vyhlídkovou lodí](net.svg)
 
@@ -53,6 +55,7 @@ Kontrola simulací: platí *Loď v přístavu* + nastupující + *Plavba* = 1 a 
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Odpočet 15 minut, který se při odjezdu plné lodi nezruší. Při příštím kotvení by loď odjela hned (proto *plná* bere značku *Kotví*).
 - Odpočet 15 minut na místě, které nástup bere a vrací. Po každém nástupu by se počítalo znovu od nuly.
@@ -66,6 +69,7 @@ Kontrola simulací: platí *Loď v přístavu* + nastupující + *Plavba* = 1 a 
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka, rok neznámý (fotka starého zadání „Příklad 3“ v přípravném dokumentu 2021/22).
 

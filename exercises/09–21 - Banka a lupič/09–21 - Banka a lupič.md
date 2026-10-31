@@ -14,6 +14,7 @@ Podobné úlohy: [09–03 – Psí salon](<../09–03 - Psí salon/09–03 - Ps�
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Klienti** jsou běžné M/M/1: *generátor* `exp(10 min)`, *Fronta*, *Přepážka*, `exp(5 min)`.
 - **Lupič** má vlastní generátor `exp(1 měsíc)` a přichází do místa *Lupič u banky*. Simulátor počítá měsíc jako 30 dní.
@@ -38,6 +39,7 @@ Podobné úlohy: [09–03 – Psí salon](<../09–03 - Psí salon/09–03 - Ps�
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – banka a lupič](net.svg)
 
@@ -61,6 +63,7 @@ Kontrola simulací (300 000 událostí, asi 2,6 roku): *Přepážka* + obsluhova
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Zastavení příchodů odebráním značky z *Fronty* místo z *generátoru*.
 - Vyprázdnění fronty hranou s váhou: váha bere přesný počet; na „všechny“ je potřeba smyčka s prioritou.
@@ -76,6 +79,7 @@ Kontrola simulací (300 000 událostí, asi 2,6 roku): *Přepážka* + obsluhova
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2010/11 (bodování neuvedeno).
 

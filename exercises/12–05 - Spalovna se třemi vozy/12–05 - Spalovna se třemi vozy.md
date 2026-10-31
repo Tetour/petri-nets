@@ -14,6 +14,7 @@ Podobné úlohy: [12–07 – Spalovna](<../12–07 - Spalovna/12–07 - Spalovn
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Vozy** jsou místo se 3 značkami a časovaný přechod `exp(1 h)`. Každá značka má vlastní odpočet (slajd 138), takže jsou to tři nezávislé vozy. „V intervalech exp(1h)“ je doba jedné sběrné trasy každého vozu.
 - **Příjezd = vyložení:** časovaný přechod rozdělí transakci na dvě značky. Balík jde do *Fronty*, vůz do místa *vyloženo*. Odtud odjíždí přechodem *odjezd*, který testuje (hrana tam a zpět) *Normální stav*. Ve výjimečném stavu značka *Normální stav* chybí, a vozy proto čekají ve *vyloženo*.
@@ -29,6 +30,7 @@ Podobné úlohy: [12–07 – Spalovna](<../12–07 - Spalovna/12–07 - Spalovn
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – spalovna se třemi vozy](net.svg)
 
@@ -49,6 +51,7 @@ Kontrola simulací: platí *Vozy na trase* + *vyloženo* = 3, volná místa + ba
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Generátor s jedním vozem (`exp(1 h)` ve smyčce s jednou značkou). Zadání má tři vozy, které mohou čekat. Vozy musí být značky, které se vrací.
 - Komora jako jedna linka, nebo spalování všech 5 balíků najednou jako jedna dávka. Každý balík hoří samostatně.
@@ -63,6 +66,7 @@ Kontrola simulací: platí *Vozy na trase* + *vyloženo* = 3, volná místa + ba
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z20. Rok, varianta ani body nejsou známé.
 

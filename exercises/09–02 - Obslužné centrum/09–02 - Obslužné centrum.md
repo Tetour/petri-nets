@@ -12,6 +12,7 @@ Podobné úlohy: [09–04 – Centrum MM1 s rychlým režimem](<../09–04 - Cen
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Tři linky** jsou jeden sklad: místo *Linka* se třemi značkami (Hrubý je kreslí jako tři tečky). Každý zákazník zabere jednu.
 - **Délka obsluhy** se rozhodne v okamžiku začátku obsluhy (if-else za obsazením linky). Obsluha začatá ve dne doběhne s `exp(5 min)`, i když mezitím nastane noc. Přepínat rychlost uprostřed obsluhy by vyžadovalo přerušení, to zadání (v rekonstrukci) nechce.
@@ -26,6 +27,7 @@ Podobné úlohy: [09–04 – Centrum MM1 s rychlým režimem](<../09–04 - Cen
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – obslužné centrum](net.svg)
 
@@ -46,6 +48,7 @@ Kontrola simulací: platí *Linka* + obsluhovaní = 3, *den* + *noc* + *ráno* =
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Test „je noc“ obyčejnou hranou bez návratu: první noční zákazník značku spotřebuje a další už jdou denní větví.
 - Testování místa, ze kterého vede časovaný přechod `8 h`: každý noční zákazník by odpočet noci restartoval.
@@ -59,6 +62,7 @@ Kontrola simulací: platí *Linka* + obsluhovaní = 3, *den* + *noc* + *ráno* =
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2025/26, varianta B, 10 bodů (bodování podle ostatních let).
 

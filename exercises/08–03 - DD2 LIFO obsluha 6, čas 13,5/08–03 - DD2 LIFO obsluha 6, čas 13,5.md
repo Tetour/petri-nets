@@ -16,6 +16,7 @@ Podobné úlohy: [08–02 – DD3 LIFO, čas 10,5](<../08–02 - DD3 LIFO, čas 
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **„Provedených“, nebo „plánovaných“:** podle fotky jde o události **provedené** v čase 12, a to včetně operací plánování, které při nich proběhnou. Při čtení „plánovaných“ by se psaly jen ty dvě operace plánování (konec obsluhy P11 v 18, příchod P13 v 13). V seznamu níže jsou obsažené tak jako tak.
 - **Petriho síť zachycuje jen počty**, ne pořadí ve frontě. LIFO se v síti neprojeví, projeví se jen v seznamu událostí.
@@ -29,6 +30,7 @@ Podobné úlohy: [08–02 – DD3 LIFO, čas 10,5](<../08–02 - DD3 LIFO, čas 
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ### Časový diagram (obsazení zařízení)
 
@@ -75,6 +77,7 @@ Kontrola (`make check`): síť se odsimuluje od času 0 (P0 ve frontě, zaříze
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Opačné pořadí v čase 12 (nejdřív příchod P12). Pak by P12 obsadil Z0 a ve frontě by zůstal P11.
 - Kalendář s událostí v čase 13 (konec obsluhy P6, příchod P13): ty už jsou v čase 13,5 provedené.
@@ -87,6 +90,7 @@ Kontrola (`make check`): síť se odsimuluje od času 0 (P0 ve frontě, zaříze
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2015/16, 3. termín (27. 1. 2016), skupina 5-D, otázka 1, 15 bodů. Sesterská skupina 5-A je [08–02 – DD3 LIFO, čas 10,5](<../08–02 - DD3 LIFO, čas 10,5/08–02 - DD3 LIFO, čas 10,5.md>).
 

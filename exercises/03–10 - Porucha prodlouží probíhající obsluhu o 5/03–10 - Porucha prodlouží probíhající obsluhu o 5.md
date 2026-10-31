@@ -17,6 +17,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **„Momentálny proces“** = právě probíhající obsluha. Síť je stejná jako v [03–09](<../03–09 - Porucha prodlouží obsluhu o 2/03–09 - Porucha prodlouží obsluhu o 2.md>), jen s `Exp(50)` a prodloužením `5`.
 - **Prodloužení běžící obsluhy:** přechod `p=1` obsluhu přeruší (vezme značku transakce), transakce počká 5 časových jednotek v místě *prodloužení* a pak se vrátí do obsluhy, kde `exp(B)` začne znovu. Díky bezpaměťovosti exponenciálního rozdělení má zbytek obsluhy pořád rozdělení `exp(B)`, takže celková obsluha = dosavadní doba + 5 + zbytek.
@@ -31,6 +32,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – porucha prodlouží probíhající obsluhu o 5](net.svg)
 
@@ -49,6 +51,7 @@ Kontrola simulací: *Linka* + obsluhovaná transakce + *prodloužení* = 1, asi 
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Prodloužení až následující obsluhy (úloha 03–08).
 - Přerušení obsluhy bez návratu do ní: transakce po prodloužení odejde nebo jde do fronty.
@@ -61,6 +64,7 @@ Kontrola simulací: *Linka* + obsluhovaná transakce + *prodloužení* = 1, asi 
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2020/21, náhradní termín (COVID), otázka 2, 10 bodů.
 

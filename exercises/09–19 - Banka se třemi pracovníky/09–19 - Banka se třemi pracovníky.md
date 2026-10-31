@@ -16,6 +16,7 @@ Podobné úlohy: [09–21 – Banka a lupič](<../09–21 - Banka a lupič/09–
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Stroj na lístky** je jedno zařízení (jeden stroj), před ním se čeká ve frontě. **Tři pracovníci** jsou sklad se 3 značkami, **vedoucí** je zařízení s 1 značkou. Všude je uvolnění sloučené s časovaným přechodem.
 - **Vedoucí jako proces:** značka *Vedoucí* znamená „stojí u přepážky a nemá klienta“. Kromě obsazení klientem ji může vzít kontrola pobočky nebo auto, takže je to zároveň stav vedoucího.
@@ -30,6 +31,7 @@ Podobné úlohy: [09–21 – Banka a lupič](<../09–21 - Banka a lupič/09–
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – banka se třemi pracovníky](net.svg)
 
@@ -53,6 +55,7 @@ Kontrola simulací: stroj, přepážky (= 3) i vedoucí (*Vedoucí* + poradenstv
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Časovač `30 min` nezávislý na vedoucím (vlastní generátor). Pak vedoucí odejde na kontrolu i od klienta nebo se odpočet nezruší, když klient přijde.
 - Auto bez `p=1`: po skončení obsluhy klienta by vedoucího mohl obsadit další klient.
@@ -66,6 +69,7 @@ Kontrola simulací: stroj, přepážky (= 3) i vedoucí (*Vedoucí* + poradenstv
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2013/14, varianta A, 6 bodů (k příkladu patřila ještě otázka z teorie za 4 body).
 

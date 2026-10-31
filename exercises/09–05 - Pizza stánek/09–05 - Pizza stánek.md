@@ -14,6 +14,7 @@ Podobné úlohy: [11–03 – Pizzerie s rozvozem](<../11–03 - Pizzerie s rozv
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Transakce** je zákazník spolu se svou pizzou: čeká u stánku, dokud pizzu nedostane, pak odchází.
 - **Pizzař** je jedno zařízení, které se zabírá dvakrát: na přípravu (3–5 min) a na vyndání a předání (1 min). Mezi tím ho pizza nepotřebuje, pečení je časovaný přechod bez pizzaře.
@@ -27,6 +28,7 @@ Podobné úlohy: [11–03 – Pizzerie s rozvozem](<../11–03 - Pizzerie s rozv
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – pizza stánek](net.svg)
 
@@ -46,6 +48,7 @@ Kontrola simulací: *Pizzař* + *příprava* + *vyndávání* = 1, *Pec* + pizzy
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Pizzař držený i během pečení (hrana zpět do *Pizzaře* až po vyndání). Zadání výslovně říká, že mezitím obsluhuje další zákazníky.
 - Pec jako jedno zařízení místo skladu se 4 značkami, nebo časovaný přechod pečení s kapacitou 4 bez místa *Pec*.
@@ -58,6 +61,7 @@ Kontrola simulací: *Pizzař* + *příprava* + *vyndávání* = 1, *Pec* + pizzy
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2024/25, varianta B, 10 bodů (bodování podle ostatních variant téhož termínu).
 

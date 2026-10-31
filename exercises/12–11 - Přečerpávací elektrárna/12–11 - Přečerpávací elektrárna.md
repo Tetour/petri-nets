@@ -12,6 +12,7 @@ Podobné úlohy: [12–09 – Přečerpávací elektrárna II](<../12–09 - Př
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Voda** jsou značky v místech *A* a *B*. Přesun jednotky je časovaný přechod mezi nimi. Voda jen obíhá, žádná transakce systém neopouští, takže síť nemá výstupní přechod.
 - **Kapacita 1000** nikdy nehraje roli: *A* + *B* = 1000 pořád, takže žádná nádrž víc než 1000 mít nemůže. „Až do vyprázdnění B“ a „do vyčerpání zásob“ zajišťuje sama sémantika: přechod bez značky ve vstupním místě se neprovede.
@@ -27,6 +28,7 @@ Podobné úlohy: [12–09 – Přečerpávací elektrárna II](<../12–09 - Př
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – přečerpávací elektrárna](net.svg)
 
@@ -49,6 +51,7 @@ Kontrola simulací (asi 600 dní): *A* + *B* = 1000, *den* + *noc* = 1, právě 
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Přesuny vody s testovací hranou přímo na místa hodin (*den*, *noc*), ze kterých čte i `16 h` / `8 h`. Každý přesun pak odpočet hodin zruší (slajd 139).
 - Havárie, která ve dne jen přidá rychlejší přesun a neodebere denní režim. Pak běží `4 min` i `1 min` současně.
@@ -62,6 +65,7 @@ Kontrola simulací (asi 600 dní): *A* + *B* = 1000, *den* + *noc* = 1, právě 
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z3. Přesný rok a varianta nejsou známé.
 

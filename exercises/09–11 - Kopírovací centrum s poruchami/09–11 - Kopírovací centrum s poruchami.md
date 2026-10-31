@@ -14,6 +14,7 @@ Podobné úlohy: [09–10 – Kopírovací centrum](<../09–10 - Kopírovací c
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Přepážka** je jedno zařízení, registrace trvá `2–3 min` rovnoměrně.
 - **Obsluha s kapacitou 10** je sklad: místo s 10 značkami. Časovaný přechod `exp(20 min)` má pro každou obsluhovanou zakázku vlastní odpočet (slajd 138), takže běží až 10 obsluh současně.
@@ -30,6 +31,7 @@ Podobné úlohy: [09–10 – Kopírovací centrum](<../09–10 - Kopírovací c
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – kopírovací centrum s poruchami](net.svg)
 
@@ -51,6 +53,7 @@ Kontrola simulací: *Přepážka* + registrace = 1, *Obsluha* + *v obsluze* = 10
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Porucha, která zničí jen jednu obsluhu (chybí smyčka), nebo hrana s váhou 10 (provede se, jen když běží přesně 10 obsluh).
 - Zničení bez vrácení kapacity *Obsluze*: kapacita se s každou poruchou zmenší.
@@ -64,6 +67,7 @@ Kontrola simulací: *Přepážka* + registrace = 1, *Obsluha* + *v obsluze* = 10
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2021/22, varianta D, 10 bodů.
 

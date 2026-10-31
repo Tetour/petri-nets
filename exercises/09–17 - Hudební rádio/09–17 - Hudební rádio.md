@@ -12,6 +12,7 @@ Podobné úlohy: [03–01 – Porucha zruší obsluhu](<../03–01 - Porucha zru
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Redaktor** je jediný zdroj (místo s 1 značkou). Je vždy právě v jednom stavu: pouští písničku (*Redaktor*), vede rozhovor, pouští reklamu, nebo se rozhoduje (*dohráno*).
 - **Písnička** je časovaný přechod `3–5 min` přímo na místě *Redaktor*. Během písničky značka zůstává v *Redaktorovi* (slajd 137), takže reklama ji může kdykoli vzít a písnička zanikne. Po reklamě začne nová písnička, ta přerušená se neopakuje.
@@ -27,6 +28,7 @@ Podobné úlohy: [03–01 – Porucha zruší obsluhu](<../03–01 - Porucha zru
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – hudební rádio](net.svg)
 
@@ -48,6 +50,7 @@ Kontrola simulací: redaktor je vždy v právě jednom stavu (*Redaktor* + *dohr
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Písnička jako obsazení redaktora okamžitým přechodem a teprve pak časovaný přechod, ale reklama bere značku z místa *Redaktor*. Ten je v tu chvíli prázdný a reklama čeká na konec písničky, takže nic nepřeruší.
 - Reklama jako generátor `exp(60 min)`. Zadání chce „každou hodinu“, tedy deterministicky `1 h`.
@@ -61,6 +64,7 @@ Kontrola simulací: redaktor je vždy v právě jednom stavu (*Redaktor* + *dohr
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z7.
 

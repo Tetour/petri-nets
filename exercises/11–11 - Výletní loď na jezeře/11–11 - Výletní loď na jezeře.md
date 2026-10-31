@@ -16,6 +16,7 @@ Podobné úlohy: [11–04 – Výletní loď](<../11–04 - Výletní loď/11–
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Loď u mola** (1 značka) je zařízení pro nástup „jednotlivě“: obsazení, `exp(30 s)` a vrácení značky. Odjezdové přechody tu značku také potřebují, takže během nástupu loď odjet nemůže („nastupování cestujícího se vždy dokončí“).
 - **Odjezd po 2 minutách** je časovaný přechod `2 min` se vstupem *Loď u mola*. Odpočet začne, když se loď po nástupu vrátí do stavu „čeká“. Když mezitím přijde cestující, obsazení si značku lodi vezme a odpočet zanikne (slajd 139). Po jeho nástupu běží odpočet znovu, tedy „2 minuty od nastoupení posledního cestujícího“.
@@ -33,6 +34,7 @@ Podobné úlohy: [11–04 – Výletní loď](<../11–04 - Výletní loď/11–
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – výletní loď na jezeře](net.svg)
 
@@ -56,6 +58,7 @@ Kontrola simulací: *Loď u mola* + nastupující + *Plavba* + *návrat k molu* 
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Časovač 2 min bez podmínky, že někdo nastoupil: prázdná loď odplouvá každé 2 minuty.
 - Časovač 2 min jako samostatný proces, který nezaniká s nástupem dalšího cestujícího. Musí ho zrušit obsazení lodi (vstupem je *Loď u mola*).
@@ -70,6 +73,7 @@ Kontrola simulací: *Loď u mola* + nastupující + *Plavba* + *návrat k molu* 
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z1. Přesný rok a varianta nejsou známé.
 

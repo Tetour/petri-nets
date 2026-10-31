@@ -16,6 +16,7 @@ Podobné úlohy: [10–03 – Databázový server](<../10–03 - Databázový se
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Transakce je požadavek:** přijde z okolí, linka ho přijme do *Vstupního bufferu*, DB úloha ho zpracuje do *Výstupního bufferu*, linka výsledek odešle a požadavek odchází.
 - **Síťová linka** je jedno zařízení sdílené příjmem a odesíláním, proto „buď přijímá, nebo odesílá“. Doby příjmu a odeslání zadání neuvádí, v síti jsou jako symboly `Tp` a `To` (pro simulaci 0,1 ms). Bez nějaké doby by vzájemné vyloučení nemělo smysl.
@@ -31,6 +32,7 @@ Podobné úlohy: [10–03 – Databázový server](<../10–03 - Databázový se
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – počítačový server](net.svg)
 
@@ -53,6 +55,7 @@ Kontrola simulací: platí *Síťová linka* + příjem + odesílání = 1 a *Pr
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Dvě samostatné linky pro příjem a odesílání; zadání chce jedno zařízení, které dělá jedno nebo druhé.
 - Test bufferu váhou 100 místo 101 („více než 100“), nebo hrana s váhou 101 jen do přechodu (bez návratu): přerušení by pak smazalo 101 požadavků.
@@ -66,6 +69,7 @@ Kontrola simulací: platí *Síťová linka* + příjem + odesílání = 1 a *Pr
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2013/14, varianta C, 6 bodů (k příkladu patřila ještě otázka z teorie za 4 body).
 

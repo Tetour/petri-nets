@@ -12,6 +12,7 @@ Podobné úlohy: [12–10 – Zahradník na FIT](<../12–10 - Zahradník na FIT
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - Model má tři části, jak si je Hrubý vypsal: život zahradníka, život bouřky a jejich interakci.
 - **Obchůzka:** přechod *vyráží* vezme značku *začátek obchůzky*, vloží 10 značek (váha hrany 10) do *záhonky k okopání* a jednu značku do *zahradník*. Zahradník je zařízení: *okopat* (`p=1`) vezme záhonek a zahradníka, `exp(10 min)` zahradníka vrátí. Když záhonky dojdou, provede se *obchůzka hotova* (p=0). Priorita zajistí, že obchůzka skončí, až když nic nezbývá.
@@ -27,6 +28,7 @@ Podobné úlohy: [12–10 – Zahradník na FIT](<../12–10 - Zahradník na FIT
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – zahradnictví a bouřka](net.svg)
 
@@ -49,6 +51,7 @@ Kontrola simulací: zahradník je vždy právě v jednom stavu (*začátek obch�
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Testování bouřky přímo na místě, které je vstupem časovaného přechodu bouřky. Testovací hrana značku vezme a hned vrátí, a tím by odpočet přerušila (slajd 139). Proto stav bouřky (*je/není bouřka*) a její odpočty patří do různých míst.
 - Po bouřce vrátit záhonek do *záhonky k okopání* místo do *okopávání*. Pak by zahradník mohl začít jiný záhonek, ale zadání chce ten přerušený.
@@ -62,6 +65,7 @@ Kontrola simulací: zahradník je vždy právě v jednom stavu (*začátek obch�
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2024/25, varianta A, 10 bodů.
 

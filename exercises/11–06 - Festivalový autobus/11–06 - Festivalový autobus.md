@@ -14,6 +14,7 @@ Podobné úlohy: [11–01 – Výletní autobus](<../11–01 - Výletní autobus
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Transakce** jsou návštěvníci: registrace → *Registrovaní* → vyzvednutí → *V autobusu* → vyložení v areálu → *odchod*. Autobus je jedna značka, která obíhá stavy *Areál* → *na svozu* → *vrací se* → *v areálu* → *Areál*.
 - **Jízdy:** každé vyzvednutí je jedna jízda `exp(3 min)` (z areálu k prvnímu návštěvníkovi, pak mezi návštěvníky). Okamžitý přechod vyzvednutí (`p=1`) vezme registrovaného návštěvníka, volné místo a autobus. Po jízdě je návštěvník *V autobusu* a autobus je znovu *na svozu*, kde se rozhoduje o dalším kroku. Návrat do areálu je další jízda `exp(3 min)`.
@@ -31,6 +32,7 @@ Podobné úlohy: [11–01 – Výletní autobus](<../11–01 - Výletní autobus
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – festivalový autobus](net.svg)
 
@@ -54,6 +56,7 @@ Kontrola simulací: autobus je vždy právě v jednom stavu, *Volná místa* + j
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Odpočet 40 min jako časovaný přechod na místě, které autobus při každé jízdě opouští (např. *na svozu*). Odpočet se pak s každým vyzvednutím spouští znovu a měří jen čekání na dalšího návštěvníka.
 - Odpočet, který po návratu kvůli zaplnění zůstane v síti: uplyne během další jízdy a autobus pošle zpět příliš brzy.
@@ -68,6 +71,7 @@ Kontrola simulací: autobus je vždy právě v jednom stavu, *Volná místa* + j
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z21. Rok, varianta ani body nejsou známé.
 

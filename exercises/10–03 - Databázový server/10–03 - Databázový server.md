@@ -14,6 +14,7 @@ Podobné úlohy: [05–02 – Dočasně MM2 při dlouhé frontě](<../05–02 - 
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Jednotky:** časy jsou v sekundách i minutách, u přechodů je proto vždy jednotka. `exp(0,5 s)` je střední doba vyřízení.
 - **Procesy A a B** jsou dvě zařízení nad společnou *Frontou*. A je k dispozici stále. Značka *Procesu B* existuje, jen když je B aktivní. Když jsou volné oba, nerozhoduje se, který požadavek vezme (zadání pořadí neurčuje).
@@ -30,6 +31,7 @@ Podobné úlohy: [05–02 – Dočasně MM2 při dlouhé frontě](<../05–02 - 
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – databázový server](net.svg)
 
@@ -52,6 +54,7 @@ Kontrola simulací: *Proces A* + obsluha A = 1, *B čeká* + *Proces B aktivní*
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Čítač, který se po vyhodnocení nevynuluje (nebo se vynuluje jen odebráním 70 značek). Zbylé obsluhy by se pak započítaly do další minuty.
 - Vynulování hranou s pevnou váhou. Počet obsluh za minutu je náhodný, na „všechny“ je potřeba smyčka s prioritou.
@@ -66,6 +69,7 @@ Kontrola simulací: *Proces A* + obsluha A = 1, *B čeká* + *Proces B aktivní*
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z22. Rok, varianta ani body nejsou známé.
 

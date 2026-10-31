@@ -16,6 +16,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Priorita obsluhy, ne priorita procesu.** Vykřičník míří právě na tento rozdíl (slajdy 182, 184 a 187). Priorita procesu jen mění pořadí ve frontě. Priorita obsluhy (SIMLIB `Seize(linka, 1)`) navíc znamená, že prioritní transakce, která přijde k lince obsazené normální transakcí, její obsluhu **přeruší** a linku zabere. Síť bez přerušení (jen `p=1` na obsazení) by byla priorita procesu, viz ukázka a) v [07–05](<../07–05 - Priorita procesu a obsluhy/07–05 - Priorita procesu a obsluhy.md>).
 - **Přerušení ve dvou krocích**, stejně jako porucha v 03–03. Přechod *přerušení* vezme normální transakci z obsluhy, vrátí ji do *Fronty N* a značku vrátí *Lince*. Prioritní transakce přitom zůstává ve *Frontě P* (hrana tam a zpět). Hned potom ji obsazení s `p=1` spojí s uvolněnou linkou.
@@ -31,6 +32,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – dva proudy příchodů s prioritou obsluhy](net.svg)
 
@@ -50,6 +52,7 @@ Kontrola simulací: *Linka* + obsluha P + obsluha N = 1. Asi 60 % prioritních t
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Jen `p=1` na obsazení bez přerušení. To je priorita procesu, ne priorita obsluhy, kterou zadání zdůrazňuje vykřičníkem.
 - Jedna společná fronta pro oba proudy. Z místa nejde poznat, která značka je prioritní, takže přerušení ani přednost nejde vyjádřit.
@@ -63,6 +66,7 @@ Kontrola simulací: *Linka* + obsluha P + obsluha N = 1. Asi 60 % prioritních t
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2025/26, 1. termín, skupina B, otázka 1, 10 bodů.
 

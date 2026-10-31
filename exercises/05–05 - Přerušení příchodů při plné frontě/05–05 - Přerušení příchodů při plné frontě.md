@@ -12,6 +12,7 @@ Podobné úlohy: [09–06 – Klientské centrum](<../09–06 - Klientské centr
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **„Dosáhne pěti“** = ve *Frontě* je aspoň 5 čekajících: test s váhou 5 (hrana do přechodu a zpět, z fronty se nic neodebere). Obsluhovaná transakce je v jiném místě a nepočítá se.
 - **Přerušení příchodů:** *přerušení* odebere značku *generátoru*. Probíhající odpočet `exp(A)` tím zanikne a nikdo nepřichází. Po `10` se značka vrátí a příchody pokračují s novým odpočtem (u exponenciálního rozložení na tom nezáleží).
@@ -26,6 +27,7 @@ Podobné úlohy: [09–06 – Klientské centrum](<../09–06 - Klientské centr
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – přerušení příchodů při plné frontě](net.svg)
 
@@ -45,6 +47,7 @@ Kontrola simulací (A = 5, B = 6): *Linka* + obsluhovaná transakce = 1, *gener�
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Test fronty jen hranou dovnitř: přerušení by z fronty odebralo pět transakcí.
 - Zastavení příchodů odebráním transakcí z *Fronty* místo odebrání značky *generátoru*.
@@ -58,6 +61,7 @@ Kontrola simulací (A = 5, B = 6): *Linka* + obsluhovaná transakce = 1, *gener�
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2024/25, 1. termín, skupina B, otázka 3 (body neuvedené; ve skupinách A a C téhož termínu byla otázka 3 za 10 bodů).
 

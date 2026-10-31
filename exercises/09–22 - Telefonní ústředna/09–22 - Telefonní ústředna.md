@@ -19,6 +19,7 @@ Podobné úlohy: [07–04 – Dva proudy příchodů](<../07–04 - Dva proudy p
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **30 volání za hodinu** v Poissonově procesu znamená exponenciální intervaly se středem 60/30 = **2 minuty**: `exp(2 min)`.
 - **Ústředna s kapacitou 20 hovorů** je sklad: místo *Linky* s 20 značkami. Hovor zabere jednu značku a `exp(2 min)` ji vrací. Běžný časovaný přechod má pro každou značku v místě *Hovor* vlastní odpočet (slajd 138), takže 20 hovorů běží souběžně.
@@ -33,6 +34,7 @@ Podobné úlohy: [07–04 – Dva proudy příchodů](<../07–04 - Dva proudy p
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – telefonní ústředna](net.svg)
 
@@ -54,6 +56,7 @@ Kontrola simulací: *Linky* + *Hovor* = 20 a *Operátorka* + obsluhovaný = 1. S
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Přepočet „30krát za hodinu“ na `exp(30 min)` nebo `exp(20 min)`. Správně je střed 2 minuty.
 - Jedno společné místo čekajících pro oba druhy volajících. Pak priorita spojovaných nejde vyjádřit.
@@ -67,6 +70,7 @@ Kontrola simulací: *Linky* + *Hovor* = 20 a *Operátorka* + obsluhovaný = 1. S
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka, rok neznámý (zadání zapsané ve Studentských skriptech 2015/16).
 

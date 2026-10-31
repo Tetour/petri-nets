@@ -14,6 +14,7 @@ Podobné úlohy: [11–07 – Vyhlídková loď na molu](<../11–07 - Vyhlídko
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Loď u mola** (1 značka) je zároveň zařízení pro nástup „po jednom“ a informace, že loď stojí u mola. Nástup je obsazení, `exp(1 min)` a vrácení značky lodi.
 - **Čítač nastoupených** je místo *Na palubě*. **Vyplutí** je okamžitý přechod s hranou váhy 20 z *Na palubě* a se značkou *Loď u mola*. Priorita `p=1` zajistí, že po 20. turistovi loď vypluje dřív, než by začal nastupovat 21. (oba přechody potřebují značku lodi). Hrubý ho označuje „(trigger)“.
@@ -27,6 +28,7 @@ Podobné úlohy: [11–07 – Vyhlídková loď na molu](<../11–07 - Vyhlídko
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – výletní loď](net.svg)
 
@@ -47,6 +49,7 @@ Kontrola simulací: *Loď u mola* + nastupující + *Vyjíždí* + *Plavba* = 1,
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Vyprázdnění fronty jedním přechodem s váhou hrany. Váha bere přesný počet, ne „všechny“; na „všechny“ je potřeba smyčka s prioritou.
 - Smyčka bez návratu značky do *Vyjíždí*: odejde jen jeden turista.
@@ -61,6 +64,7 @@ Kontrola simulací: *Loď u mola* + nastupující + *Vyjíždí* + *Plavba* = 1,
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2021/22, varianta C, 10 bodů.
 

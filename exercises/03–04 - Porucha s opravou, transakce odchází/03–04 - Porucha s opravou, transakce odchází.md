@@ -18,6 +18,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Oprava zabere linku na dobu C** (i když linka zrovna nic neobsluhuje): porucha si vezme značku *Linky* a vrátí ji po čase `C`, jako transakce s vyšší prioritou obsluhy.
 - **Přerušená transakce „bez náhrady opúšta systém“:** má vlastní výstupní přechod *odchod bez obsluhy*.
@@ -31,6 +32,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – porucha s opravou, transakce odchází](net.svg)
 
@@ -49,6 +51,7 @@ Kontrola simulací: *Linka* + obsluhovaná transakce + *oprava* = 1, každá por
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Porucha zabere jen obsazenou linku a při volné lince zanikne. Oprava ale trvá `C` vždy.
 - Zabrání linky bez priority: po zrušení obsluhy si linku vezme transakce z *Fronty*.
@@ -61,6 +64,7 @@ Kontrola simulací: *Linka* + obsluhovaná transakce + *oprava* = 1, každá por
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2021/22, 1. termín, nejspíš skupina A, otázka 1, 15 bodů (podle přepisu neznámé skupiny).
 

@@ -16,6 +16,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **„LEN zruší obsluhu a nič iné“:** porucha nemá žádnou dobu trvání (linka je hned znovu volná) a zrušená obsluha se neopakuje. Transakce tedy odchází ze systému neobsloužená, vlastním výstupním přechodem *odchod bez obsluhy*. Kdyby se měla vracet do fronty, je to úloha [03–02 – Porucha vrací transakci do fronty](<../03–02 - Porucha vrací transakci do fronty/03–02 - Porucha vrací transakci do fronty.md>). Pozor: v zadání 2024/25 (03–03) se slovem „zrušena“ myslí právě návrat do fronty, takže samotné sloveso o osudu transakce nerozhoduje. Tady ho určuje dovětek „a nič iné“.
 - **Porucha, která přijde, když linka nic neobsluhuje**, nemá žádný účinek a zanikne (*porucha bez účinku*, p=0). Jinak by se poruchy hromadily a rušily obsluhy, které začnou později.
@@ -30,6 +31,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – porucha zruší obsluhu](net.svg)
 
@@ -49,6 +51,7 @@ Kontrola simulací: *Linka* + obsluhovaná transakce = 1, v místě *porucha* je
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Chybějící zánik poruchy, když linka nepracuje: poruchy se hromadí a ruší pozdější obsluhy.
 - Zrušení bez vrácení značky *Lince*: linka se ztratí a systém se zastaví.
@@ -61,6 +64,7 @@ Kontrola simulací: *Linka* + obsluhovaná transakce = 1, v místě *porucha* je
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2017/18, 1. termín, skupina Z, otázka 1 (body neuvedené).
 

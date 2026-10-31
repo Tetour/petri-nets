@@ -15,6 +15,7 @@ Podobné úlohy: [05–03 – Natrvalo MM3 při dlouhé frontě](<../05–03 - N
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **„Přesáhne 5“** = víc než 5, tedy aspoň 6 čekajících. Test fronty má proto váhu 6 (hrana do přechodu a zpět). „Dosáhne 5“ by byla váha 5.
 - **M/M/2 = druhá jednotka kapacity:** přechod *přidej* vloží do *Linky* druhou značku. Obsluha se nemění, jen mohou běžet dvě najednou.
@@ -31,6 +32,7 @@ Podobné úlohy: [05–03 – Natrvalo MM3 při dlouhé frontě](<../05–03 - N
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – dočasně M/M/2 při dlouhé frontě](net.svg)
 
@@ -50,6 +52,7 @@ Kontrola simulací (A = 5, B = 6): *Linka* + obsluhované + *M/M/1* = 2 a režim
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Váha 5 místo 6 („přesáhne“ znamená víc než 5).
 - Bez řídicí značky *M/M/1*: test fronty zůstává splněný a přechod přidává linky pořád dokola.
@@ -62,6 +65,7 @@ Kontrola simulací (A = 5, B = 6): *Linka* + obsluhované + *M/M/1* = 2 a režim
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2018/19, 3. termín (2. opravný), otázka 1 (body neuvedené). Otázka 2 chtěla k tomuto modelu program v SIMLIBu.
 

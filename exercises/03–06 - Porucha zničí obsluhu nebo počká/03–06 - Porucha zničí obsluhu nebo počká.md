@@ -22,6 +22,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Stačí jediný přechod:** *porucha* + obsluhovaná transakce → *Linka* + *zničená*. Když linka obsluhuje, provede se hned. Když neobsluhuje, porucha zůstane v místě *porucha* a přechod se provede ve chvíli, kdy další transakce obsadí linku. Obsluha je tedy zničena hned na začátku.
 - **Oproti 03–01 tu chybí přechod *porucha bez účinku*.** Právě ten by poruchu při volné lince zahodil. Bez něj porucha „počká“.
@@ -37,6 +38,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – porucha zničí obsluhu nebo počká](net.svg)
 
@@ -55,6 +57,7 @@ Kontrola simulací: *Linka* + obsluhovaná transakce = 1, každá porucha znič�
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Přechod *porucha bez účinku* převzatý z 03–01: porucha při volné lince zanikne a nepočká.
 - Čekající porucha modelovaná vlastním časovaným přechodem nebo testem fronty. Stačí, že porucha zůstane v místě, dokud nemá s čím reagovat.
@@ -67,6 +70,7 @@ Kontrola simulací: *Linka* + obsluhovaná transakce = 1, každá porucha znič�
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2021/22, 2. termín, otázka 1 (body neuvedené).
 

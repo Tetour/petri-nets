@@ -22,6 +22,7 @@ Podobné úlohy: [08–05 – DD2 LIFO obsluha 4, čas 9,5](<../08–05 - DD2 LI
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Petriho síť zachycuje jen počty**, ne pořadí ve frontě. LIFO se v síti neprojeví, projeví se jen v seznamu událostí.
 - **Zařízení obsazovaná prioritně:** `p=1` (Z0) a `p=0` (Z1, implicitní). Když jsou volná obě, vezme se Z0.
@@ -34,6 +35,7 @@ Podobné úlohy: [08–05 – DD2 LIFO obsluha 4, čas 9,5](<../08–05 - DD2 LI
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ### Časový diagram (obsazení zařízení)
 
@@ -89,6 +91,7 @@ Proč: konec obsluhy P0 byl naplánován v čase 0, příchod P5 v čase 4. Stav
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Opačné pořadí v čase 6 (nejdřív příchod P6). Pak by P6 obsadil Z1 a ve frontě by zůstal P5.
 - V kalendáři jen jedna událost v čase 10, nebo obě v opačném pořadí. Konec obsluhy P4 byl naplánován dřív (v čase 5) než příchod P10 (v čase 9).
@@ -101,6 +104,7 @@ Proč: konec obsluhy P0 byl naplánován v čase 0, příchod P5 v čase 4. Stav
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2015/16, 2. termín, skupina B (v souboru nadepsaná „Skupina A“, druhá skupina ze stejného souboru o sobě píše „to co B“), otázka 1, 15 bodů. Stejná úloha (jiný čas t1): zkouška 2014/15, 1. termín, skupina B (události v čase 5).
 

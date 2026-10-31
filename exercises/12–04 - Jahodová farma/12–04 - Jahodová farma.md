@@ -14,6 +14,7 @@ Podobné úlohy: [12–02 – Sběrači jahod](<../12–02 - Sběrači jahod/12�
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Sběrači** jsou stejně jako v [12–02](<../12–02 - Sběrači jahod/12–02 - Sběrači jahod.md>) místo s 10 značkami ve smyčce s `exp(15 min)`. Každá značka má vlastní odpočet, takže je to 10 nezávislých sběračů. Každé provedení přinese bedýnku do místa *Bedýnky*.
 - **Zahájení vaření** potřebuje vařiče, stroj a 5 bedýnek (hrana s váhou 5). Během *přípravy* jsou obsazení vařič i stroj. Časovaný přechod `10–15 min` vrátí vařiče, stroj zůstává obsazený a sám vaří `60–70 min`. Teprve pak se vrátí do *Strojů* a vznikne 20 jednotek *Marmelády* (hrana s váhou 20).
@@ -30,6 +31,7 @@ Podobné úlohy: [12–02 – Sběrači jahod](<../12–02 - Sběrači jahod/12�
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – jahodová farma](net.svg)
 
@@ -51,6 +53,7 @@ Kontrola simulací: platí *Vařiči* + vařiči v přípravě, při startu a u 
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Vařič obsazený po celou dobu vaření (vrací se až s koncem `60–70 min`). Stroj vaří „bez potřeby obsluhy“, vařič se uvolní po přípravě.
 - Chybějící hrany s vahou 5 (bedýnky) a 20 (marmeláda).
@@ -65,6 +68,7 @@ Kontrola simulací: platí *Vařiči* + vařiči v přípravě, při startu a u 
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z23. Rok, varianta ani body nejsou známé.
 

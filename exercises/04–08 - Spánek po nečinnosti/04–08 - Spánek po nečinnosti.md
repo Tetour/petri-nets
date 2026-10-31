@@ -19,6 +19,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Nečinnost** = linka nic neobsluhuje a nikdo nečeká, tedy značka je v místě *Linka*. Časovaný přechod `10 min` (*usnutí*) má jediný vstup, *Linku*. Obsazení si značku vezme a odpočet zanikne (slajd 139). Po každé obsluze začíná znovu od nuly.
 - **Linka má čtyři stavy** a její značka je vždy v právě jednom: volná (*Linka*), obsluhuje, *spí*, *probouzí se*.
@@ -32,6 +33,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – spánek po nečinnosti](net.svg)
 
@@ -51,6 +53,7 @@ Kontrola simulací: *Linka* + obsluha + *spí* + *probouzí se* = 1. Linka usín
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Časovač nečinnosti na *Frontě* nebo na generátoru místo na volné lince.
 - Probuzení obyčejnou hranou z *Fronty* bez návratu: požadavek, který linku probudil, zmizí a nikdy není obsloužen. (Pokud místo toho rovnou obsadí linku, jako v [04–03](<../04–03 - Automat na kávu – uspání/04–03 - Automat na kávu – uspání.md>), je to v pořádku.)
@@ -63,6 +66,7 @@ Kontrola simulací: *Linka* + obsluha + *spí* + *probouzí se* = 1. Linka usín
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2022/23, 2. termín (v hlavičce přepisu „IMS 1.op. F: 2023“), skupina F, otázka 2, 10 bodů.
 

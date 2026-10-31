@@ -12,6 +12,7 @@ Podobné úlohy: [03–04 – Porucha s opravou, transakce odchází](<../03–0
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Přepážka** je jedno zařízení (registrace `1–2 min`), **Lékaři** jsou sklad se 2 značkami (vyšetření `exp(10 min)`). Mezi nimi je *Čekárna*.
 - **„Aktuálně rozpracovaní pacienti“** jsou ti, jejichž vyšetření lékaři přerušili. Jdou k registrační přepážce, přednostně se přeobjednají a odejdou. Tak to čte řešení z democvičení i studentské řešení z Přípravy. Druhé čtení (přeobjednává se pacient, kterého sanita zastihne u přepážky) nechává osud přerušených pacientů nevyřešený a slovo „prioritně“ by nedávalo smysl, protože ten pacient už přepážku má.
@@ -27,6 +28,7 @@ Podobné úlohy: [03–04 – Porucha s opravou, transakce odchází](<../03–0
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – nemocniční ambulance](net.svg)
 
@@ -49,6 +51,7 @@ Kontrola simulací (88 dní): *Přepážka* + registrovaný + přeobjednávajíc
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Registrace jen jako časovaný přechod bez místa *Přepážka*: neomezuje počet současně registrovaných (slajd 138).
 - Odjezd lékařů, který bere 2 značky z *Lékařů* bez přerušení vyšetření: když lékař právě vyšetřuje, sanita čeká, až skončí.
@@ -62,6 +65,7 @@ Kontrola simulací (88 dní): *Přepážka* + registrovaný + přeobjednávajíc
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z6. Přesný rok a varianta nejsou známé.
 

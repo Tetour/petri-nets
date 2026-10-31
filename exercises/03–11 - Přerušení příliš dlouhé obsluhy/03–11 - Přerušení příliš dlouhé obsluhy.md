@@ -14,6 +14,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Časový limit = druhý časovaný přechod na stejném místě.** Z místa obsluhy vedou dva časované přechody: `exp(B)` (konec obsluhy) a `X` (limit). Oba začnou odpočítávat ve chvíli, kdy transakce obsadí linku. Který doběhne dřív, ten si značku vezme a druhý odpočet zanikne (slajdy 137 a 139).
 - Obsluha tedy skončí normálně, je-li `exp(B) < X`. Jinak ji po `X` č.j. přeruší limit: vrátí *Linku* a transakce odchází přes *přerušená* → *odchod po přerušení*.
@@ -26,6 +27,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – přerušení příliš dlouhé obsluhy](net.svg)
 
@@ -43,6 +45,7 @@ Kontrola simulací: *Linka* + obsluhovaná transakce = 1, provádějí se oba od
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Limit jako okamžitý přechod nebo `exp(X)`: zadání dává pevnou délku `X`.
 - Limit bez vrácení *Linky*: po prvním přerušení se systém zastaví.
@@ -55,6 +58,7 @@ Kontrola simulací: *Linka* + obsluhovaná transakce = 1, provádějí se oba od
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2019/20, 2. termín (29. 1. 2020; v Řešených výpočetních příkladech „2020 - 1. opravný“), skupina Z, otázka 3, 10 bodů.
 

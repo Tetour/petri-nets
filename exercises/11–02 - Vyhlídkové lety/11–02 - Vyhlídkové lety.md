@@ -12,6 +12,7 @@ Podobné úlohy: [11–07 – Vyhlídková loď na molu](<../11–07 - Vyhlídko
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Letadlo** je zařízení s jednou značkou (*letadlo doma*). Nástup je obsazení: zákazník z *Fronty* + letadlo → *nastupuje* → `1–2 min` vrátí letadlo a zákazníka posune do *na palubě*. Místo *na palubě* je zároveň čítač nastoupených.
 - **Plné letadlo:** přechod *plno* (`p=1`) potřebuje letadlo doma a 20 značek na palubě (testovací hrany s váhou 20). Hned po dvacátém nástupu má přednost před dalším obsazením (p=0), takže 21. zákazník nenastoupí.
@@ -25,6 +26,7 @@ Podobné úlohy: [11–07 – Vyhlídková loď na molu](<../11–07 - Vyhlídko
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – vyhlídkové lety](net.svg)
 
@@ -45,6 +47,7 @@ Kontrola simulací: letadlo je vždy v jednom stavu (*letadlo doma* + *nastupuje
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Časovač 5 min jako netrpělivost na *Frontě*. Ten by měřil čekání zákazníka, ne dobu od posledního nástupu.
 - Odlet po 5 minutách i s prázdným letadlem. Zadání chce, aby už někdo seděl. Bez if–else by letadlo létalo prázdné.
@@ -58,6 +61,7 @@ Kontrola simulací: letadlo je vždy v jednom stavu (*letadlo doma* + *nastupuje
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2024/25, varianta C, 10 bodů.
 

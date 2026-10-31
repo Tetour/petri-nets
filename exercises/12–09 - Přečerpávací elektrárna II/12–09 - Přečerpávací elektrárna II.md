@@ -12,6 +12,7 @@ Podobné úlohy: [12–11 – Přečerpávací elektrárna](<../12–11 - Přeč
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Voda** jsou značky v nádržích *B* (600) a *A* (0). Přesun jedné jednotky je časovaný přechod: `2 min` z B do A (výroba), `1 min` z A do B (čerpání). „Do vyčerpání zásob“ zajistí samo vstupní místo: prázdná nádrž přechod zastaví.
 - **Kapacita 600** se nemusí hlídat: voda se jen přelévá, takže A + B = 600 a žádná nádrž víc než 600 mít nemůže.
@@ -28,6 +29,7 @@ Podobné úlohy: [12–11 – Přečerpávací elektrárna](<../12–11 - Přeč
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – přečerpávací elektrárna II](net.svg)
 
@@ -49,6 +51,7 @@ Kontrola simulací: A + B = 600, *Výroba* + *Čerpání* = 1, *den* + *noc* = 1
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Přesuny vody testují přímo místo s odpočtem `16 h` / `8 h`. Každý přesun značku vezme a vrátí a odpočet denní doby by se spouštěl znovu, takže by den nikdy neskončil.
 - Havárie v noci vezme značku noci i s jejím časovačem. Po hodině se pak noc počítá znovu od začátku a denní doba se posune.
@@ -62,6 +65,7 @@ Kontrola simulací: A + B = 600, *Výroba* + *Čerpání* = 1, *den* + *noc* = 1
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z11.
 

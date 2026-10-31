@@ -14,6 +14,7 @@ Podobné úlohy: [03–02 – Porucha vrací transakci do fronty](<../03–02 - 
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Pracovník** je jedna značka v místě *pracovník volí*. Okamžité přechody `50 %` / `50 %` ho pošlou ke stroji A nebo B. Je-li stroj právě v činnosti (10 nebo 15 min), pracovník u něj počká.
 - **Příprava** je časovaný přechod se vstupy *u stroje X* a *Stroj X volný*. Odpočet začne, až je stroj volný; obě značky zůstávají ve svých místech, dokud příprava neskončí (slajd 137). Pak stroj pracuje sám (`10 min` / `15 min`) a do kontejneru přidá 20 kusů (hrana s váhou 20). Pracovník se po přípravě vrací k volbě.
@@ -28,6 +29,7 @@ Podobné úlohy: [03–02 – Porucha vrací transakci do fronty](<../03–02 - 
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – dílna se třemi stroji](net.svg)
 
@@ -48,6 +50,7 @@ Kontrola simulací: pracovník je vždy na jednom místě (*pracovník volí* / 
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Výstup stroje A/B s váhou 1 místo 20 kusů.
 - Stroj C, který bere kus z A a z B dvěma oddělenými přechody; zadání chce oba „současně“, tedy jeden přechod se dvěma vstupy.
@@ -61,6 +64,7 @@ Kontrola simulací: pracovník je vždy na jednom místě (*pracovník volí* / 
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2011/12, příklad 4 (bodování v zadání není).
 

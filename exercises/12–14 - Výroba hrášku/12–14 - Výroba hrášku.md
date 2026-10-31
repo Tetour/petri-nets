@@ -16,6 +16,7 @@ Podobné úlohy: [03–01 – Porucha zruší obsluhu](<../03–01 - Porucha zru
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Dodávka → 100 várek:** dodávka je transakce jen do konce přípravy. Časovaný přechod `30–50 min` má výstupní hranu s váhou 100, dál putují várky samostatně.
 - **Tepelná úprava s kapacitou 50** je sklad s 50 značkami. Časovaný přechod `1 h` neomezuje počet současně čekajících (slajd 138), takže v úpravě může být až 50 várek naráz, každá s vlastním odpočtem. **Balicí stroj** je zařízení s 1 značkou.
@@ -31,6 +32,7 @@ Podobné úlohy: [03–01 – Porucha zruší obsluhu](<../03–01 - Porucha zru
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – výroba hrášku](net.svg)
 
@@ -54,6 +56,7 @@ Kontrola simulací: platí *Kapacita* + v úpravě = 50, *Balicí stroj* + balen
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Kapacita tepelné úpravy jako kapacita místa místo skladu s 50 značkami (Hrubý se kapacitám míst vyhýbá).
 - Trvanlivost jako jeden časovač pro celou frontu místo časovaného přechodu přímo na místě *Čekají na balení*.
@@ -67,6 +70,7 @@ Kontrola simulací: platí *Kapacita* + v úpravě = 50, *Balicí stroj* + balen
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2013/14, varianta B, 6 bodů (k příkladu patřila ještě otázka z teorie za 4 body).
 

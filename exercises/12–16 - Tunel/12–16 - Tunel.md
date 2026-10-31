@@ -14,6 +14,7 @@ Podobné úlohy: [03–02 – Porucha vrací transakci do fronty](<../03–02 - 
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Tunel jako sklad metrů:** místo *Zbývá metrů* má N = 1000 značek. Souprava si metr **zabere na začátku** vrtání (okamžitý přechod bere značku soupravy a jeden metr). Poslední metr tak vezme jen jedna souprava a soupravy se nesrazí.
 - **Den a noc** jsou dvě místa v cyklu `16 h` / `8 h` (noc trvá 8 h, den tedy 16 h). Počáteční čas: začátek dne, značka je v místě *Den*.
@@ -31,6 +32,7 @@ Podobné úlohy: [03–02 – Porucha vrací transakci do fronty](<../03–02 - 
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – tunel](net.svg)
 
@@ -52,6 +54,7 @@ Kontrola simulací: platí *Den* + *noc trvá* = 1, *Den* + *Noc* + *ráno* = 1 
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Metr zabíraný až na konci vrtání: obě soupravy pak můžou vrtat poslední metr současně a „srazí se“.
 - Přerušení bez testu noci (nebo bez priority), takže se rychlé vrtání přeruší hned, nebo vůbec.
@@ -65,6 +68,7 @@ Kontrola simulací: platí *Den* + *noc trvá* = 1, *Den* + *Noc* + *ráno* = 1 
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2011/12, příklad 1 (bodování v zadání není).
 

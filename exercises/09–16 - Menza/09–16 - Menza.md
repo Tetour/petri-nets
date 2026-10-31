@@ -12,6 +12,7 @@ Podobné úlohy: [09–03 – Psí salon](<../09–03 - Psí salon/09–03 - Ps�
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **5 kuchařek** je sklad s 5 značkami (obsazení, `exp(1 min)` vrací kuchařku). **Konzumace** `10–15 min` je časovaný přechod bez omezení: každý jedící student má vlastní odpočet (slajd 138), jedí souběžně.
 - **Hlášení** je proces *bez karantény* → `exp(100 d)` → *hlášení*. Generátor se vrací až po karanténě, takže hlášení během karantény nepřijde. Zadání to neřeší; interval exp(100 dní) se tu počítá od konce poslední karantény.
@@ -26,6 +27,7 @@ Podobné úlohy: [09–03 – Psí salon](<../09–03 - Psí salon/09–03 - Ps�
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – menza](net.svg)
 
@@ -47,6 +49,7 @@ Kontrola simulací: *Kuchařky* + *výdej* = 5, *generátor* + *Karanténa* = 1,
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Vyhození jedním přechodem s váhou hrany. Váha bere přesný počet, „všichni“ se dělá smyčkou s prioritou.
 - Vyhození studenta z výdeje bez vrácení kuchařky: po karanténě by kuchařek bylo méně.
@@ -60,6 +63,7 @@ Kontrola simulací: *Kuchařky* + *výdej* = 5, *generátor* + *Karanténa* = 1,
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z9.
 

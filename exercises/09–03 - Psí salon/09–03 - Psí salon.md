@@ -14,6 +14,7 @@ Podobné úlohy: [05–05 – Přerušení příchodů při plné frontě](<../0
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Vyhlížení** je samostatný proces (místo se značkou). Časovaný přechod `1 h` je proveditelný, když je značka ve *vyhlížení* a někdo je ve *Frontě*. Odpočet tedy běží, dokud je fronta neprázdná („Trvá!“ v Hrubého řešení). Když se fronta mezitím vyprázdní, odpočet zanikne a s dalším zákazníkem začne znovu.
 - To je **abstrakce**, kterou Hrubý výslovně přiznává: odpočet měří, jak dlouho je fronta nepřetržitě neprázdná, ne kolik čeká konkrétní zákazník. Přesnější alternativa (také jeho poznámka) je dát každé transakci vlastní timeout: časovaný přechod `1 h` jen se vstupem z *Fronty* (bez *vyhlížení*), který má podle slajdu 138 odpočet pro každou značku zvlášť.
@@ -28,6 +29,7 @@ Podobné úlohy: [05–05 – Přerušení příchodů při plné frontě](<../0
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – psí salon](net.svg)
 
@@ -48,6 +50,7 @@ Kontrola simulací: linka se vždy vrátí, platí *generátor* + pauza = 1 a *v
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Zastavení příchodů odebráním značky z *Fronty* místo z *generátoru*. Generátor musí přijít o svou značku, jinak příchody pokračují.
 - Vyprázdnění fronty jedním přechodem s váhou hrany. Váha bere přesný počet značek, ne „všechny“. Na „všechny“ je potřeba smyčka s prioritou.
@@ -60,6 +63,7 @@ Kontrola simulací: linka se vždy vrátí, platí *generátor* + pauza = 1 a *v
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2025/26, varianta A, 10 bodů (bodování podle ostatních let).
 

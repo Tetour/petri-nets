@@ -10,6 +10,7 @@ Podobné úlohy: [08–09 – DD1 – příchody 3, obsluha 2](<../08–09 - DD1
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **První příchod v čase 0.** Zadání ho neuvádí. Bere se konvence starších D/D/x zadání („Příchody požadavků začínají v čase 0“). Při jiném prvním příchodu se celá tabulka posune.
 - **Současné události:** v časech 4 a 8 končí obsluha a zároveň přichází další požadavek. Dřív se provede událost, která byla dřív naplánována: konec obsluhy (naplánovaný v čase 0, resp. 4) před příchodem (naplánovaným v čase 2, resp. 6). Tabulka ukazuje stav **po provedení všech událostí** v daném čase, takže na pořadí výsledek nezávisí a mezistavy (např. chvíle, kdy P0 odešel a P2 ještě nepřišel) se do ní nepíšou.
@@ -23,6 +24,7 @@ Podobné úlohy: [08–09 – DD1 – příchody 3, obsluha 2](<../08–09 - DD1
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ### Časový diagram
 
@@ -62,6 +64,7 @@ Kontrola (`make check`): síť se odsimuluje od času 0 (P0 ve frontě, linka vo
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Obrácené kritérium stability („interval 2 je menší než obsluha 4, tedy stabilní“). Rozhoduje ρ = λ/μ = obsluha / interval = 2 > 1.
 - Chybějící řádek pro čas 0: P0 přichází hned na začátku a hned obsazuje linku.
@@ -75,6 +78,7 @@ Kontrola (`make check`): síť se odsimuluje od času 0 (P0 ve frontě, linka vo
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2022/23, 3. termín (3. 2. 2023), skupina G, otázka 1, 15 bodů.
 

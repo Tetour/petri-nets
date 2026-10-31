@@ -14,6 +14,7 @@ Podobné úlohy: [12–05 – Spalovna se třemi vozy](<../12–05 - Spalovna se
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Rychlosti jako časy:** 10 kubíků/h = auto každých `6 min` (konstantně, zadání dává rychlost, ne rozložení), 15 kubíků/h = `4 min` na kubík, 30 kubíků/h = `2 min`.
 - **Kapacita skladu** je doplňkové místo *Volné místo ve skladu* (100 − 50 = 50 značek). Auto si při vjezdu vezme volné místo (`p=1`), jinak odjíždí nevyložené (*sklad plný*, `p=0`). Místo se zabere už na začátku vykládání, takže sklad nepřeteče ani s auty, která se právě vykládají. Uvolní se, když si kubík vezme linka.
@@ -29,6 +30,7 @@ Podobné úlohy: [12–05 – Spalovna se třemi vozy](<../12–05 - Spalovna se
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – spalovna](net.svg)
 
@@ -52,6 +54,7 @@ Kontrola simulací: *Linka* + zpracovávaný kubík + oprava = 1, *Sklad* + *Vol
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Rychlost zapsaná jako parametr přechodu („10/h“) místo času mezi událostmi (`6 min`).
 - Sklad jako místo s „kapacitou 100“. Kapacity míst se nepoužívají; místo nich doplňkové místo s volnými místy.
@@ -65,6 +68,7 @@ Kontrola simulací: *Linka* + zpracovávaný kubík + oprava = 1, *Sklad* + *Vol
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z15.
 

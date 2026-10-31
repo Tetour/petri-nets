@@ -14,6 +14,7 @@ Podobné úlohy: [09–04 – Centrum MM1 s rychlým režimem](<../09–04 - Cen
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Montovna a lakovna** jsou dvě zařízení (místa s jednou značkou) za sebou. Uvolnění je sloučené s časovaným přechodem.
 - **„Dosáhne délky 3“** = test hranami s váhou 3 do přechodu a zpět. Z *Fronty lakovny* se nic neodebere. Lakovaný meziprodukt je v jiném místě, takže se do délky fronty nepočítá („3 čekající“).
@@ -28,6 +29,7 @@ Podobné úlohy: [09–04 – Centrum MM1 s rychlým režimem](<../09–04 - Cen
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – výrobní hala](net.svg)
 
@@ -48,6 +50,7 @@ Kontrola simulací: *Montovna* + montáž + *Odstaveno* = 1, *Lakovna* + laková
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Test fronty jen vstupní hranou s váhou 3 (bez hrany zpět): tři meziprodukty z fronty zmizí.
 - Váha 4 („přesáhne 3“) místo 3.
@@ -62,6 +65,7 @@ Kontrola simulací: *Montovna* + montáž + *Odstaveno* = 1, *Lakovna* + laková
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z24. Rok, varianta ani body nejsou známé.
 

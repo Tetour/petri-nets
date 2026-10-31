@@ -10,6 +10,7 @@ Podobné úlohy: [05–05 – Přerušení příchodů při plné frontě](<../0
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **M/M/3** = místo *Linky* se třemi značkami, jedno obsazení a jedna obsluha `exp(B)`. Počet obsazených linek je počet značek v místě obsluhy.
 - **Přerušení příchodů:** *zastav* odebere značku *generátoru*, takže odpočet `exp(A)` zanikne. Podmínka „všechny linky obsazené“ je test s váhou 3 na místě obsluhy. Prázdné *Linky* testovat nejde (bylo by potřeba inhibiční hrany, kterou Hrubý nechce).
@@ -25,6 +26,7 @@ Podobné úlohy: [05–05 – Přerušení příchodů při plné frontě](<../0
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – M/M/3 se zastavením příchodů](net.svg)
 
@@ -43,6 +45,7 @@ Kontrola simulací (A = 3, B = 8): *Linky* + obsluhované = 3, *generátor* + *z
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Rozběh při jedné volné lince (test s váhou 1, nebo rovnou návrat značky po skončení obsluhy). Zadání chce aspoň dvě volné.
 - Zastavení i rozběh bez řídicí značky: testy zůstávají splněné a přechody se provádějí pořád dokola.
@@ -55,6 +58,7 @@ Kontrola simulací (A = 3, B = 8): *Linky* + obsluhované = 3, *generátor* + *z
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2024/25, 1. termín (8. 1. 2025), skupina C, otázka 3, 10 bodů.
 

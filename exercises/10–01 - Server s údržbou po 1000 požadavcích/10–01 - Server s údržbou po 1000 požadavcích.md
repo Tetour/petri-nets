@@ -12,6 +12,7 @@ Podobné úlohy: [04–06 – Údržba po každé 10. obsluze](<../04–06 - Úd
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Jednotky:** časy jsou v milisekundách i sekundách, u přechodů je proto vždy jednotka. „Rychlostí exp(70ms)“ znamená střední dobu obsluhy 70 ms (ne intenzitu). Server je vytížen asi na 70 %.
 - **Server s kapacitou 1** je místo *Server* s jednou značkou. Uvolnění je sloučené s časovaným přechodem obsluhy.
@@ -28,6 +29,7 @@ Podobné úlohy: [04–06 – Údržba po každé 10. obsluze](<../04–06 - Úd
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – server s údržbou po 1000 požadavcích](net.svg)
 
@@ -48,6 +50,7 @@ Kontrola simulací: *Server* + obsluhovaný + *Údržba* = 1, *probíhá údržb
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Přechod do údržby bez priority. V okamžiku 1000. obsluhy pak může server obsadit další požadavek a údržba začne až po něm.
 - Čítač testovaný hranami tam a zpět (váha 1000 v obou směrech). Čítač se nevynuluje a údržba by se spouštěla po každé další obsluze.
@@ -62,6 +65,7 @@ Kontrola simulací: *Server* + obsluhovaný + *Údržba* = 1, *probíhá údržb
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2023/24, varianta A. Body nejsou uvedené (ostatní varianty téhož roku mají 10 bodů).
 

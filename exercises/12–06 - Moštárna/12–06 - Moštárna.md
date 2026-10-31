@@ -14,6 +14,7 @@ Podobné úlohy: [12–04 – Jahodová farma](<../12–04 - Jahodová farma/12�
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Pět sběračů** je pět značek v místě generátoru. Časovaný přechod `exp(30 min)` má pro každou značku vlastní odpočet (slajd 138), takže každý sběrač nosí bedýnky nezávisle.
 - **Plnění lisu** potřebuje bedýnku, volný lis a moštaře. Po `5–7 min` se moštař vrátí a lis pracuje dál sám `30–40 min`; pak se vrátí lis a do *Nádoby* přibude 20 značek (1 značka = mošt na 1 láhev).
@@ -28,6 +29,7 @@ Podobné úlohy: [12–04 – Jahodová farma](<../12–04 - Jahodová farma/12�
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – moštárna](net.svg)
 
@@ -48,6 +50,7 @@ Kontrola simulací: lisů je vždy celkem 5, moštařů 2, linka je nejvýš jed
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Jeden sběrač místo pěti (jedna značka v generátoru).
 - Moštař obsazený po celou dobu lisování. Zadání říká, že lis po naplnění pracuje samostatně.
@@ -61,6 +64,7 @@ Kontrola simulací: lisů je vždy celkem 5, moštařů 2, linka je nejvýš jed
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z16.
 

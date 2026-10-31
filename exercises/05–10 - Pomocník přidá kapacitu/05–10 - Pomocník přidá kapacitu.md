@@ -10,6 +10,7 @@ Podobné úlohy: [05–09 – Údržba zabere celou kapacitu](<../05–09 - Údr
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Správce je jeden člověk:** jedna značka koluje mezi *správce jinde*, *pomáhá* a *končí*. Další příchod tak nastane až poté, co odejde, a systém je nejvýš M/M/2, jak zadání říká. Generátor ve smyčce by mohl poslat druhého správce, zatímco první ještě pomáhá (vzniklo by M/M/3). Interval `exp(100)` se tu proto měří od jeho odchodu.
 - **Pomoc = jednotka kapacity navíc:** příchod správce přidá do *Linky* druhou značku. Obsluha je pořád `exp(B)`, jen mohou běžet dvě najednou.
@@ -23,6 +24,7 @@ Podobné úlohy: [05–09 – Údržba zabere celou kapacitu](<../05–09 - Údr
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – pomocník přidá kapacitu](net.svg)
 
@@ -43,6 +45,7 @@ Kontrola simulací (A = 5, B = 4): *Linka* + obsluhovaní + *správce jinde* = 2
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Časovaný přechod `20` se vstupem z *Linky*: jednotka by během odpočtu čekala v *Lince*, první zákazník by ji obsadil a odpočet zrušil.
 - Odebrání jednotky bez priority: uvolněnou jednotku může dřív obsadit čekající zákazník a pomoc se protáhne.
@@ -55,6 +58,7 @@ Kontrola simulací (A = 5, B = 4): *Linka* + obsluhovaní + *správce jinde* = 2
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2025/26, 2. termín (27. 1. 2026), skupina F, otázka 1, 10 bodů.
 

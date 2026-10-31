@@ -12,6 +12,7 @@ Podobné úlohy: [04–01 – Automat na kávu – údržba po nečinnosti](<../
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Prodavač má dvě role, a proto dvě místa.** *prodavač* je zařízení pro obsluhu (značka = volný). *přítomen* říká, že stojí u pultu. Jedno místo nestačí: když prodavač obsluhuje, je obsazený, ale přítomný, takže nový zákazník se má postavit do fronty, ne odejít. Stejně to má Hrubý.
 - **Vstup zákazníka** je podmínka přes prioritu: přechod `p=1` otestuje *přítomen* (hrana tam a zpět) a pustí zákazníka do *Fronty*. Když prodavač chybí, zbude jen přechod s `p=0` a zákazník hned odchází (vlastní výstupní přechod).
@@ -26,6 +27,7 @@ Podobné úlohy: [04–01 – Automat na kávu – údržba po nečinnosti](<../
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – trafika](net.svg)
 
@@ -48,6 +50,7 @@ Kontrola simulací: platí *prodavač* + obsluha + *nikdo nepřišel* + *ve skla
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Jedno místo pro prodavače, které slouží zároveň jako test přítomnosti. Pak odchází i zákazník, který přijde během obsluhy, přestože prodavač u pultu je.
 - Odpočet nečinnosti, který zákazník nepřeruší (např. časovač na samostatném místě, nezávislém na obsluze). „Nemá zákazníky 10 minut“ znamená 10 minut v kuse bez zákazníka.
@@ -61,6 +64,7 @@ Kontrola simulací: platí *prodavač* + obsluha + *nikdo nepřišel* + *ve skla
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2022/23, varianta B, 10 bodů.
 

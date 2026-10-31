@@ -17,6 +17,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **„Neprobíhá obsluha a nikdo nečeká“** = značka je v místě *Automat* (obsazení je okamžitý přechod, při neprázdné frontě si značku vezme hned). Časovaný přechod `5` (*usnutí*) má jediný vstup, *Automat*. Když mezitím přijde zákazník, obsazení si značku vezme a odpočet zanikne (slajd 139).
 - **Automat má čtyři stavy** a jeho značka je vždy v právě jednom z nich: volný (*Automat*), obsluhuje, *spí*, *probouzení*.
@@ -32,6 +33,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – automat na kávu s uspáním](net.svg)
 
@@ -51,6 +53,7 @@ Kontrola simulací: *Automat* + obsluha + *spí* + *probouzení* = 1. Automat us
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Časovač usnutí na *Frontě* nebo na generátoru místo na volném automatu.
 - Spící automat, který se probudí sám po nějaké době, nebo ho probudí až příchod v době, kdy už nikdo nečeká. Probudit ho musí zákazník, který čeká ve *Frontě*.
@@ -64,6 +67,7 @@ Kontrola simulací: *Automat* + obsluha + *spí* + *probouzení* = 1. Automat us
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2017/18, 2. termín, skupina D, otázka 1 (body neuvedeny, sesterské skupiny B a C mají 10 bodů).
 

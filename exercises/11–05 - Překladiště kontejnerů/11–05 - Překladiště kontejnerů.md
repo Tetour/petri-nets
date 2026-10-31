@@ -14,6 +14,7 @@ Podobné úlohy: [11–09 – Překladiště s jeřábem](<../11–09 - Překlad
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Transakce je auto**, ne kontejner (Hrubý: „Pozn.: Transakce je AUTO, ne kontejner!“). Auto obsadí *Jeřáb* a stejný přechod vloží 3 značky do *kontejnery v autě* (hrana s váhou 3). Kontejnery jsou čítač, který říká, kolik cyklů vykládky auto ještě potřebuje.
 - **Cyklus vykládky:** *další kontejner* (`p=1`) vezme auto a jeden kontejner. Auto pak čeká na vlak, obsadí *Vlak*, po `exp(8 min)` se vrátí zpět do místa *auto*, vlak se uvolní a kontejner přibude do *Naloženo*. Když už v autě žádný kontejner není, přijde na řadu *uvolnění* (p=0): jeřáb je volný a auto odjíždí.
@@ -29,6 +30,7 @@ Podobné úlohy: [11–09 – Překladiště s jeřábem](<../11–09 - Překlad
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – překladiště kontejnerů](net.svg)
 
@@ -51,6 +53,7 @@ Kontrola simulací: *Jeřáb* + auto ve třech fázích vykládky = 1, *Vlak* + 
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Kontejner jako transakce (generátor kontejnerů). Pak není vidět, kdy je auto vyložené a odjíždí, a jeřáb může střídat kontejnery různých aut.
 - Uvolnění jeřábu, které nečeká na vyložení všech tří kontejnerů (chybí priorita `p=1` u dalšího kontejneru nebo dvoukrokový cyklus). Auto pak odjede naložené.
@@ -65,6 +68,7 @@ Kontrola simulací: *Jeřáb* + auto ve třech fázích vykládky = 1, *Vlak* + 
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2021/22, varianta A, 10 bodů.
 

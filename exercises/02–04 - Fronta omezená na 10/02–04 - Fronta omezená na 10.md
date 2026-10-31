@@ -13,6 +13,7 @@ Podobné úlohy: [02–01 – Netrpělivé požadavky](<../02–01 - Netrpěliv�
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Omezení přes doplňkové místo:** *volná místa ve frontě* s 10 značkami. Vstup do *Fronty* jednu značku vezme, obsazení *Linky* ji vrátí. Platí *Fronta* + *volná místa ve frontě* = 10. Kapacitu místa (`c=10`) Hrubý nepoužívá.
 - **Do fronty se počítají jen čekající**, obsluhovaná transakce ne. Kdyby se mělo omezit 10 transakcí v celém systému, vracela by značku až dokončená obsluha (`exp(B)`).
@@ -27,6 +28,7 @@ Podobné úlohy: [02–01 – Netrpělivé požadavky](<../02–01 - Netrpěliv�
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – fronta omezená na 10](net.svg)
 
@@ -45,6 +47,7 @@ Kontrola simulací: *Fronta* + *volná místa ve frontě* = 10, *Linka* + obsluh
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Kapacita místa místo doplňkového místa.
 - Značka doplňku vrácená až koncem obsluhy, i když se omezuje jen fronta (pak je limit 10 na celý systém, ne na frontu).
@@ -57,6 +60,7 @@ Kontrola simulací: *Fronta* + *volná místa ve frontě* = 10, *Linka* + obsluh
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2017/18, 1. termín, skupina 8C, otázka 1, 15 bodů.
 

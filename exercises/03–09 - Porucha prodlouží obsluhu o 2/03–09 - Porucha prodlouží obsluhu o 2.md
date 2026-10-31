@@ -18,6 +18,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Jak prodloužit běžící časovaný přechod:** v Petriho síti nejde k běžícímu odpočtu `exp(B)` „přičíst“ 2. Jde ho ale přerušit: přechod `p=1` si vezme značku obsluhované transakce (slajd 139, stejně jako v 03–02) a pošle ji do místa *prodloužení*. Po 2 časových jednotkách se transakce vrátí do obsluhy a `exp(B)` začne odpočítávat znovu.
 - **Proč je to správně:** exponenciální rozdělení je bez paměti. Zbývající doba obsluhy přerušené v libovolném okamžiku má opět rozdělení `exp(B)`, nezávisle na tom, kolik už uběhlo. Nový odpočet `exp(B)` je tedy statisticky totéž co pokračování starého a celková obsluha = dosavadní doba + 2 + zbytek. U konstantní nebo rovnoměrné doby obsluhy (M/D/1) by tento trik nefungoval, tam je potřeba konstrukce popsaná v [03–10](<../03–10 - Porucha prodlouží probíhající obsluhu o 5/03–10 - Porucha prodlouží probíhající obsluhu o 5.md>).
@@ -32,6 +33,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – porucha prodlouží obsluhu o 2](net.svg)
 
@@ -50,6 +52,7 @@ Kontrola simulací: *Linka* + obsluhovaná transakce + *prodloužení* = 1, kaž
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Časovaný přechod `2` zapojený za `exp(B)` „pro jistotu“ u každé obsluhy: prodlouží se i obsluhy bez poruchy.
 - Porucha, která prodlouží až další obsluhu (to je úloha 03–08).
@@ -63,6 +66,7 @@ Kontrola simulací: *Linka* + obsluhovaná transakce + *prodloužení* = 1, kaž
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2020/21, 1. opravný termín (11:00), otázka 2, 10 bodů. Soubor se zadáním se jmenuje „1. termín“, ale otázky jsou totožné s termínem „2021 - 1. opravný 11:00“ v Řešených výpočetních příkladech.
 

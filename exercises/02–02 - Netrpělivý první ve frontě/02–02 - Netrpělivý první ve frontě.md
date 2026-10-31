@@ -14,6 +14,7 @@ Podobné úlohy: [02–01 – Netrpělivé požadavky](<../02–01 - Netrpěliv�
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Fronta rozdělená do dvou míst** (nápověda z roku 2017/18): *Fronta* pro ostatní čekající a *První* pro transakci v čele. Časovaný přechod `4` visí jen na místě *První*. Kdyby visel na *Frontě*, měl by vlastní odpočet každý čekající (slajd 138) a šlo by o [02–01](<../02–01 - Netrpělivé požadavky/02–01 - Netrpělivé požadavky.md>).
 - **Doplněk *1. místo volné*** (1 značka) zajistí, že v *První* je nejvýš jedna transakce. Bez něj by přechod *postup* přesunul do *První* celou frontu.
@@ -28,6 +29,7 @@ Podobné úlohy: [02–01 – Netrpělivé požadavky](<../02–01 - Netrpěliv�
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – netrpělivý první ve frontě](net.svg)
 
@@ -47,6 +49,7 @@ Kontrola simulací: *Linka* + obsluhovaná transakce = 1, *1. místo volné* + *
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Časovač přímo na *Frontě*: netrpěliví jsou pak všichni čekající, ne jen první.
 - Místo *První* bez doplňku: do čela se přesune celá fronta a odpočet běží všem.
@@ -60,6 +63,7 @@ Kontrola simulací: *Linka* + obsluhovaná transakce = 1, *1. místo volné* + *
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2024/25, 2. termín (20. 1. 2025), skupina E, otázka 3, 10 bodů. Stejná úloha (jiná čísla): zkouška 2019/20, 2. termín, skupina Y, otázka 3, 10 bodů (X č. j.) a zkouška 2017/18, 2. termín, skupina A, otázka 1, 10 bodů (automat na kávu, 5 jednotek).
 

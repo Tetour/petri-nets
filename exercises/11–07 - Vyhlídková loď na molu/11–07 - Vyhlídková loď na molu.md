@@ -14,6 +14,7 @@ Podobné úlohy: [11–04 – Výletní loď](<../11–04 - Výletní loď/11–
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Loď u mola** je zařízení pro nástup „po jednom“ (jako v [11–04 – Výletní loď](<../11–04 - Výletní loď/11–04 - Výletní loď.md>)), jen má dva stavy: *prázdná* (nikdo ještě nenastoupil) a *s cestujícími*. Nástup jde z obou stavů a po `1 min` vrátí loď vždy do stavu *s cestujícími*; cestující přibude do *Na palubě*.
 - **3 minuty od posledního nástupu:** časovaný přechod `3 min` na místě *s cestujícími*. Odpočet začne po každém nástupu. Když je někdo ve frontě (nebo během 3 min přijde), obsazení lodi vezme značku a odpočet zanikne (slajd 139); po jeho nástupu začne nový. Přechod se tedy provede jen při prázdné frontě, přesně 3 min po posledním nástupu.
@@ -29,6 +30,7 @@ Podobné úlohy: [11–04 – Výletní loď](<../11–04 - Výletní loď/11–
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – vyhlídková loď na molu](net.svg)
 
@@ -50,6 +52,7 @@ Kontrola simulací: loď je vždy v jednom stavu (prázdná u mola + s cestujíc
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Odpočet 3 min, který se nezruší, když někdo nastoupí (např. přechod `3 min` na místě, které nástup nebere). Pak loď odpluje 3 min po prvním nástupu, ne po posledním.
 - Odpočet 3 min i u prázdné lodi: loď by jezdila prázdná.
@@ -64,6 +67,7 @@ Kontrola simulací: loď je vždy v jednom stavu (prázdná u mola + s cestujíc
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z18.
 

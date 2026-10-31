@@ -20,6 +20,7 @@ Podobné úlohy: [08–04 – DD2 LIFO obsluha 5, čas 9,5](<../08–04 - DD2 LI
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **LIFO je předpoklad.** Vzpomínka frontu neuvádí. Protože jde o „to co B“ a skupina B má LIFO, počítá se tu s LIFO. Při FIFO by bylo **značení sítě stejné** (síť pořadí ve frontě nevidí). Lišilo by se, kdo je kde: v čase 5 by z fronty šel P3 místo P4 a v čase 9,5 by byla fronta P6, P7, P8, P9, na Z0 P4 a na Z1 P5.
 - **Petriho síť zachycuje jen počty**, ne pořadí ve frontě.
@@ -33,6 +34,7 @@ Podobné úlohy: [08–04 – DD2 LIFO obsluha 5, čas 9,5](<../08–04 - DD2 LI
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ### Časový diagram (obsazení zařízení)
 
@@ -79,6 +81,7 @@ Kontrola (`make check`): síť se odsimuluje od času 0 (P0 ve frontě, zaříze
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Opačné pořadí v čase 5 (nejdřív příchod P5). Pak by P5 obsadil Z1 a ve frontě by zůstal P4.
 - Kalendář s událostmi v čase 9 (konec obsluhy P4, příchod P9): ty už jsou v čase 9,5 provedené. Na zařízeních jsou v čase 9,5 už P7 a P8, ne P3 a P4.
@@ -91,6 +94,7 @@ Kontrola (`make check`): síť se odsimuluje od času 0 (P0 ve frontě, zaříze
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2015/16, 2. termín, skupina A, otázka 1, 15 bodů. Sesterská skupina B je [08–04 – DD2 LIFO obsluha 5, čas 9,5](<../08–04 - DD2 LIFO obsluha 5, čas 9,5/08–04 - DD2 LIFO obsluha 5, čas 9,5.md>).
 

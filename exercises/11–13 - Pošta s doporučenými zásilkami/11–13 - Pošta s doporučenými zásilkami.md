@@ -14,6 +14,7 @@ Podobné úlohy: [11–03 – Pizzerie s rozvozem](<../11–03 - Pizzerie s rozv
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Zásilky** jsou transakce: generátor `1 d` přidá 100 zásilek (váha 100), první dávka je v místě *Zásilky na poště* od začátku. Zásilka odchází při doručení, nebo jako nedoručená přes *Úschovnu* se zákazníkem.
 - **Vůz** je proces s jednou značkou, která obíhá: nakládání → jízdy a zákazníci → návrat → vykládka → *Vůz na poště*.
@@ -30,6 +31,7 @@ Podobné úlohy: [11–03 – Pizzerie s rozvozem](<../11–03 - Pizzerie s rozv
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – pošta s doporučenými zásilkami](net.svg)
 
@@ -52,6 +54,7 @@ Kontrola simulací: vůz je vždy v jednom stavu, pracovníků je vždy 3 (voln�
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Jeden časovaný přechod pro celou trasu místo `exp(2 min)` pro každý úsek (včetně cesty zpět).
 - Rozhodnutí „další zákazník, nebo zpět“ bez priority: vůz by se mohl vrátit, i když v něm zbývají zásilky.
@@ -65,6 +68,7 @@ Kontrola simulací: vůz je vždy v jednom stavu, pracovníků je vždy 3 (voln�
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2011/12, příklad 2 (bodování v zadání není).
 

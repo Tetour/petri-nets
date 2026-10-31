@@ -17,6 +17,7 @@ Podobné úlohy: [11–10 – Bagrista a nákladní auta](<../11–10 - Bagrista
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Procesy:** krávy (100, obíhají dokola), dojičky (sklad 5), konvice (transakce: vznikne podojením, odjede autem), auta (2, obíhají mezi rampou a cestou), rampa (zařízení s kapacitou 1).
 - **exp(15 h) platí pro každou krávu zvlášť.** Časovaný přechod je přímo na místě *Krávy* se 100 značkami a podle slajdu 138 má každá značka vlastní odpočet. Celkem tak vychází asi 100 / 15 ≈ 6,7 dojení za hodinu. Generátor s jedním příchodem za 15 h pro celé stádo by s 5 dojičkami nedával smysl.
@@ -32,6 +33,7 @@ Podobné úlohy: [11–10 – Bagrista a nákladní auta](<../11–10 - Bagrista
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – kravín](net.svg)
 
@@ -53,6 +55,7 @@ Kontrola simulací: krav je vždy 100, dojičky se vždy vrátí, platí 20 · *
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Krávy jako generátor `exp(15 h)` pro celé stádo. Interval patří každé krávě; časovaný přechod na místě se 100 značkami to vyjádří sám.
 - Zabírat auto a rampu pro každou konvici zvlášť (tabule luppo). Auto i rampa patří k nakládání celé dávky 20 konvic.
@@ -65,6 +68,7 @@ Kontrola simulací: krav je vždy 100, dojičky se vždy vrátí, platí 20 · *
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** příklad z přednášky („Příklad: kravín“). Zachoval se jen jako výřez slajdu na studentské tabuli luppo spolu se studentským řešením. Ve slajdech 2025 ani v přepisech přednášek 2024 není, jde zřejmě o starší verzi přednášky.
 

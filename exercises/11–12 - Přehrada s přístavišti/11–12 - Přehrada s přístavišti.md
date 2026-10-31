@@ -14,6 +14,7 @@ Podobné úlohy: [11–14 – Přehrada s vyhlídkovou lodí](<../11–14 - Pře
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Lodě** jsou dvě značky. Na začátku jsou v místě *lodě na začátku* a každá má vlastní odpočet `exp(3 h)` (slajd 138). **Přístaviště A a B** jsou místa s 1 značkou (volné přístaviště); loď ho zabere při přistání.
 - **Nástup po jednom:** přistání vytvoří značku *nástup volný*. Je to zařízení pro nástup (obsazení, `20–30 s`, vrácení) a zároveň informace, že u mola stojí loď.
@@ -29,6 +30,7 @@ Podobné úlohy: [11–14 – Přehrada s vyhlídkovou lodí](<../11–14 - Pře
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – přehrada s přístavišti](net.svg)
 
@@ -53,6 +55,7 @@ Kontrola simulací: lodě jsou vždy dvě, přístaviště A i B má nejvýš je
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Netrpělivost jako jeden časovač pro celou frontu, nebo časovač s testovací hranou na „volné přístaviště“: pak se proveditelnost omezí na jednu značku a turisté nemají každý vlastní odpočet.
 - Odjezd po 15 minutách, který nečeká na dokončení nástupu (nebere značku nástupu).
@@ -67,6 +70,7 @@ Kontrola simulací: lodě jsou vždy dvě, přístaviště A i B má nejvýš je
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2011/12, příklad 3 (bodování v zadání není).
 

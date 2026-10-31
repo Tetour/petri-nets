@@ -14,6 +14,7 @@ Podobné úlohy: [09–03 – Psí salon](<../09–03 - Psí salon/09–03 - Ps�
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Dráha** je zařízení s jednou značkou. Přistání ji obsazuje s `p=1`, start s `p=0`: když se dráha uvolní a čekají oba druhy letadel, dostane ji přistávající.
 - **30 min na přistání:** časovaný přechod `30 min` přímo na *Frontě*; každé letadlo má vlastní odpočet (slajd 138) a zaniká, když letadlo dostane dráhu.
@@ -30,6 +31,7 @@ Podobné úlohy: [09–03 – Psí salon](<../09–03 - Psí salon/09–03 - Ps�
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – letiště](net.svg)
 
@@ -53,6 +55,7 @@ Kontrola simulací: *Dráha* + letadla na ní + *havárie* + *odstávka* = 1, *p
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Havárie, která vrátí dráhu (pak žádná odstávka není), nebo odstávka, která dráhu vezme podruhé, i když ji havarované letadlo už drží.
 - Zastavení příchodů odebráním značky z *Fronty* místo z generátoru (nebo z místa, které generátor testuje).
@@ -66,6 +69,7 @@ Kontrola simulací: *Dráha* + letadla na ní + *havárie* + *odstávka* = 1, *p
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z17.
 

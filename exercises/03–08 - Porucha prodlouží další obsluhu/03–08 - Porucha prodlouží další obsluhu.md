@@ -14,6 +14,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **„První následující transakce“** = první transakce, která po vzniku poruchy *začne* obsluhu. Probíhající obsluhu porucha nemění. Proto se o prodloužení rozhoduje v okamžiku obsazení linky (místo *zahájení*): `p=1` vybere prodlouženou cestu, pokud čeká porucha, jinak `p=0` (*bez poruchy*).
 - **Prodloužení o 10** = konstantní časovaný přechod `10` před běžnou obsluhou `exp(B)`. Transakce celou dobu drží *Linku*, takže obsluha trvá `10 + exp(B)`.
@@ -27,6 +28,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – porucha prodlouží další obsluhu](net.svg)
 
@@ -45,6 +47,7 @@ Kontrola simulací: *Linka* + transakce na lince (*zahájení*, *prodloužení*,
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Hromadění poruch: každá porucha prodlouží jinou transakci.
 - Prodloužení probíhající obsluhy místo následující (to je úloha 03–09).
@@ -58,6 +61,7 @@ Kontrola simulací: *Linka* + transakce na lince (*zahájení*, *prodloužení*,
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2017/18, 3. termín (2. 2. 2018), skupina 8A, otázka 3, 10 bodů.
 

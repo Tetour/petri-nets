@@ -18,6 +18,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Nevytíženost** = automat nic nevydává a nikdo nečeká. Přesně tehdy je značka v místě *Automat*: obsazení je okamžitý přechod, takže při neprázdné frontě si značku vezme hned. Vzpomínka z roku 2018/19 („není fronta po dobu 5“) dodává „automat se nějakou dobu nepoužívá“, jde tedy o tutéž podmínku.
 - **Časovač 5:** časovaný přechod `5` má jediný vstup, místo *Automat*. Odpočet běží jen po dobu, kdy automat stojí. Když přijde zákazník, obsazení si značku vezme a odpočet zanikne (slajd 139). Po každé obsluze začíná znovu od nuly.
@@ -31,6 +32,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – automat na kávu s údržbou po nečinnosti](net.svg)
 
@@ -49,6 +51,7 @@ Kontrola simulací: *Automat* + obsluha + *údržba* = 1. Údržba se spouští 
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Časovač napojený na *Frontu* nebo na generátor místo na volný automat. Pak neměří nevytíženost automatu.
 - Časovač s vlastní značkou (samostatný generátor „každých 5“), který automat nijak nezastaví ani se neresetuje při obsluze. Údržba pak přichází pravidelně bez ohledu na provoz.
@@ -61,6 +64,7 @@ Kontrola simulací: *Automat* + obsluha + *údržba* = 1. Údržba se spouští 
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2017/18, 2. termín (19. 1. 2018), skupina 8B, otázka 1, 10 bodů. Stejná úloha (podle vzpomínky studenta): zkouška 2018/19, 1. termín, otázka 1, 10 bodů.
 

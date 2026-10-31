@@ -12,6 +12,7 @@ Podobné úlohy: [09–11 – Kopírovací centrum s poruchami](<../09–11 - Ko
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Přepážka** je jedno zařízení (Hrubý si k ní připsal „jedno zařízení“). Před ní čekají klienti ve frontě.
 - **Uvolnění zařízení** je sloučené s časovaným přechodem obsluhy (hrana vede z časovaného přechodu zpět do místa zařízení), stejně jako na slajdu 164 a v Hrubého řešení. Samostatný okamžitý přechod „Release“ by byl také správně, jen je to zbytečný prvek navíc.
@@ -25,6 +26,7 @@ Podobné úlohy: [09–11 – Kopírovací centrum s poruchami](<../09–11 - Ko
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – kopírovací centrum](net.svg)
 
@@ -45,6 +47,7 @@ Kontrola simulací (`make check`): značka každého zařízení se vždy vrát�
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Časovač netrpělivosti umístěný **až za obsazení stroje**. Pak omezuje délku obsluhy, ne čekání ve frontě.
 - Netrpělivost i u stroje A; zadání ji má jen u speciálních zakázek.
@@ -58,6 +61,7 @@ Kontrola simulací (`make check`): značka každého zařízení se vždy vrát�
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2022/23, varianta A, 10 bodů.
 

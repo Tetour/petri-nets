@@ -14,6 +14,7 @@ Podobné úlohy: [09–18 – Nemocniční ambulance](<../09–18 - Nemocniční
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Transakce je požár** (hlášení), **vůz je zdroj**: *Vozy v centrále* je místo s 5 značkami. Výjezd spojí hlášení s vozem, po hašení požár odchází ze systému a vůz jede `exp(10 min)` zpět.
 - **Nehašený požár 2–3 h** je časovaný přechod přímo na místě *Hlášení*: každé hlášení má vlastní odpočet (slajd 138), a když pro něj mezitím vyjede vůz, odpočet zanikne. Abstrakce: požár, ke kterému už vůz jede, nevyhoří (cesta trvá v průměru 10 min, tedy mnohem méně než 2–3 h).
@@ -29,6 +30,7 @@ Podobné úlohy: [09–18 – Nemocniční ambulance](<../09–18 - Nemocniční
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – hasiči](net.svg)
 
@@ -52,6 +54,7 @@ Kontrola simulací: vozů je vždy celkem 5, *Extrémní požár* + *bez extrém
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Čekání na všech 5 vozů hranou s váhou 5 (před odpočtem 10 h nebo před návratem). „Všechny dostupné“ není „přesně pět“; na „všechny“ je potřeba smyčka s prioritou.
 - Odpočet `10 h` na stejném místě, které testuje smyčka výjezdu: každý výjezd odpočet zruší a spustí znovu.
@@ -65,6 +68,7 @@ Kontrola simulací: vozů je vždy celkem 5, *Extrémní požár* + *bez extrém
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z13.
 

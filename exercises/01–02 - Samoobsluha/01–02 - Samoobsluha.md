@@ -12,6 +12,7 @@ Podobné úlohy: [01–01 – Opravářská dílna](<../01–01 - Opravářská 
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Vozíky** jsou sklad (Store) s 50 značkami. Místo před jejich zabráním je zároveň fronta na vozík; přednášející o něm říká, že „je současně i frontou k tomu skladu těch vozíků“. Vozík se vrací až při odchodu, takže v prodejně může být nejvýš 50 zákazníků. Při příchodu jednou za 8 minut se to prakticky neprojeví.
 - **Lahůdky:** jedna fronta ke dvěma prodavačkám, tedy sklad se 2 značkami, ne dvě zařízení.
@@ -28,6 +29,7 @@ Podobné úlohy: [01–01 – Opravářská dílna](<../01–01 - Opravářská 
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – samoobsluha](net.svg)
 
@@ -50,6 +52,7 @@ Kontrola simulací: platí *Vozíky* + zákazníci v prodejně = 50, prodavačky
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Pět pokladen jako jeden sklad s 5 značkami a jednou společnou frontou. Zadání i analýza na slajdu 196 mají ke každé pokladně zvláštní frontu.
 - Vozík vrácený hned po vstupu do prodejny nebo po nákupu. Vrací se až při odchodu.
@@ -62,6 +65,7 @@ Kontrola simulací: platí *Vozíky* + zákazníci v prodejně = 50, prodavačky
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** řešený příklad z přednášky, slajdy 195–198 (SIMLIB část přednášky). Stejný příklad s řešením v SIMLIB je ve Studijní opoře.
 

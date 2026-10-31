@@ -12,6 +12,7 @@ Podobné úlohy: [12–07 – Spalovna](<../12–07 - Spalovna/12–07 - Spalovn
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Transakce** jsou dávky paliva: mlýn je vhazuje do *Kotle* a tam shoří (výstupní přechod *spálení*). Dobu hoření zadání neuvádí, takže je nulová.
 - **Mlýn** je jedna značka, která je vždy v jednom ze tří stavů: *mlýn – běžný provoz* (smyčka `1 min` vhazuje dávku), *kotel chladne* (mlýn nedodává nic) a *mlýn – rozehřívání* (smyčka `5 min`). Dvě místa pro mlýn tedy nejsou dva mlýny, ale dva stavy téhož mlýna (to byla otázka v komentáři k jednomu ze studentských řešení).
@@ -26,6 +27,7 @@ Podobné úlohy: [12–07 – Spalovna](<../12–07 - Spalovna/12–07 - Spalovn
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – uhelný mlýn](net.svg)
 
@@ -47,6 +49,7 @@ Kontrola simulací: mlýn je vždy právě v jednom stavu (*mlýn – běžný p
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Generátor havárií jako obyčejná smyčka, která běží i během odstávky. Pak se interval nepočítá od naběhnutí a havárie může přijít uprostřed rozehřívání.
 - Odstavení, které nevezme značku mlýna: mlýn pak vhazuje palivo i do chladnoucího kotle.
@@ -60,6 +63,7 @@ Kontrola simulací: mlýn je vždy právě v jednom stavu (*mlýn – běžný p
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z2. Přesný rok a varianta nejsou známé.
 

@@ -14,6 +14,7 @@ Podobné úlohy: [11–04 – Výletní loď](<../11–04 - Výletní loď/11–
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Rampa** je zařízení s jednou značkou. Dodávka ji drží od vyložení až do odjezdu, i během nakládání.
 - **Vyložení trvá nulový čas**, proto je to jediný okamžitý přechod: obsadí rampu a hranou s váhou 100 vloží 100 značek do *Nezpracované*. Dodávka na zpracování svých balíků nečeká.
@@ -29,6 +30,7 @@ Podobné úlohy: [11–04 – Výletní loď](<../11–04 - Výletní loď/11–
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – logistická centrála](net.svg)
 
@@ -50,6 +52,7 @@ Kontrola simulací: *Rampa* + *Vyložená* + *Nakládá* + *Odjíždí* = 1, *Pr
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Dodávka čeká na rampě, než se její balíky zpracují. Vyložení je okamžité a pracovník pracuje nezávisle.
 - Pracovník, kterému se značka nevrací.
@@ -63,6 +66,7 @@ Kontrola simulací: *Rampa* + *Vyložená* + *Nakládá* + *Odjíždí* = 1, *Pr
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2010/11 (bodování neuvedeno).
 

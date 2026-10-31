@@ -14,6 +14,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Vymyšlený příklad:** ambulance s jedním lékařem. Pacienti přicházejí v intervalech `exp(15 min)`, 20 % z nich je akutních, vyšetření trvá `exp(10 min)`. Akutní pacienti mají vyšší prioritu procesu: když se lékař uvolní, jde na řadu akutní pacient před dříve příchozími ostatními. Probíhající vyšetření ale nepřeruší (to by byla priorita obsluhy, viz 07–05).
 - **Priorita procesu = pořadí ve frontě** (slajd 182, v SIMLIBu atribut `Priority`). Místo v Petriho síti neuchovává pořadí ani rozdíl mezi značkami. Proto má každý druh pacientů vlastní frontu a přednost se zapíše prioritou `p=1` na obsazení lékaře z *Fronty akutních*. Projeví se jen tehdy, když se lékař uvolní a čekají pacienti z obou front.
@@ -27,6 +28,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – ambulance s prioritou procesu](net.svg)
 
@@ -46,6 +48,7 @@ Kontrola simulací: *Lékař* + vyšetřovaní pacienti = 1. Akutních je asi 20
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Akutní pacient přeruší probíhající vyšetření. To je priorita obsluhy, ne priorita procesu.
 - Jedna společná fronta a v ní „prioritní“ přechod. Místo nerozliší, která značka je akutní pacient.
@@ -58,6 +61,7 @@ Kontrola simulací: *Lékař* + vyšetřovaní pacienti = 1. Akutních je asi 20
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2019/20, 3. termín, skupina A (7. 2. 2020), otázka 2, 20 bodů.
 

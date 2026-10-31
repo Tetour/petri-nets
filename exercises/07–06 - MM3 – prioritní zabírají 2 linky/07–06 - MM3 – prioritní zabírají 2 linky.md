@@ -13,6 +13,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **M/M/3 = sklad se třemi linkami:** místo *Linky* se 3 značkami. Prioritní transakce zabere dvě linky jedním přechodem s hranou váhy 2 („současně“) a časovaný přechod jí obě vrátí (hrana váhy 2 zpět). Normální bere a vrací jednu.
 - **Jaká priorita:** zadání ji neupřesňuje. M/M/3 se modeluje skladem a sklad prioritu obsluhy nemá (slajd 188). Přerušovat by se navíc musely až dvě cizí obsluhy. Jde tedy o prioritu procesu: `p=1` na obsazení dvou linek. Čekají-li oba druhy a jsou-li volné aspoň dvě linky, jde dřív prioritní.
@@ -26,6 +27,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – M/M/3, prioritní transakce zabírají dvě linky](net.svg)
 
@@ -45,6 +47,7 @@ Kontrola simulací: *Linky* + 2 × obsluha P + obsluha N = 3, takže najednou se
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Prioritní obsluha vrací jen jednu linku (chybí váha 2 na zpětné hraně).
 - *Linky* s jednou značkou místo tří.
@@ -57,6 +60,7 @@ Kontrola simulací: *Linky* + 2 × obsluha P + obsluha N = 3, takže najednou se
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška uvedená v přípravě jako „2019:“ (pravděpodobně 2018/19, termín ani skupina nejsou uvedeny), otázka 3, 10 bodů.
 

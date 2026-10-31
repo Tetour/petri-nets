@@ -10,6 +10,7 @@ Podobné úlohy: [01–04 – Výrobní systém](<../01–04 - Výrobní systém
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Akce jsou místa, přechody jsou události.** Značka v místě *A1* znamená „proces 1 právě provádí A1“. Přechod t1 je konec A1, t2 vstup do kritické sekce, t3 její opuštění, t4 konec A2 a návrat na začátek. Počáteční stav: oba procesy provádějí první akci.
 - **Kritická sekce** je chráněná místem *volná KS* s jednou značkou (zámek, zařízení s kapacitou 1). Vstup (t2, t6) značku bere, výstup (t3, t7) ji vrací.
@@ -24,6 +25,7 @@ Podobné úlohy: [01–04 – Výrobní systém](<../01–04 - Výrobní systém
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – kritická sekce](net.svg)
 
@@ -41,6 +43,7 @@ Kontrola: síť se nesimuluje (viz interpretace). Prohledáním stavového prost
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Kritická sekce bez zámku (místa *volná KS*). Oba procesy by pak mohly být v kritické sekci současně.
 - Nevrátit značku *volná KS* při výstupu z kritické sekce. Po prvním průchodu kritickou sekcí by oba procesy uvázly před ní.
@@ -52,6 +55,7 @@ Kontrola: síť se nesimuluje (viz interpretace). Prohledáním stavového prost
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** řešený příklad 2 z poznámek „Černobílé a barvené Petriho sítě“ ke cvičení MSI (Vojnar), které jsou na webu předmětu. P/T síť bez času, tady překreslená do notace IMS.
 

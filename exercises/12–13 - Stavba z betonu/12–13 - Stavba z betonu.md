@@ -16,6 +16,7 @@ Podobné úlohy: [12–15 – Dílna se třemi stroji](<../12–15 - Dílna se t
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Transakcí je licí forma.** Značka z *Volných forem* projde přípravou, čekáním na beton, litím, zráním a odstraněním a vrátí se zpět. *Zbývá částí* (100 značek) hlídá, kolik částí se ještě má začít; příprava bere jednu značku z obou míst.
 - **Objednávka betonu:** po přípravě forma přejde do *Čeká na beton*, časovaný přechod `2 h` je dodávka. Každá forma má vlastní odpočet (slajd 138), takže dodávky pro různé formy běží souběžně. **Zrání `10 d`** funguje stejně.
@@ -31,6 +32,7 @@ Podobné úlohy: [12–15 – Dílna se třemi stroji](<../12–15 - Dílna se t
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – stavba z betonu](net.svg)
 
@@ -53,6 +55,7 @@ Kontrola simulací: forem je vždy 10 (volné + všechny rozpracované), bedná�
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Formy jako nekonečný zdroj: chybí místo s 10 značkami a návrat formy po odstranění.
 - Přednost odstraňování bez priorit (nebo s prioritou na špatném přechodu): bednáři by mohli stavět nové formy, zatímco vyzrálé čekají.
@@ -66,6 +69,7 @@ Kontrola simulací: forem je vždy 10 (volné + všechny rozpracované), bedná�
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2013/14, varianta D, 6 bodů (k příkladu patřila ještě otázka z teorie za 4 body).
 

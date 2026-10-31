@@ -14,6 +14,7 @@ Podobné úlohy: [12–04 – Jahodová farma](<../12–04 - Jahodová farma/12�
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Sběrači** jsou místo s 5 značkami ve smyčce s `exp(20 min)`. Běžný časovaný přechod má pro každou značku vlastní odpočet (slajd 138), takže je to 5 nezávislých sběračů. Každé provedení přinese jednu bedýnku (transakci) do *Fronty beden*.
 - **Siréna** testuje frontu dvojicí hran s váhou 10 (dovnitř a zpět), takže z fronty nic nebere. „Dosáhne délky alespoň 10“ znamená váhu 10, ne 11. Priorita `p=1` zajistí, že siréna zazní dřív, než linka desátou bedýnku z fronty odebere (oba okamžité přechody jsou v tu chvíli proveditelné).
@@ -28,6 +29,7 @@ Podobné úlohy: [12–04 – Jahodová farma](<../12–04 - Jahodová farma/12�
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – sběrači jahod](net.svg)
 
@@ -47,6 +49,7 @@ Kontrola simulací: *Linka* + balená bedýnka = 1, *Sběrači* + 5 × *pauza* =
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Siréna, která bedýnky z fronty odebere (jen vstupní hrana s váhou 10 bez hrany zpět). Fronta se „vyprázdní“, ale nikdo bedýnky nezabalil.
 - Test s váhou 11 („přesáhne 10“) místo „alespoň 10“.
@@ -60,6 +63,7 @@ Kontrola simulací: *Linka* + balená bedýnka = 1, *Sběrači* + 5 × *pauza* =
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrální písemka 2021/22, varianta B, 10 bodů.
 

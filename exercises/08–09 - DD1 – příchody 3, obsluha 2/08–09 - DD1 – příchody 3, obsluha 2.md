@@ -10,6 +10,7 @@ Podobné úlohy: [08–08 – DD1 – příchody 2, obsluha 4](<../08–08 - DD1
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **První příchod v čase 0.** Zadání ho neuvádí. Bere se konvence starších D/D/x zadání („Příchody požadavků začínají v čase 0“). Při jiném prvním příchodu se celá tabulka posune.
 - **Současné události tu nenastávají:** obsluha (2 min) vždy skončí dřív, než přijde další požadavek (za 3 min). Každý požadavek tak hned obsadí volnou linku a fronta je pořád prázdná.
@@ -23,6 +24,7 @@ Podobné úlohy: [08–08 – DD1 – příchody 2, obsluha 4](<../08–08 - DD1
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ### Časový diagram
 
@@ -63,6 +65,7 @@ Kontrola (`make check`): síť se odsimuluje od času 0 (P0 ve frontě, linka vo
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Obrácené kritérium stability. Rozhoduje ρ = λ/μ = obsluha / interval = 2/3 < 1.
 - Vynechané okamžiky konce obsluhy (2, 5, 8). I v nich se stav mění: počet v obsluze klesne na 0.
@@ -76,6 +79,7 @@ Kontrola (`make check`): síť se odsimuluje od času 0 (P0 ve frontě, linka vo
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2022/23, 3. termín, skupina H, otázka 1 (body v přepisu nejsou; ve skupině G má stejná otázka 15 bodů).
 

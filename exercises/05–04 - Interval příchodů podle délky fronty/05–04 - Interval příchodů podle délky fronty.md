@@ -12,6 +12,7 @@ Podobné úlohy: [05–05 – Přerušení příchodů při plné frontě](<../0
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Kdy se rozhoduje:** jen při příchodu („po každé nově příchozí transakci“). Zvolený interval platí až do dalšího příchodu, i když se fronta mezitím zkrátí. Značka generátoru proto po příchodu přejde do místa *po příchodu* a odtud jedním ze dvou přechodů do *intervalu A*, nebo do *intervalu B*. Každý z nich má svůj časovaný přechod (jeden přechod = jeden čas).
 - **„Fronta ≥ C“** testuje dvojice hran s váhou C (do přechodu a zpět). *Jinak* (`p=0`) žádný test nepotřebuje, provede se, jen když *fronta ≥ C* (`p=1`) proveditelná není. Inhibiční hrana tu tedy není potřeba.
@@ -27,6 +28,7 @@ Podobné úlohy: [05–05 – Přerušení příchodů při plné frontě](<../0
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – interval příchodů podle délky fronty](net.svg)
 
@@ -46,6 +48,7 @@ Kontrola simulací (A = 20, B = 5, C = 5, S = 8): *Linka* + obsluhovaná transak
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Jeden časovaný přechod se dvěma časy (`exp(A)` / `exp(B)`). Časovaný přechod má jen jeden čas, proto jsou tu dva.
 - Přepínání režimu generátoru průběžně, testem fronty kdykoli (i mezi příchody). Rozhodnutí patří jen k okamžiku příchodu.
@@ -58,6 +61,7 @@ Kontrola simulací (A = 20, B = 5, C = 5, S = 8): *Linka* + obsluhovaná transak
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2022/23, 1. termín, skupina A, otázka 1, 15 bodů. Stejná úloha (jen ze vzpomínky): zkouška 2021/22, 1. termín, skupina C, otázka 1.
 

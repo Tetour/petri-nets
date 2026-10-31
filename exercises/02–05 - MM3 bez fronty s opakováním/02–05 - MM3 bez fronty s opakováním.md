@@ -12,6 +12,7 @@ Podobné úlohy: [02–04 – Fronta omezená na 10](<../02–04 - Fronta omezen
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Tři linky = jedno místo *Linky* se 3 značkami** (Store s kapacitou 3). Obsazení bere jednu značku, konec obsluhy ji vrací.
 - **Bez fronty:** transakce v místě *žádá o linku* nečeká. *Obsazení* má `p=1`, takže pokud je některá linka volná, transakce ji hned obsadí. Jinak se provede *odmítnutí* (`p=0`).
@@ -26,6 +27,7 @@ Podobné úlohy: [02–04 – Fronta omezená na 10](<../02–04 - Fronta omezen
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – M/M/3 bez fronty s opakováním](net.svg)
 
@@ -44,6 +46,7 @@ Kontrola simulací: *Linky* + obsluhované transakce = 3, v *žádá o linku* ni
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Chybějící odmítnutí: transakce pak v *žádá o linku* čekají na uvolnění linky, což je M/M/3 s frontou.
 - Odmítnutí se stejnou prioritou jako obsazení: losovalo by se i při volné lince.
@@ -57,6 +60,7 @@ Kontrola simulací: *Linky* + obsluhované transakce = 3, v *žádá o linku* ni
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2023/24, 1. termín, skupina B, otázka 3, 10 bodů.
 

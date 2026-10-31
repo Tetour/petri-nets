@@ -12,6 +12,7 @@ Podobné úlohy: [04–07 – Údržbář na obchůzce](<../04–07 - Údržbá�
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Transakce** jsou auta. *Rampa* je fronta, na které může stát víc aut. *Jeřábník* je jedno zařízení: obsazení, `exp(3 min)` a vrácení značky. Vyložené auto odjíždí (výstupní přechod).
 - **Pracovní doba** jsou hodiny *pracovní doba* → `8 h` → *konec směny* → *odpočinek* → `16 h` → *pracovní doba*. Příchody se zastaví tak, že okamžitý přechod *zastavení příchodů* vezme značku *generátoru* (odpočet `exp(10 min)` zanikne). Přechod `16 h` značku generátoru vrátí a příchody začnou znovu.
@@ -26,6 +27,7 @@ Podobné úlohy: [04–07 – Údržbář na obchůzce](<../04–07 - Údržbá�
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – překladiště s jeřábem](net.svg)
 
@@ -44,6 +46,7 @@ Kontrola simulací (213 dní): jeřábník je vždy právě v jednom stavu (*Je�
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Časovač `10 min` jako samostatný proces, který se nezruší příjezdem auta. Jeřábník pak odejde na obchůzku, i když auto stojí na rampě.
 - Hodiny 8 h / 16 h, které příchody jen „testují“ přímo na místě hodin: smyčka generátoru by při každém příjezdu zrušila odpočet `8 h` (slajd 139). Proto zastavení příchodů odebráním značky generátoru, nebo samostatná stavová místa.
@@ -56,6 +59,7 @@ Kontrola simulací (213 dní): jeřábník je vždy právě v jednom stavu (*Je�
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z5. Přesný rok a varianta nejsou známé.
 

@@ -17,6 +17,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Čítač:** každá dokončená obsluha přidá značku do místa *počet obsluh*. Přechod *do údržby* má z čítače hranu s váhou 50, takže se provede až po 50. obsluze a čítač zároveň vynuluje.
 - **Údržba si vezme volný automat:** `exp(B)` vrací značku *Automatu*, údržba si ji hned odebere. Pokud čeká zákazník, je v tu chvíli proveditelné i obsazení. Priorita `p=1` zajistí, že vyhraje údržba, takže přijde opravdu po každé 50. obsluze, ne až po některé další.
@@ -30,6 +31,7 @@ Podobné úlohy:
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – automat na kávu s údržbou po 50 obsluhách](net.svg)
 
@@ -49,6 +51,7 @@ Kontrola simulací: *Automat* + obsluha + *údržba* = 1, v čítači je nejvý�
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Hrana z čítače bez váhy 50 (údržba po každé obsluze), nebo váha jen na testovací hraně, která čítač nevynuluje (údržba po každé obsluze od 50. dál).
 - Čítání příchodů místo dokončených obsluh.
@@ -61,6 +64,7 @@ Kontrola simulací: *Automat* + obsluha + *údržba* = 1, v čítači je nejvý�
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2017/18, 2. termín, skupina C (hlavička je na fotce useknutá), otázka 1, 10 bodů. Stejná úloha (podle vzpomínky studenta, počet káv nejistý): zkouška 2018/19, 1. termín, otázka 1, 10 bodů.
 

@@ -12,6 +12,7 @@ Podobné úlohy: [12–01 – Zahradnictví a bouřka](<../12–01 - Zahradnictv
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **Voda** jsou značky v místě *Konev* (na začátku 10). Zalití odebere 3 nebo 4 značky hranou s váhou.
 - **Potřeba květiny** se určí u květiny (20 % / 80 %) a **zůstane u ní** jako značka v *potřebuje 3* nebo *potřebuje 4*. Zahradník (místo *zahradník*) mezitím může odejít pro vodu. Po návratu se znovu jen porovná s konví, nelosuje se znovu: stejná květina potřebuje pořád stejně vody.
@@ -27,6 +28,7 @@ Podobné úlohy: [12–01 – Zahradnictví a bouřka](<../12–01 - Zahradnictv
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – zahradník na FIT](net.svg)
 
@@ -50,6 +52,7 @@ Kontrola simulací: zahradník je vždy právě v jednom stavu a konev nikdy nem
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Po návratu od zdroje znovu losovat 20 %/80 %. Potřeba patří květině, musí se pamatovat (místa *potřebuje 3/4*).
 - Napuštění hranou s váhou 10 do konve, ve které ještě něco zbylo: konev pak má víc než 10 jednotek. Je potřeba buď vylít zbytek, nebo doplňkové místo s prázdnými jednotkami.
@@ -63,6 +66,7 @@ Kontrola simulací: zahradník je vždy právě v jednom stavu a konev nikdy nem
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** půlsemestrálky 2014–19 (přehled zadání), úloha Z8.
 

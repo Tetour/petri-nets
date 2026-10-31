@@ -14,6 +14,7 @@ Podobné úlohy: [06–02 – MD1 – střídání 2 a 3](<../06–02 - MD1 – 
 
 <details>
 <summary>Zobrazit interpretaci (nápověda)</summary>
+<br>
 
 - **„Od doby poslední obsluhy“ = od konce poslední obsluhy**, tedy jak dlouho je linka volná. Každá obsluha (2 i 5) vrací linku do stavu *Linka (2)*: další transakce, která přijde do 10 č. j., je obsluhována 2.
 - **Měření nečinnosti:** časovaný přechod `10` přímo na místě *Linka (2)*. Když do 10 č. j. přijde transakce, obsazení si značku vezme a odpočet zanikne (slajd 139). Jinak po 10 č. j. přejde značka do *Linka (5)* a příští obsluha trvá 5. Stejný princip jako časovač nečinnosti u automatu na kávu.
@@ -29,6 +30,7 @@ Podobné úlohy: [06–02 – MD1 – střídání 2 a 3](<../06–02 - MD1 – 
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – M/D/1, doba obsluhy podle doby od poslední obsluhy](net.svg)
 
@@ -49,6 +51,7 @@ Kontrola simulací: invariant jedné linky platí. Při `A = 6` trvalo asi 89 % 
 
 <details>
 <summary>Zobrazit časté chyby</summary>
+<br>
 
 - Časovač `10` na *Frontě*: měří čekání transakce, ne dobu od poslední obsluhy.
 - Linka, která po obsluze `5` zůstane ve stavu „5“: po každé obsluze se odpočet musí spustit znovu.
@@ -61,6 +64,7 @@ Kontrola simulací: invariant jedné linky platí. Při `A = 6` trvalo asi 89 % 
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** zkouška 2020/21, 1. opravný termín (9:00), otázka 2 (počet bodů neznámý). Navazující otázka 3 chtěla tutéž síť popsat pseudokódem podle SIMLIBu.
 
