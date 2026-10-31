@@ -100,8 +100,8 @@ Each note has these sections (headings in Czech):
 1. **Zadání**: the verbatim task text and links to similar exercises.
 2. **Interpretace** → **Nápověda**: ambiguities and the assumption chosen (e.g. "přesáhne 5" means > 5, so the test arc has weight 6). The section is called *Interpretace* while it is my unconfirmed reading; once you review the note and confirm the interpretation, it is renamed to *Nápověda* („Zobrazit nápovědu“). The README index derives the status `reviewed` from that name.
 3. **Petriho síť**: the diagram only. (How each requirement maps to places and transitions belongs in the hints, not in a table here.)
-4. **SIMLIB** (being added gradually, so far only 01–01): a SIMLIB/C++ model isomorphic to the net, a table mapping net elements to code, and the simulation check (what `make check` verified on the net and what the SIMLIB run gave).
-5. **Časté chyby**: the common mistakes for this pattern.
+4. **Časté chyby**: the common mistakes for this pattern.
+5. **SIMLIB** (being added gradually, so far only 01–01): a SIMLIB/C++ model isomorphic to the net, a table mapping net elements to code, and the simulation check (what `make check` verified on the net and what the SIMLIB run gave).
 6. **Původ a zdroje**: where the exercise comes from (exam/midterm, year, term, group, points), every source file with pages, and the comparison with existing solutions (Hrubý's or students' nets, with the errors to avoid).
 
 When a note is opened, only the heading and **Zadání** are shown. Every other section is collapsed in a `<details>` block (works in the VS Code preview and on GitHub), so you can try the exercise first and reveal the hint before the net; the origin and existing solutions stay hidden too, since they can give the answer away.

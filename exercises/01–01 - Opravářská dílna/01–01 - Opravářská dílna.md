@@ -8,6 +8,7 @@
 
 <details>
 <summary>Zobrazit nápovědu</summary>
+<br>
 
 - **Příchody** modeluje místo s jednou značkou ve smyčce s časovaným přechodem `exp(20 min)`: každé provedení přechodu vloží do sítě nového zákazníka a značku vrátí, takže se odpočítává další příchod.
 - **„Každá třetí zakázka je náročná“** se modeluje jako pravděpodobnost 1/3 (na slajdu 33 % / 66 %; tady 33,3 % / 66,7 %, aby součet byl 100 %). Doslovné „každá třetí“ by šlo modelovat deterministicky čítačem: značka obíhá mezi třemi místy a každá třetí zakázka jde k náročnému opraváři.
@@ -21,8 +22,21 @@
 
 <details>
 <summary>Zobrazit Petriho síť</summary>
+<br>
 
 ![Petriho síť – opravářská dílna](net.svg)
+
+</details>
+
+## Časté chyby
+
+<details>
+<summary>Zobrazit časté chyby</summary>
+<br>
+
+- Jedna společná fronta a jeden opravář s dobou obsluhy „buď 15, nebo 45“. Zadání má dva opraváře, každého pro jiný typ zakázek.
+- Pravděpodobnosti, které nedávají dohromady 100 %.
+- Zákazník „čeká na vyřízení své zakázky“: nemodeluje se zvlášť zakázka a zákazník, transakce je jedna.
 
 </details>
 
@@ -30,6 +44,7 @@
 
 <details>
 <summary>Zobrazit SIMLIB kód</summary>
+<br>
 
 Model je izomorfní k Petriho síti výše: každé místo, přechod a značka mají svůj protějšek v kódu.
 
@@ -89,21 +104,11 @@ int main() {
 
 </details>
 
-## Časté chyby
-
-<details>
-<summary>Zobrazit časté chyby</summary>
-
-- Jedna společná fronta a jeden opravář s dobou obsluhy „buď 15, nebo 45“. Zadání má dva opraváře, každého pro jiný typ zakázek.
-- Pravděpodobnosti, které nedávají dohromady 100 %.
-- Zákazník „čeká na vyřízení své zakázky“: nemodeluje se zvlášť zakázka a zákazník, transakce je jedna.
-
-</details>
-
 ## Původ a zdroje
 
 <details>
 <summary>Zobrazit původ a zdroje</summary>
+<br>
 
 **Původ:** řešený příklad z přednášky (Hrubý), slajdy 157–164. Na přednášce 11. 10. 2024 ho označil za „typizovanou úlohu pro půlsemestrální písemku“.
 

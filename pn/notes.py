@@ -32,7 +32,7 @@ NEW_PAGE_BEFORE = ("## Interpretace", "## Nápověda", "## Petriho síť")
 
 def prepare(md: str) -> str:
     md = md.replace("️", "")                                   # emoji variation selector
-    md = re.sub(r"(?m)^<details>\n<summary>[^<]*</summary>\n", "", md)
+    md = re.sub(r"(?m)^<details>\n<summary>[^<]*</summary>\n(<br>\n)?", "", md)
     md = re.sub(r"(?m)^</details>\n", "", md)
     md = md.replace("](net.svg)", "](net.pdf)")
     md = re.sub(r"\]\(<([^>]+)\.md>\)", r"](<\1.pdf>)", md)          # links to other notes
