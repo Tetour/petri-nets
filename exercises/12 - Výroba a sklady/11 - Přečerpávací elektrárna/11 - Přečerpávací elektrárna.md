@@ -20,7 +20,7 @@ Podobné úlohy: [Přečerpávací elektrárna II](<../09 - Přečerpávací ele
 - **Konec havárie:** `3 h` běží na vlastním místě (ne na *havarijním provozu*, který každou minutu testuje přesun). *Návrat* vrátí denní provoz. Pokud mezitím skončil den, čeká signál *konec dne* a režim se hned přepne na noční. To je „vrací se do režimu dle denní doby“; hodiny se havárií neposouvají.
 - Do denního provozu se vrací dvěma cestami (ráno z noci a po havárii). Obě vedou přes místo *návrat ke dni* a okamžitý přechod, který značku hned předá do *denní provoz*; je to jen kvůli kreslení (místo *denní provoz* by jinak mělo pět hran).
 - **„Nejvýše však 3 hodiny“:** za 3 h odteče nejvýš 180 jednotek a v *A* je na začátku havárie vždy víc (nejméně asi 260 na konci prvního dne), takže zásoby nedojdou a havarijní provoz trvá vždy celé 3 h.
-- Síť se nedá nakreslit bez křížení: tři přesuny mezi *A* a *B* uzavírají místo prostředního režimu (*noční provoz*) a jeho přepínání musí přes hrany k nádržím.
+- Síť se nedá nakreslit bez křížení: tři přesuny mezi *A* a *B* tvoří uzavřené oblasti a přepínání režimů se týká všech tří. Stačí ale jedno křížení: hrana nočního přesunu zpět do *A* kříží hranu havarijního přesunu do *B*.
 
 </details>
 
