@@ -6,9 +6,10 @@ The notes are in Czech; the tooling and these documents are in English.
 
 ## Where to start
 
-1. **Notation:** [Notace a vzory](basics/Notace%20a%20vzory.md) is a cheat sheet of the course notation and the standard patterns (generator, facility, store, timeout, failure, counter, …), each with a small net in [basics/patterns/](basics/patterns/). [Jak síť funguje](<basics/Jak síť funguje.md>) explains how a net runs: firing, timed transitions, several tokens, cancelled countdowns.
+1. **Notation:** [Notace a vzory](basics/Notace%20a%20vzory.md) is a cheat sheet of the course notation and the standard patterns (generator, facility, store, timeout, failure, counter, …), each with a small net in [basics/patterns/](basics/patterns/). [Jak síť funguje](<basics/Jak síť funguje.md>) explains how a net runs: firing, timed transitions, several tokens, cancelled countdowns. Each pattern in the cheat sheet ends with *Procvičení*: exercises that use it.
 2. **Exercises:** [Seznam úloh](<exercises/Seznam úloh.md>) lists all 118 exercises by category, with their origin. It opens with *Začni tady*: 15 exercises that cover every pattern once and then the newest midterms, a good first round before the midterm.
-3. **Practise:** open a note. Only the task (*Zadání*) is visible; every other section is collapsed, so you can try the exercise first and then open the hint, the net, the common mistakes, the SIMLIB model and the sources one at a time. Each note also exists as a PDF next to it, with the task alone on the first page.
+3. **Practise:** open a note. Only the task (*Zadání*) is visible; every other section is collapsed, so you can try the exercise first and then open the hint, the net, the common mistakes, the SIMLIB model and the sources one at a time. A visible *Reference* section at the end links back to the cheat sheet, *Jak síť funguje* and the exercise list. Each note also exists as a PDF next to it, with the task alone on the first page.
+4. **Anki:** the 20 midterm word problems of 2021/22–2025/26 are also flashcards in the separate Anki repository (deck *FIT::IMS*, tag `ims::petriho-site::pulsemestralka`): the task on the front, the net and its key mechanisms on the back. 38 older IMS cards about single mechanisms show the matching net from here.
 
 The categories go from basic models over single mechanisms (failures, maintenance, priorities, … as in the short exam questions) and marking at time t to full word problems as at the midterm:
 
@@ -45,6 +46,7 @@ Two exam entries are unusable and not drawn: 2025/26 exam D Q1 (the page was nev
 
 - [Note.md](notation/Note.md): the structure of a note and the rules for each section (times in the task text, hints, SIMLIB, sources).
 - [Style.md](notation/Style.md): how a diagram is laid out.
+- **Fixes:** notes are not reviewed one by one. A problem found while practising is fixed directly in the note (and its net, if needed).
 - **Limits:** a modelling task usually has more than one correct net. Each net aims at the one closest to Hrubý's style and the hints mention real alternatives (constant vs. exponential time, ≥ vs. >). Where only a student's recollection or a blurry photo of a task exists, a ⚠️ line in the task says so. A few nets keep a single crossing of two arcs.
 
 ## Checks
@@ -71,6 +73,7 @@ make nets       # check every net and render net.pdf + net.svg next to each net.
 make notes      # render every note to its PDF (A4; task on page 1, hint and net on later pages)
 make simlib     # compile and run the SIMLIB model of every note
 make index      # regenerate "exercises/Seznam úloh.md" from pn/catalog.py
+make notecheck  # check every note against Note.md
 make check      # checks only (notes, nets, SIMLIB models)
 
 python3 -m pn.build "exercises/09 - Obsluha zákazníků/10 - Kopírovací centrum"   # one net, or a whole category
@@ -79,6 +82,8 @@ python3 -m pn.dd 3 lifo 1 5 10 10.5     # D/D/3 LIFO trace: events at t1=10, sta
 python3 -m pn.dd log 2 fifo 1 4 6.5     # every event from 0 to 6.5
 python3 -m pn.dd table 1 fifo 2 4 10    # state table after each event time (D/D/1 tasks)
 ```
+
+The note PDFs are committed, and every full rebuild adds their size to the Git history again. After editing a note, rebuild only its PDF (`python3 -m pn.notes <its folder>`).
 
 To add an exercise, add it to [pn/catalog.py](pn/catalog.py) (the single list of categories, names and origins), create its folder with `net.py` and the note, and run `make`.
 
