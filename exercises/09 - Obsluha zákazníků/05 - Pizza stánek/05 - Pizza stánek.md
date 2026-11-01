@@ -2,9 +2,13 @@
 
 ## Zadání
 
-> ⚠️ **Parafráze.** Oficiální text varianty B v materiálech chybí. V koláži je místo něj přepis od studenta (podepsaný „credits to mav_“), který zachycuje čísla, ale ne přesné znění. Text níže je ten přepis, jen časy jsou přepsané do jednotného tvaru (přepis beze změn je v Původu a zdrojích).
+⚠️ Původní zadání se nedochovalo, jen studentská parafráze. Znění níže je přepsané do celých vět, čísla a pořadí kroků zůstávají.
+
+> Stánek s pizzou řídí jediný pizzař. Zákazníci přicházejí exponenciálně se středem 10 minut a každý si objedná jednu pizzu.
 >
-> stánek s pizzou, jeden pizzař to celé řídí, zákazníci chodí exponenciálně se středem 10 minut a co zákazník to objednávka pizzy, pizzař ho obslouží rovnoměrně 3–5 minut (zahrnuje objednávku, přípravu pizzy a vložení pizzy do peci), je tam pec která má 4 místa, pizza se pak peče přesně 4 minuty a zákazník mezitím čeká, k pečení neni třeba pizzaře (ten mezitím obsluhuje další zákazníky), peče se přesně 4 minuty a pak pizzař vyndá pizzu a dá ji zákazníkovi, což trvá přesně 1 minutu a má prioritu před obsluhou nových zákazníků (credits to mav_)
+> Pizzař zákazníka obslouží rovnoměrně 3–5 minut: přijme objednávku, připraví pizzu a vloží ji do pece. Pec má 4 místa a pizza se v ní peče přesně 4 minuty. K pečení pizzař není potřeba, mezitím obsluhuje další zákazníky. Zákazník na svou pizzu čeká.
+>
+> Upečenou pizzu pizzař vyndá z pece a předá zákazníkovi. To trvá přesně 1 minutu a má přednost před obsluhou nových zákazníků.
 
 Podobné úlohy: [Pizzerie s rozvozem](<../../11 - Doprava a dávky/03 - Pizzerie s rozvozem/03 - Pizzerie s rozvozem.md>) (2022/23).
 
@@ -122,7 +126,7 @@ int main() {
 
 **Původ:** půlsemestrální písemka 2024/25, varianta B, 10 bodů (bodování podle ostatních variant téhož termínu).
 
-**Původní znění:** (studentský přepis, viz ⚠️ v zadání)
+**Původní znění:** oficiální text varianty B v materiálech chybí; v koláži je místo něj parafráze od studenta, podepsaná „credits to mav_“, která zachycuje čísla, ale ne přesné znění:
 
 > stánek s pizzou, jeden pizzař to celé řídí, zákazníci chodí exp(10') a co zákazník to objednávka pizzy, pizzař ho obslouží 3-5' (zahrnuje objednávku, přípravu pizzy a vložení pizzy do peci), je tam pec která má 4 místa, pizza se pak peče 4' a zákazník mezitím čeká, k pečení neni třeba pizzaře (ten mezitím obsluhuje další zákazníky), peče se 4' a pak pizzař vyndá pizzu a dá ji zákazníkovi, což trvá 1' a má prioritu před obsluhou nových zákazníků (credits to mav_)
 
