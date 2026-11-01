@@ -17,7 +17,7 @@ Podobné úlohy: [Vyhlídková loď na molu](<../07 - Vyhlídková loď na molu/
 - **Letadlo doma** je rozhodovací místo, kam se letadlo vrací po každém nástupu i po letu. Plné letadlo odlétá přechodem *plno* (`p=1`, testovací hrany s váhou 20 na *na palubě*), jinak přechod s `p=0` vrátí letadlo do stavu *čeká na cestující*. Dvacátý cestující tak odlet spustí hned a 21. zákazník nenastoupí.
 - **5 minut od posledního nástupu:** časovaný přechod `5 min` má vstup z *čeká na cestující*. Odpočet běží jen, když letadlo stojí volné. Každý nástup mu značku vezme a po nástupu se odpočet spustí znovu, takže měří přesně dobu od dokončení posledního nástupu. Když ve frontě někdo je, nástup (okamžitý přechod) letadlo vezme dřív, než odpočet doběhne.
 - **„V letadle už někdo sedí“:** po 5 minutách rozhoduje if–else přes prioritu. *Někdo sedí* (`p=1`) testuje aspoň jednu značku na palubě a letadlo odlétá, jinak *čekám dál* (`p=0`) vrátí letadlo do stavu *čeká na cestující* a odpočet běží znovu.
-- **Odchod ze systému:** oba důvody odletu vedou do místa *odlet*. Smyčka `p=1` z něj bere cestující z *na palubě* po jednom, dokud tam nějací jsou, a každý cestující opouští systém přechodem *odchod*. Vystupování po návratu se nemodeluje, takže cestující odcházejí v okamžiku odletu.
+- **Odchod ze systému:** oba důvody odletu vedou do místa *odlet*. Výstupní přechod *odchod* (`p=1`) testuje *odlet* (hrana tam a zpět) a bere cestující z *na palubě* po jednom, dokud tam nějací jsou. Každé jeho provedení je okamžik, kdy jeden cestující opouští systém, samostatné místo a přechod za ním nejsou potřeba. Vystupování po návratu se nemodeluje, takže cestující odcházejí v okamžiku odletu.
 - **Let:** *vzlet* (`p=0`, až po vyprázdnění paluby) pošle letadlo na trasu `50–60 min`, odkud se vrátí do místa *letadlo doma*.
 
 </details>
@@ -112,7 +112,7 @@ void Letadlo::Behavior() {
       letuPo5min++;
     }
     Obsazeni(Paluba.Length());              // místo „odlet“
-    while (!Paluba.Empty())                 // smyčka p=1: cestující odcházejí
+    while (!Paluba.Empty())                 // „odchod“ (p=1): cestující odcházejí
       Paluba.GetFirst()->Activate();
     Wait(Uniform(50, 60));                  // vzlet → vyhlídkový let 50–60 min
   }
@@ -148,7 +148,7 @@ int main() {
 | *na palubě* (čítač) | `Queue Paluba` |
 | `5 min` → *nikdo nepřišel* | událost `Pet` (při nástupu zrušená `delete t`) |
 | *někdo sedí* (`p=1`) / *čekám dál* | `if (!Paluba.Empty())` / další průchod `while` |
-| smyčka `p=1` z *odlet*, přechod *odchod* | `Paluba.GetFirst()->Activate()`, konec `Zakaznik::Behavior()` |
+| výstupní přechod *odchod* (`p=1`, test *odlet*) | `Paluba.GetFirst()->Activate()`, konec `Zakaznik::Behavior()` |
 | *vzlet* → *vyhlídkový let* → `50–60 min` | `Wait(Uniform(50, 60))` |
 
 **Kontrola simulací.** Petriho síť: letadlo je vždy v jednom stavu (*letadlo doma* + *čeká na cestující* + *nastupuje* + *nikdo nepřišel* + *odlet* + *vyhlídkový let* = 1), na palubě je nejvýš 20 cestujících a provedou se všechny přechody (`make check`). SIMLIB model: za 1000 hodin letadlo vzlétlo 705krát, 318krát plné a 387krát po pěti minutách bez nástupu, v průměru s 16,9 cestujícího. To je dohromady asi 11 900 cestujících, tedy všichni příchozí (12 za hodinu × 1000 h = 12 000, rozdíl dělá náhoda a zákazníci, kteří na konci běhu ještě čekají). Zákazník strávil od příchodu do odletu průměrně 50 minut, fronta měla nejvýš 37 zákazníků (`make simlib`).

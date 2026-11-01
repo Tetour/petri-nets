@@ -27,8 +27,9 @@ def lint(net):
             problems.append(f"{t.id}: a timed transition has only a time (slide 139)")
         if t.kind == "immediate" and t.p is not None and t.prob is not None:
             problems.append(f"{t.id}: a transition has one parameter only (slide 135)")
-        if t.exit and net.outputs(t.id):
-            problems.append(f"{t.id}: an exit transition must have no output arcs")
+        # an exit transition may only give back what it tests (a test loop, e.g. on a state place)
+        if t.exit and any(o not in net.inputs(t.id) for o in net.outputs(t.id)):
+            problems.append(f"{t.id}: an exit transition may only return tokens it tests")
         if not net.inputs(t.id) and t.kind == "immediate":
             problems.append(f"{t.id}: immediate transition without input fires forever")
 

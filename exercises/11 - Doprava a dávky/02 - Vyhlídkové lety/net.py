@@ -38,16 +38,14 @@ net.immediate("nekdo", (11.25, -2), p=1, label="někdo sedí", label_pos="below"
 net.loop("paluba", "nekdo", bend=20)
 net.arc("nikdo", "nekdo", via=[(5.25, 7), (-2, 7), (-2, -2)])
 
-# odlet: všichni na palubě opouštějí systém (smyčka p=1), pak letadlo letí
+# odlet: všichni na palubě opouštějí systém výstupním přechodem s p=1 (testuje „odlet“), pak letadlo letí
 net.place("odlet", (14.75, 0), label="odlet", label_pos="above right")
 net.arc("plno", "odlet", via=[(11.25, 4), (14.75, 4)])
 net.arc("nekdo", "odlet", via=[(14.75, -2)])
-net.immediate("cyklus", (13, 0), p=1, param_pos="below")
+net.immediate("cyklus", (13, 0), p=1, exit=True, label="odchod", label_pos="above",
+              param_pos="below")
 net.arc("paluba", "cyklus")
 net.loop("odlet", "cyklus", bend=20)
-net.place("odletajici", (13, 1.6), label="odlétá", label_pos="right")
-net.immediate("odchod", (13, 3), exit=True, label="odchod", label_pos="right")
-net.chain("cyklus", "odletajici", "odchod")
 
 net.immediate("vzlet", (16.5, 0), label="vzlet", label_pos="below")
 net.place("let", (18.25, 0), label="vyhlídkový let", label_pos="below")

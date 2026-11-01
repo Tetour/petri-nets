@@ -17,7 +17,7 @@ Podle přednášek (Hrubý, `IMS - Prezentace.pdf`, slajdy 123–164 a 186–198
 
 **Jeden parametr na přechod** (sl. 135): časovaný přechod má jen čas. Okamžitý má buď prioritu, nebo pravděpodobnost, nikdy obojí. Parametr patří přechodu, ne hraně.
 
-**U zkoušky a půlsemestrálky** se od roku 2022 vyžaduje: „V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém“ a „s vyznačením atributů na přechodech a místech“. Každá síť tedy potřebuje výstupní přechod bez výstupních hran a pojmenovaná místa.
+**U zkoušky a půlsemestrálky** se od roku 2022 vyžaduje: „V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém“ a „s vyznačením atributů na přechodech a místech“. Každá síť tedy potřebuje výstupní přechod bez výstupních hran a pojmenovaná místa. Testovací hrana tam a zpět (např. na stav „odlet“) výstupnímu přechodu nevadí: transakce v něm zaniká, vrací se jen testovaná značka (viz [Vyhlídkové lety](<../exercises/11 - Doprava a dávky/02 - Vyhlídkové lety/02 - Vyhlídkové lety.md>)).
 
 ## Sémantika časovaného přechodu
 
