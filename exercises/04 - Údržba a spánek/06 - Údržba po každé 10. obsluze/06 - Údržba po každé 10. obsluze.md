@@ -13,10 +13,10 @@ Podobné úlohy:
 - [Údržbář na obchůzce](<../07 - Údržbář na obchůzce/07 - Údržbář na obchůzce.md>): stejný termín, skupina C
 - [Server s údržbou po 1000 požadavcích](<../../10 - Počítačové systémy/01 - Server s údržbou po 1000 požadavcích/01 - Server s údržbou po 1000 požadavcích.md>)
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **M/M/1:** *příchody transakcí* ⇄ `exp(A)` → *fronta* → obsazení *Linky* → `exp(B)` → *obslouženo* → *uvolnění* (vrací *Linku*) → *odchod*. Střední doby příchodů a obsluhy zadání neuvádí, proto `exp(A)` a `exp(B)`.

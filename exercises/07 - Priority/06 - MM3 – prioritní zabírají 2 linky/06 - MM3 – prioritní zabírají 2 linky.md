@@ -9,10 +9,10 @@ Podobné úlohy:
 - [Příklad s prioritou procesu](<../01 - Příklad s prioritou procesu/01 - Příklad s prioritou procesu.md>): stejné větvení 20 % / 80 % a přednost při obsazení, jen s jednou linkou
 - [Priorita procesu a obsluhy](<../05 - Priorita procesu a obsluhy/05 - Priorita procesu a obsluhy.md>): proč tu jde o prioritu procesu
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - Čísla zadání nedává: příchody `exp(X)` (místo *příchody transakcí* ve smyčce), obsluha `exp(Y)` pro oba druhy jako ve studentském řešení.

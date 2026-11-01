@@ -14,10 +14,10 @@ Podobné úlohy:
 - [Automat na kávu – údržba po 50 obsluhách](<../02 - Automat na kávu – údržba po 50 obsluhách/02 - Automat na kávu – údržba po 50 obsluhách.md>)
 - [Trafika](<../../09 - Obsluha zákazníků/09 - Trafika/09 - Trafika.md>): stejný časovač nečinnosti na místě prodavače
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **M/M/1:** *příchody zákazníků* ⇄ `exp(A)` → *fronta* → obsazení *Automatu* → `exp(B)`, které značku automatu vrací → *odchod*. Střední doby příchodů a obsluhy zadání neuvádí, proto `exp(A)` a `exp(B)`.

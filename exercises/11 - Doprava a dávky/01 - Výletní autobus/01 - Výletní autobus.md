@@ -10,10 +10,10 @@ Všimni si: turistů přijde v průměru 20 za hodinu a autobus jich za hodinu o
 
 Podobné úlohy: [Přehrada s vyhlídkovou lodí](<../14 - Přehrada s vyhlídkovou lodí/14 - Přehrada s vyhlídkovou lodí.md>) (nabírání do kapacity, nejvýš 15 minut), [Festivalový autobus](<../06 - Festivalový autobus/06 - Festivalový autobus.md>), [Vyhlídková loď na molu](<../07 - Vyhlídková loď na molu/07 - Vyhlídková loď na molu.md>), [Výletní loď](<../04 - Výletní loď/04 - Výletní loď.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Turisté** přichází ze smyčky *příchody turistů* ⇄ `exp(3 min)` do místa *fronta turistů*.

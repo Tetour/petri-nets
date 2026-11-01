@@ -10,10 +10,10 @@ Podobné úlohy:
 - [Příklad s prioritou procesu](<../01 - Příklad s prioritou procesu/01 - Příklad s prioritou procesu.md>): prioritní je náhodně 20 % transakcí
 - [Každá 10. transakce vyvolá poruchu](<../../03 - Poruchy/07 - Každá 10. transakce vyvolá poruchu/07 - Každá 10. transakce vyvolá poruchu.md>): čítač s hranou váhy 10
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Vymyšlený příklad:** myčka aut. Auta přijíždějí v intervalech `exp(10 min)`, mytí trvá `exp(8 min)`. Každé N-té auto dostane v rámci věrnostní akce přednost: předjede všechna čekající auta, rozjeté mytí ale nepřeruší.

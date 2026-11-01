@@ -12,10 +12,10 @@ Podobné úlohy:
 - [Údržba po dlouhé obsluze](<../05 - Údržba po dlouhé obsluze/05 - Údržba po dlouhé obsluze.md>): o údržbě se také rozhoduje po obsluze
 - [Údržba po každé 10. obsluze](<../06 - Údržba po každé 10. obsluze/06 - Údržba po každé 10. obsluze.md>)
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **M/M/1:** *příchody transakcí* ⇄ `exp(A)` → *fronta* → obsazení *Linky* → `exp(B)` → *odchod*. Střední doby příchodů a obsluhy zadání neuvádí, proto `exp(A)` a `exp(B)`.
@@ -24,7 +24,7 @@ Podobné úlohy:
   - *fronta prázdná* (`p=0`) se provede jen tehdy, když `p=1` provést nejde, tedy při prázdné *frontě*. Linka jde na 5 jednotek do *údržby* (`5` je pevná doba) a pak zpět do místa *Linka*.
 - **Proč ne časovač na volné lince** (jako v úloze [Automat na kávu – údržba po nečinnosti](<../01 - Automat na kávu – údržba po nečinnosti/01 - Automat na kávu – údržba po nečinnosti.md>)): ten by údržbu spouštěl opakovaně, dokud nikdo nepřijde, a také na začátku simulace, kdy žádná obsluha neproběhla. Zadání chce jednu údržbu po každé obsluze, po které je fronta prázdná.
 - Během údržby linka není k dispozici, příchozí čekají ve *frontě*. Po údržbě se nic dalšího nekontroluje: linka je volná, i když fronta zůstala prázdná.
-- Inhibiční hrana z *fronty* na *fronta prázdná* by fungovala také, Hrubý ale místo ní používá prioritu.
+- Inhibiční hrana z *fronty* na *fronta prázdná* by fungovala také, v kurzu se ale místo ní používá priorita.
 - Transakce po obsluze **opouští systém** přechodem *odchod*, o údržbě rozhoduje už jen značka linky.
 
 </details>
@@ -45,7 +45,7 @@ Podobné úlohy:
 <summary>Zobrazit časté chyby</summary>
 <br>
 
-- Časovač nečinnosti na volné lince místo rozhodnutí po obsluze (viz Interpretace).
+- Časovač nečinnosti na volné lince místo rozhodnutí po obsluze (viz Nápověda).
 - Test fronty obyčejnou hranou bez návratu: rozhodovací přechod pak odebere čekající transakci z *fronty*.
 - Obě větve bez priority: při neprázdné frontě se náhodně vybere i údržba.
 - `exp(B)`, které vrací *Linku* a zároveň posílá značku do rozhodování. Pak vzniká druhá značka linky.

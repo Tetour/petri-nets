@@ -13,10 +13,10 @@
 
 Podobné úlohy: [Dva proudy příchodů](<../../07 - Priority/04 - Dva proudy příchodů/04 - Dva proudy příchodů.md>), [Opravářská dílna](<../../01 - Základní modely/01 - Opravářská dílna/01 - Opravářská dílna.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **30 volání za hodinu** v Poissonově procesu znamená exponenciální intervaly se středem 60/30 = **2 minuty**: místo *volání zákazníků* ve smyčce s `exp(2 min)`.

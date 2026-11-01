@@ -6,10 +6,10 @@
 
 Podobné úlohy: [Jahodová farma](<../04 - Jahodová farma/04 - Jahodová farma.md>) (stejné schéma: sběrači, stroje, balicí linka), [Sběrači jahod](<../02 - Sběrači jahod/02 - Sběrači jahod.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Pět sběračů** je pět značek v místě *Sběrači*. Časovaný přechod `exp(30 min)` má pro každou značku vlastní odpočet (slajd 138), takže každý sběrač nosí bedýnky nezávisle. Bedýnky čekají v místě *Bedýnky*.

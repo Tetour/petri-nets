@@ -6,10 +6,10 @@
 
 Podobné úlohy: [Spalovna](<../07 - Spalovna/07 - Spalovna.md>) (porucha, oprava 5 h a pak 5 h zrychlený provoz), [Automat na kávu](<../../09 - Obsluha zákazníků/07 - Automat na kávu/07 - Automat na kávu.md>) (další porucha se počítá od konce opravy), [Přečerpávací elektrárna](<../11 - Přečerpávací elektrárna/11 - Přečerpávací elektrárna.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Transakce** jsou dávky paliva: mlýn je vhazuje do *Kotle* a tam shoří (výstupní přechod *spálení*). Dobu hoření zadání neuvádí, takže je nulová.

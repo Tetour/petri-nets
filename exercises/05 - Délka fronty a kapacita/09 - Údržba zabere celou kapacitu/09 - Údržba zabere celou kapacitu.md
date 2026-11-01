@@ -6,10 +6,10 @@
 
 Podobné úlohy: [Pomocník přidá kapacitu](<../10 - Pomocník přidá kapacitu/10 - Pomocník přidá kapacitu.md>) (sesterská skupina F téhož termínu), [MM3 – prioritní zabírají 2 linky](<../../07 - Priority/06 - MM3 – prioritní zabírají 2 linky/06 - MM3 – prioritní zabírají 2 linky.md>) (transakce zabírá dvě linky najednou), [Údržbář na obchůzce](<../../04 - Údržba a spánek/07 - Údržbář na obchůzce/07 - Údržbář na obchůzce.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **M/M/2:** *příchody zákazníků* ⇄ `exp(A)` → *fronta* → obsazení *Linky* → `exp(B)`, který jednotku vrací → *konec* → *odchod*. *Linka* má dvě značky (dvě jednotky kapacity). Příchody a obsluhu zákazníků zadání neuvádí, proto `exp(A)` a `exp(B)`.

@@ -8,10 +8,10 @@
 
 Podobné úlohy: [Databázový server](<../03 - Databázový server/03 - Databázový server.md>), [Výpočetní služba se spánkem](<../02 - Výpočetní služba se spánkem/02 - Výpočetní služba se spánkem.md>), [Server s údržbou po 1000 požadavcích](<../01 - Server s údržbou po 1000 požadavcích/01 - Server s údržbou po 1000 požadavcích.md>), [Dočasně MM2 při dlouhé frontě](<../../05 - Délka fronty a kapacita/02 - Dočasně MM2 při dlouhé frontě/02 - Dočasně MM2 při dlouhé frontě.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Transakce je požadavek:** vznikne v okolí (místo *požadavky z okolí* ve smyčce s `exp(1 s)`), linka ho přijme ze *zpráv z okolí* do *vstupního bufferu*, DB úloha ho zpracuje do *výstupního bufferu*, linka výsledek odešle a požadavek přes místo *odesláno* **opouští systém** přechodem *odchod*. Buffery jsou místa bez omezení.

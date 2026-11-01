@@ -8,10 +8,10 @@
 
 Podobné úlohy: [Psí salon](<../03 - Psí salon/03 - Psí salon.md>) (vyprázdnění fronty a pauza příchodů), [Výletní loď](<../../11 - Doprava a dávky/04 - Výletní loď/04 - Výletní loď.md>) (vyprázdnění fronty v jednom okamžiku), [Porucha zruší obsluhu](<../../03 - Poruchy/01 - Porucha zruší obsluhu/01 - Porucha zruší obsluhu.md>), [Banka se třemi pracovníky](<../19 - Banka se třemi pracovníky/19 - Banka se třemi pracovníky.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Klienti** jsou běžné M/M/1: *příchody klientů* ve smyčce s `exp(10 min)`, *fronta*, *Přepážka*, `exp(5 min)`; obsloužený klient odchází přes *konec* přechodem *odchod*.

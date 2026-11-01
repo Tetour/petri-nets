@@ -6,10 +6,10 @@
 
 Podobné úlohy: [Výrobní systém](<../04 - Výrobní systém/04 - Výrobní systém.md>). Stejný princip sdíleného prostředku mají čtenáři a písaři na slajdu 131.
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Akce jsou místa, přechody jsou události.** Značka v místě *A1* znamená „proces 1 právě provádí A1“. Proces 1 je cyklus *A1* → t1 → *A před KS* → t2 → *KS1* → t3 → *A2* → t4 → *A1*: t1 je konec A1, t2 vstup do kritické sekce, t3 její opuštění, t4 konec A2 a návrat na začátek. Proces 2 je stejný cyklus *B1* → t5 → *B před KS* → t6 → *KS2* → t7 → *B2* → t8 → *B1*. Počáteční stav: oba procesy provádějí první akci.

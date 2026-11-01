@@ -7,7 +7,7 @@ The notes are in Czech; the tooling and these documents are in English.
 ## Where to start
 
 1. **Notation:** [Notace a vzory](basics/Notace%20a%20vzory.md) is a cheat sheet of the course notation and the standard patterns (generator, facility, store, timeout, failure, counter, …), each with a small net in [basics/patterns/](basics/patterns/). [Jak síť funguje](<basics/Jak síť funguje.md>) explains how a net runs: firing, timed transitions, several tokens, cancelled countdowns.
-2. **Exercises:** [Seznam úloh](<exercises/Seznam úloh.md>) lists all 118 exercises by category, with origin and review status. It opens with *Začni tady*: 15 exercises that cover every pattern once and then the newest midterms, a good first round before the midterm.
+2. **Exercises:** [Seznam úloh](<exercises/Seznam úloh.md>) lists all 118 exercises by category, with their origin. It opens with *Začni tady*: 15 exercises that cover every pattern once and then the newest midterms, a good first round before the midterm.
 3. **Practise:** open a note. Only the task (*Zadání*) is visible; every other section is collapsed, so you can try the exercise first and then open the hint, the net, the common mistakes, the SIMLIB model and the sources one at a time. Each note also exists as a PDF next to it, with the task alone on the first page.
 
 The categories go from basic models over single mechanisms (failures, maintenance, priorities, … as in the short exam questions) and marking at time t to full word problems as at the midterm:
@@ -45,7 +45,6 @@ Two exam entries are unusable and not drawn: 2025/26 exam D Q1 (the page was nev
 
 - [Note.md](notation/Note.md): the structure of a note and the rules for each section (times in the task text, hints, SIMLIB, sources).
 - [Style.md](notation/Style.md): how a diagram is laid out.
-- **Review:** a note's hint section is called *Interpretace* until you confirm the reading; then it is renamed to *Nápověda*, and the exercise list shows the note as *zkontrolováno*.
 - **Limits:** a modelling task usually has more than one correct net. Each net aims at the one closest to Hrubý's style and the hints mention real alternatives (constant vs. exponential time, ≥ vs. >). Where only a student's recollection or a blurry photo of a task exists, a ⚠️ line in the task says so.
 
 ## Checks
@@ -56,6 +55,7 @@ A wrong net learned for an exam is worse than none, so every net is checked mech
 - **Simulation:** a long random run of a timed token game with the course semantics (immediate before timed, priorities, a countdown cancelled when its transition loses its tokens, one clock per waiting token) must keep the declared invariants (e.g. *line + in service = 1*), fire every transition, and keep queues bounded where the system is stable.
 - **Marking at time t:** the drawn marking must equal the simulated one.
 - **SIMLIB:** the model in each note is compiled with SIMLIB 3.10 and run; its results are compared with the theory where it is easy to compute.
+- **Notes:** every note follows [Note.md](notation/Note.md): section order and toggles, only the diagram under *Petriho síť*, times in the standard form, no instruction lines in *Zadání*, no old exercise ids, working links (`make notecheck`).
 
 ## Building
 
@@ -71,7 +71,7 @@ make nets       # check every net and render net.pdf + net.svg next to each net.
 make notes      # render every note to its PDF (A4; task on page 1, hint and net on later pages)
 make simlib     # compile and run the SIMLIB model of every note
 make index      # regenerate "exercises/Seznam úloh.md" from pn/catalog.py
-make check      # checks only (nets + SIMLIB models)
+make check      # checks only (notes, nets, SIMLIB models)
 
 python3 -m pn.build "exercises/09 - Obsluha zákazníků/10 - Kopírovací centrum"   # one net, or a whole category
 python3 -m pn.notes "exercises/03 - Poruchy"                                      # the PDFs of one category
@@ -88,7 +88,8 @@ To add an exercise, add it to [pn/catalog.py](pn/catalog.py) (the single list of
 pn/            Python library: catalogue (catalog.py), exercise list (index.py),
                net model (net.py), TikZ output (tikz.py), lint rules (lint.py),
                timed token-game simulator (sim.py), D/D/x trace (dd.py),
-               build driver (build.py), note PDFs (notes.py), SIMLIB runner (simlib.py)
+               build driver (build.py), note PDFs (notes.py), SIMLIB runner (simlib.py),
+               note checker (notecheck.py)
 basics/        notation cheat sheet, how a net runs, pattern nets
 notation/      rules for writing a note (Note.md) and laying out a diagram (Style.md)
 exercises/     the exercises, one folder per category (see above)

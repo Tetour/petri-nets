@@ -15,17 +15,17 @@ Podobné úlohy:
 - [Automat na kávu – údržba po nečinnosti](<../01 - Automat na kávu – údržba po nečinnosti/01 - Automat na kávu – údržba po nečinnosti.md>)
 - [Trafika](<../../09 - Obsluha zákazníků/09 - Trafika/09 - Trafika.md>)
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **M/M/1:** *příchody požadavků* ⇄ `exp(A)` → *fronta* → obsazení *Linky* → `exp(B)`, které značku linky vrací → *odchod*. Časy jsou v minutách, střední doby příchodů a obsluhy zadání neuvádí, proto `exp(A)` a `exp(B)`.
 - **Nečinnost** = linka nic neobsluhuje a nikdo nečeká, tedy značka je v místě *Linka*. Časovaný přechod `10 min` (*usnutí*) má jediný vstup, *Linku*, a přesouvá značku do místa *spí*. Obsazení si značku vezme a odpočet zanikne (slajd 139). Po každé obsluze začíná znovu od nuly.
 - **Linka má čtyři stavy** a její značka je vždy v právě jednom: volná (*Linka*), obsluhuje, *spí*, *probouzí se*.
 - **Probuzení příchozím požadavkem:** okamžitý přechod potřebuje značku *spí* a požadavek ve *frontě*. K *frontě* je připojený testovacími hranami (tam a zpět), takže požadavek ve frontě zůstane.
-- **5 min, než je linka dostupná:** *probouzí se* → `5 min` → *Linka*, teprve pak požadavek linku obsadí. Linka je tedy dostupná 5 min po příchodu požadavku, který ji probudil (to říká i druhý přepis). Požadavky, které přijdou mezitím, čekají ve *frontě*.
+- **5 min, než je linka dostupná:** *probouzí se* → `5 min` → *Linka*, teprve pak požadavek linku obsadí. Linka je tedy dostupná 5 min po příchodu požadavku, který ji probudil. Požadavky, které přijdou mezitím, čekají ve *frontě*.
 - Doby 10 a 5 min jsou pevné.
 - Požadavek po obsluze **opouští systém** přechodem *odchod*.
 

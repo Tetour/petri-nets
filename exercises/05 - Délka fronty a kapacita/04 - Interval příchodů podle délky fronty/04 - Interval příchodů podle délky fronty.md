@@ -8,10 +8,10 @@
 
 Podobné úlohy: [Přerušení příchodů při plné frontě](<../05 - Přerušení příchodů při plné frontě/05 - Přerušení příchodů při plné frontě.md>) (příchody se při dlouhé frontě zastaví), [Doba obsluhy podle délky fronty](<../01 - Doba obsluhy podle délky fronty/01 - Doba obsluhy podle délky fronty.md>) (podle fronty se mění obsluha).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Kdy se rozhoduje:** jen při příchodu („po každé nově příchozí transakci“). Zvolený interval platí až do dalšího příchodu, i když se fronta mezitím zkrátí. Značka generátoru proto po příchodu přejde do místa *po příchodu* a odtud jedním ze dvou přechodů do *intervalu A*, nebo do *intervalu B*. Každý z nich má svůj časovaný přechod `exp(A)`, resp. `exp(B)` (jeden přechod = jeden čas), a ten po příchodu vrací značku do *po příchodu*.

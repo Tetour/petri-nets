@@ -2,21 +2,17 @@
 
 ## Zadání
 
-> **Příklad: kravín**
->
 > - Kravín má 100 krav, 5 dojiček, 1 nakládací rampu, 2 auta
 > - Krávy v intervalech exponenciálně se středem 15 hodin potřebují podojit (dojička, 10% případů trvá exponenciálně se středem 15 minut, jinak exponenciálně se středem 8 minut).
 > - Vznikne konvice s mlékem. Nakládají se na rampě do auta (kapacita 20). Auto náklad odváží (přesně 1 hodinu).
-> - Identifikovat procesy.
 
-⚠️ Zadání je heslovité (body slajdu). Kdy auto odjíždí a jak dlouho trvá naložení konvice, neříká; viz interpretace.
 
 Podobné úlohy: [Bagrista a nákladní auta](<../../11 - Doprava a dávky/10 - Bagrista a nákladní auta/10 - Bagrista a nákladní auta.md>), [Přepravní firma](<../../11 - Doprava a dávky/08 - Přepravní firma/08 - Přepravní firma.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Procesy:** krávy (100, obíhají dokola), dojičky (sklad 5), konvice (transakce: vznikne podojením, odjede autem), auta (2, obíhají mezi rampou a cestou), rampa (zařízení s kapacitou 1).

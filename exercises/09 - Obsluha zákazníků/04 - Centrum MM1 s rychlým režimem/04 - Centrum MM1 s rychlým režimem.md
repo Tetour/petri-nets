@@ -8,10 +8,10 @@ Všimni si: v běžném režimu je obsluha (7 min) pomalejší než příchody (
 
 Podobné úlohy: [Doba obsluhy podle délky fronty](<../../05 - Délka fronty a kapacita/01 - Doba obsluhy podle délky fronty/01 - Doba obsluhy podle délky fronty.md>), [Dočasně MM2 při dlouhé frontě](<../../05 - Délka fronty a kapacita/02 - Dočasně MM2 při dlouhé frontě/02 - Dočasně MM2 při dlouhé frontě.md>), [Klientské centrum](<../06 - Klientské centrum/06 - Klientské centrum.md>) (přepnutí režimu podle délky fronty, 2023/24).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **M/M/1:** místo *příchody zákazníků* s jednou značkou ve smyčce s `exp(5 min)` plní *frontu*; *Linka* má jednu značku a obsazení (`p=1`) ji bere.

@@ -8,10 +8,10 @@
 
 Podobné úlohy: [Fronta omezená na 10](<../04 - Fronta omezená na 10/04 - Fronta omezená na 10.md>) (odmítnutí při plné frontě, bez návratu), [MM3 – zastavení příchodů](<../../05 - Délka fronty a kapacita/06 - MM3 – zastavení příchodů/06 - MM3 – zastavení příchodů.md>) (M/M/3 jako místo se 3 značkami).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **M/M/3:** *příchody transakcí* ⇄ `exp(A)` → *žádá o linku* → *obsazení* (bere značku *Linek*) → `exp(B)`, který linku vrací → *konec* → *odchod*. Příchody a obsluha nemají čísla, proto `exp(A)` a `exp(B)`.

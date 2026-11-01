@@ -6,10 +6,10 @@
 
 Podobné úlohy: [Zahradník na FIT](<../10 - Zahradník na FIT/10 - Zahradník na FIT.md>) (obchůzka po květinách), [Porucha vrací transakci do fronty](<../../03 - Poruchy/02 - Porucha vrací transakci do fronty/02 - Porucha vrací transakci do fronty.md>) (přerušení a opakování od začátku).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - Model má tři části: život zahradníka, život bouřky a jejich interakci.

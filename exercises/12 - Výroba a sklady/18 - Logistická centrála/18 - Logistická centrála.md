@@ -8,10 +8,10 @@
 
 Podobné úlohy: [Výletní loď](<../../11 - Doprava a dávky/04 - Výletní loď/04 - Výletní loď.md>) (čítač do plna), [Přepravní firma](<../../11 - Doprava a dávky/08 - Přepravní firma/08 - Přepravní firma.md>), [Chmelová brigáda](<../17 - Chmelová brigáda/17 - Chmelová brigáda.md>) (stejný rok).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Příjezdy dodávek** modeluje místo s jednou značkou ve smyčce s `exp(2 h)`. Nová dodávka čeká ve *frontě* na rampu.

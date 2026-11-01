@@ -6,10 +6,10 @@
 
 Podobné úlohy: [Psí salon](<../03 - Psí salon/03 - Psí salon.md>) (vyprázdnění fronty smyčkou s prioritou a zastavení příchodů), [Každá 100. transakce vyprázdní frontu](<../../05 - Délka fronty a kapacita/07 - Každá 100. transakce vyprázdní frontu/07 - Každá 100. transakce vyprázdní frontu.md>), [Uhelný mlýn](<../../12 - Výroba a sklady/12 - Uhelný mlýn/12 - Uhelný mlýn.md>) (havárie exp(100 dní)).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Příchody** modeluje místo *příchody studentů* ve smyčce s časovaným přechodem `exp(3 min)`; každé provedení vloží studenta do *fronty*.

@@ -10,10 +10,10 @@ Podobné úlohy:
 - [Porucha s opravou, transakce odchází](<../04 - Porucha s opravou, transakce odchází/04 - Porucha s opravou, transakce odchází.md>) a [Kritická havárie](<../05 - Kritická havárie/05 - Kritická havárie.md>): stejná síť, jen přerušená transakce odchází
 - [Každá 10. transakce vyvolá poruchu](<../07 - Každá 10. transakce vyvolá poruchu/07 - Každá 10. transakce vyvolá poruchu.md>): stejné zabrání linky na dobu poruchy, spouští ho čítač
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **M/M/1:** *příchody transakcí* ve smyčce s `exp(A)`, *fronta*, obsazení *Linky*, obsluha `exp(B)`, která *Linku* vrací, a *odchod*. Časy příchodů a obsluhy zadání neuvádí, proto `exp(A)` a `exp(B)`.

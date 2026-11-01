@@ -18,13 +18,12 @@ ROOT = Path(__file__).resolve().parent.parent
 # section heading -> text of its toggle; Zadání has no toggle
 SECTIONS = [
     ("Zadání", None),
-    (("Interpretace", "Nápověda"), None),
+    ("Nápověda", "Zobrazit nápovědu"),
     ("Petriho síť", "Zobrazit Petriho síť"),
     ("Časté chyby", "Zobrazit časté chyby"),
     ("SIMLIB", "Zobrazit SIMLIB kód"),
     ("Původ a zdroje", "Zobrazit původ a zdroje"),
 ]
-SUMMARY = {"Interpretace": "Zobrazit interpretaci (nápověda)", "Nápověda": "Zobrazit nápovědu"}
 
 # time wordings that Note.md replaces by „exponenciálně se středem …“, „rovnoměrně …“, „přesně …“
 OLD_TIMES = [r"rozložen", r"rozdělen", r"střední hodnot", r"\bexp\.", r"\buniform\(", r"\bExp\("]
@@ -56,8 +55,7 @@ def check(note: Path):
 
     heads = [(i + 1, l[3:]) for i, l in enumerate(lines) if l.startswith("## ")]
     names = [h for _, h in heads]
-    expected = [s if isinstance(s, str) else (names[1] if len(names) > 1 and names[1] in s else s[0])
-                for s, _ in SECTIONS]
+    expected = [s for s, _ in SECTIONS]
     if names != expected:
         bad(heads[0][0] if heads else 1, f"sections {names} instead of {expected}")
         return problems
@@ -68,7 +66,7 @@ def check(note: Path):
 
     for h in names[1:]:
         b, s = body[h], start[h]
-        summary = SUMMARY.get(h) or dict((n, t) for n, t in SECTIONS if isinstance(n, str))[h]
+        summary = dict(SECTIONS)[h]
         want = ["", "<details>", f"<summary>{summary}</summary>", "<br>", ""]
         if b[:5] != want:
             bad(s + 1, f"„{h}“ must start with <details>, <summary>{summary}</summary>, <br> and an empty line")

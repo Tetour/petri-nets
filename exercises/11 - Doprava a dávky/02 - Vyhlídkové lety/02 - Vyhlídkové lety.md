@@ -6,10 +6,10 @@
 
 Podobné úlohy: [Vyhlídková loď na molu](<../07 - Vyhlídková loď na molu/07 - Vyhlídková loď na molu.md>) (skoro stejné zadání s lodí, navíc netrpěliví cestující), [Výletní autobus](<../01 - Výletní autobus/01 - Výletní autobus.md>), [Výletní loď](<../04 - Výletní loď/04 - Výletní loď.md>), [Výletní loď na jezeře](<../11 - Výletní loď na jezeře/11 - Výletní loď na jezeře.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Příchody** modeluje smyčka *příchody zákazníků* ⇄ `exp(5 min)`, zákazníci čekají ve *frontě*.

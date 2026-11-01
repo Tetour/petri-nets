@@ -8,10 +8,10 @@
 
 Podobné úlohy: [Netrpělivé požadavky](<../01 - Netrpělivé požadavky/01 - Netrpělivé požadavky.md>) (stejný termín, jiné skupiny), [MM3 bez fronty s opakováním](<../05 - MM3 bez fronty s opakováním/05 - MM3 bez fronty s opakováním.md>) (odmítnutí bez fronty), [Přerušení příchodů při plné frontě](<../../05 - Délka fronty a kapacita/05 - Přerušení příchodů při plné frontě/05 - Přerušení příchodů při plné frontě.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **M/M/1:** *příchody transakcí* ⇄ `exp(A)` → *přišel* → *vstup* → *fronta* → obsazení *Linky* → `exp(B)`, který *Linku* vrací → *konec* → *odchod*. Příchody a obsluha nemají čísla, proto `exp(A)` a `exp(B)`.

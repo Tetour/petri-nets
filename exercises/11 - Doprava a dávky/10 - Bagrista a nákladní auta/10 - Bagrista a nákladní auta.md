@@ -6,10 +6,10 @@
 
 Podobné úlohy: [Kravín](<../../01 - Základní modely/06 - Kravín/06 - Kravín.md>) (nakládání auta s kapacitou), [Překladiště kontejnerů](<../05 - Překladiště kontejnerů/05 - Překladiště kontejnerů.md>), [Překladiště s jeřábem](<../09 - Překladiště s jeřábem/09 - Překladiště s jeřábem.md>) (odchod na obchůzku při nečinnosti).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Úsek** je místo s 1000 značkami (metry), **auta** místo se 3 značkami (všechna auta jsou na počátku na stavbě).

@@ -8,10 +8,10 @@
 
 Podobné úlohy: [Netrpělivý první ve frontě](<../../02 - Netrpělivost a omezená fronta/02 - Netrpělivý první ve frontě/02 - Netrpělivý první ve frontě.md>), [Spánek po nečinnosti](<../../04 - Údržba a spánek/08 - Spánek po nečinnosti/08 - Spánek po nečinnosti.md>), [Výpočetní služba se spánkem](<../../10 - Počítačové systémy/02 - Výpočetní služba se spánkem/02 - Výpočetní služba se spánkem.md>), [Trafika](<../09 - Trafika/09 - Trafika.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Příchody** modeluje místo *příchody zákazníků* ve smyčce s `exp(1 h)`; zákazník čeká ve *frontě*.
@@ -186,6 +186,6 @@ int main() {
   - `exp(1m)` u netrpělivosti a `exp(10m)` u nečinnosti. Zadání má pevné časy („po minutě“, „po 10 minutách“);
   - „kúpi“/„nekúpi“ nemají pravděpodobnosti;
   - přechod `p=1` je nakreslený bíle jako časované přechody, přestože je okamžitý (časovaný přechod prioritu mít nemůže).
-- Komentáře pod řešením: námitka, že zákazník může iterovat donekonečna, neplatí (odpověď pod ní: iterace jsou jen 5, pak dojdou značky v „počet výberov“). Druhá námitka („Omezení kapacity pro prvního zákazníka je špatně…“) je druhé čtení popsané v interpretaci.
+- Komentáře pod řešením: námitka, že zákazník může iterovat donekonečna, neplatí (odpověď pod ní: iterace jsou jen 5, pak dojdou značky v „počet výberov“). Druhá námitka („Omezení kapacity pro prvního zákazníka je špatně…“) je druhé čtení popsané v nápovědě.
 
 </details>

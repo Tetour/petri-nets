@@ -6,10 +6,10 @@
 
 Podobné úlohy: [Výletní autobus](<../01 - Výletní autobus/01 - Výletní autobus.md>), [Přepravní firma](<../08 - Přepravní firma/08 - Přepravní firma.md>), [Vyhlídková loď na molu](<../07 - Vyhlídková loď na molu/07 - Vyhlídková loď na molu.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Transakce** jsou návštěvníci: registrace (smyčka *registrace návštěvníků* ⇄ `exp(5 min)`) → *registrovaní* → vyzvednutí → *v autobusu* → vyložení v areálu → *na festivalu* → *odchod*. Autobus je jedna značka, která obíhá stavy *areál* → *na svozu* → *vrací se* → *v areálu* → *areál*.

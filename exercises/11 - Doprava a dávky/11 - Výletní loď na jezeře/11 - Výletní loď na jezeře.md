@@ -8,10 +8,10 @@
 
 Podobné úlohy: [Výletní loď](<../04 - Výletní loď/04 - Výletní loď.md>) (2021/22), [Vyhlídková loď na molu](<../07 - Vyhlídková loď na molu/07 - Vyhlídková loď na molu.md>), [Přehrada s vyhlídkovou lodí](<../14 - Přehrada s vyhlídkovou lodí/14 - Přehrada s vyhlídkovou lodí.md>), [Vyhlídkové lety](<../02 - Vyhlídkové lety/02 - Vyhlídkové lety.md>), [Výletní autobus](<../01 - Výletní autobus/01 - Výletní autobus.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Transakce** jsou cestující. *Příchody cestujících* ve smyčce s `exp(5 min)` je posílají k rozhodnutí: po provozní době hned odchází přechodem *pozdě* (`p=1`, test příznaku *po provozní době*), jinak jdou do *fronty* (p=0). Generátor běží dál, pozdě příchozí jen hned odcházejí.

@@ -6,10 +6,10 @@
 
 Podobné úlohy: [Nemocniční ambulance](<../../09 - Obsluha zákazníků/18 - Nemocniční ambulance/18 - Nemocniční ambulance.md>), [Netrpělivé požadavky](<../../02 - Netrpělivost a omezená fronta/01 - Netrpělivé požadavky/01 - Netrpělivé požadavky.md>), [Psí salon](<../../09 - Obsluha zákazníků/03 - Psí salon/03 - Psí salon.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Transakce je požár** (hlášení), **vůz je zdroj**: *Vozy v centrále* je místo s 5 značkami. Požáry přicházejí z *příchodů požárů* ve smyčce s `exp(8 h)` do *Hlášení*. *Výjezd* spojí hlášení s vozem, cesta k požáru trvá `exp(10 min)`, *hašení* `30–60 min`. Po hašení požár přes *konec* odchází ze systému a vůz jede *cestou zpět* `exp(10 min)` do centrály.

@@ -6,10 +6,10 @@
 
 Podobné úlohy: [Spalovna se třemi vozy](<../05 - Spalovna se třemi vozy/05 - Spalovna se třemi vozy.md>), [Porucha zničí obsluhu nebo počká](<../../03 - Poruchy/06 - Porucha zničí obsluhu nebo počká/06 - Porucha zničí obsluhu nebo počká.md>), [MD1 – střídání 2 a 3](<../../06 - Doba obsluhy podle stavu/02 - MD1 – střídání 2 a 3/02 - MD1 – střídání 2 a 3.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Rychlosti jako časy:** 10 kubíků/h = auto každých `6 min` (konstantně, zadání dává rychlost, ne rozložení) z *příchodů aut*, 15 kubíků/h = `4 min` na kubík, 30 kubíků/h = `2 min`.

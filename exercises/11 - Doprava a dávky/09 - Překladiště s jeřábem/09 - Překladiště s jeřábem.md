@@ -6,10 +6,10 @@
 
 Podobné úlohy: [Údržbář na obchůzce](<../../04 - Údržba a spánek/07 - Údržbář na obchůzce/07 - Údržbář na obchůzce.md>), [Spánek po nečinnosti](<../../04 - Údržba a spánek/08 - Spánek po nečinnosti/08 - Spánek po nečinnosti.md>), [Úřad s dodatečnými přepážkami](<../../09 - Obsluha zákazníků/15 - Úřad s dodatečnými přepážkami/15 - Úřad s dodatečnými přepážkami.md>) (pracovní doba 8 h / 16 h), [Bagrista a nákladní auta](<../10 - Bagrista a nákladní auta/10 - Bagrista a nákladní auta.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Transakce** jsou auta. *Příchody aut* ve smyčce s `exp(10 min)` je dávají na *Rampu*, kde může stát víc aut.

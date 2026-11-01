@@ -6,10 +6,10 @@
 
 Podobné úlohy: [MD1 – prodlužování po 10 obsluhách](<../01 - MD1 – prodlužování po 10 obsluhách/01 - MD1 – prodlužování po 10 obsluhách.md>), [MD3 – poslední volné zařízení](<../03 - MD3 – poslední volné zařízení/03 - MD3 – poslední volné zařízení.md>), [MD1 – podle doby od poslední obsluhy](<../04 - MD1 – podle doby od poslední obsluhy/04 - MD1 – podle doby od poslední obsluhy.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Příchody:** místo *příchody transakcí* ve smyčce s `exp(A)` (M/D/1 má exponenciální příchody, číslo zadání nedává) vkládá transakce do *fronty*.

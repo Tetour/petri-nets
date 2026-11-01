@@ -6,10 +6,10 @@
 
 Podobné úlohy: [Údržba po každé 10. obsluze](<../../04 - Údržba a spánek/06 - Údržba po každé 10. obsluze/06 - Údržba po každé 10. obsluze.md>) (čítač 10 obsluh), [MD1 – střídání 2 a 3](<../02 - MD1 – střídání 2 a 3/02 - MD1 – střídání 2 a 3.md>), [Pražírna kávy](<../../09 - Obsluha zákazníků/20 - Pražírna kávy/20 - Pražírna kávy.md>) (opakování fází obsluhy podle počtu značek).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Příchody a linka:** místo *příchody transakcí* ve smyčce s `exp(A)` (M/D/1 má exponenciální příchody, číslo zadání nedává) vkládá transakce do *fronty*; obsazení vezme značku *Linky* a transakce je *v obsluze*.

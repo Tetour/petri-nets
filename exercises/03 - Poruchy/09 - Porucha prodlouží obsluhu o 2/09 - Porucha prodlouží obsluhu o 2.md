@@ -14,10 +14,10 @@ Podobné úlohy:
 - [Porucha prodlouží další obsluhu](<../08 - Porucha prodlouží další obsluhu/08 - Porucha prodlouží další obsluhu.md>): prodlužuje se následující obsluha
 - [Porucha vrací transakci do fronty](<../02 - Porucha vrací transakci do fronty/02 - Porucha vrací transakci do fronty.md>): stejné přerušení, transakce jde do fronty
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **M/M/1:** místo *příchody transakcí* ve smyčce s `exp(A)` → *fronta* → obsazení *Linky* → *obsluha* → `exp(B)` (vrací *Linku*) → *hotovo* → *odchod*. Poruchy vznikají v místě *vznik poruch* ve smyčce s `exp(X)` a čekají v místě *porucha*.

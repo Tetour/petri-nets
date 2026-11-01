@@ -1,6 +1,6 @@
 # Note structure
 
-How an exercise note looks. The diagram itself is covered by [Style.md](Style.md); the course notation by [Notace a vzory](../basics/Notace%20a%20vzory.md). The reference note is [Opravářská dílna](../exercises/01%20-%20Základní%20modely/01%20-%20Opravářská%20dílna/01%20-%20Opravářská%20dílna.md): when in doubt, copy it.
+How an exercise note looks. The diagram itself is covered by [Style.md](Style.md); the course notation by [Notace a vzory](../basics/Notace%20a%20vzory.md). The reference note is [Opravářská dílna](../exercises/01%20-%20Základní%20modely/01%20-%20Opravářská%20dílna/01%20-%20Opravářská%20dílna.md): when in doubt, copy it. `make notecheck` (part of `make check`) checks every note against these rules.
 
 ## File and language
 
@@ -21,10 +21,10 @@ Only the heading and **Zadání** are visible when the note is opened; every oth
 
 Podobné úlohy: [Netrpělivé požadavky](<../../02 - Netrpělivost a omezená fronta/01 - Netrpělivé požadavky/01 - Netrpělivé požadavky.md>), …
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - …
@@ -106,10 +106,10 @@ Podobné úlohy: [Netrpělivé požadavky](<../../02 - Netrpělivost a omezená 
 - If the source is only a student's recollection or a reconstruction, a ⚠️ line before the quote says so.
 - `Podobné úlohy:` links to related exercises (optional). Generate each link with `python3 -c "from pn.catalog import link; print(link('Netrpělivé požadavky'))"`. In running text, refer to an exercise the same way, with „úloha“ in the right case where the grammar needs it („jako v úloze [Výletní loď](…)“); in code comments, by its name in quotes.
 
-### Interpretace → Nápověda
+### Nápověda
 
 - Bullet points: how each requirement of the task becomes part of the net (arrivals, branching, resources, merged release, leaving …), in the order of the flow; and every ambiguity with the reading chosen (e.g. „přesáhne 5“ = more than 5, so the test arc has weight 6).
-- The section is called **Interpretace** („Zobrazit interpretaci (nápověda)“) while it is an unconfirmed reading. Once the user reviews the note and confirms it, it is renamed to **Nápověda** („Zobrazit nápovědu“); the [exercise list](<../exercises/Seznam úloh.md>) shows the note as *zkontrolováno* based on that name.
+- Review status is not tracked: when the user finds a problem while doing an exercise, they fix it or ask for the fix.
 - A hint states the modelling, not who said what: no mentions of the lecturer or transcripts here (those belong to Původ a zdroje).
 
 ### Petriho síť

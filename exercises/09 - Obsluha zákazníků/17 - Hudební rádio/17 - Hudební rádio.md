@@ -6,10 +6,10 @@
 
 Podobné úlohy: [Porucha zruší obsluhu](<../../03 - Poruchy/01 - Porucha zruší obsluhu/01 - Porucha zruší obsluhu.md>) (přerušení bez opakování), [Porucha vrací transakci do fronty](<../../03 - Poruchy/02 - Porucha vrací transakci do fronty/02 - Porucha vrací transakci do fronty.md>), [Zahradnictví a bouřka](<../../12 - Výroba a sklady/01 - Zahradnictví a bouřka/01 - Zahradnictví a bouřka.md>) (přerušená práce se opakuje od začátku).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Posluchači** přicházejí z místa *volání posluchačů* ve smyčce s `exp(20 min)` a čekají v místě *na lince*. Netrpělivost zadání nezmiňuje, na lince čekají libovolně dlouho.

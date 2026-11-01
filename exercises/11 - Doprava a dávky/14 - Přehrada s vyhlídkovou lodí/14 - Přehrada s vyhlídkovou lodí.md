@@ -8,10 +8,10 @@
 
 Podobné úlohy: [Výletní loď](<../04 - Výletní loď/04 - Výletní loď.md>), [Vyhlídková loď na molu](<../07 - Vyhlídková loď na molu/07 - Vyhlídková loď na molu.md>), [Výletní loď na jezeře](<../11 - Výletní loď na jezeře/11 - Výletní loď na jezeře.md>), [Přehrada s přístavišti](<../12 - Přehrada s přístavišti/12 - Přehrada s přístavišti.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Transakce** jsou návštěvníci. *Příchody návštěvníků* ve smyčce s `exp(1 min)` je dávají do *fronty v přístavu*. Ti, kteří se na loď nevešli, čekají na další jízdu (netrpělivost zadání nemá).

@@ -6,10 +6,10 @@
 
 Podobné úlohy: [Pizzerie s rozvozem](<../03 - Pizzerie s rozvozem/03 - Pizzerie s rozvozem.md>), [Přepravní firma](<../08 - Přepravní firma/08 - Přepravní firma.md>), [Výletní loď](<../04 - Výletní loď/04 - Výletní loď.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Zásilky** jsou transakce: *příchody zásilek* ve smyčce s `1 d` přidají každý den 100 zásilek (váha 100), první dávka je v místě *Zásilky na poště* od začátku. Zásilka odchází při doručení, nebo jako nedoručená přes *Úschovnu* se zákazníkem.

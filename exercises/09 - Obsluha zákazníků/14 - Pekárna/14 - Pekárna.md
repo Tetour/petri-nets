@@ -6,10 +6,10 @@
 
 Podobné úlohy: [Psí salon](<../03 - Psí salon/03 - Psí salon.md>), [Pizza stánek](<../05 - Pizza stánek/05 - Pizza stánek.md>), [Výletní loď](<../../11 - Doprava a dávky/04 - Výletní loď/04 - Výletní loď.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Příchody:** místo *příchody zákazníků* ve smyčce s `exp(20 min)` vkládá zákazníky do *fronty*.

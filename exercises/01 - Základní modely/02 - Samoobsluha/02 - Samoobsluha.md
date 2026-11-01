@@ -6,10 +6,10 @@
 
 Podobné úlohy: [Opravářská dílna](<../01 - Opravářská dílna/01 - Opravářská dílna.md>), [Menza](<../../09 - Obsluha zákazníků/16 - Menza/16 - Menza.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Příchody:** *příchody zákazníků* ⇄ `exp(8 min)` → *fronta na vozík*.

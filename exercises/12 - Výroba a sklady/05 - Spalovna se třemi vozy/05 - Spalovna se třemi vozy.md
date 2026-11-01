@@ -6,10 +6,10 @@
 
 Podobné úlohy: [Spalovna](<../07 - Spalovna/07 - Spalovna.md>), [Sběrači jahod](<../02 - Sběrači jahod/02 - Sběrači jahod.md>), [Výrobní hala](<../03 - Výrobní hala/03 - Výrobní hala.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Vozy** jsou místo se 3 značkami a časovaný přechod `exp(1 h)`. Každá značka má vlastní odpočet (slajd 138), takže jsou to tři nezávislé vozy. „V intervalech exponenciálně se středem 1 hodina“ je doba jedné sběrné trasy každého vozu.

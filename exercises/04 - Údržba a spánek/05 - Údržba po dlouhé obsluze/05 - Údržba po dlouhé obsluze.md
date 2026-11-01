@@ -13,10 +13,10 @@ Podobné úlohy:
 - [Přerušení příliš dlouhé obsluhy](<../../03 - Poruchy/11 - Přerušení příliš dlouhé obsluhy/11 - Přerušení příliš dlouhé obsluhy.md>): dlouhá obsluha se přeruší, tady se dokončí
 - [Údržba při prázdné frontě](<../04 - Údržba při prázdné frontě/04 - Údržba při prázdné frontě.md>): o údržbě se také rozhoduje po obsluze
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **M/M/1:** *příchody transakcí* ⇄ `exp(A)` → *fronta* → obsazení *Linky* → `exp(B)`, které značku linky vrací → *odchod*. Střední doby příchodů a obsluhy zadání neuvádí, proto `exp(A)` a `exp(B)`.

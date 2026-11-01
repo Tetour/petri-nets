@@ -6,10 +6,10 @@
 
 Podobné úlohy: [Výletní loď](<../04 - Výletní loď/04 - Výletní loď.md>), [Výletní autobus](<../01 - Výletní autobus/01 - Výletní autobus.md>), [Psí salon](<../../09 - Obsluha zákazníků/03 - Psí salon/03 - Psí salon.md>) (vyprázdnění místa smyčkou s prioritou).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Hovory** přichází ze smyčky *volání zákazníků* ⇄ `exp(5 min)` do *fronty*.

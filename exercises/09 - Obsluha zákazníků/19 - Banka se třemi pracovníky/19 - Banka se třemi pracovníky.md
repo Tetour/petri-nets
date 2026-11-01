@@ -8,10 +8,10 @@
 
 Podobné úlohy: [Banka a lupič](<../21 - Banka a lupič/21 - Banka a lupič.md>), [Spánek po nečinnosti](<../../04 - Údržba a spánek/08 - Spánek po nečinnosti/08 - Spánek po nečinnosti.md>), [Automat na kávu – údržba po nečinnosti](<../../04 - Údržba a spánek/01 - Automat na kávu – údržba po nečinnosti/01 - Automat na kávu – údržba po nečinnosti.md>), [Příklad s prioritou procesu](<../../07 - Priority/01 - Příklad s prioritou procesu/01 - Příklad s prioritou procesu.md>), [Kopírovací centrum](<../10 - Kopírovací centrum/10 - Kopírovací centrum.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Příchody** modeluje místo *příchody klientů* ve smyčce s `exp(5 min)`.

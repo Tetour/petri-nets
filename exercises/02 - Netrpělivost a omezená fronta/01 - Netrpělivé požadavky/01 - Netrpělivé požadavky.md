@@ -2,9 +2,7 @@
 
 ## Zadání
 
-⚠️ Zadání 2023/24 je známé jen z ručního opisu na čtverečkovaném papíře; slovosled druhé věty není úplně jistý.
-
-> Mějme systém M/M/1 s netrpělivými požadavky. Transakce po 10 časových jednotkách čekání ve frontě opouští bez obsluhy systém. Systém modelujte prostředky petriho sítě.
+> Mějme systém M/M/1 s netrpělivými požadavky. Transakce po 10 časových jednotkách čekání ve frontě opouští bez obsluhy systém.
 
 Zkouška 2017/18, skupina 8H (sken):
 
@@ -14,10 +12,10 @@ Skupina 7A má stejné znění s „nanejvýš 10 časových jednotek“.
 
 Podobné úlohy: [Netrpělivý první ve frontě](<../02 - Netrpělivý první ve frontě/02 - Netrpělivý první ve frontě.md>) (netrpělivý je jen první ve frontě), [Příklad s netrpělivou transakcí](<../03 - Příklad s netrpělivou transakcí/03 - Příklad s netrpělivou transakcí.md>) (vlastní příklad), [Kopírovací centrum](<../../09 - Obsluha zákazníků/10 - Kopírovací centrum/10 - Kopírovací centrum.md>) (netrpělivost ve slovní úloze).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **M/M/1:** *příchody požadavků* ⇄ `exp(A)` → *fronta* → obsazení *Linky* → `exp(B)`, který *Linku* vrací → *konec* → *odchod*. Příchody a obsluha nemají v zadání čísla, proto symboly `exp(A)` a `exp(B)`.

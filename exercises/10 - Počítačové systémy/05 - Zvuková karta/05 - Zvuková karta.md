@@ -8,10 +8,10 @@
 
 Podobné úlohy: [Počítačový server](<../04 - Počítačový server/04 - Počítačový server.md>) (přidělování procesoru), [Výpočetní služba se spánkem](<../02 - Výpočetní služba se spánkem/02 - Výpočetní služba se spánkem.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Jednotka je blok 100 vzorků**, jak radí doporučení. Paměť 10 000 vzorků je 100 bloků: místo *volné bloky* (na počátku 100 značek, paměť je prázdná) a *plné bloky*. Platí *volné* + *plné* = 100.
@@ -59,7 +59,7 @@ Podobné úlohy: [Počítačový server](<../04 - Počítačový server/04 - Po�
 <summary>Zobrazit SIMLIB kód</summary>
 <br>
 
-Model je izomorfní k Petriho síti výše: každé místo, přechod a značka mají svůj protějšek v kódu. Bloky jsou dva čítače; karta a zvukový proces se navzájem budí (`Passivate` / `Activate`), když čekají na plný blok, nebo na 50 volných bloků. Přednost zvukového procesu je priorita procesu: ve frontě procesoru se zařadí před ostatní, běžící proces nepřeruší. Jemnost s testem *plných bloků* (viz Interpretace) kód nemá, karta přehrává bez restartu.
+Model je izomorfní k Petriho síti výše: každé místo, přechod a značka mají svůj protějšek v kódu. Bloky jsou dva čítače; karta a zvukový proces se navzájem budí (`Passivate` / `Activate`), když čekají na plný blok, nebo na 50 volných bloků. Přednost zvukového procesu je priorita procesu: ve frontě procesoru se zařadí před ostatní, běžící proces nepřeruší. Jemnost s testem *plných bloků* (viz Nápověda) kód nemá, karta přehrává bez restartu.
 
 ```cpp
 // Zvuková karta – model v SIMLIB/C++

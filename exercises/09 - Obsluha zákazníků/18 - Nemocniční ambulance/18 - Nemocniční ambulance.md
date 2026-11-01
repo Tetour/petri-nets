@@ -6,10 +6,10 @@
 
 Podobné úlohy: [Porucha s opravou, transakce odchází](<../../03 - Poruchy/04 - Porucha s opravou, transakce odchází/04 - Porucha s opravou, transakce odchází.md>), [Porucha vrací transakci do fronty](<../../03 - Poruchy/02 - Porucha vrací transakci do fronty/02 - Porucha vrací transakci do fronty.md>), [Hudební rádio](<../17 - Hudební rádio/17 - Hudební rádio.md>) (Z7, přerušení reklamou).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Příchody** modeluje místo *příchody pacientů* ve smyčce s `exp(20 min)`. **Přepážka** je jedno zařízení (registrace `1–2 min`), **Lékaři** jsou sklad se 2 značkami (vyšetření `exp(10 min)`). Mezi nimi je *čekárna*. Vyšetřený pacient odchází přes *konec* přechodem *odchod*.

@@ -6,10 +6,10 @@
 
 Podobné úlohy: [Kopírovací centrum](<../10 - Kopírovací centrum/10 - Kopírovací centrum.md>) (2022/23), [Porucha zruší obsluhu](<../../03 - Poruchy/01 - Porucha zruší obsluhu/01 - Porucha zruší obsluhu.md>), [Kritická havárie](<../../03 - Poruchy/05 - Kritická havárie/05 - Kritická havárie.md>), [Psí salon](<../03 - Psí salon/03 - Psí salon.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Příchody:** místo *příchody požadavků* ve smyčce s přechodem `exp(2 min)` vkládá požadavky do *fronty* před přepážkou.

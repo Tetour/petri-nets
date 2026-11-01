@@ -8,10 +8,10 @@
 
 Podobné úlohy: [Spánek po nečinnosti](<../../04 - Údržba a spánek/08 - Spánek po nečinnosti/08 - Spánek po nečinnosti.md>), [Automat na kávu – uspání](<../../04 - Údržba a spánek/03 - Automat na kávu – uspání/03 - Automat na kávu – uspání.md>), [Automat na kávu – údržba po nečinnosti](<../../04 - Údržba a spánek/01 - Automat na kávu – údržba po nečinnosti/01 - Automat na kávu – údržba po nečinnosti.md>), [Trafika](<../../09 - Obsluha zákazníků/09 - Trafika/09 - Trafika.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Příchody** modeluje místo *příchody požadavků* ve smyčce s `exp(100 s)`, požadavky čekají v místě *fronta*.

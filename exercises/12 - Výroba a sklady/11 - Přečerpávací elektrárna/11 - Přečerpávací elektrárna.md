@@ -6,10 +6,10 @@
 
 Podobné úlohy: [Přečerpávací elektrárna II](<../09 - Přečerpávací elektrárna II/09 - Přečerpávací elektrárna II.md>) (Z11), [Uhelný mlýn](<../12 - Uhelný mlýn/12 - Uhelný mlýn.md>), [Zahradnictví a bouřka](<../01 - Zahradnictví a bouřka/01 - Zahradnictví a bouřka.md>) (stavová místa „je / není bouřka“).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Voda** jsou značky v místech *A* a *B* (na začátku 500 a 500). Přesun jednotky je časovaný přechod mezi nimi. Voda jen obíhá, žádná transakce systém neopouští, takže síť nemá výstupní přechod.

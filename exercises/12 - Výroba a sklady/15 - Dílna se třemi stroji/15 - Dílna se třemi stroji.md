@@ -6,10 +6,10 @@
 
 Podobné úlohy: [Porucha vrací transakci do fronty](<../../03 - Poruchy/02 - Porucha vrací transakci do fronty/02 - Porucha vrací transakci do fronty.md>) (přerušená činnost začíná znovu), [Stavba z betonu](<../13 - Stavba z betonu/13 - Stavba z betonu.md>), [Uhelný mlýn](<../12 - Uhelný mlýn/12 - Uhelný mlýn.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Pracovník** je jedna značka v místě *pracovník volí*. Okamžité přechody `50 %` / `50 %` ho pošlou ke stroji A (horní řada) nebo B (dolní řada).
@@ -139,7 +139,7 @@ int main() {
 | *porucha C* (`p=0`, bere *k dispozici*) → oprava → `exp(20 min)` | větev `else`: `kDispozici = false; … Wait(Exponential(20)); kDispozici = true;` |
 | zánik odpočtu přípravy | `prac->pripravuje = false; prac->Activate();` (čekání skončí hned) |
 
-**Kontrola simulací.** Petriho síť: pracovník je vždy na jednom místě (*pracovník volí* / *u stroje A* / *u stroje B* / u obsazeného stroje), *k dispozici* + oprava = 1, stroje A, B i C se vždy vrátí. S danými čísly se opravdu jen opravuje (viz Interpretace); se zásobou 200 kusů v obou kontejnerech se nejdřív vyrábí, přípravy se přerušují a opakují a po vyčerpání zásoby se síť zacyklí v opravách (`make check`). SIMLIB model: za jednu směnu (8 h) nastalo 25 poruch, žádná příprava se nedokončila a nevznikl žádný výrobek; poruchy jdou těsně za sebou, takže jich je zhruba 480 min / 20 min = 24. Se zásobou 200 kusů (`ZASOBA = 200`) vzniklo 420 výrobků, pracovník dokončil 30 příprav a nastalo 6 poruch (`make simlib`).
+**Kontrola simulací.** Petriho síť: pracovník je vždy na jednom místě (*pracovník volí* / *u stroje A* / *u stroje B* / u obsazeného stroje), *k dispozici* + oprava = 1, stroje A, B i C se vždy vrátí. S danými čísly se opravdu jen opravuje (viz Nápověda); se zásobou 200 kusů v obou kontejnerech se nejdřív vyrábí, přípravy se přerušují a opakují a po vyčerpání zásoby se síť zacyklí v opravách (`make check`). SIMLIB model: za jednu směnu (8 h) nastalo 25 poruch, žádná příprava se nedokončila a nevznikl žádný výrobek; poruchy jdou těsně za sebou, takže jich je zhruba 480 min / 20 min = 24. Se zásobou 200 kusů (`ZASOBA = 200`) vzniklo 420 výrobků, pracovník dokončil 30 příprav a nastalo 6 poruch (`make simlib`).
 
 </details>
 

@@ -6,10 +6,10 @@
 
 Podobné úlohy: [Psí salon](<../03 - Psí salon/03 - Psí salon.md>) (vyprázdnění fronty a zastavení příchodů), [Netrpělivé požadavky](<../../02 - Netrpělivost a omezená fronta/01 - Netrpělivé požadavky/01 - Netrpělivé požadavky.md>), [Dva proudy příchodů](<../../07 - Priority/04 - Dva proudy příchodů/04 - Dva proudy příchodů.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Žádosti o přistání:** místo *žádosti o přistání* ve smyčce s `exp(10 min)` vkládá letadla do *fronty*. Celý let jde v hlavní řadě zleva doprava: přistání, výměna cestujících, start, odchod.

@@ -6,10 +6,10 @@
 
 Podobné úlohy: [Festivalový autobus](<../06 - Festivalový autobus/06 - Festivalový autobus.md>) (svozová jízda po jednom), [Pizzerie s rozvozem](<../03 - Pizzerie s rozvozem/03 - Pizzerie s rozvozem.md>), [Výletní loď](<../04 - Výletní loď/04 - Výletní loď.md>) (odjezd po naplnění kapacity).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Transakce** jsou balíky. *Příchody balíků* ve smyčce s `exp(20 min)` je dávají do místa *A-balíky*.

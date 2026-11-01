@@ -6,10 +6,10 @@
 
 Podobné úlohy: [Kopírovací centrum s poruchami](<../11 - Kopírovací centrum s poruchami/11 - Kopírovací centrum s poruchami.md>) (2021/22), [Netrpělivé požadavky](<../../02 - Netrpělivost a omezená fronta/01 - Netrpělivé požadavky/01 - Netrpělivé požadavky.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Příchody:** místo *příchody klientů* ve smyčce s přechodem `exp(3 min)` vkládá klienty do *fronty*. Kratší varianta generátoru bez místa (jen přechod bez vstupu) je na slajdech také a u zkoušky projde.

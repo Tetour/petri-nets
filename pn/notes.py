@@ -27,7 +27,7 @@ PANDOC = [
     "-V", "pagestyle=plain", "-V", "papersize=a4",
 ]
 
-NEW_PAGE_BEFORE = ("## Interpretace", "## Nápověda", "## Petriho síť")
+NEW_PAGE_BEFORE = ("## Nápověda", "## Petriho síť")
 
 # long lines in code blocks wrap instead of running off the page (pandoc's Highlighting env)
 HEADER = r"""\usepackage{fvextra}

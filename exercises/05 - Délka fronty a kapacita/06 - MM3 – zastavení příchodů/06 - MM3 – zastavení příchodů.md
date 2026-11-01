@@ -6,14 +6,14 @@
 
 Podobné úlohy: [Přerušení příchodů při plné frontě](<../05 - Přerušení příchodů při plné frontě/05 - Přerušení příchodů při plné frontě.md>) (přerušení podle délky fronty, téhož termínu), [MD3 – poslední volné zařízení](<../../06 - Doba obsluhy podle stavu/03 - MD3 – poslední volné zařízení/03 - MD3 – poslední volné zařízení.md>) (obsazení poslední volné linky), [MM3 bez fronty s opakováním](<../../02 - Netrpělivost a omezená fronta/05 - MM3 bez fronty s opakováním/05 - MM3 bez fronty s opakováním.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **M/M/3:** *příchody transakcí* ⇄ `exp(A)` → *fronta* → obsazení *Linek* → obsluha `exp(B)`, která linku vrací → *konec* → *odchod*. Místo *Linky* má tři značky, obsazení i obsluha jsou jen jedny. Počet obsazených linek je počet značek v místě obsluhy. Příchody a obsluhu zadání neuvádí, proto `exp(A)` a `exp(B)`.
-- **Přerušení příchodů:** *zastav* přesune značku z *příchodů transakcí* do *zastaveno*, takže odpočet `exp(A)` zanikne. Podmínka „všechny linky obsazené“ je test s váhou 3 na místě obsluhy. Prázdné *Linky* testovat nejde (bylo by potřeba inhibiční hrany, kterou Hrubý nechce).
+- **Přerušení příchodů:** *zastav* přesune značku z *příchodů transakcí* do *zastaveno*, takže odpočet `exp(A)` zanikne. Podmínka „všechny linky obsazené“ je test s váhou 3 na místě obsluhy. Prázdné *Linky* testovat nejde (byla by potřeba inhibiční hrana, která se v kurzu nepoužívá).
 - **Rozběh:** *rozběh* vrátí značku ze *zastaveno* do *příchodů transakcí*, když jsou v *Linkách* aspoň 2 značky (test s váhou 2). Mezi tím, tedy při jedné volné lince, se nic nemění: zastavené příchody stojí, běžící běží. Tím vzniká hystereze ze zadání.
 - Značka v *příchodech transakcí*, nebo v *zastaveno* zároveň hlídá, aby se *zastav* ani *rozběh* neprovedly dvakrát po sobě.
 - **fronta** v tomto systému čekající transakce nikdy nemá: příchody běží jen při volné lince a příchozí ji hned obsadí. Místo je tu, aby byl model čitelný jako M/M/3.

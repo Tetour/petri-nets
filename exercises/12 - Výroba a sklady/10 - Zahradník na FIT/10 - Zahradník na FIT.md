@@ -6,10 +6,10 @@
 
 Podobné úlohy: [Zahradnictví a bouřka](<../01 - Zahradnictví a bouřka/01 - Zahradnictví a bouřka.md>) (obchůzka zahradníka po záhoncích), [Bagrista a nákladní auta](<../../11 - Doprava a dávky/10 - Bagrista a nákladní auta/10 - Bagrista a nákladní auta.md>) (jednotky materiálu jako značky s váhou hran).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **Začátek dne:** zahradník je u zdroje s plnou konví (*u zdroje (ráno)*, *Konev* s 10 značkami). Cesta k první květině `2–5 min` bere jednu značku z *Květin* (30).

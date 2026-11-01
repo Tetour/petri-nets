@@ -6,10 +6,10 @@
 
 Podobné úlohy: [Údržba zabere celou kapacitu](<../09 - Údržba zabere celou kapacitu/09 - Údržba zabere celou kapacitu.md>) (sesterská skupina E téhož termínu), [Sklad s dočasně větší kapacitou](<../08 - Sklad s dočasně větší kapacitou/08 - Sklad s dočasně větší kapacitou.md>) (+3 jednotky na 100 č. j.), [Dočasně MM2 při dlouhé frontě](<../02 - Dočasně MM2 při dlouhé frontě/02 - Dočasně MM2 při dlouhé frontě.md>).
 
-## Interpretace
+## Nápověda
 
 <details>
-<summary>Zobrazit interpretaci (nápověda)</summary>
+<summary>Zobrazit nápovědu</summary>
 <br>
 
 - **M/M/1:** *příchody zákazníků* ⇄ `exp(A)` → *fronta* → obsazení *Linky* → `exp(B)`, který jednotku vrací → *konec* → *odchod*. Příchody a obsluhu zákazníků zadání neuvádí, proto `exp(A)` a `exp(B)`.
