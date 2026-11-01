@@ -18,7 +18,7 @@ Podobné úlohy: [Porucha vrací transakci do fronty](<../../03 - Poruchy/02 - P
 - **Stroj C** je zařízení s 1 značkou. Cyklus `1 min` začne přechodem `p=1`, který bere současně kus z kontejneru A i B. Když některý kontejner je prázdný, provede se místo něj *porucha C* (p=0). Po cyklu odchází výrobek ze systému (*výrobek* → *odchod*).
 - **Okamžitá oprava a „předchozí činnost od počátku“:** místo *k dispozici* (1 značka) testují dvojicí hran obě přípravy. Porucha si tuto značku vezme (spolu se *Strojem C volný*), takže probíhající příprava ztratí jeden vstup a její odpočet zanikne (slajd 139). Značka pracovníka přitom zůstává u stroje (v místě mezi obsazením a přípravou) a pamatuje si, kde pracovník byl. Po opravě `exp(20 min)` se vrátí *k dispozici* i *Stroj C volný* a příprava začne znovu od začátku. Stejně se „přeruší“ i čekání u obsazeného stroje: příprava po uvolnění stroje nezačne, dokud pracovník opravuje.
 - **Pozor, s danými čísly se systém zasekne:** na začátku jsou kontejnery prázdné, takže C má okamžitě poruchu. Po opravě jsou pořád prázdné a porucha přijde znovu hned, takže pracovník jen opravuje a nic se nevyrobí. I s počáteční zásobou je to jen odklad: C spotřebuje 60 kusů z každého kontejneru za hodinu, pracovník je stroji A a B nestihne doplňovat, poruchy se množí a nakonec se síť zacyklí v opravách stejně. To je vlastnost zadání, ne modelu; u písemky stačí síť správně nakreslit.
-- Síť se nedá nakreslit bez křížení: místo *k dispozici* musí ležet mezi oběma přípravami a jeho oprava vede ke stroji C, takže se několik hran kříží.
+- Síť se nedá nakreslit úplně bez křížení: u stroje C bere obsazení oba kontejnery (shora a zespodu) a vrácení *Stroje C* musí přes jednu z těchto hran. Jinde se hrany nekříží.
 
 </details>
 
