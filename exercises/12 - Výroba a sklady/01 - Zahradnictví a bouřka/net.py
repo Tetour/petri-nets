@@ -1,6 +1,9 @@
 from pn import Net
 
 net = Net("Zahradnictví a bouřka (půlsemestrálka 2024/25, varianta A)")
+# záhonek zaniká koncem okopávání (exp(10 min) vrací jen zahradníka), samostatný výstupní
+# přechod síť nemá; zahradník i bouřka jsou cyklické procesy
+net.closed = True
 
 # 1) život zahradníka: obchůzka po 10 záhoncích (záhonky jsou transakce), pak 30 min v budce
 net.place("zacatek", (-1.8, -1.5), tokens=1, label="začátek obchůzky", label_pos="above left")
@@ -12,16 +15,13 @@ net.arc("zacatek", "vyrazi")
 net.arc("vyrazi", "prace", w=10, w_pos="above")
 net.chain("prace", "okopat", "okopavani")
 
-# zahradník je zařízení pod přechodem „okopat“; okopávání pokračuje dolů a doprava k odchodu
+# zahradník je zařízení pod přechodem „okopat“; okopávání pokračuje dolů
 net.place("zahradnik", (3.6, -3.2), label="zahradník", label_pos="below left")
 net.timed("okop", (5.4, -3.2), "exp(10 min)", param_pos="below")
-net.place("okopano", (7.2, -3.2), label="okopáno", label_pos="below")
-net.immediate("odchod", (9, -3.2), exit=True, label="odchod", label_pos="below")
 net.arc("vyrazi", "zahradnik", via=[(0, -3.2)])
 net.arc("zahradnik", "okopat")
 net.arc("okopavani", "okop")
 net.arc("okop", "zahradnik")
-net.chain("okop", "okopano", "odchod")
 
 # po obchůzce do budky a zpět na začátek (cyklus zahradníka)
 net.immediate("hotovo", (3.6, -4.9), label="obchůzka hotova", label_pos="right")
@@ -46,26 +46,31 @@ net.loop("ne_bourka", "vyrazi", bend=25)
 net.loop("ne_bourka", "navrat", bend=25)
 net.loop("je_bourka", "preruseni", bend=25)
 
+# generátor bouřek ve smyčce; bouřka, která začne za bouřky, splyne s probíhající
 net.place("gen_b", (-5.4, 3), tokens=1, label="příchody bouřek", label_pos="below")
 net.timed("vznik", (-3.6, 3), "exp(48 h)", param_pos="above")
+net.loop("gen_b", "vznik")
 net.place("nastava", (-1.8, 3), label="bouřka začíná", label_pos="below")
-net.immediate("zac_b", (0, 3), label="začátek bouřky", label_pos="below right")
+net.immediate("zac_b", (0, 3), p=1, label="začátek bouřky", label_pos="below right",
+              param_pos="above left")
+net.immediate("splyne", (-1.8, 4.5), label="splyne", label_pos="above")
 net.place("proces", (0, 4.5), label="trvání", label_pos="above")
 net.timed("trvani", (1.8, 4.5), "exp(1 h)", param_pos="below")
 net.place("skoncila", (3.6, 4.5), label="skončila", label_pos="above")
 net.immediate("konec_b", (11.4, 4.5), label="konec bouřky", label_pos="below left")
-net.chain("gen_b", "vznik", "nastava", "zac_b")
+net.chain("vznik", "nastava", "zac_b")
+net.arc("nastava", "splyne")
 net.arc("zac_b", "proces")
 net.chain("proces", "trvani", "skoncila", "konec_b")
-net.arc("konec_b", "gen_b", via=[(11.4, 6), (-5.4, 6)])
 net.arc("ne_bourka", "zac_b")
 net.arc("zac_b", "je_bourka", via=[(9.6, 3)])
 net.arc("je_bourka", "konec_b", via=[(11.4, -1.5)])
-net.arc("konec_b", "ne_bourka", via=[(12.9, 4.5), (12.9, 7.5), (-7.2, 7.5), (-7.2, 0)])
+net.arc("konec_b", "ne_bourka", via=[(11.4, 6), (-7.2, 6), (-7.2, 0)])
 
 net.invariant({"zacatek": 1, "zahradnik": 1, "okopavani": 1, "schovany": 1, "budka": 1}, 1,
               name="zahradník je právě v jednom stavu")
 net.invariant({"ne_bourka": 1, "je_bourka": 1}, 1)
-net.invariant({"gen_b": 1, "nastava": 1, "proces": 1, "skoncila": 1}, 1)
+net.invariant({"ne_bourka": 1, "proces": 1, "skoncila": 1}, 1,
+              name="bouřka buď není, nebo právě jedna trvá")
 net.bound("prace", 10)
 net.sim_events = 60000
