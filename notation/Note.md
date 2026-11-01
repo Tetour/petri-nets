@@ -109,7 +109,7 @@ Podobné úlohy: [Netrpělivé požadavky](<../../02 - Netrpělivost a omezená 
 ### Interpretace → Nápověda
 
 - Bullet points: how each requirement of the task becomes part of the net (arrivals, branching, resources, merged release, leaving …), in the order of the flow; and every ambiguity with the reading chosen (e.g. „přesáhne 5“ = more than 5, so the test arc has weight 6).
-- The section is called **Interpretace** („Zobrazit interpretaci (nápověda)“) while it is an unconfirmed reading. Once the user reviews the note and confirms it, it is renamed to **Nápověda** („Zobrazit nápovědu“); the [exercise list](<../exercises/Exercise list.md>) reads the status `reviewed` from that name.
+- The section is called **Interpretace** („Zobrazit interpretaci (nápověda)“) while it is an unconfirmed reading. Once the user reviews the note and confirms it, it is renamed to **Nápověda** („Zobrazit nápovědu“); the [exercise list](<../exercises/Seznam úloh.md>) shows the note as *zkontrolováno* based on that name.
 - A hint states the modelling, not who said what: no mentions of the lecturer or transcripts here (those belong to Původ a zdroje).
 
 ### Petriho síť
