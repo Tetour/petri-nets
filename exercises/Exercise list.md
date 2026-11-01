@@ -25,6 +25,26 @@ Status: `drafted` = built and passing `make check`, the interpretation not yet c
 | 11 | [Slovní úlohy: doprava a dávky](<11 - Doprava a dávky/>) | 14 | 0 |
 | 12 | [Slovní úlohy: výroba, zdroje a sklady](<12 - Výroba a sklady/>) | 18 | 0 |
 
+## Začni tady
+
+Patnáct úloh na začátek: nejdřív každý vzor z [Notace a vzory](<../notation/Notace a vzory.md>) aspoň jednou, pak nejnovější půlsemestrálky.
+
+1. [Opravářská dílna](<01 - Základní modely/01 - Opravářská dílna/01 - Opravářská dílna.md>): generátor, zařízení, pravděpodobnostní větvení, odchod ze systému
+2. [Samoobsluha](<01 - Základní modely/02 - Samoobsluha/02 - Samoobsluha.md>): sklad (vozíky), několik zařízení za sebou, výběr pokladny
+3. [Netrpělivé požadavky](<02 - Netrpělivost a omezená fronta/01 - Netrpělivé požadavky/01 - Netrpělivé požadavky.md>): netrpělivost (timeout ve frontě)
+4. [Porucha s opravou, návrat do fronty](<03 - Poruchy/03 - Porucha s opravou, návrat do fronty/03 - Porucha s opravou, návrat do fronty.md>): přerušení obsluhy poruchou
+5. [Údržba po každé 10. obsluze](<04 - Údržba a spánek/06 - Údržba po každé 10. obsluze/06 - Údržba po každé 10. obsluze.md>): čítač: každá N-tá transakce
+6. [Přerušení příchodů při plné frontě](<05 - Délka fronty a kapacita/05 - Přerušení příchodů při plné frontě/05 - Přerušení příchodů při plné frontě.md>): test délky fronty, dočasné zastavení příchodů
+7. [Kopírovací centrum](<09 - Obsluha zákazníků/10 - Kopírovací centrum/10 - Kopírovací centrum.md>): půlsemestrálka 2022/23: větvení, netrpělivost; s Hrubého řešením
+8. [Klientské centrum](<09 - Obsluha zákazníků/06 - Klientské centrum/06 - Klientské centrum.md>): půlsemestrálka 2023/24: zastavení příchodů podle délky fronty
+9. [Centrum MM1 s rychlým režimem](<09 - Obsluha zákazníků/04 - Centrum MM1 s rychlým režimem/04 - Centrum MM1 s rychlým režimem.md>): půlsemestrálka 2024/25: přepínání režimu podle fronty
+10. [Pizza stánek](<09 - Obsluha zákazníků/05 - Pizza stánek/05 - Pizza stánek.md>): půlsemestrálka 2024/25: dva zdroje, priorita
+11. [Zahradnictví a bouřka](<12 - Výroba a sklady/01 - Zahradnictví a bouřka/01 - Zahradnictví a bouřka.md>): půlsemestrálka 2024/25: proces, který přerušuje jiný proces
+12. [Vyhlídkové lety](<11 - Doprava a dávky/02 - Vyhlídkové lety/02 - Vyhlídkové lety.md>): půlsemestrálka 2024/25: dávka s odjezdem po čase
+13. [Úřad](<09 - Obsluha zákazníků/01 - Úřad/01 - Úřad.md>): půlsemestrálka 2025/26: dočasné posílení kapacity
+14. [Obslužné centrum](<09 - Obsluha zákazníků/02 - Obslužné centrum/02 - Obslužné centrum.md>): půlsemestrálka 2025/26: if–else přes prioritu, den a noc
+15. [Psí salon](<09 - Obsluha zákazníků/03 - Psí salon/03 - Psí salon.md>): půlsemestrálka 2025/26: vyprázdnění fronty, zastavení příchodů
+
 ## 01 Základní modely (přednášky)
 
 | Č. | Úloha | Původ | Status |

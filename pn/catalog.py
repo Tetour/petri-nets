@@ -156,6 +156,27 @@ CATEGORIES = [
 ]
 
 
+# Exercises to start with: every pattern of the notation cheat sheet at least once, then the
+# newest midterm word problems. (name, what it practises)
+START = [
+    ("Opravářská dílna", "generátor, zařízení, pravděpodobnostní větvení, odchod ze systému"),
+    ("Samoobsluha", "sklad (vozíky), několik zařízení za sebou, výběr pokladny"),
+    ("Netrpělivé požadavky", "netrpělivost (timeout ve frontě)"),
+    ("Porucha s opravou, návrat do fronty", "přerušení obsluhy poruchou"),
+    ("Údržba po každé 10. obsluze", "čítač: každá N-tá transakce"),
+    ("Přerušení příchodů při plné frontě", "test délky fronty, dočasné zastavení příchodů"),
+    ("Kopírovací centrum", "půlsemestrálka 2022/23: větvení, netrpělivost; s Hrubého řešením"),
+    ("Klientské centrum", "půlsemestrálka 2023/24: zastavení příchodů podle délky fronty"),
+    ("Centrum MM1 s rychlým režimem", "půlsemestrálka 2024/25: přepínání režimu podle fronty"),
+    ("Pizza stánek", "půlsemestrálka 2024/25: dva zdroje, priorita"),
+    ("Zahradnictví a bouřka", "půlsemestrálka 2024/25: proces, který přerušuje jiný proces"),
+    ("Vyhlídkové lety", "půlsemestrálka 2024/25: dávka s odjezdem po čase"),
+    ("Úřad", "půlsemestrálka 2025/26: dočasné posílení kapacity"),
+    ("Obslužné centrum", "půlsemestrálka 2025/26: if–else přes prioritu, den a noc"),
+    ("Psí salon", "půlsemestrálka 2025/26: vyprázdnění fronty, zastavení příchodů"),
+]
+
+
 def categories():
     """(category folder, full name, [(exercise folder relative to exercises/, name, origin)])"""
     for c, (short, title, exercises) in enumerate(CATEGORIES, 1):

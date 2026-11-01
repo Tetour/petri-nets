@@ -8,7 +8,7 @@ interpretation, which is marked by renaming the note's section „Interpretace�
 
 from pathlib import Path
 
-from .catalog import categories, exercises
+from .catalog import START, categories, exercises, folder
 
 ROOT = Path(__file__).resolve().parent.parent
 INDEX = ROOT / "exercises" / "Exercise list.md"
@@ -44,6 +44,13 @@ def index():
         n = cat.split(" - ")[0]
         rev = sum(status(f) == "reviewed" for f, _, _ in exs)
         out.append(f"| {n} | [{title}](<{cat}/>) | {len(exs)} | {rev} |")
+    out.append("")
+    out += ["## Začni tady", "",
+            "Patnáct úloh na začátek: nejdřív každý vzor z [Notace a vzory](<../notation/Notace a vzory.md>) aspoň jednou, "
+            "pak nejnovější půlsemestrálky.", ""]
+    for i, (name, what) in enumerate(START, 1):
+        f = folder(name)
+        out.append(f"{i}. [{name}](<{f}/{f.split('/')[1]}.md>): {what}")
     out.append("")
     for cat, title, exs in cats:
         out += [f"## {cat.split(' - ')[0]} {title}", "", "| Č. | Úloha | Původ | Status |", "|---|---|---|---|"]

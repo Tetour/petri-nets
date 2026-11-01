@@ -7,7 +7,7 @@ The notes are in Czech; the tooling and these documents are in English.
 ## Where to start
 
 1. **Notation:** [Notace a vzory](notation/Notace%20a%20vzory.md) is a cheat sheet of the course notation and the standard patterns (generator, facility, store, timeout, failure, counter, …), each with a small net in [notation/patterns/](notation/patterns/).
-2. **Exercises:** [Exercise list](<exercises/Exercise list.md>) lists all 118 exercises by category, with origin and review status.
+2. **Exercises:** [Exercise list](<exercises/Exercise list.md>) lists all 118 exercises by category, with origin and review status. It opens with *Začni tady*: 15 exercises that cover every pattern once and then the newest midterms, a good first round before the midterm.
 3. **Practise:** open a note. Only the task (*Zadání*) is visible; every other section is collapsed, so you can try the exercise first and then open the hint, the net, the common mistakes, the SIMLIB model and the sources one at a time. Each note also exists as a PDF next to it, with the task alone on the first page.
 
 The categories go from basic models over single mechanisms (failures, maintenance, priorities, … as in the short exam questions) and marking at time t to full word problems as at the midterm:
