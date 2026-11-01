@@ -2,7 +2,7 @@
 
 ## Zadání
 
-> Uvažujme systém M/M/1. Proces přichodu nových transakcí se na 10 časových jednotek přeruší, pokud délka fronty dosáhne pěti transakcí.
+> Uvažujme systém M/M/1. Proces příchodu nových transakcí se na 10 časových jednotek přeruší, pokud délka fronty dosáhne pěti transakcí.
 
 Podobné úlohy: [Klientské centrum](<../../09 - Obsluha zákazníků/06 - Klientské centrum/06 - Klientské centrum.md>) (stejný mechanismus: fronta 10 → stop stav na 4 h), [MM3 – zastavení příchodů](<../06 - MM3 – zastavení příchodů/06 - MM3 – zastavení příchodů.md>) (zastavení podle obsazení linek), [Interval příchodů podle délky fronty](<../04 - Interval příchodů podle délky fronty/04 - Interval příchodů podle délky fronty.md>).
 
