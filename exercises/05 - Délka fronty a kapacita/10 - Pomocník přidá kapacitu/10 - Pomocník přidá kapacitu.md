@@ -2,7 +2,7 @@
 
 ## Zadání
 
-> Mějme systém M/M/1. V intervalech exponenciálně se středem 100 časových jednotek přichází dobrotivý správce linky, který na dobu 20 časových jednotek pomáhá s obsluhou tak, že poskytuje lince další jednu jednotku kapacity (systém je pak M/M/2). Zadaný systém modelujte prostředky Petriho sítě.
+> Mějme systém M/M/1. V intervalech exponenciálně se středem 100 časových jednotek přichází dobrotivý správce linky, který na dobu 20 časových jednotek pomáhá s obsluhou tak, že poskytuje lince další jednu jednotku kapacity (systém je pak M/M/2).
 
 Podobné úlohy: [Údržba zabere celou kapacitu](<../09 - Údržba zabere celou kapacitu/09 - Údržba zabere celou kapacitu.md>) (sesterská skupina E téhož termínu), [Sklad s dočasně větší kapacitou](<../08 - Sklad s dočasně větší kapacitou/08 - Sklad s dočasně větší kapacitou.md>) (+3 jednotky na 100 č. j.), [Dočasně MM2 při dlouhé frontě](<../02 - Dočasně MM2 při dlouhé frontě/02 - Dočasně MM2 při dlouhé frontě.md>).
 

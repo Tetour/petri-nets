@@ -2,8 +2,6 @@
 
 ## Zadání
 
-> 1. (15 bodů) Modelujte zadaný systém Petriho sítí s vyznačením všech relevantních parametrů. Napište simulační model systému prostředky knihovny SIMLIB, který je izomorfní k modelu v Petriho síti.
->
 > Uvažujme systém M/M/1. V systému pracuje jeden údržbář, který se v intervalech exponenciálně se středem 4 hodiny vrací k této obslužné lince. Pokud v okamžiku jeho příchodu bylo dokončeno alespoň 10 obsluh od jeho poslední návštěvy u linky, pak počká na dokončení případné právě prováděné obsluhy a zahájí na lince údržbu trvající přesně 20 minut. Jinak pokračuje ve své obchůzce.
 
 Podobné úlohy:

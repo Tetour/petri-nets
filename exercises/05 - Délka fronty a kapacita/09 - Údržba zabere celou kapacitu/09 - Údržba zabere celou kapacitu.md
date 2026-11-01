@@ -2,7 +2,7 @@
 
 ## Zadání
 
-> Mějme systém M/M/2. V intervalech exponenciálně se středem 100 časových jednotek přichází údržbový proces, který chce zabrat celou kapacitu linky. Po zabrání celé kapacity linky provádí její údržbu po dobu 10 časových jednotek. Údržbový proces nesmí ve frontě k lince zestárnout. Zadaný systém modelujte prostředky Petriho sítě.
+> Mějme systém M/M/2. V intervalech exponenciálně se středem 100 časových jednotek přichází údržbový proces, který chce zabrat celou kapacitu linky. Po zabrání celé kapacity linky provádí její údržbu po dobu 10 časových jednotek. Údržbový proces nesmí ve frontě k lince zestárnout.
 
 Podobné úlohy: [Pomocník přidá kapacitu](<../10 - Pomocník přidá kapacitu/10 - Pomocník přidá kapacitu.md>) (sesterská skupina F téhož termínu), [MM3 – prioritní zabírají 2 linky](<../../07 - Priority/06 - MM3 – prioritní zabírají 2 linky/06 - MM3 – prioritní zabírají 2 linky.md>) (transakce zabírá dvě linky najednou), [Údržbář na obchůzce](<../../04 - Údržba a spánek/07 - Údržbář na obchůzce/07 - Údržbář na obchůzce.md>).
 
