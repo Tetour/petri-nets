@@ -3,10 +3,6 @@
 ## Zadání
 
 > Letiště má k dispozici jednu dráhu, která slouží pro starty a přistání letadel. V intervalech exponenciálně se středem 10 minut požádá o přistání nové letadlo. Přistávající letadla mají prioritu v přístupu na dráhu před startujícími letadly. Pokud letadlo nezíská dráhu pro přistání do 30 minut od žádosti, pak systém opouští. Letadlo po přistání vymění cestující (rovnoměrně 20–30 minut) a žádá o dráhu pro start. V 10% případů přistávající letadlo havaruje, což způsobí odstávku dráhy na přesně 8 hodin. V případě odstávky dráhy všechna letadla čekající na přistání odletí a v průběhu odstávky nová k letišti nepřilétají. Doba přistání i startu je exponenciálně se středem 3 minuty.
->
-> *Zadaný systém modelujte formou Petriho sítě s vyznačením všech potřebných parametrů.*
-
-Věta „V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém“ přibyla až v roce 2022/23. Výstupní přechody jsou v síti přesto, dnes se vyžadují.
 
 Podobné úlohy: [Psí salon](<../03 - Psí salon/03 - Psí salon.md>) (vyprázdnění fronty a zastavení příchodů), [Netrpělivé požadavky](<../../02 - Netrpělivost a omezená fronta/01 - Netrpělivé požadavky/01 - Netrpělivé požadavky.md>), [Dva proudy příchodů](<../../07 - Priority/04 - Dva proudy příchodů/04 - Dva proudy příchodů.md>).
 

@@ -3,10 +3,6 @@
 ## Zadání
 
 > Na poli pracuje 5 sběračů jahod. Každému sběrači zabere exponenciálně se středem 20 minut nasbírat bedýnku jahod a donést ji do sběrného místa. Ve sběrném místě pracuje jedna balicí linka. Lince zabere rovnoměrně 5–7 minut zabalit obsah jedné bedýnky. Pokud fronta k lince dosáhne délky alespoň 10 bedýnek, pak linka hlásí sirénou přeplněnost. Na signál sirény si všichni sběrači dají pauzu v práci na dobu přesně 60 minut a pak obnoví činnost od počátku.
->
-> *Zadaný systém modelujte formou Petriho sítě s vyznačením všech potřebných parametrů.*
-
-Věta „V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém“ přibyla až v roce 2022/23. Výstupní přechod je v síti přesto, dnes se vyžaduje.
 
 Podobné úlohy: [Jahodová farma](<../04 - Jahodová farma/04 - Jahodová farma.md>), [Přerušení příchodů při plné frontě](<../../05 - Délka fronty a kapacita/05 - Přerušení příchodů při plné frontě/05 - Přerušení příchodů při plné frontě.md>), [Psí salon](<../../09 - Obsluha zákazníků/03 - Psí salon/03 - Psí salon.md>).
 

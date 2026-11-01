@@ -3,8 +3,6 @@
 ## Zadání
 
 > Do trafiky přichází zákazníci v intervalech exponenciálně se středem 5 minut. V trafice pracuje jeden prodavač. Doba obsluhy zákazníka je exponenciálně se středem 2 minuty. Pokud prodavač nemá zákazníky 10 minut, pak odchází do skladu a vrací se přesně po 10 minutách. Příchozí zákazník okamžitě z trafiky odchází, pokud u pultu není přítomen prodavač.
->
-> **V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém.**
 
 Podobné úlohy: [Automat na kávu – údržba po nečinnosti](<../../04 - Údržba a spánek/01 - Automat na kávu – údržba po nečinnosti/01 - Automat na kávu – údržba po nečinnosti.md>), [Spánek po nečinnosti](<../../04 - Údržba a spánek/08 - Spánek po nečinnosti/08 - Spánek po nečinnosti.md>), [Údržba při prázdné frontě](<../../04 - Údržba a spánek/04 - Údržba při prázdné frontě/04 - Údržba při prázdné frontě.md>).
 

@@ -102,6 +102,7 @@ Podobné úlohy: [Netrpělivé požadavky](<../../02 - Netrpělivost a omezená 
   A **speed** („rychlostí 15 kubíků za hodinu“) stays as written: converting it to a time per unit (`4 min`) is part of the exercise, and the hints state the conversion.
 
   The rest of the text stays as in the source. Diverging from the original is accepted (at the exam one can ask); the original is kept as **Původní znění** in Původ a zdroje.
+- Zadání describes the system only. Lines that just say what to produce („Zadaný systém modelujte formou Petriho sítě s vyznačením všech potřebných parametrů.“, „V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém.“, „+ SIMLIB“, „Napište program v SIMLIBu …“) are left out; they stay in Původní znění. Every net has an exit transition and every note a SIMLIB section anyway. An instruction that carries task data stays („se značením odpovídajícím času t2 = 10,5“).
 - If the source is only a student's recollection or a reconstruction, a ⚠️ line before the quote says so.
 - `Podobné úlohy:` links to related exercises (optional). Generate each link with `python3 -c "from pn.catalog import link; print(link('Netrpělivé požadavky'))"`. In running text, refer to an exercise the same way, with „úloha“ in the right case where the grammar needs it („jako v úloze [Výletní loď](…)“); in code comments, by its name in quotes.
 

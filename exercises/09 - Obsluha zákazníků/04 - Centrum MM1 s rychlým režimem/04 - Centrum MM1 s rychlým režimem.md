@@ -3,8 +3,6 @@
 ## Zadání
 
 > Zákazníci přichází do obslužného Centra typu M/M/1 v intervalech exponenciálně se středem 5 minut. Doba obsluhy je v běžném režimu exponenciálně se středem 7 minut. Pokud však délka fronty dosáhne 5 čekajících zákazníků, pak se Centrum přepne do zrychleného režimu, ve kterém trvá obsluha exponenciálně se středem 3 minut, což se projeví na nově zahájené obsluze. Centrum setrvá ve zrychleném režimu, dokud se fronta nevyprázdní.
->
-> Zadaný systém modelujte formou Petriho sítě s vyznačením všech potřebných parametrů. **V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém.**
 
 Všimni si: v běžném režimu je obsluha (7 min) pomalejší než příchody (5 min). Bez zrychleného režimu by fronta rostla do nekonečna.
 

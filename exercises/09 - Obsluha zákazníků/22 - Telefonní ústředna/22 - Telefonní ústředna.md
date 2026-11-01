@@ -11,8 +11,6 @@
 > Hovor trvá exponenciálně se středem 2 minuty.
 > Po skončení hovoru a uvolnění linky volající požadavek opouští systém.
 
-Věta „V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém“ v zadání není (přibyla až v roce 2022/23). Výstupní přechod je v síti přesto, dnes se vyžaduje.
-
 Podobné úlohy: [Dva proudy příchodů](<../../07 - Priority/04 - Dva proudy příchodů/04 - Dva proudy příchodů.md>), [Opravářská dílna](<../../01 - Základní modely/01 - Opravářská dílna/01 - Opravářská dílna.md>).
 
 ## Interpretace

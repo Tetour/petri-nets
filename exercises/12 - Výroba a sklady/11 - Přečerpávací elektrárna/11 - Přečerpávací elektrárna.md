@@ -3,8 +3,6 @@
 ## Zadání
 
 > Přečerpávací vodní elektrárna je složena ze dvou nádrží A a B. Každá nádrž má kapacitu 1000 jednotek vody. V počátečním stavu jsou obě naplněny 500 jednotkami vody. Elektrizační soustava pracuje v běžném denním provozu přesně 16 hodin a v nočním provozu přesně 8 hodin. V běžném denním provozu se spouští voda z nádrže A do nádrže B rychlostí jednotka vody za přesně 4 minuty. V běžném nočním provozu se čerpá z B zpátky do A rychlostí jednotka vody za přesně 1 minutu až do vyprázdnění nádrže B. V intervalech exponenciálně se středem 100 dní dochází k havárii v soustavě. Pokud tato havárie nastane v běžném denním provozu, pak elektrárna zvýší produkci tím, že spouští vodu z A do B rychlostí jednotka vody za přesně 1 minutu do vyčerpání zásob, nejvýše však 3 hodiny. Potom se vrací do režimu dle denní doby.
->
-> *Zadaný systém modelujte formou Petriho sítě s vyznačením všech potřebných parametrů.*
 
 Podobné úlohy: [Přečerpávací elektrárna II](<../09 - Přečerpávací elektrárna II/09 - Přečerpávací elektrárna II.md>) (Z11), [Uhelný mlýn](<../12 - Uhelný mlýn/12 - Uhelný mlýn.md>), [Zahradnictví a bouřka](<../01 - Zahradnictví a bouřka/01 - Zahradnictví a bouřka.md>) (stavová místa „je / není bouřka“).
 

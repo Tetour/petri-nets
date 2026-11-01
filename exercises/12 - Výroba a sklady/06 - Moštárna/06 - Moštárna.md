@@ -3,10 +3,6 @@
 ## Zadání
 
 > Dílna na produkci jablečného moštu (moštárna) leží vedle jablečného sadu. Moštárna obsahuje 5 poloautomatických lisů, sběrnou nádobu na mošt a jednu lahvovací linku. Ve firmě pracují dva moštaři a pět sběračů jablek. Sběrač v intervalech exponenciálně se středem 30 minut přináší do moštárny jednu bedýnku jablek. Každý moštař pracuje nezávisle a provádí dvě činnosti: 1) plnění lisů jablky, 2) lahvování. Lis pracuje dávkově s kapacitou danou obsahem jedné bedýnky jablek. Plnění lisu moštařem zabere rovnoměrně 5–7 minut. Po naplnění lisu dále lis pracuje samostatně. Lisování zabere rovnoměrně 30–40 minut a výsledkem je mošt o objemu na 20 lahví. Lisovaný mošt ze všech lisů jde do centrální záchytné nádoby (kapacitu neuvažujeme). Pokud je v záchytné nádobě nějaký mošt, pak moštař přednostně provádí lahvování dokud je nádoba neprázdná. Naplnění jedné lahve moštařem na lahvovací lince zabere rovnoměrně 1–2 minuty.
->
-> *Zadaný systém modelujte formou Petriho sítě s vyznačením všech potřebných parametrů.*
-
-Věta „V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém“ přibyla až v roce 2022/23. Výstupní přechod je v síti přesto, dnes se vyžaduje.
 
 Podobné úlohy: [Jahodová farma](<../04 - Jahodová farma/04 - Jahodová farma.md>) (stejné schéma: sběrači, stroje, balicí linka), [Sběrači jahod](<../02 - Sběrači jahod/02 - Sběrači jahod.md>).
 

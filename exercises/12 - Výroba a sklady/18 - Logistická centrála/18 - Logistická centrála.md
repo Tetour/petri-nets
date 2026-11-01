@@ -6,8 +6,6 @@
 >
 > Poznámka: Pracovník zpracovávající přivezené balíky je nezávislý proces.
 
-Věta „V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém“ v zadání není (přibyla až v roce 2022/23). Výstupní přechod je v síti přesto, dnes se vyžaduje.
-
 Podobné úlohy: [Výletní loď](<../../11 - Doprava a dávky/04 - Výletní loď/04 - Výletní loď.md>) (čítač do plna), [Přepravní firma](<../../11 - Doprava a dávky/08 - Přepravní firma/08 - Přepravní firma.md>), [Chmelová brigáda](<../17 - Chmelová brigáda/17 - Chmelová brigáda.md>) (stejný rok).
 
 ## Interpretace

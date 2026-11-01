@@ -3,8 +3,6 @@
 ## Zadání
 
 > Do kotle uhelné elektrárny přikládá uhlí uhelný mlýn zabezpečující přísun a zpracování paliva pro kotel. V režimu běžného provozu vhazuje mlýn do kotle dávku paliva v intervalu přesně 1 minuta. V intervalech exponenciálně se středem 100 dní dochází v elektrizační soustavě k havárii, která si vynutí okamžité odstavení elektrárny. Během odstávky mlýn nedodává kotli palivo a kotel přesně 5 hodin chládne. Po vychladnutí kotle lze elektrárnu opět zapojit. Opětovný start elektrárny zabere dalších přesně 5 hodin pomalého rozehřívání, kdy mlýn vhazuje dávku paliva v intervalech přesně 5 minut. Po dokončení rozehřívací fáze může mlýn začít zásobovat kotel dle intervalu běžného režimu. Interval mezi haváriemi se počítá od posledního naběhnutí elektrárny do běžného režimu nebo od počátku modelového času.
->
-> *Zadaný systém modelujte formou Petriho sítě s vyznačením všech potřebných parametrů.*
 
 Podobné úlohy: [Spalovna](<../07 - Spalovna/07 - Spalovna.md>) (porucha, oprava 5 h a pak 5 h zrychlený provoz), [Automat na kávu](<../../09 - Obsluha zákazníků/07 - Automat na kávu/07 - Automat na kávu.md>) (další porucha se počítá od konce opravy), [Přečerpávací elektrárna](<../11 - Přečerpávací elektrárna/11 - Přečerpávací elektrárna.md>).
 

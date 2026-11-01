@@ -1,12 +1,11 @@
 from pn import Net
 
 net = Net("Kritická sekce (poznámky MSI, P/T sítě, příklad 2)")
-# Uzavřená P/T síť bez času: dva procesy obíhají dokola, nic nepřichází ani neodchází.
+# Uzavřená síť: dva procesy obíhají dokola, nic nepřichází ani neodchází.
 net.closed = True
-# Všechny přechody jsou okamžité a tvoří cykly, takže v nulovém čase by se prováděly
-# donekonečna (simulátor to hlásí jako livelock). Síť proto nesimulujeme; vzájemné
-# vyloučení zaručuje P-invariant volná KS + A v KS + B v KS = 1.
-net.simulate = False
+# Akce trvají, konce akcí jsou časované; vstupy do kritické sekce (t2, t6) jsou okamžité.
+# Zadání doby neuvádí: A = střední doba akcí A1, A2, B1, B2, K = střední doba v KS.
+net.params = {"A": 5, "K": 2}
 
 # proces 1 v horní řadě (návrat nad ní), proces 2 v dolní řadě (návrat pod ní)
 Y = 2.2
@@ -14,13 +13,16 @@ for proc, y, n, ks in (("A", Y, 1, "KS1"), ("B", -Y, 5, "KS2")):
     up = y > 0
     side, back = ("above", y + 1.6) if up else ("below", y - 1.6)
     net.place(f"{proc}1", (0, y), tokens=1, label=f"{proc}1", label_pos="left")
-    net.immediate(f"t{n}", (1.5, y), label=f"t{n}", label_pos=side)
+    net.timed(f"t{n}", (1.5, y), "exp(A)", label=f"t{n}", label_pos=side)
     net.place(f"{proc}_pred", (3, y), label=f"{proc} před KS", label_pos=side)
     net.immediate(f"t{n + 1}", (4.5, y), label=f"t{n + 1}", label_pos=side)
     net.place(f"{proc}_v", (6, y), label=ks, label_pos=side)
-    net.immediate(f"t{n + 2}", (7.5, y), label=f"t{n + 2}", label_pos=side)
+    # čas na straně odvrácené od hrany do volné KS
+    net.timed(f"t{n + 2}", (7.5, y), "exp(K)", label=f"t{n + 2}", label_pos=side,
+              param_pos=("below right" if up else "above right"))
     net.place(f"{proc}2", (9, y), label=f"{proc}2", label_pos=side)
-    net.immediate(f"t{n + 3}", (10.5, y), label=f"t{n + 3}", label_pos="right")
+    net.timed(f"t{n + 3}", (10.5, y), "exp(A)", label=f"t{n + 3}", label_pos="right",
+              param_pos=("below" if up else "above"))
     net.chain(f"{proc}1", f"t{n}", f"{proc}_pred", f"t{n + 1}", f"{proc}_v", f"t{n + 2}",
               f"{proc}2", f"t{n + 3}")
     net.arc(f"t{n + 3}", f"{proc}1", via=[(10.5, back), (0, back)])

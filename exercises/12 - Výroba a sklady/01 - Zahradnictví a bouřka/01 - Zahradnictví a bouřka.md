@@ -3,8 +3,6 @@
 ## Zadání
 
 > Zahradnictví tvoří 10 záhonků, jeden zahradník a zahradní budka. Zahradník pravidelně vyráží na obchůzku okopávat všechny záhonky. Okopání jednoho záhonku trvá exponenciálně se středem 10 minut. Po okopání všech záhonků zahradník přesně 30 minut odpočívá v zahradní budce. V intervalech exponenciálně se středem 48 hodin začne bouřka, která trvá exponenciálně se středem 1 hodina. Zahradník nevyráží na obchůzku za bouřky. Pokud ho bouřka zastihne při práci, pak se schová v budce, dokud bouřka neskončí. Po bouřce pokračuje zahradník na záhonku, u kterého byl bouřkou přerušen, ovšem **začíná okopávání od začátku**.
->
-> Zadaný systém modelujte formou Petriho sítě s vyznačením všech potřebných parametrů. **V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém.**
 
 Podobné úlohy: [Zahradník na FIT](<../10 - Zahradník na FIT/10 - Zahradník na FIT.md>) (obchůzka po květinách), [Porucha vrací transakci do fronty](<../../03 - Poruchy/02 - Porucha vrací transakci do fronty/02 - Porucha vrací transakci do fronty.md>) (přerušení a opakování od začátku).
 

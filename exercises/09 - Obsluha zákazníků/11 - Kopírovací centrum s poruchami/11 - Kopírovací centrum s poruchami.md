@@ -3,10 +3,6 @@
 ## Zadání
 
 > Do kopírovacího centra přichází požadavky v intervalech exponenciálně se středem 2 minuty. Požadavky jsou nejprve registrovány u přepážky, což zabere rovnoměrně 2–3 minuty. Pak čekají ve frontě na obsluhu. Kapacita obsluhy je 10 požadavků. Doba obsluhy je exponenciálně se středem 20 minut. V intervalech exponenciálně se středem 8 hodin dochází v centru k poruše, která nenávratně zničí všechny rozpracované obsluhy, které systém okamžitě opouští. Po zničení všech rozpracovaných obsluh systém normálně pokračuje v práci.
->
-> *Zadaný systém modelujte formou Petriho sítě s vyznačením všech potřebných parametrů.*
-
-Věta „V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém“ přibyla až v roce 2022/23. Výstupní přechod je v síti přesto, dnes se vyžaduje.
 
 Podobné úlohy: [Kopírovací centrum](<../10 - Kopírovací centrum/10 - Kopírovací centrum.md>) (2022/23), [Porucha zruší obsluhu](<../../03 - Poruchy/01 - Porucha zruší obsluhu/01 - Porucha zruší obsluhu.md>), [Kritická havárie](<../../03 - Poruchy/05 - Kritická havárie/05 - Kritická havárie.md>), [Psí salon](<../03 - Psí salon/03 - Psí salon.md>).
 

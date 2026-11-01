@@ -3,10 +3,6 @@
 ## Zadání
 
 > Do překladiště přijíždí nákladní auta v intervalech exponenciálně se středem 20 minut. Každé auto veze 3 kontejnery. Překládání kontejnerů z aut do přistaveného vlaku zajišťuje jeden jeřáb. Vykládka jednoho kontejneru zabere exponenciálně se středem 8 minut. Vlak má kapacitu 20 kontejnerů. Po naplnění vlaku vlak odjíždí a vrací se přesně po jedné hodině. Během nepřítomnosti vlaku v překladišti je vykládka z aut pozastavena. Na počátku stojí v překladišti prázdný vlak.
->
-> *Zadaný systém modelujte formou Petriho sítě s vyznačením všech potřebných parametrů.*
-
-Věta „V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém“ přibyla až v roce 2022/23. Výstupní přechod je v síti přesto, dnes se vyžaduje.
 
 Podobné úlohy: [Překladiště s jeřábem](<../09 - Překladiště s jeřábem/09 - Překladiště s jeřábem.md>), [Bagrista a nákladní auta](<../10 - Bagrista a nákladní auta/10 - Bagrista a nákladní auta.md>), [Pizzerie s rozvozem](<../03 - Pizzerie s rozvozem/03 - Pizzerie s rozvozem.md>).
 

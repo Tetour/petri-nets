@@ -9,7 +9,6 @@
 > - zničí práve prebihajúcu obsluhu
 > - alebo počká na príchod následujúcej obsluhy a tú zničí
 >
-> \+ SIMLIB kód
 > Modely MUSIA byť izomorfné.
 
 Podobné úlohy:

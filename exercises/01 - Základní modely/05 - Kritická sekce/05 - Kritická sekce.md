@@ -16,7 +16,7 @@ Podobné úlohy: [Výrobní systém](<../04 - Výrobní systém/04 - Výrobní s
 - **Kritická sekce** je chráněná místem *volná KS* s jednou značkou (zámek, zařízení s kapacitou 1). Vstup (t2, t6) značku bere, výstup (t3, t7) ji vrací.
 - **Vzájemné vyloučení** zaručuje P-invariant *volná KS* + *KS1* + *KS2* = 1: v kritické sekci nemohou být oba procesy současně.
 - **Uzavřená síť:** procesy jen obíhají, nic nepřichází ani neodchází, takže síť nemá výstupní přechod.
-- **Bez času:** přechody jsou nakreslené jako okamžité. Simulace se tu nespouští, protože okamžité přechody v cyklu by se v nulovém čase prováděly donekonečna. V SPN by akce A1, KS1, A2 (a B1, KS2, B2) měly trvání, takže konce akcí (t1, t3, t4, t5, t7, t8) by byly časované a vstupy do kritické sekce (t2, t6) by zůstaly okamžité.
+- **Čas:** akce A1, KS1, A2 (a B1, KS2, B2) trvají, takže konce akcí (t1, t3, t4, t5, t7, t8) jsou časované přechody. Vstupy do kritické sekce (t2, t6) jsou okamžité: proces vstoupí, jakmile je kritická sekce volná. Zadání doby neuvádí, v síti jsou proto symboly: akce trvají exponenciálně se středem `A`, kritická sekce exponenciálně se středem `K`.
 - Síť nezaručuje férovost: když čekají oba procesy, rozhodne se mezi t2 a t6 nedeterministicky a jeden proces může druhého předbíhat pořád.
 
 </details>
@@ -49,14 +49,15 @@ Podobné úlohy: [Výrobní systém](<../04 - Výrobní systém/04 - Výrobní s
 <summary>Zobrazit SIMLIB kód</summary>
 <br>
 
-Model je izomorfní k Petriho síti výše: každé místo, přechod a značka mají svůj protějšek v kódu. Síť je bez času, SIMLIB ale potřebuje, aby akce trvaly. Doby jsou proto doplněné: akce A1, A2, B1, B2 trvají exponenciálně se středem 5 časových jednotek, kritická sekce exponenciálně se středem 2 časové jednotky. Konce akcí (t1, t3, t4, t5, t7, t8) se tím stávají časovanými přechody, vstupy do kritické sekce (t2, t6) zůstávají okamžité.
+Model je izomorfní k Petriho síti výše: každé místo, přechod a značka mají svůj protějšek v kódu. Zadání doby neuvádí, symboly ze sítě mají proto hodnoty jen pro simulaci: `A` = 5 časových jednotek (akce A1, A2, B1, B2), `K` = 2 časové jednotky (kritická sekce).
 
 ```cpp
 // Kritická sekce – model v SIMLIB/C++
 #include "simlib.h"
 
-const double AKCE = 5;                 // střední doba akcí A1, A2, B1, B2 (doplněno, síť je bez času)
-const double SEKCE = 2;                // střední doba v kritické sekci (doplněno)
+// zadání časy neuvádí: symboly ze sítě, hodnoty jen pro simulaci (stejné jako v net.py)
+const double AKCE = 5;                 // A: střední doba akcí A1, A2, B1, B2
+const double SEKCE = 2;                // K: střední doba v kritické sekci
 
 Facility KS("Kritická sekce");         // místo volná KS s jednou značkou (zámek)
 
@@ -85,13 +86,14 @@ int main() {
 |---|---|
 | značka procesu 1 / procesu 2 | dva procesy třídy `Proces`; oba mají stejný cyklus, proto stačí jedna třída |
 | cyklus *A1* → … → t4 → *A1* | nekonečný cyklus `for (;;)` v `Behavior()` |
+| symboly `A`, `K` | konstanty `AKCE`, `SEKCE` s hodnotami jen pro simulaci |
 | místo *A1* + přechod t1 (*B1* + t5) | `Wait(Exponential(AKCE));` |
 | místo *A před KS* + přechod t2 (*B před KS* + t6) | `Seize(KS)` (čekání před KS je vnitřní fronta zařízení) |
 | místo *volná KS* (1 značka) | `Facility KS` |
 | místo *KS1* + přechod t3 (*KS2* + t7) | `Wait(Exponential(SEKCE)); Release(KS);` |
 | místo *A2* + přechod t4 (*B2* + t8) | `Wait(Exponential(AKCE));` a návrat na začátek cyklu |
 
-**Kontrola simulací.** Petriho síť se nesimuluje, protože okamžité přechody v cyklu by se v nulovém čase prováděly donekonečna (`make check` u ní jen kontroluje strukturu). Prohledáním stavového prostoru (15 dosažitelných značení) je ověřené, že ve všech značeních platí *volná KS* + *KS1* + *KS2* = 1, každý proces má právě jednu značku a síť nikdy neuvázne. SIMLIB model: v jednom běhu (10⁶ časových jednotek) byla kritická sekce obsazená 32,4 % času a před ní čekalo průměrně 0,054 procesu. Teorie (uzavřený systém se dvěma procesy, mimo KS průměrně 10 časových jednotek, v KS 2): stavy „v KS nikdo / jeden / oba“ mají váhy 10²/2 : 10 · 2 : 2² = 50 : 20 : 4, takže vytížení je 24/74 = 32,4 % a průměrný počet čekajících 4/74 = 0,054 (`make simlib`).
+**Kontrola simulací.** Petriho síť (s hodnotami A = 5, K = 2): v simulaci stále platí *volná KS* + *KS1* + *KS2* = 1, každý proces má právě jednu značku, všechny přechody se provádějí a síť neuvázne (`make check`). Prohledáním stavového prostoru (bez ohledu na čas 15 dosažitelných značení) je ověřené, že vzájemné vyloučení platí ve všech značeních a síť nikdy neuvázne. SIMLIB model: v jednom běhu (10⁶ časových jednotek) byla kritická sekce obsazená 32,4 % času a před ní čekalo průměrně 0,054 procesu. Teorie (uzavřený systém se dvěma procesy, mimo KS průměrně 10 časových jednotek, v KS 2): stavy „v KS nikdo / jeden / oba“ mají váhy 10²/2 : 10 · 2 : 2² = 50 : 20 : 4, takže vytížení je 24/74 = 32,4 % a průměrný počet čekajících 4/74 = 0,054 (`make simlib`).
 
 </details>
 
@@ -101,7 +103,7 @@ int main() {
 <summary>Zobrazit původ a zdroje</summary>
 <br>
 
-**Původ:** řešený příklad 2 z poznámek „Černobílé a barvené Petriho sítě“ ke cvičení MSI (Vojnar), které jsou na webu předmětu. P/T síť bez času, tady překreslená do notace IMS.
+**Původ:** řešený příklad 2 z poznámek „Černobílé a barvené Petriho sítě“ ke cvičení MSI (Vojnar), které jsou na webu předmětu. P/T síť bez času, tady překreslená do notace IMS a doplněná o čas: konce akcí jsou časované přechody.
 
 **Zdroje:**
 

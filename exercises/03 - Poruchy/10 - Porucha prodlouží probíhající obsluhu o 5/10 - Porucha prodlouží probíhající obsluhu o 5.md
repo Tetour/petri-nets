@@ -5,8 +5,6 @@
 ⚠️ Původní zadání se nedochovalo, jen studentský přepis (slovensky):
 
 > 2. (10b) Petriho sieť pre M/M/1 kde vzniká porucha v intervaloch exponenciálne so stredom 50 časových jednotiek, ktorá predĺži momentálny proces o 5 časových jednotiek. Ak pri vytvorení poruchy momentálne neprebieha žiadny proces tak sa nepredlžuje nič.
->
-> 3. (10b) Pseudokód na základe SIMLIBu, pre zadanie z 2. úlohy
 
 Podobné úlohy:
 

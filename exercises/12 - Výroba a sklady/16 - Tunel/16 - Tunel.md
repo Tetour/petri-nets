@@ -3,10 +3,6 @@
 ## Zadání
 
 > Mezi místy A a B je třeba vykopat 1000 metrů dlouhý tunel. Z každé strany kope jiná vrtná souprava (souprava A/B). Souprava B vždy vrtá úsek jednoho metru rovnoměrně 1–3 hodiny. Souprava A je extrémně hlučná a proto musí v nočních hodinách vrtat pomalu (rovnoměrně 3–5 hodin na metr) a v denních hodinach smí pracovat běžnou rychlostí rovnoměrně 1–3 hodiny na metr. Pokud v libovolném okamžiku vrtání běžnou rychlostí u soupravy A denní doba přejde z denních do nočních hodin, vrtání se přeruší a dále se rozpracovaný metrový úsek od počátku znovu opakuje v pomalém módu. Vrtné soupravy postupují proti sobě, přesto se však nesmí srazit. Práce se ukončí v okamžiku, kdy se soupravy potkají. Vyznačte v Petriho síti místo, které bude obsahovat informaci o počtu metrů od startovního místa A, kde dojde k setkání obou souprav. Noční doba trvá přesně 8 hodin. Zvolte si vhodně počáteční čas.
->
-> Modelujte zadaný systém ve formě Petriho sítě s vyznačením všech potřebných parametrů.
-
-Věta „V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém“ přibyla až v roce 2022/23. Výstupní přechod je v síti přesto, dnes se vyžaduje.
 
 Podobné úlohy: [Porucha vrací transakci do fronty](<../../03 - Poruchy/02 - Porucha vrací transakci do fronty/02 - Porucha vrací transakci do fronty.md>) (přerušená práce začíná znovu), [Stavba z betonu](<../13 - Stavba z betonu/13 - Stavba z betonu.md>) (konečná práce, konec po N částech), [Dílna se třemi stroji](<../15 - Dílna se třemi stroji/15 - Dílna se třemi stroji.md>).
 

@@ -5,10 +5,6 @@
 > Do bankovní pobočky přicházejí klienti v intervalech exponenciálně se středem 5 minut. V pobočce pracují tři pracovníci na přepážce a jeden vedoucí pobočky. Klient si po příchodu do pobočky vezme lístek ze stroje pro evidenci pořadí. Použití stroje zabere rovnoměrně 30–60 sekund. Deset procent klientů požaduje speciální poradenství, které vykonává vedoucí pobočky. Ostatní klienti jsou obsluhováni na přepážkách. Obsluha na přepážce i speciální poradenství trvají exponenciálně se středem 5 minut.
 >
 > Vedoucí pobočky je v počátečním stavu na své přepážce. Pokud je k jeho přepážce fronta klientů prázdná již přesně 30 minut, vydává se na kontrolu pobočky, která mu zabere rovnoměrně 10–20 minut. V intervalech exponenciálně se středem 5 hodin přijíždí do pobočky vozidlo s převozem hotovosti, které má pro vedoucího vysokou prioritu. Pokud momentálně neobsluhuje klienta, musí svou činnost přerušit a obsloužit auto. Pokud momentálně obsluhuje klienta, dokončí nejprve obsluhu klienta a pak započne obsluhu auta. Obsluha auta zabere rovnoměrně 10–15 minut. Po obsluze auta se vrací k přepážce.
->
-> *Zadaný systém modelujte formou Petriho sítě s vyznačením všech potřebných parametrů.*
-
-Věta „V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém“ přibyla až v roce 2022/23. Výstupní přechody jsou v síti přesto, dnes se vyžadují.
 
 Podobné úlohy: [Banka a lupič](<../21 - Banka a lupič/21 - Banka a lupič.md>), [Spánek po nečinnosti](<../../04 - Údržba a spánek/08 - Spánek po nečinnosti/08 - Spánek po nečinnosti.md>), [Automat na kávu – údržba po nečinnosti](<../../04 - Údržba a spánek/01 - Automat na kávu – údržba po nečinnosti/01 - Automat na kávu – údržba po nečinnosti.md>), [Příklad s prioritou procesu](<../../07 - Priority/01 - Příklad s prioritou procesu/01 - Příklad s prioritou procesu.md>), [Kopírovací centrum](<../10 - Kopírovací centrum/10 - Kopírovací centrum.md>).
 

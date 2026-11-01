@@ -6,8 +6,6 @@
 >
 > Všechny ostatní procesy mají stejnou prioritu a je jim spravedlivě (round-robin) přidělován procesor s časovým kvantem přesně 10 milisekund. Procesy se mohou vzdát procesoru s pravděpodobností 20 procent v libovolném okamžiku jim přiděleného časového kvanta. Dobu potřebnou pro přepnutí kontextu zanedbáváme.
 
-Věta „V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém“ v zadání není (přibyla až v roce 2022/23). Výstupní přechod je v síti přesto (pro přehrané bloky).
-
 Podobné úlohy: [Počítačový server](<../04 - Počítačový server/04 - Počítačový server.md>) (přidělování procesoru), [Výpočetní služba se spánkem](<../02 - Výpočetní služba se spánkem/02 - Výpočetní služba se spánkem.md>).
 
 ## Interpretace

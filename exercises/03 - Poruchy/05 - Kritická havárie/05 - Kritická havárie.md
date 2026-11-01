@@ -2,8 +2,6 @@
 
 ## Zadání
 
-> Zadaný systém modelujte prostředky Petriho sítě s vyznačením atributů na přechodech a místech. Vyznačte přechodem, kde transakce opouští systém.
->
 > Uvažujme systém typu M/M/1. V intervalech exponenciálně se středem 100 časových jednotek se na lince projeví kritická havárie, která linku na přesně 10 časových jednotek zcela odstaví. Případná rozpracovaná obsluha je bez náhrady ukončena.
 
 Podobné úlohy:

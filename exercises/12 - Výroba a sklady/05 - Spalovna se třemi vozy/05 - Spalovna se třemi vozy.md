@@ -3,10 +3,6 @@
 ## Zadání
 
 > V provozu městské spalovny pracují tři svozové vozy a jedna spalovací komora. Svozové vozy přijíždí v intervalech exponenciálně se středem 1 hodina s jednotkovým balíkem odpadu, balík vyloží do fronty ke spalovací komoře a za normálních okolností odjíždí na další sběrnou trasu. Kapacita spalovací komory je pět balíků. Spalování jednoho balíku trvá exponenciálně se středem 2 hodiny. Pokud se naplní kapacita komory a stále je její fronta neprázdná, pak se systém přepne do výjimečného stavu, kdy svozové vozy po vyložení balíku čekají na místě do jeho odvolání. Výjimečný stav se odvolá až po tom, co se veškerá spalovací práce v komoře a ve frontě dokončí.
->
-> *Zadaný systém modelujte formou Petriho sítě s vyznačením všech potřebných parametrů.*
-
-Věta „V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém“ v tehdejších zadáních ještě nebyla. Výstupní přechod je v síti přesto, dnes se vyžaduje.
 
 Podobné úlohy: [Spalovna](<../07 - Spalovna/07 - Spalovna.md>), [Sběrači jahod](<../02 - Sběrači jahod/02 - Sběrači jahod.md>), [Výrobní hala](<../03 - Výrobní hala/03 - Výrobní hala.md>).
 

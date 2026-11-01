@@ -2,8 +2,6 @@
 
 ## Zadání
 
-> Zadaný systém modelujte prostředky Petriho sítě s vyznačením atributů na přechodech a místech. Vyznačte přechodem, kde transakce opouští systém.
->
 > Uvažujme systém typu M/M/1, kde však jsou dva zcela nezávislé procesy příchodů (Normální, Prioritní). Transakce pocházející z Prioritního procesu příchodů mají na lince vyšší *prioritu obsluhy* (!) než transakce z Normálního procesu příchodů.
 
 Podobné úlohy:
@@ -141,6 +139,12 @@ int main() {
 <br>
 
 **Původ:** zkouška 2025/26, 1. termín, skupina B, otázka 1, 10 bodů.
+
+**Původní znění:**
+
+> Zadaný systém modelujte prostředky Petriho sítě s vyznačením atributů na přechodech a místech. Vyznačte přechodem, kde transakce opouští systém.
+>
+> Uvažujme systém typu M/M/1, kde však jsou dva zcela nezávislé procesy příchodů (Normální, Prioritní). Transakce pocházející z Prioritního procesu příchodů mají na lince vyšší *prioritu obsluhy* (!) než transakce z Normálního procesu příchodů.
 
 **Zdroje:**
 

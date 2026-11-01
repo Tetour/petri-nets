@@ -6,8 +6,6 @@
 >
 > Poznámka: Kapacitu skladu plných košíků lze modelovat místem v Petriho síti se zadanou kapacitou.
 
-Věta „V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém“ v zadání není (přibyla až v roce 2022/23). Výstupní přechod je v síti přesto, dnes se vyžaduje.
-
 Podobné úlohy: [Sběrači jahod](<../02 - Sběrači jahod/02 - Sběrači jahod.md>), [Jahodová farma](<../04 - Jahodová farma/04 - Jahodová farma.md>), [Výletní loď](<../../11 - Doprava a dávky/04 - Výletní loď/04 - Výletní loď.md>) (čítač do plna), [Logistická centrála](<../18 - Logistická centrála/18 - Logistická centrála.md>) (stejný rok).
 
 ## Interpretace

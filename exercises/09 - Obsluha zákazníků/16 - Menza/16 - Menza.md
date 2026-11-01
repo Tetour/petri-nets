@@ -3,8 +3,6 @@
 ## Zadání
 
 > Do školní menzy přichází studenti v intervalech exponenciálně se středem 3 minuty. Jídlo vydává 5 kuchařek. Doba obsluhy jednoho studenta kuchařkou je exponenciálně se středem 1 minuta. Po obdržení jídla student konzumuje rovnoměrně 10–15 minut. V intervalech exponenciálně se středem 100 dní dostává menza hlášení o žloutenkové karanténě. Po příchodu hlášení se ukončí okamžitě všechny činnosti (výdej, konzumace) a úplně všichni studenti opustí menzu. Po odchodu všech studentů z menzy se zahájí karanténa trvající přesně 10 dní. Příchodem hlášení se zastaví proces příchodu studentů do menzy.
->
-> Zadaný systém modelujte formou Petriho sítě s vyznačením všech potřebných parametrů.
 
 Podobné úlohy: [Psí salon](<../03 - Psí salon/03 - Psí salon.md>) (vyprázdnění fronty smyčkou s prioritou a zastavení příchodů), [Každá 100. transakce vyprázdní frontu](<../../05 - Délka fronty a kapacita/07 - Každá 100. transakce vyprázdní frontu/07 - Každá 100. transakce vyprázdní frontu.md>), [Uhelný mlýn](<../../12 - Výroba a sklady/12 - Uhelný mlýn/12 - Uhelný mlýn.md>) (havárie exp(100 dní)).
 

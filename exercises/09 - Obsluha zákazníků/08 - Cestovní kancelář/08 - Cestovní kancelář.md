@@ -3,8 +3,6 @@
 ## Zadání
 
 > Do pobočky cestovní kanceláře přichází klienti v intervalech exponenciálně se středem 10 minut. Pobočka má 3 přepážky pro obsluhu klientů. Doba obsluhy klienta je exponenciálně se středem 8 minut. Pokud je ve frontě alespoň 5 čekajících klientů, pak kancelář na dobu přesně 1 hodiny otevře dvě další přepážky, tj. tyto dodatečné přepážky se po hodině (a dokončení rozpracovaného klienta) opět uzavřou.
->
-> **V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém.**
 
 Podobné úlohy: [Úřad s dodatečnými přepážkami](<../15 - Úřad s dodatečnými přepážkami/15 - Úřad s dodatečnými přepážkami.md>), [Úřad](<../01 - Úřad/01 - Úřad.md>), [Dočasně MM2 při dlouhé frontě](<../../05 - Délka fronty a kapacita/02 - Dočasně MM2 při dlouhé frontě/02 - Dočasně MM2 při dlouhé frontě.md>), [Natrvalo MM3 při dlouhé frontě](<../../05 - Délka fronty a kapacita/03 - Natrvalo MM3 při dlouhé frontě/03 - Natrvalo MM3 při dlouhé frontě.md>).
 

@@ -6,8 +6,6 @@
 >
 > Poznámka: Po uplynutí 15 minut přítomnosti lodi v přístavu (bez ohledu na počet návštěvníků) loď další návštěvníky nenaloží a odjíždí.
 
-Věta „V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém“ v zadání není (přibyla až v roce 2022/23). Výstupní přechod je v síti přesto, dnes se vyžaduje.
-
 Podobné úlohy: [Výletní loď](<../04 - Výletní loď/04 - Výletní loď.md>), [Vyhlídková loď na molu](<../07 - Vyhlídková loď na molu/07 - Vyhlídková loď na molu.md>), [Výletní loď na jezeře](<../11 - Výletní loď na jezeře/11 - Výletní loď na jezeře.md>), [Přehrada s přístavišti](<../12 - Přehrada s přístavišti/12 - Přehrada s přístavišti.md>).
 
 ## Interpretace

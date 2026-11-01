@@ -3,8 +3,6 @@
 ## Zadání
 
 > Do pizzerie s rozvozem volají zákazníci v intervalech exponenciálně se středem 5 minut. Vyřízení jedné objednávky (rozhovor, výroba pizzy) zabere exponenciálně se středem 10 minut. V pizzerii jsou 3 pracovníci pro obsluhu volajících a jeden pracovník pro rozvoz. Rozvozový pracovník vyráží na trasu rozvozu se všemi hotovými objednávkami, pokud je splněna jedna z podmínek: A) buď je hotových objednávek alespoň 10, nebo B) je hotová alespoň nějaká a on už čeká 15 minut. Kompletní rozvoz trvá rovnoměrně 30–50 minut.
->
-> **V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém.**
 
 Podobné úlohy: [Výletní loď](<../04 - Výletní loď/04 - Výletní loď.md>), [Výletní autobus](<../01 - Výletní autobus/01 - Výletní autobus.md>), [Psí salon](<../../09 - Obsluha zákazníků/03 - Psí salon/03 - Psí salon.md>) (vyprázdnění místa smyčkou s prioritou).
 

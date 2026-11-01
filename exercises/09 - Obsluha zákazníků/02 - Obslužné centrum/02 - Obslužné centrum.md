@@ -4,7 +4,7 @@
 
 > ⚠️ **Rekonstrukce.** Zadání z roku 2025/26 v materiálech chybí, existuje jen Hrubého řešení. Text níže je odvozený z jeho sítě a poznámek („if-else“, „je noc“, „proces den/noc“). Čísla jsou převzatá z řešení. Že délka obsluhy závisí na denní době v okamžiku jejího začátku, je odvozené ze sítě.
 >
-> Do obslužného centra přichází zákazníci v intervalech exponenciálně se středem 10 minut. Zákazníky obsluhují tři linky. Ve dne trvá obsluha exponenciálně se středem 5 minut, v noci exponenciálně se středem 10 minut. Den trvá přesně 16 hodin, noc přesně 8 hodin, model začíná ráno. V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém.
+> Do obslužného centra přichází zákazníci v intervalech exponenciálně se středem 10 minut. Zákazníky obsluhují tři linky. Ve dne trvá obsluha exponenciálně se středem 5 minut, v noci exponenciálně se středem 10 minut. Den trvá přesně 16 hodin, noc přesně 8 hodin, model začíná ráno.
 
 Podobné úlohy: [Centrum MM1 s rychlým režimem](<../04 - Centrum MM1 s rychlým režimem/04 - Centrum MM1 s rychlým režimem.md>) (délka obsluhy podle režimu), [Přečerpávací elektrárna](<../../12 - Výroba a sklady/11 - Přečerpávací elektrárna/11 - Přečerpávací elektrárna.md>) (cyklus den/noc 16 h/8 h), [Překladiště s jeřábem](<../../11 - Doprava a dávky/09 - Překladiště s jeřábem/09 - Překladiště s jeřábem.md>).
 

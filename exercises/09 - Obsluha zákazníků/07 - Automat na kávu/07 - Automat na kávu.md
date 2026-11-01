@@ -3,8 +3,6 @@
 ## Zadání
 
 > K automatu na kávu přichází zákazníci v intervalech exponenciálně se středem 10 minut. Doba obsluhy je exponenciálně se středem 2 minuty. V automatu se cyklicky projevuje porucha, a to vždy rovnoměrně 5–6 hodin od okamžiku poslední opravy poruchy (nebo od počátku času). Porucha se projeví na právě probíhající obsluze nebo na další následující transakci. Požadavek zasažený poruchou opouští systém bez obsluhy. Oprava poruchy zabere přesně 1 hodinu.
->
-> **V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém.**
 
 Podobné úlohy: [Porucha zničí obsluhu nebo počká](<../../03 - Poruchy/06 - Porucha zničí obsluhu nebo počká/06 - Porucha zničí obsluhu nebo počká.md>), [Porucha s opravou, transakce odchází](<../../03 - Poruchy/04 - Porucha s opravou, transakce odchází/04 - Porucha s opravou, transakce odchází.md>), [Porucha vrací transakci do fronty](<../../03 - Poruchy/02 - Porucha vrací transakci do fronty/02 - Porucha vrací transakci do fronty.md>), [Spalovna](<../../12 - Výroba a sklady/07 - Spalovna/07 - Spalovna.md>), [Výroba hrášku](<../../12 - Výroba a sklady/14 - Výroba hrášku/14 - Výroba hrášku.md>).
 

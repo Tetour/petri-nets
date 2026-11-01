@@ -3,8 +3,6 @@
 ## Zadání
 
 > Životní cyklus překladiště se skládá z osmihodinové pracovní doby a 16 hodin odpočinku. Auta s nákladem přijíždí na rampu překladiště pouze během pracovní doby v intervalech exponenciálně se středem 10 minut. Auto je přistaveno na rampu a čeká dokud z něj jeřáb nevyloží 1 jednotku nákladu. Jeřábník přesouvá jednotku nákladu z auta do místa určení dobu exponenciálně se středem 3 minuty. Pokud nemá 10 minut co přesouvat (na rampě není auto), pak jeřábník vyráží na obchůzku po překladišti, která trvá rovnoměrně 5–10 minut.
->
-> *Zadaný systém modelujte formou Petriho sítě s vyznačením všech potřebných parametrů.*
 
 Podobné úlohy: [Údržbář na obchůzce](<../../04 - Údržba a spánek/07 - Údržbář na obchůzce/07 - Údržbář na obchůzce.md>), [Spánek po nečinnosti](<../../04 - Údržba a spánek/08 - Spánek po nečinnosti/08 - Spánek po nečinnosti.md>), [Úřad s dodatečnými přepážkami](<../../09 - Obsluha zákazníků/15 - Úřad s dodatečnými přepážkami/15 - Úřad s dodatečnými přepážkami.md>) (pracovní doba 8 h / 16 h), [Bagrista a nákladní auta](<../10 - Bagrista a nákladní auta/10 - Bagrista a nákladní auta.md>).
 

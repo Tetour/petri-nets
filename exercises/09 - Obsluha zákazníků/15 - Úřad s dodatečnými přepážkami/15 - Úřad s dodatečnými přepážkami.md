@@ -3,8 +3,6 @@
 ## Zadání
 
 > Pracovní doba úřadu je přesně 8 hodin, po kterých následuje přesně 16 hodin volna. Do úřadovny přichází klienti v období pracovní doby v intervalech exponenciálně se středem 10 minut. Agendu klientů vyřizují úředníci na třech přepážkách. Zpracování jednoho klienta trvá exponenciálně se středem 15 minut. Pokud počet klientů ve frontě k přepážkám dosáhne počtu 10 klientů, úřad na dobu přesně 2 hodin otevře tři další dodatečné přepážky. Po ukončení pracovní doby opouští všichni klienti ve frontě úřad (rozpracovaní klienti jsou dokončeni) a po uvolnění klientem se taky okamžitě uzavřou případné dodatečné přepážky.
->
-> Zadaný systém modelujte formou Petriho sítě s vyznačením všech potřebných parametrů.
 
 Podobné úlohy: [Cestovní kancelář](<../08 - Cestovní kancelář/08 - Cestovní kancelář.md>) (stejný mechanismus dodatečných přepážek), [Úřad](<../01 - Úřad/01 - Úřad.md>), [Dočasně MM2 při dlouhé frontě](<../../05 - Délka fronty a kapacita/02 - Dočasně MM2 při dlouhé frontě/02 - Dočasně MM2 při dlouhé frontě.md>), [Překladiště s jeřábem](<../../11 - Doprava a dávky/09 - Překladiště s jeřábem/09 - Překladiště s jeřábem.md>) (pracovní doba 8 h / 16 h).
 

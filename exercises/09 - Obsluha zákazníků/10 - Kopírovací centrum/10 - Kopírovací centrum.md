@@ -3,8 +3,6 @@
 ## Zadání
 
 > Do kopírovacího centra přichází klienti v intervalech exponenciálně se středem 3 minuty. U přepážky registrují svůj požadavek, což zabere rovnoměrně 1–2 minuty. V centru jsou dva kopírovací stroje: stroj pro normální zakázky (A) a stroj pro speciální zakázky. 70% zakázek směřuje na stroj A. Klienti se speciální zakázkou jsou však netrpěliví, proto po přesně 10 minutách čekání ve frontě na stroj B opouští systém. Doba zpracování na obou strojích je exponenciálně se středem 3 minuty.
->
-> **V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém.**
 
 Podobné úlohy: [Kopírovací centrum s poruchami](<../11 - Kopírovací centrum s poruchami/11 - Kopírovací centrum s poruchami.md>) (2021/22), [Netrpělivé požadavky](<../../02 - Netrpělivost a omezená fronta/01 - Netrpělivé požadavky/01 - Netrpělivé požadavky.md>).
 

@@ -3,8 +3,6 @@
 ## Zadání
 
 > Do klientského centra přichází klienti v intervalech exponenciálně se středem 20 minut. Požadavky obsluhuje jedna pracovnice. Doba obsluhy je exponenciálně se středem 10 minut. Pokud fronta k obsluze dosáhne délky 10 čekajících, pak centrum vyhlásí dočasný "stop stav", během kterého se zastaví proces příchodu požadavků. Stop stav trvá přesně 4 hodiny.
->
-> **V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém.**
 
 Podobné úlohy: [Přerušení příchodů při plné frontě](<../../05 - Délka fronty a kapacita/05 - Přerušení příchodů při plné frontě/05 - Přerušení příchodů při plné frontě.md>), [MM3 – zastavení příchodů](<../../05 - Délka fronty a kapacita/06 - MM3 – zastavení příchodů/06 - MM3 – zastavení příchodů.md>), [Psí salon](<../03 - Psí salon/03 - Psí salon.md>), [Centrum MM1 s rychlým režimem](<../04 - Centrum MM1 s rychlým režimem/04 - Centrum MM1 s rychlým režimem.md>), [Výrobní hala](<../../12 - Výroba a sklady/03 - Výrobní hala/03 - Výrobní hala.md>).
 

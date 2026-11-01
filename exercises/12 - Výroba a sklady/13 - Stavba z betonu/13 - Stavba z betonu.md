@@ -5,10 +5,6 @@
 > Pro dokončení stavby budovy z betonu je třeba provést 100 elementárních betonových stavebních částí. Na stavbě pracuje jedna parta bednářů a jedna parta betonářů. Pro zbudování jedné stavební části je třeba 1) připravit licí formu pro lití betonu (dělají bednáři, trvá rovnoměrně 3–5 hodin), 2) do formy nalít beton (dělají betonáři, trvá rovnoměrně 30–60 minut), 3) beton nechat uzrát přesně 10 dní a 4) licí formu odstranit (dělají bednáři, trvá rovnoměrně 2–3 hodiny). Na stavbě je k dispozici 10 licích forem. V situaci, kdy lze někde licí formu zbudovat a jinde licí formu po vyzrání betonu odstranit, bednáři přednostně vykonávají odstraňování forem.
 >
 > Po dokončení přípravy licí formy se odešle požadavek na dodávku betonu. Dodávka dorazí přesně 2 hodiny po zavolání. Pokud nemají betonáři dodávku betonu pro lití do zbudované formy, pak se na jeden úkon (příprava nebo odstranění formy) přidávají k bednářům.
->
-> *Zadaný systém modelujte formou Petriho sítě s vyznačením všech potřebných parametrů.*
-
-Věta „V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém“ přibyla až v roce 2022/23. Výstupní přechod je v síti přesto, dnes se vyžaduje.
 
 Podobné úlohy: [Dílna se třemi stroji](<../15 - Dílna se třemi stroji/15 - Dílna se třemi stroji.md>), [Chmelová brigáda](<../17 - Chmelová brigáda/17 - Chmelová brigáda.md>), [Banka se třemi pracovníky](<../../09 - Obsluha zákazníků/19 - Banka se třemi pracovníky/19 - Banka se třemi pracovníky.md>).
 

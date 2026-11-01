@@ -3,10 +3,6 @@
 ## Zadání
 
 > Poštovní pobočka má každý den rozvézt 100 nových doporučených zásilek. K dispozici má jeden poštovní vůz s doručovatelem. Poštovní vůz za dobu rovnoměrně 10–15 minut nabere najednou zásilky až po svou kapacitu 20 zásilek. Pak vyrazí do terénu. Každý úsek trasy (z pošty k zákazníkovi, od zákazníka k jinému zákazníkovi, od zákazníka zpět na poštu) trvá dobu exponenciálně se středem 2 minuty. Po příjezdu k zákazníkovi je pravděpodobnost 20 procent, že zákazník nebude zastižen. Pokud je zastižen, pak je doba vyřizování rovnoměrně 3–5 minut, jinak je přesně 1 minutu. Vůz se po posledním zákazníkovi vrací na pobočku, kde vyloží jednotlivě nedoručené zásilky, které se uloží pro přímý odběr zákazníky. Vyložení každé jednotlivé nedoručené zásilky trvá exponenciálně se středem 2 minuty. Zákazníci přichází na pobočku pro nedoručené balíky v intervalech exponenciálně se středem 10 minut a čekají ve frontě libovolně dlouho. K dispozici mají 3 poštovní přepážky, každou s jedním pracovníkem pošty. Obsluha zákazníka trvá rovnoměrně 1–2 minuty. Při nakládání a vykládání vozu asistuje doručovateli vždy jeden z pracovníků na přepážce.
->
-> Modelujte zadaný systém ve formě Petriho sítě s vyznačením všech potřebných parametrů.
-
-Věta „V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém“ přibyla až v roce 2022/23. Výstupní přechody jsou v síti přesto, dnes se vyžadují.
 
 Podobné úlohy: [Pizzerie s rozvozem](<../03 - Pizzerie s rozvozem/03 - Pizzerie s rozvozem.md>), [Přepravní firma](<../08 - Přepravní firma/08 - Přepravní firma.md>), [Výletní loď](<../04 - Výletní loď/04 - Výletní loď.md>).
 

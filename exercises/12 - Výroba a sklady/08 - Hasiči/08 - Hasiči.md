@@ -3,10 +3,6 @@
 ## Zadání
 
 > V regionu dochází ke vzniku požárů v intervalech exponenciálně se středem 8 hodin. Centrála hasičů dostává hlášení o novém požáru okamžitě po jeho vzniku. Nehašený požár trvá rovnoměrně 2–3 hodiny, tj. po uplynutí této doby žádost o pomoc hasičů zaniká. Hasičská centrála má 5 hasičských vozů. K běžnému požáru je třeba výjezd jednoho vozu. Cesta vozu ke každému požáru trvá exponenciálně se středem 10 minut (symetricky cesta zpátky). Hašení požáru trvá rovnoměrně 30–60 minut. V intervalech exponenciálně se středem 1 týden dochází k požáru extrémního rozsahu, která vyžaduje výjezd všech dostupných požárních vozů (všechny vozy dostupné v centrále, všechny vozy po návratu z běžného požáru). Extrémní požár po přesně 10 hodinách skončí, tj. pak se vozy vrací.
->
-> *Zadaný systém modelujte formou Petriho sítě s vyznačením všech potřebných parametrů.*
-
-Věta „V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém“ přibyla až v roce 2022/23. Výstupní přechody jsou v síti přesto, dnes se vyžadují.
 
 Podobné úlohy: [Nemocniční ambulance](<../../09 - Obsluha zákazníků/18 - Nemocniční ambulance/18 - Nemocniční ambulance.md>), [Netrpělivé požadavky](<../../02 - Netrpělivost a omezená fronta/01 - Netrpělivé požadavky/01 - Netrpělivé požadavky.md>), [Psí salon](<../../09 - Obsluha zákazníků/03 - Psí salon/03 - Psí salon.md>).
 

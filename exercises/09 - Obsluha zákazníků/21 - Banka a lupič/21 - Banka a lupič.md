@@ -6,8 +6,6 @@
 >
 > Poznámka: Po dobu přepadení banky je proces příchodů transakcí přerušen.
 
-Věta „V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém“ v zadání není (přibyla až v roce 2022/23). Výstupní přechody jsou v síti přesto, dnes se vyžadují.
-
 Podobné úlohy: [Psí salon](<../03 - Psí salon/03 - Psí salon.md>) (vyprázdnění fronty a pauza příchodů), [Výletní loď](<../../11 - Doprava a dávky/04 - Výletní loď/04 - Výletní loď.md>) (vyprázdnění fronty v jednom okamžiku), [Porucha zruší obsluhu](<../../03 - Poruchy/01 - Porucha zruší obsluhu/01 - Porucha zruší obsluhu.md>), [Banka se třemi pracovníky](<../19 - Banka se třemi pracovníky/19 - Banka se třemi pracovníky.md>).
 
 ## Interpretace

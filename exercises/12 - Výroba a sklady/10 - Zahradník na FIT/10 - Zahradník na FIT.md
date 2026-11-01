@@ -3,8 +3,6 @@
 ## Zadání
 
 > Zahradník na FIT má každý den zalít 30 květin v květináčích. Květiny obchází s konvicí o kapacitě 10 jednotek vody. Květina s pravděpodobností 20% vyžaduje 3 jednotky vody, jinak 4 jednotky vody. Zahradník napustí konvici do plné kapacity za přesně 60 sekund. Cesta mezi zdrojem vody a libovolným květináčem nechť trvá rovnoměrně 2–5 minut. Cesta mezi květináči nechť trvá exponenciálně se středem 1 minuta. Pokud u květináče zahradník zjistí, že daná květina vyžaduje více vody než má aktuálně v konvici, pak se vrací vodu (cesta ke zdroji a zpět) v konvici doplnit. Zalití květiny trvá vždy přesně 20 sekund. Zahradník je na počátku u zdroje vody a má naplněnou konvici. Modelujte jeden den práce zahradníka.
->
-> Zadaný systém modelujte formou Petriho sítě s vyznačením všech potřebných parametrů.
 
 Podobné úlohy: [Zahradnictví a bouřka](<../01 - Zahradnictví a bouřka/01 - Zahradnictví a bouřka.md>) (obchůzka zahradníka po záhoncích), [Bagrista a nákladní auta](<../../11 - Doprava a dávky/10 - Bagrista a nákladní auta/10 - Bagrista a nákladní auta.md>) (jednotky materiálu jako značky s váhou hran).
 

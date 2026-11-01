@@ -2,7 +2,6 @@
 
 ## Zadání
 
-> Zadaný systém modelujte prostředky Petriho sítě s vyznačením atributů na přechodech a místech. Vyznačte přechodem, kde transakce opouští systém.
 > Uvažujme systém typu M/D/1 s tím specifikem, že doba obsluhy se střídá mezi přesně 2 časovými jednotkami a přesně 3 časovými jednotkami (tedy v posloupnosti 2,3,2,3,...).
 
 Podobné úlohy: [MD1 – prodlužování po 10 obsluhách](<../01 - MD1 – prodlužování po 10 obsluhách/01 - MD1 – prodlužování po 10 obsluhách.md>), [MD3 – poslední volné zařízení](<../03 - MD3 – poslední volné zařízení/03 - MD3 – poslední volné zařízení.md>), [MD1 – podle doby od poslední obsluhy](<../04 - MD1 – podle doby od poslední obsluhy/04 - MD1 – podle doby od poslední obsluhy.md>).

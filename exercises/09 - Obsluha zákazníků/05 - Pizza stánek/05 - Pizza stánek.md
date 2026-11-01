@@ -6,8 +6,6 @@
 >
 > stánek s pizzou, jeden pizzař to celé řídí, zákazníci chodí exponenciálně se středem 10 minut a co zákazník to objednávka pizzy, pizzař ho obslouží rovnoměrně 3–5 minut (zahrnuje objednávku, přípravu pizzy a vložení pizzy do peci), je tam pec která má 4 místa, pizza se pak peče přesně 4 minuty a zákazník mezitím čeká, k pečení neni třeba pizzaře (ten mezitím obsluhuje další zákazníky), peče se přesně 4 minuty a pak pizzař vyndá pizzu a dá ji zákazníkovi, což trvá přesně 1 minutu a má prioritu před obsluhou nových zákazníků (credits to mav_)
 
-Ostatní varianty téhož termínu mají na konci větu „V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém.“, takže ji počítej i tady.
-
 Podobné úlohy: [Pizzerie s rozvozem](<../../11 - Doprava a dávky/03 - Pizzerie s rozvozem/03 - Pizzerie s rozvozem.md>) (2022/23).
 
 ## Interpretace

@@ -3,8 +3,6 @@
 ## Zadání
 
 > Bagrista má odstranit zeminu z 1000 metrů dlouhého úseku pro stavbu silnice. Zeminu ukládá na jedno aktuálně přistavené nákladní auto. V systému jsou 3 nákladní auta, která jsou v počátečním stavu přítomna na stavbě. Jedno auto pojme zeminu z úseku 3 metrů stavby. Bagrování jednoho metru úseku trvá dobu exponenciálně se středem 5 minut. Naložené auto odjíždí a vrací se prázdné za dobu exponenciálně se středem 1 hodina. Pokud bagrista nemá přistaveno nákladní auto, přeruší práci a odchází na dobu přesně 10 minut do nedalekého stánku s občerstvením.
->
-> *Zadaný systém modelujte formou Petriho sítě s vyznačením všech potřebných parametrů.*
 
 Podobné úlohy: [Kravín](<../../01 - Základní modely/06 - Kravín/06 - Kravín.md>) (nakládání auta s kapacitou), [Překladiště kontejnerů](<../05 - Překladiště kontejnerů/05 - Překladiště kontejnerů.md>), [Překladiště s jeřábem](<../09 - Překladiště s jeřábem/09 - Překladiště s jeřábem.md>) (odchod na obchůzku při nečinnosti).
 

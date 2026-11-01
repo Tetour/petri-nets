@@ -3,8 +3,6 @@
 ## Zadání
 
 > Do nemocniční ambulace přicházejí stále pacienti v intervalech exponenciálně se středem 20 minut. Po příchodu jsou registrováni u přepážky objednávání a registrace pacientů (rovnoměrně 1–2 minuty). Ambulance obsahuje dva lékaře, kteří vyšetřují čekající pacienty. Vyšetření trvá exponenciálně se středem 10 minut. V intervalech exponenciálně se středem 5 hodin sanita přiveze do nemocnice dodávku urgentních pacientů. Oba lékaři přeruší svou případnou práci v ambulanci a opouští ordinace rovnoměrně na 3–4 hodiny k urgentnímu zásahu. Aktuálně rozpracovaní pacienti u registrační přepážky prioritně provedou přeobjednání (rovnoměrně 1–2 minuty) a opuští systém. Ostatní pacienti v čekárně čekají dále.
->
-> *Zadaný systém modelujte formou Petriho sítě s vyznačením všech potřebných parametrů.*
 
 Podobné úlohy: [Porucha s opravou, transakce odchází](<../../03 - Poruchy/04 - Porucha s opravou, transakce odchází/04 - Porucha s opravou, transakce odchází.md>), [Porucha vrací transakci do fronty](<../../03 - Poruchy/02 - Porucha vrací transakci do fronty/02 - Porucha vrací transakci do fronty.md>), [Hudební rádio](<../17 - Hudební rádio/17 - Hudební rádio.md>) (Z7, přerušení reklamou).
 
