@@ -50,7 +50,7 @@ net.immediate("vzlet", (16.5, 0), label="vzlet", label_pos="below")
 net.place("let", (18.25, 0), label="vyhlídkový let", label_pos="below")
 net.timed("t_let", (20, 0), "50–60 min", param_pos="below")
 net.chain("odlet", "vzlet", "let", "t_let")
-net.arc("t_let", "ceka", via=[(20, 5.2), (5.25, 5.2)])
+net.arc("t_let", "ceka", via=[(20, 3.3), (5.25, 3.3)])
 
 net.invariant({"ceka": 1, "nastupuje": 1, "nikdo": 1, "odlet": 1, "let": 1}, 1,
               name="letadlo je právě v jednom stavu")
