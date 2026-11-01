@@ -5,7 +5,7 @@ net.closed = True
 net.simulate = False
 # sklad mezi oběma řádky; každá hrana má vlastní stranu skladu
 net.place("store", (1.5, -1.5), tokens=3, label="Sklad (kapacita 3)", label_pos="below left")
-net.place("q", (0, 0), tokens=2, label="Fronta", label_pos="above")
+net.place("q", (0, 0), tokens=2, label="fronta", label_pos="above")
 net.immediate("enter", (1.5, 0), label="Enter", label_pos="above")
 net.place("s", (3, 0))
 net.timed("obsl", (4.5, 0), "exp(10)")
@@ -15,7 +15,7 @@ net.arc("store", "enter")
 # návrat z horního řádku obchází frontu a vchází do skladu zleva
 net.arc("obsl", "store", via=[(4.5, 1.1), (-0.8, 1.1), (-0.8, -1.5)])
 # transakce, která potřebuje 2 jednotky naráz
-net.place("q2", (0, -3), tokens=1, label="Fronta 2", label_pos="below")
+net.place("q2", (0, -3), tokens=1, label="fronta 2", label_pos="below")
 net.immediate("enter2", (1.5, -3), label="Enter(2)", label_pos="below")
 net.place("s2", (3, -3))
 net.timed("obsl2", (4.5, -3), "exp(20)")

@@ -4,7 +4,7 @@ net = Net("Zařízení (Facility): obsazení, obsluha, uvolnění")
 net.closed = True
 net.simulate = False
 # a) jako na slajdu 154: Seize – obsluha – Release
-net.place("q", (0, 0), tokens=1, label="Fronta", label_pos="below")
+net.place("q", (0, 0), tokens=1, label="fronta", label_pos="below")
 net.place("f", (1.5, 1.6), tokens=1, label="Linka", label_pos="above")
 net.immediate("seize", (1.5, 0), label="Seize", label_pos="below")
 net.place("s", (3, 0))
@@ -16,7 +16,7 @@ net.chain("q", "seize", "s", "obsl", "r", "release", "o")
 net.arc("f", "seize")
 net.arc("release", "f", via=[(7.5, 1.6)])
 # b) zkrácený zápis: uvolnění sloučené s časovaným přechodem (slajd 164)
-net.place("q2", (0, -3.8), tokens=1, label="Fronta", label_pos="below")
+net.place("q2", (0, -3.8), tokens=1, label="fronta", label_pos="below")
 net.place("f2", (1.5, -2.2), tokens=1, label="Linka", label_pos="above")
 net.immediate("seize2", (1.5, -3.8))
 net.place("s2", (3, -3.8))

@@ -6,7 +6,7 @@ net.simulate = False
 net.place("gen", (0, 0), tokens=1, label="generátor", label_pos="left")
 net.timed("prichod", (1.5, 0), "exp(10)")
 net.loop("gen", "prichod")
-net.place("fronta", (3, 0), label="Fronta", label_pos="above")
+net.place("fronta", (3, 0), label="fronta", label_pos="above")
 net.arc("prichod", "fronta")
 # generátor zůstává vlevo: zastavení bere jeho značku zespodu, návrat ji vrací shora
 net.immediate("stop", (0, -1.8), label="zastav", label_pos="left")

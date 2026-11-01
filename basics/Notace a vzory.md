@@ -71,7 +71,7 @@ Přechod `p=1` se provede, pokud může (linka je volná); jinak přijde na řad
 
 ![timeout](patterns/06-timeout/net.svg)
 
-Časovaný přechod přímo na místě *Fronta*. Každý čekající má vlastní odpočet; kdo se dostane k lince dřív, tomu odpočet zanikne.
+Časovaný přechod přímo na místě *fronta*. Každý čekající má vlastní odpočet; kdo se dostane k lince dřív, tomu odpočet zanikne.
 
 **Procvičení:** [Netrpělivé požadavky](<../exercises/02 - Netrpělivost a omezená fronta/01 - Netrpělivé požadavky/01 - Netrpělivé požadavky.md>), [Netrpělivý první ve frontě](<../exercises/02 - Netrpělivost a omezená fronta/02 - Netrpělivý první ve frontě/02 - Netrpělivý první ve frontě.md>), [Kopírovací centrum](<../exercises/09 - Obsluha zákazníků/10 - Kopírovací centrum/10 - Kopírovací centrum.md>), [Vyhlídková loď na molu](<../exercises/11 - Doprava a dávky/07 - Vyhlídková loď na molu/07 - Vyhlídková loď na molu.md>).
 

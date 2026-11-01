@@ -3,7 +3,7 @@ from pn import Net
 net = Net("Netrpělivost (timeout) ve frontě")
 net.closed = True
 net.simulate = False
-net.place("q", (0, 0), tokens=2, label="Fronta", label_pos="above left")
+net.place("q", (0, 0), tokens=2, label="fronta", label_pos="above left")
 net.place("f", (1.5, 1.7), tokens=0, label="Linka", label_pos="above")
 net.immediate("seize", (1.5, 0))
 net.place("s", (3, 0), tokens=1)
