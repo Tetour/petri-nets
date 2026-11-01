@@ -43,8 +43,8 @@ Two exam entries are unusable and not drawn: 2025/26 exam D Q1 (the page was nev
 
 ## How the notes are made
 
-- [NOTE.md](notation/NOTE.md): the structure of a note and the rules for each section (times in the task text, hints, SIMLIB, sources).
-- [STYLE.md](notation/STYLE.md): how a diagram is laid out.
+- [Note.md](notation/Note.md): the structure of a note and the rules for each section (times in the task text, hints, SIMLIB, sources).
+- [Style.md](notation/Style.md): how a diagram is laid out.
 - **Review:** a note's hint section is called *Interpretace* until you confirm the reading; then it is renamed to *Nápověda*, and the exercise index shows the note as `reviewed`.
 - **Limits:** a modelling task usually has more than one correct net. Each net aims at the one closest to Hrubý's style and the hints mention real alternatives (constant vs. exponential time, ≥ vs. >). Where only a student's recollection or a blurry photo of a task exists, a ⚠️ line in the task says so.
 
