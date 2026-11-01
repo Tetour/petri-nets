@@ -34,13 +34,13 @@ net.timed("necinnost", (7.5, 3.2), "10 min", param_pos="right")
 net.arc("prodavac", "necinnost")
 net.place("nikdo", (7.5, 4.8), label="nikdo nepřišel", label_pos="right")
 net.arc("necinnost", "nikdo")
-net.immediate("do_skladu", (6, 4.8), p=2, label="do skladu", label_pos="above",
-              param_pos="below right")
+net.immediate("do_skladu", (6.4, 4.8), p=2, label="do skladu", label_pos="above",
+              param_pos="below left")
 net.arc("nikdo", "do_skladu")
 net.arc("pritomen", "do_skladu", via=[(4.5, 4.8)])
-net.place("sklad", (6, 3.2), label="ve skladu", label_pos="left")
+net.place("sklad", (6.4, 3.2), label="ve skladu", label_pos="left")
 net.arc("do_skladu", "sklad")
-net.timed("navrat", (6, 1.6), "10 min", label="návrat", label_pos="above left",
+net.timed("navrat", (6.4, 1.6), "10 min", label="návrat", label_pos="above left",
           param_pos="below")
 net.arc("sklad", "navrat")
 net.arc("navrat", "pritomen")

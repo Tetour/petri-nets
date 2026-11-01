@@ -25,10 +25,10 @@ for row, y, prob, t, time in (("bezne", 1.8, 90, "dojeni_8", "exp(8 min)"),
 net.place("podojeno", (12, 0), label="podojeno", label_pos="left")
 
 # uvolnění dojičky (nahoru) a krávy (dolů), vznikne konvice
-net.immediate("konvice_vznik", (13.5, 0))
+net.immediate("konvice_vznik", (13.2, 0))
 net.arc("podojeno", "konvice_vznik")
-net.arc("konvice_vznik", "dojicky", via=[(13.5, 3.4), (4.5, 3.4)])
-net.arc("konvice_vznik", "kravy", via=[(13.5, -3.4), (0, -3.4)])
+net.arc("konvice_vznik", "dojicky", via=[(13.2, 3.4), (4.5, 3.4)])
+net.arc("konvice_vznik", "kravy", via=[(13.2, -3.4), (0, -3.4)])
 net.place("konvice", (15, 0), label="Konvice", label_pos="above")
 net.arc("konvice_vznik", "konvice")
 
@@ -47,7 +47,7 @@ net.arc("odvezeno", "odvoz")
 net.place("volno", (16.5, -1.8), label="volná místa v autě", label_pos="left")
 net.arc("volno", "nalozit")
 net.immediate("pristaveni", (16.5, -3.4), label="přistavení auta", label_pos="below")
-net.arc("pristaveni", "volno", w=20, w_pos="right")
+net.arc("pristaveni", "volno", w=20, w_pos="right=2pt")
 net.place("auta", (15, -3.4), tokens=2, label="Auta", label_pos="left")
 net.place("rampa", (18, -3.4), tokens=1, label="Rampa", label_pos="above")
 net.arc("auta", "pristaveni")
