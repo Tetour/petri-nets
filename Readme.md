@@ -37,7 +37,7 @@ The exercises come from the course material (outside this repository; paths in t
 - **student prep compilations:** mostly duplicates, with student nets, several of them wrong;
 - **lectures and MSI notes:** worked examples and the notation.
 
-[inventory/](inventory/) records where every exercise was found (file, page, verbatim text). The notation follows Hrubý's 2025 slides and his handwritten solutions; the MSI notes use a different convention and are redrawn. Each note's last section, *Původ a zdroje*, gives the origin, the original wording and how existing solutions differ, including their errors.
+[source-survey/](source-survey/) is the survey this project started from: every source file, what it contains and where every task was found (page, verbatim text). The notation follows Hrubý's 2025 slides and his handwritten solutions; the MSI notes use a different convention and are redrawn. Each note's last section, *Původ a zdroje*, gives the origin, the original wording and how existing solutions differ, including their errors.
 
 Two exam entries are unusable and not drawn: 2025/26 exam D Q1 (the page was never scanned) and 2020/21 3rd term Q2 (no detail).
 
@@ -91,7 +91,7 @@ pn/            Python library: catalogue (catalog.py), exercise list (index.py),
                build driver (build.py), note PDFs (notes.py), SIMLIB runner (simlib.py)
 notation/      notation cheat sheet, note and diagram rules, pattern nets
 exercises/     the exercises, one folder per category (see above)
-inventory/     where every exercise comes from (file, page, verbatim text)
+source-survey/ the initial survey of the course material, by source file
 build/         generated intermediates (git-ignored)
 ```
 
