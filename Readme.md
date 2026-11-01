@@ -45,7 +45,7 @@ Two exam entries are unusable and not drawn: 2025/26 exam D Q1 (the page was nev
 
 - [Note.md](notation/Note.md): the structure of a note and the rules for each section (times in the task text, hints, SIMLIB, sources).
 - [Style.md](notation/Style.md): how a diagram is laid out.
-- **Limits:** a modelling task usually has more than one correct net. Each net aims at the one closest to Hrubý's style and the hints mention real alternatives (constant vs. exponential time, ≥ vs. >). Where only a student's recollection or a blurry photo of a task exists, a ⚠️ line in the task says so.
+- **Limits:** a modelling task usually has more than one correct net. Each net aims at the one closest to Hrubý's style and the hints mention real alternatives (constant vs. exponential time, ≥ vs. >). Where only a student's recollection or a blurry photo of a task exists, a ⚠️ line in the task says so. A few nets keep a single crossing of two arcs.
 
 ## Checks
 
@@ -96,10 +96,3 @@ exercises/     the exercises, one folder per category (see above)
 source-survey/ the initial survey of the course material, by source file
 build/         generated intermediates (git-ignored)
 ```
-
-## Open work
-
-- A printable collection (`make book`): each task on its own page, the solution on the next.
-- A content consistency pass over all notes (`make notecheck` covers the format, not the content).
-- About ten nets still have a single crossing; most look unavoidable, but only the three crowded nets in *Výroba a sklady* were checked carefully.
-- Optionally, transcripts of the 2023 demo-exercise videos to cross-check the midterm solutions against Hrubý's reasoning.
