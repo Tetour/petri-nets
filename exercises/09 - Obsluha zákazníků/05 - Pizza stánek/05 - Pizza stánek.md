@@ -2,8 +2,6 @@
 
 ## Zadání
 
-⚠️ Původní zadání se nedochovalo, jen studentská parafráze. Znění níže je přepsané do celých vět, čísla a pořadí kroků zůstávají.
-
 > Stánek s pizzou řídí jediný pizzař. Zákazníci přicházejí exponenciálně se středem 10 minut a každý si objedná jednu pizzu.
 >
 > Pizzař zákazníka obslouží rovnoměrně 3–5 minut: přijme objednávku, připraví pizzu a vloží ji do pece. Pec má 4 místa a pizza se v ní peče přesně 4 minuty. K pečení pizzař není potřeba, mezitím obsluhuje další zákazníky. Zákazník na svou pizzu čeká.
