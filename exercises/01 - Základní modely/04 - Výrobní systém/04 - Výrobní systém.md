@@ -13,8 +13,9 @@ Podobné úlohy: [Kritická sekce](<../05 - Kritická sekce/05 - Kritická sekce
 <br>
 
 - Zadání neuvádí žádné časy ani pravděpodobnosti. Doby jsou proto v síti jen symboly: interval příchodů `A`, soustružení `S`, vrtání `V` a kontrola `K`.
-- Soustruh, každá z vrtaček i kontrola zpracovávají vždy jen jeden výrobek. Každý stroj je tedy zařízení s kapacitou 1: místo s jednou značkou, okamžitý přechod, který značku obsadí, a časovaný přechod zpracování, který ji po skončení vrací.
-- Obě vrtačky berou výrobky ze společné fronty, výrobek jde k té, která je volná. Když jsou volné obě, rozhodne se náhodně.
+- Soustruh i kontrola zpracovávají vždy jen jeden výrobek. Každý z nich je tedy zařízení s kapacitou 1: místo s jednou značkou, okamžitý přechod, který značku obsadí, a časovaný přechod zpracování, který ji po skončení vrací.
+- Obě vrtačky jsou stejné (stejná doba `V`, společná fronta) a nezáleží na tom, která výrobek vrtá. Stačí proto jeden sklad *Vrtačky* se dvěma značkami (vzor Sklad v [Notace a vzory](<../../../basics/Notace a vzory.md>)): výrobek čeká ve frontě, jen když jsou obsazené obě, a vrtat se můžou dva výrobky současně, každý s vlastním odpočtem.
+- Kdyby se vrtačky lišily (jiná doba vrtání, porucha jen jedné z nich), potřebuje každá vlastní zařízení. Obě pak berou výrobky ze společné fronty a výrobek jde k té, která je volná.
 - Výsledek kontroly je větvení za kontrolou: dva okamžité výstupní přechody *dobrý výrobek* a *zmetek*. Bez parametru jsou proto, že zadání poměr neuvádí; kdyby ho uvádělo, dostaly by procenta.
 
 </details>
@@ -37,6 +38,7 @@ Podobné úlohy: [Kritická sekce](<../05 - Kritická sekce/05 - Kritická sekce
 
 - Stroj bez místa se značkou. Soustruh by pak zpracovával libovolně mnoho výrobků najednou.
 - Každé vrtačce vlastní frontu a výrobky mezi ně rozdělit napevno (např. 50 % / 50 %). Výrobek má jít k té vrtačce, která je volná, jinak čeká u obsazené, zatímco druhá stojí.
+- Místo *Vrtačky* s jednou značkou. Vrtala by pak jen jedna vrtačka a druhá by nebyla v modelu vůbec.
 - Rozhodnout o výsledku kontroly ještě před jejím koncem a značku kontroly vracet jen v jedné z větví. Kontrola by se po prvním výrobku z druhé větve zablokovala.
 
 </details>
@@ -59,11 +61,9 @@ const double S = 6;                    // soustružení
 const double V = 15;                   // vrtání
 const double K = 5;                    // kontrola
 
-// stroje = místa s jednou značkou (zařízení s kapacitou 1)
+// soustruh a kontrola = místa s jednou značkou (zařízení s kapacitou 1)
 Facility Soustruh("Soustruh");
-Queue FrontaV("Společná fronta k vrtačkám");
-Facility Vrtacka1("Vrtačka 1", &FrontaV); // obě vrtačky berou výrobky z jedné fronty
-Facility Vrtacka2("Vrtačka 2", &FrontaV);
+Store Vrtacky("Vrtačky", 2);           // místo Vrtačky se dvěma značkami (sklad s kapacitou 2)
 Facility Kontrola("Kontrola");
 int Dobre = 0, Zmetky = 0;             // počty provedení výstupních přechodů
 
@@ -73,17 +73,9 @@ class Vyrobek : public Process {       // transakce = značka, která prochází
     Wait(S);                           // časovaný přechod S ...
     Release(Soustruh);                 // ... který vrací značku soustruhu
 
-    // obsazení vrtačky 1 nebo 2: výrobek jde k volné; když jsou volné obě, náhodně
-    Facility *v;
-    if (!Vrtacka1.Busy() && !Vrtacka2.Busy())
-      v = Random() < 0.5 ? &Vrtacka1 : &Vrtacka2;
-    else
-      v = Vrtacka1.Busy() ? &Vrtacka2 : &Vrtacka1;
-    Seize(*v);                         // obě obsazené: čeká ve společné frontě,
-    if (v->In() != this)               // vezme ho ta vrtačka, která se uvolní dřív
-      v = (v == &Vrtacka1) ? &Vrtacka2 : &Vrtacka1;
+    Enter(Vrtacky, 1);                 // fronta + obsazení jedné značky Vrtačky
     Wait(V);                           // časovaný přechod V ...
-    Release(*v);                       // ... který vrací značku vrtačce
+    Leave(Vrtacky, 1);                 // ... který značku vrací
 
     Seize(Kontrola);                   // fronta + obsazení kontroly
     Wait(K);                           // časovaný přechod K ...
@@ -107,8 +99,7 @@ int main() {
   (new Generator)->Activate();
   Run();
   Soustruh.Output();
-  Vrtacka1.Output();
-  Vrtacka2.Output();
+  Vrtacky.Output();
   Kontrola.Output();
   Print("Dobré výrobky: %d, zmetky: %d\n", Dobre, Zmetky);
 }
@@ -122,13 +113,12 @@ int main() {
 | místa *Soustruh*, *Kontrola* (1 značka) | `Facility Soustruh`, `Facility Kontrola` |
 | *fronta* + obsazovací přechod | `Seize(…)` (fronta je vnitřní fronta zařízení) |
 | časovaný přechod se sloučeným uvolněním | `Wait(…); Release(…);` |
-| společná *fronta* k vrtačkám | `Queue FrontaV`, kterou obě vrtačky dostanou v konstruktoru |
-| místa *Vrtačka 1*, *Vrtačka 2* a přechody *obsazení* | `Facility Vrtacka1`, `Vrtacka2`; výběr volné vrtačky a `Seize(*v)` |
+| místo *Vrtačky* (2 značky) | `Store Vrtacky("Vrtačky", 2)` |
+| *fronta* k vrtačkám + obsazovací přechod | `Enter(Vrtacky, 1)` (fronta je vnitřní fronta skladu) |
+| časovaný přechod `V`, který značku vrací | `Wait(V); Leave(Vrtacky, 1);` |
 | výstupní přechody *dobrý výrobek* / *zmetek* | `if (Random() < 0.5)` a konec metody `Behavior()` |
 
-Bez vlastní fronty a výběru by stačil `Store Vrtacky("Vrtačky", 2)` s `Enter`/`Leave`: chová se stejně, jen nerozlišuje, která vrtačka výrobek zpracovala.
-
-**Kontrola simulací.** Petriho síť (s hodnotami A = 10, S = 6, V = 15, K = 5): všechny stroje se vždy vrátí, všechny přechody se provádějí, fronty zůstávají omezené (`make check`). SIMLIB model: v jednom běhu (100 000 časových jednotek, 10 000 výrobků) vyšlo vytížení soustruhu 60 %, každé vrtačky 75 % a kontroly 50 %, přesně podle teorie (S/A, V/(2A), K/A). Protože jsou všechny doby konstantní a stroje stíhají, žádný výrobek nečeká ve frontě a vrtačky se pravidelně střídají (5000 výrobků každá). Dobrých výrobků bylo 4966 a zmetků 5032 (`make simlib`).
+**Kontrola simulací.** Petriho síť (s hodnotami A = 10, S = 6, V = 15, K = 5): všechny značky strojů se vždy vrátí (u vrtaček obě), všechny přechody se provádějí, fronty zůstávají omezené (`make check`). SIMLIB model: v jednom běhu (100 000 časových jednotek, 10 000 výrobků) vyšlo vytížení soustruhu 60 % a kontroly 50 %, ve skladu *Vrtačky* bylo obsazeno průměrně 1,5 značky ze 2, tedy každá vrtačka vytížená na 75 %, přesně podle teorie (S/A, V/A, K/A). Protože jsou všechny doby konstantní a stroje stíhají, žádný výrobek nečeká ve frontě: vrtají se střídavě jeden a dva výrobky, nikdy ne tři. Dobrých výrobků bylo 4965 a zmetků 5033 (`make simlib`).
 
 </details>
 

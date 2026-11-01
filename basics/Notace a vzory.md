@@ -51,7 +51,7 @@ Nahoře plný tvar ze slajdu 154 (Seize – obsluha – Release), dole zkrácen�
 
 Místo s N značkami. Transakce, která potřebuje víc jednotek najednou, má hranu s váhou (zabere i vrátí stejný počet).
 
-**Procvičení:** [Samoobsluha](<../exercises/01 - Základní modely/02 - Samoobsluha/02 - Samoobsluha.md>), [MM3 – zastavení příchodů](<../exercises/05 - Délka fronty a kapacita/06 - MM3 – zastavení příchodů/06 - MM3 – zastavení příchodů.md>), [Cestovní kancelář](<../exercises/09 - Obsluha zákazníků/08 - Cestovní kancelář/08 - Cestovní kancelář.md>), [Údržba zabere celou kapacitu](<../exercises/05 - Délka fronty a kapacita/09 - Údržba zabere celou kapacitu/09 - Údržba zabere celou kapacitu.md>), [Kopírovací centrum s poruchami](<../exercises/09 - Obsluha zákazníků/11 - Kopírovací centrum s poruchami/11 - Kopírovací centrum s poruchami.md>).
+**Procvičení:** [Samoobsluha](<../exercises/01 - Základní modely/02 - Samoobsluha/02 - Samoobsluha.md>), [Výrobní systém](<../exercises/01 - Základní modely/04 - Výrobní systém/04 - Výrobní systém.md>), [MM3 – zastavení příchodů](<../exercises/05 - Délka fronty a kapacita/06 - MM3 – zastavení příchodů/06 - MM3 – zastavení příchodů.md>), [Cestovní kancelář](<../exercises/09 - Obsluha zákazníků/08 - Cestovní kancelář/08 - Cestovní kancelář.md>), [Údržba zabere celou kapacitu](<../exercises/05 - Délka fronty a kapacita/09 - Údržba zabere celou kapacitu/09 - Údržba zabere celou kapacitu.md>), [Kopírovací centrum s poruchami](<../exercises/09 - Obsluha zákazníků/11 - Kopírovací centrum s poruchami/11 - Kopírovací centrum s poruchami.md>).
 
 ### Podmínka přes prioritu (if–else)
 
