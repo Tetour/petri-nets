@@ -23,7 +23,7 @@ Celkem 118 úloh.
 | 11 | [Slovní úlohy: doprava a dávky](<11 - Doprava a dávky/>) | 14 |
 | 12 | [Slovní úlohy: výroba, zdroje a sklady](<12 - Výroba a sklady/>) | 18 |
 
-## Začni tady
+## Začni zde
 
 Patnáct úloh na začátek: nejdřív každý vzor z [Notace a vzory](<../basics/Notace a vzory.md>) aspoň jednou, pak nejnovější půlsemestrálky.
 
