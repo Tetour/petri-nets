@@ -1,6 +1,6 @@
 from pn import Net
 
-net = Net("P02", "Zařízení (Facility): obsazení, obsluha, uvolnění")
+net = Net("Zařízení (Facility): obsazení, obsluha, uvolnění")
 net.closed = True
 net.simulate = False
 # a) jako na slajdu 154: Seize – obsluha – Release

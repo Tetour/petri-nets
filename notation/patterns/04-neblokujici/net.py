@@ -1,6 +1,6 @@
 from pn import Net
 
-net = Net("P04", "Podmínka pomocí priority: neblokující obsazení (if–else)")
+net = Net("Podmínka pomocí priority: neblokující obsazení (if–else)")
 net.closed = True
 net.simulate = False
 net.place("t", (0, 0), tokens=1, label="transakce", label_pos="above")

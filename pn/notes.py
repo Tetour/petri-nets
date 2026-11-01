@@ -67,15 +67,19 @@ def render(note: Path):
     return note.parent.name, ""
 
 
+def find(paths):
+    """Notes in the given folders (an exercise, a category, exercises/); default all.
+    A note is the Markdown file named like its folder."""
+    roots = [Path(p).resolve() for p in paths] or [ROOT / "exercises"]
+    return [n for r in roots for n in sorted(r.rglob("*.md")) if n.stem == n.parent.name]
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("-j", "--jobs", type=int, default=os.cpu_count())
     ap.add_argument("paths", nargs="*")
     args = ap.parse_args()
-    dirs = [Path(p).resolve() for p in args.paths] or sorted((ROOT / "exercises").iterdir())
-    # a folder that is not itself an exercise (e.g. exercises/) stands for all exercises in it
-    dirs = [e for d in dirs for e in ([d] if (d / f"{d.name}.md").exists() else sorted(d.iterdir()))]
-    notes = [d / f"{d.name}.md" for d in dirs if (d / f"{d.name}.md").exists()]
+    notes = find(args.paths)
     failed = 0
     with ProcessPoolExecutor(max_workers=args.jobs) as pool:
         for name, err in pool.map(render, notes):

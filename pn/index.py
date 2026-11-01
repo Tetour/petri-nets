@@ -8,31 +8,32 @@ interpretation, which is marked by renaming the note's section „Interpretace�
 
 from pathlib import Path
 
-from .catalog import EXERCISES, TOPICS, folder
+from .catalog import categories, exercises
 
 ROOT = Path(__file__).resolve().parent.parent
 START, END = "<!-- index:start -->", "<!-- index:end -->"
-def status(ex_id):
-    d = ROOT / "exercises" / folder(ex_id)
+
+
+def status(folder):
+    d = ROOT / "exercises" / folder
     if not (d / "net.py").exists():
         return "todo"
-    note = d / f"{folder(ex_id)}.md"
+    note = d / f"{d.name}.md"
     return "reviewed" if note.exists() and "\n## Nápověda\n" in note.read_text() else "drafted"
 
 
 def table():
     out = []
-    st = [status(i) for i, _, _ in EXERCISES]
-    out.append(f"{len(st) - st.count('todo')} of {len(EXERCISES)} exercises drafted, "
+    st = [status(f) for f, _, _ in exercises()]
+    out.append(f"{len(st) - st.count('todo')} of {len(st)} exercises drafted, "
                f"{st.count('reviewed')} reviewed.\n")
-    for t, title in TOPICS.items():
-        out += [f"### {t} {title}", "", "| Id | Úloha | Původ | Status |", "|---|---|---|---|"]
-        for i, name, origin in EXERCISES:
-            if not i.startswith(t + "–"):
-                continue
-            st = status(i)
-            cell = f"[{name}](<exercises/{folder(i)}/{folder(i)}.md>)" if st != "todo" else name
-            out.append(f"| {i} | {cell} | {origin} | {st} |")
+    for cat, title, exs in categories():
+        out += [f"### {cat.split(' - ')[0]} {title}", "", "| Č. | Úloha | Původ | Status |", "|---|---|---|---|"]
+        for f, name, origin in exs:
+            s = status(f)
+            note = f"exercises/{f}/{f.split('/')[1]}.md"
+            cell = f"[{name}](<{note}>)" if s != "todo" else name
+            out.append(f"| {f.split('/')[1].split(' - ')[0]} | {cell} | {origin} | {s} |")
         out.append("")
     return "\n".join(out)
 

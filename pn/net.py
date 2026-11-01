@@ -59,8 +59,7 @@ class Arc:
 
 
 class Net:
-    def __init__(self, id, title, unit="min"):
-        self.id = id
+    def __init__(self, title, unit="min"):
         self.title = title
         self.unit = unit                # default unit for times without one
         self.places = {}

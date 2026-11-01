@@ -1,10 +1,10 @@
 # Note structure
 
-How an exercise note looks. The diagram itself is covered by [STYLE.md](STYLE.md); the course notation by [Notace a vzory](Notace%20a%20vzory.md). The reference note is [01–01 Opravářská dílna](../exercises/01–01%20-%20Opravářská%20dílna/01–01%20-%20Opravářská%20dílna.md): when in doubt, copy it.
+How an exercise note looks. The diagram itself is covered by [STYLE.md](STYLE.md); the course notation by [Notace a vzory](Notace%20a%20vzory.md). The reference note is [Opravářská dílna](../exercises/01%20-%20Základní%20modely/01%20-%20Opravářská%20dílna/01%20-%20Opravářská%20dílna.md): when in doubt, copy it.
 
 ## File and language
 
-- Folder and note: `exercises/<TT–NN> - <název>/<TT–NN> - <název>.md`. The id and name come from [pn/catalog.py](../pn/catalog.py); the id uses an en dash (`01–01`).
+- Folder and note: `exercises/<NN> - <kategorie>/<NN> - <název>/<NN> - <název>.md`, e.g. `exercises/01 - Základní modely/01 - Opravářská dílna/01 - Opravářská dílna.md`. Categories, names and their order come from [pn/catalog.py](../pn/catalog.py); the numbers are positions there. Exercise names are unique, so a note refers to another exercise by its **name**, never by its number.
 - The note is in **Czech** (natural wording, diacritics, „uvozovky“, decimal comma, `33,3 %`).
 - Next to it: `net.py` (the net), and the generated `net.svg`, `net.pdf` and the note's PDF (`make`).
 
@@ -13,13 +13,13 @@ How an exercise note looks. The diagram itself is covered by [STYLE.md](STYLE.md
 Only the heading and **Zadání** are visible when the note is opened; every other section sits behind its own toggle, so the reader can try the exercise first. After each `<summary>` comes `<br>`, which leaves an empty line between the toggle and its content in the Markdown preview (the PDF converter drops it).
 
 ````markdown
-# 01–01 – Opravářská dílna
+# Opravářská dílna
 
 ## Zadání
 
 > task text …
 
-Podobné úlohy: [02–01 – Netrpělivé požadavky](<../02–01 - Netrpělivé požadavky/02–01 - Netrpělivé požadavky.md>), …
+Podobné úlohy: [Netrpělivé požadavky](<../../02 - Netrpělivost a omezená fronta/01 - Netrpělivé požadavky/01 - Netrpělivé požadavky.md>), …
 
 ## Interpretace
 
@@ -103,7 +103,7 @@ Podobné úlohy: [02–01 – Netrpělivé požadavky](<../02–01 - Netrpěliv�
 
   The rest of the text stays as in the source. Diverging from the original is accepted (at the exam one can ask); the original is kept as **Původní znění** in Původ a zdroje.
 - If the source is only a student's recollection or a reconstruction, a ⚠️ line before the quote says so.
-- `Podobné úlohy:` links to related exercises (optional). Generate each link with `python3 -c "from pn.catalog import link; print(link('02–01'))"`.
+- `Podobné úlohy:` links to related exercises (optional). Generate each link with `python3 -c "from pn.catalog import link; print(link('Netrpělivé požadavky'))"`. In running text, refer to an exercise the same way, with „úloha“ in the right case where the grammar needs it („jako v úloze [Výletní loď](…)“); in code comments, by its name in quotes.
 
 ### Interpretace → Nápověda
 
@@ -121,7 +121,6 @@ Podobné úlohy: [02–01 – Netrpělivé požadavky](<../02–01 - Netrpěliv�
 
 ### SIMLIB
 
-- Added gradually (so far only 01–01).
 - One sentence that the model is isomorphic to the net, then one `cpp` code block: complete, compilable SIMLIB/C++ with Czech comments linking each line to the net.
 - A table **Petriho síť | SIMLIB** mapping places, transitions and tokens to the code.
 - **Kontrola simulací.** What `make check` verified on the net (invariants, all transitions fire, bounded queues) and what one SIMLIB run gave, compared with the theory where it is easy to compute.

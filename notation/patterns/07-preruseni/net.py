@@ -1,6 +1,6 @@
 from pn import Net
 
-net = Net("P07", "Přerušení probíhající obsluhy (porucha)")
+net = Net("Přerušení probíhající obsluhy (porucha)")
 net.closed = True
 net.simulate = False
 net.place("s", (0, 0), tokens=1, label="obsluha", label_pos="above")

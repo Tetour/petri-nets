@@ -1,6 +1,6 @@
 from pn import Net
 
-net = Net("P08", "Čítač: každá N-tá transakce (N = 10)")
+net = Net("Čítač: každá N-tá transakce (N = 10)")
 net.closed = True
 net.simulate = False
 net.place("p", (0, 0), tokens=1, label="po obsluze", label_pos="above")

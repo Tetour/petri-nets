@@ -1,6 +1,6 @@
 from pn import Net
 
-net = Net("P09", "Test délky fronty: alespoň k transakcí (k = 5)")
+net = Net("Test délky fronty: alespoň k transakcí (k = 5)")
 net.closed = True
 net.simulate = False
 net.place("q", (0, 0), tokens=5, label="Fronta", label_pos="below")

@@ -44,7 +44,7 @@ Key facts:
 
 - Order: midterm word problems first (§6).
 - Language: the project scaffolding is in English (directories `pn/`, `exercises/`, `notation/`, `book/`, file names `net.py`/`net.svg`/`net.pdf`, the top-level `README.md`, `Makefile`, code). Everything that is a note is in Czech:
-  - each exercise's note file name, e.g. `09–10 - Kopírovací centrum.md` (folder of the same name);
+  - each exercise's note file name, e.g. `10 - Kopírovací centrum.md` (folder of the same name, inside the category folder `09 - Obsluha zákazníků/`);
   - its headings and text;
   - labels in the diagrams;
   - the notation cheat sheet (`notation/Notace a vzory.md`);
@@ -70,15 +70,18 @@ petri-nets/
 │   ├── lint.py              ← notation/structure rules (§4)
 │   ├── sim.py               ← timed token-game simulator (§4)
 │   ├── dd.py                ← next-event trace for the D/D/x tasks
-│   ├── catalog.py           ← all exercises: id, Czech name, origin (single source of truth)
+│   ├── catalog.py           ← all exercises by category: Czech name, origin (single source of truth)
 │   └── index.py             ← regenerates the README index from the catalogue
 ├── notation/
 │   ├── Notace a vzory.md    ← cheat sheet (Czech): course notation + standard patterns, with slide refs
 │   └── patterns/*.py        ← generator, seize/release, Store, timeout, preemption, counter, if/else by priority, test arc …
-├── exercises/               ← flat, one folder per exercise, ordered by topic (§5)
-│   ├── 01–01 - Opravářská dílna/
+├── exercises/               ← one folder per category, one folder per exercise inside (§5)
+│   ├── 01 - Základní modely/
+│   │   ├── 01 - Opravářská dílna/
+│   │   └── …
 │   ├── …
-│   └── 12–18 - Logistická centrála/
+│   └── 12 - Výroba a sklady/
+│       └── 18 - Logistická centrála/
 ├── book/                    ← generated printable collection (task page, then solution page)
 └── inventory/               ← raw source inventory (already present)
 ```
@@ -86,16 +89,16 @@ petri-nets/
 Each exercise folder:
 
 ```
-exercises/09–10 - Kopírovací centrum/
-├── 09–10 - Kopírovací centrum.md   ← the note (Czech), see below
+exercises/09 - Obsluha zákazníků/10 - Kopírovací centrum/
+├── 10 - Kopírovací centrum.md   ← the note (Czech), see below
 ├── net.py                        ← the net definition (single source of truth)
 ├── net.svg                       ← generated; embedded in the note (renders in the VS Code Markdown preview)
 └── net.pdf                       ← generated; vector, for printing
 ```
 
-Folder and note are named `<TT–NN> - <název>`. The id carries no origin; the origin is in the note's last section **Původ a zdroje**.
+Folder and note are named `<NN> - <název>`, where `NN` is the position within the category; the note's heading is the name alone. Notes refer to each other by name (names are unique). The number carries no origin; the origin is in the note's last section **Původ a zdroje**.
 
-The current, binding description of a note is [notation/NOTE.md](notation/NOTE.md) (with [01–01](exercises/01–01%20-%20Opravářská%20dílna/01–01%20-%20Opravářská%20dílna.md) as the reference note); the summary below is kept for the plan's history.
+The current, binding description of a note is [notation/NOTE.md](notation/NOTE.md) (with [Opravářská dílna](exercises/01%20-%20Základní%20modely/01%20-%20Opravářská%20dílna/01%20-%20Opravářská%20dílna.md) as the reference note); the summary below is kept for the plan's history.
 
 Each note has these sections (headings in Czech):
 
@@ -103,7 +106,7 @@ Each note has these sections (headings in Czech):
 2. **Interpretace** → **Nápověda**: ambiguities and the assumption chosen (e.g. "přesáhne 5" means > 5, so the test arc has weight 6). The section is called *Interpretace* while it is my unconfirmed reading; once you review the note and confirm the interpretation, it is renamed to *Nápověda* („Zobrazit nápovědu“). The README index derives the status `reviewed` from that name.
 3. **Petriho síť**: the diagram only. (How each requirement maps to places and transitions belongs in the hints, not in a table here.)
 4. **Časté chyby**: the common mistakes for this pattern.
-5. **SIMLIB** (being added gradually, so far only 01–01): a SIMLIB/C++ model isomorphic to the net, a table mapping net elements to code, and the simulation check (what `make check` verified on the net and what the SIMLIB run gave).
+5. **SIMLIB**: a SIMLIB/C++ model isomorphic to the net, a table mapping net elements to code, and the simulation check (what `make check` verified on the net and what the SIMLIB run gave).
 6. **Původ a zdroje**: where the exercise comes from (exam/midterm, year, term, group, points), every source file with pages, and the original task wording (**Původní znění**, where the task text was rewritten), and the comparison with existing solutions (Hrubý's or students' nets, with the errors to avoid).
 
 When a note is opened, only the heading and **Zadání** are shown. Every other section is collapsed in a `<details>` block (works in the VS Code preview and on GitHub), so you can try the exercise first and reveal the hint before the net; the origin and existing solutions stay hidden too, since they can give the answer away.
@@ -169,24 +172,24 @@ I view every rendered PNG for overlaps and readability before marking an exercis
 
 ## 5. Exercise catalogue (118 diagrams)
 
-Exercises are ordered **by topic** and numbered `TT–NN` (topic – position within the topic). Topics go from basic models over single mechanisms (the short M/M/1-variant exam questions) to marking at time t and full word problems (the midterm format). Within a topic, newer tasks come first. The two-level id keeps numbers stable when an exercise is added later.
+Exercises are grouped **by category**, each category in its own folder `exercises/<NN> - <short name>/`, and numbered by their position within the category. Categories go from basic models over single mechanisms (the short M/M/1-variant exam questions) to marking at time t and full word problems (the midterm format). Within a category, newer tasks come first. Because notes refer to each other by name, adding an exercise only renumbers folders, never breaks a reference. (Until November 2026 exercises had two-level ids `TT–NN` in a flat folder.)
 
-| Topic | Content | Count |
+| Category (folder) | Full name | Count |
 |---|---|---|
-| 01 | Základní modely (lecture worked examples) | 6 |
-| 02 | Netrpělivost, omezená fronta, opakování | 5 |
-| 03 | Poruchy a přerušení obsluhy | 11 |
-| 04 | Údržba, nečinnost, spánek | 8 |
-| 05 | Řízení podle délky fronty a kapacita | 10 |
-| 06 | Doba obsluhy podle stavu | 4 |
-| 07 | Priority | 6 |
-| 08 | Značení v čase t (D/D/x) | 9 |
-| 09 | Slovní úlohy: obsluha zákazníků | 22 |
-| 10 | Slovní úlohy: počítačové systémy | 5 |
-| 11 | Slovní úlohy: doprava a dávky | 14 |
-| 12 | Slovní úlohy: výroba, zdroje a sklady | 18 |
+| 01 - Základní modely | Základní modely (lecture worked examples) | 6 |
+| 02 - Netrpělivost a omezená fronta | Netrpělivost, omezená fronta, opakování | 5 |
+| 03 - Poruchy | Poruchy a přerušení obsluhy | 11 |
+| 04 - Údržba a spánek | Údržba, nečinnost, spánek | 8 |
+| 05 - Délka fronty a kapacita | Řízení podle délky fronty a kapacita | 10 |
+| 06 - Doba obsluhy podle stavu | Doba obsluhy podle stavu | 4 |
+| 07 - Priority | Priority | 6 |
+| 08 - Značení v čase t | Značení v čase t (D/D/x) | 9 |
+| 09 - Obsluha zákazníků | Slovní úlohy: obsluha zákazníků | 22 |
+| 10 - Počítačové systémy | Slovní úlohy: počítačové systémy | 5 |
+| 11 - Doprava a dávky | Slovní úlohy: doprava a dávky | 14 |
+| 12 - Výroba a sklady | Slovní úlohy: výroba, zdroje a sklady | 18 |
 
-The full list (id, Czech name, origin) lives in [pn/catalog.py](pn/catalog.py); the README index is generated from it (`python3 -m pn.index`). Midterm word problems (09–12) are assigned to a topic by their dominant mechanism, judged from the task text. If a closer reading changes that, the exercise moves, but its id stays.
+The full list (category, Czech name, origin) lives in [pn/catalog.py](pn/catalog.py); the README index is generated from it (`python3 -m pn.index`). Midterm word problems (categories 09–12) are assigned to a category by their dominant mechanism, judged from the task text. If a closer reading changes that, the exercise moves to another category folder.
 
 ---
 
@@ -194,17 +197,17 @@ The full list (id, Czech name, origin) lives in [pn/catalog.py](pn/catalog.py); 
 
 0. **Git setup**: `git init`, private GitHub repo, first commit with the plan and the inventory.
 1. **Tooling + pilot (5 nets).** Build `pn/` with lint and simulator and the notation cheat sheet. The pilot leans toward the midterm:
-   - 09–10 kopírovací centrum (midterm 2022/23; Hrubý's solution exists, to compare);
-   - 09–03 psí salon (midterm 2025/26; tests reconstructing a task from a solution);
-   - 01–01 opravářská dílna (the lecturer's own net, to calibrate the style);
-   - 03–02 failure → back to queue (exam type);
-   - 08–02 D/D/3 marking at t = 10.5 (trace type).
+   - Kopírovací centrum (midterm 2022/23; Hrubý's solution exists, to compare);
+   - Psí salon (midterm 2025/26; tests reconstructing a task from a solution);
+   - Opravářská dílna (the lecturer's own net, to calibrate the style);
+   - Porucha vrací transakci do fronty: failure → back to queue (exam type);
+   - DD3 LIFO, čas 10,5: D/D/3 marking at t = 10.5 (trace type).
 
    **You review these** for style, language and depth before I mass-produce. This is the cheapest point to change format.
 2. **Main batch, midterm first:**
-   - word problems (topics 09–12), by year across topics, newest first: 2025/26 → 2024/25 → … → 2010/11, then Z1–Z24 and the extras;
+   - word problems (categories 09–12), by year across topics, newest first: 2025/26 → 2024/25 → … → 2010/11, then Z1–Z24 and the extras;
    - then the lecture examples (01);
-   - then the mechanism topics 02–07 (newest first);
+   - then the mechanism categories 02–07 (newest first);
    - then marking at time t (08).
 3. Drafting can run in parallel with subagents, one per batch of years. Each net still goes through `make check` and my visual review. I commit and push after each finished batch.
 4. **Finish**: README index, `make book` → one PDF with each task on its own page and the solution on the next page (for practice), and a final consistency pass. Where my net disagrees with Hrubý's, his version wins unless it is demonstrably a different reading, and that gets noted.
@@ -224,5 +227,5 @@ Status per exercise in the README index: `todo / drafted / reviewed`.
 
 ## 8. Possible improvements (later)
 
-- **SIMLIB code** in each note's SIMLIB section (started with 01–01). The code is syntax-checked against a stub header; real compilation needs SIMLIB, which is not in nixpkgs (source: https://www.fit.vut.cz/person/peringer/public/SIMLIB/).
+- ~~**SIMLIB code** in each note's SIMLIB section.~~ Done: every note has one, compiled and run against SIMLIB built by the Nix flake (`make simlib`).
 - **Video transcripts** of the 2023 demo exercises, used to cross-check midterm solutions against Hrubý's spoken reasoning.

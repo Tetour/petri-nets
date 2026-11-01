@@ -1,6 +1,6 @@
 from pn import Net
 
-net = Net("P03", "Sklad (Store) s kapacitou N a obsazení více jednotek najednou")
+net = Net("Sklad (Store) s kapacitou N a obsazení více jednotek najednou")
 net.closed = True
 net.simulate = False
 # sklad mezi oběma řádky; každá hrana má vlastní stranu skladu

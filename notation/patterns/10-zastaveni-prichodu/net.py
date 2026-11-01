@@ -1,6 +1,6 @@
 from pn import Net
 
-net = Net("P10", "Dočasné zastavení příchodů (odebrání značky generátoru)")
+net = Net("Dočasné zastavení příchodů (odebrání značky generátoru)")
 net.closed = True
 net.simulate = False
 net.place("gen", (0, 0), tokens=1, label="generátor", label_pos="left")

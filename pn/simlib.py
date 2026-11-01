@@ -14,6 +14,8 @@ import sys
 from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 
+from .notes import find
+
 ROOT = Path(__file__).resolve().parent.parent
 BUILD = ROOT / "build" / "simlib"
 
@@ -51,11 +53,7 @@ def main():
     ap.add_argument("-j", "--jobs", type=int, default=os.cpu_count())
     ap.add_argument("paths", nargs="*")
     args = ap.parse_args()
-    dirs = [Path(p).resolve() for p in args.paths] or sorted((ROOT / "exercises").iterdir())
-    # a folder that is not itself an exercise (e.g. exercises/) stands for all exercises in it
-    dirs = [e for d in dirs for e in ([d] if (d / f"{d.name}.md").exists() else sorted(d.iterdir()))]
-    notes = [d / f"{d.name}.md" for d in dirs if (d / f"{d.name}.md").exists()]
-    notes = [n for n in notes if code(n)]
+    notes = [n for n in find(args.paths) if code(n)]
     failed = 0
     with ProcessPoolExecutor(max_workers=args.jobs) as pool:
         for name, problem in pool.map(check, notes):

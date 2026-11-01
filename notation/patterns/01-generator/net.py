@@ -1,6 +1,6 @@
 from pn import Net
 
-net = Net("P01", "Generátor transakcí a odchod ze systému")
+net = Net("Generátor transakcí a odchod ze systému")
 net.closed = True
 net.simulate = False
 # a) místo se značkou ve smyčce (doporučené), b) zkrácený tvar bez místa

@@ -1,6 +1,6 @@
 from pn import Net
 
-net = Net("P05", "Pravděpodobnostní větvení")
+net = Net("Pravděpodobnostní větvení")
 net.closed = True
 net.simulate = False
 net.place("t", (0, 0), tokens=1, label="transakce", label_pos="left")

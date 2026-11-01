@@ -1,0 +1,71 @@
+from pn import Net
+
+net = Net("Pošta (půlsemestrálky 2014–19, Z19)")
+
+# příchody klientů, jedna fronta k oběma přepážkám
+net.place("gen", (0, 0), tokens=1, label="příchody klientů", label_pos="above")
+net.timed("prichod", (1.4, 0), "exp(5 min)", param_pos="below")
+net.loop("gen", "prichod")
+net.place("fronta", (3.2, 0), label="Fronta", label_pos="above left")
+net.arc("prichod", "fronta")
+
+# přepážka A (horní řada): pošťák nad ní
+net.immediate("obsaz_a", (5.4, 2), p=1, param_pos="below")
+net.arc("fronta", "obsaz_a", via=[(3.2, 2)], corner=20)
+net.place("postak", (5.4, 3.6), tokens=1, label="Pošťák", label_pos="above")
+net.place("obsluha_a", (6.9, 2))
+net.timed("podani_a", (8.4, 2), "exp(3 min)", param_pos="below")
+net.chain("obsaz_a", "obsluha_a", "podani_a")
+net.arc("postak", "obsaz_a")
+net.arc("podani_a", "postak", out=90, into=0)
+
+# přepážka B (prostřední řada): obsluhuje ji řidič, když ji otevře (značka „Řidič u B“)
+net.immediate("obsaz_b", (5.4, 0), p=1, param_pos="above")
+net.place("obsluha_b", (6.9, 0))
+net.timed("podani_b", (8.4, 0), "exp(3 min)", param_pos="above")
+net.chain("fronta", "obsaz_b", "obsluha_b", "podani_b")
+net.place("u_b", (5.4, -1.6), label="Řidič u B", label_pos="above left")
+net.arc("u_b", "obsaz_b")
+net.arc("podani_b", "u_b", out=270, into=0)
+
+# klient odchází, jeho zásilka zůstává na poště
+net.place("obslouzen", (9.9, 0), label="obsloužen", label_pos="below")
+net.arc("podani_a", "obslouzen", via=[(9.9, 2)], corner=20)
+net.arc("podani_b", "obslouzen")
+net.immediate("predani", (11.4, 0), label="podání zásilky", label_pos="above")
+net.place("klient_odchazi", (12.9, 0))
+net.immediate("odchod", (14.4, 0), exit=True, label="odchod", label_pos="above")
+net.chain("obslouzen", "predani", "klient_odchazi", "odchod")
+net.place("zasilky", (8.4, -3.2), label="Podané zásilky", label_pos="below")
+net.arc("predani", "zasilky", via=[(11.4, -2.2), (8.4, -2.2)])
+
+# řidič otevře B, když fronta dosáhne 3; zavře ji, když je fronta prázdná (p=0 < obsazení p=1)
+net.immediate("otevreni", (3.2, -1.6), label="otevření B", label_pos="left")
+net.arc("fronta", "otevreni", w=3, bend=25, w_pos="right")
+net.arc("otevreni", "fronta", w=3, bend=25, w_pos="left")
+net.arc("otevreni", "u_b")
+net.place("ridic", (3.2, -3.2), tokens=1, label="Řidič volný", label_pos="above left")
+net.arc("ridic", "otevreni")
+net.immediate("zavreni", (5.4, -3.2), label="zavření B", label_pos="below")
+net.arc("u_b", "zavreni")
+net.arc("zavreni", "ridic")
+
+# odvoz 100 zásilek: řidič je primárně určen pro náklad (od B p=2 > obsazení B, volný p=1)
+net.immediate("nalozeni_b", (6.9, -3.2), p=2, param_pos="above left")
+net.arc("u_b", "nalozeni_b", out=-45, into=90)
+net.arc("zasilky", "nalozeni_b", w=100, w_pos="below")
+net.immediate("nalozeni", (9.9, -3.2), p=1, label="naložení", label_pos="above",
+              param_pos="below right")
+net.arc("zasilky", "nalozeni", w=100, w_pos="below")
+net.place("naklada", (8.4, -5.2), label="nakládá", label_pos="above")
+net.arc("nalozeni_b", "naklada", via=[(6.9, -5.2)], corner=20)
+net.arc("nalozeni", "naklada", via=[(9.9, -5.2)], corner=20)
+net.timed("nakladani", (8.4, -6.6), "30 min", param_pos="right")
+net.place("veze", (6.9, -6.6), label="veze do Centrály", label_pos="below")
+net.timed("cesta", (5.4, -6.6), "2 h", param_pos="below")
+net.chain("naklada", "nakladani", "veze", "cesta")
+net.arc("cesta", "ridic", via=[(3.2, -6.6)])
+net.arc("ridic", "nalozeni", via=[(1.6, -3.2), (1.6, -8), (11.9, -8), (11.9, -3.2)])
+
+net.invariant({"postak": 1, "obsluha_a": 1}, 1)
+net.invariant({"ridic": 1, "u_b": 1, "obsluha_b": 1, "naklada": 1, "veze": 1}, 1)

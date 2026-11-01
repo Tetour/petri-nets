@@ -1,0 +1,65 @@
+from pn import Net
+
+net = Net("Přepravní firma (půlsemestrálky 2014–19, Z12)")
+
+# horní řada y=0: příchody A-balíků a naložení; řidič nad naložením
+net.place("gen", (0, 0), tokens=1, label="příchody balíků", label_pos="above")
+net.timed("prichod", (1.5, 0), "exp(20 min)", param_pos="below")
+net.loop("gen", "prichod")
+net.place("a_baliky", (3, 0), label="A-balíky", label_pos="below")
+net.immediate("nalozeni", (4.5, 0))
+net.chain("prichod", "a_baliky")
+net.arc("a_baliky", "nalozeni", w=20, w_pos="below")
+net.place("ridic", (4.5, 2.8), tokens=1, label="Řidič", label_pos="above")
+net.arc("ridic", "nalozeni")
+net.place("trasa", (6, 0), label="na trase", label_pos="below right")
+net.arc("nalozeni", "trasa")
+
+# dolní řada y=-1.8: balíky v autě a rozvoz (dokud jsou balíky v autě, p=1)
+net.place("v_aute", (4.5, -1.8), label="balíky v autě", label_pos="below")
+net.arc("nalozeni", "v_aute", w=20, w_pos="left")
+net.immediate("k_adresatovi", (6, -1.8), p=1, param_pos="below")
+net.arc("v_aute", "k_adresatovi")
+net.arc("trasa", "k_adresatovi")
+net.place("cesta", (7.5, -1.8))
+net.timed("jizda", (9, -1.8), "exp(10 min)", param_pos="below")
+net.place("u_adresata", (10.5, -1.8), label="u adresáta", label_pos="above")
+net.timed("zastavka", (12, -1.8), "3–5 min", param_pos="below")
+net.chain("k_adresatovi", "cesta", "jizda", "u_adresata", "zastavka")
+net.arc("zastavka", "trasa", via=[(12, 0)])
+net.place("predani", (13.5, -1.8), label="předání", label_pos="right")
+net.arc("zastavka", "predani")
+
+# 20 % nezastižen (nahoru), 80 % doručeno (dolů)
+net.immediate("nezastizen", (15, -0.3), prob=20, param_pos="above")
+net.immediate("dorucen", (15, -3.3), prob=80, param_pos="below")
+net.arc("predani", "nezastizen", via=[(13.5, -0.3)], corner=20)
+net.arc("predani", "dorucen", via=[(13.5, -3.3)], corner=20)
+net.place("doruceno", (16.5, -3.3), label="doručeno", label_pos="below")
+net.immediate("odchod", (18, -3.3), exit=True, label="odchod", label_pos="below")
+net.chain("dorucen", "doruceno", "odchod")
+
+# auto prázdné (p=0): cesta zpět do centrály, řidič se vrací
+net.immediate("navrat", (6, 1.4), label="auto prázdné", label_pos="above")
+net.arc("trasa", "navrat")
+net.place("zpet", (7.5, 1.4), label="cesta zpět", label_pos="below")
+net.timed("jizda_zpet", (9, 1.4), "exp(10 min)", param_pos="right")
+net.chain("navrat", "zpet", "jizda_zpet")
+net.arc("jizda_zpet", "ridic", out=90, into=0)
+
+# nezastižený balík jede v autě zpět; v centrále se vyloží (p=1, řidič je v centrále)
+# jako B-balík, který je po 24 h zase A-balíkem
+net.place("nedoruceno", (16.5, -0.3), label="nedoručené v autě", label_pos="right")
+net.arc("nezastizen", "nedoruceno")
+net.immediate("vylozeni", (3, 2.8), p=1, param_pos="below")
+net.arc("nedoruceno", "vylozeni", via=[(16.5, 4.4), (3, 4.4)])
+net.loop("ridic", "vylozeni", bend=20)
+net.place("b_baliky", (1.5, 2.8), label="B-balíky", label_pos="above")
+net.timed("den", (1.5, 1.4), "24 h", param_pos="left")
+net.chain("vylozeni", "b_baliky", "den")
+net.arc("den", "a_baliky", via=[(3, 1.4)])
+
+net.invariant({"ridic": 1, "trasa": 1, "cesta": 1, "u_adresata": 1, "zpet": 1}, 1,
+              name="řidič je právě v jednom stavu")
+net.bound("v_aute", 20)
+net.bound("nedoruceno", 20)

@@ -1,0 +1,73 @@
+from pn import Net
+
+net = Net("Nemocniční ambulance (půlsemestrálky 2014–19, Z6)")
+
+# pacienti: registrace u přepážky, čekárna, vyšetření u jednoho ze dvou lékařů
+net.place("gen", (0, 0), tokens=1, label="příchody pacientů", label_pos="left")
+net.timed("prichod", (1.5, 0), "exp(20 min)", param_pos="below")
+net.loop("gen", "prichod")
+net.place("fronta", (3, 0), label="fronta", label_pos="below")
+net.place("prepazka", (4.5, 1.6), tokens=1, label="Přepážka", label_pos="above right")
+net.immediate("obsaz_p", (4.5, 0))
+net.place("registrace", (6, 0))
+net.timed("reg", (7.5, 0), "1–2 min", param_pos="below")
+net.chain("prichod", "fronta", "obsaz_p", "registrace", "reg")
+net.arc("prepazka", "obsaz_p")
+net.arc("reg", "prepazka", out=90, into=0)
+net.place("cekarna", (9, 0), label="čekárna", label_pos="below")
+net.place("lekari", (10.5, -1.6), tokens=2, label="Lékaři", label_pos="below left")
+net.immediate("obsaz_l", (10.5, 0))
+net.place("vysetreni", (12, 0), label="vyšetření", label_pos="below")
+net.timed("vys", (13.5, 0), "exp(10 min)", param_pos="above")
+net.chain("reg", "cekarna", "obsaz_l", "vysetreni", "vys")
+net.arc("lekari", "obsaz_l")
+net.arc("vys", "lekari", out=270, into=0)
+net.place("konec", (15, 0), label="konec", label_pos="below")
+net.immediate("odchod", (16.5, 0), exit=True, label="odchod", label_pos="above")
+net.chain("vys", "konec", "odchod")
+
+# sanita: dvě smyčky p=1 (jako na democvičení): přerušení vyšetření a odjezd volného lékaře;
+# oba lékaři se sejdou v „lékaři k zásahu“ a odjedou spolu na 3–4 h
+net.place("gen_s", (22.5, 3.2), tokens=1, label="příjezdy sanit", label_pos="right")
+net.timed("sanita_t", (22.5, 1.6), "exp(5 h)", param_pos="right")
+net.loop("gen_s", "sanita_t")
+net.place("sanita", (22.5, 0), label="sanita", label_pos="right")
+net.arc("sanita_t", "sanita")
+net.immediate("bez_ucinku", (22.5, -1.6), exit=True, label="sanita odjede", label_pos="right")
+net.arc("sanita", "bez_ucinku")
+net.immediate("preruseni", (19.5, 1.6), p=1, label="přerušení", label_pos="above left",
+              param_pos="below left")
+net.arc("vysetreni", "preruseni", via=[(12, 1.6)])
+net.loop("sanita", "preruseni", bend=20)
+net.immediate("odjezd_l", (19.5, -1.6), p=1, label="odjezd lékaře", label_pos="below right",
+              param_pos="above left")
+net.arc("lekari", "odjezd_l", via=[(8.6, -1.6), (8.6, -3.2), (19.5, -3.2)])
+net.loop("sanita", "odjezd_l", bend=20)
+net.place("k_zasahu", (19.5, 0), label="k zásahu", label_pos="right")
+net.arc("preruseni", "k_zasahu")
+net.arc("odjezd_l", "k_zasahu")
+net.immediate("zahajeni", (18, 0))
+net.arc("k_zasahu", "zahajeni", w=2, w_pos="above")
+net.place("zasah", (18, -1.6), label="urgentní zásah", label_pos="below")
+net.timed("zasah_t", (16.5, -1.6), "3–4 h", param_pos="left")
+net.chain("zahajeni", "zasah", "zasah_t")
+net.arc("zasah_t", "lekari", w=2, via=[(16.5, -2.4), (10.5, -2.4)], w_pos="right")
+
+# přerušení pacienti se přednostně přeobjednají u přepážky a odcházejí
+net.place("preobj_f", (1.5, 1.6), label="k přeobjednání", label_pos="left")
+net.arc("preruseni", "preobj_f", via=[(19.5, 4.8), (1.5, 4.8)])
+net.immediate("obsaz_r", (3, 1.6), p=1, param_pos="below")
+net.arc("preobj_f", "obsaz_r")
+net.arc("prepazka", "obsaz_r")
+net.place("preobj", (3, 3.2), label="přeobjednání", label_pos="left")
+net.timed("preobj_t", (4.5, 3.2), "1–2 min", param_pos="above")
+net.chain("obsaz_r", "preobj", "preobj_t")
+net.arc("preobj_t", "prepazka")
+net.place("preobjednan", (6, 3.2), label="přeobjednaný", label_pos="below")
+net.immediate("odchod_r", (7.5, 3.2), exit=True, label="odchod", label_pos="right")
+net.chain("preobj_t", "preobjednan", "odchod_r")
+
+net.invariant({"prepazka": 1, "registrace": 1, "preobj": 1}, 1)
+net.invariant({"lekari": 1, "vysetreni": 1, "k_zasahu": 1, "zasah": 2}, 2,
+              name="lékaři: volní + vyšetřující + k zásahu + 2·zásah = 2")
+net.bound("sanita", 1)

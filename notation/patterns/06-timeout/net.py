@@ -1,6 +1,6 @@
 from pn import Net
 
-net = Net("P06", "Netrpělivost (timeout) ve frontě")
+net = Net("Netrpělivost (timeout) ve frontě")
 net.closed = True
 net.simulate = False
 net.place("q", (0, 0), tokens=2, label="Fronta", label_pos="above left")
