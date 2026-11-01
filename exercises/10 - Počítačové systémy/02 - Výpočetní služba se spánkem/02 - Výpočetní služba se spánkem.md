@@ -2,8 +2,6 @@
 
 ## Zadání
 
-> ⚠️ **Přepis.** Originální list se zadáním v materiálech chybí, existuje jen ruční přepis od studenta. Písmeno varianty ani závěrečná věta o odchodu transakce na přepisu nejsou.
->
 > Do výpočetní služby přichází požadavky v intervalech exponenciálně se středem 100 sekund. Server má kapacitu jedna pro obsluhu požadavků. Obsluha trvá exponenciálně se středem 5 sekund. Pokud je služba nečinná po dobu přesně 200 sekund, pak je převedena do spacího režimu. Z režimu spánku službu probere až nově příchozí požadavek. Po probuzení však služba potřebuje přesně 5 sekund na iniciační proceduru, a až po jejím dokončení může zahájit obsluhu požadavku.
 
 Podobné úlohy: [Spánek po nečinnosti](<../../04 - Údržba a spánek/08 - Spánek po nečinnosti/08 - Spánek po nečinnosti.md>), [Automat na kávu – uspání](<../../04 - Údržba a spánek/03 - Automat na kávu – uspání/03 - Automat na kávu – uspání.md>), [Automat na kávu – údržba po nečinnosti](<../../04 - Údržba a spánek/01 - Automat na kávu – údržba po nečinnosti/01 - Automat na kávu – údržba po nečinnosti.md>), [Trafika](<../../09 - Obsluha zákazníků/09 - Trafika/09 - Trafika.md>).
@@ -155,7 +153,7 @@ int main() {
 
 **Původ:** půlsemestrální písemka 2023/24, varianta neoznačená (pravděpodobně B: varianty A, C a D jsou známé). Body nejsou uvedené (ostatní varianty téhož roku mají 10 bodů).
 
-**Původní znění:**
+**Původní znění** (přepis): Originální list se zadáním v materiálech chybí, existuje jen ruční přepis od studenta. Písmeno varianty ani závěrečná věta o odchodu transakce na přepisu nejsou.
 
 > Do výpočetní služby přichází požadavky v intervalech daných exponenciálním rozložením se středem 100s. Server má kapacitu jedna pro obsluhu požadavků. Doba obsluhy se řídí exp. rozložením se středem 5s. Pokud je služba nečinná po dobu 200s, pak je převedena do spacího režimu. Z režimu spánku službu probere až nově příchozí požadavek. Po probuzení však služba potřebuje 5s na iniciační proceduru, a až po jejím dokončení může zahájit obsluhu požadavku.
 

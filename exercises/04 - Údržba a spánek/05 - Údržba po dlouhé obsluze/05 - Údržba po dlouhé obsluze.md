@@ -2,8 +2,6 @@
 
 ## Zadání
 
-⚠️ Zadání je známé jen ze stručné vzpomínky studenta.
-
 > M/M/1, kdyz obshuha trvala C časových jednotek a dyl, tak se pousti udrzba přesně D časových jednotek. + SIMLIB
 
 Podle hlavičky souboru u tohoto termínu „Petriho siet a SIMLIB nemuseli byt izomorfne“.
@@ -156,7 +154,7 @@ int main() {
 
 **Původ:** zkouška 2021/22, 1. termín, skupina D, otázka 1 (body neuvedeny).
 
-**Původní znění:**
+**Původní znění** (jen ze stručné vzpomínky studenta):
 
 > M/M/1, kdyz obshuha trvala konstatni dobu C a dyl, tak se pousti udrzba s konstatni dobu D. + SIMLIB
 

@@ -2,8 +2,6 @@
 
 ## Zadání
 
-⚠️ Původní zadání se nedochovalo, jen studentské přepisy (slovensky). Podrobný přepis neznámé skupiny:
-
 > Petriho sieť MM1, kde v intervaloch exponenciálně se středem X časových jednotek dochádza k poruchám obslužnej linky. Oprava poruchy zaberie C jednotiek času. Ak sa chyba prejaví počas obsluhy transakcie, potom táto trans. okamžite bez náhrady opúšta systém. S využitím notácie knižnice SIMLIB napíš pseudokód pre procesy transakcií a obsluhy chyby. Modely MUSIA byť izomorfné.
 
 Skupina A (zřejmě totéž): „M/M/1, porucha exponenciálně se středem X časových jednotek, trvanie poruchy C jednotiek + SIMLIB (proces, porucha)“.
@@ -164,7 +162,7 @@ int main() {
 
 **Původ:** zkouška 2021/22, 1. termín, nejspíš skupina A, otázka 1, 15 bodů (podle přepisu neznámé skupiny).
 
-**Původní znění:**
+**Původní znění** (studentské přepisy, slovensky; originál se nedochoval; podrobný přepis je od neznámé skupiny):
 
 > Petriho sieť MM1, kde v intervaloch Exp(X) dochádza k poruchám obslužnej linky. Oprava poruchy zaberie C jednotiek času. Ak sa chyba prejaví počas obsluhy transakcie, potom táto trans. okamžite bez náhrady opúšta systém. S využitím notácie knižnice SIMLIB napíš pseudokód pre procesy transakcií a obsluhy chyby. Modely MUSIA byť izomorfné.
 

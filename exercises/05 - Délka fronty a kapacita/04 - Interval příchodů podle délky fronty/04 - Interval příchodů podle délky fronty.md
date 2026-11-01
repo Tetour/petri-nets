@@ -4,8 +4,6 @@
 
 > Nakreslete Petriho síť pro systém M/M/1, kde se po každé nově příchozí transakci přehodnotí interval mezi příchody transakcí do systému podle následujícího předpisu: 1) pokud je aktuální délka fronty (včetně nově příchozího) větší nebo rovna počtu C, pak je střední doba mezi příchody nastavena na A časových jednotek, 2) jinak B časových jednotek. S využitím notace knihovny SIMLIB napište pseudokód všech nezbytných částí simulačního modelu. Dbejte na izomorfní vztah mezi oběma modely.
 
-⚠️ 2021/22, skupina C, jen ze vzpomínky (slovensky): „M/M/1. Ak je vo fronte aspon C transakcii, tak generuje transakcie s exp(A), inak s exp(B). + SIMLIB.“
-
 Podobné úlohy: [Přerušení příchodů při plné frontě](<../05 - Přerušení příchodů při plné frontě/05 - Přerušení příchodů při plné frontě.md>) (příchody se při dlouhé frontě zastaví), [Doba obsluhy podle délky fronty](<../01 - Doba obsluhy podle délky fronty/01 - Doba obsluhy podle délky fronty.md>) (podle fronty se mění obsluha).
 
 ## Nápověda
@@ -121,6 +119,10 @@ int main() {
 <br>
 
 **Původ:** zkouška 2022/23, 1. termín, skupina A, otázka 1, 15 bodů. Stejná úloha (jen ze vzpomínky): zkouška 2021/22, 1. termín, skupina C, otázka 1.
+
+**Původní znění** (2021/22, skupina C, jen ze vzpomínky studenta, slovensky):
+
+> M/M/1. Ak je vo fronte aspon C transakcii, tak generuje transakcie s exp(A), inak s exp(B). + SIMLIB.
 
 **Zdroje:**
 

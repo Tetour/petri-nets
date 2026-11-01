@@ -2,8 +2,6 @@
 
 ## Zadání
 
-⚠️ Zadání je známé z textového přepisu studenta, ne z fotky. Znění je úplné a shoduje se s textem v Řešených výpočetních příkladech.
-
 > 3. (10 bodů) Nakreslete model v podobě Petriho sítě pro systém typu M/M/1 se zadaným specifikem: Pokud je po dokončení obsluhy transakce fronta před linkou prázdná, pak systém zahájí údržbu o délce přesně 5 časových jednotek.
 
 Podobné úlohy:
@@ -134,7 +132,7 @@ int main() {
 
 **Původ:** zkouška 2019/20, 1. termín, skupina D, otázka 3, 10 bodů. Pravděpodobně stejná úloha: zkouška 2020/21, 1. termín (16:00), otázka 2, ze zadání se zachovalo jen „petriho siete M/M/1 s údržbou“.
 
-**Původní znění:**
+**Původní znění** (textový přepis studenta, ne fotka; znění je úplné a shoduje se s textem v Řešených výpočetních příkladech):
 
 > 3. (10 bodů) Nakreslete model v podobě Petriho sítě pro systém typu M/M/1 se zadaným specifikem: Pokud je po dokončení obsluhy transakce fronta před linkou prázdná, pak systém zahájí údržbu o délce 5 časových jednotek.
 

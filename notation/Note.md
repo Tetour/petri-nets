@@ -109,7 +109,7 @@ Podobné úlohy: [Netrpělivé požadavky](<../../02 - Netrpělivost a omezená 
 
   The rest of the text stays as in the source. Diverging from the original is accepted (at the exam one can ask); the original is kept as **Původní znění** in Původ a zdroje.
 - Zadání describes the system only. Lines that just say what to produce („Zadaný systém modelujte formou Petriho sítě s vyznačením všech potřebných parametrů.“, „V modelu jednoznačně ukažte (přechodem) moment, kdy transakce opouští systém.“, „+ SIMLIB“, „Napište program v SIMLIBu …“) are left out; they stay in Původní znění. Every net has an exit transition and every note a SIMLIB section anyway. An instruction that carries task data stays („se značením odpovídajícím času t2 = 10,5“).
-- If the source is only a student's recollection or a reconstruction, a ⚠️ line before the quote says so.
+- Zadání carries no warning when the source is only a student's transcript or recollection, a blurry photo or a reconstruction; Původ a zdroje says so (see below).
 - `Podobné úlohy:` links to related exercises (optional). Generate each link with `python3 -c "from pn.catalog import link; print(link('Netrpělivé požadavky'))"`. In running text, refer to an exercise the same way, with „úloha“ in the right case where the grammar needs it („jako v úloze [Výletní loď](…)“); in code comments, by its name in quotes.
 
 ### Nápověda
@@ -136,7 +136,7 @@ Podobné úlohy: [Netrpělivé požadavky](<../../02 - Netrpělivost a omezená 
 ### Původ a zdroje
 
 - **Původ:** the exam or midterm, year, term, group, question, points — or the lecture/notes.
-- **Původní znění:** the original task text, if Zadání was rewritten.
+- **Původní znění:** the original task text, if Zadání was rewritten. When the text is not the official wording, a bracket after the label says what it is and how reliable: „**Původní znění** (studentský přepis, slovensky; originál se nedochoval):“. Without a Původní znění, the same goes into the Původ line.
 - **Zdroje:** the files with pages, as paths relative to the course study folder `IMS - Modelování a simulace/` (no remark about that in the note).
 - **Existující řešení:** Hrubý's, the session's or students' solutions, how they differ from the net, and their errors.
 

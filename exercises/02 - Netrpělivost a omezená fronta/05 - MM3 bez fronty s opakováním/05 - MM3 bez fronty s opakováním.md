@@ -2,8 +2,6 @@
 
 ## Zadání
 
-⚠️ Zadání je známé z ručního opisu (čitelného).
-
 > Mějme systém M/M/3 bez fronty. Neobsloužené transakce se do systému vrací po X časových jednotkách. Systém modelujte pomocí Petriho sítě.
 
 Podobné úlohy: [Fronta omezená na 10](<../04 - Fronta omezená na 10/04 - Fronta omezená na 10.md>) (odmítnutí při plné frontě, bez návratu), [MM3 – zastavení příchodů](<../../05 - Délka fronty a kapacita/06 - MM3 – zastavení příchodů/06 - MM3 – zastavení příchodů.md>) (M/M/3 jako místo se 3 značkami).
@@ -118,7 +116,7 @@ int main() {
 <summary>Zobrazit původ a zdroje</summary>
 <br>
 
-**Původ:** zkouška 2023/24, 1. termín, skupina B, otázka 3, 10 bodů.
+**Původ:** zkouška 2023/24, 1. termín, skupina B, otázka 3, 10 bodů. Zadání je známé z ručního opisu (čitelného).
 
 **Zdroje:**
 

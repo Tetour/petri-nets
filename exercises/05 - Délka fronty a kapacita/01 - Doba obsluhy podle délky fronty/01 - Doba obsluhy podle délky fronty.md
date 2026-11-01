@@ -2,8 +2,6 @@
 
 ## Zadání
 
-⚠️ Původní zadání se nedochovalo, jen studentské přepisy:
-
 > Petriho síť (M/M/1 kde trvání 5 časových jednotek pokud je fronta >=3 jinak 10 časových jednotek)
 
 Řešené výpočetní příklady, str. 31: „Petriho síť (M/M/1 kde trvání dalsi obsluhy je 5 jednotek pokud jsou alespoň 3 transakce ve frontě, jinak 10 jednotek)“.
@@ -122,7 +120,7 @@ int main() {
 
 **Původ:** zkouška 2020/21, 1. termín, skupina v 10:00, otázka 2 (body neuvedené). Stejná úloha (obecné X místo 3): zkouška 2019/20, 1. termín, neznámá skupina, otázka 4, 10 bodů.
 
-**Původní znění:**
+**Původní znění** (studentské přepisy, originál se nedochoval):
 
 > Petriho síť (M/M/1 kde trvání 5 pokud je fronta >=3 jinak 10)
 

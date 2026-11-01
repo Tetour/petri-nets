@@ -2,8 +2,6 @@
 
 ## Zadání
 
-⚠️ Zadání je známé jen ze dvou vzpomínek studentů. Autor souboru píše: „Zadania máme dve. Neviem, ktoré je presnejšie, tak tu nechám obe.“
-
 > ② Petriho sítě M/M/1, linka po přesně 10 minutách nečinnosti jde do spacího režimu, z režimu spaní ji probudí přích. požad. a trvá přesně 5 minut než se stane dostupnou.
 
 Druhý přepis (str. 2): „M/M/1 – po 10min nečinnosti se uspí, probudí ji požadavek 5 min po svém příchodu.“
@@ -163,7 +161,7 @@ int main() {
 
 **Původ:** zkouška 2022/23, 2. termín (v hlavičce přepisu „IMS 1.op. F: 2023“), skupina F, otázka 2, 10 bodů.
 
-**Původní znění:**
+**Původní znění** (jen ze dvou vzpomínek studentů; autor souboru píše: „Zadania máme dve. Neviem, ktoré je presnejšie, tak tu nechám obe.“):
 
 > ② Petriho sítě M/M/1, linka po 10m nečinnosti jde do spacího režimu, z režimu spaní ji probudí přích. požad. a trvá 5 min než se stane dostupnou.
 

@@ -2,8 +2,6 @@
 
 ## Zadání
 
-> ⚠️ Zadání je opsané studentem (bez diakritiky), původní papír v podkladech není.
-
 > Napiste pseudokod algoritmu razeni diskreni simulace typu "next-event" (nesmite pouzit specialni ukoncovaci udalost). POZOR: bude-li chybet, -5b.
 >
 > Mejme model systemu typu D/D/2 se spolecnou LIFO frontou. Prichody pozadavku zacinaji v case 0 s intervalem přesně 1 sekundy a doba obsluhy trva přesně 5 sekund. Simulace bude provedena po cas od 0 do 99 sekund. Pozadavky cislujte od 0 podle poradi prichodu. Neuvazujte priority transakcii (vsechny jsou stejne). Zarizeni (cislovana od 0) jsou obsazovana prioritne (nizsi cislo zarizeni = vyssi priorita). Udalosti vhodně pojmenujte (napr. "P0 obsazuje Z0", "P2 jde do fronty").
@@ -198,7 +196,7 @@ int main() {
 
 **Původ:** zkouška 2015/16, 2. termín, skupina B (v souboru nadepsaná „Skupina A“, druhá skupina ze stejného souboru o sobě píše „to co B“), otázka 1, 15 bodů. Stejná úloha (jiný čas t1): zkouška 2014/15, 1. termín, skupina B (události v čase 5).
 
-**Původní znění:**
+**Původní znění** (opsané studentem bez diakritiky, původní papír v podkladech není):
 
 > Napiste pseudokod algoritmu razeni diskreni simulace typu "next-event" (nesmite pouzit specialni ukoncovaci udalost). POZOR: bude-li chybet, -5b.
 >

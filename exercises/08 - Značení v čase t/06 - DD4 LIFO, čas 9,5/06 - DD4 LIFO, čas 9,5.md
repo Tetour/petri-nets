@@ -2,8 +2,6 @@
 
 ## Zadání
 
-> ⚠️ Jen studentská vzpomínka, původní zadání v podkladech není.
-
 > pseudokód Next-event (-5b pokud chybí)
 >
 > D/D/4 s LIFO, doba obsluhy přesně 7 sekund
@@ -193,7 +191,7 @@ int main() {
 
 **Původ:** zkouška 2014/15, 3. termín, skupina D (podle studenta „asi“), otázka 1, 15 bodů.
 
-**Původní znění:**
+**Původní znění** (jen studentská vzpomínka, původní zadání v podkladech není):
 
 > pseudokód Next-event (-5b pokud chybí)
 >

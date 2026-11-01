@@ -2,8 +2,6 @@
 
 ## Zadání
 
-⚠️ Fotka je malá a rozmazaná. Text níže je čtení po zvětšení výřezu. Jistá jsou čísla (500, 3, M/M/4, 100, 1) a většina slov. Méně jistá jsou slova na začátcích řádků vlevo a to, zda před „500“ nestojí „Exp“ (na fotce ho vidět není).
-
 > 3. (10 bodů) Nakreslete Petriho síť pro systém typu M/M/1 s linkou typu Sklad. V intervalech daných 500 časových jednotek dojde k události, která obslužnou kapacitu linky rozšíří o 3 (tj. systém se změní na M/M/4) na dobu 100 časových jednotek (pak se kapacita vrátí na 1). Po ukončení doby 100 časových jednotek rozpracované obsluhy mohou normálně dokončit obsluhu.
 
 Podobné úlohy: [Pomocník přidá kapacitu](<../10 - Pomocník přidá kapacitu/10 - Pomocník přidá kapacitu.md>) (+1 jednotka na 20 č. j.), [Dočasně MM2 při dlouhé frontě](<../02 - Dočasně MM2 při dlouhé frontě/02 - Dočasně MM2 při dlouhé frontě.md>) (rozšíření podle délky fronty), [Cestovní kancelář](<../../09 - Obsluha zákazníků/08 - Cestovní kancelář/08 - Cestovní kancelář.md>) (dvě přepážky navíc na 1 h).
@@ -139,7 +137,7 @@ int main() {
 
 **Původ:** zkouška 2017/18, 3. termín, skupina Z, otázka 3, 10 bodů (počet bodů je na fotce špatně čitelný).
 
-**Původní znění:**
+**Původní znění** (čtení malé rozmazané fotky po zvětšení výřezu; jistá jsou čísla 500, 3, M/M/4, 100, 1 a většina slov, méně jistá jsou slova na začátcích řádků vlevo a to, zda před „500“ nestojí „Exp“, na fotce ho vidět není):
 
 > 3. (10 bodů) Nakreslete Petriho síť pro systém typu M/M/1 s linkou typu Sklad. V intervalech daných 500 časových jednotek dojde k události, která obslužnou kapacitu linky rozšíří o 3 (tj. systém se změní na M/M/4) na dobu 100 časových jednotek (pak se kapacita vrátí na 1). Po ukončení doby 100 č.j. rozpracované obsluhy mohou normálně dokončit obsluhu.
 

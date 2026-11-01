@@ -2,8 +2,6 @@
 
 ## Zadání
 
-> ⚠️ Jen studentská vzpomínka, původní zadání v podkladech není.
-
 > napsat next-event
 >
 > D/D/3 s FIFO frontou\
@@ -184,7 +182,7 @@ int main() {
 <summary>Zobrazit původ a zdroje</summary>
 <br>
 
-**Původ:** zkouška 2015/16, 1. termín, skupina 5H, otázka 1, 15 bodů. Stejné zadání bez zmínky o síti: zkouška 2016/17, 1. termín (jedna ze skupin: „D/D/3, FIFO, 1s, 5s, t=9,5s“).
+**Původ:** zkouška 2015/16, 1. termín, skupina 5H, otázka 1, 15 bodů. Stejné zadání bez zmínky o síti: zkouška 2016/17, 1. termín (jedna ze skupin: „D/D/3, FIFO, 1s, 5s, t=9,5s“). Zadání je známé jen ze studentské vzpomínky, původní zadání v podkladech není.
 
 **Zdroje:**
 

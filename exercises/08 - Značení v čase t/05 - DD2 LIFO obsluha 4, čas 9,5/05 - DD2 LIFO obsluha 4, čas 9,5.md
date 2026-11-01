@@ -2,8 +2,6 @@
 
 ## Zadání
 
-> ⚠️ Jen studentská vzpomínka, která uvádí pouze rozdíly proti skupině B. Zbytek zadání (LIFO fronta, příchody od času 0 po 1 s, priority, pojmenování událostí, pseudokód next-event) je převzatý ze skupiny B.
-
 > 1\) D/D/2. Doba obsluhy přesně 4 sekundy.
 >
 > Nakreslete casovy diagram ....:
@@ -188,7 +186,7 @@ int main() {
 
 **Původ:** zkouška 2015/16, 2. termín, skupina A, otázka 1, 15 bodů. Sesterská skupina B je [DD2 LIFO obsluha 5, čas 9,5](<../04 - DD2 LIFO obsluha 5, čas 9,5/04 - DD2 LIFO obsluha 5, čas 9,5.md>).
 
-**Původní znění:**
+**Původní znění** (jen studentská vzpomínka, která uvádí pouze rozdíly proti skupině B; zbytek zadání, tedy LIFO fronta, příchody od času 0 po 1 s, priority, pojmenování událostí a pseudokód next-event, je převzatý ze skupiny B):
 
 > 1\) D/D/2. Doba obsluhy 4s.
 >

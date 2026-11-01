@@ -2,8 +2,6 @@
 
 ## Zadání
 
-⚠️ Původní zadání se nedochovalo, jen studentský přepis (slovensky):
-
 > Systém M/M/1 kde exponenciálně se středem 200 časových jednotek sa vyskytne porucha, ktorá LEN zruší obsluhu a nič iné. Nakresliť k tomu Petriho sieť a napísať to v SIMLIBE.
 
 Podobné úlohy:
@@ -149,7 +147,7 @@ Porucha je tu událost, ne proces se `Seize(Linka, 1)`: nemá dobu trvání a p�
 
 **Původ:** zkouška 2017/18, 1. termín, skupina Z, otázka 1 (body neuvedené).
 
-**Původní znění:**
+**Původní znění** (studentský přepis, slovensky; originál se nedochoval):
 
 > Systém M/M/1 kde s exp(200) sa vyskytne porucha, ktorá LEN zruší obsluhu a nič iné. Nakresliť k tomu Petriho sieť a napísať to v SIMLIBE.
 

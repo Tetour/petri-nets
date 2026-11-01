@@ -2,8 +2,6 @@
 
 ## Zadání
 
-⚠️ Původní zadání se nedochovalo, jen studentské přepisy:
-
 > 1. M/M/1, pokud délka fronty přesáhne 5 – M/M/2 na 15 časových jednotek
 > 2. simlib pro 1, byla zde napověda, že máme využít Store a měnit kapacitu v závislosti na délce fronty (byl jsem upozorněn, že lze řešit i bez vyřešení 1. otázky)
 
@@ -136,7 +134,7 @@ int main() {
 
 **Původ:** zkouška 2018/19, 3. termín (2. opravný), otázka 1 (body neuvedené). Otázka 2 chtěla k tomuto modelu program v SIMLIBu.
 
-**Původní znění:**
+**Původní znění** (studentské přepisy, originál se nedochoval):
 
 > 1. M/M/1, pokud délka fronty přesáhne 5 – M/M/2 na 15j času
 > 2. simlib pro 1, byla zde napověda, že máme využít Store a měnit kapacitu v závislosti na délce fronty (byl jsem upozorněn, že lze řešit i bez vyřešení 1. otázky)

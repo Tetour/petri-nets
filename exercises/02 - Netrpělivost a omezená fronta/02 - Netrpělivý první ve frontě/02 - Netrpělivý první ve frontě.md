@@ -6,8 +6,6 @@
 
 2019/20, skupina Y: „Systém typu M/M/1 s tím specifikem, že vždy transakce, která je prvním prvkem fronty, je netrpělivá a po X časových jednotkách čekání opouští systém.“
 
-⚠️ Zadání 2017/18 je jen ze vzpomínky studenta (slovensky): „Petriho siet m/m/1 (automat na kafe). Fronta bola specificka tym, ze vzdy jej prvy clen je netrpezlivy, a ak nedostane linku do 5 casovych jednotiek, opusta system. (bola tam napoveda, ze sa da fronta rozlozit do 2 miest PS).“
-
 Podobné úlohy: [Netrpělivé požadavky](<../01 - Netrpělivé požadavky/01 - Netrpělivé požadavky.md>) (netrpěliví jsou všichni čekající), [Pražírna kávy](<../../09 - Obsluha zákazníků/20 - Pražírna kávy/20 - Pražírna kávy.md>) (stejný mechanismus ve slovní úloze).
 
 ## Nápověda
@@ -141,6 +139,10 @@ int main() {
 **Původní znění** (2019/20, skupina Y):
 
 > Systém typu M/M/1 s tím specifikem, že vždy transakce, která je prvním prvkem fronty, je netrpělivá a po X č.j. čekání opouští systém.
+
+**Původní znění** (2017/18, skupina A, jen ze vzpomínky studenta, slovensky):
+
+> Petriho siet m/m/1 (automat na kafe). Fronta bola specificka tym, ze vzdy jej prvy clen je netrpezlivy, a ak nedostane linku do 5 casovych jednotiek, opusta system. (bola tam napoveda, ze sa da fronta rozlozit do 2 miest PS).
 
 **Zdroje:**
 

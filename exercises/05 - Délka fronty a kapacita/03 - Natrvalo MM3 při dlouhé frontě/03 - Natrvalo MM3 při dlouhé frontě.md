@@ -2,8 +2,6 @@
 
 ## Zadání
 
-⚠️ Původní zadání se nedochovalo, jen studentský přepis (slovensky):
-
 > Petriho siet M/M/1. Ked bude vo fronte 5 poziadaviek, zmeni sa to na M/M/3 natrvalo
 
 Podobné úlohy: [Dočasně MM2 při dlouhé frontě](<../02 - Dočasně MM2 při dlouhé frontě/02 - Dočasně MM2 při dlouhé frontě.md>) (změna jen na 15 č. j.), [Cestovní kancelář](<../../09 - Obsluha zákazníků/08 - Cestovní kancelář/08 - Cestovní kancelář.md>) (fronta ≥ 5 → dvě přepážky navíc na 1 h).
@@ -120,7 +118,7 @@ int main() {
 <summary>Zobrazit původ a zdroje</summary>
 <br>
 
-**Původ:** zkouška 2020/21, 1. termín, skupina ve 14:00, otázka 3 (body neuvedené).
+**Původ:** zkouška 2020/21, 1. termín, skupina ve 14:00, otázka 3 (body neuvedené). Originál se nedochoval, zadání je známé jen ze studentského přepisu (slovensky).
 
 **Zdroje:**
 

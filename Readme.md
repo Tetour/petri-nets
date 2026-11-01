@@ -14,7 +14,7 @@ Found a mistake? Fix it in the note, or ask for the fix.
 ## Keep in mind
 
 - A task often has more than one correct net. The notes follow Hrubý's style and mention the real alternatives.
-- ⚠️ marks a task known only from a student's recollection or a blurry photo, or reconstructed from Hrubý's solution (the 2025/26 midterms).
+- Some tasks are known only from a student's transcript or recollection or a blurry photo, or are reconstructed from Hrubý's solution (the 2025/26 midterms). *Původ a zdroje* says so.
 - The notation follows Hrubý's 2025 slides and his midterm solutions; the MSI notes use a different convention.
 
 ## Where the exercises come from

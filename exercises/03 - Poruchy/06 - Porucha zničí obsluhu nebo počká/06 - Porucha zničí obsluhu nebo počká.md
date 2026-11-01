@@ -2,8 +2,6 @@
 
 ## Zadání
 
-⚠️ Původní zadání se nedochovalo, jen studentský přepis (slovensky):
-
 > Petri MM1
 > V intervaloch exponenciálně se středem 8 hodin sa objaví porucha ktorá buď:
 > - zničí práve prebihajúcu obsluhu
@@ -155,7 +153,7 @@ Porucha je tu událost, ne proces se `Seize(Linka, 1)`: nemá dobu trvání a p�
 
 **Původ:** zkouška 2021/22, 2. termín, otázka 1 (body neuvedené).
 
-**Původní znění:**
+**Původní znění** (studentský přepis, slovensky; originál se nedochoval):
 
 > Petri MM1
 > V intervaloch exp(8 hodín) sa objaví porucha ktorá buď:

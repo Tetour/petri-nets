@@ -2,8 +2,6 @@
 
 ## Zadání
 
-⚠️ Zadání je známé jen ze vzpomínky studenta. Petriho síť v textu výslovně není, ale otázka 1 tohoto termínu je ve skupinách B a C vždy Petriho síť.
-
 > Zadán M/M/1, ve kterém obsluhuje kávový automat. Když neprobíhá obsluha a po dobu přesně 5 časových jednotek není nebo nepřichází požadavek k obsluze, automat se uspí. Při "probuzení" se délka obsluhy zákazníka prodlužuje o přesně 2 časové jednotky.
 > - pozn.: o frontě nebyla zmínka, tudíž lze uvážit, že zákazníci stojí ve frontě dokud nejsou obslouženi
 
@@ -156,7 +154,7 @@ int main() {
 
 **Původ:** zkouška 2017/18, 2. termín, skupina D, otázka 1 (body neuvedeny, sesterské skupiny B a C mají 10 bodů).
 
-**Původní znění:**
+**Původní znění** (jen ze vzpomínky studenta; Petriho síť v textu výslovně není, ale otázka 1 tohoto termínu je ve skupinách B a C vždy Petriho síť):
 
 > Zadán M/M/1, ve kterém obsluhuje kávový automat. Když neprobíhá obsluha a po dobu 5 časových jednotek není nebo nepřichází požadavek k obsluze, automat se uspí. Při "probuzení" se délka obsluhy zákazníka prodlužuje o 2 časové jednotky.
 > - pozn.: o frontě nebyla zmínka, tudíž lze uvážit, že zákazníci stojí ve frontě dokud nejsou obslouženi

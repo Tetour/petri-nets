@@ -2,8 +2,6 @@
 
 ## Zadání
 
-> ⚠️ Text je zápis studentů ve skriptech, nadepsaný „možná jiné konstanty“. Oficiální zadání v materiálech není.
->
 > Firma F používá telefonní ústřednu s kapacitou 20 současných telefonních hovorů. Zákazníci volají různým zaměstnancům firmy průměrně 30krát za hodinu (Poissonův proces příchodů).
 > Existují dvě možnosti: 60 procent telefonujících zná místní telefonní číslo zaměstnance (klapku) a ústředna mu přidělí volnou linku automaticky.
 > Zbylých 40 procent volajících klapku nezná a jsou přepojeni na operátorku.
@@ -133,7 +131,7 @@ int main() {
 
 **Původ:** půlsemestrální písemka, rok neznámý (zadání zapsané ve Studentských skriptech 2015/16).
 
-**Původní znění:**
+**Původní znění** (zápis studentů ve skriptech, nadepsaný „možná jiné konstanty“; oficiální zadání v materiálech není):
 
 > Firma F používá telefonní ústřednu s kapacitou 20 současných telefonních hovorů. Zákazníci volají různým zaměstnancům firmy průměrně 30krát za hodinu (Poissonův proces příchodů).
 > Existují dvě možnosti: 60 procent telefonujících zná místní telefonní číslo zaměstnance (klapku) a ústředna mu přidělí volnou linku automaticky.

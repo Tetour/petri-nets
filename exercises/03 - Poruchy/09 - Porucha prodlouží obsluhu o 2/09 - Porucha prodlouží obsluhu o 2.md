@@ -2,8 +2,6 @@
 
 ## Zadání
 
-⚠️ Zadání je dochované jen jako ruční přepis:
-
 > 2.(10b) Modelujte Petriho sítí systém M/M/1 s následujícím specifikem: v intervalech exponenciálně se středem X časových jednotek se v systému projeví porucha, která prodlouží případnou právě probíhající obsluhu o 2 časové jednotky.
 >
 > 3.(10b) Pseudokód podle 2. bodu zadání.
@@ -143,7 +141,7 @@ Síť po prodloužení spouští `exp(B)` znovu, SIMLIB pokračuje se zbytkem p�
 
 **Původ:** zkouška 2020/21, 1. opravný termín (11:00), otázka 2, 10 bodů. Soubor se zadáním se jmenuje „1. termín“, ale otázky jsou totožné s termínem „2021 - 1. opravný 11:00“ v Řešených výpočetních příkladech.
 
-**Původní znění:**
+**Původní znění** (dochované jen jako ruční přepis):
 
 > 2.(10b) Modelujte Petriho sítí systém M/M/1 s následujícím specifikem: v intervalech daných exponenciálním rozložením se středem X časových jednotek se v systému projeví porucha, která prodlouží případnou právě probíhající obsluhu o 2 čas. jednotky.
 

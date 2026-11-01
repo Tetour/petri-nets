@@ -2,8 +2,6 @@
 
 ## Zadání
 
-⚠️ Zadání je známé jen jako zápis studenta ve sbírce, originál zkoušky chybí.
-
 > Pokud od doby poslední obsluhy uplynulo méně než 10 časových jednotek, další transakce bude obsluhována přesně 2 časové jednotky, jinak přesně 5 časových jednotek. (M/D/1)
 
 Otázka 3: „Popsat onu Petriho síť v “pseudojazyku vycházejícího ze SIMLIBu”“.
@@ -138,7 +136,7 @@ int main() {
 
 **Původ:** zkouška 2020/21, 1. opravný termín (9:00), otázka 2 (počet bodů neznámý). Navazující otázka 3 chtěla tutéž síť popsat pseudokódem podle SIMLIBu.
 
-**Původní znění:**
+**Původní znění** (jen zápis studenta ve sbírce, originál zkoušky chybí):
 
 > Pokud od doby poslední obsluhy uplynulo méně než 10jč. (jednotek času), další transakce bude obsluhována 2jč., jinak 5jč. (M/D/1)
 
