@@ -2,9 +2,7 @@
 
 ## Zadání
 
-⚠️ Původní zadání se nedochovalo, jen studentský přepis:
-
-> Uvažujme systém M/M/1. Proces přichodu nových transakcí se na 10 časových jednotek přeruší, pokud délka fronty dosáhne pěti transakcí. Nakreslete model systému s použitím petriho sítí
+> Uvažujme systém M/M/1. Proces přichodu nových transakcí se na 10 časových jednotek přeruší, pokud délka fronty dosáhne pěti transakcí.
 
 Podobné úlohy: [Klientské centrum](<../../09 - Obsluha zákazníků/06 - Klientské centrum/06 - Klientské centrum.md>) (stejný mechanismus: fronta 10 → stop stav na 4 h), [MM3 – zastavení příchodů](<../06 - MM3 – zastavení příchodů/06 - MM3 – zastavení příchodů.md>) (zastavení podle obsazení linek), [Interval příchodů podle délky fronty](<../04 - Interval příchodů podle délky fronty/04 - Interval příchodů podle délky fronty.md>).
 
@@ -129,6 +127,10 @@ int main() {
 <br>
 
 **Původ:** zkouška 2024/25, 1. termín, skupina B, otázka 3 (body neuvedené; ve skupinách A a C téhož termínu byla otázka 3 za 10 bodů).
+
+**Původní znění** (studentský přepis):
+
+> Uvažujme systém M/M/1. Proces přichodu nových transakcí se na 10 časových jednotek přeruší, pokud délka fronty dosáhne pěti transakcí. Nakreslete model systému s použitím petriho sítí
 
 **Zdroje:**
 
