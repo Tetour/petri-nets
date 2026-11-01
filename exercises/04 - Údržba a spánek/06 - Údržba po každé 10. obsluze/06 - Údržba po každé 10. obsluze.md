@@ -2,9 +2,7 @@
 
 ## Zadání
 
-⚠️ Fotka zadání je hodně rozmazaná. Znění je přečtené z ní a ověřené ručním přepisem na str. 4 („M/M/1, kde transakce po každé 10 dokončené obsluze navíc zařadí blok údržby linky trvající C časových jednotek.“).
-
-> 1. (15 bodů) Nakreslete Petriho síť pro systém M/M/1, kde transakce po každé desáté dokončené obsluze navíc zařadí blok údržby linky trvající přesně C časových jednotek. S využitím notace knihovny SIMLIB napište pseudokód všech nezbytných částí simulačního modelu. Dbejte na izomorfní vztah mezi oběma modely.
+> Nakreslete Petriho síť pro systém M/M/1, kde transakce po každé desáté dokončené obsluze navíc zařadí blok údržby linky trvající přesně C časových jednotek.
 
 Podobné úlohy:
 
