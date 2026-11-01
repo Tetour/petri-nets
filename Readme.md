@@ -6,7 +6,7 @@ The notes are in Czech; the tooling and these documents are in English.
 
 ## Where to start
 
-1. **Notation:** [Notace a vzory](notation/Notace%20a%20vzory.md) is a cheat sheet of the course notation and the standard patterns (generator, facility, store, timeout, failure, counter, …), each with a small net in [notation/patterns/](notation/patterns/).
+1. **Notation:** [Notace a vzory](basics/Notace%20a%20vzory.md) is a cheat sheet of the course notation and the standard patterns (generator, facility, store, timeout, failure, counter, …), each with a small net in [basics/patterns/](basics/patterns/). [Jak síť funguje](<basics/Jak síť funguje.md>) explains how a net runs: firing, timed transitions, several tokens, cancelled countdowns.
 2. **Exercises:** [Seznam úloh](<exercises/Seznam úloh.md>) lists all 118 exercises by category, with origin and review status. It opens with *Začni tady*: 15 exercises that cover every pattern once and then the newest midterms, a good first round before the midterm.
 3. **Practise:** open a note. Only the task (*Zadání*) is visible; every other section is collapsed, so you can try the exercise first and then open the hint, the net, the common mistakes, the SIMLIB model and the sources one at a time. Each note also exists as a PDF next to it, with the task alone on the first page.
 
@@ -89,7 +89,8 @@ pn/            Python library: catalogue (catalog.py), exercise list (index.py),
                net model (net.py), TikZ output (tikz.py), lint rules (lint.py),
                timed token-game simulator (sim.py), D/D/x trace (dd.py),
                build driver (build.py), note PDFs (notes.py), SIMLIB runner (simlib.py)
-notation/      notation cheat sheet, note and diagram rules, pattern nets
+basics/        notation cheat sheet, how a net runs, pattern nets
+notation/      rules for writing a note (Note.md) and laying out a diagram (Style.md)
 exercises/     the exercises, one folder per category (see above)
 source-survey/ the initial survey of the course material, by source file
 build/         generated intermediates (git-ignored)

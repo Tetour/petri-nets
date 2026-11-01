@@ -25,6 +25,8 @@ Podle přednášek (Hrubý, `IMS - Prezentace.pdf`, slajdy 123–164 a 186–198
 - Okamžitý přechod má vždy přednost před časovaným (sl. 139). Když si okamžitý přechod během odpočtu vezme značku, odpočet zanikne. **Na tom stojí přerušení obsluhy (poruchy) i netrpělivost.**
 - Běžný časovaný přechod **neomezuje počet současně čekajících** (sl. 138): každá značka ve vstupním místě má vlastní odpočet. Kapacitu (frontu u přechodu) je potřeba připsat poznámkou.
 
+Podrobně (víc značek, který odpočet zanikne, vyhladovění, past s testovací hranou): [Jak síť funguje](<Jak síť funguje.md>).
+
 ## Vzory
 
 ### Generátor a odchod

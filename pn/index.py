@@ -50,7 +50,7 @@ def index():
         out.append(f"| {n} | [{title}](<{cat}/>) | {len(exs)} | {rev} |")
     out.append("")
     out += ["## Začni tady", "",
-            "Patnáct úloh na začátek: nejdřív každý vzor z [Notace a vzory](<../notation/Notace a vzory.md>) aspoň jednou, "
+            "Patnáct úloh na začátek: nejdřív každý vzor z [Notace a vzory](<../basics/Notace a vzory.md>) aspoň jednou, "
             "pak nejnovější půlsemestrálky.", ""]
     for i, (name, what) in enumerate(START, 1):
         f = folder(name)

@@ -1,6 +1,6 @@
 # Diagram style
 
-How to lay out a net in `net.py`. These are preferences, not hard rules: when following one would make a diagram worse, break it. The course notation itself (what each element looks like and means) is in [Notace a vzory](Notace%20a%20vzory.md); this file covers layout only.
+How to lay out a net in `net.py`. These are preferences, not hard rules: when following one would make a diagram worse, break it. The course notation itself (what each element looks like and means) is in [Notace a vzory](../basics/Notace%20a%20vzory.md); this file covers layout only.
 
 ## Flow
 
@@ -21,7 +21,7 @@ How to lay out a net in `net.py`. These are preferences, not hard rules: when fo
 - **Exception:** the return arc of a resource (a timed transition giving the token back to a facility or store above the seize transition) is a **curve**: it leaves the transition from the **top** and enters the resource place from the **side facing the transition**. Use `net.arc(t, resource, out=90, into=0)` when the resource is to the left of the transition (`into=180` when it is to the right; for a resource below the row, `out=270`). See [Zdravotní ordinace](../exercises/01%20-%20Základní%20modely/03%20-%20Zdravotní%20ordinace/net.py).
   - When a **second arc also returns the token** to the resource (e.g. a breakdown cancelling the service), place the resource **directly above the timed transition** and draw the return as a **straight vertical arc**; the other return arc enters the resource from the side. See [Porucha zruší obsluhu](../exercises/03%20-%20Poruchy/01%20-%20Porucha%20zruší%20obsluhu/net.py).
 - The final segment always aims at the centre of the target node, so a place has only **four orthogonal entry points** (top, bottom, left, right). Plan positions so that each arc gets its own side.
-- **No two arcs share a segment**, and **lines don't cross**. If the only orthogonal route is a detour around a few nodes, a detour is fine (see the return arc in [03-sklad](patterns/03-sklad/net.py)).
+- **No two arcs share a segment**, and **lines don't cross**. If the only orthogonal route is a detour around a few nodes, a detour is fine (see the return arc in [03-sklad](../basics/patterns/03-sklad/net.py)).
 
 ## Labels, parameters, weights
 

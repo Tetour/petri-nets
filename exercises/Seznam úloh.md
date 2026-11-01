@@ -27,7 +27,7 @@ Zpracováno 118 ze 118 úloh, zkontrolováno 3.
 
 ## Začni tady
 
-Patnáct úloh na začátek: nejdřív každý vzor z [Notace a vzory](<../notation/Notace a vzory.md>) aspoň jednou, pak nejnovější půlsemestrálky.
+Patnáct úloh na začátek: nejdřív každý vzor z [Notace a vzory](<../basics/Notace a vzory.md>) aspoň jednou, pak nejnovější půlsemestrálky.
 
 1. [Opravářská dílna](<01 - Základní modely/01 - Opravářská dílna/01 - Opravářská dílna.md>): generátor, zařízení, pravděpodobnostní větvení, odchod ze systému
 2. [Samoobsluha](<01 - Základní modely/02 - Samoobsluha/02 - Samoobsluha.md>): sklad (vozíky), několik zařízení za sebou, výběr pokladny

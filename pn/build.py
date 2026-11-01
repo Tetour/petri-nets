@@ -2,7 +2,7 @@
 
     python3 -m pn.build [--check-only] [PATH ...]
 
-Every directory under exercises/ and notation/ containing a `net.py` is a net.
+Every directory under exercises/ and basics/ containing a `net.py` is a net.
 For each one: lint + simulation checks, then TikZ -> PDF -> SVG (next to
 net.py) and a PNG preview in build/.
 """
@@ -25,7 +25,7 @@ BUILD = ROOT / "build"
 
 
 def find(paths):
-    roots = [Path(p).resolve() for p in paths] or [ROOT / "exercises", ROOT / "notation"]
+    roots = [Path(p).resolve() for p in paths] or [ROOT / "exercises", ROOT / "basics"]
     for r in roots:
         if r.is_file():
             yield r

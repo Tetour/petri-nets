@@ -1,6 +1,6 @@
 # Note structure
 
-How an exercise note looks. The diagram itself is covered by [Style.md](Style.md); the course notation by [Notace a vzory](Notace%20a%20vzory.md). The reference note is [Opravářská dílna](../exercises/01%20-%20Základní%20modely/01%20-%20Opravářská%20dílna/01%20-%20Opravářská%20dílna.md): when in doubt, copy it.
+How an exercise note looks. The diagram itself is covered by [Style.md](Style.md); the course notation by [Notace a vzory](../basics/Notace%20a%20vzory.md). The reference note is [Opravářská dílna](../exercises/01%20-%20Základní%20modely/01%20-%20Opravářská%20dílna/01%20-%20Opravářská%20dílna.md): when in doubt, copy it.
 
 ## File and language
 
