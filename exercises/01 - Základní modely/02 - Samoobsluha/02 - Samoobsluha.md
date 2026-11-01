@@ -3,8 +3,6 @@
 ## Zadání
 
 > Do samoobsluhy přicházejí zákazníci v intervalech exponenciálně se středem 8 minut. Každý zákazník si nejprve opatří vozík. Vozíky se koncentrují na seřadišti a je jich celkem 50. Zákazník vstoupí do prodejny a 30% jde okamžitě k pultíku s lahůdkami, kde obsluhují dvě prodavačky. Obsloužení zákazníka zde trvá exponenciálně se středem 2 minuty a pak zákazník pokračuje běžným nákupem. Běžný nákup trvá rovnoměrně 10–15 minut. Nakonec přistupuje k jedné z pěti pokladen. Vybírá si pokladnu podle nejkratší fronty. Obsluha u pokladny trvá exponenciálně se středem 3 minuty. Při odchodu ze systému zákazník vrací vozík.
->
-> Zadání: analýza problému, model ve formě SPN, model ve formě SIMLIB
 
 Podobné úlohy: [Opravářská dílna](<../01 - Opravářská dílna/01 - Opravářská dílna.md>), [Menza](<../../09 - Obsluha zákazníků/16 - Menza/16 - Menza.md>).
 
