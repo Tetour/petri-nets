@@ -166,3 +166,9 @@ int main() {
   - Rozdíl: u Hrubého 20 turistů zaniká už při vyplutí a vyhnaní turisté zanikají ve smyčce. Výstupní přechod se tehdy nevyžadoval.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

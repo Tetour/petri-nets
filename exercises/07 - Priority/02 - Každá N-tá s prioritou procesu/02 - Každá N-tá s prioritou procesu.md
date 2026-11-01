@@ -135,3 +135,9 @@ int main() {
 - K tomuto zadání žádné řešení není. K sesterské úloze s prioritou obsluhy existuje chybné řešení cranycrane, rozbor je v úloze [Každá 10. s prioritou obsluhy](<../03 - Každá 10. s prioritou obsluhy/03 - Každá 10. s prioritou obsluhy.md>).
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

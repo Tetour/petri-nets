@@ -143,3 +143,9 @@ int main() {
 - Žádné řešení k této úloze není (rámeček na odpověď je na fotce prázdný).
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

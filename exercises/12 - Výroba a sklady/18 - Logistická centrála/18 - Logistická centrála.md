@@ -167,3 +167,9 @@ Značka zpracovaného balíku zůstává v síti během odpočtu naložení v m�
 - Diskuse pod řešením („Neměli by tam být odkonce 2 pracovníci, zvlášť na zpracování a nakládání?“) skončila správně: „v zadani je ze pracovnik se zabyva zpracovanim, nic vic“.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

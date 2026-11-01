@@ -152,3 +152,9 @@ int main() {
 - **Tabule luppo:** podobná síť (*Start* bere z *květiny* (30), *T get spotted* → `20%`/`80%`, váhy 3 a 4 z konve (10)). U *Musím naplnit* je `P1`, který podle všeho vylévá zbytek z konve, `P0` jde `2-5min` → `Naleju 60s` → `2-5` a vrací 10 jednotek. I tady se ale po návratu jde zpět na losování potřeby.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

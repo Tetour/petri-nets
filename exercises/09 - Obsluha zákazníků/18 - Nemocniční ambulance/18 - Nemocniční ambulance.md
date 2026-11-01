@@ -196,3 +196,9 @@ V síti se lékař přerušeného pacienta do *Lékařů* nevrací, jde rovnou d
 - **Tabule luppo:** `Exp(20min)` → přechod *Přepážka* → `1-2min` → *Čekárna* → `Exp(10min)` s *Lékaři* (2). Sanita `Exp(5hodin)` → `p=2` vezme 2 lékaře → `3-4h`. Přeobjednání bere pacienta od přepážky (druhé čtení zadání) a má dobu „1-2h“ místo minut. Vyšetření nemá místo „probíhá“, takže ho nelze přerušit, a přepážka není zařízení.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

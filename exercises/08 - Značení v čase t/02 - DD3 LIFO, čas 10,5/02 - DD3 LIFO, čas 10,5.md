@@ -211,3 +211,9 @@ int main() {
 - **xenix, str. 10–11:** stejné značení, priority `p2, p1, (0)`. Chybí výstupní přechod, takže není vidět, kde transakce opouští systém. V seznamu událostí je omylem „FIFO poslední z fronty“, ačkoli fronta je LIFO.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

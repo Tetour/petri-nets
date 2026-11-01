@@ -148,3 +148,9 @@ int main() {
 - **Jiná konvence v poznámkách MSI** (obr. 3 a 5): bílý obdélník je exponenciální přechod se střední hodnotou v sekundách (*Entrance* `720` = 12 min; z bílého obdélníku u *Laboratory* plyne i exponenciální rozložení odběru), šedý obdélník jiné rozložení (`Uni(40,150)`), černá čárka okamžitý přechod. Okamžité přechody mají místo procent váhy (`75`/`25`, `50`/`50`; pravděpodobnost = váha / součet vah). V notaci IMS je bílý obdélník okamžitý přechod, takže obrázek nejde překreslit doslova.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

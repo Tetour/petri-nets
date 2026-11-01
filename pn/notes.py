@@ -35,12 +35,15 @@ HEADER = r"""\usepackage{fvextra}
 """
 
 
-def prepare(md: str) -> str:
+def prepare(md: str, base: Path | None = None) -> str:
     md = md.replace("️", "")                                   # emoji variation selector
     md = re.sub(r"(?m)^<details>\n<summary>[^<]*</summary>\n(<br>\n)?", "", md)
     md = re.sub(r"(?m)^</details>\n", "", md)
     md = md.replace("](net.svg)", "](net.pdf)")
-    md = re.sub(r"\]\(<([^>]+)\.md>\)", r"](<\1.pdf>)", md)          # links to other notes
+    # links to other notes point to their PDFs; other Markdown files (no PDF) stay as they are
+    md = re.sub(r"\]\(<([^>]+)\.md>\)",
+                lambda m: f"](<{m.group(1)}.pdf>)" if base is None or (base / f"{m.group(1)}.pdf").exists()
+                else m.group(0), md)
     for h in NEW_PAGE_BEFORE:
         md = md.replace(f"\n{h}\n", f"\n\\newpage\n\n{h}\n")
     return md
@@ -51,7 +54,7 @@ def render(note: Path):
     the PDF byte-identical between builds (pandoc's own temporary directory would not)."""
     out = BUILD / note.parent.name
     out.mkdir(parents=True, exist_ok=True)
-    md = prepare(note.read_text()).replace("](net.pdf)", f"](<{note.parent / 'net.pdf'}>)")
+    md = prepare(note.read_text(), note.parent).replace("](net.pdf)", f"](<{note.parent / 'net.pdf'}>)")
     (out / "note.md").write_text(md)
     (out / "header.tex").write_text(HEADER)
     r = subprocess.run(PANDOC + ["-s", "-H", "header.tex", "note.md", "-o", "note.tex"],

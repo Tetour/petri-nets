@@ -180,3 +180,9 @@ int main() {
 - **Tabule luppo:** naložení 20 balíků s *Řidičem*, *Counter 20*, `3-5min`, `80%` *odevzdán* / `20%` → `24h` → *A-Balík*. Cesta k adresátovi má `exp(20)` místo `exp(10)` a nezastižený balík jde na `24h` rovnou od adresáta, bez návratu do centrály.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

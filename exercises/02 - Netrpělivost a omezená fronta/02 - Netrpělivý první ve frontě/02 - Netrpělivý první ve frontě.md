@@ -154,3 +154,9 @@ int main() {
 - K zadáním 2017/18 a 2019/20 žádné řešení není.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

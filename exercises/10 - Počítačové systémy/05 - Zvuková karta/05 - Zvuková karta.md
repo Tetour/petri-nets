@@ -193,3 +193,9 @@ int main() {
 - Ve Studentských skriptech (str. 43) je jen zadání.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

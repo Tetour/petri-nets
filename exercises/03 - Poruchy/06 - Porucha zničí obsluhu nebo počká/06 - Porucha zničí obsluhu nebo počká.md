@@ -174,3 +174,9 @@ Porucha je tu událost, ne proces se `Seize(Linka, 1)`: nemá dobu trvání a p�
 - K této úloze žádné řešení není.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

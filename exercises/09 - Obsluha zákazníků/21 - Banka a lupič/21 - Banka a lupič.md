@@ -222,3 +222,9 @@ int main() {
 - V materiálech k této úloze žádné řešení není (ani Hrubého, ani studentské). Banka ve Studentských skriptech (str. 48–49) je jiná úloha, [Banka se třemi pracovníky](<../19 - Banka se třemi pracovníky/19 - Banka se třemi pracovníky.md>).
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

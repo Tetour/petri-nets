@@ -152,3 +152,9 @@ int main() {
 - V obou variantách bedýnka zaniká v přechodu linky. Výstupní přechod se tehdy nevyžadoval.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

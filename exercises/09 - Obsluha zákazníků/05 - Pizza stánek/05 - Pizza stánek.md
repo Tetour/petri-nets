@@ -137,3 +137,9 @@ int main() {
 - **Hrubý, „Alternativně“ (str. 2 dole):** pec se zabírá až po přípravě. Pizza čeká v místě *fronta na pec* a pec obsadí přechod s `p=1`. Je to také přípustné, ale pizza pak může čekat „mimo pec“, dokud se místo neuvolní. Hrubý proto doporučuje první variantu.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

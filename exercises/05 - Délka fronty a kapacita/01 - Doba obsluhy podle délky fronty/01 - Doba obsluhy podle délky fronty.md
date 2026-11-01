@@ -138,3 +138,9 @@ int main() {
 - **Řešené výpočetní příklady, str. 32 (varianta s 3):** totéž s váhami 3 a 2 a `p=1`. Každá větev má vlastní výstupní místo a přechod, což je také správně.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

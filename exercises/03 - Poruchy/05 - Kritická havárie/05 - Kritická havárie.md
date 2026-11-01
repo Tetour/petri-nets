@@ -176,3 +176,9 @@ int main() {
 - K tomuto zadání žádné řešení není. Stejnou úlohu se symboly řeší fifinas (str. 2), viz [Porucha s opravou, transakce odchází](<../04 - Porucha s opravou, transakce odchází/04 - Porucha s opravou, transakce odchází.md>).
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

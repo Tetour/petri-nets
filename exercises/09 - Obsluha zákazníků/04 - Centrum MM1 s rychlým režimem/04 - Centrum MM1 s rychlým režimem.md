@@ -154,3 +154,9 @@ int main() {
 - **Hrubý (str. 4):** síť výše je jeho řešení překreslené: *seize* s `p=1` → místo → větvení `p=0` na `exp(7m)` a `p=1` (s testem *rychlo režimu*) na `exp(3m)` → společné místo → *release* zpět k *lince*. *Normální režim* → přechod s testem 5 na frontě → *rychlo režim*. *Obnovení* bere *rychlo režim* a je napojené na *linku*; k lince si poznamenal, že nejdřív proběhne seize a teprve potom obnovení. Generátor kreslí jako přechod `exp` bez místa. Výstupní přechod nekreslí, za *release* je jen šipka ven. Hrany režimů u něj kříží hlavní řadu; tady obchází síť zleva a zprava.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

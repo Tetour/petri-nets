@@ -207,3 +207,9 @@ int main() {
 - K této úloze řešení v podkladech není. Síť má stejný tvar jako studentská řešení úlohy [DD3 LIFO, čas 10,5](<../02 - DD3 LIFO, čas 10,5/02 - DD3 LIFO, čas 10,5.md>), jen se dvěma zařízeními.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

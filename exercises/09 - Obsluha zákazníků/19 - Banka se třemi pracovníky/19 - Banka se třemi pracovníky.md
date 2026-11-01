@@ -221,3 +221,9 @@ int main() {
 - Zadání ve skriptech (str. 48) je zapsané po paměti a zkrácené (chybí např. „dokončí nejprve obsluhu klienta“); platí text z `2013-14.pdf`.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

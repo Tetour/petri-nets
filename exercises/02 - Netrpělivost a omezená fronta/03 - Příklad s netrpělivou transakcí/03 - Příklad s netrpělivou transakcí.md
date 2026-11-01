@@ -136,3 +136,9 @@ int main() {
 - **cranycrane, 4.png a 4.cpp:** jiný výklad. Obsazení linky má `P=1` a okamžitý přechod s nižší prioritou odvede transakci z fronty, kdykoli je linka obsazená (v kódu `if (linka.Busy()) return;`). Transakce tedy vůbec nečeká, odchází hned při příchodu. To je odmítnutí, ne netrpělivost ve frontě: systém se chová jako M/M/1 bez fronty a místo „fronty“ v síti nikdy nedrží značku déle než okamžik. Zadání výslovně říká „netrpělivou transakci ve frontě“, takže tenhle výklad bych u zkoušky nepoužil.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

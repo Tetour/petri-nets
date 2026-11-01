@@ -198,3 +198,9 @@ int main() {
 - Rozdíly: oba generátory kreslí jako přechod bez vstupního místa. *1 a hnědý přechod berou značku přímo z *procesu „bus“*; tady vede větev „není místo“ nejdřív do místa *plný autobus* (přechod *plno*, `p=0`), aby z místa *autobus* nevedlo pět hran. Zbylá místa u Hrubého maže smyčka `p=1` v místě *odjezd timeout*, za kterým následuje ještě místo *odjezd kapacitní*; tady je jedno místo *odjezd* a zbylá místa maže smyčka `p=2` hned po vypršení odpočtu (chování je stejné, autobus po 20 minutách stejně nikoho nenabere). Prioritu u odjezdu po 20 minutách Hrubý nepíše.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

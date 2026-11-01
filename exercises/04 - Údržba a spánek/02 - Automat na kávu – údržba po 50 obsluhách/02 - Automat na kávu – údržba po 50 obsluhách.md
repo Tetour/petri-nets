@@ -150,3 +150,9 @@ int main() {
 - Ve zdrojích není žádné řešení. Stejný čítač s váhou hrany je v řešení půlsemestrálky [Server s údržbou po 1000 požadavcích](<../../10 - Počítačové systémy/01 - Server s údržbou po 1000 požadavcích/01 - Server s údržbou po 1000 požadavcích.md>).
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

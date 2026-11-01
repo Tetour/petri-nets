@@ -155,3 +155,9 @@ int main() {
   - Spálený balík zaniká v přechodu `exp(2h)`, výstupní přechod chybí (tehdy se nevyžadoval).
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

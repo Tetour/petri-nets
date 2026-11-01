@@ -189,3 +189,9 @@ int main() {
 - **Příprava 2021/22 (str. 20):** o havárii rozhoduje už hned za generátorem (`10%` / `90%`), havarující letadlo pak obsadí dráhu s `P=2` a vůbec nepřistává `exp(3m)`. Obě fronty mají `30m`, vyprázdnění front a odstávka `8h` (vrací dráhu a generátor) tam jsou. Chybí výstupní přechody. Hlasy: 0 souhlasí, 1 nesouhlasí („why“).
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

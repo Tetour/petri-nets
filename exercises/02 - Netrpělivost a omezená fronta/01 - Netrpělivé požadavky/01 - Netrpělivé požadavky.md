@@ -4,12 +4,6 @@
 
 > Mějme systém M/M/1 s netrpělivými požadavky. Transakce po 10 časových jednotkách čekání ve frontě opouští bez obsluhy systém.
 
-Zkouška 2017/18, skupina 8H (sken):
-
-> (a) Nakreslete Petriho síť pro systém typu M/M/1 s netrpělivými požadavky (požadavek čeká nanejvýš 20 časových jednotek) (b) Napište program v SIMLIBu pro systém z přechozího bodu (Pozor na volbu typu obslužné linky!).
-
-Skupina 7A má stejné znění s „nanejvýš 10 časových jednotek“.
-
 Podobné úlohy: [Netrpělivý první ve frontě](<../02 - Netrpělivý první ve frontě/02 - Netrpělivý první ve frontě.md>) (netrpělivý je jen první ve frontě), [Příklad s netrpělivou transakcí](<../03 - Příklad s netrpělivou transakcí/03 - Příklad s netrpělivou transakcí.md>) (vlastní příklad), [Kopírovací centrum](<../../09 - Obsluha zákazníků/10 - Kopírovací centrum/10 - Kopírovací centrum.md>) (netrpělivost ve slovní úloze).
 
 ## Nápověda
@@ -20,8 +14,9 @@ Podobné úlohy: [Netrpělivý první ve frontě](<../02 - Netrpělivý první v
 
 - **M/M/1:** *příchody požadavků* ⇄ `exp(A)` → *fronta* → obsazení *Linky* → `exp(B)`, který *Linku* vrací → *konec* → *odchod*. Příchody a obsluha nemají v zadání čísla, proto symboly `exp(A)` a `exp(B)`.
 - **Netrpělivost = časovaný přechod `10` přímo na místě *fronta*.** Běžný časovaný přechod má pro každou značku ve vstupním místě vlastní odpočet (slajd 138), takže každý čekající odchází po 10 jednotkách svého čekání. Kdo se dřív dostane k lince, tomu okamžité obsazení vezme značku a jeho odpočet zanikne (slajd 139).
+- **Proč zanikne zrovna jeho odpočet:** značky jsou nerozlišitelné, takže síť při obsazení ví jen to, že jeden z běžících odpočtů musí zaniknout, ne čí. Zanikne nejstarší, a to odpovídá frontě FIFO: k lince jde ten, kdo čeká nejdéle. Na tom záleží, protože trpělivost je pevná (`10`); u `exp(10)` by bylo jedno, který odpočet zanikne, protože exponenciální doba nemá paměť. Kdyby fronta nebyla FIFO (LIFO, priority), tahle síť by neuměla říct, kdo odejde. Podrobně v [Jak síť funguje](<../../../basics/Jak síť funguje.md>).
 - **Měří se čekání ve frontě, ne obsluha.** Transakce v obsluze už netrpělivá není, proto časovač nesmí začínat až obsazením linky.
-- **Doba čekání je pevná** („nanejvýš 10“), tedy `10`, ne `exp(10)`. Jednotky zadání neuvádí, takže se nepíšou. Pro variantu 2017/18 8H stačí přepsat `10` na `20`.
+- **Doba čekání je pevná** („po 10 časových jednotkách“), tedy `10`, ne `exp(10)`. Jednotky zadání neuvádí, takže se nepíšou.
 - **Odchod bez obsluhy:** *netrpělivost* vede do místa *konec*, odkud transakce odchází stejným přechodem *odchod* jako obsloužené. Dva samostatné výstupní přechody jsou také správně (hodí se, když se mají počítat zvlášť).
 
 </details>
@@ -56,7 +51,7 @@ Podobné úlohy: [Netrpělivý první ve frontě](<../02 - Netrpělivý první v
 <summary>Zobrazit SIMLIB kód</summary>
 <br>
 
-Model je izomorfní k Petriho síti výše: každé místo, přechod a značka mají svůj protějšek v kódu. Hodnoty `A = 10` a `B = 8` jsou doplněné, zadání je nedává. Linka je `Facility` (místo s jednou značkou), ne `Store`; na to míří poznámka „Pozor na volbu typu obslužné linky!“ v zadání 2017/18.
+Model je izomorfní k Petriho síti výše: každé místo, přechod a značka mají svůj protějšek v kódu. Hodnoty `A = 10` a `B = 8` jsou doplněné, zadání je nedává. Linka je `Facility` (místo s jednou značkou), ne `Store`.
 
 ```cpp
 // Netrpělivé požadavky – model v SIMLIB/C++
@@ -146,3 +141,9 @@ int main() {
 - **xenix, str. 26:** chybné. Časovač `X č.j.` začíná až přechodem obsazení linky (ten dává značku zároveň do obsluhy i do časovače), takže omezuje dobu obsluhy, ne čekání ve frontě. Navíc větev po vypršení časovače nevrací značku linky: po prvním vypršení se linka ztratí a systém se zastaví.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

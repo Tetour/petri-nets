@@ -152,3 +152,9 @@ Síť po prodloužení spouští `exp(B)` znovu, SIMLIB pokračuje se zbytkem p�
 - K této úloze žádné řešení není.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

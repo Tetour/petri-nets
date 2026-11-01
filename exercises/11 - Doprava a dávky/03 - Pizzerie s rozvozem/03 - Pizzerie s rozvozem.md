@@ -174,3 +174,9 @@ int main() {
 - **Hrubý (str. 4):** seznam častých chyb (viz níže) a srovnání správného a chybného modelu čekání na ose modelového času.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

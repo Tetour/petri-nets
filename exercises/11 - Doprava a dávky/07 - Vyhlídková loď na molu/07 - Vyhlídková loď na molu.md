@@ -203,3 +203,9 @@ int main() {
 - Řešení této úlohy v materiálech není. Síť vychází z Hrubého řešení příbuzné [Výletní loď](<../04 - Výletní loď/04 - Výletní loď.md>): loď u mola jako zařízení pro nástup, čítač nastoupených, vyplutí `p=1` s hranou váhy 20. Hrubý v úloze [Výletní loď](<../04 - Výletní loď/04 - Výletní loď.md>) bere 20 turistů hranou s váhou 20; tady počet cestujících při vyplutí není pevný (1 až 20), proto výstup smyčkou. Místo *po nástupu* (kam se loď vrací po každém nástupu) odděluje test plné lodi od stavu *s cestujícími*, aby žádné místo nemělo víc než čtyři hrany.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

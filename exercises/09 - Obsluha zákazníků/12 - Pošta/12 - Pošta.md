@@ -212,3 +212,9 @@ int main() {
   - Odvoz nebere značku „B otevřena“. Po návratu z Centrály tak řidič může dál obsluhovat B, i když fronta mezitím klesla pod 3. Zadání říká, že při naplnění 100 zásilek přepážku opouští.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

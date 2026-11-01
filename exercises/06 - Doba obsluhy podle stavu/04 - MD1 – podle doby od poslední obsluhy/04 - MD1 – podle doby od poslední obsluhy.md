@@ -151,3 +151,9 @@ int main() {
 - **Řešené výpočetní příklady, str. 35:** jen zadání a odkaz na SIMLIB kód na onlinegdb, Petriho síť chybí.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

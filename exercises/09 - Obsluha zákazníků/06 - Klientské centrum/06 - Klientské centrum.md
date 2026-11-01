@@ -147,3 +147,9 @@ int main() {
 - K této variantě v materiálech žádné řešení není (ani od Hrubého, ani studentské).
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

@@ -126,3 +126,9 @@ int main() {
 - **Slajd 164:** stejná síť. Generátor je tam nakreslený zkráceně jako přechod bez vstupního místa (slajd 151 ukazuje obě varianty); tady je ve smyčce s místem, což přednášející 18. 10. 2024 označil za „mírně korektnější“. Výstupní přechod je na slajdu také.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

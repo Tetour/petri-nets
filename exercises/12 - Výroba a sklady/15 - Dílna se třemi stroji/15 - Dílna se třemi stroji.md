@@ -166,3 +166,9 @@ int main() {
 - K zadáním z roku 2011/12 v materiálech žádné řešení není.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

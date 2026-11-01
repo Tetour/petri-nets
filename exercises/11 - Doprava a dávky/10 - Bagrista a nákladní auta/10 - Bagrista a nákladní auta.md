@@ -152,3 +152,9 @@ int main() {
 - **Tabule luppo:** *Bagrista* `P=2`, *Bagrujeme* → `Exp(5min)` s místem *1000*, `P=2` s váhou 3 a *Nákladní auto* (3), `Exp(1hod)`, *Bufet* `10min`. Věta o občerstvení je v zadání na tabuli přeškrtnutá. Leží v červeně ohraničené části tabule.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

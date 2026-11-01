@@ -217,3 +217,9 @@ int main() {
 - Hrubého řešení ani řešení ze cvičení v materiálech není.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

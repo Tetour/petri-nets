@@ -134,3 +134,9 @@ int main() {
 - **cranycrane, 5.png:** totéž (test 5/5, jednorázová značka, váha 2). Kód `5.cpp` hlídá délku fronty jen při příchodu a nastaví `SetCapacity(3)`. Hlídání při příchodu tu stačí, protože fronta roste jen příchody. Po `SetCapacity(3)` ale čekající požadavky nové jednotky neobsadí hned, SIMLIB je pustí až při dalším `Leave`.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

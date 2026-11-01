@@ -202,3 +202,9 @@ int main() {
 - K této skupině řešení v podkladech není. Síť má stejný tvar jako studentská řešení sesterské skupiny 5-A ([DD3 LIFO, čas 10,5](<../02 - DD3 LIFO, čas 10,5/02 - DD3 LIFO, čas 10,5.md>)), jen se dvěma zařízeními.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

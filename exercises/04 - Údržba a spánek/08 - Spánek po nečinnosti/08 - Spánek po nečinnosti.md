@@ -176,3 +176,9 @@ int main() {
 - Ve zdrojích není žádné řešení. Stejná síť (jen s jinými časy) je v řešení půlsemestrálky [Výpočetní služba se spánkem](<../../10 - Počítačové systémy/02 - Výpočetní služba se spánkem/02 - Výpočetní služba se spánkem.md>).
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

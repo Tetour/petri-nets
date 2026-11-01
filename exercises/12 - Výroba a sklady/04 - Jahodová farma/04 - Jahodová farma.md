@@ -163,3 +163,9 @@ int main() {
 - K této úloze v materiálech žádné řešení není. Nejbližší je moštárna (Z16, [Moštárna](<../06 - Moštárna/06 - Moštárna.md>)), řešená na democvičení (`Fitcheats/Půlsemestrálky/Democvičení 2020-21 - Z4 zadání a řešení.pdf`, str. 4): sběrači „5“ → bedýnky → lisy obsluhované moštaři → váha „20“ do nádoby. Lahvování začne přechodem `p=1` (linka + moštař + mošt), po každé lahvi pokračuje dalším `p=1`, dokud je nádoba neprázdná, jinak přechod bez priority vrátí linku i moštaře. To je stejný vzor jako lahvování výše, jen bez 10minutového startu linky.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

@@ -143,3 +143,9 @@ int main() {
 - **Příprava 2018-19, str. 48:** stejná struktura jako tady: po obsazení linky místo, z něj přechod `p=1` (vezme i poruchu) přes čas `10` a přechod bez priority přímo k `exp(y)`. Komentáře se neshodnou. Zelený: „Za mě je to dobře, akorát bych si dával pozor na popisky těch časovaných přechodů. Exp(x) je dle zadání jen pro generování poruch…“ (síť používá `exp(x)` pro příchody i `Exp(X)` pro poruchy). Červený: „Za mě je to špatně, protože těch poruch se tam může nakumulovat víc, což neodpovídá zadání.“ Červený má pravdu: bez sloučení prodlouží dvě poruchy dvě transakce. Jinak je síť v pořádku, včetně výstupního přechodu.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

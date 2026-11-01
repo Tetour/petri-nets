@@ -138,3 +138,9 @@ Bez doplňkového skladu by stačila podmínka `if (Linka.QueueLen() >= 10)`, kt
 - **xenix, str. 26:** stejná síť jako tady: doplňkové místo `10`, vstup `p=1`, obsazení linky vrací značku do `10`, odmítnutí s nižší prioritou bez výstupu. Okamžité přechody jsou tu černé a časované bílé, tedy opačně než na slajdech, kde jsou časované vyplněné.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

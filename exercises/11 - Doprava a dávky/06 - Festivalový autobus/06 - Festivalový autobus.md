@@ -207,3 +207,9 @@ int main() {
 - K této úloze v materiálech žádné řešení není. Nejbližší je výletní autobus z roku 2025/26 ([Výletní autobus](<../01 - Výletní autobus/01 - Výletní autobus.md>)), který také odjíždí buď plný, nebo po uplynutí času, s kapacitou jako místem s 20 značkami.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

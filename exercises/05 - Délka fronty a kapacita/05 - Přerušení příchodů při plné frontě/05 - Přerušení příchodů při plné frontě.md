@@ -139,3 +139,9 @@ int main() {
 - K této úloze v materiálech žádné řešení není. Stejný mechanismus je v úloze [Klientské centrum](<../../09 - Obsluha zákazníků/06 - Klientské centrum/06 - Klientské centrum.md>).
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

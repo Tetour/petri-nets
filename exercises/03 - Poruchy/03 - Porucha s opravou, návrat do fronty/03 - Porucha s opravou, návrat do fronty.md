@@ -2,7 +2,7 @@
 
 ## Zadání
 
-> Uvažujme systém typu M/M/1. U linky dochází k poruše v intervalech exponenciálně se středem E časových jednotek. Porucha zabere linku na dobu R. Pokud je v okamžiku vzniku poruchy nějaká transakce v obsluze, pak je její obsluha zrušena a transakce se vrací do fronty. Nakreslete model systému s použitím Petriho sítí.
+> Uvažujme systém typu M/M/1. U linky dochází k poruše v intervalech exponenciálně se středem E časových jednotek. Porucha zabere linku na dobu R. Pokud je v okamžiku vzniku poruchy nějaká transakce v obsluze, pak je její obsluha zrušena a transakce se vrací do fronty.
 
 Podobné úlohy:
 
@@ -174,3 +174,9 @@ int main() {
 - K tomuto zadání žádné řešení není. Nejbližší je **fifinas, str. 2** (úloha [Porucha s opravou, transakce odchází](<../04 - Porucha s opravou, transakce odchází/04 - Porucha s opravou, transakce odchází.md>)): porucha zabere volnou linku přechodem s `p=1` a obsazenou linku přechodem, který vezme obsluhovanou transakci. Oba vedou do místa před časovaným přechodem `C`, který linku vrátí, stejně jako tady. Rozdíl je jen v tom, že tam přerušená transakce mizí, kdežto tady se vrací do *fronty*.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

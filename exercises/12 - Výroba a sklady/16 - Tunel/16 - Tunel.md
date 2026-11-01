@@ -174,3 +174,9 @@ Odpočet „noc trvá“ a stav *Noc* jsou v kódu přirozeně oddělené: `Wait
 - K zadáním z roku 2011/12 v materiálech žádné řešení není.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

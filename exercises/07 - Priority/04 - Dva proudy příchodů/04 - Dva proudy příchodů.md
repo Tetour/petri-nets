@@ -155,3 +155,9 @@ int main() {
 - K tomuto zadání žádné řešení není. Variantu s přerušením kreslí **Studentská skripta 2015-16, str. 40** a je chybná, rozbor je v úloze [Priorita procesu a obsluhy](<../05 - Priorita procesu a obsluhy/05 - Priorita procesu a obsluhy.md>).
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

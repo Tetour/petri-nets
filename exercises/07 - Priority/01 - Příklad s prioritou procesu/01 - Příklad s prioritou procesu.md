@@ -129,3 +129,9 @@ int main() {
 - K tomuto zadání žádné řešení není. Stejnou konstrukci (dvě fronty, obsazení s různou prioritou) kreslí **Studentská skripta 2015-16, str. 39** jako „slabou prioritu“.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

@@ -179,3 +179,9 @@ int main() {
 - **Tabule luppo:** *Studenti* → `Exp(3min)` → *Příchod* → obsazení kuchařek (5) → *Obsluha* → `Exp(1min)` → *Žere* → `Rav(10-15)` → *Odchod*. *hlášení* má smyčky na vyhazovací přechody z fronty (`p=2`), z obsluhy (vrací kuchařku) i z *Žere*. Časovač `10dní` je přímo na místě *hlášení*. Hrana, která by brala značku generátoru studentů, na fotce není vidět.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

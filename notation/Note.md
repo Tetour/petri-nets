@@ -10,7 +10,7 @@ How an exercise note looks. The diagram itself is covered by [Style.md](Style.md
 
 ## Skeleton
 
-Only the heading and **Zadání** are visible when the note is opened; every other section sits behind its own toggle, so the reader can try the exercise first. After each `<summary>` comes `<br>`, which leaves an empty line between the toggle and its content in the Markdown preview (the PDF converter drops it).
+Only the heading, **Zadání** and the closing **Reference** are visible when the note is opened; every other section sits behind its own toggle, so the reader can try the exercise first. After each `<summary>` comes `<br>`, which leaves an empty line between the toggle and its content in the Markdown preview (the PDF converter drops it).
 
 ````markdown
 # Opravářská dílna
@@ -82,6 +82,12 @@ Podobné úlohy: [Netrpělivé požadavky](<../../02 - Netrpělivost a omezená 
 - …
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)
 ````
 
 ## Sections
@@ -133,3 +139,7 @@ Podobné úlohy: [Netrpělivé požadavky](<../../02 - Netrpělivost a omezená 
 - **Původní znění:** the original task text, if Zadání was rewritten.
 - **Zdroje:** the files with pages, as paths relative to the course study folder `IMS - Modelování a simulace/` (no remark about that in the note).
 - **Existující řešení:** Hrubý's, the session's or students' solutions, how they differ from the net, and their errors.
+
+### Reference
+
+- Visible, the same three links in every note (copy them from the skeleton): [Jak síť funguje](../basics/Jak%20síť%20funguje.md), [Notace a vzory](../basics/Notace%20a%20vzory.md) and the [exercise list](<../exercises/Seznam úloh.md>). In the PDF they stay links to the Markdown files, since those have no PDF.

@@ -189,3 +189,9 @@ int main() {
 - Komentáře pod řešením: námitka, že zákazník může iterovat donekonečna, neplatí (odpověď pod ní: iterace jsou jen 5, pak dojdou značky v „počet výberov“). Druhá námitka („Omezení kapacity pro prvního zákazníka je špatně…“) je druhé čtení popsané v nápovědě.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

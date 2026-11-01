@@ -171,3 +171,9 @@ int main() {
 - **Řešení ze cvičení (fotky 2024/25, str. 6):** stejná stavba. Vstup do *FRONTA* je `p=1` s testem místa přítomnosti (zakroužkované modře), odchod nepřítomnému prodavači je vodorovný výstupní přechod nad místem příchodu. Obsazení *L* má `P=1`. Úsek mezi prvním `10 min` a vysokým okamžitým přechodem je přeškrtaný a zakroužkovaný, takže ho nelze spolehlivě přečíst; písmeno „F“ u tohoto přechodu možná znamená test prázdné fronty. Ten není potřeba, protože při volném prodavači je fronta vždy prázdná.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

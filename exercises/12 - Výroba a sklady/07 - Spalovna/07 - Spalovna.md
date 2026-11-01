@@ -188,3 +188,9 @@ int main() {
   - síť je velmi nepřehledná (mnoho křížících se hran), nikdo pro ni nehlasoval.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

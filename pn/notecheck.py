@@ -23,6 +23,7 @@ SECTIONS = [
     ("Časté chyby", "Zobrazit časté chyby"),
     ("SIMLIB", "Zobrazit SIMLIB kód"),
     ("Původ a zdroje", "Zobrazit původ a zdroje"),
+    ("Reference", None),
 ]
 
 # time wordings that Note.md replaces by „exponenciálně se středem …“, „rovnoměrně …“, „přesně …“
@@ -64,7 +65,7 @@ def check(note: Path):
     body = {h: lines[bounds[k]:bounds[k + 1] - 1] for k, (_, h) in enumerate(heads)}
     start = {h: bounds[k] for k, (_, h) in enumerate(heads)}
 
-    for h in names[1:]:
+    for h in names[1:-1]:
         b, s = body[h], start[h]
         summary = dict(SECTIONS)[h]
         want = ["", "<details>", f"<summary>{summary}</summary>", "<br>", ""]

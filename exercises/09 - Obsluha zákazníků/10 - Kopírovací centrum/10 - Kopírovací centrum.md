@@ -155,3 +155,9 @@ int main() {
 - **Řešení ze cvičení (fotky 2024/25, str. 2):** totéž, jen každá větev končí vlastním výstupním přechodem. Obojí je správně; zadání chce jen, aby byl odchod jednoznačně vidět.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)

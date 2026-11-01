@@ -151,3 +151,9 @@ int main() {
 - **Hrubý (str. 2):** stejná síť: tři značky v *Lince* (kreslené jako tři tečky), if-else s `p=1` a smyčkou na *je noc* (inhibiční hranu „není noc“ nepoužívá), proces den/noc `16h` → `8h` → `p=2`. K prioritě `p=2` si připsal, že „priorita zde není ESENCIÁLNÍ“: v zásadě je jedno, jak by souběžná situace dopadla. Rozdíl je jen v uvolnění linky: obě obsluhy u něj vedou do společného místa a teprve přechod za ním vrací značku *Lince* a zároveň ukončuje transakci. Tady je uvolnění sloučené s oběma časovanými přechody (jako na slajdu 164) a odchod je samostatný přechod bez výstupu. Obojí je správně.
 
 </details>
+
+## Reference
+
+- [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
+- [Notace a vzory](<../../../basics/Notace a vzory.md>)
+- [Seznam úloh](<../../Seznam úloh.md>)
