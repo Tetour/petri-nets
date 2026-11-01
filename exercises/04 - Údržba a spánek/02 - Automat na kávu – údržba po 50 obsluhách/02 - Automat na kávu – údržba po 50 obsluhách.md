@@ -8,7 +8,7 @@ Zkouška 2018/19 podle vzpomínky: „Automat na kávu, který po připravení X
 
 Podobné úlohy:
 
-- [Údržba po každé 10. obsluze](<../06 - Údržba po každé 10. obsluze/06 - Údržba po každé 10. obsluze.md>): údržbu provádí transakce, která linku ještě drží
+- [Údržba po každé 10. obsluze](<../06 - Údržba po každé 10. obsluze/06 - Údržba po každé 10. obsluze.md>): stejná síť, údržba po 10 obsluhách trvá C
 - [Server s údržbou po 1000 požadavcích](<../../10 - Počítačové systémy/01 - Server s údržbou po 1000 požadavcích/01 - Server s údržbou po 1000 požadavcích.md>): stejný čítač, navíc se vyhazuje fronta
 - [Údržbář na obchůzce](<../07 - Údržbář na obchůzce/07 - Údržbář na obchůzce.md>)
 - [Automat na kávu – údržba po nečinnosti](<../01 - Automat na kávu – údržba po nečinnosti/01 - Automat na kávu – údržba po nečinnosti.md>)
