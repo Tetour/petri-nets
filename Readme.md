@@ -7,7 +7,7 @@ The notes are in Czech; the tooling and these documents are in English.
 ## Where to start
 
 1. **Notation:** [Notace a vzory](notation/Notace%20a%20vzory.md) is a cheat sheet of the course notation and the standard patterns (generator, facility, store, timeout, failure, counter, …), each with a small net in [notation/patterns/](notation/patterns/).
-2. **Exercises:** [exercises/Readme.md](exercises/Readme.md) lists all 118 exercises by category, with origin and review status.
+2. **Exercises:** [Exercise list](<exercises/Exercise list.md>) lists all 118 exercises by category, with origin and review status.
 3. **Practise:** open a note. Only the task (*Zadání*) is visible; every other section is collapsed, so you can try the exercise first and then open the hint, the net, the common mistakes, the SIMLIB model and the sources one at a time. Each note also exists as a PDF next to it, with the task alone on the first page.
 
 The categories go from basic models over single mechanisms (failures, maintenance, priorities, … as in the short exam questions) and marking at time t to full word problems as at the midterm:
@@ -45,7 +45,7 @@ Two exam entries are unusable and not drawn: 2025/26 exam D Q1 (the page was nev
 
 - [Note.md](notation/Note.md): the structure of a note and the rules for each section (times in the task text, hints, SIMLIB, sources).
 - [Style.md](notation/Style.md): how a diagram is laid out.
-- **Review:** a note's hint section is called *Interpretace* until you confirm the reading; then it is renamed to *Nápověda*, and the exercise index shows the note as `reviewed`.
+- **Review:** a note's hint section is called *Interpretace* until you confirm the reading; then it is renamed to *Nápověda*, and the exercise list shows the note as `reviewed`.
 - **Limits:** a modelling task usually has more than one correct net. Each net aims at the one closest to Hrubý's style and the hints mention real alternatives (constant vs. exponential time, ≥ vs. >). Where only a student's recollection or a blurry photo of a task exists, a ⚠️ line in the task says so.
 
 ## Checks
@@ -70,7 +70,7 @@ make            # everything below except check
 make nets       # check every net and render net.pdf + net.svg next to each net.py
 make notes      # render every note to its PDF (A4; task on page 1, hint and net on later pages)
 make simlib     # compile and run the SIMLIB model of every note
-make index      # regenerate exercises/Readme.md from pn/catalog.py
+make index      # regenerate "exercises/Exercise list.md" from pn/catalog.py
 make check      # checks only (nets + SIMLIB models)
 
 python3 -m pn.build "exercises/09 - Obsluha zákazníků/10 - Kopírovací centrum"   # one net, or a whole category
@@ -85,7 +85,7 @@ To add an exercise, add it to [pn/catalog.py](pn/catalog.py) (the single list of
 ## Layout
 
 ```
-pn/            Python library: catalogue (catalog.py), exercise index (index.py),
+pn/            Python library: catalogue (catalog.py), exercise list (index.py),
                net model (net.py), TikZ output (tikz.py), lint rules (lint.py),
                timed token-game simulator (sim.py), D/D/x trace (dd.py),
                build driver (build.py), note PDFs (notes.py), SIMLIB runner (simlib.py)

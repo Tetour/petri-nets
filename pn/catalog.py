@@ -9,7 +9,7 @@ unique, so notes refer to another exercise by its name.
 
 import os
 
-# (short name = folder, full name = heading in the exercise index exercises/Readme.md, [(name, origin)])
+# (short name = folder, full name = heading in the exercise list "exercises/Exercise list.md", [(name, origin)])
 CATEGORIES = [
     ('Základní modely', 'Základní modely (přednášky)', [
         ('Opravářská dílna', 'přednáška, slajdy 157–164'),
