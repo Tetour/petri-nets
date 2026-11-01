@@ -1,6 +1,6 @@
 # Diagram style
 
-How to lay out a net in `net.py`. These are preferences, not hard rules: when following one would make a diagram worse, break it. The course notation itself (what each element looks like and means) is in [Notace a vzory](Notace%20a%20vzory.md) and in [PLAN.md](../PLAN.md) §3; this file covers layout only.
+How to lay out a net in `net.py`. These are preferences, not hard rules: when following one would make a diagram worse, break it. The course notation itself (what each element looks like and means) is in [Notace a vzory](Notace%20a%20vzory.md); this file covers layout only.
 
 ## Flow
 
