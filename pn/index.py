@@ -1,4 +1,4 @@
-"""Generate the exercise index exercises/README.md from the catalogue.
+"""Generate the exercise index exercises/Readme.md from the catalogue.
 
     python3 -m pn.index
 
@@ -11,7 +11,7 @@ from pathlib import Path
 from .catalog import categories, exercises
 
 ROOT = Path(__file__).resolve().parent.parent
-INDEX = ROOT / "exercises" / "README.md"
+INDEX = ROOT / "exercises" / "Readme.md"
 
 HEAD = """\
 # Exercises
