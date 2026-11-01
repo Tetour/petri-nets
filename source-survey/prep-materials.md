@@ -501,7 +501,7 @@ Each item is a PNG (stream screenshots or paper) plus a SIMLIB `.cpp`. The READM
 10. **Service time depends on queue length:** A3 (≥X → 5, else 10; weights x / x−1) and A9 (2021 Řádný 10:00; ≥3 → 5, else 10; weights 3/2). Both use exp() for the stated durations, which is disputed in A3's comments.
 11. **Maintenance after service when the queue is empty:** A4, and probably the same as A11 (2021 Řádný 16:00, "M/M/1 s údržbou", no solution).
 12. **Failure prolongs service:** B6 (+10 for the next transaction, 2. opravný 2017/18 A), A13 (+2 current, 2021 1. opravný 11:00), A14 (+5 current, only if running, 2021 COVID). Related: E1 (failure lasting C), E2 (every 10th causes failure).
-13. **Pumped-storage power plant:** luppo Z3 vs Z11.
+13. **Pumped-storage power plant:** student whiteboard Z3 vs Z11.
 14. **Every 10th transaction:** E2 (triggers failure) vs G7 (service priority) both use a weight-10 counter place.
 
 All crops and extracts I made are in the scratchpad (`/tmp/claude-1000/-home-adam-Projects-Education-petri-nets/a6f232b0-aee0-42a0-9423-8c1043651165/scratchpad/`); no source files were modified.

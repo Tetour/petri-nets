@@ -1,6 +1,6 @@
 from pn import Net
 
-net = Net("Kravín (příklad z přednášky, tabule luppo)")
+net = Net("Kravín (příklad z přednášky, studentská tabule)")
 
 # krávy: 100 značek, každá má vlastní odpočet exp(15 h) (slajd 138)
 net.place("kravy", (0, 0), tokens=100, label="Krávy", label_pos="above")

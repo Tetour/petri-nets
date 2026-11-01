@@ -165,7 +165,7 @@ int main() {
 **Existující řešení:**
 
 - **Studentské řešení (Příprava 2021/22, str. 9, souhlasí 1):** stejné hodiny se signálními místy a stavovými místy *práce* / *volno* (`8h`, `16h`), generátor `exp(10m)` s testem na *práce*. Navíc místo *volná rampa*, obsazení jeřábu `P=1`, `exp(3m)`, časovač `10min` a obchůzka `5-10m`. U hrany z *práce* k časovači `10min` si autor připsal „extra?“, tedy také váhal, jestli mají být obchůzky jen v pracovní době.
-- **Tabule luppo:** hodiny *Rest* / *Work* (`8h`, `16h`) s místy *Rest check* / *Work check*, *Auto* ⇄ `Exp(10)` → *Rampa* → *Je auto* → `Exp(3)`, *Jeřáb*, *Čekání* `10min`, *Obchůzka* `Rov(5-10)`. Nedokončené, v červeně ohraničené části tabule.
+- **Studentská tabule:** hodiny *Rest* / *Work* (`8h`, `16h`) s místy *Rest check* / *Work check*, *Auto* ⇄ `Exp(10)` → *Rampa* → *Je auto* → `Exp(3)`, *Jeřáb*, *Čekání* `10min`, *Obchůzka* `Rov(5-10)`. Nedokončené, v červeně ohraničené části tabule.
 - Hrubého řešení ani řešení ze cvičení v materiálech není.
 
 </details>

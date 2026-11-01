@@ -198,7 +198,7 @@ int main() {
   - návrat z extrémního požáru je jeden přechod s váhou 5, takže čeká, až u požáru bude všech 5 vozů. Pokud je některý ještě u běžného požáru, extrémní požár trvá déle než 10 h. Argument v komentáři („450min = 7.5h < 10h“) to neřeší: časy jsou exponenciální, tedy neomezené;
   - všech 5 vozů jede zpět jedním přechodem `exp(10m)`, ne každý zvlášť;
   - chybí výstupní přechody.
-- **Tabule (luppo):** hlášení → `2-3h` „Vyhořelo“ / výjezd s *Vozů 5* → `exp(10)` → `30-60min` → vůz rovnou zpět do centrály (chybí cesta zpět). Extrémní požár: `exp(1t)` → „Hoří Token“, výjezd `P=2` ve smyčce → `exp(10)`. Odpočet `10h` má podle všeho na vstupu hranu s váhou 5, takže začne až po příjezdu všech pěti vozů; extrémní požár pak netrvá 10 h od vzniku.
+- **Studentská tabule:** hlášení → `2-3h` „Vyhořelo“ / výjezd s *Vozů 5* → `exp(10)` → `30-60min` → vůz rovnou zpět do centrály (chybí cesta zpět). Extrémní požár: `exp(1t)` → „Hoří Token“, výjezd `P=2` ve smyčce → `exp(10)`. Odpočet `10h` má podle všeho na vstupu hranu s váhou 5, takže začne až po příjezdu všech pěti vozů; extrémní požár pak netrvá 10 h od vzniku.
 
 </details>
 

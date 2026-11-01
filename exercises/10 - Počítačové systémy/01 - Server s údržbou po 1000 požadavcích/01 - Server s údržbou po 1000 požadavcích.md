@@ -145,7 +145,7 @@ int main() {
 
 **Původ:** půlsemestrální písemka 2023/24, varianta A. Body nejsou uvedené (ostatní varianty téhož roku mají 10 bodů).
 
-**Původní znění** (převyprávěné zadání): Originální zadání v materiálech chybí. Text níže je zpráva studenta na Discordu (Thetzi, 1. 11. 2023), kterou autor po odeslání ještě upravil (Discord u ní ukazuje „(upraveno)“). Přesné znění, body a závěrečná věta o odchodu transakce nejsou známé. Řešení neexistuje.
+**Původní znění** (převyprávěné zadání): Originální zadání v materiálech chybí. Text níže je zpráva studenta na Discordu z 1. 11. 2023, kterou autor po odeslání ještě upravil (Discord u ní ukazuje „(upraveno)“). Přesné znění, body a závěrečná věta o odchodu transakce nejsou známé. Řešení neexistuje.
 
 > Zadání A: V intervalu exp(100ms) přicházejí požadavky a čekají ve fronte na obsloužení serverem. Ten má kapacitu 1 a požadavky obsluhuje rychlostí exp(70ms). Ihned po obsloužení každeho 1000. požadavku se přepne server do režimu údržby kde je 100s. V režimu údržby jsou všechny transakce z fronty i nově příchozí vyhozeny bez obsluhy.
 

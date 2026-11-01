@@ -42,7 +42,7 @@ Podobné úlohy: [Bagrista a nákladní auta](<../../11 - Doprava a dávky/10 - 
 <br>
 
 - Krávy jako generátor `exp(15 h)` pro celé stádo. Interval patří každé krávě; časovaný přechod na místě se 100 značkami to vyjádří sám.
-- Zabírat auto a rampu pro každou konvici zvlášť (tabule luppo). Auto i rampa patří k nakládání celé dávky 20 konvic.
+- Zabírat auto a rampu pro každou konvici zvlášť (studentská tabule). Auto i rampa patří k nakládání celé dávky 20 konvic.
 - Zapomenout při odjezdu uvolnit rampu. Druhé auto by se pak nikdy nepřistavilo.
 - Odjezd jen testovat (hrana s váhou 20 tam i zpět) a naložené konvice neodebrat. Auto by pak odjíždělo pořád znovu se stejným nákladem.
 
@@ -139,7 +139,7 @@ int main() {
 <summary>Zobrazit původ a zdroje</summary>
 <br>
 
-**Původ:** příklad z přednášky („Příklad: kravín“). Zachoval se jen jako výřez slajdu na studentské tabuli luppo spolu se studentským řešením. Ve slajdech 2025 ani v přepisech přednášek 2024 není, jde zřejmě o starší verzi přednášky.
+**Původ:** příklad z přednášky („Příklad: kravín“). Zachoval se jen jako výřez slajdu na studentské tabuli spolu se studentským řešením. Ve slajdech 2025 ani v přepisech přednášek 2024 není, jde zřejmě o starší verzi přednášky.
 
 **Původní znění:**
 
@@ -156,7 +156,7 @@ int main() {
 
 **Existující řešení:**
 
-- **Tabule luppo (studentské řešení):** leží v červeně ohraničené části tabule, ke které někdo připsal „No valid“ se šipkou.
+- **Studentská tabule:** leží v červeně ohraničené části tabule, ke které někdo připsal „No valid“ se šipkou.
   - Horní část je v pořádku a odpovídá síti výše: *krav* (100) → `Exp(15h)` přímo na místě s krávami → zabrání dojičky (5) → `90%` / `10%` → `Exp(8min)` / `Exp(15min)` → přechod *Mléko*, který vrací krávu i dojičku a vytváří mléko.
   - Spodní část je nepřehledná. Přechod *Nakládání* podle nakreslených hran bere s každou konvicí (*Mléko*) i rampu a auto. Rampa se vrací až při odjezdu, takže by se naložila jen první konvice a nakládání by uvázlo. *Kapacita* (20) se bere po jedné u přechodu „Je kap?“ a vrací se váhou 20 při odjezdu; protože je rampa jen jedna, stačí jedno společné místo. Odjezd (váha 20) vede přes místo do přechodu `1hod`, který vrací auto. Výstupní přechod pro konvice chybí.
 

@@ -23,7 +23,7 @@ Celkem 118 úloh.
 | 11 | [Slovní úlohy: doprava a dávky](<11 - Doprava a dávky/>) | 14 |
 | 12 | [Slovní úlohy: výroba, zdroje a sklady](<12 - Výroba a sklady/>) | 18 |
 
-## Začni zde
+## Začni tady
 
 Patnáct úloh na začátek: nejdřív každý vzor z [Notace a vzory](<../basics/Notace a vzory.md>) aspoň jednou, pak nejnovější půlsemestrálky.
 
@@ -52,7 +52,7 @@ Patnáct úloh na začátek: nejdřív každý vzor z [Notace a vzory](<../basic
 | 03 | [Zdravotní ordinace](<01 - Základní modely/03 - Zdravotní ordinace/03 - Zdravotní ordinace.md>) | poznámky MSI (stochastické PN) |
 | 04 | [Výrobní systém](<01 - Základní modely/04 - Výrobní systém/04 - Výrobní systém.md>) | poznámky MSI (P/T sítě) |
 | 05 | [Kritická sekce](<01 - Základní modely/05 - Kritická sekce/05 - Kritická sekce.md>) | poznámky MSI (P/T sítě) |
-| 06 | [Kravín](<01 - Základní modely/06 - Kravín/06 - Kravín.md>) | příklad z přednášky (tabule luppo) |
+| 06 | [Kravín](<01 - Základní modely/06 - Kravín/06 - Kravín.md>) | příklad z přednášky (studentská tabule) |
 
 ## 02 Netrpělivost, omezená fronta, opakování
 

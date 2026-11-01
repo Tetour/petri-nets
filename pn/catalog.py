@@ -17,7 +17,7 @@ CATEGORIES = [
         ('Zdravotní ordinace', 'poznámky MSI (stochastické PN)'),
         ('Výrobní systém', 'poznámky MSI (P/T sítě)'),
         ('Kritická sekce', 'poznámky MSI (P/T sítě)'),
-        ('Kravín', 'příklad z přednášky (tabule luppo)'),
+        ('Kravín', 'příklad z přednášky (studentská tabule)'),
     ]),
     ('Netrpělivost a omezená fronta', 'Netrpělivost, omezená fronta, opakování', [
         ('Netrpělivé požadavky', 'zkouška 2017/18 1. t. (8H, 7A); 2023/24 1. t. A'),

@@ -174,7 +174,7 @@ int main() {
 
 - **Democvičení 2020/21 (str. 3):** stejná struktura. *Redaktor* → `3-5min` → místo, odkud `P=1` pustí posluchače do *Rozh* a zelený přechod jinak vrací redaktora k písničce. Rozhovor `1-2m` vrací *Redaktora*. Reklama: generátor `1h` → místo → přechod, který vezme *Redaktora* → *PP* → `5m` → *Redaktor*. Modře přerušení rozhovoru: reklama + *Rozh* → *DP* → `5m` → zpět do *Rozh*. Rozdíly: po reklamě jde redaktor rovnou na písničku, takže posluchač se po reklamě do vysílání nedostane (zadání to dovoluje: „případně reklama“). Generátory jsou bez míst a výstup posluchače po rozhovoru není jednoznačně zakreslený (`1-2m` vrací jen *Redaktora*).
 - **Příprava 2021/22 (str. 11, 5 pro / 0 proti):** v podstatě totéž. Pozor na obrácené značení: šrafované obdélníky jsou tu okamžité přechody a prázdné časované, v IMS je to naopak. Písnička je obsazení *redaktora* → místo → `3-5m`, reklama bere značku z místa mezi nimi. Posluchač má `p=1` přímo na *redaktorovi*, takže po rozhovoru může hned následovat další rozhovor bez písničky.
-- **Tabule luppo (zeleně „This cesi good“):** posluchač po rozhovoru `1-2min` dostane svou písničku (místo *Písnička* → `3,5`), reklama `1hod` má dva přechody: přeruší rozhovor (pak se opakuje) nebo písničku. Písničky ze seznamu nejsou na fotce zřetelně zakreslené.
+- **Studentská tabule (zeleně „This cesi good“):** posluchač po rozhovoru `1-2min` dostane svou písničku (místo *Písnička* → `3,5`), reklama `1hod` má dva přechody: přeruší rozhovor (pak se opakuje) nebo písničku. Písničky ze seznamu nejsou na fotce zřetelně zakreslené.
 
 </details>
 

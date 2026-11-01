@@ -196,7 +196,7 @@ int main() {
 
 **Existující řešení:**
 
-- **Tabule luppo:** stejná myšlenka. Cyklus *den* → `16h` → *noc* → `8h` posílá signály, které přepínají značky *Den token* / *Noc token*, a přesuny vody `2min` a `1min` je testují. *Porucha* `exp(10)` → přechod `P=2`, který vezme *Noc token*, → `1hod`, a zeleně přidaná cesta s `p=2` spouští vodu z B během havárie. Druhý přechod z místa havárie odvádí denní havárie. Které hrany přesně vracejí *Noc token* po hodině, z fotky nejde spolehlivě přečíst.
+- **Studentská tabule:** stejná myšlenka. Cyklus *den* → `16h` → *noc* → `8h` posílá signály, které přepínají značky *Den token* / *Noc token*, a přesuny vody `2min` a `1min` je testují. *Porucha* `exp(10)` → přechod `P=2`, který vezme *Noc token*, → `1hod`, a zeleně přidaná cesta s `p=2` spouští vodu z B během havárie. Druhý přechod z místa havárie odvádí denní havárie. Které hrany přesně vracejí *Noc token* po hodině, z fotky nejde spolehlivě přečíst.
 - Hrubého řešení v materiálech není.
 
 </details>

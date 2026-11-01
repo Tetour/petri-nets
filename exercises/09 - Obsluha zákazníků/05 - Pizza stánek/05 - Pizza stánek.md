@@ -124,9 +124,9 @@ int main() {
 
 **Původ:** půlsemestrální písemka 2024/25, varianta B, 10 bodů (bodování podle ostatních variant téhož termínu).
 
-**Původní znění:** oficiální text varianty B v materiálech chybí; v koláži je místo něj parafráze od studenta, podepsaná „credits to mav_“, která zachycuje čísla, ale ne přesné znění:
+**Původní znění:** oficiální text varianty B v materiálech chybí; v koláži je místo něj parafráze od studenta, podepsaná přezdívkou studenta, která zachycuje čísla, ale ne přesné znění:
 
-> stánek s pizzou, jeden pizzař to celé řídí, zákazníci chodí exp(10') a co zákazník to objednávka pizzy, pizzař ho obslouží 3-5' (zahrnuje objednávku, přípravu pizzy a vložení pizzy do peci), je tam pec která má 4 místa, pizza se pak peče 4' a zákazník mezitím čeká, k pečení neni třeba pizzaře (ten mezitím obsluhuje další zákazníky), peče se 4' a pak pizzař vyndá pizzu a dá ji zákazníkovi, což trvá 1' a má prioritu před obsluhou nových zákazníků (credits to mav_)
+> stánek s pizzou, jeden pizzař to celé řídí, zákazníci chodí exp(10') a co zákazník to objednávka pizzy, pizzař ho obslouží 3-5' (zahrnuje objednávku, přípravu pizzy a vložení pizzy do peci), je tam pec která má 4 místa, pizza se pak peče 4' a zákazník mezitím čeká, k pečení neni třeba pizzaře (ten mezitím obsluhuje další zákazníky), peče se 4' a pak pizzař vyndá pizzu a dá ji zákazníkovi, což trvá 1' a má prioritu před obsluhou nových zákazníků (credits to [student])
 
 **Zdroje:**
 
