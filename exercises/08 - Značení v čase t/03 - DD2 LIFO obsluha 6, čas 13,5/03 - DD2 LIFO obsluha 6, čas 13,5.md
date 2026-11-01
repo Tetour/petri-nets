@@ -4,7 +4,7 @@
 
 > Napište pseudokód algoritmu řízení diskrétní simulace typu “next-event” (nesmíte použít speciální ukončovací událost). POZOR: bude-li chybět, -5b. Mějme model systému typu D/D/2 se společnou LIFO frontou. Příchody požadavků začínají v čase 0 s intervalem přesně 1 sekundy a délka obsluhy trvá přesně 6 sekund. Simulace bude provedena pro čas od 0 do 99 sekund. Požadavky číslujte od 0 podle pořadí příchodů. Priorita všech událostí je 2 (Priority == 2). Zařízení (číslovaná od 0) jsou obsazována prioritně (nižší číslo zařízení s vyšší prioritou). Události vhodně pojmenujte (např. “P0 obsazuje Z0”, “P2 jde do fronty”). Nakreslete časový diagram činnosti simulátoru a napište:
 >
-> - Seznam všech událostí plánovaných v čase t1 = 12. Podmínky: každá událost na zvláštní řádek, události musí být ve správném pořadí (napište PROČ toto pořadí, jinak -3b) a včetně všech provedených operací plánování do kalendáře (jinak -5b). Nepište žádné jiné události, (jinak -1b).
+> - Seznam všech událostí provedených v čase t1 = 12. Podmínky: každá událost na zvláštní řádek, události musí být ve správném pořadí (napište PROČ toto pořadí, jinak -3b) a včetně všech provedených operací plánování do kalendáře (jinak -5b). Nepište žádné jiné události, (jinak -1b).
 > - Obsah kalendáře v čase t2 = 13,5 (POZOR: bude-li chybět, -5b).
 > - Nakreslete Petriho síť systému se značením odpovídajícím času t2 = 13,5.
 
@@ -23,7 +23,7 @@ Podobné úlohy: [DD3 LIFO, čas 10,5](<../02 - DD3 LIFO, čas 10,5/02 - DD3 LIF
 - **Obsluha a uvolnění:** časovaný přechod `6 s` po skončení obsluhy vrací značku zařízení; uvolnění je s ním sloučené.
 - **Odchod:** obsloužený požadavek přejde do místa *hotovo* a opouští systém přechodem *odchod* bez výstupních hran.
 - **Pořadí událostí ve stejném čase:** všechny mají prioritu 2, takže se dřív provede událost, která byla **dřív naplánována**. V čase 12 nejdřív končí obsluha P5 (naplánovaná v čase 6), až pak přichází P12 (naplánovaný v čase 11). Proto Z0 dostane P11 a P12 jde do fronty. Totéž v čase 13: konec obsluhy P6 (z času 7) před příchodem P13 (z času 12), takže Z1 dostane P12.
-- **„Provedených“, nebo „plánovaných“:** podle fotky jde o události **provedené** v čase 12, a to včetně operací plánování, které při nich proběhnou. Při čtení „plánovaných“ by se psaly jen ty dvě operace plánování (konec obsluhy P11 v 18, příchod P13 v 13). V seznamu níže jsou obsažené tak jako tak.
+- **Provedené události včetně plánování:** seznam obsahuje události **provedené** v čase 12 a u nich i operace plánování, které při nich proběhnou (konec obsluhy P11 v 18, příchod P13 v 13). Přepis zadání má místo „provedených“ „plánovaných“; podle fotky jde o provedené.
 
 ### Časový diagram (obsazení zařízení)
 
