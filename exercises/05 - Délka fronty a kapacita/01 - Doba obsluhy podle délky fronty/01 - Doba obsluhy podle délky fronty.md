@@ -18,10 +18,10 @@ Podobné úlohy: [Centrum MM1 s rychlým režimem](<../../09 - Obsluha zákazní
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **M/M/1:** *příchody transakcí* ⇄ `exp(A)` → *Fronta* → obsazení *Linky* → obsluha, která *Linku* vrací. Interval příchodů zadání neuvádí, proto `exp(A)`.
+- **M/M/1:** *příchody transakcí* ⇄ `exp(A)` → *fronta* → obsazení *Linky* → obsluha, která *Linku* vrací. Interval příchodů zadání neuvádí, proto `exp(A)`.
 - **Kdy se rozhoduje:** při zahájení obsluhy („trvání další obsluhy“). Probíhající obsluhu pozdější změna fronty nemění. Proto jsou tu dvě obsazení *Linky*, každé s vlastní obsluhou.
-- **Test fronty v obsazení:** *fronta ≥ 3* bere z *Fronty* 3 značky a 2 vrací. Odebere tedy jednu transakci a zároveň ověří, že jich ve frontě byly aspoň 3. Priorita `p=1` zajistí, že při dlouhé frontě vyhraje rychlá obsluha `exp(5)`. *Jinak* (`p=0`, obsluha `exp(10)`) se provede jen tehdy, když rychlá větev proveditelná není.
-- **Kdo se počítá do fronty:** tady i transakce, která právě linku obsazuje (v tu chvíli je ještě ve *Frontě*). Tak to kreslí i obě studentská řešení. Kdo počítá jen ty, kdo po zahájení obsluhy dál čekají, dá váhy 4 a 3. Zadání to nerozlišuje, u zkoušky stačí zvolené čtení napsat.
+- **Test fronty v obsazení:** *fronta ≥ 3* bere z *fronty* 3 značky a 2 vrací. Odebere tedy jednu transakci a zároveň ověří, že jich ve frontě byly aspoň 3. Priorita `p=1` zajistí, že při dlouhé frontě vyhraje rychlá obsluha `exp(5)`. *Jinak* (`p=0`, obsluha `exp(10)`) se provede jen tehdy, když rychlá větev proveditelná není.
+- **Kdo se počítá do fronty:** tady i transakce, která právě linku obsazuje (v tu chvíli je ještě ve *frontě*). Tak to kreslí i obě studentská řešení. Kdo počítá jen ty, kdo po zahájení obsluhy dál čekají, dá váhy 4 a 3. Zadání to nerozlišuje, u zkoušky stačí zvolené čtení napsat.
 - **exp(5), nebo 5?** Systém je M/M/1, obsluha je tedy exponenciální a 5 a 10 jsou střední hodnoty. Konstantní doba by znamenala M/D/1. Kdo čte zadání doslova, napíše `5` a `10`, struktura sítě zůstane stejná.
 - **Linka** leží mezi oběma řadami: zespodu vede do *fronta ≥ 3*, shora do *jinak*. Obě obsluhy ji vracejí (uvolnění sloučené s časovaným přechodem).
 - Obě větve se slévají v místě *konec* a transakce opouští systém přechodem *odchod*.
@@ -46,7 +46,7 @@ Podobné úlohy: [Centrum MM1 s rychlým režimem](<../../09 - Obsluha zákazní
 
 - Test fronty jedinou hranou s váhou 3 bez zpětné hrany: obsazení by z fronty odebralo tři transakce.
 - Obě obsazení bez priority: při dlouhé frontě by se náhodně vybírala i pomalá obsluha.
-- Volba doby obsluhy už při příchodu (rozdělení před *Frontou*): o době pak rozhoduje fronta v okamžiku příchodu, ne při zahájení obsluhy.
+- Volba doby obsluhy už při příchodu (rozdělení před *frontou*): o době pak rozhoduje fronta v okamžiku příchodu, ne při zahájení obsluhy.
 - Přepínání doby obsluhy během probíhající obsluhy (test fronty napojený na časovaný přechod).
 
 </details>
@@ -103,9 +103,9 @@ int main() {
 |---|---|
 | *příchody transakcí* ⇄ `exp(A)` | událost `Generator`, která se znovu plánuje za `Exponential(A)` |
 | značka (transakce) | proces `Transakce` |
-| *Fronta* + obsazení *Linky* (oba přechody) | `Seize(Linka)` (fronta je vnitřní fronta zařízení) |
+| *fronta* + obsazení *Linky* (oba přechody) | `Seize(Linka)` (fronta je vnitřní fronta zařízení) |
 | místo *Linka* (1 značka) | `Facility Linka` |
-| *fronta ≥ 3* (`p=1`): z *Fronty* 3, zpět 2 | `if (Linka.QueueLen() + 1 >= 3)` hned po `Seize` |
+| *fronta ≥ 3* (`p=1`): z *fronty* 3, zpět 2 | `if (Linka.QueueLen() + 1 >= 3)` hned po `Seize` |
 | *jinak* (`p=0`) | větev `else` |
 | `exp(5)` / `exp(10)` se sloučeným uvolněním | `Wait(Exponential(5))` / `Wait(Exponential(10))` a pak `Release(Linka)` |
 | *konec* → *odchod* | konec metody `Behavior()` |

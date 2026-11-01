@@ -12,11 +12,11 @@ Podobné úlohy: [Psí salon](<../03 - Psí salon/03 - Psí salon.md>) (vyprázd
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **Žádosti o přistání:** místo *žádosti o přistání* ve smyčce s `exp(10 min)` vkládá letadla do *Fronty*. Celý let jde v hlavní řadě zleva doprava: přistání, výměna cestujících, start, odchod.
+- **Žádosti o přistání:** místo *žádosti o přistání* ve smyčce s `exp(10 min)` vkládá letadla do *fronty*. Celý let jde v hlavní řadě zleva doprava: přistání, výměna cestujících, start, odchod.
 - **Dráha** (místo pod hlavní řadou) je zařízení s jednou značkou. Přistání ji obsazuje s `p=1`, start s `p=0`: když se dráha uvolní a čekají oba druhy letadel, dostane ji přistávající. Přistání i start trvají `exp(3 min)`; start dráhu vrací.
-- **30 min na přistání:** časovaný přechod `30 min` přímo na *Frontě*; každé letadlo má vlastní odpočet (slajd 138) a zaniká, když letadlo dostane dráhu. Letadlo, kterému odpočet vyprší, odchází přes *nepřistálo*.
+- **30 min na přistání:** časovaný přechod `30 min` přímo na *frontě*; každé letadlo má vlastní odpočet (slajd 138) a zaniká, když letadlo dostane dráhu. Letadlo, kterému odpočet vyprší, odchází přes *nepřistálo*.
 - **Havárie** se rozhoduje po přistání `exp(3 min)`: 90 % uvolní dráhu a jde na *výměnu* cestujících (`20–30 min`), pak *chce startovat*; 10 % havaruje. Havárie dráhu nevrací, značka zůstane v místě *havárie*, takže dráha je odstavená.
-- **Čekající odlétají:** smyčka `p=1` na *havárii* vyprázdní *Frontu* (→ *odlétá jinam* → *odchod*). Teprve potom (`p=0`) *uzavření* odstartuje *odstávku* `8 h`.
+- **Čekající odlétají:** smyčka `p=1` na *havárii* vyprázdní *frontu* (→ *odlétá jinam* → *odchod*). Teprve potom (`p=0`) *uzavření* odstartuje *odstávku* `8 h`.
 - **Nová letadla nepřilétají:** generátor má test na místo *provoz* (smyčka do časovaného přechodu). Uzavření mu značku vezme, odpočet příchodu zanikne a po 8 h se *provoz* vrátí. Stejně dobře lze vzít značku přímo generátoru.
 - **Konec odstávky:** `8 h` vrací *provoz* i *Dráhu*. Dráha má tak pět hran (dvě obsazení, tři návraty), a proto do ní hrana od odstávky vstupuje šikmo.
 - **Havarované letadlo:** zadání neříká, co s ním. Tady zůstane na dráze jako *odstávka* a po 8 h odchází ze systému jako *trosky*.
@@ -42,7 +42,7 @@ Podobné úlohy: [Psí salon](<../03 - Psí salon/03 - Psí salon.md>) (vyprázd
 <br>
 
 - Havárie, která vrátí dráhu (pak žádná odstávka není), nebo odstávka, která dráhu vezme podruhé, i když ji havarované letadlo už drží.
-- Zastavení příchodů odebráním značky z *Fronty* místo z generátoru (nebo z místa, které generátor testuje).
+- Zastavení příchodů odebráním značky z *fronty* místo z generátoru (nebo z místa, které generátor testuje).
 - Vyprázdnění fronty jedním přechodem s váhou hrany; „všechna letadla“ potřebují smyčku s prioritou.
 - Netrpělivost i u letadel čekajících na start; zadání ji má jen pro přistání.
 - Start se stejnou prioritou jako přistání.
@@ -148,8 +148,8 @@ int main() {
 |---|---|
 | *žádosti o přistání* ⇄ `exp(10 min)` s testem *provoz* | událost `Generator`; uzavření `generator->Passivate()`, po odstávce `Activate(Time + Exponential(10))` |
 | značka (letadlo) | proces `Letadlo` |
-| *Fronta* | `Seize(Draha)` s `Priority = 1` a množina `cekajiNaPristani` (pro vyprázdnění) |
-| `30 min` na *Frontě* → *nepřistálo* | událost `Netrpelivost(this)`; po obsazení dráhy `Cancel()`, jinak `delete letadlo` |
+| *fronta* | `Seize(Draha)` s `Priority = 1` a množina `cekajiNaPristani` (pro vyprázdnění) |
+| `30 min` na *frontě* → *nepřistálo* | událost `Netrpelivost(this)`; po obsazení dráhy `Cancel()`, jinak `delete letadlo` |
 | *Dráha* (1 značka), přistání `p=1`, start `p=0` | `Facility Draha`, priorita procesu `Priority = 1` / `0` (pořadí ve frontě) |
 | `exp(3 min)`, `90 %` vrací *Dráhu* | `Wait(Exponential(3)); if (Random() < 0.10) … Release(Draha);` |
 | *výměna* `20–30 min`, *chce startovat* | `Wait(Uniform(20, 30)); Priority = 0; Seize(Draha);` |

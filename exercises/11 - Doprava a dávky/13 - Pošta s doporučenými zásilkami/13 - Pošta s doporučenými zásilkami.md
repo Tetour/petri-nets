@@ -19,7 +19,7 @@ Podobné úlohy: [Pizzerie s rozvozem](<../03 - Pizzerie s rozvozem/03 - Pizzeri
 - **Rozvoz:** v místě *další zásilka?* se rozhoduje. Je-li ve voze zásilka, `p=1` ji vezme a vůz *jede* `exp(2 min)` k zákazníkovi. Jinak (p=0, *poslední*) jede `exp(2 min)` zpět. Každý úsek trasy má tedy svůj vlastní odpočet.
 - **U zákazníka** okamžité přechody `80 %` / `20 %`. Zastižený: `3–5 min`, zásilka → *doručeno* → *odchod*. Nezastižený: `1 min`, zásilka zůstane ve voze jako *nedoručená*. Vůz se pak vrací do rozhodování *další zásilka?*.
 - **Vykládka po jedné:** `p=1` vezme vrácený vůz a pracovníka (*vykládá*), smyčka `p=1` bere nedoručené zásilky a každou vykládá `exp(2 min)` do *Úschovny*. Když ve voze žádná nezbyla, přechod p=0 pod *vykládá* vrátí vůz i pracovníka.
-- **Zákazníci** pro nedoručené zásilky tvoří samostatný proud (*příchody zákazníků* ve smyčce s `exp(10 min)`) s *Frontou* ke 3 pracovníkům, obsluha trvá `1–2 min`. Zadání nespojuje zákazníka s konkrétní zásilkou; po obsluze si zákazník vezme zásilku z *Úschovny*, je-li tam nějaká (*výdej*, `p=1`), jinak odejde *bez zásilky*. Při exp(10 min) jde o 144 zákazníků denně, nedoručených zásilek je jen asi 20, takže většina odchází bez zásilky; zadání to neřeší.
+- **Zákazníci** pro nedoručené zásilky tvoří samostatný proud (*příchody zákazníků* ve smyčce s `exp(10 min)`) s *frontou* ke 3 pracovníkům, obsluha trvá `1–2 min`. Zadání nespojuje zákazníka s konkrétní zásilkou; po obsluze si zákazník vezme zásilku z *Úschovny*, je-li tam nějaká (*výdej*, `p=1`), jinak odejde *bez zásilky*. Při exp(10 min) jde o 144 zákazníků denně, nedoručených zásilek je jen asi 20, takže většina odchází bez zásilky; zadání to neřeší.
 
 </details>
 
@@ -170,7 +170,7 @@ int main() {
 | `80 %` / `20 %`, `3–5 min` / `1 min` | `if (Random() < 0.8)`, `Wait(Uniform(3, 5))` / `Wait(1)` |
 | vykládka po jedné `exp(2 min)` | `Enter`, cyklus `while (nedoruc > 0)`, `Leave` |
 | *příchody zákazníků* ⇄ `exp(10 min)` | událost `Generator` |
-| *Fronta* + obsazení, `1–2 min` | `Enter(Pracovnici, 1); Wait(Uniform(1, 2)); Leave(…)` |
+| *fronta* + obsazení, `1–2 min` | `Enter(Pracovnici, 1); Wait(Uniform(1, 2)); Leave(…)` |
 | *výdej* (`p=1`) / *bez zásilky* | `if (uschovna > 0)` … `else` |
 
 **Kontrola simulací.** Petriho síť: vůz je vždy v jednom stavu, pracovníků je vždy 3 (volní + u vozu + u zákazníků), ve voze nejvýš 20 zásilek (`make check`). Vůz denně udělá 5 jízd, asi 20 % zásilek se nedoručí a skončí v úschovně, fronty zůstávají krátké. SIMLIB model (100 dní): 500 jízd (5 denně), nedoručeno 20,0 % zásilek, všech 2001 nedoručených si zákazníci vyzvedli, 12 447 zákazníků odešlo bez zásilky. Pracovníci jsou vytížení na 7 % (průměrně 0,22 obsazené přepážky ze 3; teoreticky 144 × 1,5 min + 5 × 12,5 min + asi 20 × 2 min ≈ 320 min denně ze 3 × 1440 min) a zákazník téměř nečeká (`make simlib`).

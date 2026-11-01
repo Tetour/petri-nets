@@ -17,10 +17,10 @@ Podobné úlohy: [Natrvalo MM3 při dlouhé frontě](<../03 - Natrvalo MM3 při 
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **M/M/1:** *příchody transakcí* ⇄ `exp(A)` → *Fronta* → obsazení *Linky* → `exp(B)`, který *Linku* vrací → *konec* → *odchod*. Příchody a obsluhu zadání neuvádí, proto `exp(A)` a `exp(B)`.
+- **M/M/1:** *příchody transakcí* ⇄ `exp(A)` → *fronta* → obsazení *Linky* → `exp(B)`, který *Linku* vrací → *konec* → *odchod*. Příchody a obsluhu zadání neuvádí, proto `exp(A)` a `exp(B)`.
 - **„Přesáhne 5“** = víc než 5, tedy aspoň 6 čekajících. Test fronty má proto váhu 6 (hrana do přechodu a zpět). „Dosáhne 5“ by byla váha 5.
 - **M/M/2 = druhá jednotka kapacity:** přechod *přidej* vloží do *Linky* druhou značku. Obsluha se nemění, jen mohou běžet dvě najednou.
-- **Režim** je jedna značka v *M/M/1*, *M/M/2* nebo *ubrat*. *Přidej* potřebuje značku *M/M/1*, takže dlouhá fronta během M/M/2 nespustí další rozšíření. Prioritu *přidej* nepotřebuje: fronta delší než 5 je jen při obsazené lince, takže o značky *Fronty* s obsazením nesoupeří (`p=1` jako ve studentském řešení ale nevadí).
+- **Režim** je jedna značka v *M/M/1*, *M/M/2* nebo *ubrat*. *Přidej* potřebuje značku *M/M/1*, takže dlouhá fronta během M/M/2 nespustí další rozšíření. Prioritu *přidej* nepotřebuje: fronta delší než 5 je jen při obsazené lince, takže o značky *fronty* s obsazením nesoupeří (`p=1` jako ve studentském řešení ale nevadí).
 - **15 č. j.** je konstanta: zadání neříká, že jde o exponenciální rozložení. Značka *M/M/2* po `15` přejde do *ubrat*.
 - **Konec M/M/2:** druhou jednotku nejde vzít, dokud na ní běží obsluha. Po 15 č. j. proto čeká značka v *ubrat* a *odeber* (`p=1`) vezme první uvolněnou jednotku dřív, než ji obsadí další transakce (obsazení má `p=0`), a vrátí režim do *M/M/1*. Rozpracovaná obsluha se normálně dokončí.
 - Pokud je po návratu do M/M/1 fronta pořád delší než 5, *přidej* se hned provede znovu. Zadání nic jiného neříká.
@@ -115,10 +115,10 @@ int main() {
 | *příchody transakcí* ⇄ `exp(A)` | událost `Generator`, která se znovu plánuje za `Exponential(A)` |
 | značka (transakce) | proces `Transakce` |
 | místo *Linka* (1 značka, v M/M/2 dvě) | `Store Linka` s kapacitou 2, jednu jednotku drží `Rezim`, dokud je režim M/M/1 |
-| *Fronta* + obsazení | `Enter(Linka, 1)` (fronta je vnitřní fronta skladu) |
+| *fronta* + obsazení | `Enter(Linka, 1)` (fronta je vnitřní fronta skladu) |
 | `exp(B)` se sloučeným uvolněním | `Wait(Exponential(B)); Leave(Linka, 1);` |
 | značka režimu (*M/M/1*, *M/M/2*, *ubrat*) | proces `Rezim` (jen jeden, takže se M/M/2 nespustí dvakrát) |
-| *přidej*: *M/M/1* + test 6 na *Frontě* | `WaitUntil(Linka.QueueLen() >= 6)` |
+| *přidej*: *M/M/1* + test 6 na *frontě* | `WaitUntil(Linka.QueueLen() >= 6)` |
 | *přidej* → druhá značka do *Linky*, značka do *M/M/2* | `Leave(Linka, 1)` |
 | *M/M/2* → `15` → *ubrat* | `Wait(15)` |
 | *odeber* (`p=1`): *ubrat* + volná jednotka → *M/M/1* | `Enter(Linka, 1)` s prioritou procesu 1 (ve frontě skladu je první) |

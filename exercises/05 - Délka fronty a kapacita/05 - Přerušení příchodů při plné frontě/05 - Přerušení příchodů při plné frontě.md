@@ -14,8 +14,8 @@ Podobné úlohy: [Klientské centrum](<../../09 - Obsluha zákazníků/06 - Klie
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **M/M/1:** *příchody transakcí* ⇄ `exp(A)` → *Fronta* → obsazení *Linky* → `exp(B)`, který *Linku* vrací → *konec* → *odchod*. Příchody a obsluhu zadání neuvádí, proto `exp(A)` a `exp(B)`.
-- **„Dosáhne pěti“** = ve *Frontě* je aspoň 5 čekajících: test s váhou 5 (hrana do přechodu a zpět, z fronty se nic neodebere). Obsluhovaná transakce je v jiném místě a nepočítá se.
+- **M/M/1:** *příchody transakcí* ⇄ `exp(A)` → *fronta* → obsazení *Linky* → `exp(B)`, který *Linku* vrací → *konec* → *odchod*. Příchody a obsluhu zadání neuvádí, proto `exp(A)` a `exp(B)`.
+- **„Dosáhne pěti“** = ve *frontě* je aspoň 5 čekajících: test s váhou 5 (hrana do přechodu a zpět, z fronty se nic neodebere). Obsluhovaná transakce je v jiném místě a nepočítá se.
 - **Přerušení příchodů:** *přerušení* odebere značku místu *příchody transakcí* a přesune ji do *přerušeno*. Probíhající odpočet `exp(A)` tím zanikne a nikdo nepřichází. Po `10` se značka vrátí do *příchodů transakcí* a příchody pokračují s novým odpočtem (u exponenciálního rozložení na tom nezáleží).
 - **Značka příchodů je zároveň pojistka:** během přerušení chybí, takže se přerušení nemůže vyhlásit znovu, i když je ve frontě pořád 5 transakcí.
 - **Po 10 č. j.:** pokud je fronta pořád aspoň 5, přerušení se hned zopakuje. Za 10 č. j. se obslouží jen pár transakcí, takže se to může stát. Kdo zadání čte jako „jen v okamžiku, kdy fronta pětky dosáhne“, musel by test navázat na příchod (např. testovat frontu z místa za příchodem). Jednodušší čtení výše u zkoušky stačí.
@@ -40,7 +40,7 @@ Podobné úlohy: [Klientské centrum](<../../09 - Obsluha zákazníků/06 - Klie
 <br>
 
 - Test fronty jen hranou dovnitř: přerušení by z fronty odebralo pět transakcí.
-- Zastavení příchodů odebráním transakcí z *Fronty* místo odebrání značky *příchodů transakcí*.
+- Zastavení příchodů odebráním transakcí z *fronty* místo odebrání značky *příchodů transakcí*.
 - Zapomenutý návrat značky po 10 č. j.: příchody by se zastavily natrvalo.
 - Přerušení, které nebere značku příchodů ani jinou řídicí značku: test zůstává splněný a přechod se provádí pořád dokola.
 - Váha 6 („přesáhne“) místo 5 („dosáhne“).
@@ -111,14 +111,14 @@ int main() {
 | *příchody transakcí* ⇄ `exp(A)` | událost `Generator`, která se znovu plánuje za `Exponential(A)` |
 | značka v *příchodech transakcí*, nebo v *přerušeno* | `bool preruseno` (generátor bez značky nikoho nevytvoří) |
 | značka (transakce) | proces `Transakce` |
-| *Fronta* + obsazení *Linky* | `Seize(Linka)` (fronta je vnitřní fronta zařízení) |
+| *fronta* + obsazení *Linky* | `Seize(Linka)` (fronta je vnitřní fronta zařízení) |
 | místo *Linka* (1 značka) | `Facility Linka` |
 | `exp(B)` se sloučeným uvolněním | `Wait(Exponential(B)); Release(Linka);` |
-| *přerušení* (`p=1`): test 5 na *Frontě* + značka příchodů | `WaitUntil(Linka.QueueLen() >= 5); preruseno = true;` |
+| *přerušení* (`p=1`): test 5 na *frontě* + značka příchodů | `WaitUntil(Linka.QueueLen() >= 5); preruseno = true;` |
 | *přerušeno* → `10` → *příchody transakcí* | `Wait(10); preruseno = false;` |
 | *konec* → *odchod* | konec metody `Behavior()` transakce |
 
-**Kontrola simulací.** Petriho síť: *Linka* + obsluhovaná transakce = 1, *příchody transakcí* + *přerušeno* = 1 a ve *Frontě* nikdy není víc než 5 transakcí; všechny přechody se provádějí (`make check`). SIMLIB model: v jednom běhu (10⁶ časových jednotek) se příchody přerušily 24 523krát, tedy zhruba na 24,5 % času, a fronta měla nejvýš 5 čekajících. Příchody tak běží asi 75,5 % času, do systému vstoupí 0,2 · 0,755 · 10⁶ ≈ 151 000 transakcí (naměřeno 150 405) a linka je vytížena na 0,151 · 6 ≈ 90 % (naměřeno 89,8 %) (`make simlib`).
+**Kontrola simulací.** Petriho síť: *Linka* + obsluhovaná transakce = 1, *příchody transakcí* + *přerušeno* = 1 a ve *frontě* nikdy není víc než 5 transakcí; všechny přechody se provádějí (`make check`). SIMLIB model: v jednom běhu (10⁶ časových jednotek) se příchody přerušily 24 523krát, tedy zhruba na 24,5 % času, a fronta měla nejvýš 5 čekajících. Příchody tak běží asi 75,5 % času, do systému vstoupí 0,2 · 0,755 · 10⁶ ≈ 151 000 transakcí (naměřeno 150 405) a linka je vytížena na 0,151 · 6 ≈ 90 % (naměřeno 89,8 %) (`make simlib`).
 
 </details>
 

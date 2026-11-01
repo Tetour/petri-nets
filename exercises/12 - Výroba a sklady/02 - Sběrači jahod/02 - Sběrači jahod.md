@@ -12,7 +12,7 @@ Podobné úlohy: [Jahodová farma](<../04 - Jahodová farma/04 - Jahodová farma
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **Sběrači** jsou místo s 5 značkami ve smyčce s `exp(20 min)`. Běžný časovaný přechod má pro každou značku vlastní odpočet (slajd 138), takže je to 5 nezávislých sběračů. Každé provedení přinese jednu bedýnku (transakci) do *Fronty beden*.
+- **Sběrači** jsou místo s 5 značkami ve smyčce s `exp(20 min)`. Běžný časovaný přechod má pro každou značku vlastní odpočet (slajd 138), takže je to 5 nezávislých sběračů. Každé provedení přinese jednu bedýnku (transakci) do *fronty beden*.
 - **Balicí linka** je zařízení: *Linka* s jednou značkou, obsazení, `5–7 min` vrací značku linky a bedýnku pošle do *zabaleno*.
 - **Siréna** testuje frontu dvojicí hran s váhou 10 (dovnitř a zpět), takže z fronty nic nebere. „Dosáhne délky alespoň 10“ znamená váhu 10, ne 11. Priorita `p=1` zajistí, že siréna zazní dřív, než linka desátou bedýnku z fronty odebere (oba okamžité přechody jsou v tu chvíli proveditelné).
 - **Pauza:** siréna vezme všech 5 značek ze *Sběračů* (hrana s váhou 5). Značky čekají v časovaném přechodu sběru, takže jejich odpočty zaniknou (slajd 139). Po `60 min` se všech 5 vrátí a každý sběrač začíná nový sběr. To je „obnoví činnost od počátku“.
@@ -114,7 +114,7 @@ int main() {
 |---|---|
 | *Sběrači* (5 značek) ⇄ `exp(20 min)` | pole `sberaci` s 5 procesy `Sberac`, každý v cyklu `Wait(Exponential(20))` |
 | značka (bedýnka) | proces `Bedna` |
-| *Fronta beden* + obsazení linky | `Seize(Linka)` (fronta je vnitřní fronta zařízení) |
+| *fronta beden* + obsazení linky | `Seize(Linka)` (fronta je vnitřní fronta zařízení) |
 | *Linka* (1 značka) | `Facility Linka` |
 | `5–7 min` se sloučeným uvolněním | `Wait(Uniform(5, 7)); Release(Linka);` |
 | *siréna* `p=1`, test fronty s váhou 10 | proces `Sirena`: `WaitUntil(Linka.QueueLen() >= 10)` |
@@ -122,7 +122,7 @@ int main() {
 | *pauza* → `60 min` → 5 značek zpět | `Wait(60)`, pak 5 nových procesů `Sberac` (sběr od začátku) |
 | *zabaleno* → *odchod* | konec metody `Behavior()` bedýnky |
 
-**Kontrola simulací.** Petriho síť: *Linka* + balená bedýnka = 1, *Sběrači* + 5 × *pauza* = 5, *Fronta beden* nikdy nepřesáhne 10 a všechny přechody se provádějí (`make check`). Siréna zaznívá zhruba každé 3 hodiny a linka zabalí asi 9,7 bedýnky za hodinu, je tedy téměř stále vytížená. SIMLIB model: za 1000 h zazněla siréna 362× (jednou za 2,8 h), linka byla vytížena na 97 % (9,7 bedýnky za hodinu, teoreticky nejvýš 10) a fronta měla nejvýš 10 bedýnek (`make simlib`).
+**Kontrola simulací.** Petriho síť: *Linka* + balená bedýnka = 1, *Sběrači* + 5 × *pauza* = 5, *fronta beden* nikdy nepřesáhne 10 a všechny přechody se provádějí (`make check`). Siréna zaznívá zhruba každé 3 hodiny a linka zabalí asi 9,7 bedýnky za hodinu, je tedy téměř stále vytížená. SIMLIB model: za 1000 h zazněla siréna 362× (jednou za 2,8 h), linka byla vytížena na 97 % (9,7 bedýnky za hodinu, teoreticky nejvýš 10) a fronta měla nejvýš 10 bedýnek (`make simlib`).
 
 </details>
 

@@ -12,13 +12,13 @@ Podobné úlohy: [Cestovní kancelář](<../08 - Cestovní kancelář/08 - Cesto
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **Příchody:** místo *příchody klientů* ve smyčce s přechodem `exp(5 min)` vkládá klienty do *Fronty*.
+- **Příchody:** místo *příchody klientů* ve smyčce s přechodem `exp(5 min)` vkládá klienty do *fronty*.
 - **Jedna fronta** k oběma přepážkám („fronta k přepážkám“). Přepážka A (horní řada) je zařízení *Pošťák*. Přepážka B (prostřední řada) je zařízení *Řidič u B*, jehož značka existuje, jen když řidič u B sedí. Obsazení obou přepážek má `p=1` a obsluha `exp(3 min)` vrací značku zařízení.
 - Klienti mezi přepážkami nevolí: když jsou obě volné, vezme klienta kterákoli.
 - **Zásilky:** po obsluze klient odchází a jeho zásilka zůstává na poště. Přechod *podání zásilky* rozdělí transakci na klienta (→ *odchod*) a značku v *Podaných zásilkách*. Zásilka vznikne až dokončením obsluhy.
 - **Řidič má tři stavy:** *Řidič volný*, *Řidič u B* a odvoz (*nakládá* `30 min` → *veze do Centrály* `2 h` → zpět *Řidič volný*). „Vrací se po dvou hodinách“ beru jako 2 h od odjezdu po naložení.
-- **Otevření B:** volný řidič + test *Fronty* hranami s váhou 3 tam i zpět („dosáhne délky 3“ = aspoň 3 čekající).
-- **Zavření B:** přechod *zavření B* (`p=0`) vrací řidiče do *Řidič volný*. Obsazení B má `p=1`, takže zavření se provede, jen když ve *Frontě* nikdo není („po vyprázdnění fronty“). Prázdnou frontu tedy pozná priorita, žádný čítač fronty není potřeba.
+- **Otevření B:** volný řidič + test *fronty* hranami s váhou 3 tam i zpět („dosáhne délky 3“ = aspoň 3 čekající).
+- **Zavření B:** přechod *zavření B* (`p=0`) vrací řidiče do *Řidič volný*. Obsazení B má `p=1`, takže zavření se provede, jen když ve *frontě* nikdo není („po vyprázdnění fronty“). Prázdnou frontu tedy pozná priorita, žádný čítač fronty není potřeba.
 - **„Po překročení počtu 100“ vs. „naplní se kapacita 100“:** obojí čtu jako „jakmile je podaných zásilek 100“. Naloží se právě 100 zásilek (hrana s váhou 100), případné další zůstanou na příští odvoz. Kdyby se trvalo na doslovném „překročení“, byla by váha 101, ale auto má kapacitu 100.
 - **Odvoz má přednost** („primárně určen pro náklad“): naložení z volného stavu má `p=1` a vyhraje nad otevřením B (`p=0`). Naložení od přepážky B má `p=2` a vyhraje nad obsazením B dalším klientem (`p=1`). Rozpracovaného klienta řidič doobslouží, zadání přerušení nezmiňuje.
 
@@ -173,10 +173,10 @@ int main() {
 | Petriho síť | SIMLIB |
 |---|---|
 | *příchody klientů* ⇄ `exp(5 min)` | událost `Generator`, která se znovu plánuje za `Exponential(5)` |
-| značka (klient) v *Frontě* | proces `Klient`: `Into(Fronta); Passivate();` |
+| značka (klient) v *frontě* | proces `Klient`: `Into(Fronta); Passivate();` |
 | *Pošťák* (1 značka), obsazení A `p=1`, `exp(3 min)` | proces `Postak`: `Fronta.GetFirst()`, `Wait(Exponential(3))`, `k->Activate()` |
 | *Řidič volný* / *Řidič u B* / *nakládá*, *veze do Centrály* | proces `Ridic`: `Passivate()` ve volném stavu, vnitřní cyklus u B, metoda `Odvoz()` |
-| *otevření B* (test *Fronty* vahou 3) | `Fronta.Length() >= 3` (klient budí volného řidiče) |
+| *otevření B* (test *fronty* vahou 3) | `Fronta.Length() >= 3` (klient budí volného řidiče) |
 | obsazení B `p=1` / *zavření B* `p=0` | `if (Fronta.Empty()) break;` jinak obsluha dalšího klienta |
 | *naložení* `p=1` / od B `p=2` (100 zásilek) | `if (zasilky >= 100) Odvoz();` testované před otevřením i před další obsluhou u B |
 | *Podané zásilky* | `int zasilky` |

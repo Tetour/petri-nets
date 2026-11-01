@@ -6,7 +6,7 @@ net = Net("Obslužné centrum (půlsemestrálka 2025/26, varianta B – zadání
 net.place("gen", (0, 0), tokens=1, label="příchody zákazníků", label_pos="above")
 net.timed("prichod", (1.5, 0), "exp(10 min)")
 net.loop("gen", "prichod")
-net.place("fronta", (3, 0), label="Fronta", label_pos="above")
+net.place("fronta", (3, 0), label="fronta", label_pos="above")
 net.place("linka", (4.5, 2.4), tokens=3, label="Linka", label_pos="left")
 net.immediate("obsaz", (4.5, 0))
 net.place("volba", (6, 0))

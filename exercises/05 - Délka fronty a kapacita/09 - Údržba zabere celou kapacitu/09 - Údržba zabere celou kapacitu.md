@@ -12,7 +12,7 @@ Podobné úlohy: [Pomocník přidá kapacitu](<../10 - Pomocník přidá kapacit
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **M/M/2:** *příchody zákazníků* ⇄ `exp(A)` → *Fronta* → obsazení *Linky* → `exp(B)`, který jednotku vrací → *konec* → *odchod*. *Linka* má dvě značky (dvě jednotky kapacity). Příchody a obsluhu zákazníků zadání neuvádí, proto `exp(A)` a `exp(B)`.
+- **M/M/2:** *příchody zákazníků* ⇄ `exp(A)` → *fronta* → obsazení *Linky* → `exp(B)`, který jednotku vrací → *konec* → *odchod*. *Linka* má dvě značky (dvě jednotky kapacity). Příchody a obsluhu zákazníků zadání neuvádí, proto `exp(A)` a `exp(B)`.
 - **Údržbový proces** vzniká v místě *příchody údržby* (smyčka s `exp(100)`) a čeká v místě *údržba čeká*. Probíhající obsluhy nepřerušuje, čeká na uvolnění jednotek.
 - **„Nesmí ve frontě zestárnout“** = údržba má přednost před zákazníky. Jakmile čeká, dostane každou uvolněnou jednotku ona, ne další zákazník.
 - **Proto zabírá po jedné jednotce:** *zabírá* (`p=1`) testuje *údržba čeká* a přesune jednu volnou jednotku do *zabráno*. Kdyby údržba brala obě jednotky najednou (hrana s váhou 2), čekala by, až budou volné obě současně. Mezitím by každou jednotlivě uvolněnou jednotku obsadil zákazník a údržba by mohla čekat neomezeně dlouho, tedy „zestárnout“.
@@ -123,7 +123,7 @@ int main() {
 | *příchody zákazníků* ⇄ `exp(A)` | událost `Generator`, která se znovu plánuje za `Exponential(A)` |
 | značka (zákazník) | proces `Zakaznik` |
 | místo *Linka* (2 značky) | `Store Linka("Linka", 2)` |
-| *Fronta* + obsazení | `Enter(Linka, 1)` (fronta je vnitřní fronta skladu) |
+| *fronta* + obsazení | `Enter(Linka, 1)` (fronta je vnitřní fronta skladu) |
 | `exp(B)` se sloučeným uvolněním | `Wait(Exponential(B)); Leave(Linka, 1);` |
 | *příchody údržby* ⇄ `exp(100)` → *údržba čeká* | událost `GenUdrzby`: `ceka++` a další příchod za `Exponential(100)` |
 | *zabírá* (`p=1`): test *údržba čeká* + jednotka → *zabráno* | `WaitUntil(ceka > 0)` a dvakrát `Enter(Linka, 1)` s prioritou procesu 1 |

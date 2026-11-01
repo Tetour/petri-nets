@@ -6,7 +6,7 @@ net = Net("Psí salon (půlsemestrálka 2025/26, varianta A – zadání rekonst
 net.place("gen", (0, 0), tokens=1, label="příchody zákazníků", label_pos="above")
 net.timed("prichod", (1.5, 0), "exp(10 min)")
 net.loop("gen", "prichod")
-net.place("fronta", (3, 0), label="Fronta", label_pos="above left")
+net.place("fronta", (3, 0), label="fronta", label_pos="above left")
 net.arc("prichod", "fronta")
 
 # obsluha (horní řada)

@@ -38,7 +38,7 @@ Podobné úlohy: [Vyhlídková loď na molu](<../07 - Vyhlídková loď na molu/
 <summary>Zobrazit časté chyby</summary>
 <br>
 
-- Časovač 5 min jako netrpělivost na *Frontě*. Ten by měřil čekání zákazníka, ne dobu od posledního nástupu.
+- Časovač 5 min jako netrpělivost na *frontě*. Ten by měřil čekání zákazníka, ne dobu od posledního nástupu.
 - Odlet po 5 minutách i s prázdným letadlem. Zadání chce, aby už někdo seděl. Bez if–else by letadlo létalo prázdné.
 - Čítač nastoupených, který se po odletu nevynuluje. Při neplném letadle nestačí hrana s váhou, je potřeba cyklus s prioritou, který odebere všechny.
 - Plno bez hrany z *letadlo doma* (jen váha 20 z čítače). Značka letadla pak zůstane doma, letadlo „odletí“ a zároveň dál nabírá cestující.

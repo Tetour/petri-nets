@@ -16,7 +16,7 @@ Podobné úlohy:
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **M/M/1:** místo *příchody transakcí* ve smyčce s `exp(A)` → *Fronta* → obsazení *Linky* → *obsluha* → `exp(B)` (vrací *Linku*) → *hotovo* → *odchod*. Časy příchodů a obsluhy zadání neuvádí, proto `exp(A)` a `exp(B)`.
+- **M/M/1:** místo *příchody transakcí* ve smyčce s `exp(A)` → *fronta* → obsazení *Linky* → *obsluha* → `exp(B)` (vrací *Linku*) → *hotovo* → *odchod*. Časy příchodů a obsluhy zadání neuvádí, proto `exp(A)` a `exp(B)`.
 - **Časový limit = druhý časovaný přechod na stejném místě.** Z místa *obsluha* vedou dva časované přechody: `exp(B)` (konec obsluhy) a `X` (limit). Oba začnou odpočítávat ve chvíli, kdy transakce obsadí linku. Který doběhne dřív, ten si značku vezme a druhý odpočet zanikne (slajdy 137 a 139).
 - Obsluha tedy skončí normálně, je-li `exp(B) < X`. Jinak ji po `X` č. j. přeruší limit: vrátí *Linku* a transakce odchází přes *přerušená* → *odchod po přerušení*.
 - `X` je konstanta (délka ze zadání), ne `exp(X)`.
@@ -42,7 +42,7 @@ Podobné úlohy:
 
 - Limit jako okamžitý přechod nebo `exp(X)`: zadání dává pevnou délku `X`.
 - Limit bez vrácení *Linky*: po prvním přerušení se systém zastaví.
-- Limit napojený na *Frontu* místo na obsluhu: to je netrpělivost ve frontě ([Netrpělivé požadavky](<../../02 - Netrpělivost a omezená fronta/01 - Netrpělivé požadavky/01 - Netrpělivé požadavky.md>)).
+- Limit napojený na *frontu* místo na obsluhu: to je netrpělivost ve frontě ([Netrpělivé požadavky](<../../02 - Netrpělivost a omezená fronta/01 - Netrpělivé požadavky/01 - Netrpělivé požadavky.md>)).
 - Přerušená transakce, která se vrací do fronty: zadání chce, aby opustila systém.
 
 </details>
@@ -114,7 +114,7 @@ int main() {
 |---|---|
 | *příchody transakcí* ⇄ `exp(A)` | událost `Generator`, která se znovu plánuje za `Exponential(A)` |
 | značka (transakce) | proces `Transakce` |
-| *Fronta* + obsazení *Linky* | `Seize(Linka)` (fronta je vnitřní fronta zařízení) |
+| *fronta* + obsazení *Linky* | `Seize(Linka)` (fronta je vnitřní fronta zařízení) |
 | časovaný přechod `exp(B)` z místa *obsluha* | `Wait(Exponential(B))` |
 | časovaný přechod `X` z místa *obsluha* | událost `Limit` naplánovaná za `X` po obsazení; přeruší `Wait` přes `t->Activate()` |
 | zánik druhého odpočtu | `limit->Cancel()`, resp. přerušené `Wait` |

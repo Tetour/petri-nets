@@ -6,7 +6,7 @@ net = Net("Sběrači jahod (půlsemestrálka 2021/22, varianta B)")
 net.place("sberaci", (0, 0), tokens=5, label="Sběrači", label_pos="above")
 net.timed("sber", (1.5, 0), "exp(20 min)")
 net.loop("sberaci", "sber")
-net.place("fronta", (3, 0), label="Fronta beden", label_pos="above")
+net.place("fronta", (3, 0), label="fronta beden", label_pos="above")
 net.arc("sber", "fronta")
 
 # balicí linka

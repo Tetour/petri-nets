@@ -14,9 +14,9 @@ Podobné úlohy: [Doba obsluhy podle délky fronty](<../../05 - Délka fronty a 
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **M/M/1:** místo *příchody zákazníků* s jednou značkou ve smyčce s `exp(5 min)` plní *Frontu*; *Linka* má jednu značku a obsazení (`p=1`) ji bere.
+- **M/M/1:** místo *příchody zákazníků* s jednou značkou ve smyčce s `exp(5 min)` plní *frontu*; *Linka* má jednu značku a obsazení (`p=1`) ji bere.
 - **Režim** je stav: jedna značka buď v *běžném režimu*, nebo v *zrychleném režimu*.
-- **„Dosáhne 5 čekajících“:** přechod *zrychlení* bere značku *běžného režimu* a testuje *Frontu* dvojicí hran s váhou 5. Přechod se provede hned, jak je ve frontě aspoň 5 zákazníků („dosáhne 5“ = váha 5, ne 6).
+- **„Dosáhne 5 čekajících“:** přechod *zrychlení* bere značku *běžného režimu* a testuje *frontu* dvojicí hran s váhou 5. Přechod se provede hned, jak je ve frontě aspoň 5 zákazníků („dosáhne 5“ = váha 5, ne 6).
 - **„Projeví se na nově zahájené obsluze“:** doba se volí až po obsazení linky. Z místa za obsazením vedou dva přechody. *Rychle* (`p=1`) testuje *zrychlený režim* a vede na `exp(3 min)`, *běžně* (`p=0`) vede na `exp(7 min)`. Probíhající obsluhu přepnutí nijak nemění.
 - **Uvolnění linky** je samostatný okamžitý přechod (plný tvar ze slajdu 154). Obě větve obsluhy se sejdou v *hotovo* a linku stačí vracet jedinou hranou. Vracet ji z obou časovaných přechodů zvlášť je také správně.
 - **„Dokud se fronta nevyprázdní“:** *obnovení* vrací *běžný režim*, když je linka volná a nikdo nečeká. Prázdnou frontu nejde přímo otestovat (bez inhibiční hrany). Proto *obnovení* (p=0) soupeří o *Linku* s obsazením (`p=1`). Když někdo čeká, vyhraje obsazení. *Obnovení* se tedy provede, jen když je linka volná a fronta prázdná: nejdřív proběhne obsazení a teprve potom obnovení.
@@ -117,12 +117,12 @@ int main() {
 |---|---|
 | *příchody zákazníků* ⇄ `exp(5 min)` | událost `Generator`, která se znovu plánuje za `Exponential(5)` |
 | značka (zákazník) | proces `Zakaznik` |
-| místo *Linka* (1 značka), *Fronta* + obsazení `p=1` | `Facility Linka`, `Seize(Linka)` (fronta je vnitřní fronta zařízení) |
+| místo *Linka* (1 značka), *fronta* + obsazení `p=1` | `Facility Linka`, `Seize(Linka)` (fronta je vnitřní fronta zařízení) |
 | *rychle* (`p=1`, test *zrychlený režim*) / *běžně* (`p=0`) | `if (zrychleny) … else …` až po `Seize` |
 | `exp(3 min)` / `exp(7 min)` | `Wait(Exponential(3))` / `Wait(Exponential(7))` |
 | *hotovo* → *uvolnění* | `Release(Linka)` |
 | místa *běžný režim* / *zrychlený režim* | proměnná `bool zrychleny` a proces `Rezim` |
-| *zrychlení* (test 5 na *Frontě*) | `WaitUntil(Linka.QueueLen() >= 5)` |
+| *zrychlení* (test 5 na *frontě*) | `WaitUntil(Linka.QueueLen() >= 5)` |
 | *obnovení* (`p=0` proti obsazení `p=1`, test *Linky*) | `WaitUntil(!Linka.Busy() && Linka.QueueLen() == 0)` |
 | přechod *odchod* | konec metody `Behavior()` zákazníka |
 

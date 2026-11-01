@@ -14,7 +14,7 @@ Podobné úlohy: [Pomocník přidá kapacitu](<../10 - Pomocník přidá kapacit
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **M/M/1:** *příchody transakcí* ⇄ `exp(A)` → *Fronta* → obsazení jednotky *Skladu* → `exp(B)`, který jednotku vrací → *konec* → *odchod*. Příchody a obsluhu zadání neuvádí, proto `exp(A)` a `exp(B)`.
+- **M/M/1:** *příchody transakcí* ⇄ `exp(A)` → *fronta* → obsazení jednotky *Skladu* → `exp(B)`, který jednotku vrací → *konec* → *odchod*. Příchody a obsluhu zadání neuvádí, proto `exp(A)` a `exp(B)`.
 - **Linka typu Sklad** = místo s počtem značek rovným kapacitě (na začátku 1). Transakce bere jednu jednotku a obsluha ji vrací. Sklad tu zadání zmiňuje proto, že v SIMLIBu jde měnit kapacitu skladu (`SetCapacity`), v Petriho síti se kreslí stejně jako zařízení.
 - **„V intervalech daných 500“** = konstanta: *rozšíření kapacity* ve smyčce s přechodem `500`. Každé jeho provedení přidá do *Skladu* 3 značky (hrana s váhou 3) a značku do *M/M/4*.
 - **Po 100 č. j.** (značka *M/M/4* → `100`) přejdou 3 značky do *vrátit*. Každou z nich *odeber* (`p=1`) spáruje s jednou volnou jednotkou *Skladu* a obě zaniknou. Jednotky se tedy odebírají po jedné, jak se uvolňují: rozpracované obsluhy se dokončí („mohou normálně dokončit obsluhu“) a priorita `p=1` zajistí, že uvolněnou jednotku nestihne obsadit další transakce.
@@ -119,7 +119,7 @@ int main() {
 | *příchody transakcí* ⇄ `exp(A)` | událost `Generator`, která se znovu plánuje za `Exponential(A)` |
 | značka (transakce) | proces `Transakce` |
 | místo *Sklad* (1 značka, v M/M/4 čtyři) | `Store Sklad("Sklad", 4)`, jednotky mimo Sklad drží `Mimo`, resp. `Rozsireni` |
-| *Fronta* + obsazení | `Enter(Sklad, 1)` (fronta je vnitřní fronta skladu) |
+| *fronta* + obsazení | `Enter(Sklad, 1)` (fronta je vnitřní fronta skladu) |
 | `exp(B)` se sloučeným uvolněním | `Wait(Exponential(B)); Leave(Sklad, 1);` |
 | *rozšíření kapacity* ⇄ `500` | událost `GenRozsireni`, která se znovu plánuje za přesně 500 |
 | `500` → 3 značky do *Skladu*, značka do *M/M/4* | nový proces `Rozsireni`: `Leave(Sklad, 3)` |

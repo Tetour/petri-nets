@@ -12,11 +12,11 @@ Podobné úlohy: [Psí salon](<../03 - Psí salon/03 - Psí salon.md>), [Pizza s
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **Příchody:** místo *příchody zákazníků* ve smyčce s `exp(20 min)` vkládá zákazníky do *Fronty*.
+- **Příchody:** místo *příchody zákazníků* ve smyčce s `exp(20 min)` vkládá zákazníky do *fronty*.
 - **Pekař** je zařízení (*Pekař u pultu*, 1 značka). **Chléb** je sklad s 20 značkami (*Chléb na pultě*), každý zákazník bere jeden bochník. Obsluha `1–2 min` (rovnoměrně) vrací pekaře k pultu a zákazník odchází *s chlebem*.
 - **Kontrola chleba až na začátku obsluhy:** pekař nejdřív obsadí zákazníka (*začátek obsluhy*), pak se rozhodne. Je-li chléb, vezme bochník přechod `p=1`, jinak se provede *došel chléb* (`p=0`). Když se prodá poslední bochník, pekař tedy zůstane u pultu a péct jde až s dalším zákazníkem, přesně jak to zadání popisuje.
 - **Došel chléb:** rozpracovaný zákazník odchází (*bez chleba*), pekař jde péct `2 h` a zároveň vznikne stav *Pekař peče*. Stav je oddělený od místa před přechodem `2 h`: testuje ho smyčka vyprázdnění fronty (vezme a vrátí značku), a kdyby byl vstupem `2 h`, každý odchod zákazníka by odpočet pečení spustil znovu (slajd 139).
-- **Vyprázdnění fronty:** smyčka na *Pekař peče* bere zákazníky z *Fronty*, dokud tam někdo je. Protože stav trvá celé 2 h, odejdou i zákazníci, kteří přijdou během pečení, hned po příchodu („okamžitě opouští obchod“).
+- **Vyprázdnění fronty:** smyčka na *Pekař peče* bere zákazníky z *fronty*, dokud tam někdo je. Protože stav trvá celé 2 h, odejdou i zákazníci, kteří přijdou během pečení, hned po příchodu („okamžitě opouští obchod“).
 - **Po upečení** přibude 20 bochníků (hrana s váhou 20) a *návrat k pultu* vezme *upečeno* i *Pekař peče* a vrátí značku *Pekař u pultu*.
 - **Odchod** je ve dvou místech: *s chlebem* a *bez chleba* (rozpracovaný zákazník i zákazníci z fronty).
 
@@ -122,7 +122,7 @@ int main() {
 |---|---|
 | *příchody zákazníků* ⇄ `exp(20 min)` | událost `Generator`, která se znovu plánuje za `Exponential(20)` |
 | značka (zákazník) | proces `Zakaznik` |
-| *Fronta* + *Pekař u pultu* (1 značka) → *začátek obsluhy* | `Seize(Pekar)`, `Facility Pekar("Pekař u pultu", &Fronta)` |
+| *fronta* + *Pekař u pultu* (1 značka) → *začátek obsluhy* | `Seize(Pekar)`, `Facility Pekar("Pekař u pultu", &Fronta)` |
 | *Chléb na pultě* (20), `p=1` vezme bochník | `int chleba = 20`, `if (chleba > 0) chleba--;` |
 | `1–2 min` vrací pekaře, *s chlebem* → *odchod* | `Wait(Uniform(1, 2)); Release(Pekar); return;` |
 | *došel chléb* (`p=0`) → *bez chleba*, *Pekař peče* | větev `else`: `pece = true`, `bezChleba++`, proces `Peceni` |

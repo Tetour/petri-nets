@@ -20,10 +20,10 @@ Podobné úlohy:
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **M/M/1:** *příchody transakcí* ve smyčce s `exp(A)`, *Fronta*, obsazení *Linky*, obsluha `exp(B)`, která *Linku* vrací, a *odchod*. Časy příchodů a obsluhy zadání neuvádí, proto `exp(A)` a `exp(B)`.
+- **M/M/1:** *příchody transakcí* ve smyčce s `exp(A)`, *fronta*, obsazení *Linky*, obsluha `exp(B)`, která *Linku* vrací, a *odchod*. Časy příchodů a obsluhy zadání neuvádí, proto `exp(A)` a `exp(B)`.
 - **Poruchy** vznikají v intervalech `exp(X)`: místo *vznik poruch* ve smyčce s časovaným přechodem, každé provedení vloží značku do místa *porucha*.
 - **Oprava zabere linku na dobu C** (i když linka zrovna nic neobsluhuje): porucha si vezme *Linku* do místa *oprava* a časovaný přechod `C` ji vrátí, jako transakce s vyšší prioritou obsluhy (v SIMLIBu `Seize(Linka, 1)`).
-- **Volná linka:** přechod `p=1` nahoře spojí *poruchu* s *Linkou* a začne oprava. Priorita je nutná: porucha, která čekala během předchozí opravy, musí linku po jejím skončení dostat dřív než transakce čekající ve *Frontě*.
+- **Volná linka:** přechod `p=1` nahoře spojí *poruchu* s *Linkou* a začne oprava. Priorita je nutná: porucha, která čekala během předchozí opravy, musí linku po jejím skončení dostat dřív než transakce čekající ve *frontě*.
 - **Obsazená linka:** přechod dole vezme *poruchu* a obsluhovanou transakci (místo *obsluha*), linku předá rovnou do *opravy* (*Linka* + *obsluha* + *oprava* = 1) a transakci pošle do místa *zrušená*. Odpočet `exp(B)` přitom zanikne (slajd 139).
 - **Přerušená transakce „bez náhrady opúšta systém“:** z místa *zrušená* má vlastní výstupní přechod *odchod bez obsluhy*.
 - Stejně správná je varianta ve dvou krocích: přerušení vrátí značku *Lince* a poruchu nechá v místě *porucha* (hrana tam a zpět), hned potom ji přechod `p=1` spojí s volnou *Linkou*. Tady je kreslená v jednom kroku, protože síť je jednodušší.
@@ -49,7 +49,7 @@ Podobné úlohy:
 <br>
 
 - Porucha zabere jen obsazenou linku a při volné lince zanikne. Oprava ale trvá `C` vždy.
-- Zabrání volné linky bez priority: porucha čekající během opravy prohraje s transakcí z *Fronty*.
+- Zabrání volné linky bez priority: porucha čekající během opravy prohraje s transakcí z *fronty*.
 - Přerušená transakce se vrací do fronty: to je úloha [Porucha s opravou, návrat do fronty](<../03 - Porucha s opravou, návrat do fronty/03 - Porucha s opravou, návrat do fronty.md>).
 - Přerušená transakce zmizí bez výstupního přechodu.
 - V SIMLIBu jen `Seize(Linka, 1)`: přerušená transakce zůstane ve frontě přerušených a po opravě obsluhu **dokončí** (zbývající čas). Aby odešla bez náhrady, musí ji porucha z této fronty vyřadit.
@@ -140,7 +140,7 @@ int main() {
 |---|---|
 | *příchody transakcí* ⇄ `exp(A)` | událost `Generator`, která se znovu plánuje za `Exponential(A)` |
 | značka (transakce) | proces `Transakce` |
-| *Fronta* + obsazení *Linky* | `Seize(Linka)` (fronta je vnitřní fronta zařízení) |
+| *fronta* + obsazení *Linky* | `Seize(Linka)` (fronta je vnitřní fronta zařízení) |
 | místo *Linka* (1 značka) | `Facility Linka` |
 | místo *obsluha* | ukazatel `obsluhovana` (`nullptr` = místo je prázdné) |
 | `exp(B)` se sloučeným uvolněním *Linky* | `Wait(Exponential(B)); Release(Linka);` |

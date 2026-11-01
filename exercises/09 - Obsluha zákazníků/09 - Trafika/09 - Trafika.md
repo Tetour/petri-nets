@@ -14,7 +14,7 @@ Podobné úlohy: [Automat na kávu – údržba po nečinnosti](<../../04 - Údr
 
 - **Příchody** modeluje místo *příchody zákazníků* ve smyčce s přechodem `exp(5 min)`. Nový zákazník se objeví v místě *příchozí*.
 - **Prodavač má dvě role, a proto dvě místa.** *prodavač* je zařízení pro obsluhu (značka = volný). *přítomen* říká, že stojí u pultu. Jedno místo nestačí: když prodavač obsluhuje, je obsazený, ale přítomný, takže nový zákazník se má postavit do fronty, ne odejít.
-- **Vstup zákazníka** je podmínka přes prioritu: přechod `p=1` otestuje *přítomen* (hrana tam a zpět) a pustí zákazníka do *Fronty*. Když prodavač chybí, zbude jen přechod s `p=0` a zákazník hned odchází (vlastní výstupní přechod *odchod (prodavač chybí)*).
+- **Vstup zákazníka** je podmínka přes prioritu: přechod `p=1` otestuje *přítomen* (hrana tam a zpět) a pustí zákazníka do *fronty*. Když prodavač chybí, zbude jen přechod s `p=0` a zákazník hned odchází (vlastní výstupní přechod *odchod (prodavač chybí)*).
 - **Obsluha:** obsazení vezme značku *prodavač*, časovaný přechod `exp(2 min)` ji vrací. Obsloužený zákazník odchází přes místo *obsloužen* a přechod *odchod*.
 - **„Nemá zákazníky 10 minut“** je časovaný přechod `10 min`, jehož jediným vstupem je *prodavač*. Odpočet začne, jakmile je prodavač volný. Přijde-li zákazník, obsazení mu značku vezme a odpočet zanikne (slajd 139). Když je prodavač volný, je fronta vždy prázdná (obsazení je okamžité), takže značka v *prodavač* znamená přesně „nemá zákazníky“.
 - **Odchod do skladu:** po vypršení odpočtu (*nikdo nepřišel*) okamžitý přechod *do skladu* vezme i značku *přítomen* (→ *ve skladu*). Od té chvíle odcházejí všichni příchozí. Po `10 min` (*návrat*) se vrátí obě značky, *přítomen* i *prodavač*, a odpočet nečinnosti běží znovu; když zase nikdo nepřijde, jde prodavač do skladu znovu.
@@ -134,7 +134,7 @@ int main() {
 | značka (zákazník) | proces `Zakaznik` |
 | *přítomen* | `bool pritomen` |
 | `p=1` s testem *přítomen* / `p=0` *odchod (prodavač chybí)* | `if (!pritomen) { …; return; }` |
-| *Fronta* + obsazení, *prodavač* (1 značka) | `Seize(Prodavac)`, `Facility Prodavac` |
+| *fronta* + obsazení, *prodavač* (1 značka) | `Seize(Prodavac)`, `Facility Prodavac` |
 | `exp(2 min)` se sloučeným uvolněním | `Wait(Exponential(2)); Release(Prodavac);` |
 | odpočet `10 min` na místě *prodavač* | událost `Necinnost`: plánuje se, když prodavač zůstane volný, obsazení ji ruší (`Cancel()`) |
 | *do skladu* (`p=2`) → *ve skladu* | `Necinnost::Behavior()`: `pritomen = false` a naplánování `Navrat` |
@@ -167,7 +167,7 @@ int main() {
 
 **Existující řešení:**
 
-- **Hrubý (str. 2):** síť výše je jeho řešení překreslené (dvě místa pro prodavače i `p=2` u odchodu do skladu jsou od něj; k `p=2` si poznamenal, že souběh se zákazníkem je velmi hypotetická možnost). Místo *přítomen* testuje přechod `p=1` do *Fronty*, z téhož místa vede výstupní přechod pro zákazníka, který prodavače nezastihne. Místo *prodavač* má označené jako „Facility“, z něj vede `10min` (poznámka „nikdo nepřichází“) → místo → `p=2` odchod do skladu (bere *přítomen*) → místo → `10min` návrat, který vrací obě značky. Obsloužený odchází přes vlastní výstupní přechod. Jediný rozdíl: generátor kreslí bez místa.
+- **Hrubý (str. 2):** síť výše je jeho řešení překreslené (dvě místa pro prodavače i `p=2` u odchodu do skladu jsou od něj; k `p=2` si poznamenal, že souběh se zákazníkem je velmi hypotetická možnost). Místo *přítomen* testuje přechod `p=1` do *fronty*, z téhož místa vede výstupní přechod pro zákazníka, který prodavače nezastihne. Místo *prodavač* má označené jako „Facility“, z něj vede `10min` (poznámka „nikdo nepřichází“) → místo → `p=2` odchod do skladu (bere *přítomen*) → místo → `10min` návrat, který vrací obě značky. Obsloužený odchází přes vlastní výstupní přechod. Jediný rozdíl: generátor kreslí bez místa.
 - **Řešení ze cvičení (fotky 2024/25, str. 6):** stejná stavba. Vstup do *FRONTA* je `p=1` s testem místa přítomnosti (zakroužkované modře), odchod nepřítomnému prodavači je vodorovný výstupní přechod nad místem příchodu. Obsazení *L* má `P=1`. Úsek mezi prvním `10 min` a vysokým okamžitým přechodem je přeškrtaný a zakroužkovaný, takže ho nelze spolehlivě přečíst; písmeno „F“ u tohoto přechodu možná znamená test prázdné fronty. Ten není potřeba, protože při volném prodavači je fronta vždy prázdná.
 
 </details>

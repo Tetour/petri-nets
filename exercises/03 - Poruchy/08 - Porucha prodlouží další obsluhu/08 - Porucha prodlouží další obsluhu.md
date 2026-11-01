@@ -16,7 +16,7 @@ Podobné úlohy:
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **M/M/1:** místo *příchody transakcí* ve smyčce s `exp(A)` → *Fronta* → obsazení *Linky* → *zahájení* → … → *obsluha* → `exp(B)` (vrací *Linku*) → *hotovo* → *odchod*. Časy příchodů a obsluhy zadání neuvádí, proto `exp(A)` a `exp(B)`.
+- **M/M/1:** místo *příchody transakcí* ve smyčce s `exp(A)` → *fronta* → obsazení *Linky* → *zahájení* → … → *obsluha* → `exp(B)` (vrací *Linku*) → *hotovo* → *odchod*. Časy příchodů a obsluhy zadání neuvádí, proto `exp(A)` a `exp(B)`.
 - **Poruchy** vznikají v místě *vznik poruch* ve smyčce s `exp(X)` a čekají v místě *porucha*.
 - **„První následující transakce“** = první transakce, která po vzniku poruchy *začne* obsluhu. Probíhající obsluhu porucha nemění. Proto se o prodloužení rozhoduje v okamžiku obsazení linky (místo *zahájení*): `p=1` (*zahájení* + *porucha*) vybere prodlouženou cestu, pokud čeká porucha, jinak `p=0` (*bez poruchy*).
 - **Prodloužení o 10** = konstantní časovaný přechod `10` (místo *prodloužení*) před běžnou obsluhou `exp(B)`. Transakce celou dobu drží *Linku*, takže obsluha trvá `10 + exp(B)`.
@@ -112,7 +112,7 @@ int main() {
 | *vznik poruch* ⇄ `exp(X)` → *porucha* | událost `VznikPoruch`, která nastaví `porucha = true` |
 | *další porucha bez účinku* (váha 2 dovnitř, 1 ven) | `bool porucha`: druhé `porucha = true` nic nezmění |
 | značka (transakce) | proces `Transakce` |
-| *Fronta* + obsazení *Linky* → *zahájení* | `Seize(Linka)` (fronta je vnitřní fronta zařízení) |
+| *fronta* + obsazení *Linky* → *zahájení* | `Seize(Linka)` (fronta je vnitřní fronta zařízení) |
 | `p=1` → *prodloužení* → `10` / *bez poruchy* `p=0` | `if (porucha) { porucha = false; Wait(10); }` |
 | *obsluha* → `exp(B)` (vrací *Linku*) | `Wait(Exponential(B)); Release(Linka);` |
 | *hotovo* → *odchod* | konec metody `Behavior()` |

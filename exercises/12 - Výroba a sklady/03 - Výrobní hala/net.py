@@ -6,7 +6,7 @@ net = Net("Výrobní hala (půlsemestrálky 2014–19, Z24)")
 net.place("gen", (0, 0), tokens=1, label="příchody požadavků", label_pos="above")
 net.timed("prichod", (1.5, 0), "exp(30 min)")
 net.loop("gen", "prichod")
-net.place("fronta", (3, 0), label="Fronta", label_pos="above")
+net.place("fronta", (3, 0), label="fronta", label_pos="above")
 net.place("montovna", (4.5, 1.6), tokens=1, label="Montovna", label_pos="above right")
 net.immediate("obsaz_m", (4.5, 0))
 net.place("montuje", (6, 0))
@@ -16,7 +16,7 @@ net.arc("montovna", "obsaz_m")
 net.arc("montaz", "montovna", out=90, into=0)  # návrat montovny: oblouk z horní strany přechodu
 
 # lakovna
-net.place("fronta_l", (9, 0), label="Fronta lakovny", label_pos="below right")
+net.place("fronta_l", (9, 0), label="fronta lakovny", label_pos="below right")
 net.place("lakovna", (14, 1.6), tokens=1, label="Lakovna", label_pos="below left")
 net.immediate("obsaz_l", (14, 0), p=1, param_pos="below")
 net.place("lakuje", (15.5, 0))
@@ -35,7 +35,7 @@ net.arc("montovna", "odstav", via=[(4.5, 3.2), (9, 3.2)])
 net.place("odstaveno", (12, 1.6), label="Odstaveno", label_pos="above left")
 net.arc("odstav", "odstaveno")
 
-# vyhození pod frontou lakovny: fronta ≥ 3 a rozpracovaná montáž → požadavek zpět do Fronty,
+# vyhození pod frontou lakovny: fronta ≥ 3 a rozpracovaná montáž → požadavek zpět do fronty,
 # značka montovny rovnou do Odstaveno
 net.immediate("vyhozeni", (9, -1.6), label="vyhození montáže", label_pos="below right")
 net.loop("fronta_l", "vyhozeni", w=3)

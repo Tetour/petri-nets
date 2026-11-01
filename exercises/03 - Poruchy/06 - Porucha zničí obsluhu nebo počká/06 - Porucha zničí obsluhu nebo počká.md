@@ -23,7 +23,7 @@ Podobné úlohy:
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **M/M/1:** *příchody transakcí* ve smyčce s `exp(A)`, *Fronta*, obsazení *Linky*, obsluha `exp(B)`, která *Linku* vrací, a *odchod*. Časy příchodů a obsluhy zadání neuvádí, proto `exp(A)` a `exp(B)` (v simulaci v minutách).
+- **M/M/1:** *příchody transakcí* ve smyčce s `exp(A)`, *fronta*, obsazení *Linky*, obsluha `exp(B)`, která *Linku* vrací, a *odchod*. Časy příchodů a obsluhy zadání neuvádí, proto `exp(A)` a `exp(B)` (v simulaci v minutách).
 - **Poruchy** vznikají v intervalech `exp(8 h)`: místo *vznik poruch* ve smyčce s časovaným přechodem, každé provedení vloží značku do místa *porucha*.
 - **Stačí jediný přechod:** *porucha* + obsluhovaná transakce (místo *obsluha*) → *Linka* + *zničená*. Když linka obsluhuje, provede se hned. Když neobsluhuje, porucha zůstane v místě *porucha* a přechod se provede ve chvíli, kdy další transakce obsadí linku. Obsluha je tedy zničena hned na začátku.
 - **Oproti úloze [Porucha zruší obsluhu](<../01 - Porucha zruší obsluhu/01 - Porucha zruší obsluhu.md>) tu chybí přechod *porucha bez účinku*.** Právě ten by poruchu při volné lince zahodil. Bez něj porucha „počká“: žádný jiný přechod z místa *porucha* nevede.
@@ -130,7 +130,7 @@ int main() {
 |---|---|
 | *příchody transakcí* ⇄ `exp(A)` | událost `Generator`, která se znovu plánuje za `Exponential(A)` |
 | značka (transakce) | proces `Transakce` |
-| *Fronta* + obsazení *Linky* | `Seize(Linka)` (fronta je vnitřní fronta zařízení) |
+| *fronta* + obsazení *Linky* | `Seize(Linka)` (fronta je vnitřní fronta zařízení) |
 | místo *Linka* (1 značka) | `Facility Linka` |
 | místo *obsluha* | ukazatel `obsluhovana` (`nullptr` = místo je prázdné) |
 | `exp(B)` se sloučeným uvolněním *Linky* | `Wait(Exponential(B)); Release(Linka);` |

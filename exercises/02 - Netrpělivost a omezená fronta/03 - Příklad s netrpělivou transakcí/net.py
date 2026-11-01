@@ -6,7 +6,7 @@ net = Net("Zákaznická linka s jedním operátorem, volající zavěsí po 1–
 net.place("gen", (0, 0), tokens=1, label="příchody hovorů", label_pos="above")
 net.timed("volani", (1.5, 0), "exp(4 min)")
 net.loop("gen", "volani")
-net.place("fronta", (3, 0), label="Fronta", label_pos="above")
+net.place("fronta", (3, 0), label="fronta", label_pos="above")
 
 # operátor (zařízení)
 net.place("operator", (4.5, 1.6), tokens=1, label="Operátor")

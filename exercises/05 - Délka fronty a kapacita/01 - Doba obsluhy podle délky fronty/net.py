@@ -7,10 +7,10 @@ net.params = {"A": 7}
 net.place("gen", (0, 0), tokens=1, label="příchody transakcí", label_pos="above")
 net.timed("prichod", (1.5, 0), "exp(A)")
 net.loop("gen", "prichod")
-net.place("fronta", (3, 0), label="Fronta", label_pos="above")
+net.place("fronta", (3, 0), label="fronta", label_pos="above")
 net.arc("prichod", "fronta")
 
-# fronta ≥ 3 (včetně té, která obsazuje): z Fronty 3, zpět 2, rychlá obsluha rovně
+# fronta ≥ 3 (včetně té, která obsazuje): z fronty 3, zpět 2, rychlá obsluha rovně
 net.immediate("rychle", (4.8, 0), p=1, label="fronta ≥ 3", label_pos="above",
               param_pos="below right")
 net.arc("fronta", "rychle", w=3, bend=25, w_pos="above")

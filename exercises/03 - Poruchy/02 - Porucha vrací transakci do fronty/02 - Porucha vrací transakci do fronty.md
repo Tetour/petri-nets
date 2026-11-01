@@ -17,9 +17,9 @@ Podobné úlohy:
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **M/M/1:** *příchody transakcí* ve smyčce s `exp(A)`, *Fronta*, obsazení *Linky*, obsluha `exp(B)`, která *Linku* vrací, a *odchod*. Časy příchodů a obsluhy zadání neuvádí, proto `exp(A)` a `exp(B)`.
+- **M/M/1:** *příchody transakcí* ve smyčce s `exp(A)`, *fronta*, obsazení *Linky*, obsluha `exp(B)`, která *Linku* vrací, a *odchod*. Časy příchodů a obsluhy zadání neuvádí, proto `exp(A)` a `exp(B)`.
 - **Poruchy** vznikají v intervalech `exp(X)`: místo *vznik poruch* ve smyčce s časovaným přechodem, každé provedení vloží značku do místa *porucha*.
-- **Doba poruchy** v zadání není, takže porucha jen přeruší obsluhu a linka je hned znovu volná: přechod `p=1` vezme *poruchu* a obsluhovanou transakci (místo *obsluha*), transakci vrátí do *Fronty* a značku *Lince*. Obsluhu později začne znovu od začátku.
+- **Doba poruchy** v zadání není, takže porucha jen přeruší obsluhu a linka je hned znovu volná: přechod `p=1` vezme *poruchu* a obsluhovanou transakci (místo *obsluha*), transakci vrátí do *fronty* a značku *Lince*. Obsluhu později začne znovu od začátku.
 - Přerušení funguje díky sémantice časovaného přechodu (slajd 139): během odpočtu `exp(B)` zůstává značka v místě *obsluha*. Okamžitý přechod má přednost před časovaným, takže si značku vezme a plánované dokončení obsluhy zanikne.
 - **„Případnou“ obsluhu:** porucha, která přijde ve chvíli, kdy linka nic neobsluhuje, nemá žádný účinek. Proto je tu přechod *porucha bez účinku* (`p=0`, bez výstupu). Bez něj by se značky v místě *porucha* hromadily a příští obsluha by byla přerušena okamžitě po začátku.
 - **Priorita `p=1`** na přerušení zajistí, že když je linka obsazená, porucha obsluhu přeruší, a ne že tiše zanikne (oba okamžité přechody jsou v tu chvíli proveditelné).
@@ -126,13 +126,13 @@ int main() {
 |---|---|
 | *příchody transakcí* ⇄ `exp(A)` | událost `Generator`, která se znovu plánuje za `Exponential(A)` |
 | značka (transakce) | proces `Transakce` |
-| *Fronta* + obsazení *Linky* | `Seize(Linka)` (fronta je vnitřní fronta zařízení) |
+| *fronta* + obsazení *Linky* | `Seize(Linka)` (fronta je vnitřní fronta zařízení) |
 | místo *Linka* (1 značka) | `Facility Linka` |
 | místo *obsluha* | ukazatel `obsluhovana` (`nullptr` = místo je prázdné) |
 | `exp(B)` se sloučeným uvolněním *Linky* | `Wait(Exponential(B)); Release(Linka);` |
 | *vznik poruch* ⇄ `exp(X)`, značka v místě *porucha* | událost `Porucha`, která se znovu plánuje za `Exponential(X)`; porucha nemá trvání, v místě je jen okamžik |
 | přerušení (`p=1`) | větev `if (obsluhovana)`: `Activate()` ukončí `Wait` hned (odpočet `exp(B)` zanikne), příznak `prerusena` |
-| výstupy přerušení: *Linka* a *Fronta* | transakce ve stejném okamžiku zavolá `Release(Linka)` a cyklem `do … while` se vrátí k `Seize(Linka)` |
+| výstupy přerušení: *Linka* a *fronta* | transakce ve stejném okamžiku zavolá `Release(Linka)` a cyklem `do … while` se vrátí k `Seize(Linka)` |
 | *porucha bez účinku* (`p=0`) | větev `else` |
 | přechod *odchod* | konec metody `Behavior()` |
 

@@ -12,8 +12,8 @@ Podobné úlohy: [Kopírovací centrum](<../10 - Kopírovací centrum/10 - Kopí
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **Příchody:** místo *příchody požadavků* ve smyčce s přechodem `exp(2 min)` vkládá požadavky do *Fronty* před přepážkou.
-- **Přepážka** je jedno zařízení, registrace trvá `2–3 min` rovnoměrně a vrací značku přepážky. Pak požadavek čeká v druhé *Frontě*, na obsluhu.
+- **Příchody:** místo *příchody požadavků* ve smyčce s přechodem `exp(2 min)` vkládá požadavky do *fronty* před přepážkou.
+- **Přepážka** je jedno zařízení, registrace trvá `2–3 min` rovnoměrně a vrací značku přepážky. Pak požadavek čeká v druhé *frontě*, na obsluhu.
 - **Obsluha s kapacitou 10** je sklad: místo s 10 značkami. Časovaný přechod `exp(20 min)` má pro každou obsluhovanou zakázku vlastní odpočet (slajd 138), takže běží až 10 obsluh současně. Po dokončení vrací jednotku kapacity a zakázka jde do *konec*.
 - **Porucha:** místo *poruchy* ve smyčce s `exp(8 h)` vloží značku do *vznik poruchy*. Přechod *vyprázdni systém* (`p=1`) vezme značku *systém je OK* a vloží ji do *ničení*. Smyčka *zničení obsluhy* (`p=1`) pak bere rozpracované obsluhy po jedné, „dokud je co ničit“. Každé zničení vrací jednotku kapacity *Obsluze* (dlouhá hrana kolem sítě) a posílá zakázku do *konec*. Odebrání značky z *v obsluze* zruší její odpočet `exp(20 min)` (slajd 139).
 - **Obnovení** (p=0) přijde na řadu, až když už není co ničit (priorita), a vrátí značku *systém je OK*.
@@ -125,8 +125,8 @@ int main() {
 |---|---|
 | *příchody požadavků* ⇄ `exp(2 min)` | událost `Generator`, která se znovu plánuje za `Exponential(2)` |
 | značka (požadavek) | proces `Pozadavek` |
-| *Fronta* + *Přepážka* (1 značka), `2–3 min` | `Seize(Prepazka); Wait(Uniform(2, 3)); Release(Prepazka);` |
-| *Fronta* + *Obsluha* (10 značek) | `Enter(Obsluha, 1)`, `Store Obsluha("Obsluha", 10)` |
+| *fronta* + *Přepážka* (1 značka), `2–3 min` | `Seize(Prepazka); Wait(Uniform(2, 3)); Release(Prepazka);` |
+| *fronta* + *Obsluha* (10 značek) | `Enter(Obsluha, 1)`, `Store Obsluha("Obsluha", 10)` |
 | *v obsluze* | `std::set<Pozadavek *> vObsluze` |
 | `exp(20 min)` se sloučeným uvolněním | `Wait(Exponential(20)); … Leave(Obsluha, 1);` |
 | *poruchy* ⇄ `exp(8 h)` | událost `Porucha`, plánuje se za `Exponential(8 * 60)` |

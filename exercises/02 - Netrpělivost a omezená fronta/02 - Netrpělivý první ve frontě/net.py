@@ -7,7 +7,7 @@ net.params = {"A": 5, "B": 4}
 net.place("gen", (0, 0), tokens=1, label="příchody transakcí", label_pos="above")
 net.timed("prichod", (1.5, 0), "exp(A)")
 net.loop("gen", "prichod")
-net.place("fronta", (3, 0), label="Fronta", label_pos="above")
+net.place("fronta", (3, 0), label="fronta", label_pos="above")
 net.immediate("postup", (4.5, 0))
 net.place("prvni", (6, 0), label="První", label_pos="above")
 net.chain("prichod", "fronta", "postup", "prvni")

@@ -12,10 +12,10 @@ Podobné úlohy: [Přerušení příchodů při plné frontě](<../../05 - Délk
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **Příchody** modeluje místo *příchody klientů* s jednou značkou ve smyčce s `exp(20 min)`; klient čeká v místě *Fronta*.
+- **Příchody** modeluje místo *příchody klientů* s jednou značkou ve smyčce s `exp(20 min)`; klient čeká v místě *fronta*.
 - **Jedna pracovnice** je místo *Pracovnice* s jednou značkou; obsazení ji bere, časovaný přechod `exp(10 min)` ji vrací (uvolnění je s ním sloučené).
-- **Délka fronty** jsou jen čekající klienti v místě *Fronta*. Obsluhovaný klient je v jiném místě, takže se nepočítá („10 čekajících“).
-- **„Dosáhne délky 10“** = test, že je ve *Frontě* aspoň 10 značek: hrana s váhou 10 do přechodu a hrana s váhou 10 zpět. Z fronty se nic neodebere. (Kdyby zadání říkalo „přesáhne 10“, byla by váha 11.)
+- **Délka fronty** jsou jen čekající klienti v místě *fronta*. Obsluhovaný klient je v jiném místě, takže se nepočítá („10 čekajících“).
+- **„Dosáhne délky 10“** = test, že je ve *frontě* aspoň 10 značek: hrana s váhou 10 do přechodu a hrana s váhou 10 zpět. Z fronty se nic neodebere. (Kdyby zadání říkalo „přesáhne 10“, byla by váha 11.)
 - **Zastavení příchodů:** přechod stop stavu odebere značku z místa *příchody klientů*, takže probíhající odpočet `exp(20 min)` zanikne a nikdo nepřichází. Značka přejde do místa *stop stav*, po `4 h` se vrátí a příchody pokračují.
 - **Značka příchodů slouží i jako pojistka:** během stop stavu chybí, a proto se stop stav nemůže vyhlásit znovu, i když je ve frontě pořád 10 klientů. Samostatné řídicí místo (jako u vzoru „dočasné zastavení příchodů“) by bylo také správně, jen je to prvek navíc.
 - **Priorita `p=1`** na vyhlášení stop stavu říká, že se podmínka „fronta dosáhla 10“ vyhodnotí dřív než cokoli jiného v tomtéž okamžiku (např. obsazení pracovnice). V téhle úloze ke střetu prakticky nedojde, protože fronta roste, jen když je pracovnice obsazená. Priorita ale nic nezkazí a odpovídá vzoru testu fronty.
@@ -41,7 +41,7 @@ Podobné úlohy: [Přerušení příchodů při plné frontě](<../../05 - Délk
 <br>
 
 - Hrana s váhou 10 jen do přechodu, bez hrany zpět. Přechod by pak z fronty odebral 10 klientů.
-- Zastavení příchodů odebráním klientů z *Fronty* místo odebrání značky generátoru (místa *příchody klientů*).
+- Zastavení příchodů odebráním klientů z *fronty* místo odebrání značky generátoru (místa *příchody klientů*).
 - Zapomenutý návrat značky generátoru po 4 h: příchody by se zastavily natrvalo.
 - Vyhlášení stop stavu, které nebere značku generátoru ani jinou řídicí značku. Test fronty pak zůstává splněný a přechod se provádí pořád dokola.
 - Váha 11 („přesáhne“) místo 10 („dosáhne“), nebo započítání obsluhovaného klienta do délky fronty.
@@ -113,14 +113,14 @@ int main() {
 |---|---|
 | *příchody klientů* ⇄ `exp(20 min)` | událost `Generator` (ukazatel `prichody`), která se znovu plánuje za `Exponential(20)` |
 | značka (klient) | proces `Klient` |
-| místo *Pracovnice* (1 značka), *Fronta* + obsazení | `Facility Pracovnice`, `Seize(Pracovnice)` (fronta je vnitřní fronta zařízení) |
+| místo *Pracovnice* (1 značka), *fronta* + obsazení | `Facility Pracovnice`, `Seize(Pracovnice)` (fronta je vnitřní fronta zařízení) |
 | `exp(10 min)` se sloučeným uvolněním | `Wait(Exponential(10)); Release(Pracovnice);` |
 | test fronty hranami s váhou 10 | `WaitUntil(Pracovnice.QueueLen() >= 10)` |
 | *stop* (`p=1`) bere značku příchodů | `prichody->Passivate()` v procesu `StopStav` s prioritou 1 |
 | *stop stav* → `4 h` → *příchody klientů* | `Wait(4 * 60)`, pak `prichody->Activate(…)` |
 | přechod *odchod* | konec metody `Behavior()` klienta |
 
-**Kontrola simulací.** Petriho síť: *Pracovnice* + obsluhovaný = 1, *příchody klientů* + *stop stav* = 1, ve *Frontě* nikdy není víc než 10 klientů; pracovnice je vytížena jen na 50 %, takže stop stav je vzácný, v simulaci zhruba jednou za 3700 klientů (`make check`). SIMLIB model: v jednom běhu (100 000 h, asi 300 000 klientů) byla pracovnice vytížena na 49,8 % (teoreticky 10/20 = 50 %), klient strávil v centru průměrně 19,7 minuty (pro M/M/1 teoreticky 1/(1/10 − 1/20) = 20 min) a stop stav se vyhlásil 71krát, tedy zhruba jednou za 4200 klientů; fronta nepřesáhla 10 (`make simlib`).
+**Kontrola simulací.** Petriho síť: *Pracovnice* + obsluhovaný = 1, *příchody klientů* + *stop stav* = 1, ve *frontě* nikdy není víc než 10 klientů; pracovnice je vytížena jen na 50 %, takže stop stav je vzácný, v simulaci zhruba jednou za 3700 klientů (`make check`). SIMLIB model: v jednom běhu (100 000 h, asi 300 000 klientů) byla pracovnice vytížena na 49,8 % (teoreticky 10/20 = 50 %), klient strávil v centru průměrně 19,7 minuty (pro M/M/1 teoreticky 1/(1/10 − 1/20) = 20 min) a stop stav se vyhlásil 71krát, tedy zhruba jednou za 4200 klientů; fronta nepřesáhla 10 (`make simlib`).
 
 </details>
 

@@ -17,7 +17,7 @@ net.immediate("neni", (4.5, -1.6), exit=True, label="odchod (prodavač chybí)",
 net.arc("vstup", "neni", via=[(3, -1.6)], corner=20)
 
 # obsluha u pultu
-net.place("fronta", (6, 0), label="Fronta", label_pos="below")
+net.place("fronta", (6, 0), label="fronta", label_pos="below")
 net.place("prodavac", (7.5, 1.6), tokens=1, label="prodavač", label_pos="above right")
 net.immediate("obsaz", (7.5, 0))
 net.place("obsluha", (9, 0))

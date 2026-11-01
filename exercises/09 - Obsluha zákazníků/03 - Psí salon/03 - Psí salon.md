@@ -16,12 +16,12 @@ Podobné úlohy: [Přerušení příchodů při plné frontě](<../../05 - Délk
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **Příchody** modeluje místo *příchody zákazníků* s jednou značkou ve smyčce s časovaným přechodem `exp(10 min)`; zákazník čeká v místě *Fronta*.
+- **Příchody** modeluje místo *příchody zákazníků* s jednou značkou ve smyčce s časovaným přechodem `exp(10 min)`; zákazník čeká v místě *fronta*.
 - **Jedna linka obsluhy** je místo *Linka obsluhy* s jednou značkou; obsazení ji bere, časovaný přechod `exp(15 min)` ji vrací (uvolnění je s ním sloučené). Obsloužený zákazník jde do místa *ven*.
-- **Vyhlížení** je samostatný proces (místo se značkou). Časovaný přechod `1 h` je proveditelný, když je značka ve *vyhlížení* a někdo je ve *Frontě*. Odpočet tedy běží, dokud je fronta neprázdná. Když se fronta mezitím vyprázdní, odpočet zanikne a s dalším zákazníkem začne znovu.
-- To je **abstrakce**: odpočet měří, jak dlouho je fronta nepřetržitě neprázdná, ne kolik čeká konkrétní zákazník. Přesnější alternativa je dát každé transakci vlastní timeout: časovaný přechod `1 h` jen se vstupem z *Fronty* (bez *vyhlížení*), který má podle slajdu 138 odpočet pro každou značku zvlášť.
+- **Vyhlížení** je samostatný proces (místo se značkou). Časovaný přechod `1 h` je proveditelný, když je značka ve *vyhlížení* a někdo je ve *frontě*. Odpočet tedy běží, dokud je fronta neprázdná. Když se fronta mezitím vyprázdní, odpočet zanikne a s dalším zákazníkem začne znovu.
+- To je **abstrakce**: odpočet měří, jak dlouho je fronta nepřetržitě neprázdná, ne kolik čeká konkrétní zákazník. Přesnější alternativa je dát každé transakci vlastní timeout: časovaný přechod `1 h` jen se vstupem z *fronty* (bez *vyhlížení*), který má podle slajdu 138 odpočet pro každou značku zvlášť.
 - Přechod `1 h` vezme z fronty zákazníka, který čekal nejdéle. Ten se stane značkou v místě *poplach*. Odchází ze systému až přechodem *deaktivace příchodů*.
-- **Vyprázdnění fronty:** okamžitý přechod s `p=1` opakovaně bere zákazníky z *Fronty* do místa *ven* a vrací značku *poplach* zpět (smyčka), dokud fronta není prázdná. Priorita `p=1` zajistí, že vyprázdnění proběhne dřív než deaktivace (p=0) a dřív než případné obsazení linky.
+- **Vyprázdnění fronty:** okamžitý přechod s `p=1` opakovaně bere zákazníky z *fronty* do místa *ven* a vrací značku *poplach* zpět (smyčka), dokud fronta není prázdná. Priorita `p=1` zajistí, že vyprázdnění proběhne dřív než deaktivace (p=0) a dřív než případné obsazení linky.
 - **Deaktivace příchodů** odebere značku z místa *příchody zákazníků*, takže probíhající odpočet `exp(10 min)` zanikne a nikdo nepřichází; zákazníka z *poplachu* pošle do místa *ven*. Po `3 h` se vrátí značka příchodů i vyhlížení.
 - Zákazník, který je právě obsluhován, obsluhu normálně dokončí.
 - Všichni zákazníci **opouští systém** přes místo *ven* okamžitým přechodem *odchod* bez výstupních hran.
@@ -44,7 +44,7 @@ Podobné úlohy: [Přerušení příchodů při plné frontě](<../../05 - Délk
 <summary>Zobrazit časté chyby</summary>
 <br>
 
-- Zastavení příchodů odebráním značky z *Fronty* místo z místa *příchody zákazníků*. Generátor musí přijít o svou značku, jinak příchody pokračují.
+- Zastavení příchodů odebráním značky z *fronty* místo z místa *příchody zákazníků*. Generátor musí přijít o svou značku, jinak příchody pokračují.
 - Vyprázdnění fronty jedním přechodem s váhou hrany. Váha bere přesný počet značek, ne „všechny“. Na „všechny“ je potřeba smyčka s prioritou.
 - Zapomenutá smyčka *poplach* → přechod → *poplach*: pak se odebere jen jeden zákazník.
 - Zapomenutý návrat značky do *vyhlížení* po 3 h: hlídání by pak fungovalo jen jednou.
@@ -132,7 +132,7 @@ int main() {
 |---|---|
 | *příchody zákazníků* ⇄ `exp(10 min)` | událost `Generator` (ukazatel `prichody`), která se znovu plánuje za `Exponential(10)` |
 | značka (zákazník) | proces `Zakaznik` |
-| místo *Fronta* | `Queue Fronta`, vstupní fronta zařízení `Linka` |
+| místo *fronta* | `Queue Fronta`, vstupní fronta zařízení `Linka` |
 | místo *Linka obsluhy* (1 značka) + obsazení | `Facility Linka`, `Seize(Linka)` |
 | `exp(15 min)` se sloučeným uvolněním | `Wait(Exponential(15)); Release(Linka);` |
 | místo *vyhlížení* | proměnná `bool vyhlizeni` |

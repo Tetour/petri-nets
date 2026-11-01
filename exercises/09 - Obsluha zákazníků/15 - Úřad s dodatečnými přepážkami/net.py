@@ -6,7 +6,7 @@ net = Net("Úřad s dodatečnými přepážkami (půlsemestrálky 2014–19, Z10
 net.place("gen", (0, 0), tokens=1, label="příchody klientů", label_pos="above")
 net.timed("prichod", (1.5, 0), "exp(10 min)", param_pos="below")
 net.loop("gen", "prichod")
-net.place("fronta", (3, 0), label="Fronta", label_pos="below right")
+net.place("fronta", (3, 0), label="fronta", label_pos="below right")
 net.place("prepazky", (4.5, 1.6), tokens=3, label="Přepážky", label_pos="above right")
 net.immediate("obsaz", (4.5, 0))
 net.place("obsluha", (6, 0))

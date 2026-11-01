@@ -6,7 +6,7 @@ net = Net("Spalovna se třemi vozy (půlsemestrálky 2014–19, Z20)")
 net.place("vozy", (0, 0), tokens=3, label="Vozy na trase", label_pos="left")
 net.timed("prijezd", (1.5, 0), "exp(1 h)", param_pos="above")
 net.arc("vozy", "prijezd")
-net.place("fronta", (3.5, 0), label="Fronta", label_pos="above")
+net.place("fronta", (3.5, 0), label="fronta", label_pos="above")
 net.arc("prijezd", "fronta")
 # vůz po vyložení: dolů do „vyloženo“ a přes odjezd zpět na trasu
 net.place("vylozeno", (1.5, -1.6), label="vyloženo", label_pos="below")

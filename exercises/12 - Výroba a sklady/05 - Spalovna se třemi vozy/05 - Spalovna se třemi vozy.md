@@ -13,11 +13,11 @@ Podobné úlohy: [Spalovna](<../07 - Spalovna/07 - Spalovna.md>), [Sběrači jah
 <br>
 
 - **Vozy** jsou místo se 3 značkami a časovaný přechod `exp(1 h)`. Každá značka má vlastní odpočet (slajd 138), takže jsou to tři nezávislé vozy. „V intervalech exponenciálně se středem 1 hodina“ je doba jedné sběrné trasy každého vozu.
-- **Příjezd = vyložení:** časovaný přechod rozdělí transakci na dvě značky. Balík jde do *Fronty*, vůz do místa *vyloženo*. Odtud odjíždí přechodem *odjezd*, který testuje (hrana tam a zpět) *Normální stav*, zpět do *Vozů na trase*. Ve výjimečném stavu značka *Normální stav* chybí, a vozy proto čekají ve *vyloženo*.
-- **Komora** je sklad s 5 místy (*Volná místa*). Vložení (`p=2`) vezme balík z *Fronty* a volné místo. Každý balík v komoře hoří samostatně `exp(2 h)` (každá značka má vlastní odpočet), pak vrátí volné místo a jako *spáleno* opouští systém přechodem *odchod*.
-- **Přepnutí** se provede, když je ve *Frontě* balík (test) a ten nejde vložit do komory. Vezme *Normální stav* a dá *Výjimečný stav*. Podmínku „komora je plná“ zajišťuje priorita: vložení má `p=2`, takže přepnutí (`p=1`) přijde na řadu, jen když nejsou volná místa.
+- **Příjezd = vyložení:** časovaný přechod rozdělí transakci na dvě značky. Balík jde do *fronty*, vůz do místa *vyloženo*. Odtud odjíždí přechodem *odjezd*, který testuje (hrana tam a zpět) *Normální stav*, zpět do *Vozů na trase*. Ve výjimečném stavu značka *Normální stav* chybí, a vozy proto čekají ve *vyloženo*.
+- **Komora** je sklad s 5 místy (*Volná místa*). Vložení (`p=2`) vezme balík z *fronty* a volné místo. Každý balík v komoře hoří samostatně `exp(2 h)` (každá značka má vlastní odpočet), pak vrátí volné místo a jako *spáleno* opouští systém přechodem *odchod*.
+- **Přepnutí** se provede, když je ve *frontě* balík (test) a ten nejde vložit do komory. Vezme *Normální stav* a dá *Výjimečný stav*. Podmínku „komora je plná“ zajišťuje priorita: vložení má `p=2`, takže přepnutí (`p=1`) přijde na řadu, jen když nejsou volná místa.
 - **Proč `p=1` u přepnutí:** v okamžiku příjezdu do plné komory jsou proveditelné přepnutí i odjezd právě přijetého vozu. Vůz, jehož balík výjimečný stav vyvolal, má podle zadání také čekat, proto přepnutí vyhraje.
-- **Odvolání** testuje všech 5 volných míst (hrany s váhou 5 tam i zpět), tj. komora je prázdná. Prázdnou frontu zajišťuje opět priorita: dokud je ve *Frontě* balík a komora má volné místo, vyhraje vložení (`p=2`). Po odvolání se vrátí *Normální stav* a všechny čekající vozy hned odjedou.
+- **Odvolání** testuje všech 5 volných míst (hrany s váhou 5 tam i zpět), tj. komora je prázdná. Prázdnou frontu zajišťuje opět priorita: dokud je ve *frontě* balík a komora má volné místo, vyhraje vložení (`p=2`). Po odvolání se vrátí *Normální stav* a všechny čekající vozy hned odjedou.
 - Fronta je omezená sama: ve výjimečném stavu vozy postupně uvíznou ve *vyloženo*, takže ve frontě mohou být nejvýš 3 balíky.
 
 </details>
@@ -116,11 +116,11 @@ int main() {
 | Petriho síť | SIMLIB |
 |---|---|
 | *Vozy na trase* (3 značky) → `exp(1 h)` | 3 procesy `Vuz`, každý v cyklu `Wait(Exponential(60))` |
-| příjezd: balík do *Fronty*, vůz do *vyloženo* | `(new Balik)->Activate();` a vůz pokračuje ve svém `Behavior()` |
+| příjezd: balík do *fronty*, vůz do *vyloženo* | `(new Balik)->Activate();` a vůz pokračuje ve svém `Behavior()` |
 | *odjezd* (test *Normální stav*) → *Vozy na trase* | `WaitUntil(normalni);` a další obrat cyklu |
 | *Normální stav* / *Výjimečný stav* | `bool normalni` |
-| *přepnutí* `p=1` (test *Fronty*, plná komora) | `if (normalni && Komora.Full()) normalni = false;` hned po vyložení, před odjezdem |
-| *Volná místa* (5 značek), vložení `p=2` | `Store Komora(5)`, `Enter(Komora)`; fronta skladu je *Fronta* |
+| *přepnutí* `p=1` (test *fronty*, plná komora) | `if (normalni && Komora.Full()) normalni = false;` hned po vyložení, před odjezdem |
+| *Volná místa* (5 značek), vložení `p=2` | `Store Komora(5)`, `Enter(Komora)`; fronta skladu je *fronta* |
 | `exp(2 h)` vrací volné místo | `Wait(Exponential(120)); Leave(Komora);` |
 | *odvolání* (test 5 volných míst) | proces `Odvolani`: `WaitUntil(!normalni && Komora.Empty() && Komora.QueueLen() == 0)` |
 | *spáleno* → *odchod* | konec metody `Behavior()` balíku |
@@ -151,7 +151,7 @@ int main() {
 **Existující řešení:**
 
 - **Democvičení (str. 6):** vozy „3“ → `exp(1h)` → „Fronta“ → vložení `p=1` (bere místo z „Volné“ s 5 značkami) → místo s balíky v komoře → `exp(2h)` → zpět „Volné“. Režim: místo „Nor“ (značka) a „Výjim.“. Přepnutí testuje frontu a bere „Nor“, odvolání testuje „Volné“ hranami s váhou 5 a vrací „Nor“. Podmínky „komora plná“ a „fronta prázdná“ hlídá stejně jako výše priorita vložení. Rozdíly:
-  - Vůz je ve *Frontě* spolu se svým balíkem a uvolní se (do místa, odkud odjíždí přes test „Nor“) až při vložení balíku do komory. Chování je stejné: v normálním stavu se balík vloží hned, jinak nastane výjimečný stav a vůz čeká tak jako tak. Síť výše odděluje balík a vůz hned při vyložení, což víc odpovídá textu.
+  - Vůz je ve *frontě* spolu se svým balíkem a uvolní se (do místa, odkud odjíždí přes test „Nor“) až při vložení balíku do komory. Chování je stejné: v normálním stavu se balík vloží hned, jinak nastane výjimečný stav a vůz čeká tak jako tak. Síť výše odděluje balík a vůz hned při vyložení, což víc odpovídá textu.
   - Spálený balík zaniká v přechodu `exp(2h)`, výstupní přechod chybí (tehdy se nevyžadoval).
 
 </details>

@@ -16,8 +16,8 @@ Podobné úlohy: [Přerušení příchodů při plné frontě](<../05 - Přeruš
 
 - **Kdy se rozhoduje:** jen při příchodu („po každé nově příchozí transakci“). Zvolený interval platí až do dalšího příchodu, i když se fronta mezitím zkrátí. Značka generátoru proto po příchodu přejde do místa *po příchodu* a odtud jedním ze dvou přechodů do *intervalu A*, nebo do *intervalu B*. Každý z nich má svůj časovaný přechod `exp(A)`, resp. `exp(B)` (jeden přechod = jeden čas), a ten po příchodu vrací značku do *po příchodu*.
 - **„Fronta ≥ C“** testuje dvojice hran s váhou C (do přechodu a zpět). *Jinak* (`p=0`) žádný test nepotřebuje, provede se, jen když *fronta ≥ C* (`p=1`) proveditelná není. Inhibiční hrana tu tedy není potřeba.
-- **„Včetně nově příchozího“:** časovaný příchod dá značku do *Fronty* a do *po příchodu* zároveň, takže se nově příchozí do fronty počítá. Priorita `p=1` navíc zajistí, že test proběhne dřív než obsazení linky (`p=0`).
-- **M/M/1:** *Fronta* → obsazení *Linky* → `exp(S)`, který *Linku* vrací → *konec* → *odchod*. Doba obsluhy v zadání není, proto `exp(S)`.
+- **„Včetně nově příchozího“:** časovaný příchod dá značku do *fronty* a do *po příchodu* zároveň, takže se nově příchozí do fronty počítá. Priorita `p=1` navíc zajistí, že test proběhne dřív než obsazení linky (`p=0`).
+- **M/M/1:** *fronta* → obsazení *Linky* → `exp(S)`, který *Linku* vrací → *konec* → *odchod*. Doba obsluhy v zadání není, proto `exp(S)`.
 - Na začátku je fronta prázdná, proto je značka generátoru v *intervalu B*.
 - Přepis z roku 2021/22 by šel číst i tak, že se rychlost generátoru přepíná průběžně podle aktuální fronty. Oficiální znění z roku 2022/23 to vyjasňuje: rozhoduje se jen při příchodu.
 
@@ -101,11 +101,11 @@ int main() {
 |---|---|
 | značka generátoru v *interval A* / *interval B* | událost `Generator` naplánovaná za `Exponential(A)` / `Exponential(B)` |
 | na začátku značka v *interval B* | `(new Generator)->Activate(Exponential(B))` |
-| `exp(A)` / `exp(B)`: transakce do *Fronty*, značka do *po příchodu* | `(new Transakce)->Activate()` na začátku `Behavior()` generátoru |
-| *fronta ≥ C* (`p=1`, test C na *Frontě*) | `if (Linka.QueueLen() + 1 >= C)` |
+| `exp(A)` / `exp(B)`: transakce do *fronty*, značka do *po příchodu* | `(new Transakce)->Activate()` na začátku `Behavior()` generátoru |
+| *fronta ≥ C* (`p=1`, test C na *frontě*) | `if (Linka.QueueLen() + 1 >= C)` |
 | *jinak* (`p=0`) | větev `else` |
 | značka (transakce) | proces `Transakce` |
-| *Fronta* + obsazení *Linky* | `Seize(Linka)` (fronta je vnitřní fronta zařízení) |
+| *fronta* + obsazení *Linky* | `Seize(Linka)` (fronta je vnitřní fronta zařízení) |
 | místo *Linka* (1 značka) | `Facility Linka` |
 | `exp(S)` se sloučeným uvolněním | `Wait(Exponential(S)); Release(Linka);` |
 | *konec* → *odchod* | konec metody `Behavior()` transakce |

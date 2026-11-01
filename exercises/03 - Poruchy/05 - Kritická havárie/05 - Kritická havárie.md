@@ -16,10 +16,10 @@ Podobné úlohy:
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **M/M/1:** *příchody transakcí* ve smyčce s `exp(A)`, *Fronta*, obsazení *Linky*, obsluha `exp(B)`, která *Linku* vrací, a *odchod*. Časy příchodů a obsluhy zadání neuvádí, proto `exp(A)` a `exp(B)`.
+- **M/M/1:** *příchody transakcí* ve smyčce s `exp(A)`, *fronta*, obsazení *Linky*, obsluha `exp(B)`, která *Linku* vrací, a *odchod*. Časy příchodů a obsluhy zadání neuvádí, proto `exp(A)` a `exp(B)`.
 - **Havárie** vznikají v intervalech `exp(100)`: místo *vznik havárií* ve smyčce s časovaným přechodem, každé provedení vloží značku do místa *havárie*.
 - **„Linku na 10 č.j. zcela odstaví“:** havárie si vezme *Linku* do místa *odstávka* a časovaný přechod `10` ji vrátí, ať linka zrovna obsluhuje, nebo ne.
-- **Volná linka:** přechod `p=1` nahoře spojí *havárii* s *Linkou* a začne odstávka. Priorita zajistí, že havárie, která čekala během předchozí odstávky, dostane linku dřív než transakce čekající ve *Frontě*.
+- **Volná linka:** přechod `p=1` nahoře spojí *havárii* s *Linkou* a začne odstávka. Priorita zajistí, že havárie, která čekala během předchozí odstávky, dostane linku dřív než transakce čekající ve *frontě*.
 - **Obsazená linka:** přechod dole vezme *havárii* a obsluhovanou transakci (místo *obsluha*), linku předá rovnou do *odstávky* (*Linka* + *obsluha* + *odstávka* = 1) a transakci pošle do místa *zrušená*. Odpočet `exp(B)` přitom zanikne (slajd 139).
 - **„Rozpracovaná obsluha je bez náhrady ukončena“:** přerušená transakce se neobslouží a odchází ze systému. Zadání chce vyznačit odchod přechodem, a odchody jsou tu dva: *odchod* po obsluze a *odchod bez obsluhy*.
 - Stejně správná je varianta ve dvou krocích: ukončení obsluhy vrátí značku *Lince* a havárii nechá v místě *havárie* (hrana tam a zpět), hned potom ji přechod `p=1` spojí s volnou *Linkou*. Tady je kreslená v jednom kroku, protože síť je jednodušší.
@@ -137,7 +137,7 @@ int main() {
 |---|---|
 | *příchody transakcí* ⇄ `exp(A)` | událost `Generator`, která se znovu plánuje za `Exponential(A)` |
 | značka (transakce) | proces `Transakce` |
-| *Fronta* + obsazení *Linky* | `Seize(Linka)` (fronta je vnitřní fronta zařízení) |
+| *fronta* + obsazení *Linky* | `Seize(Linka)` (fronta je vnitřní fronta zařízení) |
 | místo *Linka* (1 značka) | `Facility Linka` |
 | místo *obsluha* | ukazatel `obsluhovana` (`nullptr` = místo je prázdné) |
 | `exp(B)` se sloučeným uvolněním *Linky* | `Wait(Exponential(B)); Release(Linka);` |

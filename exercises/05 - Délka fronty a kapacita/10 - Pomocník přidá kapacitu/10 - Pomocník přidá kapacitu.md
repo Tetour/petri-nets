@@ -12,7 +12,7 @@ Podobné úlohy: [Údržba zabere celou kapacitu](<../09 - Údržba zabere celou
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **M/M/1:** *příchody zákazníků* ⇄ `exp(A)` → *Fronta* → obsazení *Linky* → `exp(B)`, který jednotku vrací → *konec* → *odchod*. Příchody a obsluhu zákazníků zadání neuvádí, proto `exp(A)` a `exp(B)`.
+- **M/M/1:** *příchody zákazníků* ⇄ `exp(A)` → *fronta* → obsazení *Linky* → `exp(B)`, který jednotku vrací → *konec* → *odchod*. Příchody a obsluhu zákazníků zadání neuvádí, proto `exp(A)` a `exp(B)`.
 - **Správce je jeden člověk:** jedna značka koluje mezi *správce jinde*, *pomáhá* a *končí*. Další příchod tak nastane až poté, co odejde, a systém je nejvýš M/M/2, jak zadání říká. Generátor ve smyčce by mohl poslat druhého správce, zatímco první ještě pomáhá (vzniklo by M/M/3). Interval `exp(100)` se tu proto měří od jeho odchodu.
 - **Pomoc = jednotka kapacity navíc:** příchod správce přidá do *Linky* druhou značku. Obsluha je pořád `exp(B)`, jen mohou běžet dvě najednou.
 - **Konec pomoci po 20 č. j.:** *pomáhá* → `20` → *končí*. Jednotku nejde vzít, dokud na ní běží obsluha. *Odchod správce* (`p=1`) proto vezme první volnou jednotku dřív, než ji obsadí další transakce, a vrátí správce do *správce jinde*. Rozpracovaná obsluha se normálně dokončí. Zadání to výslovně neříká, ale odejít uprostřed obsluhy by znamenalo vrátit zákazníka do fronty a to by zadání asi zmínilo.
@@ -106,7 +106,7 @@ int main() {
 | *příchody zákazníků* ⇄ `exp(A)` | událost `Generator`, která se znovu plánuje za `Exponential(A)` |
 | značka (zákazník) | proces `Zakaznik` |
 | místo *Linka* (1 značka, se správcem 2) | `Store Linka("Linka", 2)`, druhou jednotku drží `Spravce`, když je jinde |
-| *Fronta* + obsazení | `Enter(Linka, 1)` (fronta je vnitřní fronta skladu) |
+| *fronta* + obsazení | `Enter(Linka, 1)` (fronta je vnitřní fronta skladu) |
 | `exp(B)` se sloučeným uvolněním | `Wait(Exponential(B)); Leave(Linka, 1);` |
 | značka správce (*jinde*, *pomáhá*, *končí*) | proces `Spravce` (jen jeden) |
 | *správce jinde* → `exp(100)` → jednotka do *Linky* + *pomáhá* | `Wait(Exponential(100)); Leave(Linka, 1);` |

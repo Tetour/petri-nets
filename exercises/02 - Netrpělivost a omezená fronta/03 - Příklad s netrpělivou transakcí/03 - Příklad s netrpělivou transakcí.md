@@ -14,8 +14,8 @@ Podobné úlohy: [Netrpělivé požadavky](<../01 - Netrpělivé požadavky/01 -
 
 - **Vymyšlený příklad (patří do odpovědi slovy):** Zákaznická linka s jedním operátorem. Hovory přicházejí v intervalech `exp(4 min)`, hovor s operátorem trvá `exp(3 min)`. Každý volající má jinou trpělivost, rovnoměrně 1–5 min. Když ho operátor do té doby nespojí, zavěsí a odchází bez obsluhy.
 - Příklad má být konkrétní: pojmenované zařízení (*Operátor*), čísla s jednotkami a jasné, kdy transakce odchází. Stačí jedno M/M/1 a jeden mechanismus, víc úloha nežádá.
-- **M/M/1:** *příchody hovorů* ⇄ `exp(4 min)` → *Fronta* → *spojení* (bere značku *Operátora*) → *hovor* → `exp(3 min)`, který *Operátora* vrací → *vyřízen* → *odchod*.
-- **„Netrpělivá transakce ve frontě u zařízení“** = časovaný přechod přímo na místě *Fronta* před zařízením. Každý čekající má vlastní odpočet (slajd 138). Spojení s operátorem značku vezme a odpočet zanikne (slajd 139).
+- **M/M/1:** *příchody hovorů* ⇄ `exp(4 min)` → *fronta* → *spojení* (bere značku *Operátora*) → *hovor* → `exp(3 min)`, který *Operátora* vrací → *vyřízen* → *odchod*.
+- **„Netrpělivá transakce ve frontě u zařízení“** = časovaný přechod přímo na místě *fronta* před zařízením. Každý čekající má vlastní odpočet (slajd 138). Spojení s operátorem značku vezme a odpočet zanikne (slajd 139).
 - **Náhodná trpělivost `1–5 min`:** odpočet se losuje pro každou značku zvlášť, takže každý volající čeká jinak dlouho. Proti úloze [Netrpělivé požadavky](<../01 - Netrpělivé požadavky/01 - Netrpělivé požadavky.md>) (pevných 10) to ukazuje, že doba netrpělivosti může být i náhodná. Pevná doba by byla také správně.
 - Zavěšení vede do místa *zavěsil* a odtud do výstupního přechodu *odchod bez obsluhy*. **Dva výstupní přechody** (*odchod* a *odchod bez obsluhy*) oddělují vyřízené a zavěšené hovory. V modelu se dají počítat zvlášť, což je u takového příkladu typická otázka (kolik volajících zavěsí).
 - **Co netrpělivost není:** odchod hned při obsazeném zařízení (okamžitý přechod s nižší prioritou než obsazení). Transakce pak ve frontě vůbec nečeká; to je odmítnutí (anglicky *balking*), viz cranycrane níže.
@@ -102,11 +102,11 @@ int main() {
 |---|---|
 | *příchody hovorů* ⇄ `exp(4 min)` | událost `Generator`, která se znovu plánuje za `Exponential(4)` |
 | značka (volající) | proces `Hovor` |
-| *Fronta* + *spojení* | `Seize(Operator)` (fronta je vnitřní fronta zařízení) |
+| *fronta* + *spojení* | `Seize(Operator)` (fronta je vnitřní fronta zařízení) |
 | místo *Operátor* (1 značka) | `Facility Operator` |
 | časovaný přechod `exp(3 min)` se sloučeným uvolněním | `Wait(Exponential(3)); Release(Operator);` |
-| odpočet *zavěšení* `1–5 min` pro značku ve *Frontě* | událost `Zaveseni` naplánovaná za `Uniform(1, 5)` před `Seize` |
-| spojení vezme značku z *Fronty*, odpočet zaniká | `delete zaveseni;` hned po `Seize` |
+| odpočet *zavěšení* `1–5 min` pro značku ve *frontě* | událost `Zaveseni` naplánovaná za `Uniform(1, 5)` před `Seize` |
+| spojení vezme značku z *fronty*, odpočet zaniká | `delete zaveseni;` hned po `Seize` |
 | provedení *zavěšení* → *zavěsil* → *odchod bez obsluhy* | `volajici->Cancel()`: vyjme proces z fronty a ukončí ho; počítadlo `zavesilo` |
 | *vyřízen* → *odchod* | konec metody `Behavior()`; počítadlo `vyrizeno` |
 

@@ -43,7 +43,7 @@ Podobné úlohy: [MD1 – střídání 2 a 3](<../02 - MD1 – střídání 2 a 
 <summary>Zobrazit časté chyby</summary>
 <br>
 
-- Časovač `10` na *Frontě*: měří čekání transakce, ne dobu od poslední obsluhy.
+- Časovač `10` na *frontě*: měří čekání transakce, ne dobu od poslední obsluhy.
 - Linka, která po obsluze `5` zůstane ve stavu „5“: po každé obsluze se odpočet musí spustit znovu.
 - Časovač, který běží i během obsluhy (např. vlastní místo spouštěné obsazením linky a nerušené): pak se počítá od začátku obsluhy, ne od jejího konce.
 - `exp(2)` a `exp(5)` místo pevných dob; zadání je M/D/1.

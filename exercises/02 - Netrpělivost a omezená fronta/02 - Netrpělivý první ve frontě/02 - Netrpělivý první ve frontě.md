@@ -16,11 +16,11 @@ Podobné úlohy: [Netrpělivé požadavky](<../01 - Netrpělivé požadavky/01 -
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **M/M/1:** *příchody transakcí* ⇄ `exp(A)` → *Fronta* → … → obsazení *Linky* → `exp(B)`, který *Linku* vrací → *konec* → *odchod*. Příchody a obsluha nemají čísla, proto `exp(A)` a `exp(B)`.
-- **Fronta rozdělená do dvou míst** (nápověda z roku 2017/18): *Fronta* pro ostatní čekající a *První* pro transakci v čele. Přechod *postup* přesouvá transakci z *Fronty* do *První*. Časovaný přechod `4` visí jen na místě *První*. Kdyby visel na *Frontě*, měl by vlastní odpočet každý čekající (slajd 138) a šlo by o [Netrpělivé požadavky](<../01 - Netrpělivé požadavky/01 - Netrpělivé požadavky.md>).
+- **M/M/1:** *příchody transakcí* ⇄ `exp(A)` → *fronta* → … → obsazení *Linky* → `exp(B)`, který *Linku* vrací → *konec* → *odchod*. Příchody a obsluha nemají čísla, proto `exp(A)` a `exp(B)`.
+- **fronta rozdělená do dvou míst** (nápověda z roku 2017/18): *fronta* pro ostatní čekající a *První* pro transakci v čele. Přechod *postup* přesouvá transakci z *fronty* do *První*. Časovaný přechod `4` visí jen na místě *První*. Kdyby visel na *frontě*, měl by vlastní odpočet každý čekající (slajd 138) a šlo by o [Netrpělivé požadavky](<../01 - Netrpělivé požadavky/01 - Netrpělivé požadavky.md>).
 - **Doplněk *1. místo volné*** (1 značka) zajistí, že v *První* je nejvýš jedna transakce. *Postup* jeho značku bere; bez něj by *postup* přesunul do *První* celou frontu.
 - Značku doplňku vrací **obsazení linky** (obsluhovaná transakce už ve frontě není a v čele je hned další) a **netrpělivý odchod**.
-- **Odpočet začíná, až se transakce dostane do čela.** Na „4 časové jednotky čekání“ se počítá jen čekání v čele, předchozí čekání ve *Frontě* ne. Jiné čtení (celková doba čekání) se v Petriho síti modeluje špatně a nápověda o dvou místech míří na toto řešení.
+- **Odpočet začíná, až se transakce dostane do čela.** Na „4 časové jednotky čekání“ se počítá jen čekání v čele, předchozí čekání ve *frontě* ne. Jiné čtení (celková doba čekání) se v Petriho síti modeluje špatně a nápověda o dvou místech míří na toto řešení.
 - Když je linka volná, transakce projde *První* a obsadí linku ve stejném okamžiku. Odpočet se vůbec nerozběhne.
 - **Po 4 jednotkách v čele** přechod *netrpělivost* vezme transakci z *První*, vrátí značku *1. místo volné* a transakce opouští systém vlastním výstupním přechodem *odchod bez obsluhy*. Vést netrpělivost do místa *konec* a odejít společným přechodem *odchod* by bylo také správně, jen by se v nákresu musely křížit hrany.
 - Doba je pevná: `4` (2017/18: `5`, 2019/20: `X`).
@@ -43,7 +43,7 @@ Podobné úlohy: [Netrpělivé požadavky](<../01 - Netrpělivé požadavky/01 -
 <summary>Zobrazit časté chyby</summary>
 <br>
 
-- Časovač přímo na *Frontě*: netrpěliví jsou pak všichni čekající, ne jen první.
+- Časovač přímo na *frontě*: netrpěliví jsou pak všichni čekající, ne jen první.
 - Místo *První* bez doplňku: do čela se přesune celá fronta a odpočet běží všem.
 - Značka doplňku vrácená až koncem obsluhy: během obsluhy pak v čele nikdo není a čekající nejsou netrpěliví vůbec.
 - Netrpělivý odchod, který nevrátí značku doplňku: čelo fronty se zablokuje a síť se zastaví.
@@ -118,7 +118,7 @@ int main() {
 | *příchody transakcí* ⇄ `exp(A)` | událost `Generator`, která se znovu plánuje za `Exponential(A)` |
 | značka (transakce) | proces `Transakce` |
 | *1. místo volné* (1 značka) | `Store Celo(1)`; `Store`, ne `Facility`, protože značku vrací i událost netrpělivosti, ne jen proces, který ji vzal |
-| *Fronta* + *postup* | `Enter(Celo, 1)` (*Fronta* je vnitřní fronta skladu `Celo`) |
+| *fronta* + *postup* | `Enter(Celo, 1)` (*fronta* je vnitřní fronta skladu `Celo`) |
 | místo *První* + obsazení *Linky* | `Seize(Linka)` (*První* je vnitřní fronta linky, díky `Celo` v ní je nejvýš jedna transakce) |
 | odpočet *netrpělivost* `4` pro značku v *První* | událost `Netrpelivost`, naplánovaná po vstupu do *První* |
 | obsazení vezme značku z *První* a vrací doplněk | `delete netrp; Leave(Celo, 1);` hned po `Seize` |

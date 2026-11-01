@@ -14,7 +14,7 @@ Podobné úlohy: [Pizzerie s rozvozem](<../../11 - Doprava a dávky/03 - Pizzeri
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **Příchody** modeluje místo *příchody zákazníků* s jednou značkou ve smyčce s `exp(10 min)`; zákazník čeká v místě *Fronta*.
+- **Příchody** modeluje místo *příchody zákazníků* s jednou značkou ve smyčce s `exp(10 min)`; zákazník čeká v místě *fronta*.
 - **Transakce** je zákazník spolu se svou pizzou: čeká u stánku, dokud pizzu nedostane, pak odchází.
 - **Pizzař** je jedno zařízení, které se zabírá dvakrát: na přípravu (`3–5 min`, vrací ho) a na vyndání a předání (`1 min`). Mezi tím ho pizza nepotřebuje, pečení je časovaný přechod bez pizzaře.
 - **Pec** je sklad se 4 značkami. Místo v peci se zabírá **už při zahájení přípravy** spolu s pizzařem (jeden přechod *objednávka* bere obojí). Pizzař tak nikdy nezačne připravovat pizzu, kterou by pak neměl kam dát. Místo v peci se vrací až po předání (`1 min` vrací pizzaře i místo v *Peci*).
@@ -101,7 +101,7 @@ int main() {
 |---|---|
 | *příchody zákazníků* ⇄ `exp(10 min)` | událost `Generator`, která se znovu plánuje za `Exponential(10)` |
 | značka (zákazník s pizzou) | proces `Zakaznik` |
-| místo *Pizzař* (1 značka), *Fronta* | `Facility Pizzar` a jeho vnitřní fronta |
+| místo *Pizzař* (1 značka), *fronta* | `Facility Pizzar` a jeho vnitřní fronta |
 | místo *Pec* (4 značky) | `Store Pec("Pec", 4)` |
 | *objednávka* (bere pizzaře i místo v peci) | `Enter(Pec, 1); Seize(Pizzar);`: postupně, protože SIMLIB neumí zabrat dvě zařízení naráz. Opačné pořadí by mohlo uváznout: pizzař by čekal na místo v plné peci, které uvolní jen on sám. |
 | `3–5 min` se sloučeným uvolněním pizzaře | `Wait(Uniform(3, 5)); Release(Pizzar);` |
@@ -134,6 +134,6 @@ int main() {
 **Existující řešení:**
 
 - **Hrubý (str. 2):** stejná síť. Generátor kreslí jako přechod `exp(10min)` bez místa. Na časovaných přechodech má jen názvy (*příprava*, *pečení*, *vytažení*), časy 3–5, 4 a 1 min nedopsal. Místa *obsluha* (pizzař) a *kapacita pece* (4) jdou do společného obsazení („Dává smysl alokovat si prostor v peci hned na začátku.“), vytažení má `p=1` a vrací obojí.
-- **Hrubý, „Alternativně“ (str. 2 dole):** pec se zabírá až po přípravě. Pizza čeká v místě *Fronta na pec* a pec obsadí přechod s `p=1`. Je to také přípustné, ale pizza pak může čekat „mimo pec“, dokud se místo neuvolní. Hrubý proto doporučuje první variantu.
+- **Hrubý, „Alternativně“ (str. 2 dole):** pec se zabírá až po přípravě. Pizza čeká v místě *fronta na pec* a pec obsadí přechod s `p=1`. Je to také přípustné, ale pizza pak může čekat „mimo pec“, dokud se místo neuvolní. Hrubý proto doporučuje první variantu.
 
 </details>

@@ -9,13 +9,13 @@ net.timed("prichod", (1.5, 0), "exp(A)")
 net.loop("gen", "prichod")
 net.place("prisel", (3, 0), label="přišel", label_pos="above")
 net.immediate("vstup", (4.5, 0), p=1, param_pos="above")
-net.place("fronta", (6, 0), label="Fronta", label_pos="above")
+net.place("fronta", (6, 0), label="fronta", label_pos="above")
 net.chain("prichod", "prisel", "vstup", "fronta")
 net.immediate("odmitnuti", (3, -1.8), p=0, exit=True, label="odmítnutí", label_pos="below",
               param_pos="left")
 net.arc("prisel", "odmitnuti")
 
-# doplněk Fronty: 10 volných míst, vstup bere, obsazení linky vrací
+# doplněk fronty: 10 volných míst, vstup bere, obsazení linky vrací
 net.place("volno", (6, -1.8), tokens=10, label="volná místa ve frontě", label_pos="below")
 net.arc("volno", "vstup", via=[(4.5, -1.8)])
 

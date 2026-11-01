@@ -12,7 +12,7 @@ Podobné úlohy: [Cestovní kancelář](<../08 - Cestovní kancelář/08 - Cesto
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **Příchody:** místo *příchody klientů* ve smyčce s `exp(10 min)` vkládá klienty do *Fronty*. Mimo pracovní dobu nemá místo značku, takže nikdo nepřichází.
+- **Příchody:** místo *příchody klientů* ve smyčce s `exp(10 min)` vkládá klienty do *fronty*. Mimo pracovní dobu nemá místo značku, takže nikdo nepřichází.
 - **Přepážky** jsou sklad s 3 značkami. Obsazení bere jednu, `exp(15 min)` ji vrací a klient odchází přes *hotovo*.
 - **Dodatečné přepážky** tvoří cyklus nad hlavní řadou: *otevři* vezme *nepřidáno*, otestuje frontu hranami s váhou 10 tam a zpět a přidá 3 značky do *Přepážek* a značku do *přidáno*. Po `2 h` přijdou 3 značky do *chci 3 zpět* a přechod *zavři* (`p=1`) zavírá po jedné každou volnou přepážku (→ *zavřeno*), rozpracovaný klient se dokončí. Po třech zavřených vrátí *obnov stav* značku *nepřidáno*.
 - **„Dosáhne počtu 10“** = alespoň 10, tedy váha 10, ne 11.
@@ -21,7 +21,7 @@ Podobné úlohy: [Cestovní kancelář](<../08 - Cestovní kancelář/08 - Cesto
   - klienti ve frontě odcházejí: smyčka `p=1` na *konec dne*, dokud je fronta neprázdná. Obsluhovaní klienti se dokončí, protože jejich značky jsou v *obsluze*, ne ve frontě;
   - pak (p=0) *zavření úřadu* vezme značku místu *příchody klientů*, příchody se zastaví. `16 h` značku vrátí;
   - dodatečné přepážky: `8 h` pošle signál do *zavírání* (dlouhá hrana kolem pravého okraje). Jsou-li přepážky otevřené (*přidáno*), přechod `p=1` zruší zbývající část dvou hodin (vezme značku, na které běží odpočet `2 h`) a rovnou dá 3 značky do *chci 3 zpět*. Volné přepážky se tak zavřou hned, obsazené po dokončení klienta. Nejsou-li otevřené (nebo se už zavírají), signál zanikne přechodem *nejsou otevřené* (p=0).
-- Testovací hrany vedou jen na místa bez vlastního odpočtu (*Fronta*, *konec dne*). Odpočet `8 h` je na *pracovní době*, kterou nic netestuje, takže se nepřerušuje.
+- Testovací hrany vedou jen na místa bez vlastního odpočtu (*fronta*, *konec dne*). Odpočet `8 h` je na *pracovní době*, kterou nic netestuje, takže se nepřerušuje.
 
 </details>
 
@@ -148,10 +148,10 @@ int main() {
 |---|---|
 | *příchody klientů* ⇄ `exp(10 min)` | událost `Prichody`, která se znovu plánuje za `Exponential(10)` |
 | značka (klient) | proces `Klient` |
-| *Fronta* + *Přepážky* | `Enter(Prepazky, 1)`, `Store Prepazky("Přepážky", 6, &Fronta)` |
+| *fronta* + *Přepážky* | `Enter(Prepazky, 1)`, `Store Prepazky("Přepážky", 6, &Fronta)` |
 | `exp(15 min)` se sloučeným uvolněním, *hotovo* → *odchod* | `Wait(Exponential(15)); Leave(Prepazky, 1);` a konec `Behavior()` |
 | *nepřidáno* (3 přepážky mimo provoz) | proces `Dodatecne` drží 3 jednotky skladu (`Enter(Prepazky, 3)`) |
-| *otevři* (test *Fronty* vahou 10) → *přidáno* | `WaitUntil(Fronta.Length() >= 10); Leave(Prepazky, 3);` |
+| *otevři* (test *fronty* vahou 10) → *přidáno* | `WaitUntil(Fronta.Length() >= 10); Leave(Prepazky, 3);` |
 | `2 h` → *chci 3 zpět* | `Wait(2 * 60)` |
 | *zavři* (`p=1`) → *zavřeno*, *obnov stav* | `for (…) Enter(Prepazky, 1);` s prioritou procesu 1 (předbíhá klienty ve frontě) |
 | *pracovní doba* `8 h` / *volno* `16 h` | událost `PracovniDoba`, střídá se po `8 * 60` a `16 * 60` |

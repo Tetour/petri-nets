@@ -14,10 +14,10 @@ Podobné úlohy: [Netrpělivé požadavky](<../01 - Netrpělivé požadavky/01 -
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **M/M/1:** *příchody transakcí* ⇄ `exp(A)` → *přišel* → *vstup* → *Fronta* → obsazení *Linky* → `exp(B)`, který *Linku* vrací → *konec* → *odchod*. Příchody a obsluha nemají čísla, proto `exp(A)` a `exp(B)`.
+- **M/M/1:** *příchody transakcí* ⇄ `exp(A)` → *přišel* → *vstup* → *fronta* → obsazení *Linky* → `exp(B)`, který *Linku* vrací → *konec* → *odchod*. Příchody a obsluha nemají čísla, proto `exp(A)` a `exp(B)`.
 - **Plná fronta = odmítnutí:** příchozí transakce čeká v místě *přišel* jen okamžik. *Vstup* má `p=1`, takže se provede vždy, když je volné místo. *Odmítnutí* (`p=0`) přijde na řadu jen při plné frontě a transakce hned opouští systém. Bez priority by se mezi oběma přechody losovalo i při volném místě.
 - *Odmítnutí* je výstupní přechod: i odmítnutá transakce opouští systém a má to být vidět.
-- **Omezení přes doplňkové místo:** *volná místa ve frontě* s 10 značkami. Vstup do *Fronty* jednu značku vezme, obsazení *Linky* ji vrátí. Platí *Fronta* + *volná místa ve frontě* = 10. Kapacita místa (`c=10`) se v kurzové notaci nepoužívá.
+- **Omezení přes doplňkové místo:** *volná místa ve frontě* s 10 značkami. Vstup do *fronty* jednu značku vezme, obsazení *Linky* ji vrátí. Platí *fronta* + *volná místa ve frontě* = 10. Kapacita místa (`c=10`) se v kurzové notaci nepoužívá.
 - **Do fronty se počítají jen čekající**, obsluhovaná transakce ne. Kdyby se mělo omezit 10 transakcí v celém systému, vracela by značku až dokončená obsluha (`exp(B)`).
 
 </details>
@@ -101,16 +101,16 @@ int main() {
 |---|---|
 | *příchody transakcí* ⇄ `exp(A)` | událost `Generator`, která se znovu plánuje za `Exponential(A)` |
 | značka (transakce) v místě *přišel* | nový proces `Transakce` na začátku `Behavior()` |
-| *volná místa ve frontě* (10 značek) | `Store Volno(10)`: volná kapacita = značky v místě, obsazená = transakce ve *Frontě* |
+| *volná místa ve frontě* (10 značek) | `Store Volno(10)`: volná kapacita = značky v místě, obsazená = transakce ve *frontě* |
 | *odmítnutí* `p=0` | `if (Volno.Full()) { …; return; }` |
 | *vstup* `p=1` | `Enter(Volno, 1)` (při volném místě nečeká) |
-| *Fronta* + obsazení *Linky*, které vrací volné místo | `Seize(Linka); Leave(Volno, 1);` |
+| *fronta* + obsazení *Linky*, které vrací volné místo | `Seize(Linka); Leave(Volno, 1);` |
 | místo *Linka* (1 značka), `exp(B)` se sloučeným uvolněním | `Facility Linka`, `Wait(Exponential(B)); Release(Linka);` |
 | *konec* → *odchod* | konec metody `Behavior()` |
 
 Bez doplňkového skladu by stačila podmínka `if (Linka.QueueLen() >= 10)`, která přímo testuje délku fronty linky; `Store Volno` je ale přesný protějšek místa *volná místa ve frontě*.
 
-**Kontrola simulací.** Petriho síť: *Fronta* + *volná místa ve frontě* = 10, *Linka* + obsluhovaná transakce = 1, všechny přechody se provádějí (`make check`); s přetíženou linkou (`A = 5`, `B = 6`) se fronta často zaplní a odmítnuto bylo 18,7 % příchozích. SIMLIB model: v jednom běhu (10⁶ časových jednotek) bylo odmítnuto 18,6 % transakcí, linka byla vytížena na 97,5 % a ve frontě čekalo průměrně 6,5 transakce. Teorie (M/M/1/11, ρ = 1,2: 10 míst ve frontě a 1 v obsluze) dává pravděpodobnost odmítnutí (1 − ρ)ρ¹¹ / (1 − ρ¹²) = 18,8 %, vytížení 97,5 % a průměrnou frontu 6,5 (`make simlib`).
+**Kontrola simulací.** Petriho síť: *fronta* + *volná místa ve frontě* = 10, *Linka* + obsluhovaná transakce = 1, všechny přechody se provádějí (`make check`); s přetíženou linkou (`A = 5`, `B = 6`) se fronta často zaplní a odmítnuto bylo 18,7 % příchozích. SIMLIB model: v jednom běhu (10⁶ časových jednotek) bylo odmítnuto 18,6 % transakcí, linka byla vytížena na 97,5 % a ve frontě čekalo průměrně 6,5 transakce. Teorie (M/M/1/11, ρ = 1,2: 10 míst ve frontě a 1 v obsluze) dává pravděpodobnost odmítnutí (1 − ρ)ρ¹¹ / (1 − ρ¹²) = 18,8 %, vytížení 97,5 % a průměrnou frontu 6,5 (`make simlib`).
 
 </details>
 

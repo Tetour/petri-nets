@@ -12,11 +12,11 @@ Podobné úlohy: [Přerušení příchodů při plné frontě](<../05 - Přeruš
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **M/M/3:** *příchody transakcí* ⇄ `exp(A)` → *Fronta* → obsazení *Linek* → obsluha `exp(B)`, která linku vrací → *konec* → *odchod*. Místo *Linky* má tři značky, obsazení i obsluha jsou jen jedny. Počet obsazených linek je počet značek v místě obsluhy. Příchody a obsluhu zadání neuvádí, proto `exp(A)` a `exp(B)`.
+- **M/M/3:** *příchody transakcí* ⇄ `exp(A)` → *fronta* → obsazení *Linek* → obsluha `exp(B)`, která linku vrací → *konec* → *odchod*. Místo *Linky* má tři značky, obsazení i obsluha jsou jen jedny. Počet obsazených linek je počet značek v místě obsluhy. Příchody a obsluhu zadání neuvádí, proto `exp(A)` a `exp(B)`.
 - **Přerušení příchodů:** *zastav* přesune značku z *příchodů transakcí* do *zastaveno*, takže odpočet `exp(A)` zanikne. Podmínka „všechny linky obsazené“ je test s váhou 3 na místě obsluhy. Prázdné *Linky* testovat nejde (bylo by potřeba inhibiční hrany, kterou Hrubý nechce).
 - **Rozběh:** *rozběh* vrátí značku ze *zastaveno* do *příchodů transakcí*, když jsou v *Linkách* aspoň 2 značky (test s váhou 2). Mezi tím, tedy při jedné volné lince, se nic nemění: zastavené příchody stojí, běžící běží. Tím vzniká hystereze ze zadání.
 - Značka v *příchodech transakcí*, nebo v *zastaveno* zároveň hlídá, aby se *zastav* ani *rozběh* neprovedly dvakrát po sobě.
-- **Fronta** v tomto systému čekající transakce nikdy nemá: příchody běží jen při volné lince a příchozí ji hned obsadí. Místo je tu, aby byl model čitelný jako M/M/3.
+- **fronta** v tomto systému čekající transakce nikdy nemá: příchody běží jen při volné lince a příchozí ji hned obsadí. Místo je tu, aby byl model čitelný jako M/M/3.
 - **Pozor na test na místě obsluhy:** dvojice hran s váhou 3 značky formálně vezme a hned vrátí. Podle slajdu 139 by tím odpočty obsluh mohly začít znovu. U exponenciální obsluhy na tom nezáleží (rozložení nemá paměť). Kdo se tomu chce vyhnout, naváže zastavení na obsazení poslední volné linky: druhé obsazení s `p=0`, které navíc bere značku *příchodů transakcí*, a běžné obsazení s `p=1` jen při aspoň 2 volných linkách (hrana 2 z *Linek*, 1 zpět). Kreslí se to ale hůř.
 
 </details>
@@ -39,7 +39,7 @@ Podobné úlohy: [Přerušení příchodů při plné frontě](<../05 - Přeruš
 
 - Rozběh při jedné volné lince (test s váhou 1, nebo rovnou návrat značky po skončení obsluhy). Zadání chce aspoň dvě volné.
 - Zastavení i rozběh bez řídicí značky: testy zůstávají splněné a přechody se provádějí pořád dokola.
-- Zastavení odebráním transakcí z *Fronty* nebo blokováním obsazení místo odebrání značky *příchodů transakcí*.
+- Zastavení odebráním transakcí z *fronty* nebo blokováním obsazení místo odebrání značky *příchodů transakcí*.
 - Inhibiční hrana z *Linek* na zastavení. Funguje, ale Hrubý ji nechce, test na místě obsluhy dělá totéž.
 
 </details>
@@ -111,13 +111,13 @@ int main() {
 | značka v *příchodech transakcí*, nebo v *zastaveno* | `bool zastaveno` (generátor bez značky nikoho nevytvoří) |
 | značka (transakce) | proces `Transakce` |
 | místo *Linky* (3 značky) | `Store Linky("Linky", 3)` |
-| *Fronta* + obsazení | `Enter(Linky, 1)` (fronta je vnitřní fronta skladu) |
+| *fronta* + obsazení | `Enter(Linky, 1)` (fronta je vnitřní fronta skladu) |
 | `exp(B)` se sloučeným uvolněním | `Wait(Exponential(B)); Leave(Linky, 1);` |
 | *zastav*: test 3 na místě obsluhy + značka příchodů | `WaitUntil(Linky.Full()); zastaveno = true;` |
 | *rozběh*: test 2 na *Linkách* + značka v *zastaveno* | `WaitUntil(Linky.Free() >= 2); zastaveno = false;` |
 | *konec* → *odchod* | konec metody `Behavior()` transakce |
 
-**Kontrola simulací.** Petriho síť: *Linky* + obsluhované = 3, *příchody transakcí* + *zastaveno* = 1 a ve *Frontě* nikdy nikdo nečeká; všechny přechody se provádějí (`make check`). Příchody se zastaví asi u třetiny transakcí. SIMLIB model: v jednom běhu (10⁶ časových jednotek) přišlo 201 651 transakcí a příchody se zastavily 59 203krát (jednou na 3,4 příchodu). Fronta skladu zůstala prázdná a průměrně byly obsazené 1,61 linky, což odpovídá 201 651 × 8 / 10⁶ = 1,61 (`make simlib`).
+**Kontrola simulací.** Petriho síť: *Linky* + obsluhované = 3, *příchody transakcí* + *zastaveno* = 1 a ve *frontě* nikdy nikdo nečeká; všechny přechody se provádějí (`make check`). Příchody se zastaví asi u třetiny transakcí. SIMLIB model: v jednom běhu (10⁶ časových jednotek) přišlo 201 651 transakcí a příchody se zastavily 59 203krát (jednou na 3,4 příchodu). Fronta skladu zůstala prázdná a průměrně byly obsazené 1,61 linky, což odpovídá 201 651 × 8 / 10⁶ = 1,61 (`make simlib`).
 
 </details>
 

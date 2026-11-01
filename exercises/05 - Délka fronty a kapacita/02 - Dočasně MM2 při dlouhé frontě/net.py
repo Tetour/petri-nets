@@ -7,7 +7,7 @@ net.params = {"A": 5, "B": 6}
 net.place("gen", (0, 0), tokens=1, label="příchody transakcí", label_pos="left")
 net.timed("prichod", (1.5, 0), "exp(A)", param_pos="below")
 net.loop("gen", "prichod")
-net.place("fronta", (3, 0), label="Fronta", label_pos="below")
+net.place("fronta", (3, 0), label="fronta", label_pos="below")
 net.place("linka", (4.5, 1.9), tokens=1, label="Linka", label_pos="above left")
 net.immediate("obsaz", (4.5, 0))
 net.place("obsluha", (6, 0))
@@ -19,7 +19,7 @@ net.place("konec", (9, 0))
 net.immediate("odchod", (10.5, 0), exit=True, label="odchod")
 net.chain("obsl", "konec", "odchod")
 
-# fronta přesáhne 5 (aspoň 6): přidej druhou jednotku Linky; test přímo nad Frontou
+# fronta přesáhne 5 (aspoň 6): přidej druhou jednotku Linky; test přímo nad frontou
 net.place("mm1", (1.5, 1.9), tokens=1, label="M/M/1", label_pos="left")
 net.immediate("pridej", (3, 1.9), label="přidej", label_pos="above left")
 net.loop("fronta", "pridej", w=6, bend=25)

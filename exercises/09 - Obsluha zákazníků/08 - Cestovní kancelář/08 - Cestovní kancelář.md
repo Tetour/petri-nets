@@ -12,7 +12,7 @@ Podobné úlohy: [Úřad s dodatečnými přepážkami](<../15 - Úřad s dodate
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **Příchody** modeluje místo *příchody klientů* s jednou značkou ve smyčce s `exp(10 min)`; klient čeká v místě *Fronta*.
+- **Příchody** modeluje místo *příchody klientů* s jednou značkou ve smyčce s `exp(10 min)`; klient čeká v místě *fronta*.
 - **3 přepážky** jsou sklad se 3 značkami (místo *Přepážky*); obsazení bere značku, `exp(8 min)` ji vrací (uvolnění je s ním sloučené). Otevření dvou dalších přidá do téhož místa 2 značky (hrana s váhou 2). Přepážky jsou stejné, takže nevadí, že se pak zavřou „nějaké“ dvě, ne nutně ty přidané.
 - **„alespoň 5 čekajících“** je test hranami váhy 5 tam a zpět: přechod *otevři* frontu jen zkontroluje a nikoho z ní neodebere. Na „alespoň 5“ stačí váha 5, ne 6.
 - **Stav nepřidáno / přidáno:** otevření potřebuje značku *nepřidáno*. Bez ní by se při frontě ≥ 5 přechod provedl znovu a znovu a přidával by další a další přepážky.
@@ -115,7 +115,7 @@ int main() {
 | *příchody klientů* ⇄ `exp(10 min)` | událost `Generator`, která se znovu plánuje za `Exponential(10)` |
 | značka (klient) | proces `Klient` |
 | místo *Přepážky* (3 značky, otevření přidá 2) | `Store Prepazky` s kapacitou 5, z níž 2 jednotky drží `Rizeni`, dokud jsou dočasné přepážky zavřené |
-| *Fronta* + obsazení | `Enter(Prepazky, 1)` (fronta je vnitřní fronta skladu) |
+| *fronta* + obsazení | `Enter(Prepazky, 1)` (fronta je vnitřní fronta skladu) |
 | `exp(8 min)` se sloučeným uvolněním | `Wait(Exponential(8)); Leave(Prepazky, 1);` |
 | značka řízení (*nepřidáno* …) | proces `Rizeni` (jeden, takže se přepážky neotevřou dvakrát) |
 | test fronty hranami s váhou 5 | `WaitUntil(Prepazky.QueueLen() >= 5)` |
@@ -150,7 +150,7 @@ int main() {
 
 **Existující řešení:**
 
-- **Hrubý, varianta A (str. 5):** síť výše je jeho řešení překreslené: „nepřidáno“ → přechod s hranami váhy 5 na *Fronta*, výstup s váhou 2 do *přepážky* (3) → místo → `1hod` → váha 2 → „budu chtít dvě zpátky“ → přechod, který bere přepážku → místo → váha 2 → přechod s poznámkou, že dostal dvě zpátky a obnovuje stav → *nepřidáno*. Ke skladu 3 + 2 přepážek si poznamenal, že takové míchání základních a dodatečných přepážek je přijatelné, a ke stavu *nepřidáno*, že je „nutno explicitně stavem odlišit přidáno/nepřidáno“. Rozdíl: u přechodu, který bere přepážku zpět, nemá napsanou prioritu. Bez `p=1` soupeří se zabráním přepážky klientem (náhodná volba), takže zavření se při dlouhé frontě může zbytečně odkládat. Generátor kreslí bez místa.
+- **Hrubý, varianta A (str. 5):** síť výše je jeho řešení překreslené: „nepřidáno“ → přechod s hranami váhy 5 na *fronta*, výstup s váhou 2 do *přepážky* (3) → místo → `1hod` → váha 2 → „budu chtít dvě zpátky“ → přechod, který bere přepážku → místo → váha 2 → přechod s poznámkou, že dostal dvě zpátky a obnovuje stav → *nepřidáno*. Ke skladu 3 + 2 přepážek si poznamenal, že takové míchání základních a dodatečných přepážek je přijatelné, a ke stavu *nepřidáno*, že je „nutno explicitně stavem odlišit přidáno/nepřidáno“. Rozdíl: u přechodu, který bere přepážku zpět, nemá napsanou prioritu. Bez `p=1` soupeří se zabráním přepážky klientem (náhodná volba), takže zavření se při dlouhé frontě může zbytečně odkládat. Generátor kreslí bez místa.
 - **Hrubý, varianta B (str. 6), „Má odlišné chování od varianty A!“:** 3 základní přepážky a zvlášť místo se 2 dodatečnými přepážkami s vlastním obsazením a obsluhou, obě větve končí v *konec*. Otevření (značka v místě *lze otevřít* + test fronty váhou 5) vloží značku do místa *otevřeno*, které obsazení dodatečné přepážky testuje (hrana tam a zpět), a spustí „Nezávislý proces odpočtu 1h“. Ten je samostatný proto, že test značku *otevřeno* pokaždé vezme a vrátí, takže časovač přímo na tomto místě by se s každým klientem spouštěl znovu. Po hodině přechod odebere značku *otevřeno* a vrátí *lze otevřít*: noví klienti už k dodatečným přepážkám nejdou a rozpracovaní se doobslouží. Rozdíly oproti A:
   - zavírají se vždy právě ty dvě dodatečné přepážky (A zavře libovolné dvě, které se uvolní první);
   - nové otevření je možné hned po hodině, i když u dodatečných přepážek ještě někdo je (v A až po vrácení obou přepážek);

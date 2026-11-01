@@ -12,13 +12,13 @@ Podobné úlohy: [Centrum MM1 s rychlým režimem](<../../09 - Obsluha zákazní
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- Požadavky přicházejí z *příchodů požadavků* ve smyčce s `exp(30 min)` do *Fronty*.
-- **Montovna a lakovna** jsou dvě zařízení (místa s jednou značkou) za sebou: obsazení, `10–15 min`, resp. `15–20 min`, a uvolnění sloučené s časovaným přechodem. Smontovaný meziprodukt jde do *Fronty lakovny*, nalakovaný do *hotovo* a odchází přechodem *odchod*.
-- **„Dosáhne délky 3“** = test hranami s váhou 3 do přechodu a zpět. Z *Fronty lakovny* se nic neodebere. Lakovaný meziprodukt je v jiném místě, takže se do délky fronty nepočítá („3 čekající“).
+- Požadavky přicházejí z *příchodů požadavků* ve smyčce s `exp(30 min)` do *fronty*.
+- **Montovna a lakovna** jsou dvě zařízení (místa s jednou značkou) za sebou: obsazení, `10–15 min`, resp. `15–20 min`, a uvolnění sloučené s časovaným přechodem. Smontovaný meziprodukt jde do *fronty lakovny*, nalakovaný do *hotovo* a odchází přechodem *odchod*.
+- **„Dosáhne délky 3“** = test hranami s váhou 3 do přechodu a zpět. Z *fronty lakovny* se nic neodebere. Lakovaný meziprodukt je v jiném místě, takže se do délky fronty nepočítá („3 čekající“).
 - **Odstavení** vezme značku *Montovny* a přesune ji do *Odstaveno*. Tím je montovna mimo provoz a přechod se nemůže provést znovu. Priorita `p=1` zajistí, že odstavení vyhraje nad obsazením montovny dalším požadavkem.
-- **Rozpracovaná výroba v tu chvíli ve skutečnosti nikdy není.** Fronta lakovny roste jen dokončením montáže a v témž okamžiku se montovna uvolní. Odstavení s `p=1` ji tedy zabere dřív, než ji obsadí další požadavek. Přechod *vyhození montáže* je v síti proto, že ho zadání výslovně požaduje (a hodnotitel ho bude hledat). Vezme rozpracovaný požadavek (odpočet montáže zanikne), vrátí ho do *Fronty* a značku montovny pošle rovnou do *Odstaveno*. Je to stejný vzor jako přerušení obsluhy poruchou. V simulaci se neprovede ani jednou.
-- **Obnovení** má `p=0` a testuje volnou *Lakovnu*. Obsazení lakovny má `p=1`, takže dokud je ve *Frontě lakovny* něco, vyhraje obsazení. Obnovení se tedy provede, až je fronta prázdná *a* lakovna volná, a vrátí značku z *Odstaveno* do *Montovny*. Montovna se tak rozjede až po nalakování posledního meziproduktu, nejvýš o jedno lakování (15–20 min) později než v okamžiku, kdy se fronta vyprázdní. Přesný test prázdné fronty bez inhibiční hrany by potřeboval doplňkové místo (počet volných míst ve frontě, nejvýš 3), což je zbytečně složité.
-- Požadavky během odstavení dál přicházejí a čekají ve *Frontě*.
+- **Rozpracovaná výroba v tu chvíli ve skutečnosti nikdy není.** Fronta lakovny roste jen dokončením montáže a v témž okamžiku se montovna uvolní. Odstavení s `p=1` ji tedy zabere dřív, než ji obsadí další požadavek. Přechod *vyhození montáže* je v síti proto, že ho zadání výslovně požaduje (a hodnotitel ho bude hledat). Vezme rozpracovaný požadavek (odpočet montáže zanikne), vrátí ho do *fronty* a značku montovny pošle rovnou do *Odstaveno*. Je to stejný vzor jako přerušení obsluhy poruchou. V simulaci se neprovede ani jednou.
+- **Obnovení** má `p=0` a testuje volnou *Lakovnu*. Obsazení lakovny má `p=1`, takže dokud je ve *frontě lakovny* něco, vyhraje obsazení. Obnovení se tedy provede, až je fronta prázdná *a* lakovna volná, a vrátí značku z *Odstaveno* do *Montovny*. Montovna se tak rozjede až po nalakování posledního meziproduktu, nejvýš o jedno lakování (15–20 min) později než v okamžiku, kdy se fronta vyprázdní. Přesný test prázdné fronty bez inhibiční hrany by potřeboval doplňkové místo (počet volných míst ve frontě, nejvýš 3), což je zbytečně složité.
+- Požadavky během odstavení dál přicházejí a čekají ve *frontě*.
 
 </details>
 
@@ -131,16 +131,16 @@ int main() {
 |---|---|
 | *příchody požadavků* ⇄ `exp(30 min)` | událost `Generator`, která se znovu plánuje za `Exponential(30)` |
 | značka (požadavek) | proces `Pozadavek` |
-| *Fronta* + obsazení *Montovny* | `Seize(Montovna)` (fronta je vnitřní fronta zařízení) |
+| *fronta* + obsazení *Montovny* | `Seize(Montovna)` (fronta je vnitřní fronta zařízení) |
 | `10–15 min` se sloučeným uvolněním | `Wait(Uniform(10, 15)); … Release(Montovna);` |
-| *Fronta lakovny* + obsazení *Lakovny* (`p=1`) | `Seize(Lakovna)` |
+| *fronta lakovny* + obsazení *Lakovny* (`p=1`) | `Seize(Lakovna)` |
 | `15–20 min` se sloučeným uvolněním | `Wait(Uniform(15, 20)); Release(Lakovna);` |
 | *odstavení* `p=1` (test váhou 3) → *Odstaveno* | proces `Rizeni` s prioritou 1: `WaitUntil(Lakovna.QueueLen() >= 3); Seize(Montovna);` |
 | *vyhození montáže* | `p->vyhozen = true; p->Activate();` a požadavek se vrátí do fronty (`Release`, znovu `Seize`) |
 | *obnovení* (test volné *Lakovny*) | `WaitUntil(!Lakovna.Busy() && Lakovna.QueueLen() == 0); Release(Montovna);` |
 | *hotovo* → *odchod* | konec metody `Behavior()` požadavku |
 
-**Kontrola simulací.** Petriho síť: *Montovna* + montáž + *Odstaveno* = 1, *Lakovna* + lakování = 1, *Fronta lakovny* nikdy nepřesáhne 3 a všechny přechody kromě *vyhození montáže* se provádějí (`make check`). Odstavení nastává zhruba jednou za 50 hodin a pokaždé po něm následuje obnovení. *Vyhození montáže* se podle očekávání neprovede. SIMLIB model: za 10 000 h nastalo odstavení 213× (jednou za 47 h), fronta lakovny měla nejvýš 3 meziprodukty a lakovna byla vytížena na 58 % (teoreticky 17,5 / 30 = 58 %). V SIMLIB předá `Release` montovnu dalšímu požadavku hned, takže řízení ji při odstavení najde obsazenou a „vyhodí“ montáž, která ještě nezačala (0 min práce); to odpovídá tomu, že v síti odstavení s `p=1` předběhne obsazení montovny. Rozpracovaná montáž (s nenulovou prací) se nevyhodila ani jednou (`make simlib`).
+**Kontrola simulací.** Petriho síť: *Montovna* + montáž + *Odstaveno* = 1, *Lakovna* + lakování = 1, *fronta lakovny* nikdy nepřesáhne 3 a všechny přechody kromě *vyhození montáže* se provádějí (`make check`). Odstavení nastává zhruba jednou za 50 hodin a pokaždé po něm následuje obnovení. *Vyhození montáže* se podle očekávání neprovede. SIMLIB model: za 10 000 h nastalo odstavení 213× (jednou za 47 h), fronta lakovny měla nejvýš 3 meziprodukty a lakovna byla vytížena na 58 % (teoreticky 17,5 / 30 = 58 %). V SIMLIB předá `Release` montovnu dalšímu požadavku hned, takže řízení ji při odstavení najde obsazenou a „vyhodí“ montáž, která ještě nezačala (0 min práce); to odpovídá tomu, že v síti odstavení s `p=1` předběhne obsazení montovny. Rozpracovaná montáž (s nenulovou prací) se nevyhodila ani jednou (`make simlib`).
 
 </details>
 

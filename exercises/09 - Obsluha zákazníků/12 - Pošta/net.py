@@ -6,7 +6,7 @@ net = Net("Pošta (půlsemestrálky 2014–19, Z19)")
 net.place("gen", (0, 0), tokens=1, label="příchody klientů", label_pos="above")
 net.timed("prichod", (1.4, 0), "exp(5 min)", param_pos="below")
 net.loop("gen", "prichod")
-net.place("fronta", (3.2, 0), label="Fronta", label_pos="above left")
+net.place("fronta", (3.2, 0), label="fronta", label_pos="above left")
 net.arc("prichod", "fronta")
 
 # přepážka A (horní řada): pošťák nad ní

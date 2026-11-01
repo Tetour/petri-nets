@@ -12,13 +12,13 @@ Podobné úlohy: [Porucha zničí obsluhu nebo počká](<../../03 - Poruchy/06 -
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **Příchody** modeluje místo *příchody zákazníků* s jednou značkou ve smyčce s `exp(10 min)`; zákazník čeká v místě *Fronta*.
+- **Příchody** modeluje místo *příchody zákazníků* s jednou značkou ve smyčce s `exp(10 min)`; zákazník čeká v místě *fronta*.
 - **Automat** je místo s jednou značkou; obsazení ji bere, časovaný přechod `exp(2 min)` ji vrací (uvolnění je s ním sloučené) a obsloužený zákazník jde do místa *ven*.
 - **Cyklus poruchy** je jedna značka, která obíhá: *bez poruchy* → `5–6 h` (rovnoměrně) → *porucha* → zásah → *oprava* → `1 h` → zpět *bez poruchy*. Další porucha se tak počítá od konce opravy, jak chce zadání. Počáteční značka v *bez poruchy* odpovídá „nebo od počátku času“.
 - **Zásah** je okamžitý přechod se vstupy *porucha* a obsluhovaný zákazník. Když automat právě obsluhuje, provede se hned a odpočet `exp(2 min)` zanikne (slajd 139). Když automat stojí, porucha čeká a zasáhne prvního zákazníka, který automat obsadí, ve stejném okamžiku, kdy ho obsadí. To je „na další následující transakci“.
 - Na rozdíl od úloh, kde porucha bez obsluhy zaniká ([Porucha vrací transakci do fronty](<../../03 - Poruchy/02 - Porucha vrací transakci do fronty/02 - Porucha vrací transakci do fronty.md>)), tady porucha **nezaniká**, takže žádný přechod „porucha bez účinku“ není.
 - **Zasažený zákazník** jde z přechodu zásah rovnou do místa *ven* a odchází stejným výstupním přechodem *odchod* jako obsloužení.
-- **Oprava drží automat:** zásah nevrací značku *Automatu*. Ta je po dobu opravy v místě *oprava* a vrátí ji až přechod `1 h`. Zákazníci mezitím čekají ve *Frontě*.
+- **Oprava drží automat:** zásah nevrací značku *Automatu*. Ta je po dobu opravy v místě *oprava* a vrátí ji až přechod `1 h`. Zákazníci mezitím čekají ve *frontě*.
 - Priorita není potřeba: o obsluhovaného zákazníka soupeří jen zásah (okamžitý) a `exp(2 min)` (časovaný), a okamžitý přechod má vždy přednost.
 
 </details>
@@ -42,7 +42,7 @@ Podobné úlohy: [Porucha zničí obsluhu nebo počká](<../../03 - Poruchy/06 -
 - Generátor poruch ve smyčce `5–6 h` nezávislý na opravě. Interval se pak počítá od minulé poruchy, ne od konce opravy.
 - Porucha, která při nečinném automatu zanikne (vzor z jiných úloh). Tady má počkat na dalšího zákazníka.
 - Zásah, který vrací značku *Automatu* hned. Automat by pak během opravy dál obsluhoval.
-- Zásah, který bere zákazníka z *Fronty*. Když je ve frontě někdo, automat zrovna obsluhuje, a porucha má zasáhnout toho obsluhovaného.
+- Zásah, který bere zákazníka z *fronty*. Když je ve frontě někdo, automat zrovna obsluhuje, a porucha má zasáhnout toho obsluhovaného.
 - Zasažený zákazník, který nikam neodejde (chybí hrana do odchodu).
 
 </details>
@@ -112,7 +112,7 @@ int main() {
 |---|---|
 | *příchody zákazníků* ⇄ `exp(10 min)` | událost `Generator`, která se znovu plánuje za `Exponential(10)` |
 | značka (zákazník) | proces `Zakaznik` |
-| místo *Automat* (1 značka), *Fronta* + obsazení | `Facility Automat`, `Seize(Automat)` (fronta je vnitřní fronta zařízení) |
+| místo *Automat* (1 značka), *fronta* + obsazení | `Facility Automat`, `Seize(Automat)` (fronta je vnitřní fronta zařízení) |
 | `exp(2 min)` se sloučeným uvolněním | `Wait(Exponential(2)); Release(Automat);` |
 | značka cyklu poruchy (*bez poruchy*, *porucha*, *oprava*) | proces `Porucha` |
 | *bez poruchy* → `5–6 h` → *porucha* | `Wait(Uniform(5 * 60, 6 * 60))` |

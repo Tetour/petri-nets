@@ -14,11 +14,11 @@ Podobné úlohy: [Dočasně MM2 při dlouhé frontě](<../02 - Dočasně MM2 př
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **M/M/1:** *příchody požadavků* ⇄ `exp(A)` → *Fronta* → obsazení *Linky* → `exp(B)`, který *Linku* vrací → *konec* → *odchod*. Příchody a obsluhu zadání neuvádí, proto `exp(A)` a `exp(B)`.
+- **M/M/1:** *příchody požadavků* ⇄ `exp(A)` → *fronta* → obsazení *Linky* → `exp(B)`, který *Linku* vrací → *konec* → *odchod*. Příchody a obsluhu zadání neuvádí, proto `exp(A)` a `exp(B)`.
 - **„Keď bude vo fronte 5“** = fronta dosáhne 5, test má váhu 5 (hrana do přechodu a zpět, z fronty se nic neodebere).
 - **M/M/3** = tři jednotky kapacity linky. *Změna* přidá do *Linky* dvě značky (hrana s váhou 2), obsluha se nemění.
 - **Natrvalo:** *změna* bere jedinou značku z *M/M/1* a ta už se nevrátí. Bez ní by se přechod provedl při každé další frontě 5 a linek by přibývalo. Místo *M/M/3* jen ukazuje stav, dá se vynechat.
-- Priorita není potřeba: fronta 5 vznikne jen při obsazené lince, takže *změna* nesoupeří s obsazením o značky *Fronty*.
+- Priorita není potřeba: fronta 5 vznikne jen při obsazené lince, takže *změna* nesoupeří s obsazením o značky *fronty*.
 
 </details>
 
@@ -103,10 +103,10 @@ int main() {
 | *příchody požadavků* ⇄ `exp(A)` | událost `Generator`, která se znovu plánuje za `Exponential(A)` |
 | značka (požadavek) | proces `Pozadavek` |
 | místo *Linka* (1 značka, po změně 3) | `Store Linka` s kapacitou 3, dvě jednotky drží `Zmena`, dokud je režim M/M/1 |
-| *Fronta* + obsazení | `Enter(Linka, 1)` (fronta je vnitřní fronta skladu) |
+| *fronta* + obsazení | `Enter(Linka, 1)` (fronta je vnitřní fronta skladu) |
 | `exp(B)` se sloučeným uvolněním | `Wait(Exponential(B)); Leave(Linka, 1);` |
 | značka *M/M/1* | proces `Zmena` (jen jeden, takže se změna provede jednou) |
-| test 5 na *Frontě* | `WaitUntil(Linka.QueueLen() >= 5)` |
+| test 5 na *frontě* | `WaitUntil(Linka.QueueLen() >= 5)` |
 | *změna* → 2 značky do *Linky*, značka do *M/M/3* | `Leave(Linka, 2)` a konec procesu |
 | *konec* → *odchod* | konec metody `Behavior()` požadavku |
 

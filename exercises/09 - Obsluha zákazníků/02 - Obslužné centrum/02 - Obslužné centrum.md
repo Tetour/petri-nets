@@ -14,7 +14,7 @@ Podobné úlohy: [Centrum MM1 s rychlým režimem](<../04 - Centrum MM1 s rychl�
 <summary>Zobrazit interpretaci (nápověda)</summary>
 <br>
 
-- **Příchody** modeluje místo *příchody zákazníků* s jednou značkou ve smyčce s časovaným přechodem `exp(10 min)`; zákazník čeká v místě *Fronta*.
+- **Příchody** modeluje místo *příchody zákazníků* s jednou značkou ve smyčce s časovaným přechodem `exp(10 min)`; zákazník čeká v místě *fronta*.
 - **Tři linky** jsou jeden sklad: místo *Linka* se třemi značkami. Každý zákazník zabere jednu; oba časované přechody obsluhy ji vrací (uvolnění je s nimi sloučené).
 - **Délka obsluhy** se rozhodne v okamžiku začátku obsluhy (if-else za obsazením linky). Obsluha začatá ve dne doběhne s `exp(5 min)`, i když mezitím nastane noc. Přepínat rychlost uprostřed obsluhy by vyžadovalo přerušení, to zadání (v rekonstrukci) nechce.
 - **If-else přes prioritu:** přechod *v noci* s `p=1` testuje místo *je noc* smyčkou (značku vezme a hned vrátí) a vede na `exp(10 min)`. Ve dne proveditelný není, takže se provede přechod *ve dne* (p=0) s `exp(5 min)`. Inhibiční hrana („není noc“) se nepoužívá.
@@ -118,7 +118,7 @@ int main() {
 | *příchody zákazníků* ⇄ `exp(10 min)` | událost `Generator`, která se znovu plánuje za `Exponential(10)` |
 | značka (zákazník) | proces `Zakaznik` |
 | místo *Linka* (3 značky) | `Store Linka("Linka", 3)` |
-| *Fronta* + obsazení | `Enter(Linka, 1)` (fronta je vnitřní fronta skladu) |
+| *fronta* + obsazení | `Enter(Linka, 1)` (fronta je vnitřní fronta skladu) |
 | *v noci* (`p=1`, smyčka s *je noc*) / *ve dne* (p=0) | `if (jeNoc) … else …` |
 | `exp(10 min)` / `exp(5 min)` se sloučeným uvolněním | `Wait(Exponential(10))` / `Wait(Exponential(5))`, pak `Leave(Linka, 1)` |
 | místo *je noc* | proměnná `bool jeNoc` |

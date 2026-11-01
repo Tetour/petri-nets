@@ -6,7 +6,7 @@ net = Net("Pizza stánek (půlsemestrálka 2024/25, varianta B – zadání z pa
 net.place("gen", (0, 0), tokens=1, label="příchody zákazníků", label_pos="above")
 net.timed("prichod", (1.5, 0), "exp(10 min)")
 net.loop("gen", "prichod")
-net.place("fronta", (3, 0), label="Fronta", label_pos="below")
+net.place("fronta", (3, 0), label="fronta", label_pos="below")
 
 # objednávka a příprava: pizzař (nad řadou) + místo v peci (pod řadou)
 net.place("pizzar", (4.5, 2.0), tokens=1, label="Pizzař", label_pos="below left")
