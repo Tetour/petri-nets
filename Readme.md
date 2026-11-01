@@ -99,7 +99,7 @@ build/         generated intermediates (git-ignored)
 
 ## Open work
 
-- Rework the crowded diagrams in *Výroba a sklady* (Zahradník na FIT, Přečerpávací elektrárna, Dílna se třemi stroji) and fix the few labels that touch lines.
 - A printable collection (`make book`): each task on its own page, the solution on the next.
-- A final consistency pass over all notes.
+- A content consistency pass over all notes (`make notecheck` covers the format, not the content).
+- About ten nets still have a single crossing; most look unavoidable, but only the three crowded nets in *Výroba a sklady* were checked carefully.
 - Optionally, transcripts of the 2023 demo-exercise videos to cross-check the midterm solutions against Hrubý's reasoning.
