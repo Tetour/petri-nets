@@ -11,7 +11,8 @@ How to lay out a net in `net.py`. These are preferences, not hard rules: when fo
 
 ## Transitions
 
-- Draw transitions as **vertical bars** (the default). Avoid `horizontal=True`: lay out the net so arcs come in from the left and leave to the right, and let a vertical flow enter the bar from the top or bottom.
+- Draw transitions as **vertical bars** (the default): lay out the net so arcs come in from the left and leave to the right.
+- **Exception:** a transition whose arcs all attach to its **top or bottom** (a vertical flow, none from the left or right) may be a horizontal bar, `horizontal=True`. The bar then lies across the flow, as a vertical bar does in a left-to-right flow.
 
 ## Arcs
 
