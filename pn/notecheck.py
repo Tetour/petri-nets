@@ -51,8 +51,9 @@ def check(note: Path):
         problems.append(f"{note.parent.name}:{line_no}: {msg}")
 
     name = note.parent.name.split(" - ", 1)[1]
-    if lines[0] != f"# {name}":
-        bad(1, f"the heading must be „# {name}“")
+    heading = f"# {note.parent.parent.name.split(' - ')[0]}-{note.parent.name.split(' - ')[0]} {name}"
+    if lines[0] != heading:
+        bad(1, f"the heading must be „{heading}“")
 
     heads = [(i + 1, l[3:]) for i, l in enumerate(lines) if l.startswith("## ")]
     names = [h for _, h in heads]

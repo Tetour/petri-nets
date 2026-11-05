@@ -8,7 +8,7 @@ The list is in Czech, like the notes.
 
 from pathlib import Path
 
-from .catalog import PLAN, START, categories, exercises, folder
+from .catalog import PLAN, START, categories, exercises, folder, note_id
 
 ROOT = Path(__file__).resolve().parent.parent
 INDEX = ROOT / "exercises" / "Seznam úloh.md"
@@ -19,7 +19,7 @@ HEAD = """\
 
 <!-- Generuje `make index` (python3 -m pn.index) z pn/catalog.py; needitovat ručně. -->
 
-Všechny úlohy na Petriho sítě ze studijních materiálů IMS, rozdělené do kategorií: nejdřív základní modely, pak jednotlivé mechanismy jako v krátkých zkouškových otázkách, pak značení v čase t a nakonec celé slovní úlohy jako na půlsemestrálce. V každé kategorii jsou novější úlohy první. Sloupec *Původ* říká, odkud úloha pochází; podrobnosti jsou v poslední části poznámky.
+Všechny úlohy na Petriho sítě ze studijních materiálů IMS, rozdělené do kategorií: nejdřív základní modely, pak jednotlivé mechanismy jako v krátkých zkouškových otázkách, pak značení v čase t a nakonec celé slovní úlohy jako na půlsemestrálce. V každé kategorii jsou novější úlohy první. Každá úloha má číslo `kategorie-úloha` (např. `06-02`), které je i v nadpisu poznámky. Sloupec *Původ* říká, odkud úloha pochází; podrobnosti jsou v poslední části poznámky.
 
 Doporučené pořadí všech úloh je ve [Studijním plánu](<Studijní plán.md>).
 
@@ -38,12 +38,12 @@ def index():
             "pak nejnovější půlsemestrálky.", ""]
     for i, (name, what) in enumerate(START, 1):
         f = folder(name)
-        out.append(f"{i}. [{name}](<{f}/{f.split('/')[1]}.md>): {what}")
+        out.append(f"{i}. [{note_id(f)} {name}](<{f}/{f.split('/')[1]}.md>): {what}")
     out.append("")
     for cat, title, exs in cats:
         out += [f"## {cat.split(' - ')[0]} {title}", "", "| Č. | Úloha | Původ |", "|---|---|---|"]
         for f, name, origin in exs:
-            out.append(f"| {f.split('/')[1].split(' - ')[0]} | [{name}](<{f}/{f.split('/')[1]}.md>) | {origin} |")
+            out.append(f"| {note_id(f)} | [{name}](<{f}/{f.split('/')[1]}.md>) | {origin} |")
         out.append("")
     return "\n".join(out)
 
@@ -72,7 +72,7 @@ def plan():
         for name, what in items:
             i += 1
             f = folder(name)
-            out.append(f"{i}. [{name}](<{f}/{f.split('/')[1]}.md>): {what}")
+            out.append(f"{i}. [{note_id(f)} {name}](<{f}/{f.split('/')[1]}.md>): {what}")
         out.append("")
     return "\n".join(out)
 

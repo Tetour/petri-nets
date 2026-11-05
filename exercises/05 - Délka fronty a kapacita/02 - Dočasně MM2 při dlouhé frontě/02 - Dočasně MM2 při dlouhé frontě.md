@@ -1,4 +1,4 @@
-# Dočasně MM2 při dlouhé frontě
+# 05-02 Dočasně MM2 při dlouhé frontě
 
 ## Zadání
 

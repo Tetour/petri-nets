@@ -1,4 +1,4 @@
-# DD3 LIFO, čas 10,5
+# 08-02 DD3 LIFO, čas 10,5
 
 ## Zadání
 

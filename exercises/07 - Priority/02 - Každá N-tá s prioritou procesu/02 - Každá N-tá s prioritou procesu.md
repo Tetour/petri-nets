@@ -1,4 +1,4 @@
-# Každá N-tá s prioritou procesu
+# 07-02 Každá N-tá s prioritou procesu
 
 ## Zadání
 

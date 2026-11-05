@@ -1,4 +1,4 @@
-# Netrpělivý první ve frontě
+# 02-02 Netrpělivý první ve frontě
 
 ## Zadání
 

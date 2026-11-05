@@ -1,4 +1,4 @@
-# Samoobsluha
+# 01-02 Samoobsluha
 
 ## Zadání
 

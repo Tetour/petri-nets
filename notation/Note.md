@@ -10,10 +10,12 @@ How an exercise note looks. The diagram itself is covered by [Style.md](Style.md
 
 ## Skeleton
 
+The heading is the note's number and its name. The number is `<category>-<exercise>` from the two folder numbers (`06-02` is exercise 02 in category 06), so it is short enough to name a note in conversation.
+
 Only the heading, **Zadání** and the closing **Reference** are visible when the note is opened; every other section sits behind its own toggle, so the reader can try the exercise first. After each `<summary>` comes `<br>`, which leaves an empty line between the toggle and its content in the Markdown preview (the PDF converter drops it).
 
 ````markdown
-# Opravářská dílna
+# 01-01 Opravářská dílna
 
 ## Zadání
 

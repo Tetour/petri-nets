@@ -1,4 +1,4 @@
-# Sběrači jahod
+# 12-02 Sběrači jahod
 
 ## Zadání
 

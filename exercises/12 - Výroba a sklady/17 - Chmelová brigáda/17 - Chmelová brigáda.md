@@ -1,4 +1,4 @@
-# Chmelová brigáda
+# 12-17 Chmelová brigáda
 
 ## Zadání
 

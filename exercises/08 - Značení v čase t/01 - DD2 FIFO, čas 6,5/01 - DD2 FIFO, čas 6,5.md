@@ -1,4 +1,4 @@
-# DD2 FIFO, čas 6,5
+# 08-01 DD2 FIFO, čas 6,5
 
 ## Zadání
 

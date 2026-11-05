@@ -1,4 +1,4 @@
-# DD3 FIFO, čas 9,5
+# 08-07 DD3 FIFO, čas 9,5
 
 ## Zadání
 

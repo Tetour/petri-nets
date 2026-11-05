@@ -1,4 +1,4 @@
-# MD3 – poslední volné zařízení
+# 06-03 MD3 – poslední volné zařízení
 
 ## Zadání
 
