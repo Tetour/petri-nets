@@ -5,7 +5,7 @@ All 118 Petri net exercises from the IMS course materials (Modelování a simula
 ## How to study
 
 1. **Learn the notation.** [Notace a vzory](basics/Notace%20a%20vzory.md) shows the course notation and the standard patterns, each with exercises to practise it. [Jak síť funguje](<basics/Jak síť funguje.md>) explains how a net runs: timed transitions, several tokens, cancelled countdowns.
-2. **Pick exercises** from [Seznam úloh](<exercises/Seznam úloh.md>). Start with *Začni tady*: 15 exercises that cover every pattern and the newest midterms.
+2. **Follow the plan.** [Studijní plán](<exercises/Studijní plán.md>) lists all exercises in the order to learn them. It starts with *Začni tady* (15 exercises that cover every pattern and the newest midterms), continues with mechanisms the patterns don't show and the remaining recent midterms, and ends with marking at time t and older tasks. [Seznam úloh](<exercises/Seznam úloh.md>) has the same exercises by category.
 3. **Solve, then check.** A note opens with only the task. Draw your net on paper, then open the hint, the net, the common mistakes, the SIMLIB model and the sources one at a time. Every note also has a PDF next to it.
 4. **Repeat in Anki.** The 20 midterm word problems of 2021/22–2025/26 are flashcards in the deck *FIT::IMS* (tag `ims::petriho-site::pulsemestralka`).
 
