@@ -1,4 +1,6 @@
-# Přečerpávací elektrárna II (12/09)
+# Přečerpávací elektrárna II
+
+Úloha 12/09
 
 ## Zadání
 

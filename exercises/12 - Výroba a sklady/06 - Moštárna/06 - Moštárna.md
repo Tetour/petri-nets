@@ -1,4 +1,6 @@
-# Moštárna (12/06)
+# Moštárna
+
+Úloha 12/06
 
 ## Zadání
 

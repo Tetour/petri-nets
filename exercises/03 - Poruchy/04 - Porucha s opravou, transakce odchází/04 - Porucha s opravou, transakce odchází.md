@@ -1,4 +1,6 @@
-# Porucha s opravou, transakce odchází (03/04)
+# Porucha s opravou, transakce odchází
+
+Úloha 03/04
 
 ## Zadání
 

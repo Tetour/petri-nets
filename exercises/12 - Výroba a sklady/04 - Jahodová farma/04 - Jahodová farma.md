@@ -1,4 +1,6 @@
-# Jahodová farma (12/04)
+# Jahodová farma
+
+Úloha 12/04
 
 ## Zadání
 

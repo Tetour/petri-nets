@@ -1,4 +1,6 @@
-# Počítačový server (10/04)
+# Počítačový server
+
+Úloha 10/04
 
 ## Zadání
 

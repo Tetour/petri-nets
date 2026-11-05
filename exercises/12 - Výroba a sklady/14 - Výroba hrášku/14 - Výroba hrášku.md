@@ -1,4 +1,6 @@
-# Výroba hrášku (12/14)
+# Výroba hrášku
+
+Úloha 12/14
 
 ## Zadání
 

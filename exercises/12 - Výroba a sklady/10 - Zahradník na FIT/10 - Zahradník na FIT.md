@@ -1,4 +1,6 @@
-# Zahradník na FIT (12/10)
+# Zahradník na FIT
+
+Úloha 12/10
 
 ## Zadání
 

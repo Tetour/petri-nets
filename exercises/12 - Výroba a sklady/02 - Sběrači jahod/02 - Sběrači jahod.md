@@ -1,4 +1,6 @@
-# Sběrači jahod (12/02)
+# Sběrači jahod
+
+Úloha 12/02
 
 ## Zadání
 

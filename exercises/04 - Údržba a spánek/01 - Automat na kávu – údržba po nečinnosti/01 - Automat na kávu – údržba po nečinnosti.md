@@ -1,4 +1,6 @@
-# Automat na kávu – údržba po nečinnosti (04/01)
+# Automat na kávu – údržba po nečinnosti
+
+Úloha 04/01
 
 ## Zadání
 

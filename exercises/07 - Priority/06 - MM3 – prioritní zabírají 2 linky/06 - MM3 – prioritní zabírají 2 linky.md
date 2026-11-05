@@ -1,4 +1,6 @@
-# MM3 – prioritní zabírají 2 linky (07/06)
+# MM3 – prioritní zabírají 2 linky
+
+Úloha 07/06
 
 ## Zadání
 

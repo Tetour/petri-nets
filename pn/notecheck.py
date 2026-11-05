@@ -51,9 +51,11 @@ def check(note: Path):
         problems.append(f"{note.parent.name}:{line_no}: {msg}")
 
     name = note.parent.name.split(" - ", 1)[1]
-    heading = f"# {name} ({note.parent.parent.name.split(' - ')[0]}/{note.parent.name.split(' - ')[0]})"
-    if lines[0] != heading:
-        bad(1, f"the heading must be „{heading}“")
+    if lines[0] != f"# {name}":
+        bad(1, f"the heading must be „# {name}“")
+    number = f"Úloha {note.parent.parent.name.split(' - ')[0]}/{note.parent.name.split(' - ')[0]}"
+    if lines[1:4] != ["", number, ""]:
+        bad(3, f"the heading must be followed by the paragraph „{number}“")
 
     heads = [(i + 1, l[3:]) for i, l in enumerate(lines) if l.startswith("## ")]
     names = [h for _, h in heads]

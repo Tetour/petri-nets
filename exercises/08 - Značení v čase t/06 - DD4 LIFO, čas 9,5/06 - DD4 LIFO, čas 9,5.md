@@ -1,4 +1,6 @@
-# DD4 LIFO, čas 9,5 (08/06)
+# DD4 LIFO, čas 9,5
+
+Úloha 08/06
 
 ## Zadání
 

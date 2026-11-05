@@ -1,4 +1,6 @@
-# Kopírovací centrum s poruchami (09/11)
+# Kopírovací centrum s poruchami
+
+Úloha 09/11
 
 ## Zadání
 

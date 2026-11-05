@@ -1,4 +1,6 @@
-# Banka a lupič (09/21)
+# Banka a lupič
+
+Úloha 09/21
 
 ## Zadání
 

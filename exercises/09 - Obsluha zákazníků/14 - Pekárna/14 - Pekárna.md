@@ -1,4 +1,6 @@
-# Pekárna (09/14)
+# Pekárna
+
+Úloha 09/14
 
 ## Zadání
 

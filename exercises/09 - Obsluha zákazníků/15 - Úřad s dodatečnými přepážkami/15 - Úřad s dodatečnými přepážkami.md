@@ -1,4 +1,6 @@
-# Úřad s dodatečnými přepážkami (09/15)
+# Úřad s dodatečnými přepážkami
+
+Úloha 09/15
 
 ## Zadání
 

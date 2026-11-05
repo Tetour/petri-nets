@@ -1,4 +1,6 @@
-# Každá N-tá s prioritou procesu (07/02)
+# Každá N-tá s prioritou procesu
+
+Úloha 07/02
 
 ## Zadání
 

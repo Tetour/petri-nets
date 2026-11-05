@@ -1,4 +1,6 @@
-# Vyhlídková loď na molu (11/07)
+# Vyhlídková loď na molu
+
+Úloha 11/07
 
 ## Zadání
 

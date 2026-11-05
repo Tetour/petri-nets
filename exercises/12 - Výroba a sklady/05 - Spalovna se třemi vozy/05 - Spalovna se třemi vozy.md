@@ -1,4 +1,6 @@
-# Spalovna se třemi vozy (12/05)
+# Spalovna se třemi vozy
+
+Úloha 12/05
 
 ## Zadání
 

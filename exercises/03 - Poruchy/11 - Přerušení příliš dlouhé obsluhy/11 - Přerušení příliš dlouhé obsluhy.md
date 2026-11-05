@@ -1,4 +1,6 @@
-# Přerušení příliš dlouhé obsluhy (03/11)
+# Přerušení příliš dlouhé obsluhy
+
+Úloha 03/11
 
 ## Zadání
 

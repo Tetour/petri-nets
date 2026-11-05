@@ -1,4 +1,6 @@
-# Priorita procesu a obsluhy (07/05)
+# Priorita procesu a obsluhy
+
+Úloha 07/05
 
 ## Zadání
 

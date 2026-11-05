@@ -1,4 +1,6 @@
-# Chmelová brigáda (12/17)
+# Chmelová brigáda
+
+Úloha 12/17
 
 ## Zadání
 

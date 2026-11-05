@@ -1,4 +1,6 @@
-# Dva proudy příchodů (07/04)
+# Dva proudy příchodů
+
+Úloha 07/04
 
 ## Zadání
 

@@ -1,4 +1,6 @@
-# Bagrista a nákladní auta (11/10)
+# Bagrista a nákladní auta
+
+Úloha 11/10
 
 ## Zadání
 

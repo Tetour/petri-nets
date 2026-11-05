@@ -1,4 +1,6 @@
-# Přečerpávací elektrárna (12/11)
+# Přečerpávací elektrárna
+
+Úloha 12/11
 
 ## Zadání
 

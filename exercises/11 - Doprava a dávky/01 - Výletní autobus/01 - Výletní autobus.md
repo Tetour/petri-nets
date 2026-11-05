@@ -1,4 +1,6 @@
-# Výletní autobus (11/01)
+# Výletní autobus
+
+Úloha 11/01
 
 ## Zadání
 

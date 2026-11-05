@@ -1,4 +1,6 @@
-# Automat na kávu – údržba po 50 obsluhách (04/02)
+# Automat na kávu – údržba po 50 obsluhách
+
+Úloha 04/02
 
 ## Zadání
 

@@ -1,4 +1,6 @@
-# Natrvalo MM3 při dlouhé frontě (05/03)
+# Natrvalo MM3 při dlouhé frontě
+
+Úloha 05/03
 
 ## Zadání
 

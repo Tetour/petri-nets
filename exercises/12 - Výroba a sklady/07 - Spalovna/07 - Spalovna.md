@@ -1,4 +1,6 @@
-# Spalovna (12/07)
+# Spalovna
+
+Úloha 12/07
 
 ## Zadání
 

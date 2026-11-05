@@ -1,4 +1,6 @@
-# Uhelný mlýn (12/12)
+# Uhelný mlýn
+
+Úloha 12/12
 
 ## Zadání
 

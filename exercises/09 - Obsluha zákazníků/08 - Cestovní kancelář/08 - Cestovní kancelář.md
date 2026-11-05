@@ -1,4 +1,6 @@
-# Cestovní kancelář (09/08)
+# Cestovní kancelář
+
+Úloha 09/08
 
 ## Zadání
 

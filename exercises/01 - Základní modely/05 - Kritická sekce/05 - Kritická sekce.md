@@ -1,4 +1,6 @@
-# Kritická sekce (01/05)
+# Kritická sekce
+
+Úloha 01/05
 
 ## Zadání
 

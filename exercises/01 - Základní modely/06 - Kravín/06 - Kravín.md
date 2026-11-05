@@ -1,4 +1,6 @@
-# Kravín (01/06)
+# Kravín
+
+Úloha 01/06
 
 ## Zadání
 
