@@ -10,12 +10,11 @@ net.place("fronta", (3, 0), label="fronta", label_pos="above left")
 net.arc("prichod", "fronta")
 
 # volná linka ve dvou stavech mezi řadami: od konce obsluhy uplynulo < 10 (obsluha 2),
-# nebo ≥ 10 (obsluha 5); časovaný přechod 10 přesouvá značku z Linky (2) do Linky (5)
-net.place("linka2", (5.6, 0.7), label="Linka (2)", label_pos="above left")
+# nebo ≥ 10 (obsluha 5); časovaný přechod 10 mezi nimi přesouvá značku z Linky (2) do Linky (5)
+net.place("linka2", (5.6, 0.9), label="Linka (2)", label_pos="above left")
 net.place("linka5", (5.6, -0.9), tokens=1, label="Linka (5)", label_pos="right")
-net.timed("vychladnuti", (4.3, -0.1), "10", param_pos="left")
-net.arc("linka2", "vychladnuti", via=[(4.3, 0.7)])
-net.arc("vychladnuti", "linka5", via=[(4.3, -0.9)])
+net.timed("vychladnuti", (5.6, 0), "10", horizontal=True, param_pos="left")
+net.chain("linka2", "vychladnuti", "linka5")
 
 # horní řada obsluha 2, dolní obsluha 5
 for row, y, time in (("2", 2.2, "2"), ("5", -2.2, "5")):
