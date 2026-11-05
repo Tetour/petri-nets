@@ -1,12 +1,15 @@
 {
 	"folders": [
-		{
-			"path": "."
-		},
-		{
-			"path": "../../../Documents/Knowledge/Vzdělání/FIT/6. semestr/IMS - Modelování a simulace"
-		}
-	],
+        {
+            "path": "."
+        },
+        {
+            "path": "../../../Documents/Knowledge/Vzdělání/FIT/6. semestr/IMS - Modelování a simulace"
+        },
+        {
+            "path": "../../../Temporary"
+        }
+    ],
     "settings": {
         "workbench.editorAssociations": {
             "*.md": "vscode.markdown.preview.editor"
