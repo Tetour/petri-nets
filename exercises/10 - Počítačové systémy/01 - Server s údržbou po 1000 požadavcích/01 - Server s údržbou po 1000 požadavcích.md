@@ -19,7 +19,7 @@ Podobné úlohy: [Údržba po každé 10. obsluze](<../../04 - Údržba a spáne
 - **Server s kapacitou 1** je místo *server* s jednou značkou. Uvolnění je sloučené s časovaným přechodem obsluhy `exp(70 ms)`, obsloužený požadavek odchází přechodem *odchod* vpravo.
 - **Čítač:** každá dokončená obsluha přidá značku do místa *počet obsloužených*. Okamžitý přechod *do údržby* s hranou s váhou 1000 vezme všech 1000 značek (čítač se tím vynuluje) a k tomu značku *serveru*. Server tak přejde do *údržby* a po `100 s` se značka vrátí do *serveru*. Čítač je pod hlavní řadou, protože horní stranou obsluha vrací značku serveru; jeho hrana proto obchází odchod zprava.
 - **„Ihned po obsloužení“:** v okamžiku 1000. obsluhy se značka vrátí do *serveru* a zároveň jsou proveditelné dva okamžité přechody: přechod do údržby a obsazení serveru dalším čekajícím. Priorita `p=1` zajistí, že vyhraje údržba. Bez ní by server mohl obsloužit ještě 1001. požadavek.
-- **Vyhazování:** okamžitý přechod *vyhození* bere požadavky z *fronty* a testovacími hranami (hrana tam a zpět) kontroluje stav *probíhá údržba*. Provádí se opakovaně, takže na začátku údržby vyprázdní celou frontu a pak hned vyhazuje každý nově příchozí požadavek. Vyhozený požadavek odchází přes místo *bez obsluhy* vlastním výstupním přechodem.
+- **Vyhazování:** okamžitý přechod *odchod bez obsluhy* bere požadavky z *fronty* a testovacími hranami (hrana tam a zpět) kontroluje stav *probíhá údržba*. Provádí se opakovaně, takže na začátku údržby vyprázdní celou frontu a pak hned vyhazuje každý nově příchozí požadavek. Je to zároveň výstupní přechod: vyhozený požadavek v něm zaniká a vrací se jen testovaná značka stavu (stejně jako v úloze [Každá 100. transakce vyprázdní frontu](<../../05 - Délka fronty a kapacita/07 - Každá 100. transakce vyprázdní frontu/07 - Každá 100. transakce vyprázdní frontu.md>)).
 - **Proč samostatné místo *probíhá údržba*:** testovací hrana značku na okamžik vezme a vrátí. Kdyby testovala přímo místo *údržba*, které je vstupem časovaného přechodu `100 s`, každé vyhození by odpočet zrušilo a spustilo znovu (slajdy 137–139) – s příchody každých 100 ms by údržba nikdy neskončila. Proto odpočet běží na *údržbě*, testuje se *probíhá údržba* a po skončení údržby ho okamžitý přechod *konec režimu* (`p=1`) spolu se značkou *údržba skončila* zruší.
 - Příchody se během údržby **nezastavují**: požadavky dál přicházejí, jen hned odcházejí bez obsluhy.
 - Zadání je převyprávěné. Pokud by originál říkal něco jiného (např. že se během údržby příchody zastaví), změní se jen část s vyhazováním.
@@ -83,9 +83,9 @@ class Udrzba : public Process {            // značka serveru na cestě údržbo
 class Pozadavek : public Process {         // transakce = značka, která prochází sítí
   void Behavior() {
     double prichod = Time;
-    if (udrzba) {                          // přechod „vyhození“ (test „probíhá údržba“)
+    if (udrzba) {                          // přechod „odchod bez obsluhy“ (test „probíhá údržba“)
       vyhozeno++;
-      return;                              // „bez obsluhy“ → „odchod“
+      return;                              // požadavek opouští systém
     }
     Seize(Server);                         // fronta + obsazení
     Wait(Exponential(0.070));              // časovaný přechod exp(70 ms) ...
@@ -93,7 +93,7 @@ class Pozadavek : public Process {         // transakce = značka, která proch�
       obslouzeno = 0;                      // přechod „do údržby“ (p=1) čítač vynuluje
       udrzba = true;                       // a označí „probíhá údržba“
       udrzeb++;
-      while (!Fronta.empty()) {            // „vyhození“ všech čekajících
+      while (!Fronta.empty()) {            // „odchod bez obsluhy“ všech čekajících
         delete Fronta.GetFirst();
         vyhozeno++;
       }
@@ -131,9 +131,9 @@ int main() {
 | místo *počet obsloužených* | `int obslouzeno`, `++obslouzeno` po obsluze |
 | *do údržby* (`p=1`, váha 1000) | `if (++obslouzeno == 1000)` před `Release`: vynulování, `udrzba = true`, `new Udrzba` |
 | místo *probíhá údržba* | `bool udrzba` |
-| *vyhození* čekajících a nově příchozích | `delete Fronta.GetFirst()` pro všechny čekající; `if (udrzba) return;` u nově příchozího |
+| *odchod bez obsluhy* čekajících a nově příchozích | `delete Fronta.GetFirst()` pro všechny čekající; `if (udrzba) return;` u nově příchozího |
 | *údržba* → `100 s` → *server* + *údržba skončila* → *konec režimu* | proces `Udrzba`: `Seize(Server); Wait(100); udrzba = false; Release(Server);` |
-| přechody *odchod* (obsloužený i vyhozený) | konec metody `Behavior()` (`return` u vyhozeného) |
+| přechody *odchod* a *odchod bez obsluhy* | konec metody `Behavior()` (`return` u vyhozeného) |
 
 **Kontrola simulací.** Petriho síť: *server* + obsluhovaný + *údržba* = 1, *probíhá údržba* = *údržba* + *údržba skončila*, čítač nikdy nepřesáhne 1000, všechny přechody se provádějí (`make check`). Údržba nastane zhruba každých 200 s (asi 100 s na 1000 obsluh a 100 s údržby) a během ní se vyhodí asi 1000 požadavků. Fronta zůstává krátká (nejvýš kolem 16). SIMLIB model: za 100 000 s proběhlo 499 údržeb (jedna za 200 s), vyhozeno bylo 500 337 požadavků, tedy asi 1000 na údržbu a polovina všech. Server byl obsazený 85 % času: asi 50 % údržbou a 35 % obsluhou (polovina požadavků × 70 ms / 100 ms). Obsloužený požadavek byl v systému v průměru 0,23 s (`make simlib`).
 
