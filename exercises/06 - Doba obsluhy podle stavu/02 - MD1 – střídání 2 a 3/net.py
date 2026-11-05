@@ -22,10 +22,10 @@ for row, y, time in (("2", 1.7, "2"), ("3", -1.7, "3")):
     net.chain(f"obsaz{row}", f"obsluha{row}", f"obsl{row}")
     net.arc(f"linka{row}", f"obsaz{row}")
 
-# obsluha 2 předá linku do stavu „3“: oblouk ze spodní strany přechodu
-net.arc("obsl2", "linka3", out=270, into=0)
+# obsluha 2 předá linku do stavu „3“: dolů ze spodní strany přechodu a doleva
+net.arc("obsl2", "linka3", via=[(7.5, 0)], corner=20)
 # obsluha 3 předá linku do stavu „2“: objížďka kolem konce sítě
-net.arc("obsl3", "linka2", via=[(7.5, -3.1), (12.5, -3.1), (12.5, 3.4)])
+net.arc("obsl3", "linka2", via=[(7.5, -3.1), (12.5, -3.1), (12.5, 3.4)], corner=20)
 
 net.place("konec", (9.5, 0), label="obslouženo", label_pos="left")
 net.immediate("odchod", (11, 0), exit=True, label="odchod")
