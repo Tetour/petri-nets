@@ -41,9 +41,13 @@ net.immediate("zniceni", (13.5, -3.2), p=2, label="zničení obsluhy", label_pos
               param_pos="above right")
 net.loop("niceni", "zniceni")
 net.arc("v_obsluze", "zniceni")
-net.arc("zniceni", "konec", via=[(16.5, -3.2)])
+# zničená zakázka odchází zvlášť, bez obsluhy
+net.place("znicena", (16.5, -3.2), label="zničená", label_pos="below")
+net.immediate("odchod_z", (18, -3.2), exit=True, label="odchod bez obsluhy",
+              label_pos="above")
+net.chain("zniceni", "znicena", "odchod_z")
 # uvolnění kapacity (Hrubý: „release“) objíždí síť zprava
-net.arc("zniceni", "obsluha", via=[(13.5, -4.6), (19, -4.6), (19, 2.8), (10.5, 2.8)])
+net.arc("zniceni", "obsluha", via=[(13.5, -4.6), (19.8, -4.6), (19.8, 2.8), (10.5, 2.8)])
 net.immediate("obnoveni", (12, -1.6), p=1, horizontal=True, label="obnovení",
               label_pos="left", param_pos="right")
 net.arc("niceni", "obnoveni")
