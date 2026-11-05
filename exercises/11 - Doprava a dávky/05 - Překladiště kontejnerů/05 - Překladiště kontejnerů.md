@@ -19,7 +19,8 @@ Podobné úlohy: [Překladiště s jeřábem](<../09 - Překladiště s jeřábe
 - **Cyklus vykládky:** *další kontejner* (`p=1`) vezme auto a jeden kontejner. Auto pak čeká na vlak, obsadí *vlak u rampy*, po `exp(8 min)` se vrátí zpět do místa *auto*, vlak se uvolní a kontejner přibude do *naloženo*. Když už v autě žádný kontejner není, přijde na řadu *uvolnění* (`p=0`): jeřáb je volný a auto odjíždí přechodem *odjezd auta*.
 - **Proč dva kroky (další kontejner, pak obsazení vlaku):** kdyby jeden přechod bral auto, kontejner i vlak, pak by při nepřítomném vlaku nebyl proveditelný a místo něj by se provedlo *uvolnění*. Auto by odjelo s nevyloženými kontejnery. Takhle auto čeká v *čeká na vlak* a drží jeřáb, takže vykládka je pozastavená.
 - **Vlak** je místo se značkou: vlak stojí u rampy a nic se do něj právě nevykládá. Vykládka ho drží jako zařízení.
-- **Odjezd vlaku:** hrana s váhou 20 z *naloženo* a značka *vlak u rampy*. Priorita `p=1` zajistí, že po 20. kontejneru vlak odjede dřív, než začne další vykládka (oba přechody potřebují značku vlaku). Kontejnery odjíždějí s vlakem, značky zaniknou (nejsou to transakce). Po `1 h` se vrací prázdný vlak.
+- **Odjezd vlaku:** hrana s váhou 20 z *naloženo* a značka *vlak u rampy*. Priorita `p=1` zajistí, že po 20. kontejneru vlak odjede dřív, než začne další vykládka (oba přechody potřebují značku vlaku). Po `1 h` se vrací prázdný vlak.
+- **Odvezené kontejnery:** odjezd vlaku zároveň vloží 20 značek do *odvezené kontejnery* a kontejnery opouštějí systém přechodem *odjezd kontejnerů*. Transakcí zůstává auto (má vlastní výstup *odjezd auta*); druhý výstup jen ukazuje, kdy kontejnery překladiště opouštějí.
 - **Počáteční stav:** značka ve *vlak u rampy*, *naloženo* = 0 (prázdný vlak u rampy).
 - **Systém je přetížený:** vykládka auta trvá v průměru 3 × 8 = 24 min, auta přijíždějí po 20 min a vlak je navíc po každých 20 kontejnerech hodinu pryč. Fronta aut proto roste do nekonečna. To je vlastnost zadání, ne chyba sítě.
 
@@ -66,12 +67,14 @@ Facility Jerab("Jeřáb");                    // místo „jeřáb“ (1 značka
 Facility Vlak("Vlak u rampy");              // místo „vlak u rampy“ (1 značka)
 int nalozeno = 0;                           // místo „naloženo“
 int odjezduVlaku = 0;
+long odvezeno = 0;                          // místo „odvezené kontejnery“ → „odjezd kontejnerů“
 Histogram Doba("Doba auta v překladišti [h]", 0, 10, 20);
 
 class OdjezdVlaku : public Process {        // odjezd vlaku → vlak na cestě → 1 h
   void Behavior() override {
     Seize(Vlak, 1);                         // p=1: vlak odjede dřív než další vykládka
     odjezduVlaku++;
+    odvezeno += 20;                         // váha 20 do „odvezené kontejnery“
     Wait(60);                               // vlak na cestě 1 h
     Release(Vlak);                          // vrací se prázdný vlak
   }
@@ -106,7 +109,7 @@ int main() {
   Init(0, 60 * 1000);                       // modelový čas v minutách: 1000 hodin
   (new Prijezdy)->Activate();               // na počátku stojí prázdný vlak u rampy
   Run();
-  Print("Odjezdů vlaku: %d\n", odjezduVlaku);
+  Print("Odjezdů vlaku: %d, odvezených kontejnerů: %ld\n", odjezduVlaku, odvezeno);
   Jerab.Output();
   Vlak.Output();
   Doba.Output();
@@ -122,6 +125,7 @@ int main() {
 | *vykládka* → `exp(8 min)` (vrací vlak i auto) | `Wait(Exponential(8)); Release(Vlak);` |
 | *naloženo*, *odjezd vlaku* (váha 20) | čítač `nalozeno`, při 20 nový proces `OdjezdVlaku` |
 | `p=1` odjezdu vlaku | `Seize(Vlak, 1)`: vyšší priorita obsluhy; vykládku, která v tomtéž okamžiku začala, odsune až za návrat vlaku |
+| *odvezené kontejnery* → *odjezd kontejnerů* | čítač `odvezeno` |
 | *vlak na cestě* → `1 h` | `Wait(60); Release(Vlak);` |
 | *uvolnění* → *prázdné auto* → *odjezd auta* | `Release(Jerab)` a konec `Auto::Behavior()` |
 
@@ -151,6 +155,7 @@ int main() {
 **Existující řešení:**
 
 - **Hrubý (str. 1):** stejná struktura, s poznámkou „Pozn.: Transakce je AUTO, ne kontejner!“: „Fronta aut“ → „Seize“ jeřábu (výstup do místa auta a s váhou 3 do místa kontejnerů) → okamžitý přechod `p=1` (popisek pod ním je špatně čitelný) → „Seize“ vlaku → `exp(8min)` vrací vlak, auto a přidává do místa „Složeno“ → odjezd `p=1` s váhou 20 → místo odjíždějícího vlaku → `1h` → zpět „Vlak“. Jeřáb uvolňuje samostatný přechod „Release“ a auto v něm zaniká (výstupní přechod se tehdy nevyžadoval). Generátor je bez místa.
+  - Rozdíl: kontejnery u Hrubého při odjezdu vlaku zanikají. Síť výše je odvádí přes *odvezené kontejnery* a výstupní přechod *odjezd kontejnerů*.
   - Červené poznámky: „TŘI CYKLY VYKLÁDKY (anebo čítač v systému)“, „Chování vlaku“, podtržené váhy 3 a 20. Obsazení vlaku a odjezd vlaku jsou červeně zakroužkované a propojené, nejspíš proto, že oba soupeří o značku *Vlak* (odtud `p=1` u odjezdu).
 
 </details>
