@@ -27,6 +27,39 @@ Podle přednášek (Hrubý, `IMS - Prezentace.pdf`, slajdy 123–164 a 186–198
 
 Podrobně (víc značek, který odpočet zanikne, vyhladovění, past s testovací hranou): [Jak síť funguje](<Jak síť funguje.md>).
 
+## Typ systému: M/M/1 a další
+
+Zkouškové otázky často začínají typem systému hromadné obsluhy (SHO) v **Kendallově klasifikaci** `X/Y/c` (sl. 147–148):
+
+| Pozice | Význam | V síti |
+|---|---|---|
+| X | rozložení intervalů mezi příchody | čas generátoru |
+| Y | rozložení doby obsluhy | čas přechodu obsluhy |
+| c | počet obslužných linek | počet značek v místě *Linka*; pro c > 1 je linka sklad |
+
+| Písmeno | Význam | V síti |
+|---|---|---|
+| M | exponenciální (Markovský): Poissonův proces příchodů, exponenciální doba obsluhy | `exp(A)`, `exp(B)` |
+| D | deterministické: přesně daná doba | číslo, např. `5` |
+| G | obecné rozložení, bez předpokladů | podle zadání |
+
+Na slajdech jsou ještě E<sub>k</sub> (Erlangovo), K<sub>n</sub> (χ²) a GI (rekurentní příchody); v úlohách se nevyskytují. V úlohách jsou jen M a D.
+
+**Co typ neříká, a platí proto implicitně** (sl. 323: „jedno zařízení s neomezenou FIFO frontou“):
+
+- Fronta je jedna, neomezená a FIFO. Jinou frontu zadání uvede zvlášť: „bez fronty“, „fronta omezená na 10“, LIFO.
+- Příchody tvoří jeden proud. Dva proudy zadání uvede zvlášť (viz [Dva proudy příchodů](<../exercises/07 - Priority/04 - Dva proudy příchodů/04 - Dva proudy příchodů.md>)).
+- Typ určuje rozložení, ne čísla. Když je zadání nedává, piš symboly: příchody `exp(A)`, obsluha `exp(B)`.
+
+Základní síť M/M/1 je generátor a zařízení: *příchody* ⇄ `exp(A)` → *fronta* → obsazení *Linky* (1 značka) → `exp(B)`, který *Linku* vrací → *odchod*.
+
+| Typ | Co se mění | Příklad |
+|---|---|---|
+| M/M/1 | základní síť | [Netrpělivé požadavky](<../exercises/02 - Netrpělivost a omezená fronta/01 - Netrpělivé požadavky/01 - Netrpělivé požadavky.md>) |
+| M/D/1 | obsluha má přesný čas, např. `3` | [MD1 – střídání 2 a 3](<../exercises/06 - Doba obsluhy podle stavu/02 - MD1 – střídání 2 a 3/02 - MD1 – střídání 2 a 3.md>) |
+| M/M/3 | *Linka* má 3 značky | [MM3 – zastavení příchodů](<../exercises/05 - Délka fronty a kapacita/06 - MM3 – zastavení příchodů/06 - MM3 – zastavení příchodů.md>) |
+| D/D/2 | přesné časy příchodů i obsluhy, 2 linky; typické pro značení v čase t | [DD2 FIFO, čas 6,5](<../exercises/08 - Značení v čase t/01 - DD2 FIFO, čas 6,5/01 - DD2 FIFO, čas 6,5.md>) |
+
 ## Vzory
 
 ### Generátor a odchod
