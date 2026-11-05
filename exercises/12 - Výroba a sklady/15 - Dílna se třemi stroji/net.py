@@ -6,8 +6,8 @@ net = Net("Dílna se třemi stroji (půlsemestrálka 2011/12, příklad 4)")
 net.place("volba", (0, 1.2), tokens=1, label="pracovník volí", label_pos="above left")
 net.immediate("k_a", (2, 4.2), prob=50, param_pos="above")
 net.immediate("k_b", (2, -4.2), prob=50, param_pos="below")
-net.arc("volba", "k_a", via=[(0, 4.2)], corner=20)
-net.arc("volba", "k_b", via=[(-1.2, 1.2), (-1.2, -4.2)], corner=20)
+net.arc("volba", "k_a", via=[(0, 4.2)])
+net.arc("volba", "k_b", via=[(-1.2, 1.2), (-1.2, -4.2)])
 
 # stroj A: obsazení, příprava 3–5 min (pracovník), pak sám 10 min, výsledek 20 kusů
 # stroj B: příprava 4–6 min, pak sám 15 min, výsledek 20 kusů

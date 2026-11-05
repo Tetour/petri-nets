@@ -43,7 +43,7 @@ net.arc("kontrolovani", "zkontrolovano")
 net.immediate("dobry", (22.5, 0), exit=True, label="dobrý výrobek", label_pos="above")
 net.immediate("zmetek", (22.5, -1.6), exit=True, label="zmetek", label_pos="below")
 net.arc("zkontrolovano", "dobry")
-net.arc("zkontrolovano", "zmetek", via=[(21, -1.6)], corner=20)
+net.arc("zkontrolovano", "zmetek", via=[(21, -1.6)])
 
 net.invariant({"soustruh": 1, "na_S": 1}, 1)
 net.invariant({"vrtacky": 1, "na_V": 1}, 2)

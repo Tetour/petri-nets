@@ -55,7 +55,7 @@ class Arc:
     out: float | None = None    # curved arc: direction it leaves the source (degrees, 90 = up)
     into: float | None = None   # ... and direction from which it enters the target (0 = from the right)
     looseness: float | None = None  # curved arc: how far the curve swings out (TikZ default 1)
-    corner: float | None = None # orthogonal arc (via): corner radius in pt (default 5)
+    corner: float | None = None # orthogonal arc (via): corner radius in pt (default 20, less where a segment is short)
 
 
 class Net:

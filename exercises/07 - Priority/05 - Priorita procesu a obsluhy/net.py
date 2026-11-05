@@ -41,8 +41,8 @@ def mm1(k, yc, preemptive):
 
     net.place(n("konec"), (9.5, yc), label="obslouženo", label_pos="left")
     net.immediate(n("odchod"), (11, yc), exit=True, label="odchod")
-    net.arc(n("obsl_p"), n("konec"), via=[(9.5, yc + 2)], corner=20)
-    net.arc(n("obsl_n"), n("konec"), via=[(9.5, yc - 2)], corner=20)
+    net.arc(n("obsl_p"), n("konec"), via=[(9.5, yc + 2)])
+    net.arc(n("obsl_n"), n("konec"), via=[(9.5, yc - 2)])
     net.arc(n("konec"), n("odchod"))
 
     net.invariant({n("linka"): 1, n("obsluha_p"): 1, n("obsluha_n"): 1}, 1)

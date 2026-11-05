@@ -30,8 +30,8 @@ for k, (y, p) in enumerate(((3.2, 2), (0, 1), (-3.2, None))):
         net.arc("fronta", f"obsaz{k}")
         net.arc(f"obsl{k}", "konec")
     else:
-        net.arc("fronta", f"obsaz{k}", via=[(3, y)], corner=20)
-        net.arc(f"obsl{k}", "konec", via=[(9, y)], corner=20)
+        net.arc("fronta", f"obsaz{k}", via=[(3, y)])
+        net.arc(f"obsl{k}", "konec", via=[(9, y)])
     net.invariant({f"Z{k}": 1, f"obsluha{k}": 1}, 1)
 
 # zobrazené značení musí odpovídat simulaci od času 0 (P0 přichází v čase 0)

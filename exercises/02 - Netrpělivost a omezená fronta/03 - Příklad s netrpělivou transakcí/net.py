@@ -23,7 +23,7 @@ net.chain("hovor_t", "vyrizen", "odchod")
 # netrpělivost: každý volající má vlastní trpělivost 1–5 min
 net.timed("zaveseni", (4.5, -1.8), "1–5 min", label="zavěšení", label_pos="below",
           param_pos="above")
-net.arc("fronta", "zaveseni", via=[(3, -1.8)], corner=20)
+net.arc("fronta", "zaveseni", via=[(3, -1.8)])
 net.place("zavesil", (6, -1.8), label="zavěsil", label_pos="below")
 net.immediate("odchod2", (7.5, -1.8), exit=True, label="odchod bez obsluhy", label_pos="right")
 net.chain("zaveseni", "zavesil", "odchod2")

@@ -19,7 +19,7 @@ net.arc("citac", "vyber_p", w="N", via=[(4.5, 3.4)], w_pos="above")
 # horní řada N-tá auta, dolní ostatní; myčka je mezi řadami
 for row, y, name in (("p", 1.7, "fronta P"), ("n", -1.7, "fronta N")):
     up = y > 0
-    net.arc("novy", f"vyber_{row}", via=[(3, y)], corner=20)
+    net.arc("novy", f"vyber_{row}", via=[(3, y)])
     net.place(f"fronta_{row}", (6, y), label=name, label_pos="below" if up else "above")
     net.place(f"myti_{row}", (9, y))
     net.timed(f"konec_{row}", (10.5, y), "exp(8 min)", param_pos="above" if up else "below")
@@ -39,8 +39,8 @@ net.arc("konec_n", "mycka", out=90, into=-25)
 
 net.place("konec", (12, 0), label="umyto", label_pos="left")
 net.immediate("odchod", (13.5, 0), exit=True, label="odchod")
-net.arc("konec_p", "konec", via=[(12, 1.7)], corner=20)
-net.arc("konec_n", "konec", via=[(12, -1.7)], corner=20)
+net.arc("konec_p", "konec", via=[(12, 1.7)])
+net.arc("konec_n", "konec", via=[(12, -1.7)])
 net.arc("konec", "odchod")
 
 net.invariant({"mycka": 1, "myti_p": 1, "myti_n": 1}, 1)

@@ -12,8 +12,8 @@ net.immediate("zna", (4.5, 2.4), prob=60, label="zná klapku", label_pos="below"
               param_pos="above")
 net.immediate("nezna", (4.5, -2.4), prob=40, label="nezná klapku", label_pos="above",
               param_pos="below")
-net.arc("volajici", "zna", via=[(3, 2.4)], corner=20)
-net.arc("volajici", "nezna", via=[(3, -2.4)], corner=20)
+net.arc("volajici", "zna", via=[(3, 2.4)])
+net.arc("volajici", "nezna", via=[(3, -2.4)])
 
 # volající, kteří znají klapku, čekají přímo na linku
 net.place("ceka_A", (12.3, 2.4), label="čeká na linku", label_pos="above")
@@ -41,8 +41,8 @@ net.arc("spojeny", "obsaz_B")
 net.arc("linky", "obsaz_A")
 net.arc("linky", "obsaz_B")
 net.place("hovor", (15, 0), label="hovor", label_pos="below right")
-net.arc("obsaz_A", "hovor", via=[(15, 2.4)], corner=20)
-net.arc("obsaz_B", "hovor", via=[(15, -2.4)], corner=20)
+net.arc("obsaz_A", "hovor", via=[(15, 2.4)])
+net.arc("obsaz_B", "hovor", via=[(15, -2.4)])
 net.timed("hovor_t", (16.5, 0), "exp(2 min)", param_pos="above")
 net.arc("hovor", "hovor_t")
 # návrat linky do skladu zprava (jediné křížení: se spojením zdola do „hovor“)

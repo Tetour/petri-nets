@@ -20,8 +20,8 @@ net.place("rozdeleni", (9, 0), label="rozdělování", label_pos="right")
 net.arc("vydej", "rozdeleni")
 net.immediate("na_prep", (10.5, 2.4), prob=90, param_pos="above")
 net.immediate("na_ved", (10.5, -2.4), prob=10, param_pos="below")
-net.arc("rozdeleni", "na_prep", via=[(9, 2.4)], corner=20)
-net.arc("rozdeleni", "na_ved", via=[(9, -2.4)], corner=20)
+net.arc("rozdeleni", "na_prep", via=[(9, 2.4)])
+net.arc("rozdeleni", "na_ved", via=[(9, -2.4)])
 
 # tři pracovníci na přepážkách (sklad se 3 značkami)
 net.place("fronta_p", (12, 2.4), label="fronta", label_pos="below")
@@ -43,8 +43,8 @@ net.chain("na_ved", "fronta_v", "obsaz_v", "poradenstvi", "obsl_v")
 # odchod klientů
 net.place("konec", (18, 0), label="konec", label_pos="left")
 net.immediate("odchod", (19.5, 0), exit=True, label="odchod", label_pos="above")
-net.arc("obsl_p", "konec", via=[(18, 2.4)], corner=20)
-net.arc("obsl_v", "konec", via=[(18, -2.4)], corner=20)
+net.arc("obsl_p", "konec", via=[(18, 2.4)])
+net.arc("obsl_v", "konec", via=[(18, -2.4)])
 net.arc("konec", "odchod")
 
 # vedoucí jako proces: u přepážky (Vedoucí) obsluhuje klienta, po 30 min bez klienta jde na

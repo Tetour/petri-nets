@@ -14,7 +14,7 @@ for row, y in (("a", 1.8), ("b", -1.8)):
     net.immediate(f"obsaz_{row}", (4.5, y))
     net.place(f"obsluha_{row}", (6, y))
     net.timed(f"vyrizeni_{row}", (7.5, y), "exp(0,5 s)", param_pos="below" if up else "above")
-    net.arc("fronta", f"obsaz_{row}", via=[(3, y)], corner=20)
+    net.arc("fronta", f"obsaz_{row}", via=[(3, y)])
     net.chain(f"obsaz_{row}", f"obsluha_{row}", f"vyrizeni_{row}")
 
 # proces A je mezi řadami (horní stranou jeho obsluha přidává do čítače), proces B pod nimi
@@ -27,8 +27,8 @@ net.arc("vyrizeni_b", "b", out=270, into=0)
 
 net.place("konec", (9, 0), label="vyřízeno", label_pos="left")
 net.immediate("odchod", (10.5, 0), exit=True, label="odchod", label_pos="above")
-net.arc("vyrizeni_a", "konec", via=[(9, 1.8)], corner=20)
-net.arc("vyrizeni_b", "konec", via=[(9, -1.8)], corner=20)
+net.arc("vyrizeni_a", "konec", via=[(9, 1.8)])
+net.arc("vyrizeni_b", "konec", via=[(9, -1.8)])
 net.arc("konec", "odchod")
 
 # proces S: minutu počítá dokončené obsluhy procesu A, pak vyhodnotí a čítač vynuluje

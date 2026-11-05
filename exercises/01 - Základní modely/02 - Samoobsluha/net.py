@@ -16,7 +16,7 @@ net.arc("voziky", "vzit_vozik")
 # 30 % nahoru k lahůdkám (sklad 2 prodavačky), 70 % rovně rovnou nakupovat
 net.immediate("k_lahudkam", (7.5, 1.8), prob=30, param_pos="above")
 net.immediate("bez_lahudek", (7.5, 0), prob=70, param_pos="below")
-net.arc("prodejna", "k_lahudkam", via=[(6, 1.8)], corner=20)
+net.arc("prodejna", "k_lahudkam", via=[(6, 1.8)])
 net.arc("prodejna", "bez_lahudek")
 net.place("fronta_L", (9, 1.8), label="fronta u lahůdek", label_pos="below")
 net.place("prodavacky", (10.5, 3.4), tokens=2, label="Prodavačky", label_pos="left")
@@ -28,7 +28,7 @@ net.arc("prodavacky", "obsaz_L")
 net.arc("obsl_L", "prodavacky", out=90, into=0)
 net.place("nakup", (15, 0), label="nákup", label_pos="below")
 net.arc("bez_lahudek", "nakup")
-net.arc("obsl_L", "nakup", via=[(15, 1.8)], corner=20)
+net.arc("obsl_L", "nakup", via=[(15, 1.8)])
 
 # běžný nákup a výběr pokladny
 net.timed("nakupuje", (16.5, 0), "10–15 min")

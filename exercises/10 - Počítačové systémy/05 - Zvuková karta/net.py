@@ -50,11 +50,11 @@ for name, y, prob, label, time in (("vzda", -7, 20, "vzdá se", "0–10 ms"),
     up = y > -8.4
     net.immediate(name, (5.5, y), prob=prob, label=label, label_pos="above" if up else "below",
                   param_pos="below" if up else "above")
-    net.arc("bezi", name, via=[(4, y)], corner=20)
+    net.arc("bezi", name, via=[(4, y)])
     net.place(f"{name}_p", (7, y))
     net.timed(f"{name}_t", (8.5, y), time, param_pos="above" if up else "below")
     net.chain(name, f"{name}_p", f"{name}_t")
-    net.arc(f"{name}_t", "konec_kv", via=[(10, y)], corner=20)
+    net.arc(f"{name}_t", "konec_kv", via=[(10, y)])
 net.place("konec_kv", (10, -8.4))
 net.immediate("uvolneni", (11.5, -8.4), label="uvolní procesor", label_pos="right")
 net.arc("konec_kv", "uvolneni")

@@ -23,7 +23,7 @@ net.chain("obsl", "konec", "odchod")
 # netrpělivost: časovaný přechod přímo na frontě, každý čekající má vlastní odpočet
 net.timed("netrp", (6, -1.8), "10", label="netrpělivost", label_pos="below",
           param_pos="above")
-net.arc("fronta", "netrp", via=[(3, -1.8)], corner=20)
-net.arc("netrp", "konec", via=[(9, -1.8)], corner=20)
+net.arc("fronta", "netrp", via=[(3, -1.8)])
+net.arc("netrp", "konec", via=[(9, -1.8)])
 
 net.invariant({"linka": 1, "obsluha": 1}, 1)

@@ -17,11 +17,11 @@ for row, y, prob, t, time in (("bezne", 1.8, 90, "dojeni_8", "exp(8 min)"),
                               ("dlouhe", -1.8, 10, "dojeni_15", "exp(15 min)")):
     side = "above" if y > 0 else "below"
     net.immediate(row, (7.5, y), prob=prob, param_pos=side)
-    net.arc("dojeni", row, via=[(6, y)], corner=20)
+    net.arc("dojeni", row, via=[(6, y)])
     net.place(f"d_{row}", (9, y))
     net.timed(t, (10.5, y), time, param_pos=side)
     net.chain(row, f"d_{row}", t)
-    net.arc(t, "podojeno", via=[(12, y)], corner=20)
+    net.arc(t, "podojeno", via=[(12, y)])
 net.place("podojeno", (12, 0), label="podojeno", label_pos="left")
 
 # uvolnění dojičky (nahoru) a krávy (dolů), vznikne konvice

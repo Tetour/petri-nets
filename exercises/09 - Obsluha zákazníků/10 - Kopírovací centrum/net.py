@@ -21,7 +21,7 @@ net.arc("reg", "rozdeleni")
 for row, y, prob in (("A", 2, 70), ("B", -2, 30)):
     up = y > 0
     net.immediate(f"na_{row}", (10.5, y), prob=prob, param_pos="above" if up else "below")
-    net.arc("rozdeleni", f"na_{row}", via=[(9, y)], corner=20)
+    net.arc("rozdeleni", f"na_{row}", via=[(9, y)])
     net.place(f"fronta_{row}", (12, y), label=f"fronta {row}", label_pos="above" if up else "below")
     net.place(f"stroj_{row}", (13.5, y + (1.6 if up else -1.6)), tokens=1,
               label=f"Stroj {row}", label_pos="above" if up else "below")
@@ -35,13 +35,13 @@ for row, y, prob in (("A", 2, 70), ("B", -2, 30)):
 # netrpělivost: po 10 min ve frontě B klient odchází
 net.timed("netrpelivost", (13.5, 0), "10 min", label="netrpělivost", label_pos="above",
           param_pos="below")
-net.arc("fronta_B", "netrpelivost", via=[(12, 0)], corner=20)
+net.arc("fronta_B", "netrpelivost", via=[(12, 0)])
 
 # odchod ze systému
 net.place("konec", (18, 0), label="konec", label_pos="above left")
 net.immediate("odchod", (19.5, 0), exit=True, label="odchod")
-net.arc("kop_A", "konec", via=[(18, 2)], corner=20)
-net.arc("kop_B", "konec", via=[(18, -2)], corner=20)
+net.arc("kop_A", "konec", via=[(18, 2)])
+net.arc("kop_B", "konec", via=[(18, -2)])
 net.arc("netrpelivost", "konec")
 net.arc("konec", "odchod")
 

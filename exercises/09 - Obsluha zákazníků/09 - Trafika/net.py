@@ -14,7 +14,7 @@ net.arc("vstup", "zarad")
 net.loop("pritomen", "zarad", bend=25)
 # prodavač chybí (p=0): zákazník hned odchází
 net.immediate("neni", (4.5, -1.6), exit=True, label="odchod (prodavač chybí)", label_pos="right")
-net.arc("vstup", "neni", via=[(3, -1.6)], corner=20)
+net.arc("vstup", "neni", via=[(3, -1.6)])
 
 # obsluha u pultu
 net.place("fronta", (6, 0), label="fronta", label_pos="below")

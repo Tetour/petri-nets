@@ -17,12 +17,12 @@ net.arc("linka", "obsaz")
 net.immediate("ve_dne", (7.5, 1.5))
 net.place("obsl_den", (9, 1.5))
 net.timed("den_obsl", (10.5, 1.5), "exp(5 min)", param_pos="below")
-net.arc("volba", "ve_dne", via=[(6, 1.5)], corner=20)
+net.arc("volba", "ve_dne", via=[(6, 1.5)])
 net.chain("ve_dne", "obsl_den", "den_obsl")
 net.immediate("v_noci", (7.5, -1.5), p=1, param_pos="above")
 net.place("obsl_noc", (9, -1.5))
 net.timed("noc_obsl", (10.5, -1.5), "exp(10 min)", param_pos="above")
-net.arc("volba", "v_noci", via=[(6, -1.5)], corner=20)
+net.arc("volba", "v_noci", via=[(6, -1.5)])
 net.chain("v_noci", "obsl_noc", "noc_obsl")
 # návrat linky: z denní obsluhy oblouk, z noční obchází síť zprava a shora
 net.arc("den_obsl", "linka", out=90, into=0)
@@ -31,8 +31,8 @@ net.arc("noc_obsl", "linka", via=[(10.5, -2.4), (14.6, -2.4), (14.6, 3.6), (4.5,
 # odchod
 net.place("konec", (12, 0), label="konec", label_pos="left")
 net.immediate("odchod", (13.5, 0), exit=True, label="odchod")
-net.arc("den_obsl", "konec", via=[(12, 1.5)], corner=20)
-net.arc("noc_obsl", "konec", via=[(12, -1.5)], corner=20)
+net.arc("den_obsl", "konec", via=[(12, 1.5)])
+net.arc("noc_obsl", "konec", via=[(12, -1.5)])
 net.arc("konec", "odchod")
 
 # proces den/noc

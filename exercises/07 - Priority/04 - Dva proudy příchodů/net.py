@@ -37,8 +37,8 @@ net.arc("preruseni", "linka")
 
 net.place("konec", (9.5, 0), label="obslouženo", label_pos="left")
 net.immediate("odchod", (11, 0), exit=True, label="odchod")
-net.arc("obsl_p", "konec", via=[(9.5, 2)], corner=20)
-net.arc("obsl_n", "konec", via=[(9.5, -2)], corner=20)
+net.arc("obsl_p", "konec", via=[(9.5, 2)])
+net.arc("obsl_n", "konec", via=[(9.5, -2)])
 net.arc("konec", "odchod")
 
 net.invariant({"linka": 1, "obsluha_p": 1, "obsluha_n": 1}, 1)

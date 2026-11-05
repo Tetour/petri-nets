@@ -12,7 +12,7 @@ net.arc("prichod", "fronta")
 for k, (y, p) in enumerate(((1.7, 1), (-1.7, None))):
     up = y > 0
     net.immediate(f"obsaz{k}", (4.5, y), p=p, param_pos="below" if up else "above")
-    net.arc("fronta", f"obsaz{k}", via=[(3, y)], corner=20)
+    net.arc("fronta", f"obsaz{k}", via=[(3, y)])
     net.place(f"Z{k}", (4.5, y + (1.6 if up else -1.6)), tokens=0, label=f"Z{k}",
               label_pos="above" if up else "below")
     net.place(f"obsluha{k}", (6, y), tokens=1)
@@ -25,8 +25,8 @@ for k, (y, p) in enumerate(((1.7, 1), (-1.7, None))):
 
 net.place("konec", (9, 0), label="hotovo", label_pos="left")
 net.immediate("odchod", (10.5, 0), exit=True, label="odchod")
-net.arc("obsl0", "konec", via=[(9, 1.7)], corner=20)
-net.arc("obsl1", "konec", via=[(9, -1.7)], corner=20)
+net.arc("obsl0", "konec", via=[(9, 1.7)])
+net.arc("obsl1", "konec", via=[(9, -1.7)])
 net.arc("konec", "odchod")
 
 # zobrazené značení musí odpovídat simulaci od času 0 (P0 přichází v čase 0)

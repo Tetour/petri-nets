@@ -12,7 +12,7 @@ net.arc("prichod", "novy")
 for row, y, prob, name in (("a", 1.7, 20, "fronta akutních"), ("o", -1.7, 80, "fronta ostatních")):
     up = y > 0
     net.immediate(f"vyber_{row}", (4.5, y), prob=prob, param_pos="above" if up else "below")
-    net.arc("novy", f"vyber_{row}", via=[(3, y)], corner=20)
+    net.arc("novy", f"vyber_{row}", via=[(3, y)])
     net.place(f"fronta_{row}", (6, y), label=name, label_pos="below" if up else "above")
     net.place(f"vys_{row}", (9, y))
     net.timed(f"konec_{row}", (10.5, y), "exp(10 min)", param_pos="above" if up else "below")
@@ -33,8 +33,8 @@ net.arc("konec_o", "lekar", out=90, into=-25)
 
 net.place("konec", (12, 0), label="vyšetřen", label_pos="left")
 net.immediate("odchod", (13.5, 0), exit=True, label="odchod")
-net.arc("konec_a", "konec", via=[(12, 1.7)], corner=20)
-net.arc("konec_o", "konec", via=[(12, -1.7)], corner=20)
+net.arc("konec_a", "konec", via=[(12, 1.7)])
+net.arc("konec_o", "konec", via=[(12, -1.7)])
 net.arc("konec", "odchod")
 
 net.invariant({"lekar": 1, "vys_a": 1, "vys_o": 1}, 1)

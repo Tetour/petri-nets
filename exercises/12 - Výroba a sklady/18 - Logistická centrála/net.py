@@ -18,7 +18,7 @@ net.immediate("prazdna", (8, 2.2), prob=50, label="odjíždí prázdná", label_
               param_pos="below")
 net.immediate("nakladat", (8, 0), prob=50, label="bude nakládat", label_pos="below",
               param_pos="above")
-net.arc("vylozena", "prazdna", via=[(6, 2.2)], corner=20)
+net.arc("vylozena", "prazdna", via=[(6, 2.2)])
 net.arc("vylozena", "nakladat")
 net.place("naklada", (12, 0), label="Nakládá", label_pos="above")
 net.arc("nakladat", "naklada")
@@ -33,7 +33,7 @@ net.arc("nalozeno", "odjezd", w=100, w_pos="right")
 # obě větve se sejdou, dodávka uvolní rampu a opouští systém
 net.place("odjizdi", (15, 0), label="Odjíždí", label_pos="below")
 net.arc("odjezd", "odjizdi")
-net.arc("prazdna", "odjizdi", via=[(15, 2.2)], corner=20)
+net.arc("prazdna", "odjizdi", via=[(15, 2.2)])
 net.immediate("uvolneni", (16.8, 0), label="uvolní rampu", label_pos="below")
 net.arc("odjizdi", "uvolneni")
 net.arc("uvolneni", "rampa", via=[(16.8, 3.6), (4.5, 3.6)])

@@ -11,7 +11,7 @@ net.arc("prichod", "fronta")
 
 # přepážka A (horní řada): pošťák nad ní
 net.immediate("obsaz_a", (5.4, 2), p=1, param_pos="below")
-net.arc("fronta", "obsaz_a", via=[(3.2, 2)], corner=20)
+net.arc("fronta", "obsaz_a", via=[(3.2, 2)])
 net.place("postak", (5.4, 3.6), tokens=1, label="Pošťák", label_pos="above")
 net.place("obsluha_a", (6.9, 2))
 net.timed("podani_a", (8.4, 2), "exp(3 min)", param_pos="below")
@@ -30,7 +30,7 @@ net.arc("podani_b", "u_b", out=270, into=0)
 
 # klient odchází, jeho zásilka zůstává na poště
 net.place("obslouzen", (9.9, 0), label="obsloužen", label_pos="below")
-net.arc("podani_a", "obslouzen", via=[(9.9, 2)], corner=20)
+net.arc("podani_a", "obslouzen", via=[(9.9, 2)])
 net.arc("podani_b", "obslouzen")
 net.immediate("predani", (11.4, 0), label="podání zásilky", label_pos="above")
 net.place("klient_odchazi", (12.9, 0))
@@ -58,8 +58,8 @@ net.immediate("nalozeni", (9.9, -3.2), p=1, label="naložení", label_pos="above
               param_pos="below right")
 net.arc("zasilky", "nalozeni", w=100, w_pos="below,xshift=-3pt")
 net.place("naklada", (8.4, -5.2), label="nakládá", label_pos="above")
-net.arc("nalozeni_b", "naklada", via=[(6.9, -5.2)], corner=20)
-net.arc("nalozeni", "naklada", via=[(9.9, -5.2)], corner=20)
+net.arc("nalozeni_b", "naklada", via=[(6.9, -5.2)])
+net.arc("nalozeni", "naklada", via=[(9.9, -5.2)])
 net.timed("nakladani", (8.4, -6.6), "30 min", param_pos="right")
 net.place("veze", (6.9, -6.6), label="veze do Centrály", label_pos="below")
 net.timed("cesta", (5.4, -6.6), "2 h", param_pos="below")

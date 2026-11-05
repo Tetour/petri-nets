@@ -32,7 +32,7 @@ net.arc("vraceni", "uroven")
 
 # fáze došly (p=0): transakce odchází spodní řadou; nejdřív se vrátí odsloužené fáze, pak linka
 net.immediate("dosly", (7.6, -4.8), label="fáze došly", label_pos="below")
-net.arc("obsluha", "dosly", via=[(6, -4.8)], corner=20)
+net.arc("obsluha", "dosly", via=[(6, -4.8)])
 net.place("hotovo", (10.5, -4.8), label="hotovo", label_pos="below")
 net.arc("dosly", "hotovo")
 net.arc("hotovo", "vraceni", bend=20)

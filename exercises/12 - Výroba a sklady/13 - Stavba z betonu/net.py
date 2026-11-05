@@ -15,13 +15,13 @@ for m, y, p in (("b", 2.4, 1), ("c", -2.4, None)):
     net.place(f"pripravuji_{m}", (4.5, y))
     net.timed(f"prip_{m}_t", (6, y), "3–5 h", param_pos="below" if up else "above")
     net.chain(f"prip_{m}", f"pripravuji_{m}", f"prip_{m}_t")
-    net.arc("formy", f"prip_{m}", via=[(1.5, y)], corner=20)
+    net.arc("formy", f"prip_{m}", via=[(1.5, y)])
     net.arc("zbyva", f"prip_{m}")
 
 # 2) objednávka betonu, dodávka za 2 h
 net.place("ceka", (7.5, 0), label="Čeká na beton", label_pos="below right")
-net.arc("prip_b_t", "ceka", via=[(7.5, 2.4)], corner=20)
-net.arc("prip_c_t", "ceka", via=[(7.5, -2.4)], corner=20)
+net.arc("prip_b_t", "ceka", via=[(7.5, 2.4)])
+net.arc("prip_c_t", "ceka", via=[(7.5, -2.4)])
 net.timed("dodavka", (9, 0), "2 h", param_pos="above")
 net.place("beton", (10.5, 0), label="Beton dorazil", label_pos="above")
 net.chain("ceka", "dodavka", "beton")
@@ -41,13 +41,13 @@ for m, y, p in (("b", 2.4, 2), ("c", -2.4, 1)):
     net.immediate(f"odstr_{m}", (21, y), p=p, param_pos="below" if up else "above")
     net.place(f"odstranuji_{m}", (22.5, y))
     net.timed(f"odstr_{m}_t", (24, y), "2–3 h", param_pos="below" if up else "above")
-    net.arc("vyzrale", f"odstr_{m}", via=[(19.5, y)], corner=20)
+    net.arc("vyzrale", f"odstr_{m}", via=[(19.5, y)])
     net.chain(f"odstr_{m}", f"odstranuji_{m}", f"odstr_{m}_t")
 
 # odstraněná forma se vrací, část je hotová
 net.place("odstraneno", (25.5, 0))
-net.arc("odstr_b_t", "odstraneno", via=[(25.5, 2.4)], corner=20)
-net.arc("odstr_c_t", "odstraneno", via=[(25.5, -2.4)], corner=20)
+net.arc("odstr_b_t", "odstraneno", via=[(25.5, 2.4)])
+net.arc("odstr_c_t", "odstraneno", via=[(25.5, -2.4)])
 net.immediate("uvolneni", (27.3, 0))
 net.arc("odstraneno", "uvolneni")
 net.arc("uvolneni", "formy", via=[(27.3, 6.8), (0, 6.8), (0, 0)])

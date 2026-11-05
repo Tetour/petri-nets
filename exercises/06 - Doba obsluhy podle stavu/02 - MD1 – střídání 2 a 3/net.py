@@ -16,21 +16,21 @@ net.place("linka3", (4.5, 0), label="Linka (3)", label_pos="above")
 # horní řada obsluha 2, dolní obsluha 3
 for row, y, time in (("2", 1.7, "2"), ("3", -1.7, "3")):
     net.immediate(f"obsaz{row}", (4.5, y))
-    net.arc("fronta", f"obsaz{row}", via=[(3, y)], corner=20)
+    net.arc("fronta", f"obsaz{row}", via=[(3, y)])
     net.place(f"obsluha{row}", (6, y))
     net.timed(f"obsl{row}", (7.5, y), time, param_pos="above")
     net.chain(f"obsaz{row}", f"obsluha{row}", f"obsl{row}")
     net.arc(f"linka{row}", f"obsaz{row}")
 
 # obsluha 2 předá linku do stavu „3“: dolů ze spodní strany přechodu a doleva
-net.arc("obsl2", "linka3", via=[(7.5, 0)], corner=20)
+net.arc("obsl2", "linka3", via=[(7.5, 0)])
 # obsluha 3 předá linku do stavu „2“: objížďka kolem konce sítě
-net.arc("obsl3", "linka2", via=[(7.5, -3.1), (12.5, -3.1), (12.5, 3.4)], corner=20)
+net.arc("obsl3", "linka2", via=[(7.5, -3.1), (12.5, -3.1), (12.5, 3.4)])
 
 net.place("konec", (9.5, 0), label="obslouženo", label_pos="left")
 net.immediate("odchod", (11, 0), exit=True, label="odchod")
-net.arc("obsl2", "konec", via=[(9.5, 1.7)], corner=20)
-net.arc("obsl3", "konec", via=[(9.5, -1.7)], corner=20)
+net.arc("obsl2", "konec", via=[(9.5, 1.7)])
+net.arc("obsl3", "konec", via=[(9.5, -1.7)])
 net.arc("konec", "odchod")
 
 net.invariant({"linka2": 1, "linka3": 1, "obsluha2": 1, "obsluha3": 1}, 1)

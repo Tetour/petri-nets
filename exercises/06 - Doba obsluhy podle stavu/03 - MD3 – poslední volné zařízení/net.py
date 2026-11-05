@@ -15,7 +15,7 @@ net.place("zarizeni", (5, 0), tokens=3, label="Zařízení", label_pos="below le
 for row, y, time in (("3", 2, "3"), ("5", -2, "5")):
     up = y > 0
     net.immediate(f"obsaz{row}", (5, y), p=1 if up else None, param_pos="above")
-    net.arc("fronta", f"obsaz{row}", via=[(3, y)], corner=20)
+    net.arc("fronta", f"obsaz{row}", via=[(3, y)])
     net.place(f"obsluha{row}", (6.7, y))
     net.timed(f"obsl{row}", (8.4, y), time, param_pos="above" if up else "below")
     net.chain(f"obsaz{row}", f"obsluha{row}", f"obsl{row}")
@@ -29,8 +29,8 @@ net.arc("zarizeni", "obsaz5")
 
 net.place("konec", (10, 0), label="obslouženo", label_pos="left")
 net.immediate("odchod", (11.5, 0), exit=True, label="odchod")
-net.arc("obsl3", "konec", via=[(10, 2)], corner=20)
-net.arc("obsl5", "konec", via=[(10, -2)], corner=20)
+net.arc("obsl3", "konec", via=[(10, 2)])
+net.arc("obsl5", "konec", via=[(10, -2)])
 net.arc("konec", "odchod")
 
 net.invariant({"zarizeni": 1, "obsluha3": 1, "obsluha5": 1}, 3)

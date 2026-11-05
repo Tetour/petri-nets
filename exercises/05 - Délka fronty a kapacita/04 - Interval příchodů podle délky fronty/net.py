@@ -10,7 +10,7 @@ net.immediate("vol_a", (3, 0), p=1, label="fronta ≥ C", label_pos="below",
               param_pos="above left")
 net.immediate("vol_b", (3, -1.6), label="jinak", label_pos="right")
 net.arc("volba", "vol_a")
-net.arc("volba", "vol_b", via=[(1.5, -1.6)], corner=20)
+net.arc("volba", "vol_b", via=[(1.5, -1.6)])
 
 # interval A nad testem, interval B pod větví „jinak“
 net.place("gen_a", (3, 1.6), label="interval A", label_pos="above")

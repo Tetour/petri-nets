@@ -13,7 +13,7 @@ net.arc("prichod", "nova")
 for row, y, prob, name in (("p", 1.7, 20, "fronta P"), ("n", -1.7, 80, "fronta N")):
     up = y > 0
     net.immediate(f"vyber_{row}", (4.5, y), prob=prob, param_pos="above" if up else "below")
-    net.arc("nova", f"vyber_{row}", via=[(3, y)], corner=20)
+    net.arc("nova", f"vyber_{row}", via=[(3, y)])
     net.place(f"fronta_{row}", (6, y), label=name, label_pos="below" if up else "above")
     net.place(f"obsluha_{row}", (9, y))
     net.timed(f"obsl_{row}", (10.5, y), "exp(Y)", param_pos="above" if up else "below")
@@ -33,8 +33,8 @@ net.arc("obsl_n", "linky", out=90, into=-25)
 
 net.place("konec", (12, 0), label="obslouženo", label_pos="left")
 net.immediate("odchod", (13.5, 0), exit=True, label="odchod")
-net.arc("obsl_p", "konec", via=[(12, 1.7)], corner=20)
-net.arc("obsl_n", "konec", via=[(12, -1.7)], corner=20)
+net.arc("obsl_p", "konec", via=[(12, 1.7)])
+net.arc("obsl_n", "konec", via=[(12, -1.7)])
 net.arc("konec", "odchod")
 
 net.invariant({"linky": 1, "obsluha_p": 2, "obsluha_n": 1}, 3)

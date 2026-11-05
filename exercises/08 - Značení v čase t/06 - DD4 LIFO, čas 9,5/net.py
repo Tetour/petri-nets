@@ -29,8 +29,8 @@ for k, (y, p) in enumerate(((5.4, 3), (1.8, 2), (-1.8, 1), (-5.4, None))):
     # rozvětvení z fronty a sloučení do místa hotovo: krajní řady pravoúhle,
     # vnitřní obloukem šikmo (místo má jen čtyři strany)
     if outer:
-        net.arc("fronta", f"obsaz{k}", via=[(3, y)], corner=20)
-        net.arc(f"obsl{k}", "konec", via=[(9, y)], corner=20)
+        net.arc("fronta", f"obsaz{k}", via=[(3, y)])
+        net.arc(f"obsl{k}", "konec", via=[(9, y)])
     else:
         net.arc("fronta", f"obsaz{k}", out=45 if up else -45, into=180)
         net.arc(f"obsl{k}", "konec", out=0, into=135 if up else 225)

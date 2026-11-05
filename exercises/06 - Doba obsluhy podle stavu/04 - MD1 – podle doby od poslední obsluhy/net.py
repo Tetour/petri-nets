@@ -20,7 +20,7 @@ net.chain("linka2", "vychladnuti", "linka5")
 for row, y, time in (("2", 2.8, "2"), ("5", -2.8, "5")):
     up = y > 0
     net.immediate(f"obsaz{row}", (5.6, y))
-    net.arc("fronta", f"obsaz{row}", via=[(3, y)], corner=20)
+    net.arc("fronta", f"obsaz{row}", via=[(3, y)])
     net.place(f"obsluha{row}", (7.3, y))
     net.timed(f"obsl{row}", (9, y), time, param_pos="above" if up else "below")
     net.chain(f"obsaz{row}", f"obsluha{row}", f"obsl{row}")
@@ -30,8 +30,8 @@ for row, y, time in (("2", 2.8, "2"), ("5", -2.8, "5")):
 
 net.place("konec", (10.6, 0), label="obslouženo", label_pos="left")
 net.immediate("odchod", (12.1, 0), exit=True, label="odchod")
-net.arc("obsl2", "konec", via=[(10.6, 2.8)], corner=20)
-net.arc("obsl5", "konec", via=[(10.6, -2.8)], corner=20)
+net.arc("obsl2", "konec", via=[(10.6, 2.8)])
+net.arc("obsl5", "konec", via=[(10.6, -2.8)])
 net.arc("konec", "odchod")
 
 net.invariant({"linka2": 1, "linka5": 1, "obsluha2": 1, "obsluha5": 1}, 1)

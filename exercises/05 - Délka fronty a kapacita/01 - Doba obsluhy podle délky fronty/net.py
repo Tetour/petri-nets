@@ -21,7 +21,7 @@ net.chain("rychle", "obsl_r", "exp5")
 
 # jinak běžná obsluha v dolní řadě
 net.immediate("bezne", (4.8, -3.2), label="jinak", label_pos="below")
-net.arc("fronta", "bezne", via=[(3, -3.2)], corner=20)
+net.arc("fronta", "bezne", via=[(3, -3.2)])
 net.place("obsl_b", (6.3, -3.2))
 net.timed("exp10", (7.8, -3.2), "exp(10)", param_pos="below")
 net.chain("bezne", "obsl_b", "exp10")
@@ -36,8 +36,8 @@ net.arc("exp10", "linka", via=[(7.8, -2.4), (6.3, -2.4)])
 # odchod
 net.place("konec", (9.3, -1.6), label="konec", label_pos="left")
 net.immediate("odchod", (10.8, -1.6), exit=True, label="odchod")
-net.arc("exp5", "konec", via=[(9.3, 0)], corner=20)
-net.arc("exp10", "konec", via=[(9.3, -3.2)], corner=20)
+net.arc("exp5", "konec", via=[(9.3, 0)])
+net.arc("exp10", "konec", via=[(9.3, -3.2)])
 net.arc("konec", "odchod")
 
 net.invariant({"linka": 1, "obsl_r": 1, "obsl_b": 1}, 1)
