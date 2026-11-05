@@ -4,7 +4,7 @@
 
 ## Zadání
 
-> Zadání A: V intervalu exponenciálně se středem 100 milisekund přicházejí požadavky a čekají ve fronte na obsloužení serverem. Ten má kapacitu 1 a požadavky obsluhuje rychlostí exponenciálně se středem 70 milisekund. Ihned po obsloužení každeho 1000. požadavku se přepne server do režimu údržby kde je přesně 100 sekund. V režimu údržby jsou všechny transakce z fronty i nově příchozí vyhozeny bez obsluhy.
+> Požadavky přicházejí v intervalech exponenciálně se středem 100 milisekund a čekají ve frontě na obsloužení serverem. Server má kapacitu 1 a obsluha jednoho požadavku trvá exponenciálně se středem 70 milisekund. Ihned po obsloužení každého 1000. požadavku se server přepne do režimu údržby, ve kterém zůstane přesně 100 sekund. V režimu údržby jsou všechny požadavky z fronty i nově příchozí vyhozeny bez obsluhy.
 
 Podobné úlohy: [Údržba po každé 10. obsluze](<../../04 - Údržba a spánek/06 - Údržba po každé 10. obsluze/06 - Údržba po každé 10. obsluze.md>), [Automat na kávu – údržba po 50 obsluhách](<../../04 - Údržba a spánek/02 - Automat na kávu – údržba po 50 obsluhách/02 - Automat na kávu – údržba po 50 obsluhách.md>), [Každá 100. transakce vyprázdní frontu](<../../05 - Délka fronty a kapacita/07 - Každá 100. transakce vyprázdní frontu/07 - Každá 100. transakce vyprázdní frontu.md>), [Psí salon](<../../09 - Obsluha zákazníků/03 - Psí salon/03 - Psí salon.md>).
 
