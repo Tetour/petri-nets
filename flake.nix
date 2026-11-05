@@ -54,6 +54,8 @@
             parskip lineno
             # long code lines wrap instead of running off the page
             fvextra
+            # textbook look (pn/note-style.tex)
+            titlesec tcolorbox tikzfill pdfcol enumitem caption fancyhdr newunicodechar
           ]);
         in
         {
@@ -66,8 +68,9 @@
               pkgs.gnumake
               self.packages.${pkgs.stdenv.hostPlatform.system}.simlib
             ];
-            # xelatex finds the DejaVu fonts through this fontconfig, independent of the system
-            FONTCONFIG_FILE = pkgs.makeFontsConf { fontDirectories = [ pkgs.dejavu_fonts ]; };
+            # xelatex finds the Latin Modern fonts by file name in TeX Live; fontconfig only needs
+            # to exist, independent of the system
+            FONTCONFIG_FILE = pkgs.makeFontsConf { fontDirectories = [ ]; };
           };
         });
     };

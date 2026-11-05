@@ -1,0 +1,94 @@
+% Note PDFs styled like a mathematics textbook (pandoc -H, xelatex); used by pn/notes.py.
+% Each note defines \notenumber („Úloha 11/05“) for the running head (empty if it has no number).
+\providecommand{\notenumber}{}
+
+% Latin Modern throughout (text, code; maths through unicode-math's default)
+\usepackage{fontspec}
+\usepackage{xcolor}
+\setmainfont{lmroman10}[Extension=.otf, UprightFont=*-regular, BoldFont=*-bold,
+  ItalicFont=*-italic, BoldItalicFont=*-bolditalic, SmallCapsFont=lmromancaps10-regular]
+\setsansfont{lmsans10}[Extension=.otf, UprightFont=*-regular, BoldFont=*-bold,
+  ItalicFont=*-oblique, BoldItalicFont=*-boldoblique]
+\setmonofont{lmmono10}[Extension=.otf, UprightFont=*-regular, ItalicFont=*-italic]
+
+% symbols the Latin Modern text fonts lack come from the maths font (also in code)
+\usepackage{newunicodechar}
+\newunicodechar{⇄}{\ensuremath{\rightleftarrows}}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{⇒}{\ensuremath{\Rightarrow}}
+\newunicodechar{∧}{\ensuremath{\land}}
+\newunicodechar{λ}{\ensuremath{\lambda}}
+\newunicodechar{μ}{\ensuremath{\mu}}
+\newunicodechar{ρ}{\ensuremath{\rho}}
+\newunicodechar{τ}{\ensuremath{\tau}}
+\newunicodechar{⁶}{\textsuperscript{6}}
+\newunicodechar{⁷}{\textsuperscript{7}}
+\newunicodechar{⁻}{\textsuperscript{\textminus}}
+\newunicodechar{②}{\textcircled{\scriptsize 2}}
+
+\definecolor{accent}{HTML}{1F3A5F}
+\definecolor{boxbg}{HTML}{F4F6F9}
+\definecolor{rulegray}{gray}{0.55}
+
+% section headings: numbered, small caps, a thin rule under them
+\usepackage{titlesec}
+\setcounter{secnumdepth}{1}
+\titleformat{\section}{\normalfont\Large\scshape\color{accent}}{\thesection}{0.8em}{}[\vspace{2pt}{\color{rulegray}\titlerule[0.4pt]}]
+\titlespacing*{\section}{0pt}{2.2ex plus .5ex}{1.4ex}
+\titleformat{\subsection}[runin]{\normalfont\bfseries}{}{0pt}{}[.]
+\titlespacing*{\subsection}{0pt}{1.6ex plus .4ex}{0.6em}
+
+% lists: compact, round bullets
+\usepackage{enumitem}
+\setlist{itemsep=0.35ex, topsep=0.6ex, parsep=0pt}
+\setlist[itemize,1]{label={\color{accent}\raisebox{0.15ex}{\scriptsize$\bullet$}}, leftmargin=1.4em}
+\setlist[itemize,2]{label={\color{accent}\raisebox{0.15ex}{\scriptsize$\circ$}}}
+
+% the task (and the original wording): a rounded box, like an exercise in a textbook
+\usepackage[skins,breakable]{tcolorbox}
+\renewenvironment{quote}{%
+  \begin{tcolorbox}[enhanced, breakable, colback=boxbg, colframe=accent!35, boxrule=0.6pt,
+    arc=6pt, left=10pt, right=10pt, top=6pt, bottom=6pt,
+    before skip=1.2ex, after skip=1.4ex]\itshape}{\end{tcolorbox}}
+
+% code: small, on a rounded light background, long lines wrap
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breakanywhere,commandchars=\\\{\},fontsize=\footnotesize}
+\BeforeBeginEnvironment{Shaded}{\begin{tcolorbox}[enhanced, breakable, colback=boxbg, colframe=boxbg, boxrule=0pt, arc=6pt, left=8pt, right=8pt, top=4pt, bottom=4pt]}
+\AfterEndEnvironment{Shaded}{\end{tcolorbox}}
+
+% figures: captioned as in a book; placed where they are
+\usepackage{caption}
+\captionsetup{font=small, labelfont={sc}, labelsep=period}
+\makeatletter\def\fps@figure{!htbp}\makeatother
+
+% a diagram wider than the text column may use the full page width less 2 cm margins,
+% centred on the page; narrower diagrams keep their natural size
+\makeatletter
+\newlength\figmaxwidth
+\setlength\figmaxwidth{\dimexpr\paperwidth-4cm\relax}
+\renewcommand*\pandocbounded[1]{%
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\figmaxwidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi
+  \makebox[\linewidth][c]{\ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}\else\usebox{\pandoc@box}\fi}%
+}
+\makeatother
+
+% running head in light grey without a rule (a section rule often follows right below)
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\scshape\color{rulegray} Petriho sítě}
+\fancyhead[R]{\small\scshape\color{rulegray}\notenumber}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small\thepage}\renewcommand{\headrulewidth}{0pt}}
+
+\usepackage{microtype}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.7ex plus .2ex}
+\AtBeginDocument{\hypersetup{colorlinks=true, linkcolor=accent, urlcolor=accent}}

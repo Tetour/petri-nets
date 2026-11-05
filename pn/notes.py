@@ -4,7 +4,9 @@
 
 The collapsed sections are expanded in the PDF, but the hint and the net each start on a
 new page, so the first page shows only the task. Links to other exercises point to their
-PDFs; the diagram is embedded as net.pdf (vector).
+PDFs; the diagram is embedded as net.pdf (vector). The closing Reference links are left out.
+The look (a mathematics textbook: Latin Modern, numbered sections, rounded boxes) is in
+note-style.tex.
 """
 
 import argparse
@@ -19,19 +21,27 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 BUILD = ROOT / "build" / "notes"
 
+# ## headings become numbered \section; the note's # title is set by TITLE instead
 PANDOC = [
-    "pandoc", "-f", "markdown-smart-implicit_figures",
-    "-V", "mainfont=DejaVu Sans", "-V", "monofont=DejaVu Sans Mono",
-    "-V", "fontsize=10pt", "-V", "geometry:margin=2cm", "-V", "lang=cs",
-    "-V", "colorlinks=true", "-V", "linkcolor=blue", "-V", "urlcolor=blue",
-    "-V", "pagestyle=plain", "-V", "papersize=a4",
+    "pandoc", "-f", "markdown-smart", "--shift-heading-level-by=-1",
+    "-V", "fontsize=11pt", "-V", "lang=cs",
+    "-V", "geometry:a4paper,textwidth=14.5cm,top=3cm,bottom=3cm,headsep=0.8cm",
 ]
 
 NEW_PAGE_BEFORE = ("## Nápověda", "## Petriho síť")
 
-# long lines in code blocks wrap instead of running off the page (pandoc's Highlighting env)
-HEADER = r"""\usepackage{fvextra}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breakanywhere,commandchars=\\\{\}}
+STYLE = Path(__file__).with_name("note-style.tex")
+
+TITLE = r"""```{{=latex}}
+\renewcommand{{\notenumber}}{{Úloha {number}}}
+\thispagestyle{{plain}}
+\begin{{flushleft}}
+{{\scshape\color{{accent}} Úloha {number}}}\\[3pt]
+{{\LARGE {title}}}\\[6pt]
+{{\color{{rulegray}}\rule{{\linewidth}}{{0.8pt}}}}
+\end{{flushleft}}
+\vspace{{1ex}}
+```
 """
 
 
@@ -46,6 +56,10 @@ def prepare(md: str, base: Path | None = None) -> str:
                 else m.group(0), md)
     for h in NEW_PAGE_BEFORE:
         md = md.replace(f"\n{h}\n", f"\n\\newpage\n\n{h}\n")
+    md = md.split("\n## Reference\n")[0]                     # links to the basics and the plan
+    m = re.match(r"# (.+)\n\nÚloha (\S+)\n", md)
+    if m:
+        md = TITLE.format(title=m.group(1), number=m.group(2)) + md[m.end():]
     return md
 
 
@@ -56,7 +70,7 @@ def render(note: Path):
     out.mkdir(parents=True, exist_ok=True)
     md = prepare(note.read_text(), note.parent).replace("](net.pdf)", f"](<{note.parent / 'net.pdf'}>)")
     (out / "note.md").write_text(md)
-    (out / "header.tex").write_text(HEADER)
+    shutil.copy(STYLE, out / "header.tex")
     r = subprocess.run(PANDOC + ["-s", "-H", "header.tex", "note.md", "-o", "note.tex"],
                        cwd=out, capture_output=True, text=True)
     if r.returncode:
