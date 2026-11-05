@@ -1,4 +1,4 @@
-# 11-03 Pizzerie s rozvozem
+# Pizzerie s rozvozem (11/03)
 
 ## Zadání
 

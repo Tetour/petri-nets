@@ -1,4 +1,4 @@
-# 02-03 Příklad s netrpělivou transakcí
+# Příklad s netrpělivou transakcí (02/03)
 
 ## Zadání
 

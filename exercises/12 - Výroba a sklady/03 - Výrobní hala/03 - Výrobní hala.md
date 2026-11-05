@@ -1,4 +1,4 @@
-# 12-03 Výrobní hala
+# Výrobní hala (12/03)
 
 ## Zadání
 

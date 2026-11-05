@@ -1,4 +1,4 @@
-# 10-02 Výpočetní služba se spánkem
+# Výpočetní služba se spánkem (10/02)
 
 ## Zadání
 

@@ -1,4 +1,4 @@
-# 01-01 Opravářská dílna
+# Opravářská dílna (01/01)
 
 ## Zadání
 

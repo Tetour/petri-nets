@@ -1,4 +1,4 @@
-# 11-11 Výletní loď na jezeře
+# Výletní loď na jezeře (11/11)
 
 ## Zadání
 

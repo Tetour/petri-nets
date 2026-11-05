@@ -1,4 +1,4 @@
-# 04-07 Údržbář na obchůzce
+# Údržbář na obchůzce (04/07)
 
 ## Zadání
 

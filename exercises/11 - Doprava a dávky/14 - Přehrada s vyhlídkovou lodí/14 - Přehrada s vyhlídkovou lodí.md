@@ -1,4 +1,4 @@
-# 11-14 Přehrada s vyhlídkovou lodí
+# Přehrada s vyhlídkovou lodí (11/14)
 
 ## Zadání
 

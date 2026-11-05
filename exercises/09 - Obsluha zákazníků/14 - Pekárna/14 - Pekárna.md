@@ -1,4 +1,4 @@
-# 09-14 Pekárna
+# Pekárna (09/14)
 
 ## Zadání
 

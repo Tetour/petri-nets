@@ -1,4 +1,4 @@
-# 10-05 Zvuková karta
+# Zvuková karta (10/05)
 
 ## Zadání
 

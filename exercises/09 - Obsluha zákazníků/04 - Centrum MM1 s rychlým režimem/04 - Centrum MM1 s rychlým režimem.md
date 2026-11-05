@@ -1,4 +1,4 @@
-# 09-04 Centrum MM1 s rychlým režimem
+# Centrum MM1 s rychlým režimem (09/04)
 
 ## Zadání
 

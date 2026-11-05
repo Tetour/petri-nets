@@ -1,4 +1,4 @@
-# 12-01 Zahradnictví a bouřka
+# Zahradnictví a bouřka (12/01)
 
 ## Zadání
 

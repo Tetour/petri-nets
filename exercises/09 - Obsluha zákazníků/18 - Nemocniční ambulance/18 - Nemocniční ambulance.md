@@ -1,4 +1,4 @@
-# 09-18 Nemocniční ambulance
+# Nemocniční ambulance (09/18)
 
 ## Zadání
 

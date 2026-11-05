@@ -1,4 +1,4 @@
-# 04-04 Údržba při prázdné frontě
+# Údržba při prázdné frontě (04/04)
 
 ## Zadání
 

@@ -1,4 +1,4 @@
-# 11-04 Výletní loď
+# Výletní loď (11/04)
 
 ## Zadání
 

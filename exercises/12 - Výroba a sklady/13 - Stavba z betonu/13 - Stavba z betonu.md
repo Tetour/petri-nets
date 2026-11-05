@@ -1,4 +1,4 @@
-# 12-13 Stavba z betonu
+# Stavba z betonu (12/13)
 
 ## Zadání
 

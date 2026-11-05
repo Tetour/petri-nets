@@ -1,4 +1,4 @@
-# 02-01 Netrpělivé požadavky
+# Netrpělivé požadavky (02/01)
 
 ## Zadání
 

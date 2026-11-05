@@ -1,4 +1,4 @@
-# 12-18 Logistická centrála
+# Logistická centrála (12/18)
 
 ## Zadání
 

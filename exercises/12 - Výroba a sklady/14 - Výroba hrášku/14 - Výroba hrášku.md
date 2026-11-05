@@ -1,4 +1,4 @@
-# 12-14 Výroba hrášku
+# Výroba hrášku (12/14)
 
 ## Zadání
 

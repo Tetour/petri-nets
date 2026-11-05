@@ -51,7 +51,7 @@ def check(note: Path):
         problems.append(f"{note.parent.name}:{line_no}: {msg}")
 
     name = note.parent.name.split(" - ", 1)[1]
-    heading = f"# {note.parent.parent.name.split(' - ')[0]}-{note.parent.name.split(' - ')[0]} {name}"
+    heading = f"# {name} ({note.parent.parent.name.split(' - ')[0]}/{note.parent.name.split(' - ')[0]})"
     if lines[0] != heading:
         bad(1, f"the heading must be „{heading}“")
 

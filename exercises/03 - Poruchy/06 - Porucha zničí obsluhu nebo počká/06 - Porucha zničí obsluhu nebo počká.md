@@ -1,4 +1,4 @@
-# 03-06 Porucha zničí obsluhu nebo počká
+# Porucha zničí obsluhu nebo počká (03/06)
 
 ## Zadání
 

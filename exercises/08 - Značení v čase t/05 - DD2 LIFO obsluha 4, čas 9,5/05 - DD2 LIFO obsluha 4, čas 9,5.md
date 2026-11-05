@@ -1,4 +1,4 @@
-# 08-05 DD2 LIFO obsluha 4, čas 9,5
+# DD2 LIFO obsluha 4, čas 9,5 (08/05)
 
 ## Zadání
 

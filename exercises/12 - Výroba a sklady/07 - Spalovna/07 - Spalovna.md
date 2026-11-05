@@ -1,4 +1,4 @@
-# 12-07 Spalovna
+# Spalovna (12/07)
 
 ## Zadání
 

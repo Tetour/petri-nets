@@ -1,4 +1,4 @@
-# 01-03 Zdravotní ordinace
+# Zdravotní ordinace (01/03)
 
 ## Zadání
 

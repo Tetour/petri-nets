@@ -1,4 +1,4 @@
-# 04-05 Údržba po dlouhé obsluze
+# Údržba po dlouhé obsluze (04/05)
 
 ## Zadání
 

@@ -1,4 +1,4 @@
-# 05-10 Pomocník přidá kapacitu
+# Pomocník přidá kapacitu (05/10)
 
 ## Zadání
 

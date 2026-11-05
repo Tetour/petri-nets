@@ -1,4 +1,4 @@
-# 09-08 Cestovní kancelář
+# Cestovní kancelář (09/08)
 
 ## Zadání
 

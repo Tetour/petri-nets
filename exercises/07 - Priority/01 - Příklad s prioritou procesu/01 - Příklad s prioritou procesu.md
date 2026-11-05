@@ -1,4 +1,4 @@
-# 07-01 Příklad s prioritou procesu
+# Příklad s prioritou procesu (07/01)
 
 ## Zadání
 

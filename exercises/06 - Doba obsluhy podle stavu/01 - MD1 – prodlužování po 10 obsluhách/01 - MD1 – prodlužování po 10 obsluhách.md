@@ -1,4 +1,4 @@
-# 06-01 MD1 – prodlužování po 10 obsluhách
+# MD1 – prodlužování po 10 obsluhách (06/01)
 
 ## Zadání
 

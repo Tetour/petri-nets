@@ -1,4 +1,4 @@
-# 09-22 Telefonní ústředna
+# Telefonní ústředna (09/22)
 
 ## Zadání
 

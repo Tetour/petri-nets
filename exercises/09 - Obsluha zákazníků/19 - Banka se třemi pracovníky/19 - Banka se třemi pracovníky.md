@@ -1,4 +1,4 @@
-# 09-19 Banka se třemi pracovníky
+# Banka se třemi pracovníky (09/19)
 
 ## Zadání
 

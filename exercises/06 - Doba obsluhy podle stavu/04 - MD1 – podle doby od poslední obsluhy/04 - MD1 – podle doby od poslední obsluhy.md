@@ -1,4 +1,4 @@
-# 06-04 MD1 – podle doby od poslední obsluhy
+# MD1 – podle doby od poslední obsluhy (06/04)
 
 ## Zadání
 

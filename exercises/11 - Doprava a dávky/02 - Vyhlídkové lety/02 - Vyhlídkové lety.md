@@ -1,4 +1,4 @@
-# 11-02 Vyhlídkové lety
+# Vyhlídkové lety (11/02)
 
 ## Zadání
 

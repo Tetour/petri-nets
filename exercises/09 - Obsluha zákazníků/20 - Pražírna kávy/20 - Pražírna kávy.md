@@ -1,4 +1,4 @@
-# 09-20 Pražírna kávy
+# Pražírna kávy (09/20)
 
 ## Zadání
 

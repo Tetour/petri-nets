@@ -1,4 +1,4 @@
-# 03-09 Porucha prodlouží obsluhu o 2
+# Porucha prodlouží obsluhu o 2 (03/09)
 
 ## Zadání
 

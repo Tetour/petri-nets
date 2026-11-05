@@ -1,4 +1,4 @@
-# 03-02 Porucha vrací transakci do fronty
+# Porucha vrací transakci do fronty (03/02)
 
 ## Zadání
 

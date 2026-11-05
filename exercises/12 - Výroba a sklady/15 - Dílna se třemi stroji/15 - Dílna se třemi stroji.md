@@ -1,4 +1,4 @@
-# 12-15 Dílna se třemi stroji
+# Dílna se třemi stroji (12/15)
 
 ## Zadání
 

@@ -317,9 +317,9 @@ def exercises():
 
 
 def note_id(f):
-    """Number of the exercise in folder `f` (relative to exercises/): "<category>-<exercise>", e.g. "06-02"."""
+    """Number of the exercise in folder `f` (relative to exercises/): "<category>/<exercise>", e.g. "06/02"."""
     cat, ex = f.split("/")
-    return f"{cat.split(' - ')[0]}-{ex.split(' - ')[0]}"
+    return f"{cat.split(' - ')[0]}/{ex.split(' - ')[0]}"
 
 
 def folder(name):

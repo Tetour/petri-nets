@@ -1,4 +1,4 @@
-# 12-11 Přečerpávací elektrárna
+# Přečerpávací elektrárna (12/11)
 
 ## Zadání
 

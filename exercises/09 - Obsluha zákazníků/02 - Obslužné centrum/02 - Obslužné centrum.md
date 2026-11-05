@@ -1,4 +1,4 @@
-# 09-02 Obslužné centrum
+# Obslužné centrum (09/02)
 
 ## Zadání
 

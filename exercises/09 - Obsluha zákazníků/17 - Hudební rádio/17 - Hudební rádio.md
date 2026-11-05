@@ -1,4 +1,4 @@
-# 09-17 Hudební rádio
+# Hudební rádio (09/17)
 
 ## Zadání
 

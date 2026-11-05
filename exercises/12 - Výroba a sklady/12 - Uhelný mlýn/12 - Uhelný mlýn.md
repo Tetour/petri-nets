@@ -1,4 +1,4 @@
-# 12-12 Uhelný mlýn
+# Uhelný mlýn (12/12)
 
 ## Zadání
 

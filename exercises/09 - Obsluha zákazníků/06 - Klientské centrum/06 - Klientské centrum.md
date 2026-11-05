@@ -1,4 +1,4 @@
-# 09-06 Klientské centrum
+# Klientské centrum (09/06)
 
 ## Zadání
 

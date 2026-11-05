@@ -1,4 +1,4 @@
-# 11-06 Festivalový autobus
+# Festivalový autobus (11/06)
 
 ## Zadání
 

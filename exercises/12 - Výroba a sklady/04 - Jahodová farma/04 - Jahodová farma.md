@@ -1,4 +1,4 @@
-# 12-04 Jahodová farma
+# Jahodová farma (12/04)
 
 ## Zadání
 

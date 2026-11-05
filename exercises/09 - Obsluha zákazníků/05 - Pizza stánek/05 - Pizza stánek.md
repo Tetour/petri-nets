@@ -1,4 +1,4 @@
-# 09-05 Pizza stánek
+# Pizza stánek (09/05)
 
 ## Zadání
 

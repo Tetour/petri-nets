@@ -1,4 +1,4 @@
-# 10-04 Počítačový server
+# Počítačový server (10/04)
 
 ## Zadání
 

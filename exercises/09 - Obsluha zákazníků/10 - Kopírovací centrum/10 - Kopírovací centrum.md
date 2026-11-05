@@ -1,4 +1,4 @@
-# 09-10 Kopírovací centrum
+# Kopírovací centrum (09/10)
 
 ## Zadání
 

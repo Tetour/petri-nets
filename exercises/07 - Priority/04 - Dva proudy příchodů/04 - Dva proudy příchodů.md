@@ -1,4 +1,4 @@
-# 07-04 Dva proudy příchodů
+# Dva proudy příchodů (07/04)
 
 ## Zadání
 

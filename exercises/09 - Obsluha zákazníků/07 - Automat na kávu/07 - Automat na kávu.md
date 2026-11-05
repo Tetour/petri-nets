@@ -1,4 +1,4 @@
-# 09-07 Automat na kávu
+# Automat na kávu (09/07)
 
 ## Zadání
 

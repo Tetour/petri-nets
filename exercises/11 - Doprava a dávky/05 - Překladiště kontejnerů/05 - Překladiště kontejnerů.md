@@ -1,4 +1,4 @@
-# 11-05 Překladiště kontejnerů
+# Překladiště kontejnerů (11/05)
 
 ## Zadání
 

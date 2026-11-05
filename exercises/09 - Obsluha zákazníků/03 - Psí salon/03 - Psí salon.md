@@ -1,4 +1,4 @@
-# 09-03 Psí salon
+# Psí salon (09/03)
 
 ## Zadání
 

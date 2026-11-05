@@ -1,4 +1,4 @@
-# 12-10 Zahradník na FIT
+# Zahradník na FIT (12/10)
 
 ## Zadání
 

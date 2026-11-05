@@ -1,4 +1,4 @@
-# 10-03 Databázový server
+# Databázový server (10/03)
 
 ## Zadání
 

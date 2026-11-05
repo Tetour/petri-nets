@@ -1,4 +1,4 @@
-# 03-05 Kritická havárie
+# Kritická havárie (03/05)
 
 ## Zadání
 

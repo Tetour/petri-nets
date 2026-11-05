@@ -1,4 +1,4 @@
-# 03-04 Porucha s opravou, transakce odchází
+# Porucha s opravou, transakce odchází (03/04)
 
 ## Zadání
 

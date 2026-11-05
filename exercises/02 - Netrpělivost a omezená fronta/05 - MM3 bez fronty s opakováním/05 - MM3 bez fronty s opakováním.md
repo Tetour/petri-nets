@@ -1,4 +1,4 @@
-# 02-05 MM3 bez fronty s opakováním
+# MM3 bez fronty s opakováním (02/05)
 
 ## Zadání
 

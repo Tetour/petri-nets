@@ -1,4 +1,4 @@
-# 09-11 Kopírovací centrum s poruchami
+# Kopírovací centrum s poruchami (09/11)
 
 ## Zadání
 

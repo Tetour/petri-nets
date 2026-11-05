@@ -1,4 +1,4 @@
-# 02-04 Fronta omezená na 10
+# Fronta omezená na 10 (02/04)
 
 ## Zadání
 
