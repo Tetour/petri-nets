@@ -179,4 +179,8 @@ Odpočet „noc trvá“ a stav *Noc* jsou v kódu přirozeně oddělené: `Wait
 
 - [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
 - [Notace a vzory](<../../../basics/Notace a vzory.md>)
+
+<!-- -->
+
+- [Studijní plán](<../../Studijní plán.md>)
 - [Seznam úloh](<../../Seznam úloh.md>)

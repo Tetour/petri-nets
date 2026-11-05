@@ -141,4 +141,8 @@ Bez doplňkového skladu by stačila podmínka `if (Linka.QueueLen() >= 10)`, kt
 
 - [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
 - [Notace a vzory](<../../../basics/Notace a vzory.md>)
+
+<!-- -->
+
+- [Studijní plán](<../../Studijní plán.md>)
 - [Seznam úloh](<../../Seznam úloh.md>)

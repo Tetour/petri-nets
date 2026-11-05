@@ -198,4 +198,8 @@ Fronta *Várky* je zařízení jen proto, aby na podmínku `WaitUntil` čekala v
 
 - [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
 - [Notace a vzory](<../../../basics/Notace a vzory.md>)
+
+<!-- -->
+
+- [Studijní plán](<../../Studijní plán.md>)
 - [Seznam úloh](<../../Seznam úloh.md>)

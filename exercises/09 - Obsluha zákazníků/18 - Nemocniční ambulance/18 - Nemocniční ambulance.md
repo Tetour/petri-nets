@@ -201,4 +201,8 @@ V síti se lékař přerušeného pacienta do *Lékařů* nevrací, jde rovnou d
 
 - [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
 - [Notace a vzory](<../../../basics/Notace a vzory.md>)
+
+<!-- -->
+
+- [Studijní plán](<../../Studijní plán.md>)
 - [Seznam úloh](<../../Seznam úloh.md>)

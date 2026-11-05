@@ -183,4 +183,8 @@ Skupina A: „M/M/1, porucha s Exp(X), trvanie poruchy C jednotiek + SIMLIB (pro
 
 - [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
 - [Notace a vzory](<../../../basics/Notace a vzory.md>)
+
+<!-- -->
+
+- [Studijní plán](<../../Studijní plán.md>)
 - [Seznam úloh](<../../Seznam úloh.md>)

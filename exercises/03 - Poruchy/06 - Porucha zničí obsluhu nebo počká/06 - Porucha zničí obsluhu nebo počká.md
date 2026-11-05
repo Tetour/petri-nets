@@ -177,4 +177,8 @@ Porucha je tu událost, ne proces se `Seize(Linka, 1)`: nemá dobu trvání a p�
 
 - [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
 - [Notace a vzory](<../../../basics/Notace a vzory.md>)
+
+<!-- -->
+
+- [Studijní plán](<../../Studijní plán.md>)
 - [Seznam úloh](<../../Seznam úloh.md>)

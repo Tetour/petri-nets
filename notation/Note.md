@@ -87,6 +87,10 @@ Podobné úlohy: [Netrpělivé požadavky](<../../02 - Netrpělivost a omezená 
 
 - [Jak síť funguje](<../../../basics/Jak síť funguje.md>)
 - [Notace a vzory](<../../../basics/Notace a vzory.md>)
+
+<!-- -->
+
+- [Studijní plán](<../../Studijní plán.md>)
 - [Seznam úloh](<../../Seznam úloh.md>)
 ````
 
@@ -142,4 +146,4 @@ Podobné úlohy: [Netrpělivé požadavky](<../../02 - Netrpělivost a omezená 
 
 ### Reference
 
-- Visible, the same three links in every note (copy them from the skeleton): [Jak síť funguje](../basics/Jak%20síť%20funguje.md), [Notace a vzory](../basics/Notace%20a%20vzory.md) and the [exercise list](<../exercises/Seznam úloh.md>). In the PDF they stay links to the Markdown files, since those have no PDF.
+- Visible, the same four links in every note (copy them from the skeleton), in two lists separated by an empty comment `<!-- -->` (a blank line alone would only make one loose list): the basics, [Jak síť funguje](../basics/Jak%20síť%20funguje.md) and [Notace a vzory](../basics/Notace%20a%20vzory.md); then the exercise lists, the [study plan](<../exercises/Studijní plán.md>) and the [exercise list](<../exercises/Seznam úloh.md>). In the PDF they stay links to the Markdown files, since those have no PDF.
